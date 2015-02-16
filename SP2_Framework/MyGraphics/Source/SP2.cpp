@@ -50,8 +50,8 @@ void SP2::Init()
 	//m_programID = LoadShaders( "Shader//Shading.vertexshader", "Shader//Shading.fragmentshader" );
 	/*m_programID = LoadShaders( "Shader//Shading.vertexshader", "Shader//LightSource.fragmentshader" );*/
 		//m_programID = LoadShaders( "Shader//Texture.vertexshader", "Shader//Texture.fragmentshader" );
-		m_programID = LoadShaders( "Shader//Texture.vertexshader", "Shader//Blending.fragmentshader" );
-			m_programID = LoadShaders( "Shader//Texture.vertexshader", "Shader//Text.fragmentshader" );
+	m_programID = LoadShaders( "Shader//Texture.vertexshader", "Shader//Blending.fragmentshader" );
+	m_programID = LoadShaders( "Shader//Texture.vertexshader", "Shader//Text.fragmentshader" );
 	// Use our shader
 	//glUseProgram(m_programID);
 	// Get a handle for our "MVP" uniform
@@ -219,6 +219,10 @@ void SP2::Init()
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
 
 	EntranceDoorSlide = data.GetRenderPos(1)->getTranslationX();
+	
+	npc.setName(character.GetRenderPos(0)->getName());
+	npc.setPosX(character.GetRenderPos(0)->getTranslationX());
+	npc.setPosZ(character.GetRenderPos(0)->getTranslationZ());
 
 }
 
@@ -327,6 +331,8 @@ void SP2::Update(double dt)
 				EntranceDoorSlide-= 0.4;
 		}
 	}
+
+	npc.TestAIPath();
 
 	std::stringstream dd;
 	dd << camera.position.x;
@@ -548,18 +554,18 @@ void SP2::RenderWorld()
 void SP2::RenderCharacter()
 {
 	modelStack.PushMatrix();
-	modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
-	modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
+	modelStack.Translate(npc.getPosX(),character.GetRenderPos(0)->getTranslationY(),npc.getPosZ());
+	modelStack.Rotate(npc.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
 	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
 	modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
-	modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
-	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_CHAR1], true);
-	modelStack.PopMatrix();
+	//modelStack.PushMatrix();
+	//modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
+	//modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
+	//modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
+	//RenderMesh(meshList[GEO_MODEL_CHAR1], true);
+	//modelStack.PopMatrix();
 }
 
 void SP2::RenderMesh(Mesh *mesh, bool enableLight)

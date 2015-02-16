@@ -11,6 +11,8 @@
 #include "Utility.h"
 #include "ReadFromText.h"
 #include "RenderPos.h"
+#include "NPC.h"
+
 
 
 class SP2: public Scene
@@ -103,6 +105,9 @@ public:
 	CReadFromText cashier;
 	CReadFromText fridge;
 	CReadFromText character;
+	CNPC npc;
+
+
 private:
 	unsigned m_vertexArrayID;
 	Mesh* meshList[NUM_GEOMETRY];
