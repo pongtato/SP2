@@ -76,6 +76,7 @@ private:
 		GEO_MODEL_CASHIER,
 		GEO_MODEL_CHAR1,
 		GEO_MODEL_FRIDGE,
+		GEO_MODEL_SHELF,
 		GEO_TEXT,
 
 		GEO_LEFT,
@@ -98,7 +99,7 @@ public:
 	virtual void Exit();
 
 	CReadFromText data;
-	CReadFromText shelf;
+	CReadFromText shelve;
 	CReadFromText cashier;
 	CReadFromText fridge;
 	CReadFromText character;
@@ -123,7 +124,12 @@ private:
 
 	Light lights[2];
 
+	void RenderWorld();
 	void RenderSkybox();
+	void RenderCashier();
+	void RenderFridge();
+	void RenderShelves();
+	void RenderCharacter();
 
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);

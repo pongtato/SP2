@@ -23,11 +23,11 @@ SP2::~SP2()
 
 void SP2::Init()
 {
-	data.ReadTextFile( "Modelpos.txt" );
-	shelf.ReadTextFile( "Modelpos.txt" );
-	cashier.ReadTextFile( "Cashierpos.txt" );
-	fridge.ReadTextFile( "Fridgepos.txt" );
-	character.ReadTextFile( "Characterpos.txt" );
+	data.ReadTextFile( "OBJ-Pos/Modelpos.txt" );
+	shelve.ReadTextFile( "OBJ-Pos/Shelves.txt" );
+	cashier.ReadTextFile( "OBJ-Pos/Cashierpos.txt" );
+	fridge.ReadTextFile( "OBJ-Pos/Fridgepos.txt" );
+	character.ReadTextFile( "OBJ-Pos/Characterpos.txt" );
 
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -211,6 +211,9 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_FRIDGE] = MeshBuilder::GenerateOBJ("model1", "OBJ//fridge.obj");
 	meshList[GEO_MODEL_FRIDGE]->textureID = LoadTGA("Image//fridge.tga");
+
+	meshList[GEO_MODEL_SHELF] = MeshBuilder::GenerateOBJ("model1", "OBJ//shelf.obj");
+	meshList[GEO_MODEL_SHELF]->textureID = LoadTGA("Image//Shelf_Texture2.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -409,55 +412,11 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
 
-
-
-	modelStack.PushMatrix();
-	modelStack.Translate(data.GetRenderPos(0)->getTranslationX(),data.GetRenderPos(0)->getTranslationY(),data.GetRenderPos(0)->getTranslationZ());
-	modelStack.Rotate(data.GetRenderPos(0)->getRotation(),data.GetRenderPos(0)->getRX(),data.GetRenderPos(0)->getRY(),data.GetRenderPos(0)->getRZ());
-	modelStack.Scale(data.GetRenderPos(0)->getScaleX(),data.GetRenderPos(0)->getScaleY(),data.GetRenderPos(0)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_MART], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(EntranceDoorSlide,data.GetRenderPos(1)->getTranslationY(),data.GetRenderPos(1)->getTranslationZ());
-	modelStack.Rotate(data.GetRenderPos(1)->getRotation(),data.GetRenderPos(1)->getRX(),data.GetRenderPos(1)->getRY(),data.GetRenderPos(1)->getRZ());
-	modelStack.Scale(data.GetRenderPos(1)->getScaleX(),data.GetRenderPos(1)->getScaleY(),data.GetRenderPos(1)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_DOOR], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(shelf.GetRenderPos(0)->getTranslationX(),shelf.GetRenderPos(0)->getTranslationY(),shelf.GetRenderPos(0)->getTranslationZ());
-	modelStack.Rotate(shelf.GetRenderPos(0)->getRotation(),shelf.GetRenderPos(0)->getRX(),shelf.GetRenderPos(0)->getRY(),shelf.GetRenderPos(0)->getRZ());
-	modelStack.Scale(shelf.GetRenderPos(0)->getScaleX(),shelf.GetRenderPos(0)->getScaleY(),shelf.GetRenderPos(0)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
-	modelStack.PopMatrix();
-
-	for(int i = 0; i < 3; ++i)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*20));
-		modelStack.Rotate(cashier.GetRenderPos(0)->getRotation(),cashier.GetRenderPos(0)->getRX(),cashier.GetRenderPos(0)->getRY(),cashier.GetRenderPos(0)->getRZ());
-		modelStack.Scale(cashier.GetRenderPos(0)->getScaleX(),cashier.GetRenderPos(0)->getScaleY(),cashier.GetRenderPos(0)->getScaleZ());
-		RenderMesh(meshList[GEO_MODEL_CASHIER], true);
-		modelStack.PopMatrix();
-	}
-
-	for(int i = 0; i < 3; ++i)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(fridge.GetRenderPos(0)->getTranslationX()-(i*14),fridge.GetRenderPos(0)->getTranslationY(),fridge.GetRenderPos(0)->getTranslationZ());
-		modelStack.Rotate(fridge.GetRenderPos(0)->getRotation(),fridge.GetRenderPos(0)->getRX(),fridge.GetRenderPos(0)->getRY(),fridge.GetRenderPos(0)->getRZ());
-		modelStack.Scale(fridge.GetRenderPos(0)->getScaleX(),fridge.GetRenderPos(0)->getScaleY(),fridge.GetRenderPos(0)->getScaleZ());
-		RenderMesh(meshList[GEO_MODEL_FRIDGE], true);
-		modelStack.PopMatrix();
-	}
-
-	modelStack.PushMatrix();
-	modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
-	modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
-	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_CHAR1], true);
-	modelStack.PopMatrix();
+	RenderWorld();
+	RenderCashier();
+	RenderFridge();
+	RenderShelves();
+	RenderCharacter();
 
 	RenderSkybox();
 
@@ -525,6 +484,82 @@ void SP2::RenderSkybox()
 	modelStack.PopMatrix();
 
 
+}
+
+void SP2::RenderCashier()
+{
+		for(int i = 0; i < 3; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*20));
+		modelStack.Rotate(cashier.GetRenderPos(0)->getRotation(),cashier.GetRenderPos(0)->getRX(),cashier.GetRenderPos(0)->getRY(),cashier.GetRenderPos(0)->getRZ());
+		modelStack.Scale(cashier.GetRenderPos(0)->getScaleX(),cashier.GetRenderPos(0)->getScaleY(),cashier.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_CASHIER], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderFridge()
+{
+	for(int i = 0; i < 3; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(fridge.GetRenderPos(0)->getTranslationX()-(i*14),fridge.GetRenderPos(0)->getTranslationY(),fridge.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(fridge.GetRenderPos(0)->getRotation(),fridge.GetRenderPos(0)->getRX(),fridge.GetRenderPos(0)->getRY(),fridge.GetRenderPos(0)->getRZ());
+		modelStack.Scale(fridge.GetRenderPos(0)->getScaleX(),fridge.GetRenderPos(0)->getScaleY(),fridge.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_FRIDGE], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderShelves()
+{
+	for(int i = 1; i <= 3; ++ i )
+	{
+		for(int j = 0; j < 7; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(shelve.GetRenderPos(0)->getTranslationX()+(j*15),shelve.GetRenderPos(0)->getTranslationY(),shelve.GetRenderPos(0)->getTranslationZ()+(i*15));
+		modelStack.Rotate(shelve.GetRenderPos(0)->getRotation(),shelve.GetRenderPos(0)->getRX(),shelve.GetRenderPos(0)->getRY(),shelve.GetRenderPos(0)->getRZ());
+		modelStack.Scale(shelve.GetRenderPos(0)->getScaleX(),shelve.GetRenderPos(0)->getScaleY(),shelve.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_SHELF], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
+void SP2::RenderWorld()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(0)->getTranslationX(),data.GetRenderPos(0)->getTranslationY(),data.GetRenderPos(0)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(0)->getRotation(),data.GetRenderPos(0)->getRX(),data.GetRenderPos(0)->getRY(),data.GetRenderPos(0)->getRZ());
+	modelStack.Scale(data.GetRenderPos(0)->getScaleX(),data.GetRenderPos(0)->getScaleY(),data.GetRenderPos(0)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_MART], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(EntranceDoorSlide,data.GetRenderPos(1)->getTranslationY(),data.GetRenderPos(1)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(1)->getRotation(),data.GetRenderPos(1)->getRX(),data.GetRenderPos(1)->getRY(),data.GetRenderPos(1)->getRZ());
+	modelStack.Scale(data.GetRenderPos(1)->getScaleX(),data.GetRenderPos(1)->getScaleY(),data.GetRenderPos(1)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_DOOR], true);
+	modelStack.PopMatrix();
+}
+
+void SP2::RenderCharacter()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
+	modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
+	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
+	modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
+	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_CHAR1], true);
+	modelStack.PopMatrix();
 }
 
 void SP2::RenderMesh(Mesh *mesh, bool enableLight)
