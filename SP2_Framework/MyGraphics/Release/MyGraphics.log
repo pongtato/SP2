@@ -1,0 +1,129 @@
+﻿Build started 21/1/2015 8:12:47 PM.
+     1>Project "C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\MyGraphics.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\\glew\include" /I"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\\glfw\include" /I"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\\Common\Source" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Application.cpp Source\Camera.cpp Source\Camera2.cpp Source\Camera3.cpp Source\LoadOBJ.cpp Source\LoadTGA.cpp Source\main.cpp Source\Mesh.cpp Source\MeshBuilder.cpp Source\Scene1.cpp Source\Scene2.cpp Source\Scene3.cpp Source\Scene4.cpp Source\Scene5.cpp Source\SceneLight2.cpp Source\SceneModel.cpp Source\SceneSkybox.cpp Source\SceneText.cpp Source\SceneTexture.cpp Source\shader.cpp Source\Utility.cpp
+         Application.cpp
+         Camera.cpp
+         Camera2.cpp
+         Camera3.cpp
+     1>Source\Camera3.cpp(26): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>Source\Camera3.cpp(154): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Camera3.cpp(155): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Camera3.cpp(163): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Camera3.cpp(164): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Camera3.cpp(169): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Camera3.cpp(170): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Camera3.cpp(175): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Camera3.cpp(176): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         LoadOBJ.cpp
+         LoadTGA.cpp
+         main.cpp
+         Mesh.cpp
+         MeshBuilder.cpp
+     1>Source\MeshBuilder.cpp(409): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>Source\MeshBuilder.cpp(410): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>Source\MeshBuilder.cpp(411): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>Source\MeshBuilder.cpp(412): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>Source\MeshBuilder.cpp(413): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>Source\MeshBuilder.cpp(414): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+         Scene1.cpp
+         Scene2.cpp
+         Scene3.cpp
+         Scene4.cpp
+         Scene5.cpp
+     1>Source\Scene5.cpp(142): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\Scene5.cpp(142): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\Scene5.cpp(156): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\Scene5.cpp(156): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\Scene5.cpp(156): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\Scene5.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\Scene5.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\Scene5.cpp(262): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(264): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(266): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(268): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(270): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(272): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(274): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(276): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\Scene5.cpp(278): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+         SceneLight2.cpp
+     1>Source\SceneLight2.cpp(192): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneLight2.cpp(192): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneLight2.cpp(374): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneLight2.cpp(374): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneLight2.cpp(375): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(377): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(379): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(381): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(383): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(385): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(387): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(389): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>Source\SceneLight2.cpp(391): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+         SceneModel.cpp
+     1>Source\SceneModel.cpp(424): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneModel.cpp(424): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneModel.cpp(470): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneModel.cpp(477): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneModel.cpp(485): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneModel.cpp(493): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneModel.cpp(501): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneModel.cpp(512): warning C4305: 'argument' : truncation from 'double' to 'float'
+         SceneSkybox.cpp
+     1>Source\SceneSkybox.cpp(402): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneSkybox.cpp(409): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneSkybox.cpp(417): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneSkybox.cpp(425): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneSkybox.cpp(433): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneSkybox.cpp(444): warning C4305: 'argument' : truncation from 'double' to 'float'
+         SceneText.cpp
+     1>Source\SceneText.cpp(313): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SceneText.cpp(498): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneText.cpp(505): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneText.cpp(513): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneText.cpp(521): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneText.cpp(529): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneText.cpp(540): warning C4305: 'argument' : truncation from 'double' to 'float'
+         SceneTexture.cpp
+         shader.cpp
+         Compiling...
+         Utility.cpp
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\Release\MyGraphics.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\\glew\lib" /LIBPATH:"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\\glfw\lib-msvc100" /LIBPATH:"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\MyGraphics.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\Release\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\Release\MyGraphics.lib" /MACHINE:X86 Release\Application.obj
+         Release\Camera.obj
+         Release\Camera2.obj
+         Release\Camera3.obj
+         Release\LoadOBJ.obj
+         Release\LoadTGA.obj
+         Release\main.obj
+         Release\Mesh.obj
+         Release\MeshBuilder.obj
+         Release\Scene1.obj
+         Release\Scene2.obj
+         Release\Scene3.obj
+         Release\Scene4.obj
+         Release\Scene5.obj
+         Release\SceneLight2.obj
+         Release\SceneModel.obj
+         Release\SceneSkybox.obj
+         Release\SceneText.obj
+         Release\SceneTexture.obj
+         Release\shader.obj
+         Release\Utility.obj
+         Generating code
+     1>c:\users\aloysius chun\desktop\comg_assignment3\mygraphics\source\camera3.cpp(67): warning C4715: 'Camera3::Limit' : not all control paths return a value
+         Finished generating code
+         MyGraphics.vcxproj -> C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\Release\MyGraphics.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\Release\MyGraphics.exe;#1" /manifest Release\MyGraphics.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\MyGraphics.unsuccessfulbuild".
+         Touching "Release\MyGraphics.lastbuildstate".
+     1>Done Building Project "C:\Users\Aloysius Chun\Desktop\ComG_Assignment3\MyGraphics\MyGraphics.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.32
