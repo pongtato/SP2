@@ -67,9 +67,9 @@ void CReadFromText::ReadTextFile(const char* filename)
 			{
 				CRenderPos * new_pos = new CRenderPos();
 				new_pos->setName(data[0]);
-				new_pos->setTranslation( atoi(data[1].c_str()), atoi(data[2].c_str()), atoi(data[3].c_str()));
-				new_pos->setRotation( atoi(data[4].c_str()), atoi(data[5].c_str()), atoi(data[6].c_str()), atoi(data[7].c_str()));
-				new_pos->setScale( atoi(data[8].c_str()), atoi(data[9].c_str()), atoi(data[10].c_str()));
+				new_pos->setTranslation( stof(data[1].c_str()), stof(data[2].c_str()), stof(data[3].c_str()));
+				new_pos->setRotation( stof(data[4].c_str()), atoi(data[5].c_str()), atoi(data[6].c_str()), atoi(data[7].c_str()));
+				new_pos->setScale( stof(data[8].c_str()), stof(data[9].c_str()), stof(data[10].c_str()));
 				my_list.push_back( new_pos );
 			}
 		}

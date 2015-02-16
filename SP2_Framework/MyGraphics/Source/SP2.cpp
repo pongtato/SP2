@@ -202,7 +202,7 @@ void SP2::Init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
 
-	EntranceDoorSlide = -71.1;
+	EntranceDoorSlide = data.GetRenderPos(1)->getTranslationX();
 
 }
 
@@ -400,15 +400,15 @@ void SP2::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(data.GetRenderPos(0)->getTranslationX(),data.GetRenderPos(0)->getTranslationY(),data.GetRenderPos(0)->getTranslationZ());
-	modelStack.Rotate(180,0,1,0);
-	modelStack.Scale(1,1,1);
+	modelStack.Rotate(data.GetRenderPos(0)->getRotation(),data.GetRenderPos(0)->getRX(),data.GetRenderPos(0)->getRY(),data.GetRenderPos(0)->getRZ());
+	modelStack.Scale(data.GetRenderPos(0)->getScaleX(),data.GetRenderPos(0)->getScaleY(),data.GetRenderPos(0)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_MART], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(EntranceDoorSlide,0.4,44);
-	modelStack.Rotate(180,0,1,0);
-	modelStack.Scale(1,1,1);
+	modelStack.Translate(EntranceDoorSlide,data.GetRenderPos(1)->getTranslationY(),data.GetRenderPos(1)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(1)->getRotation(),data.GetRenderPos(1)->getRX(),data.GetRenderPos(1)->getRY(),data.GetRenderPos(1)->getRZ());
+	modelStack.Scale(data.GetRenderPos(1)->getScaleX(),data.GetRenderPos(1)->getScaleY(),data.GetRenderPos(1)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOOR], true);
 	modelStack.PopMatrix();
 
