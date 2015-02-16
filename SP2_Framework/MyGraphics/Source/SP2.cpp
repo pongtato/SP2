@@ -63,7 +63,7 @@ void SP2::Init()
 	rotateAngle = 0;
 
 	//Initialize camera settings
-	camera.Init(Vector3(0, 0.6, 100), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	camera.Init(Vector3(0, 5, 100), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	
 	//Initialize all meshes to NULL
 	for(int i = 0; i < NUM_GEOMETRY; ++i)
@@ -177,22 +177,22 @@ void SP2::Init()
 	//meshList[GEO_QUAD]->textureID = LoadTGA("Image//color2.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//front.tga");
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//()Town_bk.tga");
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//back.tga");
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//()Town_ft.tga");
 
 	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//bottom.tga");
+	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//()Town_dn.tga");
 
 	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//top.tga");
+	meshList[GEO_TOP]->textureID = LoadTGA("Image//()Town2_Up.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//right.tga");
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//()Town_rt.tga");
 
 	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//left.tga");
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//()Town_lf.tga");
 
 	meshList[GEO_MODEL_DOORMAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//doorman.obj");
 	meshList[GEO_MODEL_DOORMAN]->textureID = LoadTGA("Image//doorman.tga");
@@ -202,6 +202,15 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_DOOR] = MeshBuilder::GenerateOBJ("model1", "OBJ//Door.obj");
 	meshList[GEO_MODEL_DOOR]->textureID = LoadTGA("Image//Door.tga");
+
+	meshList[GEO_MODEL_CASHIER] = MeshBuilder::GenerateOBJ("model1", "OBJ//cashier table.obj");
+	meshList[GEO_MODEL_CASHIER]->textureID = LoadTGA("Image//cashier table.tga");
+
+	meshList[GEO_MODEL_CHAR1] = MeshBuilder::GenerateOBJ("model1", "OBJ//char1.obj");
+	meshList[GEO_MODEL_CHAR1]->textureID = LoadTGA("Image//Door.tga");
+
+	meshList[GEO_MODEL_FRIDGE] = MeshBuilder::GenerateOBJ("model1", "OBJ//fridge.obj");
+	meshList[GEO_MODEL_FRIDGE]->textureID = LoadTGA("Image//fridge.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -423,6 +432,33 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
 	modelStack.PopMatrix();
 
+	for(int i = 0; i < 3; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*20));
+		modelStack.Rotate(cashier.GetRenderPos(0)->getRotation(),cashier.GetRenderPos(0)->getRX(),cashier.GetRenderPos(0)->getRY(),cashier.GetRenderPos(0)->getRZ());
+		modelStack.Scale(cashier.GetRenderPos(0)->getScaleX(),cashier.GetRenderPos(0)->getScaleY(),cashier.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_CASHIER], true);
+		modelStack.PopMatrix();
+	}
+
+	for(int i = 0; i < 3; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(fridge.GetRenderPos(0)->getTranslationX()-(i*14),fridge.GetRenderPos(0)->getTranslationY(),fridge.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(fridge.GetRenderPos(0)->getRotation(),fridge.GetRenderPos(0)->getRX(),fridge.GetRenderPos(0)->getRY(),fridge.GetRenderPos(0)->getRZ());
+		modelStack.Scale(fridge.GetRenderPos(0)->getScaleX(),fridge.GetRenderPos(0)->getScaleY(),fridge.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_FRIDGE], true);
+		modelStack.PopMatrix();
+	}
+
+	modelStack.PushMatrix();
+	modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
+	modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
+	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_CHAR1], true);
+	modelStack.PopMatrix();
+
 	RenderSkybox();
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
@@ -438,14 +474,14 @@ void SP2::RenderSkybox()
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Scale(1000,1000,1000);
-	modelStack.Translate(0,0,-0.497);
+	modelStack.Translate(0,0.1,-0.497);
 	RenderMesh(meshList[GEO_FRONT], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Scale(1000,1000,1000);
-	modelStack.Translate(0.497,0,0);
+	modelStack.Translate(0.497,0.1,0);
 	modelStack.Rotate(-90,0,1,0);
 	RenderMesh(meshList[GEO_RIGHT], false);
 	modelStack.PopMatrix();
@@ -453,7 +489,7 @@ void SP2::RenderSkybox()
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Scale(1000,1000,1000);
-	modelStack.Translate(-0.497,0,0);
+	modelStack.Translate(-0.497,0.1,0);
 	modelStack.Rotate(90,0,1,0);
 	RenderMesh(meshList[GEO_LEFT], false);
 	modelStack.PopMatrix();
@@ -461,7 +497,7 @@ void SP2::RenderSkybox()
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Scale(1000,1000,1000);
-	modelStack.Translate(0,0,0.497);
+	modelStack.Translate(0,0.1,0.497);
 	modelStack.Rotate(180,0,1,0);
 	RenderMesh(meshList[GEO_BACK], false);
 	modelStack.PopMatrix();
@@ -469,7 +505,7 @@ void SP2::RenderSkybox()
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Scale(1000,1000,1000);
-	modelStack.Translate(0,0.497,0);
+	modelStack.Translate(0,0.597,0);
 	modelStack.Rotate(90,1,0,0);
 	modelStack.PushMatrix();
 	modelStack.Rotate(90,0,0,1);
@@ -480,7 +516,7 @@ void SP2::RenderSkybox()
 	modelStack.PushMatrix();
 	//scale, translate, rotate
 	modelStack.Scale(1000,1000,1000);
-	modelStack.Translate(0,-0.497,0);
+	modelStack.Translate(0,0,0);
 	modelStack.Rotate(-90,1,0,0);
 	modelStack.PushMatrix();
 	modelStack.Rotate(90,0,0,1);
