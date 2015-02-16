@@ -502,10 +502,10 @@ void SP2::RenderSkybox()
 
 void SP2::RenderCashier()
 {
-		for(int i = 0; i < 3; ++i)
+		for(int i = 0; i < 6; ++i)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*20));
+		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*12));
 		modelStack.Rotate(cashier.GetRenderPos(0)->getRotation(),cashier.GetRenderPos(0)->getRX(),cashier.GetRenderPos(0)->getRY(),cashier.GetRenderPos(0)->getRZ());
 		modelStack.Scale(cashier.GetRenderPos(0)->getScaleX(),cashier.GetRenderPos(0)->getScaleY(),cashier.GetRenderPos(0)->getScaleZ());
 		RenderMesh(meshList[GEO_MODEL_CASHIER], true);
@@ -528,12 +528,26 @@ void SP2::RenderFridge()
 
 void SP2::RenderShelves()
 {
+	int temp = 0;
 	for(int i = 1; i <= 3; ++ i )
 	{
-		for(int j = 0; j < 7; ++ j )
+		for(int j = 0; j < 12; ++ j )
 		{
+			if ( j >= 4 && j < 8 )
+			{
+			 temp = 10;
+			}
+			else  if ( j >= 8 )
+			{
+			temp = 20;
+			}
+			else
+			{
+				temp = 0;
+			}
+			
 			modelStack.PushMatrix();
-			modelStack.Translate(shelve.GetRenderPos(0)->getTranslationX()+(j*15),shelve.GetRenderPos(0)->getTranslationY(),shelve.GetRenderPos(0)->getTranslationZ()+(i*15));
+			modelStack.Translate(shelve.GetRenderPos(0)->getTranslationX()+(j*6)+temp,shelve.GetRenderPos(0)->getTranslationY(),shelve.GetRenderPos(0)->getTranslationZ()+(i*15));
 		modelStack.Rotate(shelve.GetRenderPos(0)->getRotation(),shelve.GetRenderPos(0)->getRX(),shelve.GetRenderPos(0)->getRY(),shelve.GetRenderPos(0)->getRZ());
 		modelStack.Scale(shelve.GetRenderPos(0)->getScaleX(),shelve.GetRenderPos(0)->getScaleY(),shelve.GetRenderPos(0)->getScaleZ());
 			RenderMesh(meshList[GEO_MODEL_SHELF], true);
