@@ -9,6 +9,8 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Utility.h"
+#include "ReadFromText.h"
+#include "RenderPos.h"
 
 
 class SP2: public Scene
@@ -91,6 +93,8 @@ public:
 	virtual void Update(double dt);
 	virtual void Render();
 	virtual void Exit();
+
+	CReadFromText data;
 private:
 	unsigned m_vertexArrayID;
 	Mesh* meshList[NUM_GEOMETRY];

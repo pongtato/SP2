@@ -23,6 +23,8 @@ SP2::~SP2()
 
 void SP2::Init()
 {
+	data.ReadTextFile( "Modelpos.txt" );
+
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	//Enable depth buffer and depth testing
@@ -394,24 +396,26 @@ void SP2::Render()
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
 
+
+
 	modelStack.PushMatrix();
-	modelStack.Scale(1,1,1);
-	modelStack.Translate(0,-5,0);
+	modelStack.Translate(data.GetRenderPos(0)->getTranslationX(),data.GetRenderPos(0)->getTranslationY(),data.GetRenderPos(0)->getTranslationZ());
 	modelStack.Rotate(180,0,1,0);
+	modelStack.Scale(1,1,1);
 	RenderMesh(meshList[GEO_MODEL_MART], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Scale(1,1,1);
 	modelStack.Translate(EntranceDoorSlide,0.4,44);
 	modelStack.Rotate(180,0,1,0);
+	modelStack.Scale(1,1,1);
 	RenderMesh(meshList[GEO_MODEL_DOOR], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Scale(1,1,1);
 	modelStack.Translate(0,-5,0);
 	modelStack.Rotate(180,0,1,0);
+	modelStack.Scale(1,1,1);
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
 	modelStack.PopMatrix();
 
