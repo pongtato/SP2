@@ -78,3 +78,4 @@ void CReadFromText::ReadTextFile(const char* filename)
 	file.close();
 }
 
+

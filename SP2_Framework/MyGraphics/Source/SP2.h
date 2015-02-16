@@ -95,6 +95,7 @@ public:
 	virtual void Exit();
 
 	CReadFromText data;
+	CReadFromText shelf;
 private:
 	unsigned m_vertexArrayID;
 	Mesh* meshList[NUM_GEOMETRY];

@@ -24,6 +24,7 @@ SP2::~SP2()
 void SP2::Init()
 {
 	data.ReadTextFile( "Modelpos.txt" );
+	shelf.ReadTextFile( "Modelpos.txt" );
 
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -413,9 +414,9 @@ void SP2::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.Translate(0,-5,0);
-	modelStack.Rotate(180,0,1,0);
-	modelStack.Scale(1,1,1);
+	modelStack.Translate(shelf.GetRenderPos(0)->getTranslationX(),shelf.GetRenderPos(0)->getTranslationY(),shelf.GetRenderPos(0)->getTranslationZ());
+	modelStack.Rotate(shelf.GetRenderPos(0)->getRotation(),shelf.GetRenderPos(0)->getRX(),shelf.GetRenderPos(0)->getRY(),shelf.GetRenderPos(0)->getRZ());
+	modelStack.Scale(shelf.GetRenderPos(0)->getScaleX(),shelf.GetRenderPos(0)->getScaleY(),shelf.GetRenderPos(0)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
 	modelStack.PopMatrix();
 
