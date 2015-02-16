@@ -99,6 +99,9 @@ public:
 
 	CReadFromText data;
 	CReadFromText shelf;
+	CReadFromText cashier;
+	CReadFromText fridge;
+	CReadFromText character;
 private:
 	unsigned m_vertexArrayID;
 	Mesh* meshList[NUM_GEOMETRY];

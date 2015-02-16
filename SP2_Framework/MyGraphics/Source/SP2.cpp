@@ -25,6 +25,9 @@ void SP2::Init()
 {
 	data.ReadTextFile( "Modelpos.txt" );
 	shelf.ReadTextFile( "Modelpos.txt" );
+	cashier.ReadTextFile( "Cashierpos.txt" );
+	fridge.ReadTextFile( "Fridgepos.txt" );
+	character.ReadTextFile( "Characterpos.txt" );
 
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
