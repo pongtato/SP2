@@ -7,7 +7,7 @@ CNPC::CNPC(void)
 	CharPosX = 0;
 	CharPosZ = 0;
 	CharSpeed = 0;
-	CharRot = 0;
+	CharRot = 90;
 }
 
 
@@ -95,28 +95,69 @@ void CNPC::TestAIPath(void)
 	}
 
 
-	if ( getDirection() == 1)
+	if ( getDirection() == 1 && getRot() >= 90)
 	{
-		float temp = getPosX() + 0.2;
+
+		if ( getRot() <= 90)
+		{
+			float temp2 = getRot() + 3;
+			SetRot(temp2);
+		}
+		else 
+		{
+			float temp = getPosX() + 0.2;
+			setPosX(temp);
+		}
+	}
+	else if ( getDirection() == 1 && getRot() <= -180)
+	{
+		if ( getRot() >= -270 )
+		{
+			float temp2 = getRot() - 3;
+			SetRot(temp2);
+		}
+		else
+		{
 		SetRot(90);
-		setPosX(temp);
+		}
 	}
 	else if ( getDirection() == 2)
 	{
-		float temp = getPosZ() + 0.2;
-		SetRot(0);
-		setPosZ(temp);
+		if ( getRot() >= 0 )
+		{
+			float temp2 = getRot() - 3;
+			SetRot(temp2);
+		}
+		else
+		{
+			float temp = getPosZ() + 0.2;
+			setPosZ(temp);
+		}
 	}
 	else if ( getDirection() == 3)
 	{
+		if ( getRot() >= -90 )
+		{
+			float temp2 = getRot() - 3;
+			SetRot(temp2);
+		}
+		else
+		{
 		float temp = getPosX() - 0.2;
-		SetRot(-90);
 		setPosX(temp);
+		}
 	}
 	else if ( getDirection() == 4)
 	{
+		if ( getRot() >= -180 )
+		{
+			float temp2 = getRot() - 3;
+			SetRot(temp2);
+		}
+		else
+		{
 		float temp = getPosZ() - 0.2;
-		SetRot(180);
 		setPosZ(temp);
+		}
 	}
 }
