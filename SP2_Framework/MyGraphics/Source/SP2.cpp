@@ -30,16 +30,13 @@ void SP2::Init()
 	fridge.ReadTextFile( "OBJ-Pos/Fridgepos.txt" );
 	character.ReadTextFile( "OBJ-Pos/Characterpos.txt" );
 	cereal.ReadTextFile( "OBJ-Pos/Cerealpos.txt" );
-<<<<<<< 433d5cbd0f0ae856f5ac7790cd6679b625bb27f6
 	watercan.ReadTextFile( "OBJ-Pos/WaterCanpos.txt" );
 	mtdew.ReadTextFile( "OBJ-Pos/MountainDew.txt" );
 	coke.ReadTextFile( "OBJ-Pos/Cokepos.txt" );
 	pepsi.ReadTextFile( "OBJ-Pos/Pepsipos.txt" );
 	chocolate.ReadTextFile( "OBJ-Pos/Chocolatepos.txt" );
 	chips.ReadTextFile( "OBJ-Pos/Chipspos.txt" );
-=======
 	shopper.ReadTextFilePath( "OBJ-Pos/CharacterPath.txt");
->>>>>>> e6ac66ff7aed130d0a5f9272634107882ecbff3b
 
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
