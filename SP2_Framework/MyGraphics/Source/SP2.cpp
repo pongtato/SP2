@@ -23,18 +23,23 @@ SP2::~SP2()
 
 void SP2::Init()
 {
+
 	data.ReadTextFile( "OBJ-Pos/Modelpos.txt" );
 	shelve.ReadTextFile( "OBJ-Pos/Shelves.txt" );
 	cashier.ReadTextFile( "OBJ-Pos/Cashierpos.txt" );
 	fridge.ReadTextFile( "OBJ-Pos/Fridgepos.txt" );
 	character.ReadTextFile( "OBJ-Pos/Characterpos.txt" );
 	cereal.ReadTextFile( "OBJ-Pos/Cerealpos.txt" );
+<<<<<<< 433d5cbd0f0ae856f5ac7790cd6679b625bb27f6
 	watercan.ReadTextFile( "OBJ-Pos/WaterCanpos.txt" );
 	mtdew.ReadTextFile( "OBJ-Pos/MountainDew.txt" );
 	coke.ReadTextFile( "OBJ-Pos/Cokepos.txt" );
 	pepsi.ReadTextFile( "OBJ-Pos/Pepsipos.txt" );
 	chocolate.ReadTextFile( "OBJ-Pos/Chocolatepos.txt" );
 	chips.ReadTextFile( "OBJ-Pos/Chipspos.txt" );
+=======
+	shopper.ReadTextFilePath( "OBJ-Pos/CharacterPath.txt");
+>>>>>>> e6ac66ff7aed130d0a5f9272634107882ecbff3b
 
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -256,12 +261,15 @@ void SP2::Init()
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
 
 	EntranceDoorSlide = data.GetRenderPos(1)->getTranslationX();
-	
+
 	npc.setName(character.GetRenderPos(0)->getName());
 	npc.setPosX(character.GetRenderPos(0)->getTranslationX());
 	npc.setPosZ(character.GetRenderPos(0)->getTranslationZ());
-
+	shopper.setPosX(-75);
+	shopper.setPosZ(25);
 }
+
+
 
 static float ROT_LIMIT = 45.f;
 static float SCALE_LIMIT = 5.f;
@@ -370,6 +378,7 @@ void SP2::Update(double dt)
 	}
 
 	npc.TestAIPath();
+	shopper.ShopPathing();
 
 	std::stringstream dd;
 	dd << camera.position.x;
@@ -2428,6 +2437,13 @@ void SP2::RenderCharacter()
 	modelStack.PushMatrix();
 	modelStack.Translate(npc.getPosX(),character.GetRenderPos(0)->getTranslationY(),npc.getPosZ());
 	modelStack.Rotate(npc.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
+	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(shopper.getPosX(),character.GetRenderPos(0)->getTranslationY(),shopper.getPosZ());
+	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
 	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
 	modelStack.PopMatrix();

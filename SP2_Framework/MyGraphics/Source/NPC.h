@@ -3,6 +3,11 @@
 #include <string>
 #include <iostream>
 
+#include <string>
+#include <vector>
+#include <sstream>
+#include <fstream>
+
 using namespace std;
 
 class CNPC
@@ -14,6 +19,8 @@ private:
 	float CharPosZ;
 	float CharRot;
 	int Direction;
+	int Path;
+	float Checkpoints[20];
 public:
 	CNPC(void);
 	~CNPC(void);
@@ -24,8 +31,11 @@ public:
 	void setSpeed(float speed);
 	void setDirection(int state);
 	void SetRot(float rot);
+	void setPath(int node);
+	void setCheckpoints(int n, float point);
 
 	void TestAIPath(void);
+	void ShopPathing(void);
 	
 	string getName(void);
 	float getPosX(void);
@@ -33,5 +43,9 @@ public:
 	float getSpeed(void);
 	float getRot(void);
 	int getDirection(void);
+	int getPath(void);
+	float getCheckpoints(int n);
+
+	void ReadTextFilePath(const char* filename);
 };
 

@@ -17,6 +17,11 @@ CRenderPos* CReadFromText::GetRenderPos(const int selection)
 	return this->my_list[selection];
 }
 
+CNPC* CReadFromText::GetRenderPosChar(const int selection)
+{
+	return this->npc_list[selection];
+}
+
 void CReadFromText::ResetData(void)
 {
 	// Release memory 
@@ -71,6 +76,54 @@ void CReadFromText::ReadTextFile(const char* filename)
 				new_pos->setRotation( stof(data[4].c_str()), atoi(data[5].c_str()), atoi(data[6].c_str()), atoi(data[7].c_str()));
 				new_pos->setScale( stof(data[8].c_str()), stof(data[9].c_str()), stof(data[10].c_str()));
 				my_list.push_back( new_pos );
+			}
+		}
+	}
+	// Close file
+	file.close();
+}
+
+void CReadFromText::ReadTextFilePath(const char* filename)
+{
+	// Open File
+	ifstream file;
+	file.open( filename );
+
+	// Read File
+	if ( file.is_open() )
+	{
+		// Reset data before doing anything
+		this->ResetData();
+
+		// Reset File
+		file.clear();
+		file.seekg( 0, file.beg );
+
+		// File Is Healthy
+		while ( file.good() )
+		{
+			// Get Data Per Line
+			string aLineOfText = "";
+			string token = "";
+
+			vector<string> data;
+			data.clear();
+			
+			getline( file, aLineOfText );
+			//aLineOfText.erase(aLineOfText.find(' '),1);
+			istringstream iss( aLineOfText );
+
+			while ( getline( iss, token, ',' ) || getline( iss, token, '/' ))
+			data.push_back( token );
+
+			if ( data[0] != "" )
+			{
+				CNPC * new_pos = new CNPC();
+				for ( int i = 0; i < 16; ++i)
+				{
+					new_pos->setCheckpoints(i,stof(data[i].c_str()));
+				}
+				npc_list.push_back( new_pos );
 			}
 		}
 	}

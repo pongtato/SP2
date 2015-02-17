@@ -116,13 +116,19 @@ public:
 	CReadFromText fridge;
 	CReadFromText character;
 	CReadFromText cereal;
+<<<<<<< 433d5cbd0f0ae856f5ac7790cd6679b625bb27f6
 	CReadFromText watercan;
 	CReadFromText mtdew;
 	CReadFromText coke;
 	CReadFromText pepsi;
 	CReadFromText chocolate;
 	CReadFromText chips;
+=======
+	CReadFromText Test;
+>>>>>>> e6ac66ff7aed130d0a5f9272634107882ecbff3b
 	CNPC npc;
+	CNPC shopper;
+
 
 
 private:
