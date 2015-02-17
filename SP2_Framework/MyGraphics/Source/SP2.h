@@ -79,6 +79,8 @@ private:
 		GEO_MODEL_CHAR1,
 		GEO_MODEL_FRIDGE,
 		GEO_MODEL_SHELF,
+		GEO_MODEL_CEREAL_1,
+		GEO_MODEL_CEREAL_2,
 		GEO_TEXT,
 
 		GEO_LEFT,
@@ -105,6 +107,7 @@ public:
 	CReadFromText cashier;
 	CReadFromText fridge;
 	CReadFromText character;
+	CReadFromText cereal;
 	CNPC npc;
 
 
@@ -135,6 +138,7 @@ private:
 	void RenderFridge();
 	void RenderShelves();
 	void RenderCharacter();
+	void RenderCereal();
 
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);

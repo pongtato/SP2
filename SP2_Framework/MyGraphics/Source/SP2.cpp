@@ -28,6 +28,7 @@ void SP2::Init()
 	cashier.ReadTextFile( "OBJ-Pos/Cashierpos.txt" );
 	fridge.ReadTextFile( "OBJ-Pos/Fridgepos.txt" );
 	character.ReadTextFile( "OBJ-Pos/Characterpos.txt" );
+	cereal.ReadTextFile( "OBJ-Pos/Cerealpos.txt" );
 
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -214,6 +215,12 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_SHELF] = MeshBuilder::GenerateOBJ("model1", "OBJ//shelf.obj");
 	meshList[GEO_MODEL_SHELF]->textureID = LoadTGA("Image//Shelf_Texture2.tga");
+
+	meshList[GEO_MODEL_CEREAL_1] = MeshBuilder::GenerateOBJ("model1", "OBJ//cerealbox1.obj");
+	meshList[GEO_MODEL_CEREAL_1]->textureID = LoadTGA("Image//cereal box 1.tga");
+
+	meshList[GEO_MODEL_CEREAL_2] = MeshBuilder::GenerateOBJ("model1", "OBJ//cerealbox2.obj");
+	meshList[GEO_MODEL_CEREAL_2]->textureID = LoadTGA("Image//cereal box 2.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -423,6 +430,7 @@ void SP2::Render()
 	RenderFridge();
 	RenderShelves();
 	RenderCharacter();
+	RenderCereal();
 
 	RenderSkybox();
 
@@ -532,6 +540,96 @@ void SP2::RenderShelves()
 			modelStack.PopMatrix();
 		}
 	}
+}
+
+void SP2::RenderCereal()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cereal.GetRenderPos(0)->getTranslationX()+(j*1.4),cereal.GetRenderPos(0)->getTranslationY(),cereal.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cereal.GetRenderPos(0)->getRotation(),cereal.GetRenderPos(0)->getRX(),cereal.GetRenderPos(0)->getRY(),cereal.GetRenderPos(0)->getRZ());
+			modelStack.Scale(cereal.GetRenderPos(0)->getScaleX(),cereal.GetRenderPos(0)->getScaleY(),cereal.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CEREAL_1], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cereal.GetRenderPos(1)->getTranslationX()+(j*1.4),cereal.GetRenderPos(1)->getTranslationY(),cereal.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cereal.GetRenderPos(1)->getRotation(),cereal.GetRenderPos(1)->getRX(),cereal.GetRenderPos(1)->getRY(),cereal.GetRenderPos(1)->getRZ());
+			modelStack.Scale(cereal.GetRenderPos(1)->getScaleX(),cereal.GetRenderPos(1)->getScaleY(),cereal.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CEREAL_1], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cereal.GetRenderPos(2)->getTranslationX()+(j*1.4),cereal.GetRenderPos(2)->getTranslationY(),cereal.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cereal.GetRenderPos(2)->getRotation(),cereal.GetRenderPos(2)->getRX(),cereal.GetRenderPos(2)->getRY(),cereal.GetRenderPos(0)->getRZ());
+			modelStack.Scale(cereal.GetRenderPos(2)->getScaleX(),cereal.GetRenderPos(2)->getScaleY(),cereal.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CEREAL_1], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cereal.GetRenderPos(3)->getTranslationX()+(j*1.4),cereal.GetRenderPos(3)->getTranslationY(),cereal.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cereal.GetRenderPos(3)->getRotation(),cereal.GetRenderPos(3)->getRX(),cereal.GetRenderPos(3)->getRY(),cereal.GetRenderPos(3)->getRZ());
+			modelStack.Scale(cereal.GetRenderPos(3)->getScaleX(),cereal.GetRenderPos(3)->getScaleY(),cereal.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cereal.GetRenderPos(4)->getTranslationX()+(j*1.4),cereal.GetRenderPos(4)->getTranslationY(),cereal.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cereal.GetRenderPos(4)->getRotation(),cereal.GetRenderPos(4)->getRX(),cereal.GetRenderPos(4)->getRY(),cereal.GetRenderPos(4)->getRZ());
+			modelStack.Scale(cereal.GetRenderPos(4)->getScaleX(),cereal.GetRenderPos(4)->getScaleY(),cereal.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cereal.GetRenderPos(5)->getTranslationX()+(j*1.4),cereal.GetRenderPos(5)->getTranslationY(),cereal.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cereal.GetRenderPos(5)->getRotation(),cereal.GetRenderPos(5)->getRX(),cereal.GetRenderPos(5)->getRY(),cereal.GetRenderPos(5)->getRZ());
+			modelStack.Scale(cereal.GetRenderPos(5)->getScaleX(),cereal.GetRenderPos(5)->getScaleY(),cereal.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
+			modelStack.PopMatrix();
+		}
+	}
+
 }
 
 void SP2::RenderWorld()
