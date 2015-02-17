@@ -371,6 +371,15 @@ float CNPC::getCheckpoints(int n)
 	return Checkpoints[n];
 }
 
+void CNPC::setCurrentState(int state)
+{
+	CurrentState = state;
+}
+
+int CNPC::getCurrentState(void)
+{
+	return CurrentState;
+}
 
 
 

@@ -24,7 +24,7 @@ SP2::~SP2()
 void SP2::Init()
 {
 
-	data.ReadTextFile( "OBJ-Pos/Modelpos.txt" );
+	data.ReadTextFile( "OBJ-Pos/Martpos.txt" );
 	shelve.ReadTextFile( "OBJ-Pos/Shelves.txt" );
 	cashier.ReadTextFile( "OBJ-Pos/Cashierpos.txt" );
 	fridge.ReadTextFile( "OBJ-Pos/Fridgepos.txt" );
@@ -206,7 +206,7 @@ void SP2::Init()
 	meshList[GEO_MODEL_DOORMAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//doorman.obj");
 	meshList[GEO_MODEL_DOORMAN]->textureID = LoadTGA("Image//doorman.tga");
 
-	meshList[GEO_MODEL_MART] = MeshBuilder::GenerateOBJ("model1", "OBJ//SuperMart.obj");
+	meshList[GEO_MODEL_MART] = MeshBuilder::GenerateOBJ("model1", "OBJ//Mart.obj");
 	meshList[GEO_MODEL_MART]->textureID = LoadTGA("Image//supermart.tga");
 
 	meshList[GEO_MODEL_DOOR] = MeshBuilder::GenerateOBJ("model1", "OBJ//Door.obj");
@@ -254,10 +254,14 @@ void SP2::Init()
 	meshList[GEO_MODEL_LAYSCHIPS] = MeshBuilder::GenerateOBJ("model1", "OBJ//LaysChips.obj");
 	meshList[GEO_MODEL_LAYSCHIPS]->textureID = LoadTGA("Image//LaysChips.tga");
 
+	meshList[GEO_MODEL_FLOOR] = MeshBuilder::GenerateOBJ("model1", "OBJ//Floor.obj");
+	meshList[GEO_MODEL_FLOOR]->textureID = LoadTGA("Image//Floor.tga");
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
 
 	EntranceDoorSlide = data.GetRenderPos(1)->getTranslationX();
+	ExitDoorSlide = data.GetRenderPos(2)->getTranslationX();
 
 	npc.setName(character.GetRenderPos(0)->getName());
 	npc.setPosX(character.GetRenderPos(0)->getTranslationX());
@@ -361,16 +365,32 @@ void SP2::Update(double dt)
 
 	if ( camera.EntranceDoor == true)
 	{
-		if ( EntranceDoorSlide <= -44.5)
+		if ( EntranceDoorSlide >= 53)
 		{
-				EntranceDoorSlide+= 0.4;
+				EntranceDoorSlide-= 0.4;
 		}
 	}
 	else if ( camera.EntranceDoor == false)
 	{
-		if ( EntranceDoorSlide >= -71.1)
+		if ( EntranceDoorSlide <= 66.4)
 		{
-				EntranceDoorSlide-= 0.4;
+				EntranceDoorSlide+= 0.4;
+		}
+	}
+	
+
+	if ( camera.ExitDoor == true)
+	{
+		if ( ExitDoorSlide <= -53)
+		{
+				ExitDoorSlide+= 0.4;
+		}
+	}
+	else if ( camera.ExitDoor == false)
+	{
+		if ( ExitDoorSlide >= -66.4)
+		{
+				ExitDoorSlide-= 0.4;
 		}
 	}
 
@@ -540,10 +560,10 @@ void SP2::RenderSkybox()
 
 void SP2::RenderCashier()
 {
-		for(int i = 0; i < 6; ++i)
+		for(int i = 0; i < 4; ++i)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*12));
+		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*16));
 		modelStack.Rotate(cashier.GetRenderPos(0)->getRotation(),cashier.GetRenderPos(0)->getRX(),cashier.GetRenderPos(0)->getRY(),cashier.GetRenderPos(0)->getRZ());
 		modelStack.Scale(cashier.GetRenderPos(0)->getScaleX(),cashier.GetRenderPos(0)->getScaleY(),cashier.GetRenderPos(0)->getScaleZ());
 		RenderMesh(meshList[GEO_MODEL_CASHIER], true);
@@ -553,7 +573,7 @@ void SP2::RenderCashier()
 
 void SP2::RenderFridge()
 {
-	for(int i = 0; i < 3; ++i)
+	for(int i = 0; i < 7; ++i)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(fridge.GetRenderPos(0)->getTranslationX()-(i*14),fridge.GetRenderPos(0)->getTranslationY(),fridge.GetRenderPos(0)->getTranslationZ());
@@ -2419,13 +2439,27 @@ void SP2::RenderWorld()
 	modelStack.Rotate(data.GetRenderPos(0)->getRotation(),data.GetRenderPos(0)->getRX(),data.GetRenderPos(0)->getRY(),data.GetRenderPos(0)->getRZ());
 	modelStack.Scale(data.GetRenderPos(0)->getScaleX(),data.GetRenderPos(0)->getScaleY(),data.GetRenderPos(0)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_MART], true);
-	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.Translate(EntranceDoorSlide,data.GetRenderPos(1)->getTranslationY(),data.GetRenderPos(1)->getTranslationZ());
 	modelStack.Rotate(data.GetRenderPos(1)->getRotation(),data.GetRenderPos(1)->getRX(),data.GetRenderPos(1)->getRY(),data.GetRenderPos(1)->getRZ());
 	modelStack.Scale(data.GetRenderPos(1)->getScaleX(),data.GetRenderPos(1)->getScaleY(),data.GetRenderPos(1)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOOR], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(ExitDoorSlide,data.GetRenderPos(2)->getTranslationY(),data.GetRenderPos(2)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(2)->getRotation(),data.GetRenderPos(2)->getRX(),data.GetRenderPos(2)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(2)->getScaleX(),data.GetRenderPos(2)->getScaleY(),data.GetRenderPos(2)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_DOOR], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(3)->getTranslationX(),data.GetRenderPos(3)->getTranslationY(),data.GetRenderPos(3)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(3)->getRotation(),data.GetRenderPos(3)->getRX(),data.GetRenderPos(3)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(3)->getScaleX(),data.GetRenderPos(3)->getScaleY(),data.GetRenderPos(3)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_FLOOR], true);
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 

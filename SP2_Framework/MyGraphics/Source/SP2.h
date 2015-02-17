@@ -126,8 +126,6 @@ public:
 	CNPC npc;
 	CNPC shopper;
 
-
-
 private:
 	unsigned m_vertexArrayID;
 	Mesh* meshList[NUM_GEOMETRY];
@@ -141,6 +139,7 @@ private:
 	std::string ZPos;
 
 	float EntranceDoorSlide;
+	float ExitDoorSlide;
 
 	//Camera2 camera;
 	Camera3 camera;

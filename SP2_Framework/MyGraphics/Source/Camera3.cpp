@@ -69,13 +69,22 @@ bool Camera3::Limit( Vector3& position,Vector3& target, int Border, float camSpe
 void Camera3::Doorsensor(Vector3& pos, float camSpeed)
 {
 	camSpeed *= 0.05;
-	if(position.x <= - 55 && position.x >= -85 && position.z <= 70 &&  position.z >= 25)
+	if(position.x <= - 50 && position.x >= -75 && position.z <= 70 &&  position.z >= 25)
 	{
 		EntranceDoor = true;
 	}
 	else
 	{
 		EntranceDoor = false;
+	}
+
+	if(position.x >=  50 && position.x <= 75 && position.z <= 70 &&  position.z >= 25)
+	{
+		ExitDoor = true;
+	}
+	else
+	{
+		ExitDoor = false;
 	}
 }
 

@@ -20,6 +20,7 @@ private:
 	float CharRot;
 	int Direction;
 	int Path;
+	int CurrentState;
 	float Checkpoints[20];
 public:
 	CNPC(void);
@@ -33,6 +34,7 @@ public:
 	void SetRot(float rot);
 	void setPath(int node);
 	void setCheckpoints(int n, float point);
+	void setCurrentState(int state);
 
 	void TestAIPath(void);
 	void ShopPathing(void);
@@ -45,6 +47,7 @@ public:
 	int getDirection(void);
 	int getPath(void);
 	float getCheckpoints(int n);
+	int getCurrentState(void);
 
 	void ReadTextFilePath(const char* filename);
 };
