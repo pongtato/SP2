@@ -81,7 +81,7 @@ void Camera3::Doorsensor(Vector3& pos, float camSpeed)
 
 void Camera3::Update(double dt)
 {
-	static const float CAMERA_SPEED = 30.f;
+	static const float CAMERA_SPEED = 65.f;
 if(Application::IsKeyPressed(VK_LEFT))
 	{
 		Vector3 view = (target - position).Normalized();

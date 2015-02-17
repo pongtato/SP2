@@ -1,0 +1,6 @@
+SardCanLeftBTM,-50,3.4,13,90,0,1,0,1,1,1
+SardCanLeftMIDDLE,-50,5.3,13,90,0,1,0,1,1,1
+SardCanLeftTOP,-50,7.2,13,90,0,1,0,1,1,1
+SardCanRightBTM,-50,3.4,15,-90,0,1,0,1,1,1
+SardCanRightMIDDLE,-50,5.3,15,-90,0,1,0,1,1,1
+SardCanRightTOP,-50,7.2,15,-90,0,1,0,1,1,1
