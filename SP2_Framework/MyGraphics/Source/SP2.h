@@ -93,6 +93,21 @@ private:
 		GEO_MODEL_TOMATOSOUPCAN,
 		GEO_MODEL_PEASNCARROTCAN,
 		GEO_MODEL_LAYSCHIPS,
+		GEO_MODEL_PIZZA,
+		GEO_MODEL_ICECREAM,
+		GEO_MODEL_MCNCHEESE,
+		GEO_MODEL_SARDINES,
+		GEO_MODEL_AYAMCAN,
+		GEO_MODEL_CHICKENSTOCK,
+		GEO_MODEL_TOBLERONE,
+		GEO_MODEL_VEGCAN,
+		GEO_MODEL_MILO,
+		GEO_MODEL_SARDCAN,
+		GEO_MODEL_CACTUS,
+		GEO_MODEL_REDITOS,
+		GEO_MODEL_DEWITOS,
+		GEO_MODEL_DIABETOS,
+		GEO_MODEL_MOATIES,
 		GEO_TEXT,
 
 		GEO_LEFT,
@@ -126,7 +141,22 @@ public:
 	CReadFromText pepsi;
 	CReadFromText chocolate;
 	CReadFromText chips;
+	CReadFromText pizza;
+	CReadFromText icecream;
+	CReadFromText mcncheese;
+	CReadFromText sardines;
+	CReadFromText ayamcan;
+	CReadFromText chickenstock;
+	CReadFromText toblerone;
+	CReadFromText milo;
+	CReadFromText vegcan;
+	CReadFromText sardcan;
 	CReadFromText canfood;
+	CReadFromText cactus;
+	CReadFromText reditos;
+	CReadFromText dewitos;
+	CReadFromText diabetos;
+	CReadFromText moaties;
 	CReadFromText Test;
 	CNPC npc;
 	CNPC shopper;
@@ -163,7 +193,22 @@ private:
 	void RenderDrinks();
 	void RenderChocolate();
 	void RenderChips();
+	void RenderPizza();
+	void RenderIceCream();
+	void RenderMcNCheese();
+	void RenderSardines();
+	void RenderAyamCan();
+	void RenderChickenStock();
+	void RenderToblerone();
+	void RenderMilo();
+	void RenderVegCan();
+	void RenderSardCan();
 	void RenderCanFood();
+	void RenderCactus();
+	void RenderReditos();
+	void RenderDewitos();
+	void RenderDiabetos();
+	void RenderMOaties();
 
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);

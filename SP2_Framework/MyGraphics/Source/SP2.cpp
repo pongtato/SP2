@@ -38,6 +38,21 @@ void SP2::Init()
 	chips.ReadTextFile( "OBJ-Pos/Chipspos.txt" );
 	canfood.ReadTextFile( "OBJ-Pos/CanFoodpos.txt" );
 	shopper.ReadTextFilePath( "OBJ-Pos/CharacterPath.txt");
+	pizza.ReadTextFile("OBJ-Pos/Pizzapos.txt");
+	icecream.ReadTextFile("OBJ-Pos/Icecreampos.txt");
+	mcncheese.ReadTextFile("OBJ-Pos/Mcncheesepos.txt");
+	sardines.ReadTextFile("OBJ-Pos/Sardinespos.txt");
+	ayamcan.ReadTextFile("OBJ-Pos/Ayamcanpos.txt");
+	chickenstock.ReadTextFile("OBJ-Pos/Chickenstockpos.txt");
+	toblerone.ReadTextFile("OBJ-Pos/Tobleronepos.txt");
+	milo.ReadTextFile("OBJ-Pos/Milopos.txt");
+	vegcan.ReadTextFile("OBJ-Pos/Vegcanpos.txt");
+	sardcan.ReadTextFile("OBJ-Pos/Sardcanpos.txt");
+	cactus.ReadTextFile("OBJ-Pos/Cactuspos.txt");
+	reditos.ReadTextFile("OBJ-Pos/Reditospos.txt");
+	dewitos.ReadTextFile("OBJ-Pos/Dewitospos.txt");
+	diabetos.ReadTextFile("OBJ-Pos/Diabetospos.txt");
+	moaties.ReadTextFile("OBJ-Pos/Moatiespos.txt");
 
 	// Set background color to black
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -269,6 +284,51 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_FLOOR] = MeshBuilder::GenerateOBJ("model1", "OBJ//Floor.obj");
 	meshList[GEO_MODEL_FLOOR]->textureID = LoadTGA("Image//Floor.tga");
+
+	meshList[GEO_MODEL_PIZZA] = MeshBuilder::GenerateOBJ("model1", "OBJ//pizza.obj");
+	meshList[GEO_MODEL_PIZZA]->textureID = LoadTGA("Image//frozen_pizza.tga");
+	
+	meshList[GEO_MODEL_ICECREAM] = MeshBuilder::GenerateOBJ("model1", "OBJ//icecream.obj");
+	meshList[GEO_MODEL_ICECREAM]->textureID = LoadTGA("Image//ice_cream_box.tga");
+
+	meshList[GEO_MODEL_MCNCHEESE] = MeshBuilder::GenerateOBJ("model1", "OBJ//mcncheese.obj");
+	meshList[GEO_MODEL_MCNCHEESE]->textureID = LoadTGA("Image//Box_Tex.tga");
+
+	meshList[GEO_MODEL_SARDINES] = MeshBuilder::GenerateOBJ("model1", "OBJ//sardines.obj");
+	meshList[GEO_MODEL_SARDINES]->textureID = LoadTGA("Image//Can_Tex.tga");
+
+	meshList[GEO_MODEL_AYAMCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//ayamcan.obj");
+	meshList[GEO_MODEL_AYAMCAN]->textureID = LoadTGA("Image//Can2_Tex.tga");
+
+	meshList[GEO_MODEL_CHICKENSTOCK] = MeshBuilder::GenerateOBJ("model1", "OBJ//chickenstock.obj");
+	meshList[GEO_MODEL_CHICKENSTOCK]->textureID = LoadTGA("Image//Packet_Tex.tga");
+
+	meshList[GEO_MODEL_TOBLERONE] = MeshBuilder::GenerateOBJ("model1", "OBJ//toblerone.obj");
+	meshList[GEO_MODEL_TOBLERONE]->textureID = LoadTGA("Image//Packet2_Tex.tga");
+
+	meshList[GEO_MODEL_VEGCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//vegcan.obj");
+	meshList[GEO_MODEL_VEGCAN]->textureID = LoadTGA("Image//vegcan.tga");
+
+	meshList[GEO_MODEL_MILO] = MeshBuilder::GenerateOBJ("model1", "OBJ//milo.obj");
+	meshList[GEO_MODEL_MILO]->textureID = LoadTGA("Image//milo.tga");
+
+	meshList[GEO_MODEL_SARDCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//sardcan.obj");
+	meshList[GEO_MODEL_SARDCAN]->textureID = LoadTGA("Image//sardcan.tga");
+
+	meshList[GEO_MODEL_CACTUS] = MeshBuilder::GenerateOBJ("model1", "OBJ//cactus.obj");
+	meshList[GEO_MODEL_CACTUS]->textureID = LoadTGA("Image//cactus.tga");
+
+	meshList[GEO_MODEL_REDITOS] = MeshBuilder::GenerateOBJ("model1", "OBJ//reditos.obj");
+	meshList[GEO_MODEL_REDITOS]->textureID = LoadTGA("Image//reditos.tga");
+
+	meshList[GEO_MODEL_DEWITOS] = MeshBuilder::GenerateOBJ("model1", "OBJ//dewitos.obj");
+	meshList[GEO_MODEL_DEWITOS]->textureID = LoadTGA("Image//dewitos.tga");
+
+	meshList[GEO_MODEL_DIABETOS] = MeshBuilder::GenerateOBJ("model1", "OBJ//diabetos.obj");
+	meshList[GEO_MODEL_DIABETOS]->textureID = LoadTGA("Image//diabetos.tga");
+
+	meshList[GEO_MODEL_MOATIES] = MeshBuilder::GenerateOBJ("model1", "OBJ//moaties.obj");
+	meshList[GEO_MODEL_MOATIES]->textureID = LoadTGA("Image//moaties.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -504,7 +564,22 @@ void SP2::Render()
 	RenderChocolate();
 	RenderSkybox();
 	RenderChips();
+	RenderPizza();
+	RenderIceCream();
+	RenderMcNCheese();
+	RenderSardines();
+	RenderAyamCan();
+	RenderChickenStock();
+	RenderToblerone();
+	RenderMilo();
+	RenderVegCan();
+	RenderSardCan();
+	RenderCactus();
 	RenderCanFood();
+	RenderReditos();
+	RenderDewitos();
+	RenderDiabetos();
+	RenderMOaties();
 
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
 	RenderTextOnScreen(meshList[GEO_TEXT], FPS_count , Color(0, 1, 0), 3, 18, 18);
@@ -626,6 +701,727 @@ void SP2::RenderShelves()
 			modelStack.PopMatrix();
 		}
 	}
+}
+
+void SP2::RenderVegCan()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(vegcan.GetRenderPos(0)->getTranslationX()+(j*1.4),vegcan.GetRenderPos(0)->getTranslationY(),vegcan.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(vegcan.GetRenderPos(0)->getRotation(),vegcan.GetRenderPos(0)->getRX(),vegcan.GetRenderPos(0)->getRY(),vegcan.GetRenderPos(0)->getRZ());
+			modelStack.Scale(vegcan.GetRenderPos(0)->getScaleX(),vegcan.GetRenderPos(0)->getScaleY(),vegcan.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(vegcan.GetRenderPos(1)->getTranslationX()+(j*1.4),vegcan.GetRenderPos(1)->getTranslationY(),vegcan.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(vegcan.GetRenderPos(1)->getRotation(),vegcan.GetRenderPos(1)->getRX(),vegcan.GetRenderPos(1)->getRY(),vegcan.GetRenderPos(1)->getRZ());
+			modelStack.Scale(vegcan.GetRenderPos(1)->getScaleX(),vegcan.GetRenderPos(1)->getScaleY(),vegcan.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(vegcan.GetRenderPos(2)->getTranslationX()+(j*1.4),vegcan.GetRenderPos(2)->getTranslationY(),vegcan.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(vegcan.GetRenderPos(2)->getRotation(),vegcan.GetRenderPos(2)->getRX(),vegcan.GetRenderPos(2)->getRY(),vegcan.GetRenderPos(0)->getRZ());
+			modelStack.Scale(vegcan.GetRenderPos(2)->getScaleX(),vegcan.GetRenderPos(2)->getScaleY(),vegcan.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(vegcan.GetRenderPos(3)->getTranslationX()+(j*1.4),vegcan.GetRenderPos(3)->getTranslationY(),vegcan.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(vegcan.GetRenderPos(3)->getRotation(),vegcan.GetRenderPos(3)->getRX(),vegcan.GetRenderPos(3)->getRY(),vegcan.GetRenderPos(3)->getRZ());
+			modelStack.Scale(vegcan.GetRenderPos(3)->getScaleX(),vegcan.GetRenderPos(3)->getScaleY(),vegcan.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(vegcan.GetRenderPos(4)->getTranslationX()+(j*1.4),vegcan.GetRenderPos(4)->getTranslationY(),vegcan.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(vegcan.GetRenderPos(4)->getRotation(),vegcan.GetRenderPos(4)->getRX(),vegcan.GetRenderPos(4)->getRY(),vegcan.GetRenderPos(4)->getRZ());
+			modelStack.Scale(vegcan.GetRenderPos(4)->getScaleX(),vegcan.GetRenderPos(4)->getScaleY(),vegcan.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(vegcan.GetRenderPos(5)->getTranslationX()+(j*1.4),vegcan.GetRenderPos(5)->getTranslationY(),vegcan.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(vegcan.GetRenderPos(5)->getRotation(),vegcan.GetRenderPos(5)->getRX(),vegcan.GetRenderPos(5)->getRY(),vegcan.GetRenderPos(5)->getRZ());
+			modelStack.Scale(vegcan.GetRenderPos(5)->getScaleX(),vegcan.GetRenderPos(5)->getScaleY(),vegcan.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+}
+
+void SP2::RenderMilo()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(milo.GetRenderPos(0)->getTranslationX()+(j*1.4),milo.GetRenderPos(0)->getTranslationY(),milo.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(milo.GetRenderPos(0)->getRotation(),milo.GetRenderPos(0)->getRX(),milo.GetRenderPos(0)->getRY(),milo.GetRenderPos(0)->getRZ());
+			modelStack.Scale(milo.GetRenderPos(0)->getScaleX(),milo.GetRenderPos(0)->getScaleY(),milo.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MILO], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(milo.GetRenderPos(1)->getTranslationX()+(j*1.4),milo.GetRenderPos(1)->getTranslationY(),milo.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(milo.GetRenderPos(1)->getRotation(),milo.GetRenderPos(1)->getRX(),milo.GetRenderPos(1)->getRY(),milo.GetRenderPos(1)->getRZ());
+			modelStack.Scale(milo.GetRenderPos(1)->getScaleX(),milo.GetRenderPos(1)->getScaleY(),milo.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MILO], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(milo.GetRenderPos(2)->getTranslationX()+(j*1.4),milo.GetRenderPos(2)->getTranslationY(),milo.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(milo.GetRenderPos(2)->getRotation(),milo.GetRenderPos(2)->getRX(),milo.GetRenderPos(2)->getRY(),milo.GetRenderPos(0)->getRZ());
+			modelStack.Scale(milo.GetRenderPos(2)->getScaleX(),milo.GetRenderPos(2)->getScaleY(),milo.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MILO], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(milo.GetRenderPos(3)->getTranslationX()+(j*1.4),milo.GetRenderPos(3)->getTranslationY(),milo.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(milo.GetRenderPos(3)->getRotation(),milo.GetRenderPos(3)->getRX(),milo.GetRenderPos(3)->getRY(),milo.GetRenderPos(3)->getRZ());
+			modelStack.Scale(milo.GetRenderPos(3)->getScaleX(),milo.GetRenderPos(3)->getScaleY(),milo.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MILO], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(milo.GetRenderPos(4)->getTranslationX()+(j*1.4),milo.GetRenderPos(4)->getTranslationY(),milo.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(milo.GetRenderPos(4)->getRotation(),milo.GetRenderPos(4)->getRX(),milo.GetRenderPos(4)->getRY(),milo.GetRenderPos(4)->getRZ());
+			modelStack.Scale(milo.GetRenderPos(4)->getScaleX(),milo.GetRenderPos(4)->getScaleY(),milo.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MILO], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(milo.GetRenderPos(5)->getTranslationX()+(j*1.4),milo.GetRenderPos(5)->getTranslationY(),milo.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(milo.GetRenderPos(5)->getRotation(),milo.GetRenderPos(5)->getRX(),milo.GetRenderPos(5)->getRY(),milo.GetRenderPos(5)->getRZ());
+			modelStack.Scale(milo.GetRenderPos(5)->getScaleX(),milo.GetRenderPos(5)->getScaleY(),milo.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MILO], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+}
+
+void SP2::RenderSardCan()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(sardcan.GetRenderPos(0)->getTranslationX()+(j*1.4),sardcan.GetRenderPos(0)->getTranslationY(),sardcan.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(sardcan.GetRenderPos(0)->getRotation(),sardcan.GetRenderPos(0)->getRX(),sardcan.GetRenderPos(0)->getRY(),sardcan.GetRenderPos(0)->getRZ());
+			modelStack.Scale(sardcan.GetRenderPos(0)->getScaleX(),sardcan.GetRenderPos(0)->getScaleY(),sardcan.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(sardcan.GetRenderPos(1)->getTranslationX()+(j*1.4),sardcan.GetRenderPos(1)->getTranslationY(),sardcan.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(sardcan.GetRenderPos(1)->getRotation(),sardcan.GetRenderPos(1)->getRX(),sardcan.GetRenderPos(1)->getRY(),sardcan.GetRenderPos(1)->getRZ());
+			modelStack.Scale(sardcan.GetRenderPos(1)->getScaleX(),sardcan.GetRenderPos(1)->getScaleY(),sardcan.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(sardcan.GetRenderPos(2)->getTranslationX()+(j*1.4),sardcan.GetRenderPos(2)->getTranslationY(),sardcan.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(sardcan.GetRenderPos(2)->getRotation(),sardcan.GetRenderPos(2)->getRX(),sardcan.GetRenderPos(2)->getRY(),sardcan.GetRenderPos(0)->getRZ());
+			modelStack.Scale(sardcan.GetRenderPos(2)->getScaleX(),sardcan.GetRenderPos(2)->getScaleY(),sardcan.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(sardcan.GetRenderPos(3)->getTranslationX()+(j*1.4),sardcan.GetRenderPos(3)->getTranslationY(),sardcan.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(sardcan.GetRenderPos(3)->getRotation(),sardcan.GetRenderPos(3)->getRX(),sardcan.GetRenderPos(3)->getRY(),sardcan.GetRenderPos(3)->getRZ());
+			modelStack.Scale(sardcan.GetRenderPos(3)->getScaleX(),sardcan.GetRenderPos(3)->getScaleY(),sardcan.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(sardcan.GetRenderPos(4)->getTranslationX()+(j*1.4),sardcan.GetRenderPos(4)->getTranslationY(),sardcan.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(sardcan.GetRenderPos(4)->getRotation(),sardcan.GetRenderPos(4)->getRX(),sardcan.GetRenderPos(4)->getRY(),sardcan.GetRenderPos(4)->getRZ());
+			modelStack.Scale(sardcan.GetRenderPos(4)->getScaleX(),sardcan.GetRenderPos(4)->getScaleY(),sardcan.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(sardcan.GetRenderPos(5)->getTranslationX()+(j*1.4),sardcan.GetRenderPos(5)->getTranslationY(),sardcan.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(sardcan.GetRenderPos(5)->getRotation(),sardcan.GetRenderPos(5)->getRX(),sardcan.GetRenderPos(5)->getRY(),sardcan.GetRenderPos(5)->getRZ());
+			modelStack.Scale(sardcan.GetRenderPos(5)->getScaleX(),sardcan.GetRenderPos(5)->getScaleY(),sardcan.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+}
+
+void SP2::RenderCactus()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cactus.GetRenderPos(0)->getTranslationX()+(j*1.4),cactus.GetRenderPos(0)->getTranslationY(),cactus.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cactus.GetRenderPos(0)->getRotation(),cactus.GetRenderPos(0)->getRX(),cactus.GetRenderPos(0)->getRY(),cactus.GetRenderPos(0)->getRZ());
+			modelStack.Scale(cactus.GetRenderPos(0)->getScaleX(),cactus.GetRenderPos(0)->getScaleY(),cactus.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cactus.GetRenderPos(1)->getTranslationX()+(j*1.4),cactus.GetRenderPos(1)->getTranslationY(),cactus.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cactus.GetRenderPos(1)->getRotation(),cactus.GetRenderPos(1)->getRX(),cactus.GetRenderPos(1)->getRY(),cactus.GetRenderPos(1)->getRZ());
+			modelStack.Scale(cactus.GetRenderPos(1)->getScaleX(),cactus.GetRenderPos(1)->getScaleY(),cactus.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cactus.GetRenderPos(2)->getTranslationX()+(j*1.4),cactus.GetRenderPos(2)->getTranslationY(),cactus.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cactus.GetRenderPos(2)->getRotation(),cactus.GetRenderPos(2)->getRX(),cactus.GetRenderPos(2)->getRY(),cactus.GetRenderPos(0)->getRZ());
+			modelStack.Scale(cactus.GetRenderPos(2)->getScaleX(),cactus.GetRenderPos(2)->getScaleY(),cactus.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cactus.GetRenderPos(3)->getTranslationX()+(j*1.4),cactus.GetRenderPos(3)->getTranslationY(),cactus.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cactus.GetRenderPos(3)->getRotation(),cactus.GetRenderPos(3)->getRX(),cactus.GetRenderPos(3)->getRY(),cactus.GetRenderPos(3)->getRZ());
+			modelStack.Scale(cactus.GetRenderPos(3)->getScaleX(),cactus.GetRenderPos(3)->getScaleY(),cactus.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cactus.GetRenderPos(4)->getTranslationX()+(j*1.4),cactus.GetRenderPos(4)->getTranslationY(),cactus.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cactus.GetRenderPos(4)->getRotation(),cactus.GetRenderPos(4)->getRX(),cactus.GetRenderPos(4)->getRY(),cactus.GetRenderPos(4)->getRZ());
+			modelStack.Scale(cactus.GetRenderPos(4)->getScaleX(),cactus.GetRenderPos(4)->getScaleY(),cactus.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(cactus.GetRenderPos(5)->getTranslationX()+(j*1.4),cactus.GetRenderPos(5)->getTranslationY(),cactus.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(cactus.GetRenderPos(5)->getRotation(),cactus.GetRenderPos(5)->getRX(),cactus.GetRenderPos(5)->getRY(),cactus.GetRenderPos(5)->getRZ());
+			modelStack.Scale(cactus.GetRenderPos(5)->getScaleX(),cactus.GetRenderPos(5)->getScaleY(),cactus.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+}
+
+void SP2::RenderReditos()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(reditos.GetRenderPos(0)->getTranslationX()+(j*1.4),reditos.GetRenderPos(0)->getTranslationY(),reditos.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(reditos.GetRenderPos(0)->getRotation(),reditos.GetRenderPos(0)->getRX(),reditos.GetRenderPos(0)->getRY(),reditos.GetRenderPos(0)->getRZ());
+			modelStack.Scale(reditos.GetRenderPos(0)->getScaleX(),reditos.GetRenderPos(0)->getScaleY(),reditos.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(reditos.GetRenderPos(1)->getTranslationX()+(j*1.4),reditos.GetRenderPos(1)->getTranslationY(),reditos.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(reditos.GetRenderPos(1)->getRotation(),reditos.GetRenderPos(1)->getRX(),reditos.GetRenderPos(1)->getRY(),reditos.GetRenderPos(1)->getRZ());
+			modelStack.Scale(reditos.GetRenderPos(1)->getScaleX(),reditos.GetRenderPos(1)->getScaleY(),reditos.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(reditos.GetRenderPos(2)->getTranslationX()+(j*1.4),reditos.GetRenderPos(2)->getTranslationY(),reditos.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(reditos.GetRenderPos(2)->getRotation(),reditos.GetRenderPos(2)->getRX(),reditos.GetRenderPos(2)->getRY(),reditos.GetRenderPos(0)->getRZ());
+			modelStack.Scale(reditos.GetRenderPos(2)->getScaleX(),reditos.GetRenderPos(2)->getScaleY(),reditos.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(reditos.GetRenderPos(3)->getTranslationX()+(j*1.4),reditos.GetRenderPos(3)->getTranslationY(),reditos.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(reditos.GetRenderPos(3)->getRotation(),reditos.GetRenderPos(3)->getRX(),reditos.GetRenderPos(3)->getRY(),reditos.GetRenderPos(3)->getRZ());
+			modelStack.Scale(reditos.GetRenderPos(3)->getScaleX(),reditos.GetRenderPos(3)->getScaleY(),reditos.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(reditos.GetRenderPos(4)->getTranslationX()+(j*1.4),reditos.GetRenderPos(4)->getTranslationY(),reditos.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(reditos.GetRenderPos(4)->getRotation(),reditos.GetRenderPos(4)->getRX(),reditos.GetRenderPos(4)->getRY(),reditos.GetRenderPos(4)->getRZ());
+			modelStack.Scale(reditos.GetRenderPos(4)->getScaleX(),reditos.GetRenderPos(4)->getScaleY(),reditos.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(reditos.GetRenderPos(5)->getTranslationX()+(j*1.4),reditos.GetRenderPos(5)->getTranslationY(),reditos.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(reditos.GetRenderPos(5)->getRotation(),reditos.GetRenderPos(5)->getRX(),reditos.GetRenderPos(5)->getRY(),reditos.GetRenderPos(5)->getRZ());
+			modelStack.Scale(reditos.GetRenderPos(5)->getScaleX(),reditos.GetRenderPos(5)->getScaleY(),reditos.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+}
+
+void SP2::RenderDewitos()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(dewitos.GetRenderPos(0)->getTranslationX()+(j*1.4),dewitos.GetRenderPos(0)->getTranslationY(),dewitos.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(dewitos.GetRenderPos(0)->getRotation(),dewitos.GetRenderPos(0)->getRX(),dewitos.GetRenderPos(0)->getRY(),dewitos.GetRenderPos(0)->getRZ());
+			modelStack.Scale(dewitos.GetRenderPos(0)->getScaleX(),dewitos.GetRenderPos(0)->getScaleY(),dewitos.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(dewitos.GetRenderPos(1)->getTranslationX()+(j*1.4),dewitos.GetRenderPos(1)->getTranslationY(),dewitos.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(dewitos.GetRenderPos(1)->getRotation(),dewitos.GetRenderPos(1)->getRX(),dewitos.GetRenderPos(1)->getRY(),dewitos.GetRenderPos(1)->getRZ());
+			modelStack.Scale(dewitos.GetRenderPos(1)->getScaleX(),dewitos.GetRenderPos(1)->getScaleY(),dewitos.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(dewitos.GetRenderPos(2)->getTranslationX()+(j*1.4),dewitos.GetRenderPos(2)->getTranslationY(),dewitos.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(dewitos.GetRenderPos(2)->getRotation(),dewitos.GetRenderPos(2)->getRX(),dewitos.GetRenderPos(2)->getRY(),dewitos.GetRenderPos(0)->getRZ());
+			modelStack.Scale(dewitos.GetRenderPos(2)->getScaleX(),dewitos.GetRenderPos(2)->getScaleY(),dewitos.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(dewitos.GetRenderPos(3)->getTranslationX()+(j*1.4),dewitos.GetRenderPos(3)->getTranslationY(),dewitos.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(dewitos.GetRenderPos(3)->getRotation(),dewitos.GetRenderPos(3)->getRX(),dewitos.GetRenderPos(3)->getRY(),dewitos.GetRenderPos(3)->getRZ());
+			modelStack.Scale(dewitos.GetRenderPos(3)->getScaleX(),dewitos.GetRenderPos(3)->getScaleY(),dewitos.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(dewitos.GetRenderPos(4)->getTranslationX()+(j*1.4),dewitos.GetRenderPos(4)->getTranslationY(),dewitos.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(dewitos.GetRenderPos(4)->getRotation(),dewitos.GetRenderPos(4)->getRX(),dewitos.GetRenderPos(4)->getRY(),dewitos.GetRenderPos(4)->getRZ());
+			modelStack.Scale(dewitos.GetRenderPos(4)->getScaleX(),dewitos.GetRenderPos(4)->getScaleY(),dewitos.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(dewitos.GetRenderPos(5)->getTranslationX()+(j*1.4),dewitos.GetRenderPos(5)->getTranslationY(),dewitos.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(dewitos.GetRenderPos(5)->getRotation(),dewitos.GetRenderPos(5)->getRX(),dewitos.GetRenderPos(5)->getRY(),dewitos.GetRenderPos(5)->getRZ());
+			modelStack.Scale(dewitos.GetRenderPos(5)->getScaleX(),dewitos.GetRenderPos(5)->getScaleY(),dewitos.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+}
+
+void SP2::RenderDiabetos()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(diabetos.GetRenderPos(0)->getTranslationX()+(j*1.4),diabetos.GetRenderPos(0)->getTranslationY(),diabetos.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(diabetos.GetRenderPos(0)->getRotation(),diabetos.GetRenderPos(0)->getRX(),diabetos.GetRenderPos(0)->getRY(),diabetos.GetRenderPos(0)->getRZ());
+			modelStack.Scale(diabetos.GetRenderPos(0)->getScaleX(),diabetos.GetRenderPos(0)->getScaleY(),diabetos.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DIABETOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(diabetos.GetRenderPos(1)->getTranslationX()+(j*1.4),diabetos.GetRenderPos(1)->getTranslationY(),diabetos.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(diabetos.GetRenderPos(1)->getRotation(),diabetos.GetRenderPos(1)->getRX(),diabetos.GetRenderPos(1)->getRY(),diabetos.GetRenderPos(1)->getRZ());
+			modelStack.Scale(diabetos.GetRenderPos(1)->getScaleX(),diabetos.GetRenderPos(1)->getScaleY(),diabetos.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DIABETOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(diabetos.GetRenderPos(2)->getTranslationX()+(j*1.4),diabetos.GetRenderPos(2)->getTranslationY(),diabetos.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(diabetos.GetRenderPos(2)->getRotation(),diabetos.GetRenderPos(2)->getRX(),diabetos.GetRenderPos(2)->getRY(),diabetos.GetRenderPos(0)->getRZ());
+			modelStack.Scale(diabetos.GetRenderPos(2)->getScaleX(),diabetos.GetRenderPos(2)->getScaleY(),diabetos.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DIABETOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(diabetos.GetRenderPos(3)->getTranslationX()+(j*1.4),diabetos.GetRenderPos(3)->getTranslationY(),diabetos.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(diabetos.GetRenderPos(3)->getRotation(),diabetos.GetRenderPos(3)->getRX(),diabetos.GetRenderPos(3)->getRY(),diabetos.GetRenderPos(3)->getRZ());
+			modelStack.Scale(diabetos.GetRenderPos(3)->getScaleX(),diabetos.GetRenderPos(3)->getScaleY(),diabetos.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DIABETOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(diabetos.GetRenderPos(4)->getTranslationX()+(j*1.4),diabetos.GetRenderPos(4)->getTranslationY(),diabetos.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(diabetos.GetRenderPos(4)->getRotation(),diabetos.GetRenderPos(4)->getRX(),diabetos.GetRenderPos(4)->getRY(),diabetos.GetRenderPos(4)->getRZ());
+			modelStack.Scale(diabetos.GetRenderPos(4)->getScaleX(),diabetos.GetRenderPos(4)->getScaleY(),diabetos.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DIABETOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(diabetos.GetRenderPos(5)->getTranslationX()+(j*1.4),diabetos.GetRenderPos(5)->getTranslationY(),diabetos.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(diabetos.GetRenderPos(5)->getRotation(),diabetos.GetRenderPos(5)->getRX(),diabetos.GetRenderPos(5)->getRY(),diabetos.GetRenderPos(5)->getRZ());
+			modelStack.Scale(diabetos.GetRenderPos(5)->getScaleX(),diabetos.GetRenderPos(5)->getScaleY(),diabetos.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_DIABETOS], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+}
+
+void SP2::RenderMOaties()
+{
+	//Left Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(moaties.GetRenderPos(0)->getTranslationX()+(j*1.4),moaties.GetRenderPos(0)->getTranslationY(),moaties.GetRenderPos(0)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(moaties.GetRenderPos(0)->getRotation(),moaties.GetRenderPos(0)->getRX(),moaties.GetRenderPos(0)->getRY(),moaties.GetRenderPos(0)->getRZ());
+			modelStack.Scale(moaties.GetRenderPos(0)->getScaleX(),moaties.GetRenderPos(0)->getScaleY(),moaties.GetRenderPos(0)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(moaties.GetRenderPos(1)->getTranslationX()+(j*1.4),moaties.GetRenderPos(1)->getTranslationY(),moaties.GetRenderPos(1)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(moaties.GetRenderPos(1)->getRotation(),moaties.GetRenderPos(1)->getRX(),moaties.GetRenderPos(1)->getRY(),moaties.GetRenderPos(1)->getRZ());
+			modelStack.Scale(moaties.GetRenderPos(1)->getScaleX(),moaties.GetRenderPos(1)->getScaleY(),moaties.GetRenderPos(1)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(moaties.GetRenderPos(2)->getTranslationX()+(j*1.4),moaties.GetRenderPos(2)->getTranslationY(),moaties.GetRenderPos(2)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(moaties.GetRenderPos(2)->getRotation(),moaties.GetRenderPos(2)->getRX(),moaties.GetRenderPos(2)->getRY(),moaties.GetRenderPos(0)->getRZ());
+			modelStack.Scale(moaties.GetRenderPos(2)->getScaleX(),moaties.GetRenderPos(2)->getScaleY(),moaties.GetRenderPos(2)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	//RIGHT Side
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//BTM
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(moaties.GetRenderPos(3)->getTranslationX()+(j*1.4),moaties.GetRenderPos(3)->getTranslationY(),moaties.GetRenderPos(3)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(moaties.GetRenderPos(3)->getRotation(),moaties.GetRenderPos(3)->getRX(),moaties.GetRenderPos(3)->getRY(),moaties.GetRenderPos(3)->getRZ());
+			modelStack.Scale(moaties.GetRenderPos(3)->getScaleX(),moaties.GetRenderPos(3)->getScaleY(),moaties.GetRenderPos(3)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//MIDDLE
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(moaties.GetRenderPos(4)->getTranslationX()+(j*1.4),moaties.GetRenderPos(4)->getTranslationY(),moaties.GetRenderPos(4)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(moaties.GetRenderPos(4)->getRotation(),moaties.GetRenderPos(4)->getRX(),moaties.GetRenderPos(4)->getRY(),moaties.GetRenderPos(4)->getRZ());
+			modelStack.Scale(moaties.GetRenderPos(4)->getScaleX(),moaties.GetRenderPos(4)->getScaleY(),moaties.GetRenderPos(4)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+			modelStack.PopMatrix();
+		}
+	}
+
+	for(int i = 1; i <= 2; ++ i )
+	{
+		//TOP
+		for(int j = 0; j < 4; ++ j )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(moaties.GetRenderPos(5)->getTranslationX()+(j*1.4),moaties.GetRenderPos(5)->getTranslationY(),moaties.GetRenderPos(5)->getTranslationZ()+(i*0.6));
+			modelStack.Rotate(moaties.GetRenderPos(5)->getRotation(),moaties.GetRenderPos(5)->getRX(),moaties.GetRenderPos(5)->getRY(),moaties.GetRenderPos(5)->getRZ());
+			modelStack.Scale(moaties.GetRenderPos(5)->getScaleX(),moaties.GetRenderPos(5)->getScaleY(),moaties.GetRenderPos(5)->getScaleZ());
+			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+			modelStack.PopMatrix();
+		}
+	}
+
 }
 
 void SP2::RenderCanFood()
@@ -2806,6 +3602,115 @@ void SP2::RenderCereal()
 	}
 
 	modelStack.PopMatrix();
+}
+
+void SP2::RenderPizza()
+{
+	for(int i = 0; i < 4; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(pizza.GetRenderPos(0)->getTranslationX()+(i*3),pizza.GetRenderPos(0)->getTranslationY(),pizza.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(pizza.GetRenderPos(0)->getRotation(),pizza.GetRenderPos(0)->getRX(),pizza.GetRenderPos(0)->getRY(),pizza.GetRenderPos(0)->getRZ());
+		modelStack.Scale(pizza.GetRenderPos(0)->getScaleX(),pizza.GetRenderPos(0)->getScaleY(),pizza.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_PIZZA], true);
+		modelStack.PopMatrix();
+	}
+	for(int i = 0; i < 4; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(pizza.GetRenderPos(1)->getTranslationX()+(i*3),pizza.GetRenderPos(1)->getTranslationY(),pizza.GetRenderPos(1)->getTranslationZ());
+		modelStack.Rotate(pizza.GetRenderPos(1)->getRotation(),pizza.GetRenderPos(1)->getRX(),pizza.GetRenderPos(1)->getRY(),pizza.GetRenderPos(1)->getRZ());
+		modelStack.Scale(pizza.GetRenderPos(1)->getScaleX(),pizza.GetRenderPos(1)->getScaleY(),pizza.GetRenderPos(1)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_PIZZA], true);
+		modelStack.PopMatrix();
+	}
+	for(int i = 0; i < 4; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(pizza.GetRenderPos(2)->getTranslationX()+(i*3),pizza.GetRenderPos(2)->getTranslationY(),pizza.GetRenderPos(2)->getTranslationZ());
+		modelStack.Rotate(pizza.GetRenderPos(2)->getRotation(),pizza.GetRenderPos(2)->getRX(),pizza.GetRenderPos(2)->getRY(),pizza.GetRenderPos(2)->getRZ());
+		modelStack.Scale(pizza.GetRenderPos(2)->getScaleX(),pizza.GetRenderPos(2)->getScaleY(),pizza.GetRenderPos(2)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_PIZZA], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderIceCream()
+{
+	for(int i = 0; i < 6; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(icecream.GetRenderPos(0)->getTranslationX()-(i*2),icecream.GetRenderPos(0)->getTranslationY(),icecream.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(icecream.GetRenderPos(0)->getRotation(),icecream.GetRenderPos(0)->getRX(),icecream.GetRenderPos(0)->getRY(),icecream.GetRenderPos(0)->getRZ());
+		modelStack.Scale(icecream.GetRenderPos(0)->getScaleX(),icecream.GetRenderPos(0)->getScaleY(),icecream.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_ICECREAM], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderMcNCheese()
+{
+	for(int i = 0; i < 8; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(mcncheese.GetRenderPos(0)->getTranslationX()-(i*1.5),mcncheese.GetRenderPos(0)->getTranslationY(),mcncheese.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(mcncheese.GetRenderPos(0)->getRotation(),mcncheese.GetRenderPos(0)->getRX(),mcncheese.GetRenderPos(0)->getRY(),mcncheese.GetRenderPos(0)->getRZ());
+		modelStack.Scale(mcncheese.GetRenderPos(0)->getScaleX(),mcncheese.GetRenderPos(0)->getScaleY(),mcncheese.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_MCNCHEESE], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderSardines()
+{
+	for(int i = 0; i < 9; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(sardines.GetRenderPos(0)->getTranslationX()-(i*1.5),sardines.GetRenderPos(0)->getTranslationY(),sardines.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(sardines.GetRenderPos(0)->getRotation(),sardines.GetRenderPos(0)->getRX(),sardines.GetRenderPos(0)->getRY(),sardines.GetRenderPos(0)->getRZ());
+		modelStack.Scale(sardines.GetRenderPos(0)->getScaleX(),sardines.GetRenderPos(0)->getScaleY(),sardines.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_SARDINES], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderAyamCan()
+{
+	for(int i = 0; i < 13; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(ayamcan.GetRenderPos(0)->getTranslationX()-(i*1),ayamcan.GetRenderPos(0)->getTranslationY(),ayamcan.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(ayamcan.GetRenderPos(0)->getRotation(),ayamcan.GetRenderPos(0)->getRX(),ayamcan.GetRenderPos(0)->getRY(),ayamcan.GetRenderPos(0)->getRZ());
+		modelStack.Scale(ayamcan.GetRenderPos(0)->getScaleX(),ayamcan.GetRenderPos(0)->getScaleY(),ayamcan.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_AYAMCAN], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderChickenStock()
+{
+	for(int i = 0; i < 7; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(chickenstock.GetRenderPos(0)->getTranslationX()-(i*1.8),chickenstock.GetRenderPos(0)->getTranslationY(),chickenstock.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(chickenstock.GetRenderPos(0)->getRotation(),chickenstock.GetRenderPos(0)->getRX(),chickenstock.GetRenderPos(0)->getRY(),chickenstock.GetRenderPos(0)->getRZ());
+		modelStack.Scale(chickenstock.GetRenderPos(0)->getScaleX(),chickenstock.GetRenderPos(0)->getScaleY(),chickenstock.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_CHICKENSTOCK], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SP2::RenderToblerone()
+{
+	for(int i = 0; i < 4; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(toblerone.GetRenderPos(0)->getTranslationX()-(i*3),toblerone.GetRenderPos(0)->getTranslationY(),toblerone.GetRenderPos(0)->getTranslationZ());
+		modelStack.Rotate(toblerone.GetRenderPos(0)->getRotation(),toblerone.GetRenderPos(0)->getRX(),toblerone.GetRenderPos(0)->getRY(),toblerone.GetRenderPos(0)->getRZ());
+		modelStack.Scale(toblerone.GetRenderPos(0)->getScaleX(),toblerone.GetRenderPos(0)->getScaleY(),toblerone.GetRenderPos(0)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_TOBLERONE], true);
+		modelStack.PopMatrix();
+	}
 }
 
 void SP2::RenderWorld()
