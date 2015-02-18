@@ -22,6 +22,7 @@ private:
 	int Path;
 	int CurrentState;
 	float Checkpoints[20];
+	vector<CNPC*>npc_list;
 public:
 	CNPC(void);
 	~CNPC(void);
@@ -37,7 +38,7 @@ public:
 	void setCurrentState(int state);
 
 	void TestAIPath(void);
-	void ShopPathing(void);
+	void ShopPathing(int n);
 	
 	string getName(void);
 	float getPosX(void);
@@ -50,5 +51,6 @@ public:
 	int getCurrentState(void);
 
 	void ReadTextFilePath(const char* filename);
+	CNPC* GetNPCPos(const int selection);
 };
 

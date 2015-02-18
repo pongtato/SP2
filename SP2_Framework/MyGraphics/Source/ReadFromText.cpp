@@ -16,11 +16,11 @@ CRenderPos* CReadFromText::GetRenderPos(const int selection)
 {
 	return this->my_list[selection];
 }
-
-CNPC* CReadFromText::GetRenderPosChar(const int selection)
-{
-	return this->npc_list[selection];
-}
+//
+//CNPC* CReadFromText::GetRenderPosChar(const int selection)
+//{
+//	return this->npc_list[selection];
+//}
 
 void CReadFromText::ResetData(void)
 {
@@ -83,52 +83,52 @@ void CReadFromText::ReadTextFile(const char* filename)
 	file.close();
 }
 
-void CReadFromText::ReadTextFilePath(const char* filename)
-{
-	// Open File
-	ifstream file;
-	file.open( filename );
-
-	// Read File
-	if ( file.is_open() )
-	{
-		// Reset data before doing anything
-		this->ResetData();
-
-		// Reset File
-		file.clear();
-		file.seekg( 0, file.beg );
-
-		// File Is Healthy
-		while ( file.good() )
-		{
-			// Get Data Per Line
-			string aLineOfText = "";
-			string token = "";
-
-			vector<string> data;
-			data.clear();
-			
-			getline( file, aLineOfText );
-			//aLineOfText.erase(aLineOfText.find(' '),1);
-			istringstream iss( aLineOfText );
-
-			while ( getline( iss, token, ',' ) || getline( iss, token, '/' ))
-			data.push_back( token );
-
-			if ( data[0] != "" )
-			{
-				CNPC * new_pos = new CNPC();
-				for ( int i = 0; i < 16; ++i)
-				{
-					new_pos->setCheckpoints(i,stof(data[i].c_str()));
-				}
-				npc_list.push_back( new_pos );
-			}
-		}
-	}
-	// Close file
-	file.close();
-}
+//void CReadFromText::ReadTextFilePath(const char* filename)
+//{
+//	// Open File
+//	ifstream file;
+//	file.open( filename );
+//
+//	// Read File
+//	if ( file.is_open() )
+//	{
+//		// Reset data before doing anything
+//		this->ResetData();
+//
+//		// Reset File
+//		file.clear();
+//		file.seekg( 0, file.beg );
+//
+//		// File Is Healthy
+//		while ( file.good() )
+//		{
+//			// Get Data Per Line
+//			string aLineOfText = "";
+//			string token = "";
+//
+//			vector<string> data;
+//			data.clear();
+//			
+//			getline( file, aLineOfText );
+//			//aLineOfText.erase(aLineOfText.find(' '),1);
+//			istringstream iss( aLineOfText );
+//
+//			while ( getline( iss, token, ',' ) || getline( iss, token, '/' ))
+//			data.push_back( token );
+//
+//			if ( data[0] != "" )
+//			{
+//				CNPC * new_pos = new CNPC();
+//				for ( int i = 0; i < 16; ++i)
+//				{
+//					new_pos->setCheckpoints(i,stof(data[i].c_str()));
+//				}
+//				/*npc_list.push_back( new_pos );*/
+//			}
+//		}
+//	}
+//	// Close file
+//	file.close();
+//}
 
 

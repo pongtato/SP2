@@ -15,7 +15,6 @@ class CReadFromText
 {
 private:
 	vector<CRenderPos*>my_list;
-	vector<CNPC*>npc_list;
 public:
 	CReadFromText(void);
 	~CReadFromText(void);

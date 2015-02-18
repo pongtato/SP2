@@ -38,6 +38,7 @@ void SP2::Init()
 	chips.ReadTextFile( "OBJ-Pos/Chipspos.txt" );
 	canfood.ReadTextFile( "OBJ-Pos/CanFoodpos.txt" );
 	shopper.ReadTextFilePath( "OBJ-Pos/CharacterPath.txt");
+	patroler.ReadTextFilePath( "OBJ-Pos/CharacterPath.txt");
 	pizza.ReadTextFile("OBJ-Pos/Pizzapos.txt");
 	icecream.ReadTextFile("OBJ-Pos/Icecreampos.txt");
 	mcncheese.ReadTextFile("OBJ-Pos/Mcncheesepos.txt");
@@ -339,8 +340,12 @@ void SP2::Init()
 	npc.setName(character.GetRenderPos(0)->getName());
 	npc.setPosX(character.GetRenderPos(0)->getTranslationX());
 	npc.setPosZ(character.GetRenderPos(0)->getTranslationZ());
-	shopper.setPosX(-75);
-	shopper.setPosZ(25);
+	shopper.setName(character.GetRenderPos(1)->getName());
+	shopper.setPosX(character.GetRenderPos(1)->getTranslationX());
+	shopper.setPosZ(character.GetRenderPos(1)->getTranslationZ());
+	patroler.setName(character.GetRenderPos(2)->getName());
+	patroler.setPosX(character.GetRenderPos(2)->getTranslationX());
+	patroler.setPosZ(character.GetRenderPos(2)->getTranslationZ());
 }
 
 
@@ -468,7 +473,8 @@ void SP2::Update(double dt)
 	}
 
 	npc.TestAIPath();
-	shopper.ShopPathing();
+	shopper.ShopPathing(0);
+	patroler.ShopPathing(1);
 
 	std::stringstream dd;
 	dd << camera.position.x;
@@ -3750,17 +3756,25 @@ void SP2::RenderWorld()
 
 void SP2::RenderCharacter()
 {
+	//Bob
 	modelStack.PushMatrix();
 	modelStack.Translate(npc.getPosX(),character.GetRenderPos(0)->getTranslationY(),npc.getPosZ());
 	modelStack.Rotate(npc.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
 	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
 	modelStack.PopMatrix();
-
+	//Dan
 	modelStack.PushMatrix();
-	modelStack.Translate(shopper.getPosX(),character.GetRenderPos(0)->getTranslationY(),shopper.getPosZ());
-	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
-	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
+	modelStack.Translate(shopper.getPosX(),character.GetRenderPos(1)->getTranslationY(),shopper.getPosZ());
+	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(1)->getRX(),character.GetRenderPos(1)->getRY(),character.GetRenderPos(1)->getRZ());
+	modelStack.Scale(character.GetRenderPos(1)->getScaleX(),character.GetRenderPos(1)->getScaleY(),character.GetRenderPos(1)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
+	modelStack.PopMatrix();
+	//Tom
+	modelStack.PushMatrix();
+	modelStack.Translate(patroler.getPosX(),character.GetRenderPos(2)->getTranslationY(),patroler.getPosZ());
+	modelStack.Rotate(patroler.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
+	modelStack.Scale(character.GetRenderPos(2)->getScaleX(),character.GetRenderPos(2)->getScaleY(),character.GetRenderPos(2)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
 	modelStack.PopMatrix();
 

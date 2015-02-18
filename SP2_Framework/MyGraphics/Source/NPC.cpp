@@ -173,6 +173,11 @@ int CNPC::getPath(void)
 	return Path;
 }
 
+CNPC* CNPC::GetNPCPos(const int selection)
+{
+	return this->npc_list[selection];
+}
+
 void CNPC::ReadTextFilePath(const char* filename)
 {
 	// Open File
@@ -208,11 +213,12 @@ void CNPC::ReadTextFilePath(const char* filename)
 
 			if ( data[0] != "" )
 			{
-				//CNPC * new_pos = new CNPC();
+				CNPC * new_pos = new CNPC();
 				for ( int i = 0; i < 16; ++i)
 				{
-					setCheckpoints(i,stof(data[i].c_str()));
+					new_pos->setCheckpoints(i,stof(data[i].c_str()));
 				}
+				npc_list.push_back( new_pos );
 			}
 		}
 	}
@@ -220,115 +226,116 @@ void CNPC::ReadTextFilePath(const char* filename)
 	file.close();
 }
 
-void CNPC::ShopPathing(void)
+void CNPC::ShopPathing(int n)
 {
+	cout<<GetNPCPos(n)->getCheckpoints(0)<<endl;
 	// 1st node
 	if ( getPosX() <= -75 && getPosZ() >= 25)
 	{
-		if(getCheckpoints(0) != 0)
-			setPath(getCheckpoints(0));
+		if(GetNPCPos(n)->getCheckpoints(0) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(0));
 	}
 
 	// 2nd node
 	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() >= 25)
 	{
-		if(getCheckpoints(1) != 0)
-			setPath(getCheckpoints(1));
+		if(GetNPCPos(n)->getCheckpoints(1) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(1));
 	}
 
 	// 3rd node
 	else if( getPosX() >= 0 && getPosX() < 2 && getPosZ() >= 25)
 	{
-		if(getCheckpoints(2) != 0)
-			setPath(getCheckpoints(2));
+		if(GetNPCPos(n)->getCheckpoints(2) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(2));
 	}
 
 	// 4th node
 	else if ( getPosX() >= 35 && getPosZ() >= 25)
 	{
-		if(getCheckpoints(3) != 0)
-			setPath(getCheckpoints(3));
+		if(GetNPCPos(n)->getCheckpoints(3) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(3));
 	}
 
 	// 5th node
 	else if ( getPosX() <= -75 && getPosZ() <= 7 && getPosZ() > -8)
 	{
-		if(getCheckpoints(4) != 0)
-			setPath(getCheckpoints(4));
+		if(GetNPCPos(n)->getCheckpoints(4) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(4));
 	}
 
 	// 6th node
 	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= 7 && getPosZ() > 5)
 	{
-		if(getCheckpoints(5) != 0)
-			setPath(getCheckpoints(5));
+		if(GetNPCPos(n)->getCheckpoints(5) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(5));
 	}
 	// 7th node
 	else if ( getPosX() >= 0 && getPosX() < 2 && getPosZ() <= 7 && getPosZ() > 5)
 	{
-		if(getCheckpoints(6) != 0)
-			setPath(getCheckpoints(6));
+		if(GetNPCPos(n)->getCheckpoints(6) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(6));
 	}
 
 	// 8th node
 	else if ( getPosX() >= 35 && getPosZ() <= 7 && getPosZ() > 5)
 	{
-		if(getCheckpoints(7) != 0)
-			setPath(getCheckpoints(7));
+		if(GetNPCPos(n)->getCheckpoints(7) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(7));
 	}
 
 	// 9th node
 	else if ( getPosX() <= -75 && getPosZ() <= -8 && getPosZ() > -10)
 	{
-		if(getCheckpoints(8) != 0)
-			setPath(getCheckpoints(8));
+		if(GetNPCPos(n)->getCheckpoints(8) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(8));
 	}
 
 	// 10th node
 	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= -8 && getPosZ() > -10)
 	{
-		if(getCheckpoints(9) != 0)
-			setPath(getCheckpoints(9));
+		if(GetNPCPos(n)->getCheckpoints(9) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(9));
 	}
 	// 11th node
 	else if ( getPosX() >= 0 && getPosX() < 2 &&  getPosZ() <= -8 && getPosZ() > -10)
 	{
-		if(getCheckpoints(10) != 0)
-			setPath(getCheckpoints(10));
+		if(GetNPCPos(n)->getCheckpoints(10) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(10));
 	}
 
 	// 12th node
 	else if ( getPosX() >= 35 && getPosZ() <= -8 && getPosZ() > -10)
 	{
-		if(getCheckpoints(11) != 0)
-			setPath(getCheckpoints(11));
+		if(GetNPCPos(n)->getCheckpoints(11) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(11));
 	}
 
 	// 13th node
 	else if ( getPosX() <= -75 && getPosZ() <= -25)
 	{
-		if(getCheckpoints(12) != 0)
-			setPath(getCheckpoints(12));
+		if(GetNPCPos(n)->getCheckpoints(12) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(12));
 	}
 
 	// 14th node
 	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= -25)
 	{
-		if(getCheckpoints(13) != 0)
-			setPath(getCheckpoints(13));
+		if(GetNPCPos(n)->getCheckpoints(13) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(13));
 	}
 	// 15th node
 	else if ( getPosX() >= 0 && getPosX() < 2 && getPosZ() <= -25)
 	{
-		if(getCheckpoints(14) != 0)
-			setPath(getCheckpoints(14));
+		if(GetNPCPos(n)->getCheckpoints(14) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(14));
 	}
 
 	// 16th node
 	else if ( getPosX() >= 35 && getPosZ() <= -25)
 	{
-		if(getCheckpoints(15) != 0)
-			setPath(getCheckpoints(15));
+		if(GetNPCPos(n)->getCheckpoints(15) != 0)
+			setPath(GetNPCPos(n)->getCheckpoints(15));
 	}
 
 	//left

@@ -160,6 +160,7 @@ public:
 	CReadFromText Test;
 	CNPC npc;
 	CNPC shopper;
+	CNPC patroler;
 
 private:
 	unsigned m_vertexArrayID;
