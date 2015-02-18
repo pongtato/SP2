@@ -81,23 +81,6 @@ private:
 		GEO_MODEL_SHELF,
 		GEO_MODEL_CEREAL_1,
 		GEO_MODEL_CEREAL_2,
-<<<<<<< Updated upstream
-		GEO_MODEL_PIZZA,
-		GEO_MODEL_ICECREAM,
-		GEO_MODEL_MCNCHEESE,
-		GEO_MODEL_SARDINES,
-		GEO_MODEL_AYAMCAN,
-		GEO_MODEL_CHICKENSTOCK,
-		GEO_MODEL_TOBLERONE,
-		GEO_MODEL_VEGCAN,
-		GEO_MODEL_MILO,
-		GEO_MODEL_SARDCAN,
-		GEO_MODEL_CACTUS,
-		GEO_MODEL_REDITOS,
-		GEO_MODEL_DEWITOS,
-		GEO_MODEL_DIABETOS,
-		GEO_MODEL_MOATIES,
-=======
 		GEO_MODEL_CEREAL_3,
 		GEO_MODEL_WATERCAN,
 		GEO_MODEL_MTDEW,
@@ -106,7 +89,6 @@ private:
 		GEO_MODEL_HERSHEY,
 		GEO_MODEL_ROCHER,
 		GEO_MODEL_LAYSCHIPS,
->>>>>>> Stashed changes
 		GEO_TEXT,
 
 		GEO_LEFT,
@@ -134,23 +116,6 @@ public:
 	CReadFromText fridge;
 	CReadFromText character;
 	CReadFromText cereal;
-<<<<<<< Updated upstream
-	CReadFromText pizza;
-	CReadFromText icecream;
-	CReadFromText mcncheese;
-	CReadFromText sardines;
-	CReadFromText ayamcan;
-	CReadFromText chickenstock;
-	CReadFromText toblerone;
-	CReadFromText milo;
-	CReadFromText vegcan;
-	CReadFromText sardcan;
-	CReadFromText cactus;
-	CReadFromText reditos;
-	CReadFromText dewitos;
-	CReadFromText diabetos;
-	CReadFromText moaties;
-=======
 	CReadFromText watercan;
 	CReadFromText mtdew;
 	CReadFromText coke;
@@ -158,9 +123,7 @@ public:
 	CReadFromText chocolate;
 	CReadFromText chips;
 	CNPC npc;
->>>>>>> Stashed changes
 
-	CNPC npc;
 
 private:
 	unsigned m_vertexArrayID;
@@ -190,27 +153,9 @@ private:
 	void RenderShelves();
 	void RenderCharacter();
 	void RenderCereal();
-<<<<<<< Updated upstream
-	void RenderPizza();
-	void RenderIceCream();
-	void RenderMcNCheese();
-	void RenderSardines();
-	void RenderAyamCan();
-	void RenderChickenStock();
-	void RenderToblerone();
-	void RenderMilo();
-	void RenderVegCan();
-	void RenderSardCan();
-	void RenderCactus();
-	void RenderReditos();
-	void RenderDewitos();
-	void RenderDiabetos();
-	void RenderMOaties();
-=======
 	void RenderDrinks();
 	void RenderChocolate();
 	void RenderChips();
->>>>>>> Stashed changes
 
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);
