@@ -88,6 +88,10 @@ private:
 		GEO_MODEL_PEPSI,
 		GEO_MODEL_HERSHEY,
 		GEO_MODEL_ROCHER,
+		GEO_MODEL_BBCAN,
+		GEO_MODEL_PUMPKINCAN,
+		GEO_MODEL_TOMATOSOUPCAN,
+		GEO_MODEL_PEASNCARROTCAN,
 		GEO_MODEL_LAYSCHIPS,
 		GEO_TEXT,
 
@@ -122,6 +126,7 @@ public:
 	CReadFromText pepsi;
 	CReadFromText chocolate;
 	CReadFromText chips;
+	CReadFromText canfood;
 	CReadFromText Test;
 	CNPC npc;
 	CNPC shopper;
@@ -158,6 +163,7 @@ private:
 	void RenderDrinks();
 	void RenderChocolate();
 	void RenderChips();
+	void RenderCanFood();
 
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);
