@@ -1,1 +1,2 @@
-ChickenStock,19,6.2,-35,0,0,1,0,1,1,1
+ChickenStockMid,-21,4.3,-35,0,0,1,0,1,1,1
+ChickenStockTop,-21,6.2,-35,0,0,1,0,1,1,1
