@@ -41,12 +41,37 @@ bool Application::IsKeyPressed(unsigned short key)
     return ((GetAsyncKeyState(key) & 0x8001) != 0);
 }
 
+bool Application::IsKeyReleased(unsigned short key)
+{
+    return ((GetAsyncKeyState(key) & 0x8001) == 0);
+}
+
 Application::Application()
 {
 }
 
 Application::~Application()
 {
+}
+
+void Application::setPosX(double x)
+{
+	MX = x;
+}
+
+void Application::setPosY(double y)
+{
+	MY = y;
+}
+
+double Application::getPosX(void)
+{
+	return MX;
+}
+
+double Application::getPosY(void)
+{
+	return MY;
 }
 
 void Application::Init()
@@ -127,4 +152,16 @@ void Application::Exit()
 	glfwDestroyWindow(m_window);
 	//Finalize and clean up GLFW
 	glfwTerminate();
+}
+
+void Application::mousePos(void)
+{
+	glfwGetCursorPos(m_window,&DMX,&DMY);
+	setPosX(DMX);
+	setPosY(DMY);
+	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+	if (getPosX() != 400 || getPosY() != 300)
+	{
+	glfwSetCursorPos(m_window,800/2,600/2);
+	}
 }

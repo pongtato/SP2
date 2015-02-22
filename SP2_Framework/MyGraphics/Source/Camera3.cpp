@@ -88,32 +88,88 @@ void Camera3::Doorsensor(Vector3& pos, float camSpeed)
 	}
 }
 
-void Camera3::Update(double dt)
+void Camera3::setStaminaDupe(int stam)
 {
-	static const float CAMERA_SPEED = 30.f;
-if(Application::IsKeyPressed(VK_LEFT))
+	staminaDupe = stam;
+}
+
+int Camera3::getStaminaDupe(void)
+{
+	return staminaDupe;
+}
+
+void Camera3::Update(double dt)
+{	
+	int sprint = 1;
+	static const float CAMERA_SPEED = 10.f;
+	double MouseX = 0;
+	double MouseY = 0;
+	double OldMousePosX = MouseX;
+	double OldMousePosY = MouseY;
+	test.mousePos();
+	MouseX = test.getPosX();
+	MouseY = test.getPosY();
+	
+
+
+	if(Application::IsKeyPressed(VK_SHIFT) && player.getStamina()!=0)
+	{
+		player.setStamina(1);
+		sprint = 5;
+	}
+	else if (Application::IsKeyReleased(VK_SHIFT) && player.getStamina() != 200)
+	{
+		player.setStamina(-1);
+		sprint = 1;
+	}
+
+	setStaminaDupe(player.getStamina());
+
+	if((MouseX - OldMousePosX) < 400)
 	{
 		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(5 * CAMERA_SPEED * dt);
+		float yaw = (float)(3*CAMERA_SPEED * dt);
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;
 		up = rotation * up;
 		target = view + position;
 	}
-	if(Application::IsKeyPressed(VK_RIGHT))
+
+	if((MouseX - OldMousePosX) < 398)
 	{
 		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(5 * -CAMERA_SPEED * dt);
+		float yaw = (float)(24 * CAMERA_SPEED * dt);
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;
 		up = rotation * up;
 		target = view + position;
 	}
-	if(Application::IsKeyPressed(VK_UP))
+	if((MouseX - OldMousePosX) > 400)
 	{
-		float pitch = (float)(5 * CAMERA_SPEED * dt);
+		Vector3 view = (target - position).Normalized();
+		float yaw = (float)(3*-CAMERA_SPEED * dt);
+		Mtx44 rotation;
+		rotation.SetToRotation(yaw, 0, 1, 0);
+		view = rotation * view;
+		up = rotation * up;
+		target = view + position;
+	}
+
+	if((MouseX - OldMousePosX) > 402)
+	{
+		Vector3 view = (target - position).Normalized();
+		float yaw = (float)(24 * -CAMERA_SPEED * dt);
+		Mtx44 rotation;
+		rotation.SetToRotation(yaw, 0, 1, 0);
+		view = rotation * view;
+		up = rotation * up;
+		target = view + position;
+	}
+	if((MouseY - OldMousePosY) < 299.5)
+	{
+		float pitch = (float)(3*CAMERA_SPEED * dt);
 		Vector3 view = (target - position).Normalized();
 		Vector3 right = view.Cross(up);
 		right.y = 0;
@@ -124,9 +180,35 @@ if(Application::IsKeyPressed(VK_LEFT))
 		view = rotation * view;
 		target = view + position;
 	}
-	if(Application::IsKeyPressed(VK_DOWN))
+	if((MouseY - OldMousePosY) < 297)
 	{
-		float pitch = (float)(5 * -CAMERA_SPEED * dt);
+		float pitch = (float)(12 *CAMERA_SPEED * dt);
+		Vector3 view = (target - position).Normalized();
+		Vector3 right = view.Cross(up);
+		right.y = 0;
+		right.Normalize();
+		up = right.Cross(view).Normalized();
+		Mtx44 rotation;
+		rotation.SetToRotation(pitch, right.x, right.y, right.z);
+		view = rotation * view;
+		target = view + position;
+	}
+	if((MouseY - OldMousePosY) > 300)
+	{
+		float pitch = (float)(3*-CAMERA_SPEED * dt);
+		Vector3 view = (target - position).Normalized();
+		Vector3 right = view.Cross(up);
+		right.y = 0;
+		right.Normalize();
+		up = right.Cross(view).Normalized();
+		Mtx44 rotation;
+		rotation.SetToRotation(pitch, right.x, right.y, right.z);
+		view = rotation * view;
+		target = view + position;
+	}
+	if((MouseY - OldMousePosY) > 302)
+	{
+		float pitch = (float)(12 * -CAMERA_SPEED * dt);
 		Vector3 view = (target - position).Normalized();
 		Vector3 right = view.Cross(up);
 		right.y = 0;
@@ -144,8 +226,8 @@ if(Application::IsKeyPressed(VK_LEFT))
 		Vector3 right = view.Cross(up);
 		right.y = 0;
 		right.Normalize();
-		position -= right * CAMERA_SPEED * dt;
-		target -= right * CAMERA_SPEED * dt;
+		position -= right * sprint *CAMERA_SPEED * dt;
+		target -= right * sprint *CAMERA_SPEED * dt;
 	}
 	if(Application::IsKeyPressed('D') && Limit(position,target, 450, CAMERA_SPEED))
 	{
@@ -154,22 +236,22 @@ if(Application::IsKeyPressed(VK_LEFT))
 		Vector3 right = view.Cross(up);
 		right.y = 0;
 		right.Normalize();
-		position += right * CAMERA_SPEED * dt;
-		target += right * CAMERA_SPEED * dt;			
+		position += right * sprint *CAMERA_SPEED * dt;
+		target += right * sprint *CAMERA_SPEED * dt;			
 	}
 	if(Application::IsKeyPressed('W') && Limit(position,target, 450, CAMERA_SPEED))
 	{
 		Vector3 view = (target - position).Normalized();
 		view.y = 0;
-		position += view * CAMERA_SPEED * dt;
-		target += view * CAMERA_SPEED * dt;
+		position += view * sprint *CAMERA_SPEED * dt;
+		target += view * sprint *CAMERA_SPEED * dt;
 	}
 	if(Application::IsKeyPressed('S') && Limit(position,target, 450, CAMERA_SPEED))
 	{
 		Vector3 view = (target - position).Normalized();
 		view.y = 0;
-		position -= view * CAMERA_SPEED * dt;
-		target -= view * CAMERA_SPEED * dt;
+		position -= view * sprint *CAMERA_SPEED * dt;
+		target -= view * sprint *CAMERA_SPEED * dt;
 	}
 
 	Doorsensor(position,CAMERA_SPEED);

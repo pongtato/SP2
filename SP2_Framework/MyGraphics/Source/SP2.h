@@ -12,8 +12,11 @@
 #include "ReadFromText.h"
 #include "RenderPos.h"
 #include "NPC.h"
+#include "Item.h"
+#include "Character.h"
+#include<algorithm>
 
-
+using namespace std;
 
 class SP2: public Scene
 {
@@ -79,36 +82,21 @@ private:
 		GEO_MODEL_CHAR1,
 		GEO_MODEL_FRIDGE,
 		GEO_MODEL_SHELF,
-		GEO_MODEL_CEREAL_1,
-		GEO_MODEL_CEREAL_2,
-		GEO_MODEL_CEREAL_3,
-		GEO_MODEL_WATERCAN,
-		GEO_MODEL_MTDEW,
-		GEO_MODEL_COKE,
 		GEO_MODEL_PEPSI,
-		GEO_MODEL_HERSHEY,
-		GEO_MODEL_ROCHER,
-		GEO_MODEL_BBCAN,
-		GEO_MODEL_PUMPKINCAN,
-		GEO_MODEL_TOMATOSOUPCAN,
-		GEO_MODEL_PEASNCARROTCAN,
-		GEO_MODEL_LAYSCHIPS,
-		GEO_MODEL_PIZZA,
-		GEO_MODEL_ICECREAM,
-		GEO_MODEL_MCNCHEESE,
-		GEO_MODEL_SARDINES,
-		GEO_MODEL_AYAMCAN,
-		GEO_MODEL_CHICKENSTOCK,
-		GEO_MODEL_TOBLERONE,
-		GEO_MODEL_VEGCAN,
-		GEO_MODEL_MILO,
-		GEO_MODEL_SARDCAN,
-		GEO_MODEL_CACTUS,
-		GEO_MODEL_REDITOS,
-		GEO_MODEL_DEWITOS,
-		GEO_MODEL_DIABETOS,
-		GEO_MODEL_MOATIES,
+		GEO_MODEL_COKE,
 		GEO_TEXT,
+		GEO_XHAIR,
+		GEO_HP,
+		GEO_STAM,
+		GEO_HPI,
+		GEO_STAMI,
+		GEO_ALERT,
+		GEO_UI,
+		GEO_MODEL_CAMERA,
+		GEO_MODEL_STAFFDOOR,
+		GEO_MODEL_SHUTTER,
+		GEO_MODEL_ROAD,
+		GEO_MODEL_FENCE,
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -134,33 +122,14 @@ public:
 	CReadFromText cashier;
 	CReadFromText fridge;
 	CReadFromText character;
-	CReadFromText cereal;
-	CReadFromText watercan;
-	CReadFromText mtdew;
-	CReadFromText coke;
-	CReadFromText pepsi;
-	CReadFromText chocolate;
-	CReadFromText chips;
-	CReadFromText pizza;
-	CReadFromText icecream;
-	CReadFromText mcncheese;
-	CReadFromText sardines;
-	CReadFromText ayamcan;
-	CReadFromText chickenstock;
-	CReadFromText toblerone;
-	CReadFromText milo;
-	CReadFromText vegcan;
-	CReadFromText sardcan;
-	CReadFromText canfood;
-	CReadFromText cactus;
-	CReadFromText reditos;
-	CReadFromText dewitos;
-	CReadFromText diabetos;
-	CReadFromText moaties;
-	CReadFromText Test;
+	CReadFromText FNB;
+
 	CNPC npc;
 	CNPC shopper;
 	CNPC patroler;
+	CCharacter player;
+
+
 
 private:
 	unsigned m_vertexArrayID;
@@ -173,6 +142,10 @@ private:
 	std::string FPS_count;
 	std::string XPos;
 	std::string ZPos;
+	std::string Target;
+	std::string HP;
+	std::string STAM;
+	std::string MONEY;
 
 	float EntranceDoorSlide;
 	float ExitDoorSlide;
@@ -190,31 +163,18 @@ private:
 	void RenderFridge();
 	void RenderShelves();
 	void RenderCharacter();
-	void RenderCereal();
-	void RenderDrinks();
-	void RenderChocolate();
-	void RenderChips();
-	void RenderPizza();
-	void RenderIceCream();
-	void RenderMcNCheese();
-	void RenderSardines();
-	void RenderAyamCan();
-	void RenderChickenStock();
-	void RenderToblerone();
-	void RenderMilo();
-	void RenderVegCan();
-	void RenderSardCan();
-	void RenderCanFood();
-	void RenderCactus();
-	void RenderReditos();
-	void RenderDewitos();
-	void RenderDiabetos();
-	void RenderMOaties();
+	void RenderFNB();
+	void RenderPlayer();
+	void RenderScreenUI();
 
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-
+	void RenderUI(Mesh* mesh, Color color, float sizeX,float sizeY,float sizeZ, float x, float y);
+	void CheckItem();
+	void CharacterCrouch();
+	void DoorSlide();
+	void UIupdates(double dt);
 };
 
 #endif

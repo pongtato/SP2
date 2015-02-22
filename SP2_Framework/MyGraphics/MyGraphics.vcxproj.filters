@@ -59,6 +59,12 @@
     <ClCompile Include="Source\NPC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -115,6 +121,12 @@
     <ClInclude Include="Source\NPC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\SimpleFragmentShader.fragmentshader">
@@ -136,6 +148,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shader\Texture.vertexshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\..\ComG_Assignment3\MyGraphics\Shader\MultiLight.fragmentshader">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

@@ -1,0 +1,99 @@
+#include "Character.h"
+
+
+CCharacter::CCharacter(void)
+{
+	health = 100;
+	stamina = 200;
+	money = 100;
+	detection = 0;
+	bullets = 0;
+	inventoryCap = 5;
+}
+
+
+CCharacter::~CCharacter(void)
+{
+}
+
+void CCharacter::setMoney(int cash)
+{
+	money = cash;
+}
+
+void CCharacter::setBullets(int ammo)
+{
+	bullets = ammo;
+}
+
+void CCharacter::setStamina(int stam)
+{
+	stamina -= stam;
+}
+
+void CCharacter::setDetection(float detect)
+{
+	detection = detect;
+}
+
+double CCharacter::getMoney(void)
+{
+	return money;
+}
+
+int CCharacter::getHealth(void)
+{
+	return health;
+}
+
+int CCharacter::getStamina(void)
+{
+	return stamina;
+}
+
+float CCharacter::getDetection(void)
+{
+	return detection;
+}
+
+void  CCharacter::setInventory(string name, double price)
+{
+	CItem * inven = new CItem();
+	inven->setItemName(name);
+	inven->setItemPrice(price);
+	inven_list.push_back(inven);
+}
+
+void  CCharacter::dropItem(string itemname)
+{
+	{
+		for (int i = 0; i < returnInvenSize(); ++i)
+		{
+			if ( getInventory(i)->getItemName() == itemname)
+			{
+				inven_list.erase(inven_list.begin()+i);
+				break;
+			}
+		}
+	}
+}
+
+CItem* CCharacter::getInventory(int n)
+{
+	return this->inven_list[n];
+}
+
+int CCharacter::returnInvenSize()
+{
+	return inven_list.size();
+}
+
+void CCharacter::setInventoryCap(int size)
+{
+	inventoryCap =size;
+}
+
+int CCharacter::getInventoryCap(void)
+{
+	return inventoryCap;
+}
