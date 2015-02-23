@@ -340,11 +340,104 @@ void SP2::Init()
 	meshList[GEO_MODEL_FLOOR] = MeshBuilder::GenerateOBJ("model1", "OBJ//Floor.obj");
 	meshList[GEO_MODEL_FLOOR]->textureID = LoadTGA("Image//Floor.tga");
 
-	meshList[GEO_MODEL_PEPSI] = MeshBuilder::GenerateOBJ("model1", "OBJ//pepsi.obj");
-	meshList[GEO_MODEL_PEPSI]->textureID = LoadTGA("Image//Pepsi.tga");
+	meshList[GEO_MODEL_CEREAL_1] = MeshBuilder::GenerateOBJ("model1", "OBJ//cerealbox1.obj");
+	meshList[GEO_MODEL_CEREAL_1]->textureID = LoadTGA("Image//cereal box 1.tga");
+
+	meshList[GEO_MODEL_CEREAL_2] = MeshBuilder::GenerateOBJ("model1", "OBJ//cerealbox2.obj");
+	meshList[GEO_MODEL_CEREAL_2]->textureID = LoadTGA("Image//cereal box 2.tga");
+
+	meshList[GEO_MODEL_CEREAL_3] = MeshBuilder::GenerateOBJ("model1", "OBJ//cerealbox3.obj");
+	meshList[GEO_MODEL_CEREAL_3]->textureID = LoadTGA("Image//cereal box 3.tga");
+
+	meshList[GEO_MODEL_WATERCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//water.obj");
+	meshList[GEO_MODEL_WATERCAN]->textureID = LoadTGA("Image//water.tga");
+
+	meshList[GEO_MODEL_MTDEW] = MeshBuilder::GenerateOBJ("model1", "OBJ//mountainDew.obj");
+	meshList[GEO_MODEL_MTDEW]->textureID = LoadTGA("Image//Mountain Dew Texture.tga");
 
 	meshList[GEO_MODEL_COKE] = MeshBuilder::GenerateOBJ("model1", "OBJ//coke.obj");
 	meshList[GEO_MODEL_COKE]->textureID = LoadTGA("Image//Coke.tga");
+
+	meshList[GEO_MODEL_PEPSI] = MeshBuilder::GenerateOBJ("model1", "OBJ//pepsi.obj");
+	meshList[GEO_MODEL_PEPSI]->textureID = LoadTGA("Image//Pepsi.tga");
+
+	meshList[GEO_MODEL_HERSHEY] = MeshBuilder::GenerateOBJ("model1", "OBJ//hershey.obj");
+	meshList[GEO_MODEL_HERSHEY]->textureID = LoadTGA("Image//hershey.tga");
+
+	meshList[GEO_MODEL_ROCHER] = MeshBuilder::GenerateOBJ("model1", "OBJ//FerreroRocher.obj");
+	meshList[GEO_MODEL_ROCHER]->textureID = LoadTGA("Image//rocher.tga");
+
+	meshList[GEO_MODEL_BBCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//bbCan.obj");
+	meshList[GEO_MODEL_BBCAN]->textureID = LoadTGA("Image//bbCan.tga");
+
+	meshList[GEO_MODEL_PUMPKINCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//pumpkinCan.obj");
+	meshList[GEO_MODEL_PUMPKINCAN]->textureID = LoadTGA("Image//pumpkinCan.tga");
+
+	meshList[GEO_MODEL_TOMATOSOUPCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//tomatoSoupCan.obj");
+	meshList[GEO_MODEL_TOMATOSOUPCAN]->textureID = LoadTGA("Image//tomatoSoupCan.tga");
+
+	meshList[GEO_MODEL_PEASNCARROTCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//peasNcarrot.obj");
+	meshList[GEO_MODEL_PEASNCARROTCAN]->textureID = LoadTGA("Image//peasNcarrot.tga");
+
+	meshList[GEO_MODEL_LAYSCHIPS] = MeshBuilder::GenerateOBJ("model1", "OBJ//LaysChips.obj");
+	meshList[GEO_MODEL_LAYSCHIPS]->textureID = LoadTGA("Image//LaysChips.tga");
+
+	meshList[GEO_MODEL_PIZZA] = MeshBuilder::GenerateOBJ("model1", "OBJ//pizza.obj");
+	meshList[GEO_MODEL_PIZZA]->textureID = LoadTGA("Image//frozen_pizza.tga");
+	
+	meshList[GEO_MODEL_ICECREAM] = MeshBuilder::GenerateOBJ("model1", "OBJ//icecream.obj");
+	meshList[GEO_MODEL_ICECREAM]->textureID = LoadTGA("Image//ice_cream_box.tga");
+
+	meshList[GEO_MODEL_MCNCHEESE] = MeshBuilder::GenerateOBJ("model1", "OBJ//mcncheese.obj");
+	meshList[GEO_MODEL_MCNCHEESE]->textureID = LoadTGA("Image//Box_Tex.tga");
+
+	meshList[GEO_MODEL_SARDINES] = MeshBuilder::GenerateOBJ("model1", "OBJ//sardines.obj");
+	meshList[GEO_MODEL_SARDINES]->textureID = LoadTGA("Image//Can_Tex.tga");
+
+	meshList[GEO_MODEL_AYAMCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//ayamcan.obj");
+	meshList[GEO_MODEL_AYAMCAN]->textureID = LoadTGA("Image//Can2_Tex.tga");
+
+	meshList[GEO_MODEL_CHICKENSTOCK] = MeshBuilder::GenerateOBJ("model1", "OBJ//chickenstock.obj");
+	meshList[GEO_MODEL_CHICKENSTOCK]->textureID = LoadTGA("Image//Packet_Tex.tga");
+
+	meshList[GEO_MODEL_TOBLERONE] = MeshBuilder::GenerateOBJ("model1", "OBJ//toblerone.obj");
+	meshList[GEO_MODEL_TOBLERONE]->textureID = LoadTGA("Image//Packet2_Tex.tga");
+
+	meshList[GEO_MODEL_VEGCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//vegcan.obj");
+	meshList[GEO_MODEL_VEGCAN]->textureID = LoadTGA("Image//vegcan.tga");
+
+	meshList[GEO_MODEL_MILO] = MeshBuilder::GenerateOBJ("model1", "OBJ//milo.obj");
+	meshList[GEO_MODEL_MILO]->textureID = LoadTGA("Image//milo.tga");
+
+	meshList[GEO_MODEL_SARDCAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//sardcan.obj");
+	meshList[GEO_MODEL_SARDCAN]->textureID = LoadTGA("Image//sardcan.tga");
+
+	meshList[GEO_MODEL_CACTUS] = MeshBuilder::GenerateOBJ("model1", "OBJ//cactus.obj");
+	meshList[GEO_MODEL_CACTUS]->textureID = LoadTGA("Image//cactus.tga");
+
+	meshList[GEO_MODEL_REDITOS] = MeshBuilder::GenerateOBJ("model1", "OBJ//reditos.obj");
+	meshList[GEO_MODEL_REDITOS]->textureID = LoadTGA("Image//reditos.tga");
+
+	meshList[GEO_MODEL_DEWITOS] = MeshBuilder::GenerateOBJ("model1", "OBJ//dewitos.obj");
+	meshList[GEO_MODEL_DEWITOS]->textureID = LoadTGA("Image//dewitos.tga");
+
+	meshList[GEO_MODEL_DIABETOS] = MeshBuilder::GenerateOBJ("model1", "OBJ//diabetos.obj");
+	meshList[GEO_MODEL_DIABETOS]->textureID = LoadTGA("Image//diabetos.tga");
+
+	meshList[GEO_MODEL_MOATIES] = MeshBuilder::GenerateOBJ("model1", "OBJ//moaties.obj");
+	meshList[GEO_MODEL_MOATIES]->textureID = LoadTGA("Image//moaties.tga");
+
+	meshList[GEO_MODEL_SWBOX] = MeshBuilder::GenerateOBJ("model1", "OBJ//SWBox.obj");
+	meshList[GEO_MODEL_SWBOX]->textureID = LoadTGA("Image//SWBox.tga");
+
+	meshList[GEO_MODEL_DOSH] = MeshBuilder::GenerateOBJ("model1", "OBJ//dosh.obj");
+	meshList[GEO_MODEL_DOSH]->textureID = LoadTGA("Image//Door.tga");
+
+	meshList[GEO_MODEL_PISTOL] = MeshBuilder::GenerateOBJ("model1", "OBJ//handgun.obj");
+	meshList[GEO_MODEL_PISTOL]->textureID = LoadTGA("Image//DOOR2.tga");
+
+	meshList[GEO_MODEL_RIFLE] = MeshBuilder::GenerateOBJ("model1", "OBJ//rifle.obj");
+	meshList[GEO_MODEL_RIFLE]->textureID = LoadTGA("Image//DOOR2.tga");
 
 	meshList[GEO_MODEL_CAMERA] = MeshBuilder::GenerateOBJ("model1", "OBJ//camera.obj");
 	meshList[GEO_MODEL_CAMERA]->textureID = LoadTGA("Image//CAMERA.tga");
@@ -1004,6 +1097,86 @@ void SP2::RenderFNB()
 			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Coke")
 			{
 			RenderMesh(meshList[GEO_MODEL_COKE], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Pizza")
+			{
+			RenderMesh(meshList[GEO_MODEL_PIZZA], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "IceCream")
+			{
+			RenderMesh(meshList[GEO_MODEL_ICECREAM], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "McNCheese")
+			{
+			RenderMesh(meshList[GEO_MODEL_MCNCHEESE], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Toblerone")
+			{
+			RenderMesh(meshList[GEO_MODEL_TOBLERONE], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Rocher")
+			{
+			RenderMesh(meshList[GEO_MODEL_ROCHER], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "MtDew")
+			{
+			RenderMesh(meshList[GEO_MODEL_MTDEW], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Reditos")
+			{
+			RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Dewitos")
+			{
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Lays")
+			{
+			RenderMesh(meshList[GEO_MODEL_LAYSCHIPS], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Cactus")
+			{
+			RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Vegcan")
+			{
+			RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "PCan")
+			{
+			RenderMesh(meshList[GEO_MODEL_PUMPKINCAN], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Cereal1")
+			{
+			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Cereal2")
+			{
+			RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Cereal3")
+			{
+			RenderMesh(meshList[GEO_MODEL_CHICKENSTOCK], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Pistol")
+			{
+			RenderMesh(meshList[GEO_MODEL_PISTOL], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Rifle")
+			{
+			RenderMesh(meshList[GEO_MODEL_RIFLE], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Milo")
+			{
+			RenderMesh(meshList[GEO_MODEL_MILO], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SardCan")
+			{
+			RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SoupCan")
+			{
+			RenderMesh(meshList[GEO_MODEL_TOMATOSOUPCAN], true);
 			}
 			modelStack.PopMatrix();
 		}
