@@ -228,7 +228,6 @@ void CNPC::ReadTextFilePath(const char* filename)
 
 void CNPC::ShopPathing(int n)
 {
-	cout<<GetNPCPos(n)->getCheckpoints(0)<<endl;
 	// 1st node
 	if ( getPosX() <= -75 && getPosZ() >= 25)
 	{
