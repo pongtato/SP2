@@ -101,6 +101,7 @@ int Camera3::getStaminaDupe(void)
 void Camera3::Update(double dt)
 {	
 	int sprint = 1;
+	//bool moving = false;
 	static const float CAMERA_SPEED = 10.f;
 	double MouseX = 0;
 	double MouseY = 0;
@@ -112,7 +113,7 @@ void Camera3::Update(double dt)
 	
 
 
-	if(Application::IsKeyPressed(VK_SHIFT) && player.getStamina()!=0)
+	if(Application::IsKeyPressed(VK_SHIFT) && player.getStamina()!=0 && moving == true)
 	{
 		player.setStamina(1);
 		sprint = 5;
@@ -228,6 +229,7 @@ void Camera3::Update(double dt)
 		right.Normalize();
 		position -= right * sprint *CAMERA_SPEED * dt;
 		target -= right * sprint *CAMERA_SPEED * dt;
+		moving = true;
 	}
 	if(Application::IsKeyPressed('D') && Limit(position,target, 450, CAMERA_SPEED))
 	{
@@ -237,7 +239,8 @@ void Camera3::Update(double dt)
 		right.y = 0;
 		right.Normalize();
 		position += right * sprint *CAMERA_SPEED * dt;
-		target += right * sprint *CAMERA_SPEED * dt;			
+		target += right * sprint *CAMERA_SPEED * dt;	
+		moving = true;
 	}
 	if(Application::IsKeyPressed('W') && Limit(position,target, 450, CAMERA_SPEED))
 	{
@@ -245,6 +248,7 @@ void Camera3::Update(double dt)
 		view.y = 0;
 		position += view * sprint *CAMERA_SPEED * dt;
 		target += view * sprint *CAMERA_SPEED * dt;
+		moving = true;
 	}
 	if(Application::IsKeyPressed('S') && Limit(position,target, 450, CAMERA_SPEED))
 	{
@@ -252,6 +256,11 @@ void Camera3::Update(double dt)
 		view.y = 0;
 		position -= view * sprint *CAMERA_SPEED * dt;
 		target -= view * sprint *CAMERA_SPEED * dt;
+		moving = true;
+	}
+	if(Application::IsKeyReleased('S') && Application::IsKeyReleased('W') && Application::IsKeyReleased('A') && Application::IsKeyReleased('D'))
+	{
+		moving = false;
 	}
 
 	Doorsensor(position,CAMERA_SPEED);

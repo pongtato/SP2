@@ -2,6 +2,10 @@
 #include "Mesh.h"
 #include "GL\glew.h"
 #include "Vertex.h"
+#include <GL\GL.h>
+#include <GL\GLU.h>
+#pragma comment( lib, "opengl32.lib" )									
+#pragma comment( lib, "glu32.lib" )	
 
 /******************************************************************************/
 /*!

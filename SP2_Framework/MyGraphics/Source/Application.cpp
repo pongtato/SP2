@@ -111,7 +111,7 @@ void Application::Init()
 
 	//Sets the key callback
 	//glfwSetKeyCallback(m_window, key_callback);
-
+	
 	glewExperimental = true; // Needed for core profile
 	//Initialize GLEW
 	GLenum err = glewInit();
@@ -126,8 +126,7 @@ void Application::Init()
 
 void Application::Run()
 {
-	//Main Loop
-	Scene *scene = new SP2();
+	Scene *scene = new SP2();		
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
@@ -143,6 +142,7 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 	scene->Exit();
+
 	delete scene;
 }
 
