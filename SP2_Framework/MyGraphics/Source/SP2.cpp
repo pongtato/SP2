@@ -169,7 +169,7 @@ void SP2::Init()
 			lights[0].spotDirection.Set(0.f, 1.f, 0.f);
 
 			lights[1].type = Light::LIGHT_SPOT;
-			lights[1].position.Set(0, 20, 15);
+			lights[1].position.Set(0, 14.5, 15);
 			lights[1].color.Set(1, 1, 1);
 			lights[1].power = 0.2;
 			lights[1].kC = 1.f;
@@ -181,7 +181,7 @@ void SP2::Init()
 			lights[1].spotDirection.Set(0.f, 1.f, 0.f);
 
 			lights[2].type = Light::LIGHT_SPOT;
-			lights[2].position.Set(0, 20, -15);
+			lights[2].position.Set(0, 14.5, -15);
 			lights[2].color.Set(1, 1, 1);
 			lights[2].power = 0.2;
 			lights[2].kC = 1.f;
@@ -193,7 +193,7 @@ void SP2::Init()
 			lights[2].spotDirection.Set(0.f, 1.f, 0.f);
 
 			lights[3].type = Light::LIGHT_SPOT;
-			lights[3].position.Set(-35, 20, 15);
+			lights[3].position.Set(-35, 14.5, 15);
 			lights[3].color.Set(1, 1, 1);
 			lights[3].power = 0.2;
 			lights[3].kC = 1.f;
@@ -205,7 +205,7 @@ void SP2::Init()
 			lights[3].spotDirection.Set(0.f, 1.f, 0.f);
 
 			lights[4].type = Light::LIGHT_SPOT;
-			lights[4].position.Set(-35, 20, -15);
+			lights[4].position.Set(-35, 14.5, -15);
 			lights[4].color.Set(1, 1, 1);
 			lights[4].power = 0.2;
 			lights[4].kC = 1.f;
@@ -455,6 +455,23 @@ void SP2::Init()
 	meshList[GEO_MODEL_FENCE] = MeshBuilder::GenerateOBJ("model1", "OBJ//fence.obj");
 	meshList[GEO_MODEL_FENCE]->textureID = LoadTGA("Image//fence.tga");
 
+	meshList[GEO_MODEL_BOARD1] = MeshBuilder::GenerateOBJ("model1", "OBJ//Board.obj");
+	meshList[GEO_MODEL_BOARD1]->textureID = LoadTGA("Image//board1.tga");
+
+	meshList[GEO_MODEL_BOARD2] = MeshBuilder::GenerateOBJ("model1", "OBJ//Board.obj");
+	meshList[GEO_MODEL_BOARD2]->textureID = LoadTGA("Image//board2.tga");
+
+	meshList[GEO_MODEL_BOARD3] = MeshBuilder::GenerateOBJ("model1", "OBJ//Board.obj");
+	meshList[GEO_MODEL_BOARD3]->textureID = LoadTGA("Image//board3.tga");
+
+	meshList[GEO_MODEL_BOARD4] = MeshBuilder::GenerateOBJ("model1", "OBJ//Board.obj");
+	meshList[GEO_MODEL_BOARD4]->textureID = LoadTGA("Image//board4.tga");
+
+	meshList[GEO_MODEL_LIGHTS] = MeshBuilder::GenerateOBJ("model1", "OBJ//Lights.obj");
+	meshList[GEO_MODEL_LIGHTS]->textureID = LoadTGA("Image//supermart.tga");
+
+
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
 
@@ -599,6 +616,22 @@ void SP2::Stealing()
 		lights[2].color.Set(1,Lightswitch,Lightswitch);
 		lights[3].color.Set(1,Lightswitch,Lightswitch);
 		lights[4].color.Set(1,Lightswitch,Lightswitch);
+		lights[0].power = 0.1f;
+		lights[1].power = 1.0f;
+		lights[2].power = 1.0f;
+		lights[3].power = 1.0f;
+		lights[4].power = 1.0f;
+
+
+		glUniform3fv(m_parameters[U_LIGHT1_COLOR], 1, &lights[1].color.r);
+		glUniform1f(m_parameters[U_LIGHT1_POWER], lights[1].power);
+		glUniform1f(m_parameters[U_LIGHT2_POWER], lights[2].power);
+		glUniform3fv(m_parameters[U_LIGHT2_COLOR], 1, &lights[2].color.r);
+		glUniform3fv(m_parameters[U_LIGHT3_COLOR], 1, &lights[3].color.r);
+		glUniform1f(m_parameters[U_LIGHT3_POWER], lights[3].power);
+		glUniform3fv(m_parameters[U_LIGHT4_COLOR], 1, &lights[4].color.r);
+		glUniform1f(m_parameters[U_LIGHT4_POWER], lights[4].power);
+		glUniform1f(m_parameters[U_LIGHT0_POWER], lights[0].power);
 	}
 }
 
@@ -612,9 +645,9 @@ void SP2::UIupdates(double dt)
 	ff << camera.position.z;
 	ZPos = ff.str();
 
-	FPS = 1/dt;
+	//FPS = 1/dt;
 	std::stringstream ss;
-	ss << FPS;
+	ss << 1/dt;;
 	FPS_count = ss.str();
 
 	std::stringstream hh;
@@ -654,7 +687,7 @@ void SP2::UIupdates(double dt)
 			&& camera.target.y >= cashier.GetRenderPos(i)->getTranslationY()-10 && camera.target.y <= cashier.GetRenderPos(i)->getTranslationY()+10 
 			&& camera.target.z >= cashier.GetRenderPos(i)->getTranslationZ()-3 && camera.target.z <= cashier.GetRenderPos(i)->getTranslationZ()+3)
 		{
-			ItemName = "cashier";
+			ItemName = "Checkout Items";
 		}
 	}
 }
@@ -933,7 +966,7 @@ void SP2::Render()
 		glUniform3fv(m_parameters[U_LIGHT4_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
 
-	modelStack.PushMatrix();
+	/*modelStack.PushMatrix();
 	modelStack.Translate(lights[0].position.x, lights[0].position.y, lights[0].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL], false);
 	modelStack.PopMatrix();
@@ -951,7 +984,7 @@ void SP2::Render()
 	modelStack.PushMatrix();
 	modelStack.Translate(lights[3].position.x, lights[3].position.y, lights[3].position.z);
 	RenderMesh(meshList[GEO_LIGHTBALL2], false);
-	modelStack.PopMatrix();
+	modelStack.PopMatrix();*/
 
 	RenderMesh(meshList[GEO_AXES], false);
 
@@ -1095,16 +1128,15 @@ void SP2::CheckItem()
 	{
 		for ( int i = 0; i < FNB.ReturnListSize();  ++i)
 		{
-			if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.2 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.2 
+			if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.4 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.4 
 				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-1 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+1 
 				&& camera.target.z >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-1 && camera.target.z <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+1)
 			{
-				if (player.returnInvenSize() < 5 && FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				if (player.returnInvenSize() < 5 && FNB.GetRenderPosItem(i)->getItemAvailability() == true && FNB.GetRenderPosItem(i)->getItemName() == ItemName)
 				{
 					FNB.GetRenderPosItem(i)->setItemAvailable(0);
 					player.setInventory(FNB.GetRenderPosItem(i)->getItemName(),FNB.GetRenderPosItem(i)->getItemPrice());
 					cout << player.returnInvenSize()<< endl;
-
 					for (int i = 0; i < player.returnInvenSize(); ++i)
 					{
 						if (player.returnInvenSize() != 0 )
@@ -1113,6 +1145,7 @@ void SP2::CheckItem()
 							cout << i + 1 << player.getInventory(i)->getItemPrice() << endl;
 						}
 					}
+					break;
 				}
 			}
 		}
@@ -1121,8 +1154,8 @@ void SP2::CheckItem()
 	{
 		for ( int i = 0; i < FNB.ReturnListSize();  ++i)
 		{
-			if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.2 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.2 
-				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-1 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+1 
+			if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.4 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.4 
+				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-0.8 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+0.8 
 				&& camera.target.z >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-1 && camera.target.z <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+1)
 			{
 				if (player.returnInvenSize() > 0 && FNB.GetRenderPosItem(i)->getItemAvailability() == false)
@@ -1359,6 +1392,62 @@ void SP2::RenderWorld()
 	modelStack.Rotate(data.GetRenderPos(10)->getRotation(),data.GetRenderPos(10)->getRX(),data.GetRenderPos(10)->getRY(),data.GetRenderPos(2)->getRZ());
 	modelStack.Scale(data.GetRenderPos(10)->getScaleX(),data.GetRenderPos(10)->getScaleY(),data.GetRenderPos(10)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_CAMERA], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(11)->getTranslationX(),data.GetRenderPos(11)->getTranslationY(),data.GetRenderPos(11)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(11)->getRotation(),data.GetRenderPos(11)->getRX(),data.GetRenderPos(11)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(11)->getScaleX(),data.GetRenderPos(11)->getScaleY(),data.GetRenderPos(11)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_BOARD1], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(12)->getTranslationX(),data.GetRenderPos(12)->getTranslationY(),data.GetRenderPos(12)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(12)->getRotation(),data.GetRenderPos(12)->getRX(),data.GetRenderPos(12)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(12)->getScaleX(),data.GetRenderPos(12)->getScaleY(),data.GetRenderPos(12)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_BOARD2], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(13)->getTranslationX(),data.GetRenderPos(13)->getTranslationY(),data.GetRenderPos(13)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(13)->getRotation(),data.GetRenderPos(13)->getRX(),data.GetRenderPos(13)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(13)->getScaleX(),data.GetRenderPos(13)->getScaleY(),data.GetRenderPos(13)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_BOARD3], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(14)->getTranslationX(),data.GetRenderPos(14)->getTranslationY(),data.GetRenderPos(14)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(14)->getRotation(),data.GetRenderPos(14)->getRX(),data.GetRenderPos(14)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(14)->getScaleX(),data.GetRenderPos(14)->getScaleY(),data.GetRenderPos(14)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_BOARD4], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(15)->getTranslationX(),data.GetRenderPos(15)->getTranslationY(),data.GetRenderPos(15)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(15)->getRotation(),data.GetRenderPos(15)->getRX(),data.GetRenderPos(15)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(15)->getScaleX(),data.GetRenderPos(15)->getScaleY(),data.GetRenderPos(15)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_LIGHTS], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(16)->getTranslationX(),data.GetRenderPos(16)->getTranslationY(),data.GetRenderPos(16)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(16)->getRotation(),data.GetRenderPos(16)->getRX(),data.GetRenderPos(16)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(16)->getScaleX(),data.GetRenderPos(16)->getScaleY(),data.GetRenderPos(16)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_LIGHTS], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(17)->getTranslationX(),data.GetRenderPos(17)->getTranslationY(),data.GetRenderPos(17)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(17)->getRotation(),data.GetRenderPos(17)->getRX(),data.GetRenderPos(17)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(17)->getScaleX(),data.GetRenderPos(17)->getScaleY(),data.GetRenderPos(17)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_LIGHTS], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(18)->getTranslationX(),data.GetRenderPos(18)->getTranslationY(),data.GetRenderPos(18)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(18)->getRotation(),data.GetRenderPos(18)->getRX(),data.GetRenderPos(18)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(18)->getScaleX(),data.GetRenderPos(18)->getScaleY(),data.GetRenderPos(18)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_LIGHTS], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();

@@ -1,6 +1,0 @@
-ChipsLeftBTM,6,3.4,-16.3,180,0,1,0,1,1,1
-ChipsLeftMIDDLE,6,5.3,-16.3,180,0,1,0,1,1,1
-ChipsLeftTOP,6,7.2,-16.3,180,0,1,0,1,1,1
-ChipsRightBTM,6,3.4,-13.8,0,0,1,0,1,1,1
-ChipsRightMIDDLE,6,5.3,-13.8,0,0,1,0,1,1,1
-ChipsRightTOP,6,7.2,-13.8,0,0,1,0,1,1,1
