@@ -1,0 +1,6 @@
+CactusLeftBTM,-44,3.5,13,180,0,1,0,1,1,1
+CactusLeftMIDDLE,-44,5.4,13,180,0,1,0,1,1,1
+CactusLeftTOP,-44,7.3,13,180,0,1,0,1,1,1
+CactusRightBTM,-44,3.5,15,0,0,1,0,1,1,1
+CactusRightMIDDLE,-44,5.4,15,0,0,1,0,1,1,1
+CactusRightTOP,-44,7.3,15,0,0,1,0,1,1,1

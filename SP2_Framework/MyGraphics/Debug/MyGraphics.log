@@ -1,154 +1,154 @@
-﻿Build started 24/2/2015 10:40:24 PM.
-     1>Project "C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
+﻿Build started 25/2/2015 11:39:00 AM.
+     1>Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\MyGraphics.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\\glew\include" /I"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\\glfw\include" /I"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SP2.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glew\include" /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glfw\include" /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SP2.cpp
          SP2.cpp
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(174): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(186): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(198): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(210): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(526): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(527): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(528): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(547): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(548): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(549): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(615): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(615): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(616): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(616): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(617): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(617): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(838): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(844): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(856): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(863): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(872): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(879): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(886): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(892): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(897): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(903): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1015): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1023): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1032): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1036): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1040): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1044): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1048): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1052): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1056): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1061): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1065): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1069): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1074): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1078): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1082): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1086): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1090): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1095): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1099): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1103): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1107): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1111): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1115): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1119): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1208): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1208): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1215): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1215): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1223): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1223): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1231): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1231): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1239): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1267): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1267): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1267): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1280): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1280): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1280): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1309): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1309): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1309): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1321): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1321): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1321): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1327): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1327): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1327): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1334): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1334): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1334): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1341): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1341): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1341): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1349): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1349): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1349): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1357): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1357): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1357): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1364): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1364): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1364): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1371): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1371): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1371): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1378): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1378): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1378): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1385): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1385): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1385): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1392): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1392): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1392): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1399): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1399): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1399): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1406): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1406): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1406): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1413): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1413): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1413): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1420): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1420): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1420): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1427): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1427): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1427): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1434): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1434): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1434): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1441): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1441): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1441): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1448): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1448): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1448): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1454): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1469): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1469): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1469): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1476): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1476): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1476): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1483): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1483): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1483): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1509): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1509): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\aloysius chun\desktop\sp2\sp2_framework\mygraphics\source\sp2.cpp(1509): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(174): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(186): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(198): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(210): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(526): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(527): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(528): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(547): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(548): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(549): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(615): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(615): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(616): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(616): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(617): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(617): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(838): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(844): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(856): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(863): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(872): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(879): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(886): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(892): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(897): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(903): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1015): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1023): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1032): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1036): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1040): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1044): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1048): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1052): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1056): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1060): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1064): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1068): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1072): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1076): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1080): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1084): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1088): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1092): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1096): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1100): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1104): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1108): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1112): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1116): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1205): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1205): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1212): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1212): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1220): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1220): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1228): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1228): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1236): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1264): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1264): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1264): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1277): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1277): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1277): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1306): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1306): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1306): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1318): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1318): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1318): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1324): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1324): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1324): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1331): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1331): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1331): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1338): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1338): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1338): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1346): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1346): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1346): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1354): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1354): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1354): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1361): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1361): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1361): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1368): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1368): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1368): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1375): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1375): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1375): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1382): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1382): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1382): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1389): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1389): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1389): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1396): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1396): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1396): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1403): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1403): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1403): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1410): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1410): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1410): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1417): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1417): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1417): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1424): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1424): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1424): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1431): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1431): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1431): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1438): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1438): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1438): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1445): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1445): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1445): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1451): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1466): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1466): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1466): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1473): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1473): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1473): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1480): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1480): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1480): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1506): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1506): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\sp2.cpp(1506): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\Debug\MyGraphics.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\\glew\lib" /LIBPATH:"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\\glfw\lib-msvc100" /LIBPATH:"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\MyGraphics.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\Debug\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\Debug\MyGraphics.lib" /MACHINE:X86 Debug\MyGraphics.exe.embed.manifest.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glew\lib" /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glfw\lib-msvc100" /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\MyGraphics.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.lib" /MACHINE:X86 Debug\MyGraphics.exe.embed.manifest.res
          Debug\Application.obj
          Debug\Camera.obj
          Debug\Camera2.obj
@@ -171,12 +171,12 @@
          All outputs are up-to-date.
        LinkEmbedManifest:
          All outputs are up-to-date.
-         MyGraphics.vcxproj -> C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\Debug\MyGraphics.exe
+         MyGraphics.vcxproj -> C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.exe
        FinalizeBuildStatus:
          Deleting file "Debug\MyGraphics.unsuccessfulbuild".
          Touching "Debug\MyGraphics.lastbuildstate".
-     1>Done Building Project "C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.05
+Time Elapsed 00:00:01.36

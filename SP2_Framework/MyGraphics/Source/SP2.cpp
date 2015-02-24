@@ -1041,24 +1041,23 @@ void SP2::RenderScreenUI()
 			}
 			else if ( player.getInventory(i)->getItemName() == "Pizza")
 			{
-				RenderUI(meshList[GEO_MODEL_PIZZA], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_PIZZA], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "IceCream")
 			{
-				RenderUI(meshList[GEO_MODEL_ICECREAM], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5), 2.5);
+				RenderUI(meshList[GEO_MODEL_ICECREAM], Color(0, 1, 0), 2, 2, 2,15+(i*5.5), 2.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "McNCheese")
 			{
-				RenderUI(meshList[GEO_MODEL_MCNCHEESE], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_MCNCHEESE], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Toblerone")
 			{
-				RenderUI(meshList[GEO_MODEL_TOBLERONE], Color(0, 1, 0), 2.5, 4, 4,15+(i*5.5), 3.5);
+				RenderUI(meshList[GEO_MODEL_TOBLERONE], Color(0, 1, 0), 2, 4, 4,15+(i*5.5), 3.5);
 			}
-			//Fix this, flipped around
 			else if ( player.getInventory(i)->getItemName() == "Rocher")
 			{
-				RenderUI(meshList[GEO_MODEL_ROCHER], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_ROCHER], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Reditos")
 			{
@@ -1066,37 +1065,35 @@ void SP2::RenderScreenUI()
 			}
 			else if ( player.getInventory(i)->getItemName() == "Dewitos")
 			{
-				RenderUI(meshList[GEO_MODEL_DEWITOS], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 3.5);
+				RenderUI(meshList[GEO_MODEL_DEWITOS], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 3.5);
 			}
-			//Fix This, flipped on back
 			else if ( player.getInventory(i)->getItemName() == "Lays")
 			{
-				RenderUI(meshList[GEO_MODEL_LAYSCHIPS], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_LAYSCHIPS], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5), 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Cactus")
 			{
-				RenderUI(meshList[GEO_MODEL_CACTUS], Color(0, 1, 0), 10, 10, 10,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_CACTUS], Color(0, 1, 0), 9.5, 9.5, 9.5,15+(i*5.5), 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Vegcan")
 			{
-				RenderUI(meshList[GEO_MODEL_VEGCAN], Color(0, 1, 0), 6.5, 6.5, 6.5,15+(i*5.5), 1.5);
+				RenderUI(meshList[GEO_MODEL_VEGCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5), 1.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "PCan")
 			{
 				RenderUI(meshList[GEO_MODEL_PUMPKINCAN], Color(0, 1, 0), 4.5, 4.5, 4.5,15+(i*5.5), 4);
 			}
-			else if ( player.getInventory(i)->getItemName() == "Cereal1")
+			else if ( player.getInventory(i)->getItemName() == "MOaties")
 			{
-				RenderUI(meshList[GEO_MODEL_MOATIES], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 2);
+				RenderUI(meshList[GEO_MODEL_MOATIES], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 2);
 			}
-			//Fix this, turned to side
-			else if ( player.getInventory(i)->getItemName() == "Cereal2")
+			else if ( player.getInventory(i)->getItemName() == "OBox")
 			{
-				RenderUI(meshList[GEO_MODEL_CEREAL_2], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_CEREAL_2], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5), 4);
 			}
-			else if ( player.getInventory(i)->getItemName() == "Cereal3")
+			else if ( player.getInventory(i)->getItemName() == "Chickenstock")
 			{
-				RenderUI(meshList[GEO_MODEL_CHICKENSTOCK], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5),3.5);
+				RenderUI(meshList[GEO_MODEL_CHICKENSTOCK], Color(0, 1, 0), 3, 3, 3,15+(i*5.5),3.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Pistol")
 			{
@@ -1108,7 +1105,7 @@ void SP2::RenderScreenUI()
 			}
 			else if ( player.getInventory(i)->getItemName() == "Milo")
 			{
-				RenderUI(meshList[GEO_MODEL_MILO], Color(0, 1, 0), 4, 4, 4,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_MILO], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "SardCan")
 			{
@@ -1564,15 +1561,15 @@ void SP2::RenderFNB()
 			{
 			RenderMesh(meshList[GEO_MODEL_PUMPKINCAN], true);
 			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Cereal1")
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "MOaties")
 			{
 			RenderMesh(meshList[GEO_MODEL_MOATIES], true);
 			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Cereal2")
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "OBox")
 			{
 			RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
 			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Cereal3")
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Chickenstock")
 			{
 			RenderMesh(meshList[GEO_MODEL_CHICKENSTOCK], true);
 			}
