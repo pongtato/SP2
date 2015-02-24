@@ -4,6 +4,8 @@
 
 Camera3::Camera3()
 {
+	cameraState = 0;
+	CameraLock = 0;
 }
 
 Camera3::~Camera3()
@@ -102,7 +104,7 @@ void Camera3::Update(double dt)
 {	
 	int sprint = 1;
 	//bool moving = false;
-	static const float CAMERA_SPEED = 10.f;
+	float CAMERA_SPEED = 10.f;
 	double MouseX = 0;
 	double MouseY = 0;
 	double OldMousePosX = MouseX;
@@ -110,7 +112,7 @@ void Camera3::Update(double dt)
 	test.mousePos();
 	MouseX = test.getPosX();
 	MouseY = test.getPosY();
-	
+
 
 
 	if(Application::IsKeyPressed(VK_SHIFT) && player.getStamina()!=0 && moving == true)
@@ -126,10 +128,14 @@ void Camera3::Update(double dt)
 
 	setStaminaDupe(player.getStamina());
 
+	if (getCameraState() == 1 )
+	{
+		CAMERA_SPEED = 5.f;
+	}
 	if((MouseX - OldMousePosX) < 400)
 	{
 		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(3*CAMERA_SPEED * dt);
+		float yaw = (float)(8*CAMERA_SPEED * dt);
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;
@@ -137,7 +143,7 @@ void Camera3::Update(double dt)
 		target = view + position;
 	}
 
-	if((MouseX - OldMousePosX) < 398)
+	else if((MouseX - OldMousePosX) < 398)
 	{
 		Vector3 view = (target - position).Normalized();
 		float yaw = (float)(24 * CAMERA_SPEED * dt);
@@ -150,7 +156,7 @@ void Camera3::Update(double dt)
 	if((MouseX - OldMousePosX) > 400)
 	{
 		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(3*-CAMERA_SPEED * dt);
+		float yaw = (float)(8*-CAMERA_SPEED * dt);
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;
@@ -158,7 +164,7 @@ void Camera3::Update(double dt)
 		target = view + position;
 	}
 
-	if((MouseX - OldMousePosX) > 402)
+	else if((MouseX - OldMousePosX) > 402)
 	{
 		Vector3 view = (target - position).Normalized();
 		float yaw = (float)(24 * -CAMERA_SPEED * dt);
@@ -168,58 +174,78 @@ void Camera3::Update(double dt)
 		up = rotation * up;
 		target = view + position;
 	}
-	if((MouseY - OldMousePosY) < 299.5)
+
+	if (CameraLock < 90)
 	{
-		float pitch = (float)(3*CAMERA_SPEED * dt);
-		Vector3 view = (target - position).Normalized();
-		Vector3 right = view.Cross(up);
-		right.y = 0;
-		right.Normalize();
-		up = right.Cross(view).Normalized();
-		Mtx44 rotation;
-		rotation.SetToRotation(pitch, right.x, right.y, right.z);
-		view = rotation * view;
-		target = view + position;
+		if (getCameraState() == 0 )
+		{
+			if((MouseY - OldMousePosY) < 299.5)
+			{
+				float pitch = (float)(4*CAMERA_SPEED * dt);
+				Vector3 view = (target - position).Normalized();
+				Vector3 right = view.Cross(up);
+				right.y = 0;
+				right.Normalize();
+				up = right.Cross(view).Normalized();
+				Mtx44 rotation;
+				rotation.SetToRotation(pitch, right.x, right.y, right.z);
+				view = rotation * view;
+				target = view + position;
+				CameraLock++;
+			}
+			else if((MouseY - OldMousePosY) < 297)
+			{
+				float pitch = (float)(12 *CAMERA_SPEED * dt);
+				Vector3 view = (target - position).Normalized();
+				Vector3 right = view.Cross(up);
+				right.y = 0;
+				right.Normalize();
+				up = right.Cross(view).Normalized();
+				Mtx44 rotation;
+				rotation.SetToRotation(pitch, right.x, right.y, right.z);
+				view = rotation * view;
+				target = view + position;
+				CameraLock++;
+			}
+		}
 	}
-	if((MouseY - OldMousePosY) < 297)
+	if (CameraLock > -90)
 	{
-		float pitch = (float)(12 *CAMERA_SPEED * dt);
-		Vector3 view = (target - position).Normalized();
-		Vector3 right = view.Cross(up);
-		right.y = 0;
-		right.Normalize();
-		up = right.Cross(view).Normalized();
-		Mtx44 rotation;
-		rotation.SetToRotation(pitch, right.x, right.y, right.z);
-		view = rotation * view;
-		target = view + position;
+		if((MouseY - OldMousePosY) > 300)
+		{
+			float pitch = (float)(4*-CAMERA_SPEED * dt);
+			Vector3 view = (target - position).Normalized();
+			Vector3 right = view.Cross(up);
+			right.y = 0;
+			right.Normalize();
+			up = right.Cross(view).Normalized();
+			Mtx44 rotation;
+			rotation.SetToRotation(pitch, right.x, right.y, right.z);
+			view = rotation * view;
+			target = view + position;
+			CameraLock--;
+		}
+		else if((MouseY - OldMousePosY) > 302)
+		{
+			float pitch = (float)(12 * -CAMERA_SPEED * dt);
+			Vector3 view = (target - position).Normalized();
+			Vector3 right = view.Cross(up);
+			right.y = 0;
+			right.Normalize();
+			up = right.Cross(view).Normalized();
+			Mtx44 rotation;
+			rotation.SetToRotation(pitch, right.x, right.y, right.z);
+			view = rotation * view;
+			target = view + position;
+			CameraLock--;
+		}
+
 	}
-	if((MouseY - OldMousePosY) > 300)
-	{
-		float pitch = (float)(3*-CAMERA_SPEED * dt);
-		Vector3 view = (target - position).Normalized();
-		Vector3 right = view.Cross(up);
-		right.y = 0;
-		right.Normalize();
-		up = right.Cross(view).Normalized();
-		Mtx44 rotation;
-		rotation.SetToRotation(pitch, right.x, right.y, right.z);
-		view = rotation * view;
-		target = view + position;
-	}
-	if((MouseY - OldMousePosY) > 302)
-	{
-		float pitch = (float)(12 * -CAMERA_SPEED * dt);
-		Vector3 view = (target - position).Normalized();
-		Vector3 right = view.Cross(up);
-		right.y = 0;
-		right.Normalize();
-		up = right.Cross(view).Normalized();
-		Mtx44 rotation;
-		rotation.SetToRotation(pitch, right.x, right.y, right.z);
-		view = rotation * view;
-		target = view + position;
-	}
+	
+
+
+
+
 	if(Application::IsKeyPressed('A') && Limit(position,target, 450, CAMERA_SPEED))
 	{
 		Vector3 view = (target - position).Normalized();
@@ -271,4 +297,14 @@ void Camera3::Reset()
 	position = defaultPosition;
 	target = defaultTarget;
 	up = defaultUp;
+}
+
+void Camera3::setCameraState(int state)
+{
+	cameraState = state;
+}
+
+int Camera3::getCameraState(void)
+{
+	return cameraState;
 }

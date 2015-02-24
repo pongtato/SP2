@@ -459,7 +459,6 @@ void SP2::Init()
 
 	EntranceDoorSlide = data.GetRenderPos(1)->getTranslationX();
 	ExitDoorSlide = data.GetRenderPos(2)->getTranslationX();
-
 	npc.setName(character.GetRenderPos(0)->getName());
 	npc.setPosX(character.GetRenderPos(0)->getTranslationX());
 	npc.setPosZ(character.GetRenderPos(0)->getTranslationZ());
@@ -480,7 +479,6 @@ bool Lightsssss = false;
 void SP2::Update(double dt)
 {
 	float LSPEED = 10.f;
-
 	if(Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
 	if(Application::IsKeyPressed('2')) //disable back face culling
@@ -489,23 +487,81 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if(Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+	if(Application::IsKeyPressed('5'))
+	{
+		Vector3 getOrigin;
+		getOrigin.x = data.GetRenderPos(0)->getTranslationX();
+		getOrigin.y = data.GetRenderPos(0)->getTranslationY();
+		getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
+		camera.setCameraState(1);
+		float tempX = data.GetRenderPos(10)->getTranslationX();
+		float tempY = data.GetRenderPos(10)->getTranslationY();
+		float tempZ = data.GetRenderPos(10)->getTranslationZ();
+		camera.target.x = 0;
+		camera.target.y = 1;
+		camera.target.z = 0;
+		camera.up.y = 0.98;
+		camera.up.x = 0.11;
+		camera.up.z = -0.07;
+		camera.position.y = getOrigin.y + tempY;
+		camera.position.x = getOrigin.x - tempX + 1;
+		camera.position.z = getOrigin.z - tempZ - 1;
+	}
+
+	if(Application::IsKeyPressed('6'))
+	{
+		Vector3 getOrigin;
+		getOrigin.x = data.GetRenderPos(0)->getTranslationX();
+		getOrigin.y = data.GetRenderPos(0)->getTranslationY();
+		getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
+		camera.setCameraState(1);
+		float tempX = data.GetRenderPos(9)->getTranslationX();
+		float tempY = data.GetRenderPos(9)->getTranslationY();
+		float tempZ = data.GetRenderPos(9)->getTranslationZ();
+		camera.target.x = 0;
+		camera.target.y = 0;
+		camera.target.z = 0;
+		camera.up.y = 0.98;
+		camera.up.x = 0.11;
+		camera.up.z = 0.07;
+		
+		camera.position.y = getOrigin.y + tempY;
+		camera.position.x = getOrigin.x - tempX +1;
+		camera.position.z = getOrigin.z - tempZ +1;
+	}
+	if(Application::IsKeyPressed('7'))
+	{
+		camera.position = cameraDupe.position;
+		camera.target = cameraDupe.target;
+		camera.up = cameraDupe.up;
+		camera.setCameraState(0);
+	}
 
 	CheckItem();
 	DoorSlide();
+	NPCwalk();
+
+	if (camera.getCameraState() == 0)
+	{
 	CharacterCrouch();
 	UIupdates(dt);
 	BoundsCheck();
+	SetPrevPos();
+	}
 	camera.Update(dt);
 
 
 }
 
-void SP2::UIupdates(double dt)
+void SP2::NPCwalk()
 {
 	npc.TestAIPath();
 	shopper.ShopPathing(0);
 	patroler.ShopPathing(1);
+}
 
+void SP2::UIupdates(double dt)
+{
 	std::stringstream dd;
 	dd << camera.position.x;
 	XPos = dd.str();
@@ -534,16 +590,23 @@ void SP2::UIupdates(double dt)
 
 void SP2::CharacterCrouch()
 {
-	if(Application::IsKeyPressed(VK_CONTROL) && camera.position.y != 4)
-	{
-		camera.position.y -= 0.5;
-		camera.target.y -= 0.5;
-	}
-	else if (Application::IsKeyReleased(VK_CONTROL) && camera.position.y != 6)
-	{
-		camera.position.y = 6;
-		camera.target.y = 6;
-	}
+		if(Application::IsKeyPressed(VK_CONTROL) && camera.position.y != 4)
+		{
+			camera.position.y -= 0.5;
+			camera.target.y -= 0.5;
+		}
+		else if (Application::IsKeyReleased(VK_CONTROL) && camera.position.y != 6 )
+		{
+			camera.position.y = 6;
+			camera.target.y = 6;
+		}
+}
+
+void SP2::SetPrevPos()
+{
+	cameraDupe.position = camera.position;
+	cameraDupe.target = camera.target;
+	cameraDupe.up = camera.up;
 }
 
 void SP2::BoundsCheck()
@@ -556,65 +619,80 @@ void SP2::BoundsCheck()
 	//leftfence
 	if( camera.position.x <= data.GetRenderPos(7)->getTranslationX()-100)
 	{
-		camera.position.x += 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
 	}
 	//right fence
 	if( camera.position.x >= data.GetRenderPos(7)->getTranslationX()+90)
 	{
-		camera.position.x -= 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
 	}
 	if( camera.position.z <= data.GetRenderPos(7)->getTranslationZ()-205)
 	{
-		camera.position.z += 1;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
 	if( camera.position.z >= data.GetRenderPos(7)->getTranslationZ()+180)
 	{
-		camera.position.z -= 1;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
 	
-	//mart outer bound check
-	//left wall
-	if( camera.position.x >= tempMart.x - 80 && camera.position.x <= tempMart.x - 77 && camera.position.z <= tempMart.z + 58 && camera.position.z >= tempMart.z - 54)
+
+
+	////mart outer bound check
+	////left wall
+	if( camera.position.x >= tempMart.x - 78 && camera.position.x <= tempMart.x - 71 && camera.position.z <= tempMart.z + 54 && camera.position.z >= tempMart.z - 54)
 	{
-		camera.position.x -= 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
-	//right wall
-	if( camera.position.x >= tempMart.x + 75 && camera.position.x <= tempMart.x + 78 && camera.position.z <= tempMart.z + 53 && camera.position.z >= tempMart.z - 54)
+	////Back Wall Left
+	if( camera.position.x >= tempMart.x -78 && camera.position.x <= tempMart.x - 14 && camera.position.z <= tempMart.z + -45  && camera.position.z >= tempMart.z - 54)
 	{
-		camera.position.x += 1;
-	}
-	//Top wall
-	if( camera.position.x <= tempMart.x + 75 && camera.position.x >= tempMart.x - 77 && camera.position.z <= tempMart.z - 52 && camera.position.z >= tempMart.z - 54)
-	{
-		camera.position.z -= 1;
-	}
-	//Btm wall(entrance and exit side)
-	if( ((camera.position.x >= tempMart.x - 80 && camera.position.x <= tempMart.x -70) || (camera.position.x >= tempMart.x - 60 && camera.position.x <= tempMart.x +61) || (camera.position.x >= tempMart.x +72 && camera.position.x <= tempMart.x + 75)) && (camera.position.z <= tempMart.z + 54 && camera.position.z >= tempMart.z + 53))
-	{
-		camera.position.z += 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
 
-	//mart inner bound check
-	//left wall
-	if( camera.position.x <= tempMart.x - 70 && camera.position.x >= tempMart.x - 71 && camera.position.z <= tempMart.z + 58 && camera.position.z >= tempMart.z - 54)
+	////Back Wall Right
+	if( camera.position.x >= tempMart.x + 14 && camera.position.x <= tempMart.x + 78 && camera.position.z <= tempMart.z + -45  && camera.position.z >= tempMart.z - 54)
 	{
-		camera.position.x += 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
-	//
-	//right wall
-	if( camera.position.x <= tempMart.x + 69 && camera.position.x >= tempMart.x + 68 && camera.position.z <= tempMart.z + 53 && camera.position.z >= tempMart.z - 54)
+
+	////Right Wall
+	if( camera.position.x >= tempMart.x + 71 && camera.position.x <= tempMart.x + 78 && camera.position.z <= tempMart.z + 54  && camera.position.z >= tempMart.z - 54)
 	{
-		camera.position.x -= 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
-	//Top wall(with the fridges done seperately)
-	if( camera.position.x <= tempMart.x + 75 && camera.position.x >= tempMart.x - 77 && camera.position.z <= tempMart.z - 22 && camera.position.z >= tempMart.z - 23)
+
+	////Right Wall
+	if( camera.position.x >= tempMart.x - 62 && camera.position.x <= tempMart.x + 62 && camera.position.z <= tempMart.z + 54  && camera.position.z >= tempMart.z + 46)
 	{
-		camera.position.z += 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
-	//Btm wall(entrance and exit side)
-	if( (camera.position.x >= tempMart.x - 60 && camera.position.x <= tempMart.x +61) && (camera.position.z <= tempMart.z + 45 && camera.position.z >= tempMart.z + 44))
+
+	////Middle Wall
+	if( camera.position.x >= tempMart.x - 62 && camera.position.x <= tempMart.x + 62 && camera.position.z <= tempMart.z - 22  && camera.position.z >= tempMart.z  - 30)
 	{
-		camera.position.z -= 1;
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
 	}
 }
 
@@ -739,7 +817,8 @@ void SP2::Render()
 	RenderPlayer();
 	RenderSkybox();
 	RenderFNB();
-	RenderScreenUI();
+	if ( camera.getCameraState() == 0 )
+		RenderScreenUI();
 }
 
 void SP2::RenderScreenUI()

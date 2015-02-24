@@ -218,6 +218,7 @@ private:
 
 	//Camera2 camera;
 	Camera3 camera;
+	Camera3 cameraDupe;
 
 	MS modelStack, viewStack, projectionStack;
 
@@ -233,6 +234,7 @@ private:
 	void RenderPlayer();
 	void RenderScreenUI();
 
+	void SetPrevPos(void);
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
@@ -242,6 +244,7 @@ private:
 	void DoorSlide();
 	void BoundsCheck();
 	void UIupdates(double dt);
+	void NPCwalk();
 };
 
 #endif

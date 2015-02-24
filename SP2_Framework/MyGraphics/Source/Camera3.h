@@ -13,6 +13,7 @@ class Camera3 : public Camera
 {
 private:
 	int staminaDupe;
+	int cameraState;
 public:
 	//Vector3 position;
 	//Vector3 target;
@@ -37,6 +38,10 @@ public:
 	virtual void Reset();
 	void setStaminaDupe(int stam);
 	int getStaminaDupe(void);
+	void setCameraState(int State);
+	int getCameraState(void);
+	int CameraLock;
+
 	Application test;
 };
 
