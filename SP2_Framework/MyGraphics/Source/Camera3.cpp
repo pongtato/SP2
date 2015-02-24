@@ -68,6 +68,42 @@ bool Camera3::Limit( Vector3& position,Vector3& target, int Border, float camSpe
 	}
 }
 
+void Camera3::StaffDoorsensor(Vector3& pos, float camSpeed)
+{
+	camSpeed *= 0.05;
+	//Right door
+	if(position.x <= 62 && position.x >= 55 && position.z <= -30 &&  position.z >= -35)
+	{
+		RightStaffDoor = true;
+	}
+	else
+	{
+		RightStaffDoor = false;
+	}
+	//Left door
+	if(position.x >=  -74 && position.x <= -65 && position.z <= -30 &&  position.z >= -35)
+	{
+		LeftStaffDoor = true;
+	}
+	else
+	{
+		LeftStaffDoor = false;
+	}
+}
+
+void Camera3::Shuttersensor(Vector3& pos, float camSpeed)
+{
+	camSpeed *= 0.05;
+	if(position.x <= 10 && position.x >= -20 && position.z <= -60 &&  position.z >= -70)
+	{
+		ShutterDoor = true;
+	}
+	else
+	{
+		ShutterDoor = false;
+	}
+}
+
 void Camera3::Doorsensor(Vector3& pos, float camSpeed)
 {
 	camSpeed *= 0.05;
@@ -290,6 +326,8 @@ void Camera3::Update(double dt)
 	}
 
 	Doorsensor(position,CAMERA_SPEED);
+	Shuttersensor(position, CAMERA_SPEED);
+	StaffDoorsensor(position, CAMERA_SPEED);
 }
 
 void Camera3::Reset()

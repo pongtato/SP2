@@ -215,6 +215,9 @@ private:
 
 	float EntranceDoorSlide;
 	float ExitDoorSlide;
+	float ShutterDoorOpen;
+	float RightStaffDoorSlide;
+	float LeftStaffDoorSlide;
 
 	//Camera2 camera;
 	Camera3 camera;
@@ -242,6 +245,7 @@ private:
 	void CheckItem();
 	void CharacterCrouch();
 	void DoorSlide();
+	void ShutterOpen();
 	void BoundsCheck();
 	void UIupdates(double dt);
 	void NPCwalk();

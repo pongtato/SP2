@@ -459,6 +459,10 @@ void SP2::Init()
 
 	EntranceDoorSlide = data.GetRenderPos(1)->getTranslationX();
 	ExitDoorSlide = data.GetRenderPos(2)->getTranslationX();
+	ShutterDoorOpen = data.GetRenderPos(8)->getTranslationY();
+	LeftStaffDoorSlide = data.GetRenderPos(4)->getTranslationX();
+	RightStaffDoorSlide = data.GetRenderPos(5)->getTranslationX();
+
 	npc.setName(character.GetRenderPos(0)->getName());
 	npc.setPosX(character.GetRenderPos(0)->getTranslationX());
 	npc.setPosZ(character.GetRenderPos(0)->getTranslationZ());
@@ -539,6 +543,7 @@ void SP2::Update(double dt)
 
 	CheckItem();
 	DoorSlide();
+	ShutterOpen();
 	NPCwalk();
 
 	if (camera.getCameraState() == 0)
@@ -696,8 +701,24 @@ void SP2::BoundsCheck()
 	}
 }
 
+void SP2::ShutterOpen()
+{
+	if (camera.ShutterDoor == true && ShutterDoorOpen < 18)
+	{
+		ShutterDoorOpen += 0.4;
+	}
+	else if (camera.ShutterDoor == false)
+	{
+		if(ShutterDoorOpen > 8)
+		{
+			ShutterDoorOpen -= 0.4;
+		}
+	}
+}
+
 void SP2::DoorSlide()
 {
+	//Main Mart Doors
 		if ( camera.EntranceDoor == true)
 	{
 		if ( EntranceDoorSlide >= 53)
@@ -726,6 +747,30 @@ void SP2::DoorSlide()
 		if ( ExitDoorSlide >= -66.4)
 		{
 				ExitDoorSlide-= 0.4;
+		}
+	}
+
+	//Staff Doors
+	if ( camera.RightStaffDoor == true && RightStaffDoorSlide < -50)
+	{
+		RightStaffDoorSlide += 0.4;
+	}
+	else if ( camera.RightStaffDoor == false)
+	{
+		if ( RightStaffDoorSlide > -66.4)
+		{
+				RightStaffDoorSlide -= 0.4;
+		}
+	}
+	if ( camera.LeftStaffDoor == true && LeftStaffDoorSlide >50)
+	{
+		LeftStaffDoorSlide -= 0.4;
+	}
+	else if ( camera.LeftStaffDoor == false)
+	{
+		if ( LeftStaffDoorSlide < 66.4)
+		{
+				LeftStaffDoorSlide += 0.4;
 		}
 	}
 }
@@ -857,6 +902,89 @@ void SP2::RenderScreenUI()
 			else if ( player.getInventory(i)->getItemName() == "Pepsi")
 			{
 				RenderUI(meshList[GEO_MODEL_PEPSI], Color(0, 1, 0), 5, 5, 5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "MtDew")
+			{
+				RenderUI(meshList[GEO_MODEL_MTDEW], Color(0, 1, 0), 5, 5, 5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Pizza")
+			{
+				RenderUI(meshList[GEO_MODEL_PIZZA], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "IceCream")
+			{
+				RenderUI(meshList[GEO_MODEL_ICECREAM], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5), 2.5);
+			}
+			else if ( player.getInventory(i)->getItemName() == "McNCheese")
+			{
+				RenderUI(meshList[GEO_MODEL_MCNCHEESE], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Toblerone")
+			{
+				RenderUI(meshList[GEO_MODEL_TOBLERONE], Color(0, 1, 0), 2.5, 4, 4,15+(i*5.5), 3.5);
+			}
+			//Fix this, flipped around
+			else if ( player.getInventory(i)->getItemName() == "Rocher")
+			{
+				RenderUI(meshList[GEO_MODEL_ROCHER], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Reditos")
+			{
+				RenderUI(meshList[GEO_MODEL_REDITOS], Color(0, 1, 0), 4, 4, 4,15+(i*5.5), 3);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Dewitos")
+			{
+				RenderUI(meshList[GEO_MODEL_DEWITOS], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 3.5);
+			}
+			//Fix This, flipped on back
+			else if ( player.getInventory(i)->getItemName() == "Lays")
+			{
+				RenderUI(meshList[GEO_MODEL_LAYSCHIPS], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Cactus")
+			{
+				RenderUI(meshList[GEO_MODEL_CACTUS], Color(0, 1, 0), 10, 10, 10,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Vegcan")
+			{
+				RenderUI(meshList[GEO_MODEL_VEGCAN], Color(0, 1, 0), 6.5, 6.5, 6.5,15+(i*5.5), 1.5);
+			}
+			else if ( player.getInventory(i)->getItemName() == "PCan")
+			{
+				RenderUI(meshList[GEO_MODEL_PUMPKINCAN], Color(0, 1, 0), 4.5, 4.5, 4.5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Cereal1")
+			{
+				RenderUI(meshList[GEO_MODEL_MOATIES], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 2);
+			}
+			//Fix this, turned to side
+			else if ( player.getInventory(i)->getItemName() == "Cereal2")
+			{
+				RenderUI(meshList[GEO_MODEL_CEREAL_2], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Cereal3")
+			{
+				RenderUI(meshList[GEO_MODEL_CHICKENSTOCK], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5),3.5);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Pistol")
+			{
+				RenderUI(meshList[GEO_MODEL_PISTOL], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 3);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Rifle")
+			{
+				RenderUI(meshList[GEO_MODEL_RIFLE], Color(0, 1, 0), 2.5, 3.5, 3.5,15+(i*5.5), 3);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Milo")
+			{
+				RenderUI(meshList[GEO_MODEL_MILO], Color(0, 1, 0), 4, 4, 4,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "SardCan")
+			{
+				RenderUI(meshList[GEO_MODEL_SARDCAN], Color(0, 1, 0), 10, 10, 10,15+(i*5.5), 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "SoupCan")
+			{
+				RenderUI(meshList[GEO_MODEL_TOMATOSOUPCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5), 4);
 			}
 		}
 	}
@@ -1062,15 +1190,17 @@ void SP2::RenderWorld()
 	RenderMesh(meshList[GEO_MODEL_FLOOR], true);
 	modelStack.PopMatrix();
 
+	//Left Staff Door
 	modelStack.PushMatrix();
-	modelStack.Translate(data.GetRenderPos(4)->getTranslationX(),data.GetRenderPos(4)->getTranslationY(),data.GetRenderPos(4)->getTranslationZ());
+	modelStack.Translate(LeftStaffDoorSlide,data.GetRenderPos(4)->getTranslationY(),data.GetRenderPos(4)->getTranslationZ());
 	modelStack.Rotate(data.GetRenderPos(4)->getRotation(),data.GetRenderPos(4)->getRX(),data.GetRenderPos(4)->getRY(),data.GetRenderPos(2)->getRZ());
 	modelStack.Scale(data.GetRenderPos(4)->getScaleX(),data.GetRenderPos(4)->getScaleY(),data.GetRenderPos(4)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_STAFFDOOR], true);
 	modelStack.PopMatrix();
 
+	//Right Staff Door
 	modelStack.PushMatrix();
-	modelStack.Translate(data.GetRenderPos(5)->getTranslationX(),data.GetRenderPos(5)->getTranslationY(),data.GetRenderPos(5)->getTranslationZ());
+	modelStack.Translate(RightStaffDoorSlide,data.GetRenderPos(5)->getTranslationY(),data.GetRenderPos(5)->getTranslationZ());
 	modelStack.Rotate(data.GetRenderPos(5)->getRotation(),data.GetRenderPos(5)->getRX(),data.GetRenderPos(5)->getRY(),data.GetRenderPos(2)->getRZ());
 	modelStack.Scale(data.GetRenderPos(5)->getScaleX(),data.GetRenderPos(5)->getScaleY(),data.GetRenderPos(5)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_STAFFDOOR], true);
@@ -1091,7 +1221,7 @@ void SP2::RenderWorld()
 	modelStack.PopMatrix();
 
 			modelStack.PushMatrix();
-	modelStack.Translate(data.GetRenderPos(8)->getTranslationX(),data.GetRenderPos(8)->getTranslationY(),data.GetRenderPos(8)->getTranslationZ());
+	modelStack.Translate(data.GetRenderPos(8)->getTranslationX(),ShutterDoorOpen,data.GetRenderPos(8)->getTranslationZ());
 	modelStack.Rotate(data.GetRenderPos(8)->getRotation(),data.GetRenderPos(8)->getRX(),data.GetRenderPos(8)->getRY(),data.GetRenderPos(2)->getRZ());
 	modelStack.Scale(data.GetRenderPos(8)->getScaleX(),data.GetRenderPos(8)->getScaleY(),data.GetRenderPos(8)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_SHUTTER], true);
