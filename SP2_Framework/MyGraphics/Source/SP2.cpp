@@ -368,6 +368,7 @@ void SP2::Update(double dt)
 	DoorSlide();
 	CharacterCrouch();
 	UIupdates(dt);
+	BoundsCheck();
 	camera.Update(dt);
 
 
@@ -416,6 +417,78 @@ void SP2::CharacterCrouch()
 	{
 		camera.position.y = 6;
 		camera.target.y = 6;
+	}
+}
+
+void SP2::BoundsCheck()
+{
+	Vector3 tempMart;
+	tempMart.x = data.GetRenderPos(0)->getTranslationX();
+	tempMart.z = data.GetRenderPos(0)->getTranslationZ();
+
+	//fence check
+	//leftfence
+	if( camera.position.x <= data.GetRenderPos(7)->getTranslationX()-100)
+	{
+		camera.position.x += 1;
+	}
+	//right fence
+	if( camera.position.x >= data.GetRenderPos(7)->getTranslationX()+90)
+	{
+		camera.position.x -= 1;
+	}
+	if( camera.position.z <= data.GetRenderPos(7)->getTranslationZ()-205)
+	{
+		camera.position.z += 1;
+	}
+	if( camera.position.z >= data.GetRenderPos(7)->getTranslationZ()+180)
+	{
+		camera.position.z -= 1;
+	}
+	
+	//mart outer bound check
+	//left wall
+	if( camera.position.x >= tempMart.x - 80 && camera.position.x <= tempMart.x - 77 && camera.position.z <= tempMart.z + 58 && camera.position.z >= tempMart.z - 54)
+	{
+		camera.position.x -= 1;
+	}
+	//right wall
+	if( camera.position.x >= tempMart.x + 75 && camera.position.x <= tempMart.x + 78 && camera.position.z <= tempMart.z + 53 && camera.position.z >= tempMart.z - 54)
+	{
+		camera.position.x += 1;
+	}
+	//Top wall
+	if( camera.position.x <= tempMart.x + 75 && camera.position.x >= tempMart.x - 77 && camera.position.z <= tempMart.z - 52 && camera.position.z >= tempMart.z - 54)
+	{
+		camera.position.z -= 1;
+	}
+	//Btm wall(entrance and exit side)
+	if( ((camera.position.x >= tempMart.x - 80 && camera.position.x <= tempMart.x -70) || (camera.position.x >= tempMart.x - 60 && camera.position.x <= tempMart.x +61) || (camera.position.x >= tempMart.x +72 && camera.position.x <= tempMart.x + 75)) && (camera.position.z <= tempMart.z + 54 && camera.position.z >= tempMart.z + 53))
+	{
+		camera.position.z += 1;
+	}
+
+	//mart inner bound check
+	//left wall
+	if( camera.position.x <= tempMart.x - 70 && camera.position.x >= tempMart.x - 71 && camera.position.z <= tempMart.z + 58 && camera.position.z >= tempMart.z - 54)
+	{
+		camera.position.x += 1;
+	}
+	//
+	//right wall
+	if( camera.position.x <= tempMart.x + 69 && camera.position.x >= tempMart.x + 68 && camera.position.z <= tempMart.z + 53 && camera.position.z >= tempMart.z - 54)
+	{
+		camera.position.x -= 1;
+	}
+	//Top wall(with the fridges done seperately)
+	if( camera.position.x <= tempMart.x + 75 && camera.position.x >= tempMart.x - 77 && camera.position.z <= tempMart.z - 22 && camera.position.z >= tempMart.z - 23)
+	{
+		camera.position.z += 1;
+	}
+	//Btm wall(entrance and exit side)
+	if( (camera.position.x >= tempMart.x - 60 && camera.position.x <= tempMart.x +61) && (camera.position.z <= tempMart.z + 45 && camera.position.z >= tempMart.z + 44))
+	{
+		camera.position.z -= 1;
 	}
 }
 

@@ -174,6 +174,7 @@ private:
 	void CheckItem();
 	void CharacterCrouch();
 	void DoorSlide();
+	void BoundsCheck();
 	void UIupdates(double dt);
 };
 
