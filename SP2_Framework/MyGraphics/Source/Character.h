@@ -20,13 +20,14 @@ public:
 	CCharacter(void);
 	~CCharacter(void);
 
-	void setMoney(int cash);
+	void setMoney(double cash);
 	void setHealth(int hp);
 	void setStamina(int stam);
 	void setBullets(int ammo);
 	void setDetection(float detect);
 	void setInventory(string name, double price);
 	void dropItem(string itemname);
+	void sellItems(int n);
 	void setInventoryCap(int size);
 
 	double getMoney(void);
@@ -37,5 +38,6 @@ public:
 	CItem* getInventory(int n);
 	int returnInvenSize();
 	int getInventoryCap(void);
+	bool unpaiditems;
 };
 

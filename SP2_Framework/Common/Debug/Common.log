@@ -1,8 +1,14 @@
+<<<<<<< 3fe9c09c0b07680461b53987433d432886fc292f
 ﻿Build started 24/2/2015 4:34:28 PM.
      1>Project "D:\SP2\SP2_Framework\Common\Common.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Debug\Common.lastbuildstate".
        InitializeBuildStatus:
+=======
+﻿Build started 24/2/2015 5:51:26 PM.
+     1>Project "C:\Users\Aloysius Chun\Desktop\SP2\SP2_Framework\Common\Common.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+>>>>>>> 1e369156cfa75741a796610b6f51a6d81f312594
          Creating "Debug\Common.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector3.cpp
@@ -24,4 +30,8 @@
 
 Build succeeded.
 
+<<<<<<< 3fe9c09c0b07680461b53987433d432886fc292f
 Time Elapsed 00:00:02.02
+=======
+Time Elapsed 00:00:00.03
+>>>>>>> 1e369156cfa75741a796610b6f51a6d81f312594

@@ -15,6 +15,7 @@
 
 SP2::SP2()
 {
+	Lightswitch = 1;
 }
 
 SP2::~SP2()
@@ -472,6 +473,7 @@ void SP2::Init()
 	patroler.setName(character.GetRenderPos(2)->getName());
 	patroler.setPosX(character.GetRenderPos(2)->getTranslationX());
 	patroler.setPosZ(character.GetRenderPos(2)->getTranslationZ());
+	police = false;
 }
 
 
@@ -552,6 +554,9 @@ void SP2::Update(double dt)
 	UIupdates(dt);
 	BoundsCheck();
 	SetPrevPos();
+	CheckOut();
+	UnpaidItems();
+	Stealing();
 	}
 	camera.Update(dt);
 
@@ -563,6 +568,38 @@ void SP2::NPCwalk()
 	npc.TestAIPath();
 	shopper.ShopPathing(0);
 	patroler.ShopPathing(1);
+}
+
+void SP2::UnpaidItems()
+{
+	if (player.returnInvenSize() == 0)
+	{
+		player.unpaiditems = false;
+	}
+	else
+	{
+		player.unpaiditems = true;
+	}
+	if (player.unpaiditems == true)
+	{
+		if ( camera.position.z <= -40 || camera.position.z >= 40)
+		{
+			police = true;
+		}
+	}
+}
+
+void SP2::Stealing()
+{
+	if (police == true)
+	{
+		cout << "stealing" << endl;
+		Lightswitch = 0;
+		lights[1].color.Set(1,Lightswitch,Lightswitch);
+		lights[2].color.Set(1,Lightswitch,Lightswitch);
+		lights[3].color.Set(1,Lightswitch,Lightswitch);
+		lights[4].color.Set(1,Lightswitch,Lightswitch);
+	}
 }
 
 void SP2::UIupdates(double dt)
@@ -591,6 +628,35 @@ void SP2::UIupdates(double dt)
 	std::stringstream jj;
 	jj << player.getStamina();
 	STAM = jj.str();
+
+	std::stringstream kk;
+	kk << "$" << player.getMoney();
+	MONEY = kk.str();
+
+	for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+	{
+		if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.2 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.2 
+			&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-1 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+1 
+			&& camera.target.z >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-1 && camera.target.z <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+1)
+		{
+			ItemName = FNB.GetRenderPosItem(i)->getItemName();
+			break;
+		}
+		else
+		{
+			ItemName = "";
+		}
+	}
+
+	for ( int i = 0; i < 4;  ++i)
+	{
+		if ( camera.target.x >= cashier.GetRenderPos(i)->getTranslationX()-4 && camera.target.x <= cashier.GetRenderPos(i)->getTranslationX()+4 
+			&& camera.target.y >= cashier.GetRenderPos(i)->getTranslationY()-10 && camera.target.y <= cashier.GetRenderPos(i)->getTranslationY()+10 
+			&& camera.target.z >= cashier.GetRenderPos(i)->getTranslationZ()-3 && camera.target.z <= cashier.GetRenderPos(i)->getTranslationZ()+3)
+		{
+			ItemName = "cashier";
+		}
+	}
 }
 
 void SP2::CharacterCrouch()
@@ -604,6 +670,7 @@ void SP2::CharacterCrouch()
 		{
 			camera.position.y = 6;
 			camera.target.y = 6;
+			camera.CameraLock = 0;
 		}
 }
 
@@ -906,6 +973,8 @@ void SP2::RenderScreenUI()
 
 	RenderTextOnScreen(meshList[GEO_TEXT], XPos , Color(0, 1, 0), 3, 0, 18);
 	RenderTextOnScreen(meshList[GEO_TEXT], ZPos , Color(0, 1, 0), 3, 0, 17);
+	RenderTextOnScreen(meshList[GEO_TEXT], MONEY , Color(0, 1, 0), 3, 0, 14);
+	RenderTextOnScreen(meshList[GEO_TEXT], ItemName , Color(0, 1, 0), 3, 13, 11);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
 	RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 34.25);
@@ -1077,6 +1146,27 @@ void SP2::CheckItem()
 	}
 }
 
+void SP2::CheckOut()
+{ 
+	if(Application::IsKeyPressed('E'))
+	{
+		for ( int i = 0; i < 4;  ++i)
+		{
+			if ( camera.target.x >= cashier.GetRenderPos(i)->getTranslationX()-4 && camera.target.x <= cashier.GetRenderPos(i)->getTranslationX()+4 
+			&& camera.target.y >= cashier.GetRenderPos(i)->getTranslationY()-10 && camera.target.y <= cashier.GetRenderPos(i)->getTranslationY()+10 
+			&& camera.target.z >= cashier.GetRenderPos(i)->getTranslationZ()-3 && camera.target.z <= cashier.GetRenderPos(i)->getTranslationZ()+3)
+			{
+				for ( int i = 0; i < player.returnInvenSize(); ++ i)
+				{
+					cout << player.getInventory(i)->getItemPrice() << endl;
+					player.setMoney(player.getInventory(i)->getItemPrice());
+					player.sellItems(i);
+				}
+			}
+		}
+	}
+}
+
 void SP2::RenderSkybox()
 {
 	modelStack.PushMatrix();
@@ -1140,9 +1230,9 @@ void SP2::RenderCashier()
 	for(int i = 0; i < 4; ++i)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*16));
-		modelStack.Rotate(cashier.GetRenderPos(0)->getRotation(),cashier.GetRenderPos(0)->getRX(),cashier.GetRenderPos(0)->getRY(),cashier.GetRenderPos(0)->getRZ());
-		modelStack.Scale(cashier.GetRenderPos(0)->getScaleX(),cashier.GetRenderPos(0)->getScaleY(),cashier.GetRenderPos(0)->getScaleZ());
+		modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),cashier.GetRenderPos(i)->getTranslationY(),cashier.GetRenderPos(i)->getTranslationZ());
+		modelStack.Rotate(cashier.GetRenderPos(i)->getRotation(),cashier.GetRenderPos(i)->getRX(),cashier.GetRenderPos(i)->getRY(),cashier.GetRenderPos(i)->getRZ());
+		modelStack.Scale(cashier.GetRenderPos(i)->getScaleX(),cashier.GetRenderPos(i)->getScaleY(),cashier.GetRenderPos(i)->getScaleZ());
 		RenderMesh(meshList[GEO_MODEL_CASHIER], true);
 		modelStack.PopMatrix();
 	}

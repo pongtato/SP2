@@ -197,6 +197,9 @@ public:
 	CNPC patroler;
 	CCharacter player;
 
+	bool police;
+	int Lightswitch;
+
 private:
 	unsigned m_vertexArrayID;
 	Mesh* meshList[NUM_GEOMETRY];
@@ -212,6 +215,7 @@ private:
 	std::string HP;
 	std::string STAM;
 	std::string MONEY;
+	std::string ItemName;
 
 	float EntranceDoorSlide;
 	float ExitDoorSlide;
@@ -248,7 +252,10 @@ private:
 	void ShutterOpen();
 	void BoundsCheck();
 	void UIupdates(double dt);
+	void CheckOut();
 	void NPCwalk();
+	void UnpaidItems();
+	void Stealing();
 };
 
 #endif

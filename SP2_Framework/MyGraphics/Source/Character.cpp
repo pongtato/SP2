@@ -9,6 +9,7 @@ CCharacter::CCharacter(void)
 	detection = 0;
 	bullets = 0;
 	inventoryCap = 5;
+	unpaiditems = false;
 }
 
 
@@ -16,9 +17,9 @@ CCharacter::~CCharacter(void)
 {
 }
 
-void CCharacter::setMoney(int cash)
+void CCharacter::setMoney(double cash)
 {
-	money = cash;
+	money -= cash;
 }
 
 void CCharacter::setBullets(int ammo)
@@ -76,6 +77,11 @@ void  CCharacter::dropItem(string itemname)
 			}
 		}
 	}
+}
+
+void  CCharacter::sellItems(int n)
+{
+		inven_list.erase(inven_list.begin()+n);
 }
 
 CItem* CCharacter::getInventory(int n)

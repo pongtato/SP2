@@ -171,18 +171,7 @@ void Camera3::Update(double dt)
 	if((MouseX - OldMousePosX) < 400)
 	{
 		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(8*CAMERA_SPEED * dt);
-		Mtx44 rotation;
-		rotation.SetToRotation(yaw, 0, 1, 0);
-		view = rotation * view;
-		up = rotation * up;
-		target = view + position;
-	}
-
-	else if((MouseX - OldMousePosX) < 398)
-	{
-		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(24 * CAMERA_SPEED * dt);
+		float yaw = (float)(12*CAMERA_SPEED * dt);
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;
@@ -192,25 +181,13 @@ void Camera3::Update(double dt)
 	if((MouseX - OldMousePosX) > 400)
 	{
 		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(8*-CAMERA_SPEED * dt);
+		float yaw = (float)(12*-CAMERA_SPEED * dt);
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;
 		up = rotation * up;
 		target = view + position;
 	}
-
-	else if((MouseX - OldMousePosX) > 402)
-	{
-		Vector3 view = (target - position).Normalized();
-		float yaw = (float)(24 * -CAMERA_SPEED * dt);
-		Mtx44 rotation;
-		rotation.SetToRotation(yaw, 0, 1, 0);
-		view = rotation * view;
-		up = rotation * up;
-		target = view + position;
-	}
-
 	if (CameraLock < 90)
 	{
 		if (getCameraState() == 0 )
@@ -229,9 +206,15 @@ void Camera3::Update(double dt)
 				target = view + position;
 				CameraLock++;
 			}
-			else if((MouseY - OldMousePosY) < 297)
+		}
+	}
+	if (CameraLock > -90)
+	{
+		if (getCameraState() == 0 )
+		{
+			if((MouseY - OldMousePosY) > 300)
 			{
-				float pitch = (float)(12 *CAMERA_SPEED * dt);
+				float pitch = (float)(4*-CAMERA_SPEED * dt);
 				Vector3 view = (target - position).Normalized();
 				Vector3 right = view.Cross(up);
 				right.y = 0;
@@ -241,41 +224,9 @@ void Camera3::Update(double dt)
 				rotation.SetToRotation(pitch, right.x, right.y, right.z);
 				view = rotation * view;
 				target = view + position;
-				CameraLock++;
+				CameraLock--;
 			}
 		}
-	}
-	if (CameraLock > -90)
-	{
-		if((MouseY - OldMousePosY) > 300)
-		{
-			float pitch = (float)(4*-CAMERA_SPEED * dt);
-			Vector3 view = (target - position).Normalized();
-			Vector3 right = view.Cross(up);
-			right.y = 0;
-			right.Normalize();
-			up = right.Cross(view).Normalized();
-			Mtx44 rotation;
-			rotation.SetToRotation(pitch, right.x, right.y, right.z);
-			view = rotation * view;
-			target = view + position;
-			CameraLock--;
-		}
-		else if((MouseY - OldMousePosY) > 302)
-		{
-			float pitch = (float)(12 * -CAMERA_SPEED * dt);
-			Vector3 view = (target - position).Normalized();
-			Vector3 right = view.Cross(up);
-			right.y = 0;
-			right.Normalize();
-			up = right.Cross(view).Normalized();
-			Mtx44 rotation;
-			rotation.SetToRotation(pitch, right.x, right.y, right.z);
-			view = rotation * view;
-			target = view + position;
-			CameraLock--;
-		}
-
 	}
 	
 
