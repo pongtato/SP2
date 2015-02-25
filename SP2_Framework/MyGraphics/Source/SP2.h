@@ -225,6 +225,9 @@ private:
 	std::string STAM;
 	std::string MONEY;
 	std::string ItemName;
+	std::string ShopTut;
+	std::string GuardTut;
+	std::string TheifTut;
 
 	float EntranceDoorSlide;
 	float ExitDoorSlide;

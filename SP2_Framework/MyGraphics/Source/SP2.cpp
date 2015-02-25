@@ -1115,7 +1115,7 @@ void SP2::RenderScreenUI()
 			}
 			else if ( player.getInventory(i)->getItemName() == "Cactus")
 			{
-				RenderUI(meshList[GEO_MODEL_CACTUS], Color(0, 1, 0), 9.5, 9.5, 9.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_CACTUS], Color(0, 1, 0), 9.5, 8.5, 9.5,15+(i*5.5), 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Vegcan")
 			{
