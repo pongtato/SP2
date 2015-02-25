@@ -1190,6 +1190,23 @@ void SP2::CheckItem()
 			}
 		}
 	}
+	int itemcount = 0;
+	if(patroler.getTake() == true)
+	{
+		for(int i = 0; i < FNB.ReturnListSize();  ++i)
+		{
+			if ( patroler.getPosX() >= FNB.GetRenderPosItem(i)->getItemTranslationX()-3 && patroler.getPosX() <= FNB.GetRenderPosItem(i)->getItemTranslationX()+3 
+				&& patroler.getPosZ() >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-12 && patroler.getPosZ() <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+12)
+			{
+				if(FNB.GetRenderPosItem(i)->getItemAvailability() == true && itemcount < 1)
+				{
+					FNB.GetRenderPosItem(i)->setItemAvailable(0);
+					patroler.setTake(false);
+					itemcount++;
+				}
+			}
+		}
+	}
 }
 
 void SP2::CheckOut()
