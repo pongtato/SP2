@@ -616,9 +616,13 @@ void SP2::SetPrevPos()
 
 void SP2::BoundsCheck()
 {
-	Vector3 tempMart;
+	Vector3 tempMart, tempShelves, tempCashier;
 	tempMart.x = data.GetRenderPos(0)->getTranslationX();
 	tempMart.z = data.GetRenderPos(0)->getTranslationZ();
+	tempShelves.x = shelve.GetRenderPos(0)->getTranslationX();
+	tempShelves.z = shelve.GetRenderPos(0)->getTranslationZ();
+	tempCashier.x = cashier.GetRenderPos(0)->getTranslationX();
+	tempCashier.z = cashier.GetRenderPos(0)->getTranslationZ();
 
 	//fence check
 	//leftfence
@@ -644,8 +648,6 @@ void SP2::BoundsCheck()
 		camera.target.z = cameraDupe.target.z;
 	}
 	
-
-
 	////mart outer bound check
 	////left wall
 	if( camera.position.x >= tempMart.x - 78 && camera.position.x <= tempMart.x - 71 && camera.position.z <= tempMart.z + 54 && camera.position.z >= tempMart.z - 54)
@@ -699,6 +701,34 @@ void SP2::BoundsCheck()
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
 	}
+
+	//Shelves Bounds Check
+	for(int i = 0; i<3; ++i)
+	{
+		for(int j = 0; j<3; ++j)
+		{
+			if(camera.position.x >= ((tempShelves.x - 4) + (j*34)) && camera.position.x <= ((tempShelves.x + 22) + (j*34))  && camera.position.z <= (tempShelves.z +48 -(i*15)) && camera.position.z >= (tempShelves.z +43-(i*15)))
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+				camera.position.z = cameraDupe.position.z;
+				camera.target.z = cameraDupe.target.z;
+			}
+		}
+	}
+
+	//Cashier Bounds Check
+	for(int i = 0; i < 4; ++i)
+	{
+		if(camera.position.x >= tempCashier.x -1 && camera.position.x <= tempCashier.x +2 && camera.position.z <= tempCashier.z + 53 -(i*16) && camera.position.z >= tempCashier.z + 44-(i*16))
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+		}
+	}
+
 }
 
 void SP2::ShutterOpen()
@@ -1107,7 +1137,7 @@ void SP2::RenderSkybox()
 
 void SP2::RenderCashier()
 {
-		for(int i = 0; i < 4; ++i)
+	for(int i = 0; i < 4; ++i)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(cashier.GetRenderPos(0)->getTranslationX(),cashier.GetRenderPos(0)->getTranslationY(),cashier.GetRenderPos(0)->getTranslationZ()+(i*16));
