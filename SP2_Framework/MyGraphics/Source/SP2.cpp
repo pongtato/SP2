@@ -24,7 +24,6 @@ SP2::~SP2()
 
 void SP2::Init()
 {
-
 	data.ReadTextFile( "OBJ-Pos/Martpos.txt" );
 	shelve.ReadTextFile( "OBJ-Pos/Shelves.txt" );
 	cashier.ReadTextFile( "OBJ-Pos/Cashierpos.txt" );
@@ -470,6 +469,12 @@ void SP2::Init()
 	meshList[GEO_MODEL_LIGHTS] = MeshBuilder::GenerateOBJ("model1", "OBJ//Lights.obj");
 	meshList[GEO_MODEL_LIGHTS]->textureID = LoadTGA("Image//supermart.tga");
 
+	meshList[GEO_MODEL_GUARDHOUSE] = MeshBuilder::GenerateOBJ("model1", "OBJ//GuardHouse.obj");
+	meshList[GEO_MODEL_GUARDHOUSE]->textureID = LoadTGA("Image//guardhouse.tga");
+
+	meshList[GEO_MODEL_GUARDCONTROL] = MeshBuilder::GenerateOBJ("model1", "OBJ//GuardControl.obj");
+	meshList[GEO_MODEL_GUARDCONTROL]->textureID = LoadTGA("Image//guardhouse.tga");
+
 
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
@@ -493,8 +498,6 @@ void SP2::Init()
 	police = false;
 }
 
-
-
 static float ROT_LIMIT = 45.f;
 static float SCALE_LIMIT = 5.f;
 bool Lightsssss = false;
@@ -510,54 +513,60 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if(Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	if(Application::IsKeyPressed('5'))
+	if ( ItemName == "Camera")
 	{
-		Vector3 getOrigin;
-		getOrigin.x = data.GetRenderPos(0)->getTranslationX();
-		getOrigin.y = data.GetRenderPos(0)->getTranslationY();
-		getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
-		camera.setCameraState(1);
-		float tempX = data.GetRenderPos(10)->getTranslationX();
-		float tempY = data.GetRenderPos(10)->getTranslationY();
-		float tempZ = data.GetRenderPos(10)->getTranslationZ();
-		camera.target.x = 0;
-		camera.target.y = 1;
-		camera.target.z = 0;
-		camera.up.y = 0.98;
-		camera.up.x = 0.11;
-		camera.up.z = -0.07;
-		camera.position.y = getOrigin.y + tempY;
-		camera.position.x = getOrigin.x - tempX + 1;
-		camera.position.z = getOrigin.z - tempZ - 1;
-	}
+		if(Application::IsKeyPressed('5'))
+		{
+			Vector3 getOrigin;
+			getOrigin.x = data.GetRenderPos(0)->getTranslationX();
+			getOrigin.y = data.GetRenderPos(0)->getTranslationY();
+			getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
+			camera.setCameraState(1);
+			float tempX = data.GetRenderPos(10)->getTranslationX();
+			float tempY = data.GetRenderPos(10)->getTranslationY();
+			float tempZ = data.GetRenderPos(10)->getTranslationZ();
+			camera.target.x = 0;
+			camera.target.y = 1;
+			camera.target.z = 0;
+			camera.up.y = 0.98;
+			camera.up.x = 0.11;
+			camera.up.z = -0.07;
+			camera.position.y = getOrigin.y + tempY;
+			camera.position.x = getOrigin.x - tempX + 1;
+			camera.position.z = getOrigin.z - tempZ - 1;
+			camera.CameraMode = true;
+		}
 
-	if(Application::IsKeyPressed('6'))
-	{
-		Vector3 getOrigin;
-		getOrigin.x = data.GetRenderPos(0)->getTranslationX();
-		getOrigin.y = data.GetRenderPos(0)->getTranslationY();
-		getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
-		camera.setCameraState(1);
-		float tempX = data.GetRenderPos(9)->getTranslationX();
-		float tempY = data.GetRenderPos(9)->getTranslationY();
-		float tempZ = data.GetRenderPos(9)->getTranslationZ();
-		camera.target.x = 0;
-		camera.target.y = 0;
-		camera.target.z = 0;
-		camera.up.y = 0.98;
-		camera.up.x = 0.11;
-		camera.up.z = 0.07;
-		
-		camera.position.y = getOrigin.y + tempY;
-		camera.position.x = getOrigin.x - tempX +1;
-		camera.position.z = getOrigin.z - tempZ +1;
-	}
-	if(Application::IsKeyPressed('7'))
-	{
-		camera.position = cameraDupe.position;
-		camera.target = cameraDupe.target;
-		camera.up = cameraDupe.up;
-		camera.setCameraState(0);
+		if(Application::IsKeyPressed('6'))
+		{
+			Vector3 getOrigin;
+			getOrigin.x = data.GetRenderPos(0)->getTranslationX();
+			getOrigin.y = data.GetRenderPos(0)->getTranslationY();
+			getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
+			camera.setCameraState(1);
+			float tempX = data.GetRenderPos(9)->getTranslationX();
+			float tempY = data.GetRenderPos(9)->getTranslationY();
+			float tempZ = data.GetRenderPos(9)->getTranslationZ();
+			camera.target.x = 0;
+			camera.target.y = 0;
+			camera.target.z = 0;
+			camera.up.y = 0.98;
+			camera.up.x = 0.11;
+			camera.up.z = 0.07;
+
+			camera.position.y = getOrigin.y + tempY;
+			camera.position.x = getOrigin.x - tempX +1;
+			camera.position.z = getOrigin.z - tempZ +1;
+			camera.CameraMode = true;
+		}
+		if(Application::IsKeyPressed('7'))
+		{
+			camera.position = cameraDupe.position;
+			camera.target = cameraDupe.target;
+			camera.up = cameraDupe.up;
+			camera.setCameraState(0);
+			camera.CameraMode = false;
+		}
 	}
 
 	CheckItem();
@@ -687,9 +696,16 @@ void SP2::UIupdates(double dt)
 			&& camera.target.y >= cashier.GetRenderPos(i)->getTranslationY()-10 && camera.target.y <= cashier.GetRenderPos(i)->getTranslationY()+10 
 			&& camera.target.z >= cashier.GetRenderPos(i)->getTranslationZ()-3 && camera.target.z <= cashier.GetRenderPos(i)->getTranslationZ()+3)
 		{
-			ItemName = "Checkout Items";
+			ItemName = "Checkout";
 		}
 	}
+
+	if ( camera.target.x >= data.GetRenderPos(20)->getTranslationX()-2 && camera.target.x <= data.GetRenderPos(20)->getTranslationX()+13.5 
+			&& camera.target.y >= data.GetRenderPos(20)->getTranslationY()-10 && camera.target.y <= data.GetRenderPos(20)->getTranslationY()+10
+			&& camera.target.z >= data.GetRenderPos(20)->getTranslationZ()-10 && camera.target.z <= data.GetRenderPos(20)->getTranslationZ())
+		{
+			ItemName = "Camera";
+		}
 }
 
 void SP2::CharacterCrouch()
@@ -1448,6 +1464,13 @@ void SP2::RenderWorld()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(19)->getTranslationX(),data.GetRenderPos(19)->getTranslationY(),data.GetRenderPos(19)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(19)->getRotation(),data.GetRenderPos(19)->getRX(),data.GetRenderPos(19)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(19)->getScaleX(),data.GetRenderPos(19)->getScaleY(),data.GetRenderPos(19)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_GUARDHOUSE], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
 	modelStack.Translate(-5,0,-13.2);
 	modelStack.Rotate(180,0,1,0);
 	RenderCashier();
@@ -1455,6 +1478,13 @@ void SP2::RenderWorld()
 	RenderShelves();
 	RenderCharacter();
 	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(data.GetRenderPos(20)->getTranslationX(),data.GetRenderPos(20)->getTranslationY(),data.GetRenderPos(20)->getTranslationZ());
+	modelStack.Rotate(data.GetRenderPos(20)->getRotation(),data.GetRenderPos(20)->getRX(),data.GetRenderPos(20)->getRY(),data.GetRenderPos(2)->getRZ());
+	modelStack.Scale(data.GetRenderPos(20)->getScaleX(),data.GetRenderPos(10)->getScaleY(),data.GetRenderPos(20)->getScaleZ());
+	RenderMesh(meshList[GEO_MODEL_GUARDCONTROL], true);
 	modelStack.PopMatrix();
 }
 

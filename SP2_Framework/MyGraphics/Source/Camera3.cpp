@@ -6,6 +6,7 @@ Camera3::Camera3()
 {
 	cameraState = 0;
 	CameraLock = 0;
+	CameraMode = false;
 }
 
 Camera3::~Camera3()
@@ -229,53 +230,55 @@ void Camera3::Update(double dt)
 		}
 	}
 	
+	
 
 
+		if ( CameraMode == false)
+		{
 
-
-	if(Application::IsKeyPressed('A') && Limit(position,target, 450, CAMERA_SPEED))
-	{
-		Vector3 view = (target - position).Normalized();
-		view.y = 0;
-		Vector3 right = view.Cross(up);
-		right.y = 0;
-		right.Normalize();
-		position -= right * sprint *CAMERA_SPEED * dt;
-		target -= right * sprint *CAMERA_SPEED * dt;
-		moving = true;
-	}
-	if(Application::IsKeyPressed('D') && Limit(position,target, 450, CAMERA_SPEED))
-	{
-		Vector3 view = (target - position).Normalized();
-		view.y = 0;
-		Vector3 right = view.Cross(up);
-		right.y = 0;
-		right.Normalize();
-		position += right * sprint *CAMERA_SPEED * dt;
-		target += right * sprint *CAMERA_SPEED * dt;	
-		moving = true;
-	}
-	if(Application::IsKeyPressed('W') && Limit(position,target, 450, CAMERA_SPEED))
-	{
-		Vector3 view = (target - position).Normalized();
-		view.y = 0;
-		position += view * sprint *CAMERA_SPEED * dt;
-		target += view * sprint *CAMERA_SPEED * dt;
-		moving = true;
-	}
-	if(Application::IsKeyPressed('S') && Limit(position,target, 450, CAMERA_SPEED))
-	{
-		Vector3 view = (target - position).Normalized();
-		view.y = 0;
-		position -= view * sprint *CAMERA_SPEED * dt;
-		target -= view * sprint *CAMERA_SPEED * dt;
-		moving = true;
-	}
-	if(Application::IsKeyReleased('S') && Application::IsKeyReleased('W') && Application::IsKeyReleased('A') && Application::IsKeyReleased('D'))
-	{
-		moving = false;
-	}
-
+			if(Application::IsKeyPressed('A') && Limit(position,target, 450, CAMERA_SPEED))
+			{
+				Vector3 view = (target - position).Normalized();
+				view.y = 0;
+				Vector3 right = view.Cross(up);
+				right.y = 0;
+				right.Normalize();
+				position -= right * sprint *CAMERA_SPEED * dt;
+				target -= right * sprint *CAMERA_SPEED * dt;
+				moving = true;
+			}
+			if(Application::IsKeyPressed('D') && Limit(position,target, 450, CAMERA_SPEED))
+			{
+				Vector3 view = (target - position).Normalized();
+				view.y = 0;
+				Vector3 right = view.Cross(up);
+				right.y = 0;
+				right.Normalize();
+				position += right * sprint *CAMERA_SPEED * dt;
+				target += right * sprint *CAMERA_SPEED * dt;	
+				moving = true;
+			}
+			if(Application::IsKeyPressed('W') && Limit(position,target, 450, CAMERA_SPEED))
+			{
+				Vector3 view = (target - position).Normalized();
+				view.y = 0;
+				position += view * sprint *CAMERA_SPEED * dt;
+				target += view * sprint *CAMERA_SPEED * dt;
+				moving = true;
+			}
+			if(Application::IsKeyPressed('S') && Limit(position,target, 450, CAMERA_SPEED))
+			{
+				Vector3 view = (target - position).Normalized();
+				view.y = 0;
+				position -= view * sprint *CAMERA_SPEED * dt;
+				target -= view * sprint *CAMERA_SPEED * dt;
+				moving = true;
+			}
+			if(Application::IsKeyReleased('S') && Application::IsKeyReleased('W') && Application::IsKeyReleased('A') && Application::IsKeyReleased('D'))
+			{
+				moving = false;
+			}
+		}
 	Doorsensor(position,CAMERA_SPEED);
 	Shuttersensor(position, CAMERA_SPEED);
 	StaffDoorsensor(position, CAMERA_SPEED);
