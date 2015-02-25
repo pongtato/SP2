@@ -10,6 +10,9 @@ CCharacter::CCharacter(void)
 	bullets = 0;
 	inventoryCap = 5;
 	unpaiditems = false;
+	trolley = false;
+	trolleyDrop = false;
+	Align = false;
 }
 
 
@@ -96,7 +99,7 @@ int CCharacter::returnInvenSize()
 
 void CCharacter::setInventoryCap(int size)
 {
-	inventoryCap =size;
+	inventoryCap = size;
 }
 
 int CCharacter::getInventoryCap(void)

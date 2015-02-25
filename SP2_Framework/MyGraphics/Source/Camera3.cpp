@@ -7,6 +7,7 @@ Camera3::Camera3()
 	cameraState = 0;
 	CameraLock = 0;
 	CameraMode = false;
+	CamRotation = 90;
 }
 
 Camera3::~Camera3()
@@ -173,6 +174,7 @@ void Camera3::Update(double dt)
 	{
 		Vector3 view = (target - position).Normalized();
 		float yaw = (float)(12*CAMERA_SPEED * dt);
+		CamRotation += yaw;
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;
@@ -183,6 +185,7 @@ void Camera3::Update(double dt)
 	{
 		Vector3 view = (target - position).Normalized();
 		float yaw = (float)(12*-CAMERA_SPEED * dt);
+		CamRotation += yaw;
 		Mtx44 rotation;
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		view = rotation * view;

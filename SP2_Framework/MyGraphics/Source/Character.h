@@ -39,5 +39,8 @@ public:
 	int returnInvenSize();
 	int getInventoryCap(void);
 	bool unpaiditems;
+	bool trolley;
+	bool trolleyDrop;
+	bool Align;
 };
 

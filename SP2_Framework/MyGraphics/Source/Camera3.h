@@ -47,6 +47,7 @@ public:
 	void setCameraState(int State);
 	int getCameraState(void);
 	int CameraLock;
+	float CamRotation;
 
 	Application test;
 };

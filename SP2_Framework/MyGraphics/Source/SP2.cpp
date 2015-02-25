@@ -475,6 +475,10 @@ void SP2::Init()
 	meshList[GEO_MODEL_GUARDCONTROL] = MeshBuilder::GenerateOBJ("model1", "OBJ//GuardControl.obj");
 	meshList[GEO_MODEL_GUARDCONTROL]->textureID = LoadTGA("Image//guardhouse.tga");
 
+	meshList[GEO_MODEL_TROLLEY] = MeshBuilder::GenerateOBJ("model1", "OBJ//Cart.obj");
+	meshList[GEO_MODEL_TROLLEY]->textureID = LoadTGA("Image//Cart.tga");
+
+	
 	//Character
 	meshList[GEO_MODEL_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
 	meshList[GEO_MODEL_HEAD]->textureID = LoadTGA("Image//characterskin.tga");
@@ -723,6 +727,13 @@ void SP2::UIupdates(double dt)
 		{
 			ItemName = "Camera";
 		}
+
+	if ( camera.target.x >= trolley.LastX-5 && camera.target.x <= trolley.LastX+5
+		&& camera.target.y >= data.GetRenderPos(21)->getTranslationY()-2 && camera.target.y <= data.GetRenderPos(21)->getTranslationY()+5
+		&& camera.target.z >= trolley.LastZ-5 && camera.target.z <= trolley.LastZ+5 && player.trolley == false)
+		{
+			ItemName = "Trolley";
+		}
 }
 
 void SP2::CharacterCrouch()
@@ -964,6 +975,74 @@ void SP2::DoorSlide()
 	}
 }
 
+void SP2::Trolley()
+{
+	if(Application::IsKeyPressed('E'))
+	{
+		if ( camera.target.x >= trolley.LastX-5 && camera.target.x <= trolley.LastX+5
+		&& camera.target.y >= data.GetRenderPos(21)->getTranslationY()-2 && camera.target.y <= data.GetRenderPos(21)->getTranslationY()+5
+			&& camera.target.z >= trolley.LastZ-5 && camera.target.z <= trolley.LastZ+5)
+		{
+			player.trolley = true;
+			player.trolleyDrop = false;
+		}
+	}
+	if ( player.trolley == true)
+	{
+		if ( player.Align == false)
+		{
+			camera.CamRotation == 0;
+			player.Align = true;
+		}
+		player.setInventoryCap(trolley.ExpansionSize);
+		modelStack.PushMatrix();
+		modelStack.Translate(camera.position.x,data.GetRenderPos(21)->getTranslationY(),camera.position.z);
+		modelStack.Rotate(camera.CamRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+		modelStack.PushMatrix();
+		modelStack.Translate(6,0,0);
+		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
+		modelStack.PopMatrix();	
+		modelStack.PopMatrix();	
+		trolley.SetList(camera.position.x,camera.position.z,camera.CamRotation,10);
+	}
+	else if ( player.trolley == false && player.trolleyDrop == false)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(data.GetRenderPos(21)->getTranslationX(),data.GetRenderPos(21)->getTranslationY(),data.GetRenderPos(21)->getTranslationZ());
+		modelStack.Rotate(data.GetRenderPos(21)->getRotation(),data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
+		modelStack.PopMatrix();
+		trolley.SetList(data.GetRenderPos(21)->getTranslationX(),data.GetRenderPos(21)->getTranslationZ(),camera.CamRotation,10);
+	}
+
+	if(Application::IsKeyPressed('R') && player.trolley == true)
+	{
+		player.trolley = false;
+		player.trolleyDrop = true;
+	}
+
+	if ( player.trolleyDrop == true)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY(),trolley.LastZ);
+		modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+		modelStack.PushMatrix();
+		modelStack.Translate(6,0,0);
+		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
+		modelStack.PopMatrix();	
+		modelStack.PopMatrix();	
+		player.setInventoryCap(trolley.ExpansionSize/2);
+	}
+
+}
+
+void SP2::TrolleyUpdate()
+{
+}
+
 void SP2::Render()
 {
 	//bool toggleLight = false;
@@ -1051,6 +1130,7 @@ void SP2::Render()
 	RenderPlayer();
 	RenderSkybox();
 	RenderFNB();
+	Trolley();
 	if ( camera.getCameraState() == 0 )
 		RenderScreenUI();
 }
@@ -1098,100 +1178,110 @@ void SP2::RenderScreenUI()
 	//RenderUI(meshList[GEO_ALERT], Color(0, 1, 0), 15, 2.5, 15,1, 1);
 	for ( int i = 0; i < player.getInventoryCap() ; ++i)
 	{
-	RenderUI(meshList[GEO_UI], Color(0, 1, 0), 5, 5, 5,15+(i*5.5), 4);
+		int temp = 0;
+		if ( i >= 5)
+		{
+			temp = 4;
+		}
+	RenderUI(meshList[GEO_UI], Color(0, 1, 0), 5, 5, 5,15+(i*5.5)+temp, 4);
 	}
 
 	for ( int i = 0; i < player.returnInvenSize(); ++i)
 	{
+		int temp = 0;
+		if ( i >= 5)
+		{
+			temp = 4;
+		}
 		if ( player.returnInvenSize() != 0 )
 		{
 			if ( player.getInventory(i)->getItemName() == "Coke")
 			{
-				RenderUI(meshList[GEO_MODEL_COKE], Color(0, 1, 0), 5, 5, 5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_COKE], Color(0, 1, 0), 5, 5, 5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Pepsi")
 			{
-				RenderUI(meshList[GEO_MODEL_PEPSI], Color(0, 1, 0), 5, 5, 5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_PEPSI], Color(0, 1, 0), 5, 5, 5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "MtDew")
 			{
-				RenderUI(meshList[GEO_MODEL_MTDEW], Color(0, 1, 0), 5, 5, 5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_MTDEW], Color(0, 1, 0), 5, 5, 5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Pizza")
 			{
-				RenderUI(meshList[GEO_MODEL_PIZZA], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_PIZZA], Color(0, 1, 0), 3, 3, 3,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "IceCream")
 			{
-				RenderUI(meshList[GEO_MODEL_ICECREAM], Color(0, 1, 0), 2, 2, 2,15+(i*5.5), 2.5);
+				RenderUI(meshList[GEO_MODEL_ICECREAM], Color(0, 1, 0), 2, 2, 2,15+(i*5.5)+temp, 2.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "McNCheese")
 			{
-				RenderUI(meshList[GEO_MODEL_MCNCHEESE], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_MCNCHEESE], Color(0, 1, 0), 3, 3, 3,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Toblerone")
 			{
-				RenderUI(meshList[GEO_MODEL_TOBLERONE], Color(0, 1, 0), 2, 4, 4,15+(i*5.5), 3.5);
+				RenderUI(meshList[GEO_MODEL_TOBLERONE], Color(0, 1, 0), 2, 4, 4,15+(i*5.5)+temp, 3.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Rocher")
 			{
-				RenderUI(meshList[GEO_MODEL_ROCHER], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_ROCHER], Color(0, 1, 0), 3, 3, 3,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Reditos")
 			{
-				RenderUI(meshList[GEO_MODEL_REDITOS], Color(0, 1, 0), 4, 4, 4,15+(i*5.5), 3);
+				RenderUI(meshList[GEO_MODEL_REDITOS], Color(0, 1, 0), 4, 4, 4,15+(i*5.5)+temp, 3);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Dewitos")
 			{
-				RenderUI(meshList[GEO_MODEL_DEWITOS], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 3.5);
+				RenderUI(meshList[GEO_MODEL_DEWITOS], Color(0, 1, 0), 3, 3, 3,15+(i*5.5)+temp, 3.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Lays")
 			{
-				RenderUI(meshList[GEO_MODEL_LAYSCHIPS], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_LAYSCHIPS], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Cactus")
 			{
-				RenderUI(meshList[GEO_MODEL_CACTUS], Color(0, 1, 0), 9.5, 8.5, 9.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_CACTUS], Color(0, 1, 0), 9.5, 8.5, 9.5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Vegcan")
 			{
-				RenderUI(meshList[GEO_MODEL_VEGCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5), 1.5);
+				RenderUI(meshList[GEO_MODEL_VEGCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5)+temp, 1.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "PCan")
 			{
-				RenderUI(meshList[GEO_MODEL_PUMPKINCAN], Color(0, 1, 0), 4.5, 4.5, 4.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_PUMPKINCAN], Color(0, 1, 0), 4.5, 4.5, 4.5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "MOaties")
 			{
-				RenderUI(meshList[GEO_MODEL_MOATIES], Color(0, 1, 0), 3, 3, 3,15+(i*5.5), 2);
+				RenderUI(meshList[GEO_MODEL_MOATIES], Color(0, 1, 0), 3, 3, 3,15+(i*5.5)+temp, 2);
 			}
 			else if ( player.getInventory(i)->getItemName() == "OBox")
 			{
-				RenderUI(meshList[GEO_MODEL_CEREAL_2], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_CEREAL_2], Color(0, 1, 0), 2.5, 2.5, 2.5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Chickenstock")
 			{
-				RenderUI(meshList[GEO_MODEL_CHICKENSTOCK], Color(0, 1, 0), 3, 3, 3,15+(i*5.5),3.5);
+				RenderUI(meshList[GEO_MODEL_CHICKENSTOCK], Color(0, 1, 0), 3, 3, 3,15+(i*5.5)+temp,3.5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Pistol")
 			{
-				RenderUI(meshList[GEO_MODEL_PISTOL], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 3);
+				RenderUI(meshList[GEO_MODEL_PISTOL], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5)+temp, 3);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Rifle")
 			{
-				RenderUI(meshList[GEO_MODEL_RIFLE], Color(0, 1, 0), 2.5, 3.5, 3.5,15+(i*5.5), 3);
+				RenderUI(meshList[GEO_MODEL_RIFLE], Color(0, 1, 0), 2.5, 3.5, 3.5,15+(i*5.5)+temp, 3);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Milo")
 			{
-				RenderUI(meshList[GEO_MODEL_MILO], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_MILO], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "SardCan")
 			{
-				RenderUI(meshList[GEO_MODEL_SARDCAN], Color(0, 1, 0), 10, 10, 10,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_SARDCAN], Color(0, 1, 0), 10, 10, 10,15+(i*5.5)+temp, 4);
 			}
 			else if ( player.getInventory(i)->getItemName() == "SoupCan")
 			{
-				RenderUI(meshList[GEO_MODEL_TOMATOSOUPCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5), 4);
+				RenderUI(meshList[GEO_MODEL_TOMATOSOUPCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5)+temp, 4);
 			}
 		}
 	}
@@ -1207,7 +1297,7 @@ void SP2::CheckItem()
 				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-1 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+1 
 				&& camera.target.z >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-1 && camera.target.z <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+1)
 			{
-				if (player.returnInvenSize() < 5 && FNB.GetRenderPosItem(i)->getItemAvailability() == true && FNB.GetRenderPosItem(i)->getItemName() == ItemName)
+				if (player.returnInvenSize() < player.getInventoryCap() && FNB.GetRenderPosItem(i)->getItemAvailability() == true && FNB.GetRenderPosItem(i)->getItemName() == ItemName)
 				{
 					FNB.GetRenderPosItem(i)->setItemAvailable(0);
 					player.setInventory(FNB.GetRenderPosItem(i)->getItemName(),FNB.GetRenderPosItem(i)->getItemPrice());

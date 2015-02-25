@@ -96,6 +96,7 @@
     <ClCompile Include="Source\RenderPos.cpp" />
     <ClCompile Include="Source\SP2.cpp" />
     <ClCompile Include="Source\shader.cpp" />
+    <ClCompile Include="Source\Trolley.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +118,7 @@
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\SP2.h" />
     <ClInclude Include="Source\shader.hpp" />
+    <ClInclude Include="Source\Trolley.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />
   </ItemGroup>

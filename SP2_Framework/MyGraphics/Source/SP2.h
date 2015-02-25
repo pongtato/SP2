@@ -14,6 +14,7 @@
 #include "NPC.h"
 #include "Item.h"
 #include "Character.h"
+#include "Trolley.h"
 #include<algorithm>
 
 using namespace std;
@@ -179,6 +180,7 @@ private:
 		GEO_MODEL_LIGHTS,
 		GEO_MODEL_GUARDHOUSE,
 		GEO_MODEL_GUARDCONTROL,
+		GEO_MODEL_TROLLEY,
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -210,6 +212,7 @@ public:
 	CNPC shopper;
 	CNPC patroler;
 	CCharacter player;
+	CTrolley trolley;
 
 	bool police;
 	int Lightswitch;
@@ -274,6 +277,8 @@ private:
 	void UnpaidItems();
 	void Stealing();
 	void RenderModel();
+	void Trolley();
+	void TrolleyUpdate();
 };
 
 #endif
