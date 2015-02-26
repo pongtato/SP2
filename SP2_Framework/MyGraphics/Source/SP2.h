@@ -111,6 +111,13 @@ private:
 		GEO_CYLINDER,
 
 		GEO_MODEL1,
+		//Character Parts
+		GEO_MODEL_HEAD,
+		GEO_MODEL_BODY,
+		GEO_MODEL_LEFTARM,
+		GEO_MODEL_RIGHTARM,
+		GEO_MODEL_LEFTLEG,
+		GEO_MODEL_RIGHTLEG,
 		GEO_MODEL_DOORMAN,
 		GEO_MODEL_MART,
 		GEO_MODEL_DOOR,
@@ -172,8 +179,6 @@ private:
 		GEO_MODEL_LIGHTS,
 		GEO_MODEL_GUARDHOUSE,
 		GEO_MODEL_GUARDCONTROL,
-
-
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -268,6 +273,7 @@ private:
 	void NPCwalk();
 	void UnpaidItems();
 	void Stealing();
+	void RenderModel();
 };
 
 #endif

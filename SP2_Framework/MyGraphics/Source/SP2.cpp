@@ -475,7 +475,24 @@ void SP2::Init()
 	meshList[GEO_MODEL_GUARDCONTROL] = MeshBuilder::GenerateOBJ("model1", "OBJ//GuardControl.obj");
 	meshList[GEO_MODEL_GUARDCONTROL]->textureID = LoadTGA("Image//guardhouse.tga");
 
+	//Character
+	meshList[GEO_MODEL_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
+	meshList[GEO_MODEL_HEAD]->textureID = LoadTGA("Image//characterskin.tga");
 
+	meshList[GEO_MODEL_BODY] = MeshBuilder::GenerateOBJ("model1", "OBJ//body.obj");
+	meshList[GEO_MODEL_BODY]->textureID = LoadTGA("Image//characterskin.tga");
+
+	meshList[GEO_MODEL_LEFTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_LEFTARM]->textureID = LoadTGA("Image//characterskin.tga");
+
+	meshList[GEO_MODEL_RIGHTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_RIGHTARM]->textureID = LoadTGA("Image//characterskin.tga");
+
+	meshList[GEO_MODEL_LEFTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_LEFTLEG]->textureID = LoadTGA("Image//characterskin.tga");
+
+	meshList[GEO_MODEL_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_RIGHTLEG]->textureID = LoadTGA("Image//characterskin.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -1029,13 +1046,32 @@ void SP2::Render()
 	modelStack.PopMatrix();*/
 
 	RenderMesh(meshList[GEO_AXES], false);
-
+	RenderModel();
 	RenderWorld();
 	RenderPlayer();
 	RenderSkybox();
 	RenderFNB();
 	if ( camera.getCameraState() == 0 )
 		RenderScreenUI();
+}
+
+void SP2::RenderModel()
+{
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 1, 0);
+	RenderMesh(meshList[GEO_MODEL_HEAD], false);
+	RenderMesh(meshList[GEO_MODEL_BODY], false);
+	RenderMesh(meshList[GEO_MODEL_LEFTARM], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-3, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
+	modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
 }
 
 void SP2::RenderScreenUI()
@@ -1534,33 +1570,78 @@ void SP2::RenderWorld()
 void SP2::RenderCharacter()
 {
 	//Bob
-	modelStack.PushMatrix();
+	/*modelStack.PushMatrix();
 	modelStack.Translate(npc.getPosX(),character.GetRenderPos(0)->getTranslationY(),npc.getPosZ());
 	modelStack.Rotate(npc.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
 	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
-	modelStack.PopMatrix();
-	//Dan
+	modelStack.PopMatrix();*/
+
 	modelStack.PushMatrix();
+	modelStack.Translate(npc.getPosX(), character.GetRenderPos(0)->getTranslationY(), npc.getPosZ());
+	RenderMesh(meshList[GEO_MODEL_HEAD], false);
+	RenderMesh(meshList[GEO_MODEL_BODY], false);
+	RenderMesh(meshList[GEO_MODEL_LEFTARM], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-3, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
+	modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	//Dan
+	/*modelStack.PushMatrix();
 	modelStack.Translate(shopper.getPosX(),character.GetRenderPos(1)->getTranslationY(),shopper.getPosZ());
 	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(1)->getRX(),character.GetRenderPos(1)->getRY(),character.GetRenderPos(1)->getRZ());
 	modelStack.Scale(character.GetRenderPos(1)->getScaleX(),character.GetRenderPos(1)->getScaleY(),character.GetRenderPos(1)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
-	modelStack.PopMatrix();
-	//Tom
+	modelStack.PopMatrix();*/
+
 	modelStack.PushMatrix();
+	modelStack.Translate(shopper.getPosX(), character.GetRenderPos(1)->getTranslationY(), shopper.getPosZ());
+	RenderMesh(meshList[GEO_MODEL_HEAD], false);
+	RenderMesh(meshList[GEO_MODEL_BODY], false);
+	RenderMesh(meshList[GEO_MODEL_LEFTARM], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-3, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
+	modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
+	//Tom
+	/*modelStack.PushMatrix();
 	modelStack.Translate(patroler.getPosX(),character.GetRenderPos(2)->getTranslationY(),patroler.getPosZ());
 	modelStack.Rotate(patroler.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
 	modelStack.Scale(character.GetRenderPos(2)->getScaleX(),character.GetRenderPos(2)->getScaleY(),character.GetRenderPos(2)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
+	modelStack.PopMatrix();*/
+
+	modelStack.PushMatrix();
+	modelStack.Translate(patroler.getPosX(), character.GetRenderPos(2)->getTranslationY(), patroler.getPosZ());
+	RenderMesh(meshList[GEO_MODEL_HEAD], false);
+	RenderMesh(meshList[GEO_MODEL_BODY], false);
+	RenderMesh(meshList[GEO_MODEL_LEFTARM], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-3, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
+	modelStack.PopMatrix();
+	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
+	modelStack.PushMatrix();
+	modelStack.Translate(-1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
-	//modelStack.PushMatrix();
-	//modelStack.Translate(character.GetRenderPos(0)->getTranslationX(),character.GetRenderPos(0)->getTranslationY(),character.GetRenderPos(0)->getTranslationZ());
-	//modelStack.Rotate(character.GetRenderPos(0)->getRotation(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
-	//modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
-	//RenderMesh(meshList[GEO_MODEL_CHAR1], true);
-	//modelStack.PopMatrix();
+	
 }
 
 void SP2::RenderPlayer()
