@@ -228,6 +228,7 @@ public:
 
 	bool police;
 	int Lightswitch;
+	bool CheckoutActive;
 
 private:
 	unsigned m_vertexArrayID;
@@ -242,6 +243,11 @@ private:
 	float translateY;
 	bool walk;
 	bool playeridle;
+	bool paying;
+	bool paid;
+	float CashierOffetX;
+	float CashierOffetY;
+	float CashierOffetZ;
 	std::string FPS_count;
 	std::string XPos;
 	std::string ZPos;

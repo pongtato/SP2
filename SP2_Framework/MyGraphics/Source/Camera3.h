@@ -34,6 +34,9 @@ public:
 	bool LeftStaffDoor;
 	bool moving;
 	bool CameraMode;
+	bool TrolleyMode;
+	bool fixCamera;
+	bool fixTranslation;
 
 	virtual void Init(const Vector3& pos, const Vector3& target, const Vector3& up);
 	virtual void Update(double dt);
@@ -48,6 +51,11 @@ public:
 	int getCameraState(void);
 	int CameraLock;
 	float CamRotation;
+	float CAMERA_SPEED;
+	float TrolleyStateR;
+	float TrolleyStateT;
+	bool RepeatPress;
+	int State;
 
 	Application test;
 };
