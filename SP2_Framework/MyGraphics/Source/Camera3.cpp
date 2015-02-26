@@ -73,7 +73,7 @@ void Camera3::StaffDoorsensor(Vector3& pos, float camSpeed)
 {
 	camSpeed *= 0.05;
 	//Right door
-	if(position.x <= 62 && position.x >= 55 && position.z <= -30 &&  position.z >= -35)
+	if(position.x <= 65 && position.x >= 55 && position.z <= -25 &&  position.z >= -45)
 	{
 		RightStaffDoor = true;
 	}
@@ -82,7 +82,7 @@ void Camera3::StaffDoorsensor(Vector3& pos, float camSpeed)
 		RightStaffDoor = false;
 	}
 	//Left door
-	if(position.x >=  -74 && position.x <= -65 && position.z <= -30 &&  position.z >= -35)
+	if(position.x >=  -76 && position.x <= -65 && position.z <= -25 &&  position.z >= -45)
 	{
 		LeftStaffDoor = true;
 	}
@@ -95,7 +95,7 @@ void Camera3::StaffDoorsensor(Vector3& pos, float camSpeed)
 void Camera3::Shuttersensor(Vector3& pos, float camSpeed)
 {
 	camSpeed *= 0.05;
-	if(position.x <= 10 && position.x >= -20 && position.z <= -60 &&  position.z >= -70)
+	if(position.x <= 10 && position.x >= -20 && position.z <= -55 &&  position.z >= -70)
 	{
 		ShutterDoor = true;
 	}

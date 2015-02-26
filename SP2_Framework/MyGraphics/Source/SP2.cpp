@@ -732,13 +732,15 @@ void SP2::SetPrevPos()
 
 void SP2::BoundsCheck()
 {
-	Vector3 tempMart, tempShelves, tempCashier;
+	Vector3 tempMart, tempShelves, tempCashier, tempFridge;
 	tempMart.x = data.GetRenderPos(0)->getTranslationX();
 	tempMart.z = data.GetRenderPos(0)->getTranslationZ();
 	tempShelves.x = shelve.GetRenderPos(0)->getTranslationX();
 	tempShelves.z = shelve.GetRenderPos(0)->getTranslationZ();
 	tempCashier.x = cashier.GetRenderPos(0)->getTranslationX();
 	tempCashier.z = cashier.GetRenderPos(0)->getTranslationZ();
+	tempFridge.x = fridge.GetRenderPos(0)->getTranslationX();
+	tempFridge.z = fridge.GetRenderPos(0)->getTranslationZ();
 
 	//fence check
 	//leftfence
@@ -845,11 +847,35 @@ void SP2::BoundsCheck()
 		}
 	}
 
+	//Fridge Bounds Check
+	if(camera.position.x >= tempFridge.x -92 && camera.position.x <= tempFridge.x +8 && camera.position.z <= tempFridge.z + 2 && camera.position.z >= tempFridge.z)
+	{
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
+	}
+
+	//patroler collision
+	if(camera.position.x >= patroler.getPosX() - 2 && camera.position.x <= patroler.getPosX() +2 && camera.position.z >= patroler.getPosZ() - 2 && camera.position.z <= patroler.getPosZ() +2)
+	{
+		if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)//player not idle
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+		}
+		else//idle player/camera
+		{
+			cout<<"player is idle"<<endl;
+		}
+	}
 }
 
 void SP2::ShutterOpen()
 {
-	if (camera.ShutterDoor == true && ShutterDoorOpen < 18)
+	if (camera.ShutterDoor == true && ShutterDoorOpen < 22)
 	{
 		ShutterDoorOpen += 0.4;
 	}
