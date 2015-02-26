@@ -225,6 +225,10 @@ private:
 
 	float rotateAngle;
 	float FPS;
+	float angle;
+	float translate;
+	float translateY;
+	bool walk;
 	std::string FPS_count;
 	std::string XPos;
 	std::string ZPos;
@@ -260,6 +264,7 @@ private:
 	void RenderFNB();
 	void RenderPlayer();
 	void RenderScreenUI();
+	void RenderAnimate();
 
 	void SetPrevPos(void);
 	void RenderMesh(Mesh *mesh, bool enableLight);
@@ -272,6 +277,7 @@ private:
 	void ShutterOpen();
 	void BoundsCheck();
 	void UIupdates(double dt);
+	void Animate(double dt);
 	void CheckOut();
 	void NPCwalk();
 	void UnpaidItems();

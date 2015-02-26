@@ -1,4 +1,4 @@
-﻿Build started 25/2/2015 12:46:45 PM.
+﻿Build started 26/2/2015 12:00:35 PM.
      1>Project "C:\Users\Eng\Desktop\SP2\SP2_Framework\Common\Common.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\Common.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -14,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.15
+Time Elapsed 00:00:00.22

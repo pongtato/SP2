@@ -59,6 +59,10 @@ void SP2::Init()
 
 	//variable to rotate geometry
 	rotateAngle = 0;
+	angle = 0;
+	walk = false;
+	translate = 0;
+	translateY = 0;
 
 	//Initialize camera settings
 	camera.Init(Vector3(0, 6, 100), Vector3(0, 0, 0), Vector3(0, 1, 0));
@@ -522,6 +526,7 @@ void SP2::Init()
 static float ROT_LIMIT = 45.f;
 static float SCALE_LIMIT = 5.f;
 bool Lightsssss = false;
+static float WSPEED = 50.0f;
 
 void SP2::Update(double dt)
 {
@@ -607,7 +612,7 @@ void SP2::Update(double dt)
 	}
 	camera.Update(dt);
 
-
+	Animate(dt);
 }
 
 void SP2::NPCwalk()
@@ -734,6 +739,44 @@ void SP2::UIupdates(double dt)
 		{
 			ItemName = "Trolley";
 		}
+}
+
+void SP2::Animate(double dt)
+{
+	 if(walk == false)
+	 {
+		 angle += (float)(WSPEED * dt);
+		 translate += (float)(dt);
+		 if(translate < 0)
+		 {
+			 translateY = translate * -1;
+		 }
+		 else
+		 {
+			 translateY = translate;
+		 }
+		 if(angle >= 30)
+		 {
+			 walk = true;
+		 }
+	 }
+	 else if(walk == true)
+	 {
+		 angle -= (float)(WSPEED * dt);
+		 translate -= (float)(dt);
+		 if(translate < 0)
+		 {
+			 translateY = translate * - 1;
+		 }
+		 else
+		 {
+			 translateY = translate;
+		 }
+		 if(angle <= -30)
+		 {
+			 walk = false;
+		 }
+	 }
 }
 
 void SP2::CharacterCrouch()
@@ -1669,18 +1712,9 @@ void SP2::RenderCharacter()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(npc.getPosX(), character.GetRenderPos(0)->getTranslationY(), npc.getPosZ());
-	RenderMesh(meshList[GEO_MODEL_HEAD], false);
-	RenderMesh(meshList[GEO_MODEL_BODY], false);
-	RenderMesh(meshList[GEO_MODEL_LEFTARM], false);
-	modelStack.PushMatrix();
-	modelStack.Translate(-3, 0, 0);
-	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
-	modelStack.PopMatrix();
-	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
-	modelStack.PushMatrix();
-	modelStack.Translate(-1, 0, 0);
-	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
-	modelStack.PopMatrix();
+	modelStack.Rotate(npc.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
+	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
+	RenderAnimate();
 	modelStack.PopMatrix();
 
 	//Dan
@@ -1693,18 +1727,9 @@ void SP2::RenderCharacter()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(shopper.getPosX(), character.GetRenderPos(1)->getTranslationY(), shopper.getPosZ());
-	RenderMesh(meshList[GEO_MODEL_HEAD], false);
-	RenderMesh(meshList[GEO_MODEL_BODY], false);
-	RenderMesh(meshList[GEO_MODEL_LEFTARM], false);
-	modelStack.PushMatrix();
-	modelStack.Translate(-3, 0, 0);
-	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
-	modelStack.PopMatrix();
-	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
-	modelStack.PushMatrix();
-	modelStack.Translate(-1, 0, 0);
-	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
-	modelStack.PopMatrix();
+	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(1)->getRX(),character.GetRenderPos(1)->getRY(),character.GetRenderPos(1)->getRZ());
+	modelStack.Scale(character.GetRenderPos(1)->getScaleX(),character.GetRenderPos(1)->getScaleY(),character.GetRenderPos(1)->getScaleZ());
+	RenderAnimate();
 	modelStack.PopMatrix();
 
 	//Tom
@@ -1717,21 +1742,43 @@ void SP2::RenderCharacter()
 
 	modelStack.PushMatrix();
 	modelStack.Translate(patroler.getPosX(), character.GetRenderPos(2)->getTranslationY(), patroler.getPosZ());
+	modelStack.Rotate(patroler.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
+	modelStack.Scale(character.GetRenderPos(2)->getScaleX(),character.GetRenderPos(2)->getScaleY(),character.GetRenderPos(2)->getScaleZ());
+	RenderAnimate();
+	modelStack.PopMatrix();
+}
+
+void SP2::RenderAnimate()
+{
+	modelStack.PushMatrix();
 	RenderMesh(meshList[GEO_MODEL_HEAD], false);
 	RenderMesh(meshList[GEO_MODEL_BODY], false);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, translateY - 0.1, -translate * 4);
+	modelStack.Rotate(angle, 1, 0, 0);
 	RenderMesh(meshList[GEO_MODEL_LEFTARM], false);
-	modelStack.PushMatrix();
-	modelStack.Translate(-3, 0, 0);
-	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
-	modelStack.PopMatrix();
-	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
-	modelStack.PushMatrix();
-	modelStack.Translate(-1, 0, 0);
-	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
-	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 
+	modelStack.PushMatrix();
+	modelStack.Translate(-3, translateY - 0.1, 0 + translate * 4);
+	modelStack.Rotate(-angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTARM], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0.2, translate * 2);
+	modelStack.Rotate(-angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_LEFTLEG], false);
+	modelStack.PopMatrix();
 	
+	modelStack.PushMatrix();
+	modelStack.Translate(-1, 0.2, 0 - translate * 2);
+	modelStack.Rotate(angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();
 }
 
 void SP2::RenderPlayer()
