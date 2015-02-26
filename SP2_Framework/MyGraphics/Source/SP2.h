@@ -113,12 +113,21 @@ private:
 
 		GEO_MODEL1,
 		//Character Parts
+		//Basic Guy
 		GEO_MODEL_HEAD,
 		GEO_MODEL_BODY,
 		GEO_MODEL_LEFTARM,
 		GEO_MODEL_RIGHTARM,
 		GEO_MODEL_LEFTLEG,
 		GEO_MODEL_RIGHTLEG,
+		//Cashier
+		GEO_MODEL_CASHIER_HEAD,
+		GEO_MODEL_CASHIER_BODY,
+		GEO_MODEL_CASHIER_LEFTARM,
+		GEO_MODEL_CASHIER_RIGHTARM,
+		GEO_MODEL_CASHIER_LEFTLEG,
+		GEO_MODEL_CASHIER_RIGHTLEG,
+		//Default Doorman
 		GEO_MODEL_DOORMAN,
 		GEO_MODEL_MART,
 		GEO_MODEL_DOOR,
@@ -168,6 +177,7 @@ private:
 		GEO_STAMI,
 		GEO_ALERT,
 		GEO_UI,
+		GEO_DIALOGUEBOX,
 		GEO_MODEL_CAMERA,
 		GEO_MODEL_STAFFDOOR,
 		GEO_MODEL_SHUTTER,
@@ -207,6 +217,7 @@ public:
 	CReadFromText cashier;
 	CReadFromText fridge;
 	CReadFromText character;
+	CReadFromText cashiermodel;
 	CReadFromText FNB;
 
 	CNPC npc;
@@ -265,6 +276,7 @@ private:
 	void RenderWorld();
 	void RenderSkybox();
 	void RenderCashier();
+	void RenderCashierModel();
 	void RenderFridge();
 	void RenderShelves();
 	void RenderCharacter();
@@ -289,7 +301,7 @@ private:
 	void NPCwalk();
 	void UnpaidItems();
 	void Stealing();
-	void RenderModel();
+	void RenderBasicModel();
 	void Trolley();
 	void TrolleyUpdate();
 };

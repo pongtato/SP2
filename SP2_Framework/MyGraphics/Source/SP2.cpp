@@ -27,6 +27,7 @@ void SP2::Init()
 	data.ReadTextFile( "OBJ-Pos/Martpos.txt" );
 	shelve.ReadTextFile( "OBJ-Pos/Shelves.txt" );
 	cashier.ReadTextFile( "OBJ-Pos/Cashierpos.txt" );
+	cashiermodel.ReadTextFile( "OBJ-Pos/CashierModelpos.txt" );
 	fridge.ReadTextFile( "OBJ-Pos/Fridgepos.txt" );
 	character.ReadTextFile( "OBJ-Pos/NPC/Characterpos.txt" );
 	shopper.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
@@ -302,6 +303,9 @@ void SP2::Init()
 	meshList[GEO_UI] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI.tga");
 
+	meshList[GEO_DIALOGUEBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_DIALOGUEBOX]->textureID = LoadTGA("Image//dialoguebox.tga");
+
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//uback.tga");
 
@@ -482,7 +486,7 @@ void SP2::Init()
 	meshList[GEO_MODEL_TROLLEY] = MeshBuilder::GenerateOBJ("model1", "OBJ//Cart.obj");
 	meshList[GEO_MODEL_TROLLEY]->textureID = LoadTGA("Image//Cart.tga");
 	
-	//Character
+	//Character(basic)
 	meshList[GEO_MODEL_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
 	meshList[GEO_MODEL_HEAD]->textureID = LoadTGA("Image//characterskin.tga");
 
@@ -500,6 +504,25 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
 	meshList[GEO_MODEL_RIGHTLEG]->textureID = LoadTGA("Image//characterskin.tga");
+
+	//Character(cashier person)
+	meshList[GEO_MODEL_CASHIER_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
+	meshList[GEO_MODEL_CASHIER_HEAD]->textureID = LoadTGA("Image//cashierskin.tga");
+
+	meshList[GEO_MODEL_CASHIER_BODY] = MeshBuilder::GenerateOBJ("model1", "OBJ//body.obj");
+	meshList[GEO_MODEL_CASHIER_BODY]->textureID = LoadTGA("Image//cashierskin.tga");
+
+	meshList[GEO_MODEL_CASHIER_LEFTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_CASHIER_LEFTARM]->textureID = LoadTGA("Image//cashierskin.tga");
+
+	meshList[GEO_MODEL_CASHIER_RIGHTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_CASHIER_RIGHTARM]->textureID = LoadTGA("Image//cashierskin.tga");
+
+	meshList[GEO_MODEL_CASHIER_LEFTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_CASHIER_LEFTLEG]->textureID = LoadTGA("Image//cashierskin.tga");
+
+	meshList[GEO_MODEL_CASHIER_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_CASHIER_RIGHTLEG]->textureID = LoadTGA("Image//cashierskin.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -1209,7 +1232,7 @@ void SP2::Render()
 	modelStack.PopMatrix();*/
 
 	RenderMesh(meshList[GEO_AXES], false);
-	RenderModel();
+	RenderBasicModel();
 	RenderWorld();
 	RenderPlayer();
 	RenderSkybox();
@@ -1219,9 +1242,8 @@ void SP2::Render()
 		RenderScreenUI();
 }
 
-void SP2::RenderModel()
+void SP2::RenderBasicModel()
 {
-	modelStack.PushMatrix();
 	modelStack.Translate(0, 1, 0);
 	RenderMesh(meshList[GEO_MODEL_HEAD], false);
 	RenderMesh(meshList[GEO_MODEL_BODY], false);
@@ -1234,7 +1256,6 @@ void SP2::RenderModel()
 	modelStack.PushMatrix();
 	modelStack.Translate(-1, 0, 0);
 	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
-	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 
@@ -1262,6 +1283,16 @@ void SP2::RenderScreenUI()
 	RenderUI(meshList[GEO_STAM], Color(0, 1, 0), Calc, 1.5, 15, 45, 9);
 	RenderUI(meshList[GEO_HPI], Color(0, 1, 0), 4, 4, 4, 12, 9);
 	RenderUI(meshList[GEO_STAMI], Color(0, 1, 0), 4, 4, 4, 45, 9);
+
+	//Render Cashier Dialogue
+	for(int i = 0; i<4; ++i)
+	{
+		if(camera.position.x >= cashier.GetRenderPos(i)->getTranslationX()-5 && camera.position.x <= cashier.GetRenderPos(i)->getTranslationX()-1 && camera.position.z >= cashier.GetRenderPos(i)->getTranslationZ()-2 && camera.position.z <= cashier.GetRenderPos(i)->getTranslationZ()+2)
+		{
+			RenderUI(meshList[GEO_DIALOGUEBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Welcome to UNFAIRPRICE" , Color(0, 1, 0), 2, 6, 9.2);
+		}
+	}
 	//RenderTextOnScreen(meshList[GEO_TEXT], HP, Color(1, 1, 1), 4, 3.2, 1.5);
 	//RenderTextOnScreen(meshList[GEO_TEXT], STAM, Color(1, 1, 1), 4, 12.2, 1.5);
 	//RenderUI(meshList[GEO_ALERT], Color(0, 1, 0), 15, 2.5, 15,1, 1);
@@ -1529,6 +1560,30 @@ void SP2::RenderSkybox()
 
 }
 
+void SP2::RenderCashierModel()
+{
+	for(int i = 0; i < 4; ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(cashiermodel.GetRenderPos(i)->getTranslationX(),cashiermodel.GetRenderPos(i)->getTranslationY(),cashiermodel.GetRenderPos(i)->getTranslationZ());
+		modelStack.Rotate(cashiermodel.GetRenderPos(i)->getRotation(),cashiermodel.GetRenderPos(i)->getRX(),cashiermodel.GetRenderPos(i)->getRY(),cashiermodel.GetRenderPos(i)->getRZ());
+		modelStack.Scale(cashiermodel.GetRenderPos(i)->getScaleX(),cashiermodel.GetRenderPos(i)->getScaleY(),cashiermodel.GetRenderPos(i)->getScaleZ());
+		RenderMesh(meshList[GEO_MODEL_CASHIER_HEAD], false);
+		RenderMesh(meshList[GEO_MODEL_CASHIER_BODY], false);
+		RenderMesh(meshList[GEO_MODEL_CASHIER_LEFTARM], false);
+		modelStack.PushMatrix();
+		modelStack.Translate(-3, 0, 0);
+		RenderMesh(meshList[GEO_MODEL_CASHIER_RIGHTARM], false);
+		modelStack.PopMatrix();
+		RenderMesh(meshList[GEO_MODEL_CASHIER_LEFTLEG], false);
+		modelStack.PushMatrix();
+		modelStack.Translate(-1, 0, 0);
+		RenderMesh(meshList[GEO_MODEL_CASHIER_RIGHTLEG], false);
+		modelStack.PopMatrix();
+		modelStack.PopMatrix();
+	}
+}
+
 void SP2::RenderCashier()
 {
 	for(int i = 0; i < 4; ++i)
@@ -1791,6 +1846,11 @@ void SP2::RenderCharacter()
 	modelStack.Rotate(patroler.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
 	modelStack.Scale(character.GetRenderPos(2)->getScaleX(),character.GetRenderPos(2)->getScaleY(),character.GetRenderPos(2)->getScaleZ());
 	RenderAnimate();
+	modelStack.PopMatrix();
+
+	//All Cashier personnel
+	modelStack.PushMatrix();
+	RenderCashierModel();
 	modelStack.PopMatrix();
 }
 
