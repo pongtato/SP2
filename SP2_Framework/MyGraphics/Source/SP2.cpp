@@ -303,22 +303,22 @@ void SP2::Init()
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//()Town_bk.tga");
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//uback.tga");
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//()Town_ft.tga");
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//ufront.tga");
 
 	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//()Town_dn.tga");
+	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//ubottom.tga");
 
 	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//()Town2_Up.tga");
+	meshList[GEO_TOP]->textureID = LoadTGA("Image//utop.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//()Town_rt.tga");
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//uleft.tga");
 
 	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//()Town_lf.tga");
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//uright.tga");
 
 	meshList[GEO_MODEL_DOORMAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//doorman.obj");
 	meshList[GEO_MODEL_DOORMAN]->textureID = LoadTGA("Image//doorman.tga");
@@ -481,7 +481,6 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_TROLLEY] = MeshBuilder::GenerateOBJ("model1", "OBJ//Cart.obj");
 	meshList[GEO_MODEL_TROLLEY]->textureID = LoadTGA("Image//Cart.tga");
-
 	
 	//Character
 	meshList[GEO_MODEL_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
@@ -521,6 +520,8 @@ void SP2::Init()
 	patroler.setPosX(character.GetRenderPos(2)->getTranslationX());
 	patroler.setPosZ(character.GetRenderPos(2)->getTranslationZ());
 	police = false;
+
+	MenuKey = true;
 }
 
 static float ROT_LIMIT = 45.f;
@@ -539,6 +540,46 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if(Application::IsKeyPressed('4'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+	if(MenuKey == true)
+	{
+		INSTRUCTIONS1 = "Press 8 for Thief";
+		INSTRUCTIONS2 = "Press 9 for Shopper";
+		INSTRUCTIONS3 = "Press 0 for Guard";
+		INSTRUCTIONS4 = "Press Esc to quit";
+	}
+	if(Application::IsKeyPressed('8'))
+	{
+		ROLE = "Thief";	
+		INSTRUCTIONS1 = "";
+		INSTRUCTIONS2 = "";
+		INSTRUCTIONS3 = "";
+		INSTRUCTIONS4 = "";
+		MenuKey = false;
+		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('0'))
+			ROLE = "Thief";
+	}	
+	if(Application::IsKeyPressed('9'))
+	{	
+		ROLE = "Shopper";
+		INSTRUCTIONS1 = "";
+		INSTRUCTIONS2 = "";
+		INSTRUCTIONS3 = "";
+		INSTRUCTIONS4 = "";
+		MenuKey = false;
+		if(Application::IsKeyPressed('8')||Application::IsKeyPressed('0'))
+			ROLE = "Shopper";
+	}
+	if(Application::IsKeyPressed('0'))
+	{
+		ROLE = "Guard";
+		INSTRUCTIONS1 = "";
+		INSTRUCTIONS2 = "";
+		INSTRUCTIONS3 = "";
+		INSTRUCTIONS4 = "";
+		MenuKey = false;
+		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('8'))
+			ROLE = "Guard";
+	}
 	if ( ItemName == "Camera")
 	{
 		if(Application::IsKeyPressed('5'))
@@ -1209,6 +1250,11 @@ void SP2::RenderScreenUI()
 	RenderTextOnScreen(meshList[GEO_TEXT], ZPos , Color(0, 1, 0), 3, 0, 17);
 	RenderTextOnScreen(meshList[GEO_TEXT], MONEY , Color(0, 1, 0), 3, 0, 14);
 	RenderTextOnScreen(meshList[GEO_TEXT], ItemName , Color(0, 1, 0), 3, 13, 11);
+	RenderTextOnScreen(meshList[GEO_TEXT], ROLE , Color(0,1,0), 3, 0, 16);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS1 , Color(0,1,0), 3, 4, 13);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 12);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 11);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 10);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
 	RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 34.25);

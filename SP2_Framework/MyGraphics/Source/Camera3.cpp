@@ -151,8 +151,6 @@ void Camera3::Update(double dt)
 	MouseX = test.getPosX();
 	MouseY = test.getPosY();
 
-
-
 	if(Application::IsKeyPressed(VK_SHIFT) && player.getStamina()!=0 && moving == true)
 	{
 		player.setStamina(1);

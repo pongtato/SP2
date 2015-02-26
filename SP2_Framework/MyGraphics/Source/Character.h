@@ -15,6 +15,7 @@ private:
 	float detection;
 	vector<CItem* >inven_list;
 	int inventoryCap;
+	string career;
 
 public:
 	CCharacter(void);
@@ -26,6 +27,7 @@ public:
 	void setBullets(int ammo);
 	void setDetection(float detect);
 	void setInventory(string name, double price);
+	void setClass(string job);
 	void dropItem(string itemname);
 	void sellItems(int n);
 	void setInventoryCap(int size);
@@ -36,6 +38,7 @@ public:
 	int getBullets(void);
 	float getDetection(void);
 	CItem* getInventory(int n);
+	string getClass(void);
 	int returnInvenSize();
 	int getInventoryCap(void);
 	bool unpaiditems;

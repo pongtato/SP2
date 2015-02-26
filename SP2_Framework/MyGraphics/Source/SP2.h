@@ -181,6 +181,7 @@ private:
 		GEO_MODEL_GUARDHOUSE,
 		GEO_MODEL_GUARDCONTROL,
 		GEO_MODEL_TROLLEY,
+		GEO_MENUBOX,
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -236,6 +237,11 @@ private:
 	std::string HP;
 	std::string STAM;
 	std::string MONEY;
+	std::string ROLE;
+	std::string INSTRUCTIONS1;
+	std::string INSTRUCTIONS2;
+	std::string INSTRUCTIONS3;
+	std::string INSTRUCTIONS4;
 	std::string ItemName;
 	std::string ShopTut;
 	std::string GuardTut;
@@ -246,6 +252,7 @@ private:
 	float ShutterDoorOpen;
 	float RightStaffDoorSlide;
 	float LeftStaffDoorSlide;
+	bool MenuKey;
 
 	//Camera2 camera;
 	Camera3 camera;

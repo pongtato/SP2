@@ -1,3 +1,4 @@
+<<<<<<< c4f39505c82dade3a9538d855b780eabf81efc59
 ﻿Build started 26/2/2015 10:57:00 AM.
      1>Project "C:\Users\Eng\Desktop\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
@@ -156,6 +157,19 @@
          All outputs are up-to-date.
        Link:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Eng\Desktop\SP2\SP2_Framework\Debug\MyGraphics.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\Eng\Desktop\SP2\SP2_Framework\\glew\lib /LIBPATH:"C:\Users\Eng\Desktop\SP2\SP2_Framework\\glfw\lib-msvc100" /LIBPATH:C:\Users\Eng\Desktop\SP2\SP2_Framework\Debug glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\MyGraphics.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Eng\Desktop\SP2\SP2_Framework\Debug\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Eng\Desktop\SP2\SP2_Framework\Debug\MyGraphics.lib" /MACHINE:X86 Debug\MyGraphics.exe.embed.manifest.res
+=======
+﻿Build started 26/2/2015 2:53:01 PM.
+     1>Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\MyGraphics.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glew\include" /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glfw\include" /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Character.cpp
+         Character.cpp
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glew\lib" /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glfw\lib-msvc100" /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\MyGraphics.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.lib" /MACHINE:X86 Debug\MyGraphics.exe.embed.manifest.res
+>>>>>>> f5755848a988081f0487146c384bf16b7dd2ed9c
          Debug\Application.obj
          Debug\Camera.obj
          Debug\Camera2.obj
@@ -174,11 +188,20 @@
          Debug\shader.obj
          Debug\Trolley.obj
          Debug\Utility.obj
+<<<<<<< c4f39505c82dade3a9538d855b780eabf81efc59
+=======
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>Common.lib(MatrixStack.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'Common.lib(MatrixStack.obj)' or at 'C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\vc100.pdb'; linking object as if no debug info
+     1>Common.lib(Mtx44.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'Common.lib(Mtx44.obj)' or at 'C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\vc100.pdb'; linking object as if no debug info
+     1>Common.lib(timer.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'Common.lib(timer.obj)' or at 'C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\vc100.pdb'; linking object as if no debug info
+     1>Common.lib(Vector3.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'Common.lib(Vector3.obj)' or at 'C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\vc100.pdb'; linking object as if no debug info
+>>>>>>> f5755848a988081f0487146c384bf16b7dd2ed9c
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\MyGraphics.exe.embed.manifest" /manifest Debug\MyGraphics.exe.intermediate.manifest
          All outputs are up-to-date.
        LinkEmbedManifest:
          All outputs are up-to-date.
+<<<<<<< c4f39505c82dade3a9538d855b780eabf81efc59
          MyGraphics.vcxproj -> C:\Users\Eng\Desktop\SP2\SP2_Framework\Debug\MyGraphics.exe
        FinalizeBuildStatus:
          Deleting file "Debug\MyGraphics.unsuccessfulbuild".
@@ -188,3 +211,14 @@
 Build succeeded.
 
 Time Elapsed 00:00:05.88
+=======
+         MyGraphics.vcxproj -> C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\MyGraphics.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\MyGraphics.unsuccessfulbuild".
+         Touching "Debug\MyGraphics.lastbuildstate".
+     1>Done Building Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.04
+>>>>>>> f5755848a988081f0487146c384bf16b7dd2ed9c

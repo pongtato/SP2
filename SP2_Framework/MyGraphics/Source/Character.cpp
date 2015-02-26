@@ -9,6 +9,7 @@ CCharacter::CCharacter(void)
 	detection = 0;
 	bullets = 0;
 	inventoryCap = 5;
+	career = "Unemployed";
 	unpaiditems = false;
 	trolley = false;
 	trolleyDrop = false;
@@ -40,6 +41,11 @@ void CCharacter::setDetection(float detect)
 	detection = detect;
 }
 
+void CCharacter::setClass(string job)
+{
+	career = job;
+}
+
 double CCharacter::getMoney(void)
 {
 	return money;
@@ -58,6 +64,11 @@ int CCharacter::getStamina(void)
 float CCharacter::getDetection(void)
 {
 	return detection;
+}
+
+string CCharacter::getClass(void)
+{
+	return career;
 }
 
 void  CCharacter::setInventory(string name, double price)
@@ -84,7 +95,7 @@ void  CCharacter::dropItem(string itemname)
 
 void  CCharacter::sellItems(int n)
 {
-		inven_list.erase(inven_list.begin()+n);
+	inven_list.erase(inven_list.begin()+n);
 }
 
 CItem* CCharacter::getInventory(int n)

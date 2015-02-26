@@ -1,16 +1,29 @@
+<<<<<<< c4f39505c82dade3a9538d855b780eabf81efc59
 ﻿Build started 26/2/2015 10:56:59 AM.
      1>Project "C:\Users\Eng\Desktop\SP2\SP2_Framework\Common\Common.vcxproj" on node 2 (build target(s)).
+=======
+﻿Build started 26/2/2015 2:53:01 PM.
+     1>Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Common\Common.vcxproj" on node 2 (build target(s)).
+>>>>>>> f5755848a988081f0487146c384bf16b7dd2ed9c
      1>InitializeBuildStatus:
          Creating "Debug\Common.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
        Lib:
          All outputs are up-to-date.
+<<<<<<< c4f39505c82dade3a9538d855b780eabf81efc59
          Common.vcxproj -> C:\Users\Eng\Desktop\SP2\SP2_Framework\Debug\Common.lib
        FinalizeBuildStatus:
          Deleting file "Debug\Common.unsuccessfulbuild".
          Touching "Debug\Common.lastbuildstate".
      1>Done Building Project "C:\Users\Eng\Desktop\SP2\SP2_Framework\Common\Common.vcxproj" (build target(s)).
+=======
+         Common.vcxproj -> C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Debug\Common.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\Common.unsuccessfulbuild".
+         Touching "Debug\Common.lastbuildstate".
+     1>Done Building Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Common\Common.vcxproj" (build target(s)).
+>>>>>>> f5755848a988081f0487146c384bf16b7dd2ed9c
 
 Build succeeded.
 
