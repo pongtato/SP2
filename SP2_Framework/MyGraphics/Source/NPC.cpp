@@ -231,8 +231,10 @@ void CNPC::ReadTextFilePath(const char* filename)
 	file.close();
 }
 
-void CNPC::ShopPathing(int n)
+void CNPC::ShopPathing(int n, bool idle)
 {
+	if(idle == false)
+	{
 	// 1st node
 	if ( getPosX() <= -75 && getPosZ() >= 25)
 	{
@@ -403,6 +405,7 @@ void CNPC::ShopPathing(int n)
 	if(getPosX() > 38 && getPosZ() < 25)
 	{
 		setPosX(38);
+	}
 	}
 }
 

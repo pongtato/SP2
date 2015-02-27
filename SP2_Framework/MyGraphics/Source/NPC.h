@@ -46,7 +46,7 @@ public:
 	void setTake(bool temp_take);
 
 	void TestAIPath(void);
-	void ShopPathing(int n);
+	void ShopPathing(int n, bool idle);
 	void turnleft(void);
 	void turnright(void);
 	void turnup(void);

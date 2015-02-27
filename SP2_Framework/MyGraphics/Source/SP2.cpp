@@ -62,6 +62,7 @@ void SP2::Init()
 	rotateAngle = 0;
 	angle = 0;
 	walk = false;
+	playeridle = false;
 	translate = 0;
 	translateY = 0;
 
@@ -682,8 +683,8 @@ void SP2::Update(double dt)
 void SP2::NPCwalk()
 {
 	npc.TestAIPath();
-	shopper.ShopPathing(0);
-	patroler.ShopPathing(1);
+	shopper.ShopPathing(0,playeridle);
+	patroler.ShopPathing(1,playeridle);
 }
 
 void SP2::UnpaidItems()
@@ -867,7 +868,7 @@ void SP2::SetPrevPos()
 
 void SP2::BoundsCheck()
 {
-	Vector3 tempMart, tempShelves, tempCashier, tempFridge;
+	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
 	tempMart.x = data.GetRenderPos(0)->getTranslationX();
 	tempMart.z = data.GetRenderPos(0)->getTranslationZ();
 	tempShelves.x = shelve.GetRenderPos(0)->getTranslationX();
@@ -876,6 +877,8 @@ void SP2::BoundsCheck()
 	tempCashier.z = cashier.GetRenderPos(0)->getTranslationZ();
 	tempFridge.x = fridge.GetRenderPos(0)->getTranslationX();
 	tempFridge.z = fridge.GetRenderPos(0)->getTranslationZ();
+	tempPatroler.x = patroler.getPosX();
+	tempPatroler.z = patroler.getPosZ();
 
 	//fence check
 	//leftfence
@@ -992,7 +995,7 @@ void SP2::BoundsCheck()
 	}
 
 	//patroler collision
-	if(camera.position.x >= patroler.getPosX() - 2 && camera.position.x <= patroler.getPosX() +2 && camera.position.z >= patroler.getPosZ() - 2 && camera.position.z <= patroler.getPosZ() +2)
+	if(camera.position.x >= patroler.getPosX() - 4 && camera.position.x <= patroler.getPosX() +4 && camera.position.z >= patroler.getPosZ() - 4 && camera.position.z <= patroler.getPosZ() +4)
 	{
 		if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)//player not idle
 		{
@@ -1000,10 +1003,22 @@ void SP2::BoundsCheck()
 			camera.target.x = cameraDupe.target.x;
 			camera.position.z = cameraDupe.position.z;
 			camera.target.z = cameraDupe.target.z;
+			playeridle = false;
+			
 		}
 		else//idle player/camera
 		{
 			cout<<"player is idle"<<endl;
+			playeridle = true;
+			
+		}
+	}
+	//player break idle
+	if(playeridle == true)
+	{
+		if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)
+		{
+			playeridle = false;
 		}
 	}
 }
@@ -1291,6 +1306,15 @@ void SP2::RenderScreenUI()
 		{
 			RenderUI(meshList[GEO_DIALOGUEBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
 			RenderTextOnScreen(meshList[GEO_TEXT], "Welcome to UNFAIRPRICE" , Color(0, 1, 0), 2, 6, 9.2);
+		}
+	}
+	//Render Patroler/shopper Dialogue
+	for(int i = 0; i<4; ++i)
+	{
+		if(camera.position.x >= patroler.getPosX()-8 && camera.position.x <= patroler.getPosX()+2 && camera.position.z >= patroler.getPosZ()-2 && camera.position.z <= patroler.getPosZ()+2)
+		{
+			RenderUI(meshList[GEO_DIALOGUEBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
+			RenderTextOnScreen(meshList[GEO_TEXT], "What should i get?" , Color(0, 1, 0), 2, 6, 9.2);
 		}
 	}
 	//RenderTextOnScreen(meshList[GEO_TEXT], HP, Color(1, 1, 1), 4, 3.2, 1.5);

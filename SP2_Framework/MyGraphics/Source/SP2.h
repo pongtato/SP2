@@ -241,6 +241,7 @@ private:
 	float translate;
 	float translateY;
 	bool walk;
+	bool playeridle;
 	std::string FPS_count;
 	std::string XPos;
 	std::string ZPos;
