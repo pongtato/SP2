@@ -137,4 +137,9 @@ int CReadFromText::ReturnListSize(void)
 	return item_list.size();
 }
 
+int CReadFromText::ReturnReadListSize(void)
+{
+	return my_list.size();
+}
+
 

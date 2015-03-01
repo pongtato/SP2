@@ -32,7 +32,8 @@ void SP2::Init()
 	character.ReadTextFile( "OBJ-Pos/NPC/Characterpos.txt" );
 	shopper.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	patroler.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
-	FNB.ReadTextFileItem( "OBJ-Pos/Food/Cans/FNB.txt");
+	FNB.ReadTextFileItem( "OBJ-Pos/FNB.txt");
+	Police.ReadTextFileItem("OBJ-Pos/Police.txt");
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	//Enable depth buffer and depth testing
@@ -65,10 +66,13 @@ void SP2::Init()
 	playeridle = false;
 	translate = 0;
 	translateY = 0;
+	float tempX = data.GetRenderPos(10)->getTranslationX();
 
 	//Initialize camera settings
 	camera.Init(Vector3(0, 6, 100), Vector3(0, 0, 0), Vector3(0, 1, 0));
-	
+	Security1.Init(Vector3(-73,14.5,33), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	Security2.Init(Vector3(67,14.5,-35), Vector3(0, 0, 0), Vector3(0, 1, 0));
+
 	//Initialize all meshes to NULL
 	for(int i = 0; i < NUM_GEOMETRY; ++i)
 	{
@@ -446,7 +450,7 @@ void SP2::Init()
 	meshList[GEO_MODEL_PISTOL]->textureID = LoadTGA("Image//DOOR2.tga");
 
 	meshList[GEO_MODEL_RIFLE] = MeshBuilder::GenerateOBJ("model1", "OBJ//rifle.obj");
-	meshList[GEO_MODEL_RIFLE]->textureID = LoadTGA("Image//DOOR2.tga");
+	meshList[GEO_MODEL_RIFLE]->textureID = LoadTGA("Image//rifle.tga");
 
 	meshList[GEO_MODEL_CAMERA] = MeshBuilder::GenerateOBJ("model1", "OBJ//camera.obj");
 	meshList[GEO_MODEL_CAMERA]->textureID = LoadTGA("Image//CAMERA.tga");
@@ -525,6 +529,24 @@ void SP2::Init()
 	meshList[GEO_MODEL_CASHIER_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
 	meshList[GEO_MODEL_CASHIER_RIGHTLEG]->textureID = LoadTGA("Image//cashierskin.tga");
 
+	//player
+	meshList[GEO_PLAYER_ARMSL] = MeshBuilder::GenerateOBJ("model1", "OBJ//Arm.obj");
+	meshList[GEO_PLAYER_ARMSL]->textureID = LoadTGA("Image//POLICE.tga");
+
+	meshList[GEO_PLAYER_ARMSR] = MeshBuilder::GenerateOBJ("model1", "OBJ//Arm.obj");
+	meshList[GEO_PLAYER_ARMSR]->textureID = LoadTGA("Image//POLICE.tga");
+
+	//bullet
+	meshList[GEO_MODEL_BULLET] = MeshBuilder::GenerateOBJ("model1", "OBJ//bullet.obj");
+	meshList[GEO_MODEL_BULLET]->textureID = LoadTGA("Image//stamina.tga");
+
+	//police car
+	meshList[GEO_MODEL_POLICEVAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//PoliceVan.obj");
+	meshList[GEO_MODEL_POLICEVAN]->textureID = LoadTGA("Image//PoliceVan.tga");
+
+	meshList[GEO_MODEL_POLICEVANWHEEL] = MeshBuilder::GenerateOBJ("model1", "OBJ//PoliceVanWheel.obj");
+	meshList[GEO_MODEL_POLICEVANWHEEL]->textureID = LoadTGA("Image//Cart.tga");
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
 
@@ -544,8 +566,19 @@ void SP2::Init()
 	patroler.setPosX(character.GetRenderPos(2)->getTranslationX());
 	patroler.setPosZ(character.GetRenderPos(2)->getTranslationZ());
 	police = false;
-
+	ArmSwing = 130;
 	MenuKey = true;
+
+	for ( int i = 0; i < Police.ReturnListSize(); ++i)
+	{
+		if ( Police.GetRenderPosItem(i)->getItemAvailability() == true)
+		{
+			CCollisionBounds* temp =  new CCollisionBounds();
+			temp->SetCollisionBounds(Police.GetRenderPosItem(i)->getItemTranslationX(),Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ(),2,2,2);
+			colBounds.push_back(temp);
+			cout << " added " << endl;
+		}
+	}
 }
 
 static float ROT_LIMIT = 45.f;
@@ -562,7 +595,7 @@ void SP2::Update(double dt)
 		glDisable(GL_CULL_FACE);
 	if(Application::IsKeyPressed('3'))
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-	if(Application::IsKeyPressed('4'))
+	if(Application::IsKeyPressed('4')) 
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 	if(MenuKey == true)
 	{
@@ -608,53 +641,17 @@ void SP2::Update(double dt)
 	{
 		if(Application::IsKeyPressed('5'))
 		{
-			Vector3 getOrigin;
-			getOrigin.x = data.GetRenderPos(0)->getTranslationX();
-			getOrigin.y = data.GetRenderPos(0)->getTranslationY();
-			getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
 			camera.setCameraState(1);
-			float tempX = data.GetRenderPos(10)->getTranslationX();
-			float tempY = data.GetRenderPos(10)->getTranslationY();
-			float tempZ = data.GetRenderPos(10)->getTranslationZ();
-			camera.target.x = 0;
-			camera.target.y = 1;
-			camera.target.z = 0;
-			camera.up.y = 0.98;
-			camera.up.x = 0.11;
-			camera.up.z = -0.07;
-			camera.position.y = getOrigin.y + tempY;
-			camera.position.x = getOrigin.x - tempX + 1;
-			camera.position.z = getOrigin.z - tempZ - 1;
 			camera.CameraMode = true;
 		}
 
 		if(Application::IsKeyPressed('6'))
 		{
-			Vector3 getOrigin;
-			getOrigin.x = data.GetRenderPos(0)->getTranslationX();
-			getOrigin.y = data.GetRenderPos(0)->getTranslationY();
-			getOrigin.z = data.GetRenderPos(0)->getTranslationZ();
-			camera.setCameraState(1);
-			float tempX = data.GetRenderPos(9)->getTranslationX();
-			float tempY = data.GetRenderPos(9)->getTranslationY();
-			float tempZ = data.GetRenderPos(9)->getTranslationZ();
-			camera.target.x = 0;
-			camera.target.y = 0;
-			camera.target.z = 0;
-			camera.up.y = 0.98;
-			camera.up.x = 0.11;
-			camera.up.z = 0.07;
-
-			camera.position.y = getOrigin.y + tempY;
-			camera.position.x = getOrigin.x - tempX +1;
-			camera.position.z = getOrigin.z - tempZ +1;
+			camera.setCameraState(2);
 			camera.CameraMode = true;
 		}
 		if(Application::IsKeyPressed('7'))
 		{
-			camera.position = cameraDupe.position;
-			camera.target = cameraDupe.target;
-			camera.up = cameraDupe.up;
 			camera.setCameraState(0);
 			camera.CameraMode = false;
 		}
@@ -671,9 +668,53 @@ void SP2::Update(double dt)
 	BoundsCheck();
 	SetPrevPos();
 	UnpaidItems();
+	camera.Update(dt);
 	Stealing();
 	}
-	camera.Update(dt);
+	else if ( camera.getCameraState() == 1)
+	{
+	Security1.Update(dt);
+	}
+	else if ( camera.getCameraState() == 2)
+	{
+	Security2.Update(dt);
+	}
+
+	if ( police == true)
+	{
+		for (int i = 0; i < Police.ReturnListSize(); ++i)
+		{
+			if (Police.GetRenderPosItem(i)->getItemName() == "PoliceVan")
+			{
+				police1.PoliceDrive(Police.GetRenderPosItem(i)->getItemTranslationX(),
+					Police.GetRenderPosItem(i)->getItemRotation(),
+					Police.GetRenderPosItem(i)->getItemTranslationZ(),
+					80,40,270);
+			}
+		}
+	}
+
+	if (shoot.bullet > 0  && police == true)
+	{
+		if(Application::IsKeyPressed(VK_LBUTTON))
+		{
+			CBullet* temp =  new CBullet();
+			temp->Position = Vector3(camera.position.x,camera.position.y,camera.position.z);
+			temp->Direction = Vector3(camera.target.x-camera.position.x,camera.target.y-camera.position.y,camera.target.z-camera.position.z);
+			bullet.push_back( temp );
+			shoot.bullet--;
+		}
+	}
+
+	for( int i=0; i < bullet.size(); i ++ )
+	{
+		BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z);
+		if ( !bullet[i]->BulletUpdate(dt) || BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z) == true )
+		{
+			bullet.erase( bullet.begin() + i );
+			cout << "erased" << endl;
+		}
+	}
 
 	Animate(dt);
 }
@@ -708,7 +749,6 @@ void SP2::Stealing()
 {
 	if (police == true)
 	{
-		cout << "stealing" << endl;
 		Lightswitch = 0;
 		lights[1].color.Set(1,Lightswitch,Lightswitch);
 		lights[2].color.Set(1,Lightswitch,Lightswitch);
@@ -731,6 +771,13 @@ void SP2::Stealing()
 		glUniform1f(m_parameters[U_LIGHT4_POWER], lights[4].power);
 		glUniform1f(m_parameters[U_LIGHT0_POWER], lights[0].power);
 	}
+}
+
+void SP2::SetPrevPos()
+{
+	cameraDupe.position = camera.position;
+	cameraDupe.target = camera.target;
+	cameraDupe.up = camera.up;
 }
 
 void SP2::UIupdates(double dt)
@@ -764,6 +811,16 @@ void SP2::UIupdates(double dt)
 	kk << "$" << player.getMoney();
 	MONEY = kk.str();
 
+	if ( police == true)
+	{
+		std::stringstream ll;
+		if ( shoot.bullet != 0 )
+			ll << shoot.bullet;
+		else 
+			ll << "Reload";
+		BulletCount = ll.str();
+	}
+
 	for ( int i = 0; i < FNB.ReturnListSize();  ++i)
 	{
 		if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.2 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.2 
@@ -771,11 +828,15 @@ void SP2::UIupdates(double dt)
 			&& camera.target.z >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-1 && camera.target.z <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+1)
 		{
 			ItemName = FNB.GetRenderPosItem(i)->getItemName();
+			std::stringstream pp;
+			pp << "$" << FNB.GetRenderPosItem(i)->getItemPrice();
+			ItemPrice = pp.str();
 			break;
 		}
 		else
 		{
 			ItemName = "";
+			ItemPrice = "";
 		}
 	}
 
@@ -857,13 +918,6 @@ void SP2::CharacterCrouch()
 		}
 }
 
-void SP2::SetPrevPos()
-{
-	cameraDupe.position = camera.position;
-	cameraDupe.target = camera.target;
-	cameraDupe.up = camera.up;
-}
-
 void SP2::BoundsCheck()
 {
 	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
@@ -884,22 +938,26 @@ void SP2::BoundsCheck()
 	{
 		camera.position.x = cameraDupe.position.x;
 		camera.target.x = cameraDupe.target.x;
+		camera.isCollide = true;
 	}
 	//right fence
 	else if( camera.position.x >= data.GetRenderPos(7)->getTranslationX()+90)
 	{
 		camera.position.x = cameraDupe.position.x;
 		camera.target.x = cameraDupe.target.x;
+		camera.isCollide = true;
 	}
 	else if( camera.position.z <= data.GetRenderPos(7)->getTranslationZ()-205)
 	{
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 	else if( camera.position.z >= data.GetRenderPos(7)->getTranslationZ()+180)
 	{
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 	
 	////mart outer bound check
@@ -910,6 +968,7 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 	////Back Wall Left
 	else if( camera.position.x >= tempMart.x -78 && camera.position.x <= tempMart.x - 14 && camera.position.z <= tempMart.z + -45  && camera.position.z >= tempMart.z - 54)
@@ -918,6 +977,7 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 
 	////Back Wall Right
@@ -927,6 +987,7 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 
 	////Right Wall
@@ -936,6 +997,7 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 
 	////Right Wall
@@ -945,6 +1007,7 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 
 	////Middle Wall
@@ -954,6 +1017,7 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 
 		//Fridge Bounds Check
@@ -963,6 +1027,7 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 
 	//patroler collision
@@ -974,11 +1039,16 @@ void SP2::BoundsCheck()
 			camera.target.x = cameraDupe.target.x;
 			camera.position.z = cameraDupe.position.z;
 			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
 		}
 		else//idle player/camera
 		{
 			cout<<"player is idle"<<endl;
 		}
+	}
+	else
+	{
+		camera.isCollide = false;
 	}
 
 	//Shelves Bounds Check
@@ -992,6 +1062,7 @@ void SP2::BoundsCheck()
 				camera.target.x = cameraDupe.target.x;
 				camera.position.z = cameraDupe.position.z;
 				camera.target.z = cameraDupe.target.z;
+				camera.isCollide = true;
 			}
 		}
 	}
@@ -1210,6 +1281,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_COKE], true);
 					modelStack.PopMatrix();	
@@ -1222,6 +1294,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_PEPSI], true);
 					modelStack.PopMatrix();	
@@ -1234,6 +1307,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_MTDEW], true);
 					modelStack.PopMatrix();	
@@ -1245,7 +1319,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0.2,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_PIZZA], true);
 					modelStack.PopMatrix();	
@@ -1257,7 +1332,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.41,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_ICECREAM], true);
 					modelStack.PopMatrix();	
@@ -1271,6 +1347,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_MCNCHEESE], true);
 					modelStack.PopMatrix();	
@@ -1282,7 +1359,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.3,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_TOBLERONE], true);
 					modelStack.PopMatrix();	
@@ -1294,7 +1372,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0.3,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_ROCHER], true);
 					modelStack.PopMatrix();	
@@ -1307,6 +1386,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_REDITOS], true);
 					modelStack.PopMatrix();	
@@ -1318,6 +1398,7 @@ void SP2::TrolleyUpdate()
 				modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 				modelStack.PushMatrix();
 				modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+				modelStack.Rotate(90,0,1,0);
 				modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 				RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
 				modelStack.PopMatrix();	
@@ -1329,7 +1410,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0.39,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_LAYSCHIPS], true);
 					modelStack.PopMatrix();	
@@ -1342,6 +1424,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_CACTUS], true);
 					modelStack.PopMatrix();	
@@ -1354,6 +1437,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
 					modelStack.PopMatrix();	
@@ -1366,6 +1450,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_PUMPKINCAN], true);
 					modelStack.PopMatrix();	
@@ -1377,7 +1462,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.4,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_MOATIES], true);
 					modelStack.PopMatrix();	
@@ -1390,6 +1476,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
 					modelStack.PopMatrix();	
@@ -1402,6 +1489,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_CHICKENSTOCK], true);
 					modelStack.PopMatrix();	
@@ -1414,6 +1502,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_PISTOL], true);
 					modelStack.PopMatrix();	
@@ -1426,6 +1515,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_RIFLE], true);
 					modelStack.PopMatrix();	
@@ -1438,6 +1528,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_MILO], true);
 					modelStack.PopMatrix();	
@@ -1449,7 +1540,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.2,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
 					modelStack.PopMatrix();	
@@ -1461,7 +1553,8 @@ void SP2::TrolleyUpdate()
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
 					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
+					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.1,StartPosZ+offSetZ);
+					modelStack.Rotate(90,0,1,0);
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_TOMATOSOUPCAN], true);
 					modelStack.PopMatrix();	
@@ -1482,7 +1575,18 @@ void SP2::Render()
 	Mtx44 MVP;
 
 	viewStack.LoadIdentity();
+	if ( camera.getCameraState() == 0 )
+	{
 	viewStack.LookAt(camera.position.x, camera.position.y, camera.position.z, camera.target.x, camera.target.y, camera.target.z, camera.up.x, camera.up.y, camera.up.z);
+	}
+	else if ( camera.getCameraState() == 1 )
+	{
+	viewStack.LookAt(Security1.position.x, Security1.position.y, Security1.position.z, Security1.target.x, Security1.target.y, Security1.target.z, Security1.up.x, Security1.up.y, Security1.up.z);
+	}
+	else if ( camera.getCameraState() == 2 )
+	{
+	viewStack.LookAt(Security2.position.x, Security2.position.y, Security2.position.z, Security2.target.x, Security2.target.y, Security2.target.z, Security2.up.x, Security2.up.y, Security2.up.z);
+	}
 	modelStack.LoadIdentity();
 
 	if(lights[0].type == Light::LIGHT_DIRECTIONAL)
@@ -1553,7 +1657,6 @@ void SP2::Render()
 	modelStack.PopMatrix();*/
 
 	RenderMesh(meshList[GEO_AXES], false);
-	//RenderBasicModel();
 	RenderWorld();
 	RenderPlayer();
 	RenderSkybox();
@@ -1561,6 +1664,19 @@ void SP2::Render()
 	Trolley();
 	TrolleyUpdate();
 	CheckOut();
+
+	if ( police == true)
+	{
+		RenderPolice();
+	}
+
+		for( int i=0; i < bullet.size(); i ++ )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z);
+			RenderMesh(meshList[GEO_MODEL_BULLET], true);
+			modelStack.PopMatrix();
+		}
 	if ( camera.getCameraState() == 0 )
 		RenderScreenUI();
 }
@@ -1596,14 +1712,16 @@ void SP2::RenderScreenUI()
 	RenderTextOnScreen(meshList[GEO_TEXT], ZPos , Color(0, 1, 0), 3, 0, 17);
 	RenderTextOnScreen(meshList[GEO_TEXT], MONEY , Color(0, 1, 0), 3, 0, 14);
 	RenderTextOnScreen(meshList[GEO_TEXT], ItemName , Color(0, 1, 0), 3, 13, 11);
+	RenderTextOnScreen(meshList[GEO_TEXT], ItemPrice , Color(0, 1, 0), 3, 13, 10.2);
 	RenderTextOnScreen(meshList[GEO_TEXT], ROLE , Color(0,1,0), 3, 0, 16);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS1 , Color(0,1,0), 3, 4, 13);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 12);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 11);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 10);
+	RenderTextOnScreen(meshList[GEO_TEXT], BulletCount , Color(0, 1, 0), 2, 20, 13);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
-	RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 34.25);
+	RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 30);
 	RenderUI(meshList[GEO_HP], Color(0, 1, 0), 54, 1.5, 15, 12.5, 9);
 	RenderUI(meshList[GEO_STAM], Color(0, 1, 0), Calc, 1.5, 15, 45, 9);
 	RenderUI(meshList[GEO_HPI], Color(0, 1, 0), 4, 4, 4, 12, 9);
@@ -1745,6 +1863,11 @@ void SP2::CheckItem()
 {
 	if(Application::IsKeyPressed('E'))
 	{
+		player.Takeitems = true;
+	}
+
+	if ( player.Takeitems == true)
+	{
 		for ( int i = 0; i < FNB.ReturnListSize();  ++i)
 		{
 			if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.4 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.4 
@@ -1753,9 +1876,18 @@ void SP2::CheckItem()
 			{
 				if (player.returnInvenSize() < player.getInventoryCap() && FNB.GetRenderPosItem(i)->getItemAvailability() == true && FNB.GetRenderPosItem(i)->getItemName() == ItemName)
 				{
+					if (ArmSwing > 0 )
+					{
+						ArmSwing-=15;
+					}
+					else
+					{
 					FNB.GetRenderPosItem(i)->setItemAvailable(0);
 					player.setInventory(FNB.GetRenderPosItem(i)->getItemName(),FNB.GetRenderPosItem(i)->getItemPrice());
+					ArmSwing = 130;
+					player.Takeitems = false;
 					break;
+					}
 				}
 			}
 		}
@@ -1803,7 +1935,7 @@ void SP2::CheckOut()
 	float StartPosZ = -2.3;
 	float StartPosX = 1.8;
 	float PerZ = 1;
-	if(Application::IsKeyPressed('E'))
+	if(Application::IsKeyPressed('E') && player.returnInvenSize() != 0)
 	{
 		for ( int i = 0; i < 4;  ++i)
 		{
@@ -1812,287 +1944,303 @@ void SP2::CheckOut()
 				&& camera.target.z >= cashier.GetRenderPos(i)->getTranslationZ()-3 && camera.target.z <= cashier.GetRenderPos(i)->getTranslationZ()+3)
 			{
 				paying = true;
+				ArmSwing = 0;
 				CashierOffetX = cashier.GetRenderPos(i)->getTranslationX();
 				CashierOffetY = cashier.GetRenderPos(i)->getTranslationY();
 				CashierOffetZ = cashier.GetRenderPos(i)->getTranslationZ();
 			}
 		}
 	}
-		if ( paying == true)
-		{
-			for ( int j = 0; j < player.returnInvenSize(); ++j)
-			{
-				if ( player.getInventory(j)->getItemName() == "Coke")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
-					//modelStack.Rotate(player.getInventory(j)->getItemRotation(),player.getInventory(j)->getItemRX(),player.getInventory(j)->getItemRY(),player.getInventory(j)->getItemRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+offSetX,0,StartPosZ+(j*PerZ));
-					RenderMesh(meshList[GEO_MODEL_COKE], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-			/*	else if ( player.getInventory(i)->getItemName() == "Pepsi")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_PEPSI], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "MtDew")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_MTDEW], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Pizza")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_PIZZA], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "IceCream")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_ICECREAM], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
 
-				}
-				else if ( player.getInventory(i)->getItemName() == "McNCheese")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_MCNCHEESE], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Toblerone")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_TOBLERONE], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Rocher")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_ROCHER], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Reditos")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_REDITOS], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Dewitos")
-				{						modelStack.PushMatrix();
-				modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-				modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+	if ( paying == true && player.returnInvenSize() != 0)
+	{
+		for ( int j = 0; j < player.returnInvenSize(); ++j)
+		{
+			if ( j >= 5)
+			{
+				offSetX = 1.5;
+				offSetZ = 5;
+			}
+			if ( player.getInventory(j)->getItemName() == "Coke")
+			{
 				modelStack.PushMatrix();
-				modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-				modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-				RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+				//modelStack.Rotate(player.getInventory(j)->getItemRotation(),player.getInventory(j)->getItemRX(),player.getInventory(j)->getItemRY(),player.getInventory(j)->getItemRZ());
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+				RenderMesh(meshList[GEO_MODEL_COKE], true);
 				modelStack.PopMatrix();	
 				modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Lays")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_LAYSCHIPS], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Cactus")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_CACTUS], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Vegcan")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "PCan")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_PUMPKINCAN], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "MOaties")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_MOATIES], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "OBox")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Chickenstock")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_CHICKENSTOCK], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Pistol")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_PISTOL], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Rifle")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_RIFLE], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "Milo")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_MILO], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "SardCan")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
-				}
-				else if ( player.getInventory(i)->getItemName() == "SoupCan")
-				{
-					modelStack.PushMatrix();
-					modelStack.Translate(cashier.GetRenderPos(i)->getTranslationX(),data.GetRenderPos(21)->getTranslationY()+tempOffsetY,cashier.GetRenderPos(i)->getTranslationZ());
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-					modelStack.PushMatrix();
-					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
-					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
-					RenderMesh(meshList[GEO_MODEL_TOMATOSOUPCAN], true);
-					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	*/
-				/*}*/
-				//cout << player.getInventory(j)->getItemPrice() << endl;
-				//player.setMoney(player.getInventory(j)->getItemPrice());
-				//player.sellItems(j);
+			}
+			else if ( player.getInventory(j)->getItemName() == "Pepsi")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_PEPSI], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "MtDew")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_MTDEW], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Pizza")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0.2,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_PIZZA], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "IceCream")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,-0.41,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_ICECREAM], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+
+			}
+			else if ( player.getInventory(j)->getItemName() == "McNCheese")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_MCNCHEESE], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Toblerone")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,-0.3,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_TOBLERONE], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Rocher")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0.3,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_ROCHER], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Reditos")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_REDITOS], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Dewitos")
+			{						modelStack.PushMatrix();
+			modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+			modelStack.PushMatrix();
+			modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+			RenderMesh(meshList[GEO_MODEL_DEWITOS], true);
+			modelStack.PopMatrix();	
+			modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Lays")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0.39,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_LAYSCHIPS], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Cactus")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,-0.2,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_CACTUS], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Vegcan")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_VEGCAN], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "PCan")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_PUMPKINCAN], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "MOaties")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,-0.4,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_MOATIES], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "OBox")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_CEREAL_2], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Chickenstock")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_CHICKENSTOCK], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Pistol")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_PISTOL], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Rifle")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_RIFLE], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "Milo")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,0,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_MILO], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "SardCan")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,-0.2,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_SARDCAN], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			else if ( player.getInventory(j)->getItemName() == "SoupCan")
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
+
+				modelStack.PushMatrix();
+				modelStack.Translate(StartPosX-offSetX,-0.1,StartPosZ+(j*PerZ)-offSetZ);
+
+				RenderMesh(meshList[GEO_MODEL_TOMATOSOUPCAN], true);
+				modelStack.PopMatrix();	
+				modelStack.PopMatrix();	
+			}
+			//cout << player.getInventory(j)->getItemPrice() << endl;
+			if (ArmSwing < 130 && paying == true )
+			{
+				ArmSwing++;
+			}
+			else if (ArmSwing >= 130 && paying == true )
+			{
+				player.setMoney(player.getInventory(j)->getItemPrice());
+				player.sellItems(j);
 			}
 		}
+		if (player.returnInvenSize() == 0)
+			{
+				paying = false;
+			}
 	}
-	//CheckoutActive = false;
-
+}
 
 void SP2::RenderSkybox()
 {
@@ -2174,6 +2322,93 @@ void SP2::RenderCashierModel()
 		modelStack.PopMatrix();
 		modelStack.PopMatrix();
 	}
+}
+
+void SP2::RenderPolice()
+{
+	for(int i=0; i< Police.ReturnListSize(); ++i)
+	{
+		if  ( Police.GetRenderPosItem(i)->getItemAvailability() == true && Police.GetRenderPosItem(i)->getItemName() == "PoliceVan")
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX()+police1.PoliceXMove,Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ()+police1.PoliceZMove);
+			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation()+police1.PoliceRotate,Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
+			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
+			RenderMesh(meshList[GEO_MODEL_POLICEVAN], true);
+			//front Left wheel
+			modelStack.PushMatrix();
+			modelStack.Translate(-3.2,-1,5.7);
+			modelStack.Rotate(90,1,0,0);
+			modelStack.PushMatrix();
+			modelStack.Rotate(police1.WheelRot,1,0,0);
+			modelStack.Scale(1,1,1);
+			RenderMesh(meshList[GEO_MODEL_POLICEVANWHEEL], true);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			//front right wheel
+			modelStack.PushMatrix();
+			modelStack.Translate(3.2,-1,5.7);
+			modelStack.Rotate(90,1,0,0);
+			modelStack.PushMatrix();
+			modelStack.Rotate(police1.WheelRot,1,0,0);
+			modelStack.Scale(1,1,1);
+			RenderMesh(meshList[GEO_MODEL_POLICEVANWHEEL], true);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			//back left wheel
+			modelStack.PushMatrix();
+			modelStack.Translate(-3.2,-1,-6);
+			modelStack.Rotate(90,1,0,0);
+			modelStack.PushMatrix();
+			modelStack.Rotate(police1.WheelRot,1,0,0);
+			modelStack.Scale(1,1,1);
+			RenderMesh(meshList[GEO_MODEL_POLICEVANWHEEL], true);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			//back right wheel
+			modelStack.PushMatrix();
+			modelStack.Translate(3.2,-1,-6);
+			modelStack.Rotate(90,1,0,0);
+			modelStack.PushMatrix();
+			modelStack.Rotate(police1.WheelRot,1,0,0);
+			modelStack.Scale(1,1,1);
+			RenderMesh(meshList[GEO_MODEL_POLICEVANWHEEL], true);
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+			modelStack.PopMatrix();
+		}
+
+		if (police1.arrived == true && Police.GetRenderPosItem(i)->getItemAvailability() == true && Police.GetRenderPosItem(i)->getItemName() == "Police1")
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX(),Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ());
+			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation(),Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
+			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
+			RenderMesh(meshList[GEO_LIGHTBALL], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
+bool SP2::BulletCollision(float x,float y,float z)
+{
+	for ( int i = 0; i < colBounds.size(); ++i)
+	{
+		if ( x >= colBounds[i]->TTL.x && x <= colBounds[i]->TTR.x 
+			&& y >= colBounds[i]->BTL.y && y <= colBounds[i]->TTL.y
+			&& z >= colBounds[i]->TTL.z && z <= colBounds[i]->TBL.z
+			)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				colBounds.erase(colBounds.begin() +i );
+			}
+			cout << "deleted";
+			return true;
+		}
+	}
+	return false;
 }
 
 void SP2::RenderCashier()
@@ -2481,7 +2716,70 @@ void SP2::RenderAnimate()
 
 void SP2::RenderPlayer()
 {
+	if (police != true)
+	{
+	//Origin
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	//Left Right to camera
+	if ( player.trolley == false)
+		modelStack.Rotate(camera.CamRotationX,0,1,0);
+	else if ( player.trolley == true)
+		modelStack.Rotate(camera.CamRotation-90,0,1,0);
+	modelStack.PushMatrix();
+	//Up Down to camera
+	if ( player.trolley == false)
+		modelStack.Rotate(camera.CamRotationY,1,0,0);
+	else if ( player.trolley == true)
+		modelStack.Rotate(-60,1,0,0);
+	//Right Arm
+	modelStack.PushMatrix();
+	modelStack.Translate(0.05, -0.2, -0.1);
+	modelStack.Rotate(-10,0,1,0);
+	modelStack.PushMatrix();
+	modelStack.Rotate(ArmSwing,1,0,0);
+	RenderMesh(meshList[GEO_PLAYER_ARMSR], false);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	//left Arm
+	modelStack.PushMatrix();
+	modelStack.Translate(-0.05, -0.2, -0.1);
+	modelStack.Rotate(10,0,1,0);
+	modelStack.PushMatrix();
+	if ( player.trolley == true)
+		modelStack.Rotate(ArmSwing,1,0,0);
+	else if ( player.trolley == false)
+		modelStack.Rotate(0,1,0,0);
+	RenderMesh(meshList[GEO_PLAYER_ARMSL], false);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	}
 
+	if ( police == true)
+	{
+		//Origin
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	//Left Right to camera
+	modelStack.Rotate(camera.CamRotationX,0,1,0);
+	modelStack.PushMatrix();
+	//Up Down to camera
+	modelStack.Rotate(camera.CamRotationY,1,0,0);
+	//Right Arm
+	modelStack.PushMatrix();
+	modelStack.Translate(0.07, -0.12, -0.25);
+	//modelStack.Rotate(-10,0,1,0);
+	modelStack.PushMatrix();
+	//modelStack.Rotate(ArmSwing,1,0,0);
+	modelStack.Rotate(-90,0,1,0);
+	RenderMesh(meshList[GEO_MODEL_RIFLE], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	}
 }
 
 void SP2::RenderFNB()

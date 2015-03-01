@@ -15,7 +15,11 @@
 #include "Item.h"
 #include "Character.h"
 #include "Trolley.h"
+#include "CameraSecurity.h"
 #include<algorithm>
+#include "Bullet.h"
+#include "CollisionBounds.h"
+#include "Police.h"
 
 using namespace std;
 
@@ -192,6 +196,12 @@ private:
 		GEO_MODEL_GUARDCONTROL,
 		GEO_MODEL_TROLLEY,
 		GEO_MENUBOX,
+		GEO_PLAYER_ARMSL,
+		GEO_PLAYER_ARMSR,
+		GEO_MODEL_BULLET,
+		GEO_MODEL_POLICEVAN,
+		GEO_MODEL_POLICEVANWHEEL,
+
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -219,12 +229,20 @@ public:
 	CReadFromText character;
 	CReadFromText cashiermodel;
 	CReadFromText FNB;
+	CReadFromText Police;
+	vector<CBullet*> bullet;
+	CBullet shoot;
+
+	vector<CCollisionBounds*> colBounds;
+
 
 	CNPC npc;
 	CNPC shopper;
 	CNPC patroler;
 	CCharacter player;
 	CTrolley trolley;
+	CPolice police1;
+
 
 	bool police;
 	int Lightswitch;
@@ -264,16 +282,21 @@ private:
 	std::string ShopTut;
 	std::string GuardTut;
 	std::string TheifTut;
+	std::string BulletCount;
+	std::string ItemPrice;
 
 	float EntranceDoorSlide;
 	float ExitDoorSlide;
 	float ShutterDoorOpen;
 	float RightStaffDoorSlide;
 	float LeftStaffDoorSlide;
+	float ArmSwing;
 	bool MenuKey;
 
 	//Camera2 camera;
 	Camera3 camera;
+	CCameraSecurity Security1;
+	CCameraSecurity Security2;
 	Camera3 cameraDupe;
 
 	MS modelStack, viewStack, projectionStack;
@@ -291,7 +314,7 @@ private:
 	void RenderPlayer();
 	void RenderScreenUI();
 	void RenderAnimate();
-
+	void RenderPolice();
 	void SetPrevPos(void);
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);
@@ -311,6 +334,7 @@ private:
 	void RenderBasicModel();
 	void Trolley();
 	void TrolleyUpdate();
+	bool BulletCollision(float x,float y,float z);
 };
 
 #endif

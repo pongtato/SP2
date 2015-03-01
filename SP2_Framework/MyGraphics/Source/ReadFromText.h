@@ -26,6 +26,7 @@ public:
 	void ReadTextFileItem(const char* filename);
 	void ResetData(void);
 	int ReturnListSize(void);
+	int ReturnReadListSize(void);
 
 };
 

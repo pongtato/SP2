@@ -37,6 +37,7 @@ public:
 	bool TrolleyMode;
 	bool fixCamera;
 	bool fixTranslation;
+	bool isCollide;
 
 	virtual void Init(const Vector3& pos, const Vector3& target, const Vector3& up);
 	virtual void Update(double dt);
@@ -51,6 +52,8 @@ public:
 	int getCameraState(void);
 	int CameraLock;
 	float CamRotation;
+	float CamRotationX;
+	float CamRotationY;
 	float CAMERA_SPEED;
 	float TrolleyStateR;
 	float TrolleyStateT;
