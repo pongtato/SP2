@@ -311,6 +311,12 @@ void SP2::Init()
 	meshList[GEO_DIALOGUEBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_DIALOGUEBOX]->textureID = LoadTGA("Image//dialoguebox.tga");
 
+	meshList[GEO_MENUBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_MENUBOX]->textureID = LoadTGA("Image//menubox.tga");
+
+	meshList[GEO_MENUSELECT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_MENUSELECT]->textureID = LoadTGA("Image//menuselect.tga");
+
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//()Town_bk.tga");
 
@@ -597,46 +603,6 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if(Application::IsKeyPressed('4')) 
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	if(MenuKey == true)
-	{
-		INSTRUCTIONS1 = "Press 8 for Thief";
-		INSTRUCTIONS2 = "Press 9 for Shopper";
-		INSTRUCTIONS3 = "Press 0 for Guard";
-		INSTRUCTIONS4 = "Press Esc to quit";
-	}
-	if(Application::IsKeyPressed('8'))
-	{
-		ROLE = "Thief";	
-		INSTRUCTIONS1 = "";
-		INSTRUCTIONS2 = "";
-		INSTRUCTIONS3 = "";
-		INSTRUCTIONS4 = "";
-		MenuKey = false;
-		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('0'))
-			ROLE = "Thief";
-	}	
-	if(Application::IsKeyPressed('9'))
-	{	
-		ROLE = "Shopper";
-		INSTRUCTIONS1 = "";
-		INSTRUCTIONS2 = "";
-		INSTRUCTIONS3 = "";
-		INSTRUCTIONS4 = "";
-		MenuKey = false;
-		if(Application::IsKeyPressed('8')||Application::IsKeyPressed('0'))
-			ROLE = "Shopper";
-	}
-	if(Application::IsKeyPressed('0'))
-	{
-		ROLE = "Guard";
-		INSTRUCTIONS1 = "";
-		INSTRUCTIONS2 = "";
-		INSTRUCTIONS3 = "";
-		INSTRUCTIONS4 = "";
-		MenuKey = false;
-		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('8'))
-			ROLE = "Guard";
-	}
 	if ( ItemName == "Camera")
 	{
 		if(Application::IsKeyPressed('5'))
@@ -1714,10 +1680,6 @@ void SP2::RenderScreenUI()
 	RenderTextOnScreen(meshList[GEO_TEXT], ItemName , Color(0, 1, 0), 3, 13, 11);
 	RenderTextOnScreen(meshList[GEO_TEXT], ItemPrice , Color(0, 1, 0), 3, 13, 10.2);
 	RenderTextOnScreen(meshList[GEO_TEXT], ROLE , Color(0,1,0), 3, 0, 16);
-	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS1 , Color(0,1,0), 3, 4, 13);
-	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 12);
-	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 11);
-	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 10);
 	RenderTextOnScreen(meshList[GEO_TEXT], BulletCount , Color(0, 1, 0), 2, 20, 13);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
@@ -1855,6 +1817,39 @@ void SP2::RenderScreenUI()
 			{
 				RenderUI(meshList[GEO_MODEL_TOMATOSOUPCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5)+temp, 4);
 			}
+		}
+	}
+	if(MenuKey == true)
+	{	
+		RenderUI(meshList[GEO_MENUBOX], Color(0, 1, 0), 80, 60, 1.5, 40, 30);
+		RenderTextOnScreen(meshList[GEO_TEXT], TITLE, Color(0,1,0), 6, 1, 7);
+		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 30);
+		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 24);
+		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 18);
+		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 12);
+		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS1 , Color(0,1,0), 3, 4, 9);
+		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 7);
+		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 5);
+		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 3);
+		TITLE = "SP2 Project";
+		INSTRUCTIONS1 = "Press 8 for Thief";
+		INSTRUCTIONS2 = "Press 9 for Stocker";
+		INSTRUCTIONS3 = "Press 0 for Guard";
+		INSTRUCTIONS4 = "Press Esc to quit";
+		if(Application::IsKeyPressed('8'))
+		{
+			ROLE = "Thief";	
+			MenuKey = false;
+		}	
+		if(Application::IsKeyPressed('9'))
+		{	
+			ROLE = "Stocker";
+			MenuKey = false;
+		}
+		if(Application::IsKeyPressed('0'))
+		{
+			ROLE = "Guard";
+			MenuKey = false;
 		}
 	}
 }

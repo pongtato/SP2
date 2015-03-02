@@ -196,6 +196,7 @@ private:
 		GEO_MODEL_GUARDCONTROL,
 		GEO_MODEL_TROLLEY,
 		GEO_MENUBOX,
+		GEO_MENUSELECT,
 		GEO_PLAYER_ARMSL,
 		GEO_PLAYER_ARMSR,
 		GEO_MODEL_BULLET,
@@ -278,10 +279,8 @@ private:
 	std::string INSTRUCTIONS2;
 	std::string INSTRUCTIONS3;
 	std::string INSTRUCTIONS4;
+	std::string TITLE;
 	std::string ItemName;
-	std::string ShopTut;
-	std::string GuardTut;
-	std::string TheifTut;
 	std::string BulletCount;
 	std::string ItemPrice;
 
