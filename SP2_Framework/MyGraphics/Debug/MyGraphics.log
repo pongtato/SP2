@@ -1,4 +1,4 @@
-﻿Build started 2/3/2015 3:45:16 PM.
+﻿Build started 2/3/2015 5:03:18 PM.
      1>Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\MyGraphics.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -17,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.07
+Time Elapsed 00:00:00.06
