@@ -318,22 +318,22 @@ void SP2::Init()
 	meshList[GEO_MENUSELECT]->textureID = LoadTGA("Image//menuselect.tga");
 
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//()Town_bk.tga");
+	meshList[GEO_FRONT]->textureID = LoadTGA("Image//()airBK.tga");
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//()Town_ft.tga");
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//()airFT.tga");
 
 	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//()Town_dn.tga");
+	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//()airDN.tga");
 
 	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//()Town2_Up.tga");
+	meshList[GEO_TOP]->textureID = LoadTGA("Image//()airUP.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//()Town_rt.tga");
+	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//()airRT.tga");
 
 	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//()Town_lf.tga");
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//()airLT.tga");
 
 	meshList[GEO_MODEL_DOORMAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//doorman.obj");
 	meshList[GEO_MODEL_DOORMAN]->textureID = LoadTGA("Image//doorman.tga");
