@@ -4,7 +4,7 @@
 CBullet::CBullet(void)
 : Position	( Vector3() )
 , Direction	( Vector3() )
-, Velocity	( Vector3( 3.0f, 3.0f, 3.0f ) )
+, Velocity	( Vector3( 5.0f, 5.0f, 5.0f ) )
 , Range		( Vector3( 500.0f, 500.0f, 500.0f ) )
 , alive		( true )
 {

@@ -242,7 +242,12 @@ public:
 	CNPC patroler;
 	CCharacter player;
 	CTrolley trolley;
+
 	CPolice police1;
+	CPolice police2;
+	CPolice police3;
+	CPolice police4;
+	CPolice Escape;
 
 
 	bool police;

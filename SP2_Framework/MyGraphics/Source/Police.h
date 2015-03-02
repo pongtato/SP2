@@ -17,7 +17,9 @@ public:
 	float FinalPosZ;
 	float WheelRot;
 	bool arrived;
+	bool escape;
 
 	void PoliceDrive(float x, float y, float z,float zOff, float xOff, float rot);
+	void PoliceDriveL(float x, float rot, float z,float zOff, float xOff, float rotOff);
 };
 
