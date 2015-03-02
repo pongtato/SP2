@@ -33,7 +33,9 @@ void SP2::Init()
 	shopper.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	patroler.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	FNB.ReadTextFileItem( "OBJ-Pos/FNB.txt");
-	Police.ReadTextFileItem("OBJ-Pos/Police.txt");
+	Police.ReadTextFileItem("OBJ-Pos/PoliceInit.txt");
+	PoliceCol.ReadTextFileItem("OBJ-Pos/PoliceCol.txt");
+	PoliceMan.ReadTextFilePolice("OBJ-Pos/Police.txt");
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	//Enable depth buffer and depth testing
@@ -593,16 +595,39 @@ void SP2::Init()
 	patroler.setPosX(character.GetRenderPos(2)->getTranslationX());
 	patroler.setPosZ(character.GetRenderPos(2)->getTranslationZ());
 	police = false;
+	EscapeCarMove = 0;
 	ArmSwing = 130;
 	MenuKey = true;
 
-	for ( int i = 0; i < Police.ReturnListSize(); ++i)
+	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
 	{
-		if ( Police.GetRenderPosItem(i)->getItemAvailability() == true)
+		if ( PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true )
 		{
 			CCollisionBounds* temp =  new CCollisionBounds();
-			temp->SetCollisionBounds(Police.GetRenderPosItem(i)->getItemTranslationX(),Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ(),2,2,2);
+			temp->SetCollisionBounds(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ(),2,2,2);
 			colBounds.push_back(temp);
+		}
+	}
+
+	for ( int i =0; i < PoliceCol.ReturnListSize(); ++i)
+	{
+		if ( i < 4)
+		{
+			if ( PoliceCol.GetRenderPosItem(i)->getItemAvailability() == true )
+			{
+				CCollisionBounds* temp =  new CCollisionBounds();
+				temp->SetCollisionBounds(PoliceCol.GetRenderPosItem(i)->getItemTranslationX(),PoliceCol.GetRenderPosItem(i)->getItemTranslationY(),PoliceCol.GetRenderPosItem(i)->getItemTranslationZ(),12,5,5);
+				VanBounds.push_back(temp);
+			}
+		}
+		else
+		{
+			if ( PoliceCol.GetRenderPosItem(i)->getItemAvailability() == true )
+			{
+				CCollisionBounds* temp =  new CCollisionBounds();
+				temp->SetCollisionBounds(PoliceCol.GetRenderPosItem(i)->getItemTranslationX(),PoliceCol.GetRenderPosItem(i)->getItemTranslationY(),PoliceCol.GetRenderPosItem(i)->getItemTranslationZ(),5,5,12);
+				VanBounds.push_back(temp);
+			}
 		}
 	}
 }
@@ -668,6 +693,32 @@ void SP2::Update(double dt)
 
 	if ( police == true)
 	{
+		if ( EscapeEnd == true)
+		{
+			EscapeCarMove++;
+		}
+
+		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
+		{
+			if ( PoliceMan.GetRenderPosPolice(i)->getItemPrice() <= 0 )
+			{
+				PoliceMan.GetRenderPosPolice(i)->setItemAvailable(false);
+			}
+			if ( PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == false)
+			{
+				if ( PoliceMan.GetRenderPosPolice(i)->RespawnCD < 20)
+				{
+					PoliceMan.GetRenderPosPolice(i)->RespawnCD += (1*dt);
+				}
+				else if ( PoliceMan.GetRenderPosPolice(i)->RespawnCD > 20)
+				{
+					PoliceMan.GetRenderPosPolice(i)->setItemAvailable(true);
+				}
+			}
+		}
+
+		PoliceShoot(dt);
+
 		for (int i = 0; i < Police.ReturnListSize(); ++i)
 		{
 			if (Police.GetRenderPosItem(i)->getItemName() == "PoliceVan")
@@ -705,11 +756,34 @@ void SP2::Update(double dt)
 	{
 		if(Application::IsKeyPressed(VK_LBUTTON))
 		{
+			if (shoot.ShootInterval < 0.3)
+			{
+				shoot.ShootInterval += (2*dt);
+			}
+
+			if (shoot.ShootInterval >= 0.3)
+			{
 			CBullet* temp =  new CBullet();
 			temp->Position = Vector3(camera.position.x,camera.position.y,camera.position.z);
 			temp->Direction = Vector3(camera.target.x-camera.position.x,camera.target.y-camera.position.y,camera.target.z-camera.position.z);
 			bullet.push_back( temp );
 			shoot.bullet--;
+			shoot.ShootInterval = 0;
+			}
+		}
+	}
+	else if  (shoot.bullet <= 0  && police == true)
+	{
+		if ( shoot.clip >0)
+		{
+			if (shoot.RTime < 2)
+				shoot.RTime += (1*dt);
+			if ( shoot.RTime >= 2)
+			{
+				shoot.clip--;
+				shoot.bullet=30;
+				shoot.RTime = 0;
+			}
 		}
 	}
 	else if  (shoot.bullet <= 0  && police == true)
@@ -725,6 +799,15 @@ void SP2::Update(double dt)
 		if ( !bullet[i]->BulletUpdate(dt) || BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z) == true )
 		{
 			bullet.erase( bullet.begin() + i );
+		}
+	}
+
+	for( int i=0; i < Policebullet.size(); i ++ )
+	{
+		BulletCollisionEnemy(Policebullet[i]->Position.x,Policebullet[i]->Position.y,Policebullet[i]->Position.z);
+		if ( !Policebullet[i]->BulletUpdatePolice(dt) || BulletCollisionEnemy(Policebullet[i]->Position.x,Policebullet[i]->Position.y,Policebullet[i]->Position.z) == true )
+		{
+			Policebullet.erase( Policebullet.begin() + i );
 		}
 	}
 
@@ -828,8 +911,12 @@ void SP2::UIupdates(double dt)
 		std::stringstream ll;
 		if ( shoot.bullet != 0 )
 			ll << shoot.bullet;
-		else 
+		else if ( shoot.clip > 0 && shoot.RTime == 0)
 			ll << "Reload";
+		else if (shoot.RTime > 0)
+			ll << "Reloading";
+		else 
+			ll << "Empty";
 		BulletCount = ll.str();
 	}
 
@@ -874,6 +961,20 @@ void SP2::UIupdates(double dt)
 		&& camera.target.z >= trolley.LastZ-5 && camera.target.z <= trolley.LastZ+5 && player.trolley == false)
 		{
 			ItemName = "Trolley";
+		}
+
+	if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
+		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
+		&& camera.target.z >= VanBounds[4]->TBL.z-2 && camera.target.z <= VanBounds[4]->TBL.z+2 && police == true)
+		{
+			ItemName = "$$$";
+		}
+
+		if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
+		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
+		&& camera.target.z >= VanBounds[4]->TTL.z && camera.target.z <= VanBounds[4]->TBL.z-15 && police == true)
+		{
+			ItemName = "Escape";
 		}
 }
 
@@ -943,6 +1044,21 @@ void SP2::BoundsCheck()
 	tempFridge.z = fridge.GetRenderPos(0)->getTranslationZ();
 	tempPatroler.x = patroler.getPosX();
 	tempPatroler.z = patroler.getPosZ();
+
+	//PoliceCar
+	for ( int i = 0; i< VanBounds.size(); ++i)
+	{
+		if ( camera.position.x  >= VanBounds[i]->TTL.x && camera.position.x  <= VanBounds[i]->TTR.x 
+			&& camera.position.y >= VanBounds[i]->BTL.y && camera.position.y <= VanBounds[i]->TTL.y
+			&& camera.position.z >= VanBounds[i]->TTL.z && camera.position.z <= VanBounds[i]->TBL.z)
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+		}
+	}
 
 	//fence check
 	//leftfence
@@ -1676,6 +1792,7 @@ void SP2::Render()
 	Trolley();
 	TrolleyUpdate();
 	CheckOut();
+	EscapeSteal();
 
 	if ( police == true)
 	{
@@ -1686,6 +1803,14 @@ void SP2::Render()
 		{
 			modelStack.PushMatrix();
 			modelStack.Translate(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z);
+			RenderMesh(meshList[GEO_MODEL_BULLET], true);
+			modelStack.PopMatrix();
+		}
+
+			for( int i=0; i < Policebullet.size(); i ++ )
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(Policebullet[i]->Position.x,Policebullet[i]->Position.y,Policebullet[i]->Position.z);
 			RenderMesh(meshList[GEO_MODEL_BULLET], true);
 			modelStack.PopMatrix();
 		}
@@ -1717,6 +1842,9 @@ void SP2::RenderScreenUI()
 	double tempStamCalc = camera.getStaminaDupe();
 	double Calc = (tempStamCalc/200) * 54 ;
 
+	double tempHpCalc = player.getHealth();
+	double HpCalc = (tempHpCalc/100) * 54 ;
+
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
 	RenderTextOnScreen(meshList[GEO_TEXT], FPS_count , Color(0, 1, 0), 3, 18, 18);
 
@@ -1730,7 +1858,7 @@ void SP2::RenderScreenUI()
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
 	RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 30);
-	RenderUI(meshList[GEO_HP], Color(0, 1, 0), 54, 1.5, 15, 12.5, 9);
+	RenderUI(meshList[GEO_HP], Color(0, 1, 0), HpCalc, 1.5, 15, 12.5, 9);
 	RenderUI(meshList[GEO_STAM], Color(0, 1, 0), Calc, 1.5, 15, 45, 9);
 	RenderUI(meshList[GEO_HPI], Color(0, 1, 0), 4, 4, 4, 12, 9);
 	RenderUI(meshList[GEO_STAMI], Color(0, 1, 0), 4, 4, 4, 45, 9);
@@ -2265,7 +2393,6 @@ void SP2::CheckOut()
 				modelStack.PopMatrix();	
 				modelStack.PopMatrix();	
 			}
-			//cout << player.getInventory(j)->getItemPrice() << endl;
 			if (ArmSwing < 130 && paying == true )
 			{
 				ArmSwing++;
@@ -2280,6 +2407,31 @@ void SP2::CheckOut()
 			{
 				paying = false;
 			}
+	}
+}
+
+void SP2::EscapeSteal()
+{
+	if(Application::IsKeyPressed('E') && player.returnInvenSize() != 0)
+	{
+		if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
+		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
+		&& camera.target.z >= VanBounds[4]->TBL.z-2 && camera.target.z <= VanBounds[4]->TBL.z+2 && police == true)
+		{
+			for ( int i = 0; i <player.returnInvenSize(); ++i)
+			{
+			player.setMoney(player.getInventory(i)->getItemPrice()*-1);
+			player.sellItems(i);
+			}
+		}
+
+		if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
+		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
+		&& camera.target.z >= VanBounds[4]->TTL.z && camera.target.z <= VanBounds[4]->TBL.z-15 && police == true)
+		{
+			//End scene code
+			EscapeEnd = true;
+		}
 	}
 }
 
@@ -2572,7 +2724,7 @@ void SP2::RenderPolice()
 		if  ( Police.GetRenderPosItem(i)->getItemAvailability() == true && Police.GetRenderPosItem(i)->getItemName() == "Escape")
 		{
 			modelStack.PushMatrix();
-			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX()+Escape.PoliceXMove,Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ()+Escape.PoliceZMove);
+			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX()+Escape.PoliceXMove,Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ()+Escape.PoliceZMove-EscapeCarMove);
 			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation()+Escape.PoliceRotate,Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
 			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
 			RenderMesh(meshList[GEO_MODEL_POLICEVAN], true);
@@ -2618,46 +2770,120 @@ void SP2::RenderPolice()
 			modelStack.PopMatrix();
 			modelStack.PopMatrix();
 		}
-
-		if (police1.arrived == true && Police.GetRenderPosItem(i)->getItemAvailability() == true && Police.GetRenderPosItem(i)->getItemName() == "Police1")
+	}
+	for ( int i = 0;i < PoliceMan.ReadTextFilePoliceSize(); ++i)
+	{
+		if (police1.arrived == true && PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true && PoliceMan.GetRenderPosPolice(i)->getItemName() == "Police")
 		{
 			modelStack.PushMatrix();
-			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX(),Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ());
-			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation(),Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
-			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
-			RenderMesh(meshList[GEO_LIGHTBALL], true);
-			modelStack.PopMatrix();
-		}
-		if (police2.arrived == true && Police.GetRenderPosItem(i)->getItemAvailability() == true && Police.GetRenderPosItem(i)->getItemName() == "Police2")
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX(),Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ());
-			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation(),Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
-			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
-			RenderMesh(meshList[GEO_LIGHTBALL], true);
-			modelStack.PopMatrix();
-		}
-		if (police3.arrived == true && Police.GetRenderPosItem(i)->getItemAvailability() == true && Police.GetRenderPosItem(i)->getItemName() == "Police3")
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX(),Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ());
-			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation(),Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
-			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
-			RenderMesh(meshList[GEO_LIGHTBALL], true);
-			modelStack.PopMatrix();
-		}
-		if (police4.arrived == true && Police.GetRenderPosItem(i)->getItemAvailability() == true && Police.GetRenderPosItem(i)->getItemName() == "Police4")
-		{
-			modelStack.PushMatrix();
-			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX(),Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ());
-			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation(),Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
-			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
+			modelStack.Translate(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
+			modelStack.Rotate(PoliceMan.GetRenderPosPolice(i)->getItemRotation(),PoliceMan.GetRenderPosPolice(i)->getItemRX(),PoliceMan.GetRenderPosPolice(i)->getItemRY(),PoliceMan.GetRenderPosPolice(i)->getItemRZ());
+			modelStack.Scale(PoliceMan.GetRenderPosPolice(i)->getItemScaleX(),PoliceMan.GetRenderPosPolice(i)->getItemScaleY(),PoliceMan.GetRenderPosPolice(i)->getItemScaleZ());
 			RenderMesh(meshList[GEO_LIGHTBALL], true);
 			modelStack.PopMatrix();
 		}
 	}
 }
 
+void SP2::PoliceShoot(double dt)
+{
+	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
+	{
+		if ( i == 2)
+		{
+			if(police1.arrived == true && PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true)
+			{
+				if ( PoliceMan.GetRenderPosPolice(i)->ShootCD < 3)
+				{
+					PoliceMan.GetRenderPosPolice(i)->ShootCD += (1*dt);
+				}
+
+				if (PoliceMan.GetRenderPosPolice(i)->ShootCD >= 3)
+				{
+					CBullet* temp =  new CBullet();
+					temp->Position = 
+						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
+					temp->Direction = 
+						Vector3(-0.999,0,0);
+					Policebullet.push_back( temp );
+					PoliceMan.GetRenderPosPolice(i)->ShootCD = 0;
+				}
+			}
+		}
+		else if ( i == 3)
+		{
+			if(police1.arrived == true && PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true)
+			{
+				if ( PoliceMan.GetRenderPosPolice(i)->ShootCD < 3)
+				{
+					PoliceMan.GetRenderPosPolice(i)->ShootCD += (1*dt);
+				}
+
+				if (PoliceMan.GetRenderPosPolice(i)->ShootCD >= 3)
+				{
+					CBullet* temp =  new CBullet();
+					temp->Position = 
+						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
+					temp->Direction = 
+						Vector3(-0.994,0,-0.1);
+					Policebullet.push_back( temp );
+					PoliceMan.GetRenderPosPolice(i)->ShootCD = 0;
+				}
+			}
+		}
+		else if ( i == 6)
+		{
+			if(police1.arrived == true && PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true)
+			{
+				if ( PoliceMan.GetRenderPosPolice(i)->ShootCD < 3)
+				{
+					PoliceMan.GetRenderPosPolice(i)->ShootCD += (1*dt);
+				}
+
+				if (PoliceMan.GetRenderPosPolice(i)->ShootCD >= 3)
+				{
+					CBullet* temp =  new CBullet();
+					temp->Position = 
+						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
+					temp->Direction = 
+						Vector3(0.999,0,0.1);
+					Policebullet.push_back( temp );
+					PoliceMan.GetRenderPosPolice(i)->ShootCD = 0;
+				}
+			}
+		}
+
+		else if ( i == 7)
+		{
+			if(police1.arrived == true && PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true)
+			{
+				if ( PoliceMan.GetRenderPosPolice(i)->ShootCD < 3)
+				{
+					PoliceMan.GetRenderPosPolice(i)->ShootCD += (1*dt);
+				}
+
+				if (PoliceMan.GetRenderPosPolice(i)->ShootCD >= 3)
+				{
+					CBullet* temp =  new CBullet();
+					temp->Position = 
+						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
+					temp->Direction = 
+						Vector3(0.992,0,-0.1);
+					Policebullet.push_back( temp );
+					PoliceMan.GetRenderPosPolice(i)->ShootCD = 0;
+				}
+			}
+		}
+	}
+}
 bool SP2::BulletCollision(float x,float y,float z)
 {
 	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
@@ -2677,10 +2903,9 @@ bool SP2::BulletCollision(float x,float y,float z)
 			&& z >= colBounds[i]->TTL.z && z <= colBounds[i]->TBL.z
 			)
 		{
-			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			if ( PoliceMan.GetRenderPosPolice(i)->getItemName() == "Police")
 			{
-				cout << i << endl;
-				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				PoliceMan.GetRenderPosPolice(i)->sethealth(30);
 				//colBounds.erase(colBounds.begin() +i );
 			}
 			return true;
@@ -2842,6 +3067,343 @@ bool SP2::BulletCollision(float x,float y,float z)
 	return false;
 }
 
+bool SP2::BulletCollisionEnemy(float x,float y,float z)
+{
+	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
+	tempMart.x = data.GetRenderPos(0)->getTranslationX();
+	tempMart.z = data.GetRenderPos(0)->getTranslationZ();
+	tempShelves.x = shelve.GetRenderPos(0)->getTranslationX();
+	tempShelves.z = shelve.GetRenderPos(0)->getTranslationZ();
+	tempCashier.x = cashier.GetRenderPos(0)->getTranslationX();
+	tempCashier.z = cashier.GetRenderPos(0)->getTranslationZ();
+	tempFridge.x = fridge.GetRenderPos(0)->getTranslationX();
+	tempFridge.z = fridge.GetRenderPos(0)->getTranslationZ();
+
+	for ( int i = 0; i < VanBounds.size(); ++i)
+	{
+		if ( x >= VanBounds[i]->TTL.x && x <= VanBounds[i]->TTR.x 
+			&& y >= VanBounds[i]->BTL.y && y <= VanBounds[i]->TTL.y
+			&& z >= VanBounds[i]->TTL.z && z <= VanBounds[i]->TBL.z
+			)
+		{
+			if ( PoliceCol.GetRenderPosItem(i)->getItemName() == "Escape")
+			{
+				player.setHealth(1);
+				//colBounds.erase(colBounds.begin() +i );
+			}
+			return true;
+		}
+		//fence check
+		//leftfence
+		else if( x <= data.GetRenderPos(7)->getTranslationX()-100)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+		//right fence
+		else if( x >= data.GetRenderPos(7)->getTranslationX()+90)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+		else if( z <= data.GetRenderPos(7)->getTranslationZ()-205)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+		else if( z >= data.GetRenderPos(7)->getTranslationZ()+180)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+
+		////mart outer bound check
+		////left wall
+		else if( x >= tempMart.x - 78 && x <= tempMart.x - 71 && z <= tempMart.z + 54 && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+		////Back Wall Left
+		else if( x >= tempMart.x -78 && x <= tempMart.x - 14 && z <= tempMart.z + -45  && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Back Wall Right
+		else if( x >= tempMart.x + 14 && x <= tempMart.x + 78 && z <= tempMart.z + -45  && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Right Wall
+		else if( x >= tempMart.x + 71 && x <= tempMart.x + 78 && z <= tempMart.z + 54  && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Right Wall
+		else if( x >= tempMart.x - 62 && x <= tempMart.x + 62 && z <= tempMart.z + 54  && z >= tempMart.z + 46)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Middle Wall
+		else if( x >= tempMart.x - 62 && x <= tempMart.x + 62 && z <= tempMart.z - 22  && z >= tempMart.z  - 30)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		//Fridge Bounds Check
+		else if(x >= tempFridge.x -92 && x <= tempFridge.x +8 && z <= tempFridge.z + 2 && z >= tempFridge.z)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		//Shelves Bounds Check
+		for(int i = 0; i<3; ++i)
+		{
+			for(int j = 0; j<3; ++j)
+			{
+				if(x >= ((tempShelves.x - 4) + (j*34)) && x <= ((tempShelves.x + 22) + (j*34))  && z <= (tempShelves.z +48 -(i*15)) && z >= (tempShelves.z +43-(i*15)))
+				{
+					if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+					{
+						Police.GetRenderPosItem(i)->setItemAvailable(false);
+						
+					}
+					return true;
+				}
+			}
+		}
+		//Cashier Bounds Check
+		for(int i = 0; i < 4; ++i)
+		{
+			if(x >= tempCashier.x -1 && x <= tempCashier.x +2 && z <= tempCashier.z + 53 -(i*16) && z >= tempCashier.z + 44-(i*16))
+			{
+				if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+				{
+					Police.GetRenderPosItem(i)->setItemAvailable(false);
+					
+				}
+				return true;
+			}
+		}
+
+		//Fridge Bounds Check
+		if(x >= tempFridge.x -92 && x <= tempFridge.x +8 && z <= tempFridge.z + 2 && z >= tempFridge.z)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				cout << i << endl;
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				//colBounds.erase(colBounds.begin() +i );
+			}
+			return true;
+		}
+		//fence check
+		//leftfence
+		else if( x <= data.GetRenderPos(7)->getTranslationX()-100)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+		//right fence
+		else if( x >= data.GetRenderPos(7)->getTranslationX()+90)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+		else if( z <= data.GetRenderPos(7)->getTranslationZ()-205)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+		else if( z >= data.GetRenderPos(7)->getTranslationZ()+180)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+			}
+			return true;
+		}
+
+		////mart outer bound check
+		////left wall
+		else if( x >= tempMart.x - 78 && x <= tempMart.x - 71 && z <= tempMart.z + 54 && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+		////Back Wall Left
+		else if( x >= tempMart.x -78 && x <= tempMart.x - 14 && z <= tempMart.z + -45  && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Back Wall Right
+		else if( x >= tempMart.x + 14 && x <= tempMart.x + 78 && z <= tempMart.z + -45  && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Right Wall
+		else if( x >= tempMart.x + 71 && x <= tempMart.x + 78 && z <= tempMart.z + 54  && z >= tempMart.z - 54)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Right Wall
+		else if( x >= tempMart.x - 62 && x <= tempMart.x + 62 && z <= tempMart.z + 54  && z >= tempMart.z + 46)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		////Middle Wall
+		else if( x >= tempMart.x - 62 && x <= tempMart.x + 62 && z <= tempMart.z - 22  && z >= tempMart.z  - 30)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		//Fridge Bounds Check
+		else if(x >= tempFridge.x -92 && x <= tempFridge.x +8 && z <= tempFridge.z + 2 && z >= tempFridge.z)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);
+				
+			}
+			return true;
+		}
+
+		//Shelves Bounds Check
+		for(int i = 0; i<3; ++i)
+		{
+			for(int j = 0; j<3; ++j)
+			{
+				if(x >= ((tempShelves.x - 4) + (j*34)) && x <= ((tempShelves.x + 22) + (j*34))  && z <= (tempShelves.z +48 -(i*15)) && z >= (tempShelves.z +43-(i*15)))
+				{
+					if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+					{
+						Police.GetRenderPosItem(i)->setItemAvailable(false);
+						
+					}
+					return true;
+				}
+			}
+		}
+		//Cashier Bounds Check
+		for(int i = 0; i < 4; ++i)
+		{
+			if(x >= tempCashier.x -1 && x <= tempCashier.x +2 && z <= tempCashier.z + 53 -(i*16) && z >= tempCashier.z + 44-(i*16))
+			{
+				if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+				{
+					Police.GetRenderPosItem(i)->setItemAvailable(false);
+					
+				}
+				return true;
+			}
+		}
+
+		//Fridge Bounds Check
+		if(x >= tempFridge.x -92 && x <= tempFridge.x +8 && z <= tempFridge.z + 2 && z >= tempFridge.z)
+		{
+			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
+			{
+				Police.GetRenderPosItem(i)->setItemAvailable(false);		
+			}
+					}
+			return true;
+		}
+	}
+	return false;
+}
+
 void SP2::RenderCashier()
 {
 	for(int i = 0; i < 4; ++i)
@@ -2877,17 +3439,16 @@ void SP2::RenderShelves()
 		{
 			if ( j >= 4 && j < 8 )
 			{
-			 temp = 10;
+				temp = 10;
 			}
 			else  if ( j >= 8 )
 			{
-			temp = 20;
+				temp = 20;
 			}
 			else
 			{
 				temp = 0;
 			}
-			
 			modelStack.PushMatrix();
 			modelStack.Translate(shelve.GetRenderPos(0)->getTranslationX()+(j*6)+temp,shelve.GetRenderPos(0)->getTranslationY(),shelve.GetRenderPos(0)->getTranslationZ()+(i*15));
 			modelStack.Rotate(shelve.GetRenderPos(0)->getRotation(),shelve.GetRenderPos(0)->getRX(),shelve.GetRenderPos(0)->getRY(),shelve.GetRenderPos(0)->getRZ());

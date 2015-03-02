@@ -21,7 +21,7 @@ void CPolice::PoliceDrive(float x, float rot, float z,float zOff, float xOff, fl
 {
 	if (z + PoliceZMove >= zOff)
 	{
-		PoliceZMove--;
+		PoliceZMove-=3;
 		WheelRot++;
 	}
 	else if(rot + PoliceRotate < rotOff)
@@ -30,13 +30,13 @@ void CPolice::PoliceDrive(float x, float rot, float z,float zOff, float xOff, fl
 	}
 	else if (x + PoliceXMove >= xOff)
 	{
-		PoliceXMove--;
+		PoliceXMove-=3;
 		WheelRot++;
 	}
 	else
 	{
-		FinalPosX = zOff;
-		FinalPosZ = xOff;
+		FinalPosX = xOff;
+		FinalPosZ = zOff;
 		arrived = true;
 	}
 }
@@ -45,7 +45,7 @@ void CPolice::PoliceDriveL(float x, float rot, float z,float zOff, float xOff, f
 {
 	if (z + PoliceZMove >= zOff)
 	{
-		PoliceZMove--;
+		PoliceZMove-=3;
 		WheelRot++;
 	}
 	else if(rot + PoliceRotate > rotOff)
@@ -54,13 +54,14 @@ void CPolice::PoliceDriveL(float x, float rot, float z,float zOff, float xOff, f
 	}
 	else if (x + PoliceXMove <= xOff)
 	{
-		PoliceXMove++;
+		PoliceXMove+=3;
 		WheelRot++;
 	}
 	else
 	{
-		FinalPosX = zOff;
-		FinalPosZ = xOff;
+		FinalPosX = xOff;
+		FinalPosZ = zOff;
 		arrived = true;
 	}
+
 }
