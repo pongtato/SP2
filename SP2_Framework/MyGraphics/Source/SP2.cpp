@@ -458,6 +458,27 @@ void SP2::Init()
 	meshList[GEO_MODEL_RIFLE] = MeshBuilder::GenerateOBJ("model1", "OBJ//rifle.obj");
 	meshList[GEO_MODEL_RIFLE]->textureID = LoadTGA("Image//rifle.tga");
 
+	meshList[GEO_MODEL_SFFOOD] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplyfrozen.obj");
+	meshList[GEO_MODEL_SFFOOD]->textureID = LoadTGA("Image//supplies.tga");
+
+	meshList[GEO_MODEL_SCANS] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplycan.obj");
+	meshList[GEO_MODEL_SCANS]->textureID = LoadTGA("Image//supplies.tga");
+
+	meshList[GEO_MODEL_SCVEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplyveg.obj");
+	meshList[GEO_MODEL_SCVEG]->textureID = LoadTGA("Image//supplies.tga");
+
+	meshList[GEO_MODEL_SCHIPS] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplychips.obj");
+	meshList[GEO_MODEL_SCHIPS]->textureID = LoadTGA("Image//supplies.tga");
+
+	meshList[GEO_MODEL_SCEREAL] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplycereal.obj");
+	meshList[GEO_MODEL_SCEREAL]->textureID = LoadTGA("Image//supplies.tga");
+
+	meshList[GEO_MODEL_SGUNS] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplygun.obj");
+	meshList[GEO_MODEL_SGUNS]->textureID = LoadTGA("Image//supplies.tga");
+
+	meshList[GEO_MODEL_STFOOD] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplytfood.obj");
+	meshList[GEO_MODEL_STFOOD]->textureID = LoadTGA("Image//supplies.tga");
+
 	meshList[GEO_MODEL_CAMERA] = MeshBuilder::GenerateOBJ("model1", "OBJ//camera.obj");
 	meshList[GEO_MODEL_CAMERA]->textureID = LoadTGA("Image//CAMERA.tga");
 
@@ -3289,6 +3310,34 @@ void SP2::RenderFNB()
 			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SoupCan")
 			{
 			RenderMesh(meshList[GEO_MODEL_TOMATOSOUPCAN], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyFrozen")
+			{
+			RenderMesh(meshList[GEO_MODEL_SFFOOD], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyCan")
+			{
+			RenderMesh(meshList[GEO_MODEL_SCANS], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyChips")
+			{
+			RenderMesh(meshList[GEO_MODEL_SCHIPS], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyCereal")
+			{
+			RenderMesh(meshList[GEO_MODEL_SCEREAL], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyVeg")
+			{
+			RenderMesh(meshList[GEO_MODEL_SCVEG], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyGun")
+			{
+			RenderMesh(meshList[GEO_MODEL_SGUNS], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyTin")
+			{
+			RenderMesh(meshList[GEO_MODEL_STFOOD], true);
 			}
 			modelStack.PopMatrix();
 		}
