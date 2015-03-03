@@ -21,6 +21,11 @@ CCharacter::~CCharacter(void)
 {
 }
 
+void CCharacter::setHealth(int hp)
+{
+	health -= hp;
+}
+
 void CCharacter::setMoney(double cash)
 {
 	money -= cash;

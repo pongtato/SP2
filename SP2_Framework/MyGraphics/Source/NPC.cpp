@@ -9,11 +9,11 @@ CNPC::CNPC(void)
 	CharSpeed = 0;
 	CharRot = 90;
 	Path = 0;
-
-	srand((unsigned) time(NULL));
-	RandomCourse = rand() % 10 + 1;
-	shop = true;
-	take = false;
+	shop = false;
+	maxItem = 0;
+	cashIn = false;
+	exitMart = false;
+	enterMart = false;
 }
 
 
@@ -235,531 +235,160 @@ void CNPC::ShopPathing(int n, bool idle)
 {
 	if(idle == false)
 	{
-	// 1st node
-	if ( getPosX() <= -75 && getPosZ() >= 25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(0) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(0));
-	}
-
-	// 2nd node
-	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() >= 25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(1) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(1));
-	}
-
-	// 3rd node
-	else if( getPosX() >= 0 && getPosX() < 2 && getPosZ() >= 25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(2) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(2));
-	}
-
-	// 4th node
-	else if ( getPosX() >= 35 && getPosZ() >= 25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(3) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(3));
-	}
-
-	// 5th node
-	else if ( getPosX() <= -75 && getPosZ() <= 7 && getPosZ() > -8)
-	{
-		if(GetNPCPos(n)->getCheckpoints(4) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(4));
-	}
-
-	// 6th node
-	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= 7 && getPosZ() > 5)
-	{
-		if(GetNPCPos(n)->getCheckpoints(5) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(5));
-	}
-	// 7th node
-	else if ( getPosX() >= 0 && getPosX() < 2 && getPosZ() <= 7 && getPosZ() > 5)
-	{
-		if(GetNPCPos(n)->getCheckpoints(6) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(6));
-	}
-
-	// 8th node
-	else if ( getPosX() >= 35 && getPosZ() <= 7 && getPosZ() > 5)
-	{
-		if(GetNPCPos(n)->getCheckpoints(7) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(7));
-	}
-
-	// 9th node
-	else if ( getPosX() <= -75 && getPosZ() <= -8 && getPosZ() > -10)
-	{
-		if(GetNPCPos(n)->getCheckpoints(8) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(8));
-	}
-
-	// 10th node
-	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= -8 && getPosZ() > -10)
-	{
-		if(GetNPCPos(n)->getCheckpoints(9) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(9));
-	}
-	// 11th node
-	else if ( getPosX() >= 0 && getPosX() < 2 &&  getPosZ() <= -8 && getPosZ() > -10)
-	{
-		if(GetNPCPos(n)->getCheckpoints(10) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(10));
-	}
-
-	// 12th node
-	else if ( getPosX() >= 35 && getPosZ() <= -8 && getPosZ() > -10)
-	{
-		if(GetNPCPos(n)->getCheckpoints(11) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(11));
-	}
-
-	// 13th node
-	else if ( getPosX() <= -75 && getPosZ() <= -25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(12) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(12));
-	}
-
-	// 14th node
-	else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= -25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(13) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(13));
-	}
-	// 15th node
-	else if ( getPosX() >= 0 && getPosX() < 2 && getPosZ() <= -25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(14) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(14));
-	}
-
-	// 16th node
-	else if ( getPosX() >= 35 && getPosZ() <= -25)
-	{
-		if(GetNPCPos(n)->getCheckpoints(15) != 0)
-			setPath(GetNPCPos(n)->getCheckpoints(15));
-	}
-
-	//left
-	if ( getPath() == 1)
-	{
-		if(getRot() != 270)
+		// 1st node
+		if ( getPosX() <= -75 && getPosZ() >= 25 && cashIn == false)
 		{
-			turnleft();
-			RandomCourse = rand() % 10;
+			if(GetNPCPos(n)->getCheckpoints(0) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(0));
 		}
-		else
+
+		// 2nd node
+		else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() >= 25)
 		{
-			AIShop();
+			if(GetNPCPos(n)->getCheckpoints(1) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(1));
+		}
+
+		// 3rd node
+		else if( getPosX() >= 0 && getPosX() < 2 && getPosZ() >= 25)
+		{
+			if(GetNPCPos(n)->getCheckpoints(2) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(2));
+		}
+
+		// 4th node
+		else if ( getPosX() >= 35 && getPosZ() >= 25)
+		{
+			if(GetNPCPos(n)->getCheckpoints(3) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(3));
+		}
+
+		// 5th node
+		else if ( getPosX() <= -75 && getPosZ() <= 7 && getPosZ() > -8)
+		{
+			if(GetNPCPos(n)->getCheckpoints(4) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(4));
+		}
+
+		// 6th node
+		else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= 7 && getPosZ() > 5)
+		{
+			if(GetNPCPos(n)->getCheckpoints(5) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(5));
+		}
+		// 7th node
+		else if ( getPosX() >= 0 && getPosX() < 2 && getPosZ() <= 7 && getPosZ() > 5)
+		{
+			if(GetNPCPos(n)->getCheckpoints(6) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(6));
+		}
+
+		// 8th node
+		else if ( getPosX() >= 35 && getPosZ() <= 7 && getPosZ() > 5)
+		{
+			if(GetNPCPos(n)->getCheckpoints(7) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(7));
+		}
+
+		// 9th node
+		else if ( getPosX() <= -75 && getPosZ() <= -8 && getPosZ() > -10)
+		{
+			if(GetNPCPos(n)->getCheckpoints(8) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(8));
+		}
+
+		// 10th node
+		else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= -8 && getPosZ() > -10)
+		{
+			if(GetNPCPos(n)->getCheckpoints(9) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(9));
+		}
+		// 11th node
+		else if ( getPosX() >= 0 && getPosX() < 2 &&  getPosZ() <= -8 && getPosZ() > -10)
+		{
+			if(GetNPCPos(n)->getCheckpoints(10) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(10));
+		}
+
+		// 12th node
+		else if ( getPosX() >= 35 && getPosZ() <= -8 && getPosZ() > -10)
+		{
+			if(GetNPCPos(n)->getCheckpoints(11) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(11));
+		}
+
+		// 13th node
+		else if ( getPosX() <= -75 && getPosZ() <= -25)
+		{
+			if(GetNPCPos(n)->getCheckpoints(12) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(12));
+		}
+
+		// 14th node
+		else if ( getPosX() >= -35 && getPosX() < -33 && getPosZ() <= -25)
+		{
+			if(GetNPCPos(n)->getCheckpoints(13) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(13));
+		}
+		// 15th node
+		else if ( getPosX() >= 0 && getPosX() < 2 && getPosZ() <= -25)
+		{
+			if(GetNPCPos(n)->getCheckpoints(14) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(14));
+		}
+
+		// 16th node
+		else if ( getPosX() >= 35 && getPosZ() <= -25  && cashIn == false)
+		{
+			if(GetNPCPos(n)->getCheckpoints(15) != 0)
+				setPath(GetNPCPos(n)->getCheckpoints(15));
+		}
+
+		//left
+		if ( getPath() == 1 && cashIn == false)
+		{
 			float temp = getPosX() - 0.2;
 			setPosX(temp);
+			SetRot(-90);
 		}
-	}
-	//right
-	else if ( getPath() == 2)
-	{
-		if(getRot() != 90)
+		//right
+		else if ( getPath() == 2  && cashIn == false)
 		{
-			turnright();
-			RandomCourse = rand() % 10;
+			if(shop == false)
+			{
+				float temp = getPosX() + 0.2;
+				setPosX(temp);
+				if(getRot() >= 0 && getRot() <= 90)//rotate left after rotating right
+				{
+					float temp = getRot() + 1;
+					SetRot(temp);
+				}
+				else
+				{
+					SetRot(90);
+				}
+			}
+			else if(shop == true)// rotate right to get item from shelf
+			{
+				float temp = getRot() - 1;
+				SetRot(temp);
+			}
 		}
-		else
-		{
-			AIShop();
-			float temp = getPosX() + 0.2;
-			setPosX(temp);
-		}
-	}
-	//up
-	else if ( getPath() == 3)
-	{
-		if(getRot() != 180)
-		{
-			turnup();
-			RandomCourse = rand() % 10;
-		}
-		else
+		//up
+		else if ( getPath() == 3 && cashIn == false)
 		{
 			float temp = getPosZ() - 0.2;
 			setPosZ(temp);
+			SetRot(180);
 		}
-	}
-	//down
-	else if ( getPath() == 4)
-	{
-		if(getRot() != 0)
-		{
-			turndown();
-			RandomCourse = rand() % 10;
-		}
-		else
+		//down
+		else if ( getPath() == 4 && cashIn == false)
 		{
 			float temp = getPosZ() + 0.2;
 			setPosZ(temp);
+			SetRot(0);
 		}
 	}
-	if(getPosX() > 38 && getPosZ() < 25)
-	{
-		setPosX(38);
-	}
-	}
-}
-
-void CNPC::turnleft(void)
-{
-	if(getRot() != 270)
-	{
-		if(getRot() >= 360)
-		{
-			int temp2 = getRot() - 360;
-			SetRot(temp2);
-		}
-		else if(getRot() == -90)
-		{
-			SetRot(270);
-		}
-		else if(getRot() < 90)
-		{
-			int temp2 = getRot() - 3;
-			SetRot(temp2);
-		}
-		else if( getRot() > 90)
-		{
-			int temp2 = getRot() + 3;
-			SetRot(temp2);
-		}
-	}
-}
-
-void CNPC::turnright(void)
-{
-	if(getRot() != 90)
-	{
-		if(getRot() >= 450)
-		{
-			int temp2 = getRot() - 360;
-			SetRot(temp2);
-		}
-		else if(getRot() < 0)
-		{
-			int temp2 = getRot() + 360;
-			SetRot(temp2);
-		}
-		else if(getRot() < 270)
-		{
-			int temp2 = getRot() - 3;
-			SetRot(temp2);
-		}
-		else // getRot() > 270
-		{
-			int temp2 = getRot() + 3;
-			SetRot(temp2);
-		}
-	}
-}
-
-void CNPC::turnup(void)
-{
-	if(getRot() != 180)
-	{
-		if(getRot() >= 360)
-		{
-			int temp2 = getRot() - 360;
-			SetRot(temp2);
-		}
-		else if(getRot() < 0)
-		{
-			int temp2 = getRot() + 360;
-			SetRot(temp2);
-		}
-		else if(getRot() < 180)
-		{
-			int temp2 = getRot() + 3;
-			SetRot(temp2);
-		}
-		else // getRot() > 180
-		{
-			int temp2 = getRot() - 3;
-			SetRot(temp2);
-		}
-	}
-}
-
-void CNPC::turndown(void)
-{
-	if(getRot() != 0)
-	{
-		if(getRot() >= 360)
-		{
-			int temp2 = getRot() - 360;
-			SetRot(temp2);
-		}
-		else if(getRot() == 270)
-		{
-			int temp2 = getRot() - 360;
-			SetRot(temp2);
-		}
-		else if(getRot() < 0)
-		{
-			int temp2 = getRot() + 3;
-			SetRot(temp2);
-		}
-		else // getRot() == 270
-		{
-			int temp2 = getRot() - 3;
-			SetRot(temp2);
-		}
-	}
-}
-
-void CNPC::AIShop(void)
-{
-	if(RandomCourse == 1 || RandomCourse == 2) // 7
-	{
-		if(getPosX() < -60 && getPosX() >= -60.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < -26 && getPosX() >= -26.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < 8.3 && getPosX() >= 8 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else
-		{
-			shop = true;
-			take = false;
-		}
-	}
-	else if(RandomCourse == 3 || RandomCourse == 4) // 14
-	{
-		if(getPosX() < -54 && getPosX() >= -54.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < -20 && getPosX() >= -20.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < 14.3 && getPosX() >= 14 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else
-		{
-			shop = true;
-			take = false;
-		}
-	}
-	else if(RandomCourse == 5 || RandomCourse == 6) // 21
-	{
-		if(getPosX() < -48 && getPosX() >= -48.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < -14 && getPosX() >= -14.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < 20.3 && getPosX() >= 20 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else
-		{
-			shop = true;
-			take = false;
-		}
-	}
-	else if(RandomCourse == 7 || RandomCourse == 8)
-	{
-		if(getPosX() < -42 && getPosX() >= -42.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < -8 && getPosX() >= -8.3 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else if(getPosX() < 26.3 && getPosX() >= 26 && shop == true)
-		{
-			turn();
-			shop = false;
-			RandomCourse = rand() % 10;
-		}
-		else
-		{
-			shop = true;
-			take = false;
-		}
-	}
-}
-
-void CNPC::turn(void)
-{
-	if(getPosZ() >= 23)
-	{
-		turnup();
-		take = true;
-		int temp = getRot();
-		if(temp > 180)
-		{
-			if(getRot() != 270)
-			{
-				turnleft();
-			}
-			else
-			{
-				float temp = getPosX() - 0.2;
-				setPosX(temp);
-			}
-		}
-		else
-		{
-			if(getRot() != 90)
-			{
-				turnright();
-			}
-			else
-			{
-				float temp = getPosX() + 0.2;
-				setPosX(temp);
-			}
-		}
-	}
-	else if(getPosZ() <= 7 && getPosZ() > 5)
-	{
-		turnup();
-		take = true;
-		//turndown();
-		int temp = getRot();
-		turndown();
-		if(temp > 180)
-		{
-			if(getRot() != 270)
-			{
-				turnleft();
-			}
-			else
-			{
-				float temp = getPosX() - 0.2;
-				setPosX(temp);
-			}
-		}
-		else
-		{
-			if(getRot() != 90)
-			{
-				turnright();
-			}
-			else
-			{
-				float temp = getPosX() + 0.2;
-				setPosX(temp);
-			}
-		}
-	}
-	else if(getPosZ() <= -8 && getPosZ() > -10)
-	{
-		turnup();
-		take = true;
-		//turndown();
-		int temp = getRot();
-		turndown();
-		if(temp > 180)
-		{
-			if(getRot() != 270)
-			{
-				turnleft();
-			}
-			else
-			{
-				float temp = getPosX() - 0.2;
-				setPosX(temp);
-			}
-		}
-		else
-		{
-			if(getRot() != 90)
-			{
-				turnright();
-			}
-			else
-			{
-				float temp = getPosX() + 0.2;
-				setPosX(temp);
-			}
-		}
-	}
-	else if(getPosZ() <= -25)
-	{
-		turndown();
-		take = true;
-		int temp = getRot();
-		if(temp > 180)
-		{
-			if(getRot() != 270)
-			{
-				turnleft();
-			}
-			else
-			{
-				float temp = getPosX() - 0.2;
-				setPosX(temp);
-			}
-		}
-		else
-		{
-			if(getRot() != 90)
-			{
-				turnright();
-			}
-			else
-			{
-				float temp = getPosX() + 0.2;
-				setPosX(temp);
-			}
-		}
-	}
-}
-
-void CNPC::setTake(bool temp_take)
-{
-	take = temp_take;
-}
-
-bool CNPC::getTake(void)
-{
-	return take;
 }
 
 void CNPC::setCheckpoints(int n, float point)
@@ -780,6 +409,123 @@ void CNPC::setCurrentState(int state)
 int CNPC::getCurrentState(void)
 {
 	return CurrentState;
+}
+
+int CNPC::RandNumGen(int minNum, int maxNum)
+{
+	int result = 0;
+	for(int i = minNum; i <50; i++)
+	{
+		result = rand() %maxNum;// randomly generate 0 - maxnum
+	}
+	return result;
+}
+void CNPC::Checkout()
+{
+	if(cashIn == true)
+	{
+		if(getRot() >= 0 && getRot() < 90 && getPosX() < 41)//turn shopper left after shopping to check out
+		{
+			float temp = getRot() + 1;
+			SetRot(temp);
+		}
+		if(getPosX() < 41)// walk to cashier
+		{
+			float temp = getPosX() + 0.2;
+			setPosX(temp);
+		}
+		//Put AI Pay Money Animation
+		cout<<getPosX()<<endl;
+		cout<<getPosZ()<<endl;
+		cout<<getRot()<<endl;
+		if(getPosX() >= 41)// AI at left most cashier
+		{
+			if(getRot() <= 90 && getRot() > 0 && getPosZ() <=-25)//turn shopper right after paying money
+			{
+				float temp = getRot() - 1;
+				SetRot(temp);
+			}
+		}
+		if(getPosZ() < 31 && getPosX() >= 41 && getRot() == 0)// walk to area above rightmost cashier
+		{
+			float temp = getPosZ() + 0.2;
+			setPosZ(temp);
+		}
+		if(getPosZ() >= 31 && getPosX() < 61)// rotate the AI left
+		{
+			if(getRot() >= 0 && getRot() < 90)
+			{
+				float temp = getRot() + 1;
+				SetRot(temp);
+			}
+		}
+		if(getRot() == 90 && getPosX() < 61 && getPosZ() >= 31)// move to exit door
+		{
+			float temp = getPosX() + 0.2;
+			setPosX(temp);
+		}
+		//exit door open
+		if(getPosX() >= 61 && getPosZ() >= 31)
+		{
+			exitMart = true;
+		}
+		//turn right and exit mart
+		if(getPosX() >= 61)
+		{
+			if(getRot() <= 90 && getRot() > 0 && getPosZ() >= 31 && getPosZ() <75)// turn right
+			{
+				float temp = getRot() - 1;
+				SetRot(temp);
+			}
+		}
+		if(getPosX() >= 61 && getPosZ() >= 31 && getPosZ() <= 75 && getRot() == 0)// exit mart
+		{
+			float temp = getPosZ() + 0.2;
+			setPosZ(temp);
+		}
+		if(getPosX() >= 61 && getPosZ() >= 41)// exit door close
+		{
+			exitMart = false;
+		}
+		//turn left
+		if(getPosZ() >=75)
+		{
+			if(getRot() >= 0 && getRot() < 90)
+			{
+				float temp = getRot() + 1;
+				SetRot(temp);
+			}
+		}
+		//walk out of the fence
+		if(getPosZ() >=75 && getRot() == 90)
+		{
+			float temp = getPosX() + 0.2;
+			setPosX(temp);
+		}
+	}
+	
+	
+}
+void CNPC::Steal()
+{
+}
+void CNPC::setShop(bool input)
+{
+	shop = input;
+}
+bool CNPC::getShop()
+{
+	return shop;
+}
+void CNPC::respawn()
+{
+	cashIn = false;
+	maxItem = 0;
+	//exactly outside the entrance door
+	setPosX(-75);
+	setPosZ(75);
+	SetRot(90);
+	
 }
 
 

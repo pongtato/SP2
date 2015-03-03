@@ -7,8 +7,7 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
-#include <time.h>
-#include <stdlib.h>
+#include "Camera3.h"
 
 using namespace std;
 
@@ -25,10 +24,10 @@ private:
 	int CurrentState;
 	float Checkpoints[20];
 	vector<CNPC*>npc_list;
-
-	int RandomCourse;
+	//for AI
 	bool shop;
-	bool take;
+	
+	
 
 public:
 	CNPC(void);
@@ -43,16 +42,9 @@ public:
 	void setPath(int node);
 	void setCheckpoints(int n, float point);
 	void setCurrentState(int state);
-	void setTake(bool temp_take);
 
 	void TestAIPath(void);
 	void ShopPathing(int n, bool idle);
-	void turnleft(void);
-	void turnright(void);
-	void turnup(void);
-	void turndown(void);
-	void AIShop(void);
-	void turn(void);
 	
 	string getName(void);
 	float getPosX(void);
@@ -63,7 +55,18 @@ public:
 	int getPath(void);
 	float getCheckpoints(int n);
 	int getCurrentState(void);
-	bool getTake(void);
+
+	//AI NPC
+	int maxItem;
+	bool cashIn;
+	bool exitMart;
+	bool enterMart;
+	int RandNumGen(int minNum, int maxNum);
+	void Checkout();
+	void Steal();
+	void setShop(bool input);
+	bool getShop();
+	void respawn();
 
 	void ReadTextFilePath(const char* filename);
 	CNPC* GetNPCPos(const int selection);

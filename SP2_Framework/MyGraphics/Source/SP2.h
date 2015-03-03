@@ -131,6 +131,13 @@ private:
 		GEO_MODEL_CASHIER_RIGHTARM,
 		GEO_MODEL_CASHIER_LEFTLEG,
 		GEO_MODEL_CASHIER_RIGHTLEG,
+		//Security Guard
+		GEO_MODEL_GUARD_HEAD,
+		GEO_MODEL_GUARD_BODY,
+		GEO_MODEL_GUARD_LEFTARM,
+		GEO_MODEL_GUARD_RIGHTARM,
+		GEO_MODEL_GUARD_LEFTLEG,
+		GEO_MODEL_GUARD_RIGHTLEG,
 		//Default Doorman
 		GEO_MODEL_DOORMAN,
 		GEO_MODEL_MART,
@@ -239,13 +246,18 @@ public:
 	CReadFromText cashiermodel;
 	CReadFromText FNB;
 	CReadFromText Police;
+	CReadFromText PoliceCol;
+	CReadFromText PoliceMan;
 	vector<CBullet*> bullet;
+	vector<CBullet*> Policebullet;
 	CBullet shoot;
 
 	vector<CCollisionBounds*> colBounds;
+	vector<CCollisionBounds*> VanBounds;
 
 
 	CNPC npc;
+	CNPC guard;
 	CNPC shopper;
 	CNPC patroler;
 	CCharacter player;
@@ -261,6 +273,8 @@ public:
 	bool police;
 	int Lightswitch;
 	bool CheckoutActive;
+	float EscapeCarMove;
+	bool EscapeEnd;
 
 private:
 	unsigned m_vertexArrayID;
@@ -296,6 +310,9 @@ private:
 	std::string ItemName;
 	std::string BulletCount;
 	std::string ItemPrice;
+	std::string TheifTut;
+	std::string ShopTut;
+	std::string GuardTut;
 
 	float EntranceDoorSlide;
 	float ExitDoorSlide;
@@ -304,6 +321,8 @@ private:
 	float LeftStaffDoorSlide;
 	float ArmSwing;
 	bool MenuKey;
+	void EscapeSteal();
+	
 
 	//Camera2 camera;
 	Camera3 camera;
@@ -326,7 +345,10 @@ private:
 	void RenderPlayer();
 	void RenderScreenUI();
 	void RenderAnimate();
+	void RenderAnimateGuard();
 	void RenderPolice();
+	void PoliceShoot(double dt);
+
 	void SetPrevPos(void);
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderText(Mesh* mesh, std::string text, Color color);
@@ -346,7 +368,10 @@ private:
 	void RenderBasicModel();
 	void Trolley();
 	void TrolleyUpdate();
+	void NPCShop();
 	bool BulletCollision(float x,float y,float z);
+	bool BulletCollisionEnemy(float x,float y,float z);
+
 };
 
 #endif

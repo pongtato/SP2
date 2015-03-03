@@ -30,6 +30,7 @@ void SP2::Init()
 	cashiermodel.ReadTextFile( "OBJ-Pos/CashierModelpos.txt" );
 	fridge.ReadTextFile( "OBJ-Pos/Fridgepos.txt" );
 	character.ReadTextFile( "OBJ-Pos/NPC/Characterpos.txt" );
+	guard.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	shopper.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	patroler.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	FNB.ReadTextFileItem( "OBJ-Pos/FNB.txt");
@@ -575,6 +576,24 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_POLICEVANWHEEL] = MeshBuilder::GenerateOBJ("model1", "OBJ//PoliceVanWheel.obj");
 	meshList[GEO_MODEL_POLICEVANWHEEL]->textureID = LoadTGA("Image//Cart.tga");
+	//Character(security guard)
+	meshList[GEO_MODEL_GUARD_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
+	meshList[GEO_MODEL_GUARD_HEAD]->textureID = LoadTGA("Image//guardskin.tga");
+
+	meshList[GEO_MODEL_GUARD_BODY] = MeshBuilder::GenerateOBJ("model1", "OBJ//body.obj");
+	meshList[GEO_MODEL_GUARD_BODY]->textureID = LoadTGA("Image//guardskin.tga");
+
+	meshList[GEO_MODEL_GUARD_LEFTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_GUARD_LEFTARM]->textureID = LoadTGA("Image//guardskin.tga");
+
+	meshList[GEO_MODEL_GUARD_RIGHTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_GUARD_RIGHTARM]->textureID = LoadTGA("Image//guardskin.tga");
+
+	meshList[GEO_MODEL_GUARD_LEFTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_GUARD_LEFTLEG]->textureID = LoadTGA("Image//guardskin.tga");
+
+	meshList[GEO_MODEL_GUARD_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_GUARD_RIGHTLEG]->textureID = LoadTGA("Image//guardskin.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -588,12 +607,12 @@ void SP2::Init()
 	npc.setName(character.GetRenderPos(0)->getName());
 	npc.setPosX(character.GetRenderPos(0)->getTranslationX());
 	npc.setPosZ(character.GetRenderPos(0)->getTranslationZ());
-	shopper.setName(character.GetRenderPos(1)->getName());
-	shopper.setPosX(character.GetRenderPos(1)->getTranslationX());
-	shopper.setPosZ(character.GetRenderPos(1)->getTranslationZ());
-	patroler.setName(character.GetRenderPos(2)->getName());
-	patroler.setPosX(character.GetRenderPos(2)->getTranslationX());
-	patroler.setPosZ(character.GetRenderPos(2)->getTranslationZ());
+	guard.setName(character.GetRenderPos(1)->getName());
+	guard.setPosX(character.GetRenderPos(1)->getTranslationX());
+	guard.setPosZ(character.GetRenderPos(1)->getTranslationZ());
+	shopper.setName(character.GetRenderPos(2)->getName());
+	shopper.setPosX(character.GetRenderPos(2)->getTranslationX());
+	shopper.setPosZ(character.GetRenderPos(2)->getTranslationZ());
 	police = false;
 	EscapeCarMove = 0;
 	ArmSwing = 130;
@@ -648,6 +667,46 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if(Application::IsKeyPressed('4')) 
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+	if(MenuKey == true)
+	{
+		INSTRUCTIONS1 = "Press 8 for Thief";
+		INSTRUCTIONS2 = "Press 9 for guard";
+		INSTRUCTIONS3 = "Press 0 for Guard";
+		INSTRUCTIONS4 = "Press Esc to quit";
+	}
+	if(Application::IsKeyPressed('8'))
+	{
+		ROLE = "Thief";	
+		INSTRUCTIONS1 = "";
+		INSTRUCTIONS2 = "";
+		INSTRUCTIONS3 = "";
+		INSTRUCTIONS4 = "";
+		MenuKey = false;
+		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('0'))
+			ROLE = "Thief";
+	}	
+	if(Application::IsKeyPressed('9'))
+	{	
+		ROLE = "guard";
+		INSTRUCTIONS1 = "";
+		INSTRUCTIONS2 = "";
+		INSTRUCTIONS3 = "";
+		INSTRUCTIONS4 = "";
+		MenuKey = false;
+		if(Application::IsKeyPressed('8')||Application::IsKeyPressed('0'))
+			ROLE = "guard";
+	}
+	if(Application::IsKeyPressed('0'))
+	{
+		ROLE = "Guard";
+		INSTRUCTIONS1 = "";
+		INSTRUCTIONS2 = "";
+		INSTRUCTIONS3 = "";
+		INSTRUCTIONS4 = "";
+		MenuKey = false;
+		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('8'))
+			ROLE = "Guard";
+	}
 	if ( ItemName == "Camera")
 	{
 		if(Application::IsKeyPressed('5'))
@@ -672,6 +731,7 @@ void SP2::Update(double dt)
 	DoorSlide();
 	ShutterOpen();
 	NPCwalk();
+	NPCShop();
 	if (camera.getCameraState() == 0)
 	{
 	CharacterCrouch();
@@ -712,6 +772,8 @@ void SP2::Update(double dt)
 				}
 				else if ( PoliceMan.GetRenderPosPolice(i)->RespawnCD > 20)
 				{
+					PoliceMan.GetRenderPosPolice(i)->resethealth();
+					PoliceMan.GetRenderPosPolice(i)->RespawnCD = 0;
 					PoliceMan.GetRenderPosPolice(i)->setItemAvailable(true);
 				}
 			}
@@ -817,8 +879,8 @@ void SP2::Update(double dt)
 void SP2::NPCwalk()
 {
 	npc.TestAIPath();
-	shopper.ShopPathing(0,playeridle);
-	patroler.ShopPathing(1,playeridle);
+	guard.ShopPathing(0,playeridle);
+	shopper.ShopPathing(1,playeridle);
 }
 
 void SP2::UnpaidItems()
@@ -1033,7 +1095,7 @@ void SP2::CharacterCrouch()
 
 void SP2::BoundsCheck()
 {
-	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
+	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempshopper;
 	tempMart.x = data.GetRenderPos(0)->getTranslationX();
 	tempMart.z = data.GetRenderPos(0)->getTranslationZ();
 	tempShelves.x = shelve.GetRenderPos(0)->getTranslationX();
@@ -1042,8 +1104,8 @@ void SP2::BoundsCheck()
 	tempCashier.z = cashier.GetRenderPos(0)->getTranslationZ();
 	tempFridge.x = fridge.GetRenderPos(0)->getTranslationX();
 	tempFridge.z = fridge.GetRenderPos(0)->getTranslationZ();
-	tempPatroler.x = patroler.getPosX();
-	tempPatroler.z = patroler.getPosZ();
+	tempshopper.x = shopper.getPosX();
+	tempshopper.z = shopper.getPosZ();
 
 	//PoliceCar
 	for ( int i = 0; i< VanBounds.size(); ++i)
@@ -1215,32 +1277,66 @@ void SP2::BoundsCheck()
 		camera.target.z = cameraDupe.target.z;
 	}
 
-	//patroler collision
-	if(camera.position.x >= patroler.getPosX() - 4 && camera.position.x <= patroler.getPosX() +4 && camera.position.z >= patroler.getPosZ() - 4 && camera.position.z <= patroler.getPosZ() +4)
+	//Trolley Collision(player only)
+	if(camera.position.x >= trolley.LastX - 5 && camera.position.x <= trolley.LastX + 5 && camera.position.z >= trolley.LastZ - 3 && camera.position.z <= trolley.LastZ + 3)
 	{
-		if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)//player not idle
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
+	}
+
+	//shopper AI collision
+	if(playeridle == false)
+	{
+		if(camera.position.x >= shopper.getPosX() - 4 && camera.position.x <= shopper.getPosX() + 4 && camera.position.z >= shopper.getPosZ() - 4 && camera.position.z <= shopper.getPosZ() + 4)
 		{
-			camera.position.x = cameraDupe.position.x;
-			camera.target.x = cameraDupe.target.x;
-			camera.position.z = cameraDupe.position.z;
-			camera.target.z = cameraDupe.target.z;
-			playeridle = false;
+			if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)//player not idle
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+				camera.position.z = cameraDupe.position.z;
+				camera.target.z = cameraDupe.target.z;
+				playeridle = false;
 			
-		}
-		else//idle player/camera
-		{
-			cout<<"player is idle"<<endl;
-			playeridle = true;
-			
+			}
+			else if(camera.position.x == cameraDupe.position.x && camera.position.z == cameraDupe.position.z)//idle player/camera
+			{
+				cout<<"player is idle"<<endl;
+				//prevent AI movement
+				playeridle = true;
+			}
 		}
 	}
-	//player break idle
+	//player break idle for AI
 	if(playeridle == true)
 	{
-		if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)
+		//player X Coord > AI X Coord
+		if(camera.position.x > shopper.getPosX())
+		{
+			if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+				
+			}
+			if(camera.position.z >= shopper.getPosZ() + 2 || camera.position.z <= shopper.getPosZ() - 2)
+			{
+			}
+		}
+		//player X Coord < AI X Coord
+		if(camera.position.x < shopper.getPosX())
+		{
+			if(camera.position.x > cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+			}
+		}
+		/*if(camera.position.x > shopper.getPosX() + 5 && camera.position.z > shopper.getPosZ() + 5 )
 		{
 			playeridle = false;
-		}
+		}*/
 	}
 }
 
@@ -1262,14 +1358,14 @@ void SP2::ShutterOpen()
 void SP2::DoorSlide()
 {
 	//Main Mart Doors
-		if ( camera.EntranceDoor == true)
+		if ( camera.EntranceDoor == true || shopper.enterMart == true)
 	{
 		if ( EntranceDoorSlide >= 53)
 		{
 				EntranceDoorSlide-= 0.4;
 		}
 	}
-	else if ( camera.EntranceDoor == false)
+	else if ( camera.EntranceDoor == false || shopper.enterMart == false)
 	{
 		if ( EntranceDoorSlide <= 66.4)
 		{
@@ -1278,14 +1374,14 @@ void SP2::DoorSlide()
 	}
 	
 
-	if ( camera.ExitDoor == true)
+	if ( camera.ExitDoor == true || shopper.exitMart == true)
 	{
 		if ( ExitDoorSlide <= -53)
 		{
 				ExitDoorSlide+= 0.4;
 		}
 	}
-	else if ( camera.ExitDoor == false)
+	else if ( camera.ExitDoor == false|| shopper.exitMart == false)
 	{
 		if ( ExitDoorSlide >= -66.4)
 		{
@@ -1855,6 +1951,10 @@ void SP2::RenderScreenUI()
 	RenderTextOnScreen(meshList[GEO_TEXT], ItemPrice , Color(0, 1, 0), 3, 13, 10.2);
 	RenderTextOnScreen(meshList[GEO_TEXT], ROLE , Color(0,1,0), 3, 0, 16);
 	RenderTextOnScreen(meshList[GEO_TEXT], BulletCount , Color(0, 1, 0), 2, 20, 13);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS1 , Color(0,1,0), 3, 4, 13);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 12);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 11);
+	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 10);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
 	RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 30);
@@ -1872,10 +1972,10 @@ void SP2::RenderScreenUI()
 			RenderTextOnScreen(meshList[GEO_TEXT], "Welcome to UNFAIRPRICE" , Color(0, 1, 0), 2, 6, 9.2);
 		}
 	}
-	//Render Patroler/shopper Dialogue
+	//Render shopper/guard Dialogue
 	for(int i = 0; i<4; ++i)
 	{
-		if(camera.position.x >= patroler.getPosX()-8 && camera.position.x <= patroler.getPosX()+2 && camera.position.z >= patroler.getPosZ()-2 && camera.position.z <= patroler.getPosZ()+2)
+		if(camera.position.x >= shopper.getPosX()-8 && camera.position.x <= shopper.getPosX()+2 && camera.position.z >= shopper.getPosZ()-2 && camera.position.z <= shopper.getPosZ()+2)
 		{
 			RenderUI(meshList[GEO_DIALOGUEBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
 			RenderTextOnScreen(meshList[GEO_TEXT], "What should i get?" , Color(0, 1, 0), 2, 6, 9.2);
@@ -2073,23 +2173,6 @@ void SP2::CheckItem()
 				{
 					FNB.GetRenderPosItem(i)->setItemAvailable(1);
 					player.dropItem(FNB.GetRenderPosItem(i)->getItemName());
-				}
-			}
-		}
-	}
-	int itemcount = 0;
-	if(patroler.getTake() == true)
-	{
-		for(int i = 0; i < FNB.ReturnListSize();  ++i)
-		{
-			if ( patroler.getPosX() >= FNB.GetRenderPosItem(i)->getItemTranslationX()-3 && patroler.getPosX() <= FNB.GetRenderPosItem(i)->getItemTranslationX()+3 
-				&& patroler.getPosZ() >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-12 && patroler.getPosZ() <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+12)
-			{
-				if(FNB.GetRenderPosItem(i)->getItemAvailability() == true && itemcount < 1)
-				{
-					FNB.GetRenderPosItem(i)->setItemAvailable(0);
-					patroler.setTake(false);
-					itemcount++;
 				}
 			}
 		}
@@ -3397,7 +3480,6 @@ bool SP2::BulletCollisionEnemy(float x,float y,float z)
 			{
 				Police.GetRenderPosItem(i)->setItemAvailable(false);		
 			}
-					}
 			return true;
 		}
 	}
@@ -3449,6 +3531,7 @@ void SP2::RenderShelves()
 			{
 				temp = 0;
 			}
+			
 			modelStack.PushMatrix();
 			modelStack.Translate(shelve.GetRenderPos(0)->getTranslationX()+(j*6)+temp,shelve.GetRenderPos(0)->getTranslationY(),shelve.GetRenderPos(0)->getTranslationZ()+(i*15));
 			modelStack.Rotate(shelve.GetRenderPos(0)->getRotation(),shelve.GetRenderPos(0)->getRX(),shelve.GetRenderPos(0)->getRY(),shelve.GetRenderPos(0)->getRZ());
@@ -3622,47 +3705,16 @@ void SP2::RenderWorld()
 
 void SP2::RenderCharacter()
 {
-	//Bob
-	/*modelStack.PushMatrix();
-	modelStack.Translate(npc.getPosX(),character.GetRenderPos(0)->getTranslationY(),npc.getPosZ());
-	modelStack.Rotate(npc.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
-	modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
-	modelStack.PopMatrix();*/
-
-	//modelStack.PushMatrix();
-	//modelStack.Translate(npc.getPosX(), character.GetRenderPos(0)->getTranslationY(), npc.getPosZ());
-	//modelStack.Rotate(npc.getRot(),character.GetRenderPos(0)->getRX(),character.GetRenderPos(0)->getRY(),character.GetRenderPos(0)->getRZ());
-	//modelStack.Scale(character.GetRenderPos(0)->getScaleX(),character.GetRenderPos(0)->getScaleY(),character.GetRenderPos(0)->getScaleZ());
-	//RenderAnimate();
-	//modelStack.PopMatrix();
-
-	//Dan
-	/*modelStack.PushMatrix();
-	modelStack.Translate(shopper.getPosX(),character.GetRenderPos(1)->getTranslationY(),shopper.getPosZ());
-	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(1)->getRX(),character.GetRenderPos(1)->getRY(),character.GetRenderPos(1)->getRZ());
-	modelStack.Scale(character.GetRenderPos(1)->getScaleX(),character.GetRenderPos(1)->getScaleY(),character.GetRenderPos(1)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
-	modelStack.PopMatrix();*/
-
 	modelStack.PushMatrix();
-	modelStack.Translate(shopper.getPosX(), character.GetRenderPos(1)->getTranslationY(), shopper.getPosZ());
-	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(1)->getRX(),character.GetRenderPos(1)->getRY(),character.GetRenderPos(1)->getRZ());
+	modelStack.Translate(guard.getPosX(), character.GetRenderPos(1)->getTranslationY(), guard.getPosZ());
+	modelStack.Rotate(guard.getRot(),character.GetRenderPos(1)->getRX(),character.GetRenderPos(1)->getRY(),character.GetRenderPos(1)->getRZ());
 	modelStack.Scale(character.GetRenderPos(1)->getScaleX(),character.GetRenderPos(1)->getScaleY(),character.GetRenderPos(1)->getScaleZ());
-	RenderAnimate();
+	RenderAnimateGuard();
 	modelStack.PopMatrix();
 
-	//Tom
-	/*modelStack.PushMatrix();
-	modelStack.Translate(patroler.getPosX(),character.GetRenderPos(2)->getTranslationY(),patroler.getPosZ());
-	modelStack.Rotate(patroler.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
-	modelStack.Scale(character.GetRenderPos(2)->getScaleX(),character.GetRenderPos(2)->getScaleY(),character.GetRenderPos(2)->getScaleZ());
-	RenderMesh(meshList[GEO_MODEL_DOORMAN], true);
-	modelStack.PopMatrix();*/
-
 	modelStack.PushMatrix();
-	modelStack.Translate(patroler.getPosX(), character.GetRenderPos(2)->getTranslationY(), patroler.getPosZ());
-	modelStack.Rotate(patroler.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
+	modelStack.Translate(shopper.getPosX(), character.GetRenderPos(2)->getTranslationY(), shopper.getPosZ());
+	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
 	modelStack.Scale(character.GetRenderPos(2)->getScaleX(),character.GetRenderPos(2)->getScaleY(),character.GetRenderPos(2)->getScaleZ());
 	RenderAnimate();
 	modelStack.PopMatrix();
@@ -3670,6 +3722,39 @@ void SP2::RenderCharacter()
 	//All Cashier personnel
 	modelStack.PushMatrix();
 	RenderCashierModel();
+	modelStack.PopMatrix();
+}
+
+void SP2::RenderAnimateGuard()
+{
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_MODEL_GUARD_HEAD], false);
+	RenderMesh(meshList[GEO_MODEL_GUARD_BODY], false);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, translateY - 0.1, -translate * 4);
+	modelStack.Rotate(angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_GUARD_LEFTARM], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-3, translateY - 0.1, 0 + translate * 4);
+	modelStack.Rotate(-angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_GUARD_RIGHTARM], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0.2, translate * 2);
+	modelStack.Rotate(-angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_GUARD_LEFTLEG], false);
+	modelStack.PopMatrix();
+	
+	modelStack.PushMatrix();
+	modelStack.Translate(-1, 0.2, 0 - translate * 2);
+	modelStack.Rotate(angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_GUARD_RIGHTLEG], false);
+	modelStack.PopMatrix();
+
 	modelStack.PopMatrix();
 }
 
@@ -3901,6 +3986,125 @@ void SP2::RenderFNB()
 			RenderMesh(meshList[GEO_MODEL_STFOOD], true);
 			}
 			modelStack.PopMatrix();
+		}
+	}
+}
+
+void SP2::NPCShop()
+{
+	if(playeridle == false)
+	{
+		//shopper shop(scripted)
+		if(shopper.getPosX() > -60 && shopper.getPosX() < -35 && shopper.getPosZ() <= -25)//getting 1 pepsi
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "Pepsi" && shopper.maxItem == 0)
+					{
+						shopper.setShop(true);
+						if(shopper.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopper.maxItem = 1;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopper.getRot() == 0)//reset for next shop
+		{
+			shopper.setShop(false);
+		}
+		if(shopper.getPosX() > -25 && shopper.getPosX() < 0 && shopper.getPosZ() <= -25)//getting 1 coke
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "Coke" && shopper.maxItem == 1)
+					{
+						shopper.setShop(true);
+						if(shopper.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopper.maxItem = 2;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopper.getRot() == 0)//reset for next shop
+		{
+			shopper.setShop(false);
+		}
+		if(shopper.getPosX() > 10 && shopper.getPosX() < 35 && shopper.getPosZ() <= -25)//getting 1 MtDew
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "MtDew" && shopper.maxItem == 2)
+					{
+						shopper.setShop(true);
+						if(shopper.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopper.maxItem = 3;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopper.getRot() == 0)//reset for next shop
+		{
+			shopper.setShop(false);
+		}
+		if(shopper.getPosX() > -60 && shopper.getPosX() < -35 && shopper.getPosZ() <= -25)//getting 2nd pepsi
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "Pepsi" && shopper.maxItem == 3)
+					{
+						shopper.setShop(true);
+						if(shopper.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopper.maxItem = 4;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopper.getRot() == 0)//reset for next shop
+		{
+			shopper.setShop(false);
+		}
+		if(shopper.maxItem == 1)
+		{
+			shopper.cashIn = true;
+			shopper.Checkout();
+		}
+		// respawn AI
+		if(shopper.getPosX() >= 150 )
+		{
+			shopper.respawn();
+		}
+		//open entrance door
+		if(shopper.getPosZ() <= 60 && shopper.getPosZ() >= 30 && shopper.maxItem == 0)
+		{
+			shopper.enterMart = true;
+		}
+		if(shopper.getPosZ() < 30)
+		{
+			shopper.enterMart = false;
 		}
 	}
 }

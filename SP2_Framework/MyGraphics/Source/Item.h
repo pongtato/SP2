@@ -50,5 +50,9 @@ public:
 	float  getItemScaleY(void);
 	float  getItemScaleZ(void);
 	int getItemCount(void);
+	float ShootCD;
+	float RespawnCD;
+	void sethealth(int hp);
+	void resethealth();
 };
 

@@ -13,6 +13,16 @@ CItem::~CItem(void)
 {
 }
 
+void CItem::sethealth(int hp)
+{
+	itemPrice -= hp;
+}
+
+void CItem::resethealth()
+{
+	itemPrice = 100;
+}
+
 void CItem::setItemRotation(float rotate,int x,int y, int z)
 {
 	rotation = rotate;
