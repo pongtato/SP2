@@ -1,17 +1,458 @@
-﻿Build started 3/3/2015 12:05:04 PM.
-     1>Project "D:\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
+﻿Build started 3/3/2015 2:22:45 PM.
+     1>Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\MyGraphics.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glew\include" /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glfw\include" /I"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\Common\Source" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SP2.cpp
+         SP2.cpp
+     1>Source\SP2.cpp(186): warning C4305: '=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(198): warning C4305: '=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(210): warning C4305: '=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(222): warning C4305: '=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(774): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(826): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(845): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(861): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SP2.cpp(870): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SP2.cpp(913): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(913): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(914): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(914): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(915): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(915): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(916): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(916): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1114): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SP2.cpp(1350): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1356): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1368): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1375): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1384): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1391): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1398): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1404): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1409): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1415): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1445): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1445): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1445): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1458): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1458): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1458): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1476): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1476): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1476): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1494): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1508): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1508): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1508): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1521): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1521): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1521): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1534): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1534): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1534): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1547): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1547): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1547): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1549): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1560): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1560): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1560): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1562): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1574): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1574): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1574): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1587): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1587): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1587): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1589): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1600): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1600): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1600): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1602): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1613): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1613): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1613): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1625): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1625): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1625): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1638): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1638): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1638): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1640): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1651): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1651): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1651): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1664): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1664): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1664): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1677): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1677): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1677): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1690): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1690): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1690): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1692): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1703): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1703): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1703): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1716): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1716): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1716): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1742): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1742): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1742): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1755): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1755): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1755): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1768): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1768): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1768): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1770): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1781): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1781): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1781): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(1783): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1901): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SP2.cpp(1909): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SP2.cpp(1954): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1964): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(1965): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(1975): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1984): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(1997): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2011): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2015): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2019): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2023): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2027): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2031): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2035): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2039): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2043): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2047): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2051): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2055): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2059): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2063): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2067): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2071): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2075): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2079): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2083): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2087): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2091): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2095): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2099): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2191): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2194): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2195): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2264): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2276): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2301): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2313): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2348): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2360): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2396): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2468): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2480): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2533): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2533): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2540): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2540): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2548): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2548): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2556): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2556): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2564): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2592): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2592): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2592): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2623): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2623): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2633): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2633): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2643): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2653): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2668): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2668): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2668): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2673): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2673): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2683): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2683): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2693): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2703): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2718): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2718): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2718): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2723): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2723): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2733): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2733): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2743): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2753): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2768): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2768): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2768): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2773): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2773): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2783): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2783): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2793): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2803): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2818): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2818): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2818): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2823): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2823): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2833): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2833): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2843): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2853): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2870): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2870): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2870): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(2888): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2899): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2911): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2922): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2922): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2934): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2945): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2945): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2958): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(2969): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2969): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(2989): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SP2.cpp(3149): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3133) : definition of 'i' ignored
+                 Source\SP2.cpp(2989) : definition of 'i' used
+     1>Source\SP2.cpp(3151): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3133) : definition of 'i' ignored
+                 Source\SP2.cpp(2989) : definition of 'i' used
+     1>Source\SP2.cpp(3172): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SP2.cpp(3332): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3334): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3335): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3344): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3346): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3353): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3355): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3361): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3363): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3369): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3371): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3380): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3382): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3390): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3392): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3401): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3403): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3412): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3414): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3423): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3425): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3434): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3436): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3445): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3447): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3316) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3486): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3470) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3488): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 Source\SP2.cpp(3470) : definition of 'i' ignored
+                 Source\SP2.cpp(3172) : definition of 'i' used
+     1>Source\SP2.cpp(3502): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3502): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3502): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3515): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3515): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3515): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3544): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3544): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3544): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3556): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3556): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3556): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3562): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3562): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3562): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3569): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3569): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3569): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3576): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3576): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3576): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3584): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3584): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3584): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3592): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3592): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3592): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3599): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3599): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3599): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3606): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3606): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3606): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3613): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3613): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3613): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3620): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3620): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3620): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3627): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3627): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3627): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3634): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3634): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3634): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3641): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3641): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3641): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3648): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3648): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3648): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3655): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3655): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3655): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3662): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3662): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3662): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3669): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3669): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3669): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3676): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3676): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3676): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3683): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3683): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3683): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3690): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3690): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3690): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3696): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3707): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3707): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3707): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3717): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3717): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3717): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3724): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3724): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3724): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3742): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(3748): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(3754): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3760): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3775): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(3781): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SP2.cpp(3787): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3793): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3821): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3821): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3821): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3830): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3830): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3830): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3856): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3856): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SP2.cpp(3877): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3877): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SP2.cpp(3877): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        Link:
-         All outputs are up-to-date.
-         MyGraphics.vcxproj -> D:\SP2\SP2_Framework\Release\MyGraphics.exe
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Release\MyGraphics.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glew\lib" /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\\glfw\lib-msvc100" /LIBPATH:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\MyGraphics.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Release\MyGraphics.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Release\MyGraphics.lib" /MACHINE:X86 Release\Application.obj
+         Release\Bullet.obj
+         Release\Camera.obj
+         Release\Camera2.obj
+         Release\Camera3.obj
+         Release\CameraSecurity.obj
+         Release\Character.obj
+         Release\CollisionBounds.obj
+         Release\GameState.obj
+         Release\Item.obj
+         Release\LoadOBJ.obj
+         Release\LoadTGA.obj
+         Release\main.obj
+         Release\Mesh.obj
+         Release\MeshBuilder.obj
+         Release\NPC.obj
+         Release\Police.obj
+         Release\ReadFromText.obj
+         Release\RenderPos.obj
+         Release\SP2.obj
+         Release\shader.obj
+         Release\Trolley.obj
+         Release\Utility.obj
+         Generating code
+     1>c:\users\c3pot_000\desktop\nyp work\sp2\sp2_framework\mygraphics\source\camera3.cpp(78): warning C4715: 'Camera3::Limit' : not all control paths return a value
+         Finished generating code
+         MyGraphics.vcxproj -> C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Release\MyGraphics.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\Release\MyGraphics.exe;#1" /manifest Release\MyGraphics.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Release\MyGraphics.unsuccessfulbuild".
          Touching "Release\MyGraphics.lastbuildstate".
-     1>Done Building Project "D:\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\c3pot_000\Desktop\NYP Work\SP2\SP2_Framework\MyGraphics\MyGraphics.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:06.21

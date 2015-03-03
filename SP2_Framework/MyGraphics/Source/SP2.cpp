@@ -461,6 +461,9 @@ void SP2::Init()
 	meshList[GEO_MODEL_RIFLE] = MeshBuilder::GenerateOBJ("model1", "OBJ//rifle.obj");
 	meshList[GEO_MODEL_RIFLE]->textureID = LoadTGA("Image//rifle.tga");
 
+	meshList[GEO_MODEL_AMMO] = MeshBuilder::GenerateOBJ("model1", "OBJ//ammo.obj");
+	meshList[GEO_MODEL_AMMO]->textureID = LoadTGA("Image//ammo.tga");
+
 	meshList[GEO_MODEL_SFFOOD] = MeshBuilder::GenerateOBJ("model1", "OBJ//supplyfrozen.obj");
 	meshList[GEO_MODEL_SFFOOD]->textureID = LoadTGA("Image//supplies.tga");
 
@@ -670,7 +673,7 @@ void SP2::Update(double dt)
 	if(MenuKey == true)
 	{
 		INSTRUCTIONS1 = "Press 8 for Thief";
-		INSTRUCTIONS2 = "Press 9 for guard";
+		INSTRUCTIONS2 = "Press 9 for Stocker";
 		INSTRUCTIONS3 = "Press 0 for Guard";
 		INSTRUCTIONS4 = "Press Esc to quit";
 	}
@@ -687,14 +690,14 @@ void SP2::Update(double dt)
 	}	
 	if(Application::IsKeyPressed('9'))
 	{	
-		ROLE = "guard";
+		ROLE = "Stocker";
 		INSTRUCTIONS1 = "";
 		INSTRUCTIONS2 = "";
 		INSTRUCTIONS3 = "";
 		INSTRUCTIONS4 = "";
 		MenuKey = false;
 		if(Application::IsKeyPressed('8')||Application::IsKeyPressed('0'))
-			ROLE = "guard";
+			ROLE = "Stocker";
 	}
 	if(Application::IsKeyPressed('0'))
 	{
@@ -2077,7 +2080,7 @@ void SP2::RenderScreenUI()
 			}
 			else if ( player.getInventory(i)->getItemName() == "Rifle")
 			{
-				RenderUI(meshList[GEO_MODEL_RIFLE], Color(0, 1, 0), 2.5, 3.5, 3.5,15+(i*5.5)+temp, 3);
+				RenderUI(meshList[GEO_MODEL_RIFLE], Color(0, 1, 0), 5, 5, 5,15+(i*5.5)+temp, 5);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Milo")
 			{
@@ -2090,6 +2093,10 @@ void SP2::RenderScreenUI()
 			else if ( player.getInventory(i)->getItemName() == "SoupCan")
 			{
 				RenderUI(meshList[GEO_MODEL_TOMATOSOUPCAN], Color(0, 1, 0), 6, 6, 6,15+(i*5.5)+temp, 4);
+			}
+			else if ( player.getInventory(i)->getItemName() == "Ammo")
+			{
+				RenderUI(meshList[GEO_MODEL_AMMO], Color(0, 1, 0), 3, 5, 5,15+(i*5.5)+temp, 4);
 			}
 		}
 	}
@@ -3984,6 +3991,10 @@ void SP2::RenderFNB()
 			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyTin")
 			{
 			RenderMesh(meshList[GEO_MODEL_STFOOD], true);
+			}
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Ammo")
+			{
+			RenderMesh(meshList[GEO_MODEL_AMMO], true);
 			}
 			modelStack.PopMatrix();
 		}
