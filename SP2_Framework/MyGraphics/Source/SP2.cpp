@@ -75,6 +75,7 @@ void SP2::Init()
 	camera.Init(Vector3(0, 6, 100), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	Security1.Init(Vector3(-73,14.5,33), Vector3(0, 0, 0), Vector3(0, 1, 0));
 	Security2.Init(Vector3(67,14.5,-35), Vector3(0, 0, 0), Vector3(0, 1, 0));
+	EndScene.Init(Vector3(-5,20,-80), Vector3(-5, 0, -140), Vector3(0, 1, 0));
 
 	//Initialize all meshes to NULL
 	for(int i = 0; i < NUM_GEOMETRY; ++i)
@@ -298,6 +299,9 @@ void SP2::Init()
 
 	meshList[GEO_HP] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_HP]->textureID = LoadTGA("Image//hp.tga");
+
+	meshList[GEO_EXPLODE] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_EXPLODE]->textureID = LoadTGA("Image//boom.tga");
 
 	meshList[GEO_STAM] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_STAM]->textureID = LoadTGA("Image//stamina.tga");
@@ -595,6 +599,15 @@ void SP2::Init()
 	meshList[GEO_MODEL_GUARD_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
 	meshList[GEO_MODEL_GUARD_RIGHTLEG]->textureID = LoadTGA("Image//guardskin.tga");
 
+	meshList[GEO_MODEL_POLICEMAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//Policeman.obj");
+	meshList[GEO_MODEL_POLICEMAN]->textureID = LoadTGA("Image//POLICE.tga");
+
+	meshList[GEO_MODEL_POLICEMAN_DAMAGED] = MeshBuilder::GenerateOBJ("model1", "OBJ//Policeman.obj");
+	meshList[GEO_MODEL_POLICEMAN_DAMAGED]->textureID = LoadTGA("Image//POLICE_HIT.tga");
+
+	meshList[GEO_MODEL_BROKEN] = MeshBuilder::GenerateOBJ("model1", "OBJ//Broken_fence.obj");
+	meshList[GEO_MODEL_BROKEN]->textureID = LoadTGA("Image//fence.tga");
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
 
@@ -617,13 +630,14 @@ void SP2::Init()
 	EscapeCarMove = 0;
 	ArmSwing = 130;
 	MenuKey = true;
+	ExplosionScale = 50;
 
 	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
 	{
 		if ( PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true )
 		{
 			CCollisionBounds* temp =  new CCollisionBounds();
-			temp->SetCollisionBounds(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ(),2,2,2);
+			temp->SetCollisionBounds(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ(),2,7,2);
 			colBounds.push_back(temp);
 		}
 	}
@@ -751,11 +765,29 @@ void SP2::Update(double dt)
 	Security2.Update(dt);
 	}
 
+	if ( EscapeEnd == true)
+	{
+		ExplosionScale++;
+	}
+
 	if ( police == true)
 	{
 		if ( EscapeEnd == true)
 		{
 			EscapeCarMove++;
+		}
+
+		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
+		{
+			if (PoliceMan.GetRenderPosPolice(i)->DamageReset < 0.5 && PoliceMan.GetRenderPosPolice(i)->Damaged == true)
+			{
+				PoliceMan.GetRenderPosPolice(i)->DamageReset += (2*dt);
+			}
+			else if (PoliceMan.GetRenderPosPolice(i)->DamageReset >=0.5 )
+			{
+				PoliceMan.GetRenderPosPolice(i)->Damaged = false;
+				PoliceMan.GetRenderPosPolice(i)->DamageReset = 0;
+			}
 		}
 
 		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
@@ -857,8 +889,8 @@ void SP2::Update(double dt)
 
 	for( int i=0; i < bullet.size(); i ++ )
 	{
-		BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z);
-		if ( !bullet[i]->BulletUpdate(dt) || BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z) == true )
+		BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z,dt);
+		if ( !bullet[i]->BulletUpdate(dt) || BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z,dt) == true )
 		{
 			bullet.erase( bullet.begin() + i );
 		}
@@ -1873,6 +1905,10 @@ void SP2::Render()
 	{
 	viewStack.LookAt(Security2.position.x, Security2.position.y, Security2.position.z, Security2.target.x, Security2.target.y, Security2.target.z, Security2.up.x, Security2.up.y, Security2.up.z);
 	}
+	else if ( camera.getCameraState() == 3 )
+	{
+	viewStack.LookAt(EndScene.position.x, EndScene.position.y, EndScene.position.z, EndScene.target.x, EndScene.target.y, EndScene.target.z, EndScene.up.x, EndScene.up.y, EndScene.up.z);
+	}
 	modelStack.LoadIdentity();
 
 	if(lights[0].type == Light::LIGHT_DIRECTIONAL)
@@ -1951,6 +1987,16 @@ void SP2::Render()
 	TrolleyUpdate();
 	CheckOut();
 	EscapeSteal();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-5,20,-190);
+	modelStack.Rotate(0,1,0,0);
+	modelStack.Scale(ExplosionScale,ExplosionScale,ExplosionScale);
+	if (ExplosionScale < 100 && EscapeEnd == true)
+	{
+	RenderMesh(meshList[GEO_EXPLODE], true);
+	}
+	modelStack.PopMatrix();
 
 	if ( police == true)
 	{
@@ -2560,24 +2606,28 @@ void SP2::EscapeSteal()
 	if(Application::IsKeyPressed('E') && player.returnInvenSize() != 0)
 	{
 		if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
-		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
-		&& camera.target.z >= VanBounds[4]->TBL.z-2 && camera.target.z <= VanBounds[4]->TBL.z+2 && police == true)
+			&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
+			&& camera.target.z >= VanBounds[4]->TBL.z-2 && camera.target.z <= VanBounds[4]->TBL.z+2 && police == true)
 		{
 			for ( int i = 0; i <player.returnInvenSize(); ++i)
 			{
-			player.setMoney(player.getInventory(i)->getItemPrice()*-1);
-			player.sellItems(i);
+				player.setMoney(player.getInventory(i)->getItemPrice()*-1);
+				player.sellItems(i);
 			}
 		}
-
-		if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
-		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
-		&& camera.target.z >= VanBounds[4]->TTL.z && camera.target.z <= VanBounds[4]->TBL.z-15 && police == true)
-		{
-			//End scene code
-			EscapeEnd = true;
-		}
 	}
+		if(Application::IsKeyPressed('E') && player.getMoney() > 0 )
+		{
+			if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
+				&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
+				&& camera.target.z >= VanBounds[4]->TTL.z && camera.target.z <= VanBounds[4]->TBL.z-15 && police == true)
+			{
+				//End scene code
+				EscapeEnd = true;
+				camera.setCameraState(3);
+				
+			}
+		}
 }
 
 void SP2::RenderSkybox()
@@ -2924,7 +2974,10 @@ void SP2::RenderPolice()
 			modelStack.Translate(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
 			modelStack.Rotate(PoliceMan.GetRenderPosPolice(i)->getItemRotation(),PoliceMan.GetRenderPosPolice(i)->getItemRX(),PoliceMan.GetRenderPosPolice(i)->getItemRY(),PoliceMan.GetRenderPosPolice(i)->getItemRZ());
 			modelStack.Scale(PoliceMan.GetRenderPosPolice(i)->getItemScaleX(),PoliceMan.GetRenderPosPolice(i)->getItemScaleY(),PoliceMan.GetRenderPosPolice(i)->getItemScaleZ());
-			RenderMesh(meshList[GEO_LIGHTBALL], true);
+			if ( PoliceMan.GetRenderPosPolice(i)->Damaged == false)
+				RenderMesh(meshList[GEO_MODEL_POLICEMAN], true);
+			else if ( PoliceMan.GetRenderPosPolice(i)->Damaged == true)
+				RenderMesh(meshList[GEO_MODEL_POLICEMAN_DAMAGED], true);
 			modelStack.PopMatrix();
 		}
 	}
@@ -2948,7 +3001,7 @@ void SP2::PoliceShoot(double dt)
 					CBullet* temp =  new CBullet();
 					temp->Position = 
 						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
-						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY()+5,
 						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
 					temp->Direction = 
 						Vector3(-0.999,0,0);
@@ -2971,7 +3024,7 @@ void SP2::PoliceShoot(double dt)
 					CBullet* temp =  new CBullet();
 					temp->Position = 
 						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
-						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY()+5,
 						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
 					temp->Direction = 
 						Vector3(-0.994,0,-0.1);
@@ -2994,7 +3047,7 @@ void SP2::PoliceShoot(double dt)
 					CBullet* temp =  new CBullet();
 					temp->Position = 
 						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
-						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY()+5,
 						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
 					temp->Direction = 
 						Vector3(0.999,0,0.1);
@@ -3018,7 +3071,7 @@ void SP2::PoliceShoot(double dt)
 					CBullet* temp =  new CBullet();
 					temp->Position = 
 						Vector3(PoliceMan.GetRenderPosPolice(i)->getItemTranslationX(),
-						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY(),
+						PoliceMan.GetRenderPosPolice(i)->getItemTranslationY()+5,
 						PoliceMan.GetRenderPosPolice(i)->getItemTranslationZ());
 					temp->Direction = 
 						Vector3(0.992,0,-0.1);
@@ -3029,7 +3082,7 @@ void SP2::PoliceShoot(double dt)
 		}
 	}
 }
-bool SP2::BulletCollision(float x,float y,float z)
+bool SP2::BulletCollision(float x,float y,float z,double dt)
 {
 	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
 	tempMart.x = data.GetRenderPos(0)->getTranslationX();
@@ -3051,7 +3104,8 @@ bool SP2::BulletCollision(float x,float y,float z)
 			if ( PoliceMan.GetRenderPosPolice(i)->getItemName() == "Police")
 			{
 				PoliceMan.GetRenderPosPolice(i)->sethealth(30);
-				//colBounds.erase(colBounds.begin() +i );
+				PoliceMan.GetRenderPosPolice(i)->Damaged = true;
+				//colBounds.erase(colBounds.begin() +i );0
 			}
 			return true;
 		}
@@ -3386,7 +3440,6 @@ bool SP2::BulletCollisionEnemy(float x,float y,float z)
 		{
 			if ( Police.GetRenderPosItem(i)->getItemName() != "PoliceVan")
 			{
-				cout << i << endl;
 				Police.GetRenderPosItem(i)->setItemAvailable(false);
 				//colBounds.erase(colBounds.begin() +i );
 			}
@@ -3605,7 +3658,7 @@ void SP2::RenderShelves()
 }
 
 void SP2::RenderWorld()
-{
+{	
 	modelStack.PushMatrix();
 	modelStack.Translate(data.GetRenderPos(0)->getTranslationX(),data.GetRenderPos(0)->getTranslationY(),data.GetRenderPos(0)->getTranslationZ());
 	modelStack.Rotate(data.GetRenderPos(0)->getRotation(),data.GetRenderPos(0)->getRX(),data.GetRenderPos(0)->getRY(),data.GetRenderPos(0)->getRZ());
@@ -3660,7 +3713,14 @@ void SP2::RenderWorld()
 	modelStack.Translate(data.GetRenderPos(7)->getTranslationX(),data.GetRenderPos(7)->getTranslationY(),data.GetRenderPos(7)->getTranslationZ());
 	modelStack.Rotate(data.GetRenderPos(7)->getRotation(),data.GetRenderPos(7)->getRX(),data.GetRenderPos(7)->getRY(),data.GetRenderPos(2)->getRZ());
 	modelStack.Scale(data.GetRenderPos(7)->getScaleX(),data.GetRenderPos(7)->getScaleY(),data.GetRenderPos(7)->getScaleZ());
+	if (EscapeEnd == true)
+	{
+	RenderMesh(meshList[GEO_MODEL_BROKEN], true);
+	}
+	else
+	{
 	RenderMesh(meshList[GEO_MODEL_FENCE], true);
+	}
 	modelStack.PopMatrix();
 
 			modelStack.PushMatrix();

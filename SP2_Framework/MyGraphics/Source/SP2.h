@@ -217,6 +217,10 @@ private:
 		GEO_MODEL_BULLET,
 		GEO_MODEL_POLICEVAN,
 		GEO_MODEL_POLICEVANWHEEL,
+		GEO_MODEL_POLICEMAN,
+		GEO_MODEL_POLICEMAN_DAMAGED,
+		GEO_MODEL_BROKEN,
+		GEO_EXPLODE,
 
 
 		GEO_LEFT,
@@ -275,6 +279,7 @@ public:
 	bool CheckoutActive;
 	float EscapeCarMove;
 	bool EscapeEnd;
+	float ExplosionScale;
 
 private:
 	unsigned m_vertexArrayID;
@@ -326,6 +331,7 @@ private:
 
 	//Camera2 camera;
 	Camera3 camera;
+	CCameraSecurity EndScene;
 	CCameraSecurity Security1;
 	CCameraSecurity Security2;
 	Camera3 cameraDupe;
@@ -369,7 +375,7 @@ private:
 	void Trolley();
 	void TrolleyUpdate();
 	void NPCShop();
-	bool BulletCollision(float x,float y,float z);
+	bool BulletCollision(float x,float y,float z,double dt);
 	bool BulletCollisionEnemy(float x,float y,float z);
 
 };

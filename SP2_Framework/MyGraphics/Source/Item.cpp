@@ -6,6 +6,7 @@ CItem::CItem(void)
 	itemName = "";
 	itemPrice = 0;
 	itemAvailable = false;
+	Damaged = false;
 }
 
 

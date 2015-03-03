@@ -54,5 +54,7 @@ public:
 	float RespawnCD;
 	void sethealth(int hp);
 	void resethealth();
+	bool Damaged;
+	float DamageReset;
 };
 
