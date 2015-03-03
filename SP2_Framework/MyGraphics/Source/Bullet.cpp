@@ -6,6 +6,7 @@ CBullet::CBullet(void)
 , Direction		( Vector3() )
 , Velocity		( Vector3( 5.0f, 5.0f, 5.0f ) )
 , VelocityPolice( Vector3( 3.0f, 3.0f, 3.0f ) )
+, Zoom			( Vector3( 5.0f, 5.0f, 5.0f ) )
 , Range			( Vector3( 500.0f, 500.0f, 500.0f ) )
 , ShootInterval (0)
 , alive			( true )
@@ -39,6 +40,19 @@ bool CBullet::BulletUpdatePolice(double dt)
 	// Normalise Direction
 	Direction.Normalize();
 	Position += Vector3( Direction.x * VelocityPolice.x , Direction.y * VelocityPolice.y , Direction.z * VelocityPolice.z );
+
+	if ( Position.x > Range.x || Position.x < -Range.x || Position.y > Range.y || Position.y < -Range.y || Position.z > Range.z || Position.z < -Range.z )
+		alive = false;
+	return true;
+}
+
+bool CBullet::DummyZoom(double dt)
+{
+	if ( !alive ) return false;
+
+	// Normalise Direction
+	Direction.Normalize();
+	Position = Vector3( Direction.x + VelocityPolice.x , Direction.y + VelocityPolice.y , Direction.z + VelocityPolice.z );
 
 	if ( Position.x > Range.x || Position.x < -Range.x || Position.y > Range.y || Position.y < -Range.y || Position.z > Range.z || Position.z < -Range.z )
 		alive = false;

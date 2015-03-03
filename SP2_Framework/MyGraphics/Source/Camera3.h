@@ -59,8 +59,8 @@ public:
 	float TrolleyStateT;
 	bool RepeatPress;
 	int State;
-
 	Application test;
+	bool downSight;
 };
 
 #endif

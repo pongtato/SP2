@@ -221,6 +221,12 @@ private:
 		GEO_MODEL_POLICEMAN_DAMAGED,
 		GEO_MODEL_BROKEN,
 		GEO_EXPLODE,
+		GEO_STARTBTN,
+		GEO_INSTRUCTIONBTN,
+		GEO_ACHIEVEBTN,
+		GEO_EXITBTN,
+		GEO_LOGO,
+		GEO_TINT,
 
 
 		GEO_LEFT,
@@ -280,6 +286,8 @@ public:
 	float EscapeCarMove;
 	bool EscapeEnd;
 	float ExplosionScale;
+	int MenuState;
+	float MenuLimit;
 
 private:
 	unsigned m_vertexArrayID;
@@ -377,7 +385,9 @@ private:
 	void NPCShop();
 	bool BulletCollision(float x,float y,float z,double dt);
 	bool BulletCollisionEnemy(float x,float y,float z);
-
+	void MainMenu();
+	void MenuUpdate(double dt);
+	void LightsReset();
 };
 
 #endif

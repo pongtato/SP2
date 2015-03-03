@@ -84,7 +84,6 @@ void SP2::Init()
 	}
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
-
 	Mtx44 projection;
 	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 2000.f);
 	projectionStack.LoadMatrix(projection);
@@ -314,6 +313,24 @@ void SP2::Init()
 
 	meshList[GEO_UI] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_UI]->textureID = LoadTGA("Image//UI.tga");
+
+	meshList[GEO_STARTBTN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_STARTBTN]->textureID = LoadTGA("Image//Startbtn.tga");
+
+	meshList[GEO_INSTRUCTIONBTN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_INSTRUCTIONBTN]->textureID = LoadTGA("Image//Instructions.tga");
+
+	meshList[GEO_ACHIEVEBTN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_ACHIEVEBTN]->textureID = LoadTGA("Image//Achievements.tga");
+
+	meshList[GEO_LOGO] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_LOGO]->textureID = LoadTGA("Image//Logo.tga");
+
+	meshList[GEO_TINT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_TINT]->textureID = LoadTGA("Image//Tint.tga");
+
+	meshList[GEO_EXITBTN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_EXITBTN]->textureID = LoadTGA("Image//Exit.tga");
 
 	meshList[GEO_DIALOGUEBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_DIALOGUEBOX]->textureID = LoadTGA("Image//dialoguebox.tga");
@@ -631,6 +648,9 @@ void SP2::Init()
 	ArmSwing = 130;
 	MenuKey = true;
 	ExplosionScale = 50;
+	camera.setCameraState(2);
+	MenuState = 1;
+	ROLE = "Shopper";
 
 	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
 	{
@@ -683,44 +703,11 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 	if(MenuKey == true)
 	{
-		INSTRUCTIONS1 = "Press 8 for Thief";
-		INSTRUCTIONS2 = "Press 9 for guard";
-		INSTRUCTIONS3 = "Press 0 for Guard";
-		INSTRUCTIONS4 = "Press Esc to quit";
+		MenuUpdate(dt);
 	}
-	if(Application::IsKeyPressed('8'))
-	{
-		ROLE = "Thief";	
-		INSTRUCTIONS1 = "";
-		INSTRUCTIONS2 = "";
-		INSTRUCTIONS3 = "";
-		INSTRUCTIONS4 = "";
-		MenuKey = false;
-		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('0'))
-			ROLE = "Thief";
-	}	
-	if(Application::IsKeyPressed('9'))
-	{	
-		ROLE = "guard";
-		INSTRUCTIONS1 = "";
-		INSTRUCTIONS2 = "";
-		INSTRUCTIONS3 = "";
-		INSTRUCTIONS4 = "";
-		MenuKey = false;
-		if(Application::IsKeyPressed('8')||Application::IsKeyPressed('0'))
-			ROLE = "guard";
-	}
-	if(Application::IsKeyPressed('0'))
-	{
-		ROLE = "Guard";
-		INSTRUCTIONS1 = "";
-		INSTRUCTIONS2 = "";
-		INSTRUCTIONS3 = "";
-		INSTRUCTIONS4 = "";
-		MenuKey = false;
-		if(Application::IsKeyPressed('9')||Application::IsKeyPressed('8'))
-			ROLE = "Guard";
-	}
+	else
+		LightsReset();
+
 	if ( ItemName == "Camera")
 	{
 		if(Application::IsKeyPressed('5'))
@@ -772,9 +759,38 @@ void SP2::Update(double dt)
 
 	if ( police == true)
 	{
+		ROLE = "Thief";
 		if ( EscapeEnd == true)
 		{
 			EscapeCarMove++;
+		}
+
+		if(Application::IsKeyPressed(VK_RBUTTON))
+		{
+			Mtx44 projection;
+			projection.SetToPerspective(15.f, 4.f / 3.f, 0.1f, 2000.f);
+			projectionStack.LoadMatrix(projection);
+			camera.downSight = true;
+		}
+		else
+		{
+			Mtx44 projection;
+			projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 2000.f);
+			projectionStack.LoadMatrix(projection);
+			camera.downSight = false;
+		}
+
+		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
+		{
+			if (PoliceMan.GetRenderPosPolice(i)->DamageReset < 0.5 && PoliceMan.GetRenderPosPolice(i)->Damaged == true)
+			{
+				PoliceMan.GetRenderPosPolice(i)->DamageReset += (2*dt);
+			}
+			else if (PoliceMan.GetRenderPosPolice(i)->DamageReset >=0.5 )
+			{
+				PoliceMan.GetRenderPosPolice(i)->Damaged = false;
+				PoliceMan.GetRenderPosPolice(i)->DamageReset = 0;
+			}
 		}
 
 		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
@@ -1181,7 +1197,7 @@ void SP2::BoundsCheck()
 		camera.target.z = cameraDupe.target.z;
 		camera.isCollide = true;
 	}
-	
+
 	////mart outer bound check
 	////left wall
 	else if( camera.position.x >= tempMart.x - 78 && camera.position.x <= tempMart.x - 71 && camera.position.z <= tempMart.z + 54 && camera.position.z >= tempMart.z - 54)
@@ -1242,7 +1258,7 @@ void SP2::BoundsCheck()
 		camera.isCollide = true;
 	}
 
-		//Fridge Bounds Check
+	//Fridge Bounds Check
 	else if(camera.position.x >= tempFridge.x -92 && camera.position.x <= tempFridge.x +8 && camera.position.z <= tempFridge.z + 2 && camera.position.z >= tempFridge.z)
 	{
 		camera.position.x = cameraDupe.position.x;
@@ -1376,7 +1392,7 @@ void SP2::BoundsCheck()
 			camera.target.z = cameraDupe.target.z;
 			camera.isCollide = true;
 		}
-		
+
 	}
 	//shopper AI collision
 	if(playeridle == false)
@@ -1390,7 +1406,7 @@ void SP2::BoundsCheck()
 				camera.position.z = cameraDupe.position.z;
 				camera.target.z = cameraDupe.target.z;
 				playeridle = false;
-			
+
 			}
 			else if(camera.position.x == cameraDupe.position.x && camera.position.z == cameraDupe.position.z)//idle player/camera
 			{
@@ -1408,29 +1424,32 @@ void SP2::BoundsCheck()
 		{
 			if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 3 && camera.position.z <= shopper.getPosZ() + 3)
 			{
-				camera.position.x = cameraDupe.position.x;
-				camera.target.x = cameraDupe.target.x;
-				
+				if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
+				{
+					camera.position.x = cameraDupe.position.x;
+					camera.target.x = cameraDupe.target.x;
+
+				}
+
 			}
-			
-		}
-		//player X Coord < AI X Coord
-		if(camera.position.x < shopper.getPosX() && camera.position.x > shopper.getPosX() - 2)
-		{
-			if(camera.position.x > cameraDupe.position.x && camera.position.z > shopper.getPosZ() - 2 && camera.position.z < shopper.getPosZ() + 2)
+			//player X Coord < AI X Coord
+			if(camera.position.x < shopper.getPosX())
 			{
-				camera.position.x = cameraDupe.position.x;
-				camera.target.x = cameraDupe.target.x;
+				if(camera.position.x > cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
+				{
+					camera.position.x = cameraDupe.position.x;
+					camera.target.x = cameraDupe.target.x;
+				}
 			}
-		}
-		if(((camera.position.z > shopper.getPosZ() + 3 || camera.position.z < shopper.getPosZ() - 3) && (camera.position.x > shopper.getPosX() + 3 || camera.position.x < shopper.getPosX() - 3)) || (camera.position.x > shopper.getPosX() + 5) || (camera.position.x < shopper.getPosX() - 5))
-		{
+			if(((camera.position.z > shopper.getPosZ() + 3 || camera.position.z < shopper.getPosZ() - 3) && (camera.position.x > shopper.getPosX() + 3 || camera.position.x < shopper.getPosX() - 3)) || (camera.position.x > shopper.getPosX() + 5) || (camera.position.x < shopper.getPosX() - 5))
+			{
+				playeridle = false;
+			}
+			/*if(camera.position.x > shopper.getPosX() + 5 && camera.position.z > shopper.getPosZ() + 5 )
+			{
 			playeridle = false;
+			}*/
 		}
-		/*if(camera.position.x > shopper.getPosX() + 5 && camera.position.z > shopper.getPosZ() + 5 )
-		{
-			playeridle = false;
-		}*/
 	}
 }
 
@@ -2018,8 +2037,10 @@ void SP2::Render()
 			RenderMesh(meshList[GEO_MODEL_BULLET], true);
 			modelStack.PopMatrix();
 		}
-	if ( camera.getCameraState() == 0 )
+			if ( camera.getCameraState() == 0 )
 		RenderScreenUI();
+			else if (MenuKey == true)
+				MainMenu();
 }
 
 void SP2::RenderBasicModel()
@@ -2201,38 +2222,125 @@ void SP2::RenderScreenUI()
 			}
 		}
 	}
+}
+
+void SP2::MainMenu()
+{
 	if(MenuKey == true)
-	{	
-		RenderUI(meshList[GEO_MENUBOX], Color(0, 1, 0), 80, 60, 1.5, 40, 30);
-		RenderTextOnScreen(meshList[GEO_TEXT], TITLE, Color(0,1,0), 6, 1, 7);
-		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 30);
-		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 24);
-		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 18);
-		RenderUI(meshList[GEO_MENUSELECT], Color(0,1,0), 65, 3, 1.5, 43, 12);
-		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS1 , Color(0,1,0), 3, 4, 9);
-		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 7);
-		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 5);
-		RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 3);
-		TITLE = "SP2 Project";
-		INSTRUCTIONS1 = "Press 8 for Thief";
-		INSTRUCTIONS2 = "Press 9 for Stocker";
-		INSTRUCTIONS3 = "Press 0 for Guard";
-		INSTRUCTIONS4 = "Press Esc to quit";
-		if(Application::IsKeyPressed('8'))
+	{	float buttonsize = 20;
+	//RenderUI(meshList[GEO_TINT], Color(0, 1, 0), 80, 60, 1.5, 40, 30);
+	RenderUI(meshList[GEO_LOGO], Color(0, 1, 0), 80, 80, 1.5, 40, 50);
+	//RenderTextOnScreen(meshList[GEO_TEXT], TITLE, Color(0,1,0), 6, 1, 7);
+	if (MenuState == 1)
+	{
+		float middle = 40;
+		float offset = 25;
+		RenderUI(meshList[GEO_INSTRUCTIONBTN], Color(0,1,0), 25, 25, 1.5, middle, 25);
+		RenderUI(meshList[GEO_STARTBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle + offset, 25);
+	}
+
+	else if (MenuState == 2)
+	{
+		float middle = 40;
+		float offset = 25;
+		RenderUI(meshList[GEO_STARTBTN], Color(0,1,0), 25, 25, 1.5, middle, 25);
+		RenderUI(meshList[GEO_INSTRUCTIONBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle - offset, 25);
+		RenderUI(meshList[GEO_ACHIEVEBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle + offset, 25);
+	}
+
+	else if (MenuState == 3)
+	{
+		float middle = 40;
+		float offset = 25;
+		RenderUI(meshList[GEO_ACHIEVEBTN], Color(0,1,0), 25, 25, 1.5, middle, 25);
+		RenderUI(meshList[GEO_STARTBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle - offset, 25);
+		RenderUI(meshList[GEO_EXITBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle + offset, 25);
+	}
+	else if (MenuState == 4)
+	{
+		float middle = 40;
+		float offset = 25;
+		RenderUI(meshList[GEO_EXITBTN], Color(0,1,0), 25, 25, 1.5, middle, 25);
+		RenderUI(meshList[GEO_ACHIEVEBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle - offset, 25);
+	}
+	}
+}
+
+void SP2::MenuUpdate(double dt)
+{
+	if (MenuLimit > 0 )
+	{
+		MenuLimit -= (1*dt);
+	}
+	if(Application::IsKeyPressed(VK_LEFT))
+	{
+		if ( MenuState > 1 && MenuLimit <= 0 )
 		{
-			ROLE = "Thief";	
-			MenuKey = false;
-		}	
-		if(Application::IsKeyPressed('9'))
-		{	
-			ROLE = "Stocker";
+			MenuState--;
+			MenuLimit = true;
+		}
+	}	
+	if(Application::IsKeyPressed(VK_RIGHT))
+	{
+		if ( MenuState <4 && MenuLimit <= 0)
+		{
+			MenuState++;
+			MenuLimit = true;
+		}
+	}	
+	if(Application::IsKeyPressed(VK_RETURN))
+	{
+		if ( MenuState == 2 && MenuLimit <= 0)
+		{
+			camera.setCameraState(0);
+			MenuLimit = true;
 			MenuKey = false;
 		}
-		if(Application::IsKeyPressed('0'))
-		{
-			ROLE = "Guard";
-			MenuKey = false;
-		}
+	}	
+
+		if (MenuKey == true)
+	{
+		Lightswitch = 0;
+		lights[0].power = 0;
+		lights[1].power = 0;
+		lights[2].power = 0;
+		lights[3].power = 0;
+		lights[4].power = 0;
+
+
+		glUniform1f(m_parameters[U_LIGHT1_POWER], lights[1].power);
+		glUniform1f(m_parameters[U_LIGHT2_POWER], lights[2].power);
+		glUniform1f(m_parameters[U_LIGHT3_POWER], lights[3].power);
+		glUniform1f(m_parameters[U_LIGHT4_POWER], lights[4].power);
+		glUniform1f(m_parameters[U_LIGHT0_POWER], lights[0].power);
+	}
+}
+
+void SP2::LightsReset()
+{
+	if (police != true)
+	{
+		Lightswitch = 1;
+		lights[1].color.Set(Lightswitch,Lightswitch,Lightswitch);
+		lights[2].color.Set(Lightswitch,Lightswitch,Lightswitch);
+		lights[3].color.Set(Lightswitch,Lightswitch,Lightswitch);
+		lights[4].color.Set(Lightswitch,Lightswitch,Lightswitch);
+		lights[0].power = 1.0f;
+		lights[1].power = 1.0f;
+		lights[2].power = 1.0f;
+		lights[3].power = 1.0f;
+		lights[4].power = 1.0f;
+
+
+		glUniform3fv(m_parameters[U_LIGHT1_COLOR], 1, &lights[1].color.r);
+		glUniform1f(m_parameters[U_LIGHT1_POWER], lights[1].power);
+		glUniform1f(m_parameters[U_LIGHT2_POWER], lights[2].power);
+		glUniform3fv(m_parameters[U_LIGHT2_COLOR], 1, &lights[2].color.r);
+		glUniform3fv(m_parameters[U_LIGHT3_COLOR], 1, &lights[3].color.r);
+		glUniform1f(m_parameters[U_LIGHT3_POWER], lights[3].power);
+		glUniform3fv(m_parameters[U_LIGHT4_COLOR], 1, &lights[4].color.r);
+		glUniform1f(m_parameters[U_LIGHT4_POWER], lights[4].power);
+		glUniform1f(m_parameters[U_LIGHT0_POWER], lights[0].power);
 	}
 }
 
@@ -3713,7 +3821,7 @@ void SP2::RenderWorld()
 	modelStack.Translate(data.GetRenderPos(7)->getTranslationX(),data.GetRenderPos(7)->getTranslationY(),data.GetRenderPos(7)->getTranslationZ());
 	modelStack.Rotate(data.GetRenderPos(7)->getRotation(),data.GetRenderPos(7)->getRX(),data.GetRenderPos(7)->getRY(),data.GetRenderPos(2)->getRZ());
 	modelStack.Scale(data.GetRenderPos(7)->getScaleX(),data.GetRenderPos(7)->getScaleY(),data.GetRenderPos(7)->getScaleZ());
-	if (EscapeEnd == true)
+	if (EscapeEnd == true && ExplosionScale >= 100)
 	{
 	RenderMesh(meshList[GEO_MODEL_BROKEN], true);
 	}
@@ -3915,7 +4023,7 @@ void SP2::RenderAnimate()
 
 void SP2::RenderPlayer()
 {
-	if (police != true)
+	if (police != true && EscapeEnd != true)
 	{
 	//Origin
 	modelStack.PushMatrix();
@@ -3956,7 +4064,7 @@ void SP2::RenderPlayer()
 	modelStack.PopMatrix();
 	}
 
-	if ( police == true)
+	if ( police == true  && EscapeEnd != true)
 	{
 		//Origin
 	modelStack.PushMatrix();

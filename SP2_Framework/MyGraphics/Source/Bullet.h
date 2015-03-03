@@ -13,6 +13,7 @@ public:
 	Vector3 Direction;
 	Vector3 Velocity;
 	Vector3 VelocityPolice;
+	Vector3 Zoom;
 	Vector3 Range;
 
 	bool alive;
@@ -24,6 +25,7 @@ public:
 
 	bool BulletUpdate(double dt);
 	bool BulletUpdatePolice(double dt);
+	bool DummyZoom(double dt);
 	void BulletRender(void);
 	float ShootInterval;
 	float RTime;

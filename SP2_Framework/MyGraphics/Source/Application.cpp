@@ -160,8 +160,5 @@ void Application::mousePos(void)
 	setPosX(DMX);
 	setPosY(DMY);
 	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-	if (getPosX() != 400 || getPosY() != 300)
-	{
 	glfwSetCursorPos(m_window,800/2,600/2);
-	}
 }
