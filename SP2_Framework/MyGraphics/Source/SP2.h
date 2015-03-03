@@ -228,6 +228,10 @@ private:
 		GEO_LOGO,
 		GEO_TINT,
 
+		GEO_BUILDING01,
+		GEO_BUILDING02,
+		GEO_BUILDING03,
+		GEO_BUILDING04,
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -258,6 +262,10 @@ public:
 	CReadFromText Police;
 	CReadFromText PoliceCol;
 	CReadFromText PoliceMan;
+	CReadFromText Building01;
+	CReadFromText Building02;
+	CReadFromText Building03;
+	CReadFromText Building04;
 	vector<CBullet*> bullet;
 	vector<CBullet*> Policebullet;
 	CBullet shoot;
@@ -362,6 +370,7 @@ private:
 	void RenderAnimateGuard();
 	void RenderPolice();
 	void PoliceShoot(double dt);
+	void RenderBuilding();
 
 	void SetPrevPos(void);
 	void RenderMesh(Mesh *mesh, bool enableLight);

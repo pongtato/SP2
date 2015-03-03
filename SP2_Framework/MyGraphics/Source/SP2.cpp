@@ -37,6 +37,10 @@ void SP2::Init()
 	Police.ReadTextFileItem("OBJ-Pos/PoliceInit.txt");
 	PoliceCol.ReadTextFileItem("OBJ-Pos/PoliceCol.txt");
 	PoliceMan.ReadTextFilePolice("OBJ-Pos/Police.txt");
+	Building01.ReadTextFile("OBJ-Pos/Building/Building01Pos.txt");
+	Building02.ReadTextFile("OBJ-Pos/Building/Building02Pos.txt");
+	Building03.ReadTextFile("OBJ-Pos/Building/Building03Pos.txt");
+	Building04.ReadTextFile("OBJ-Pos/Building/Building04Pos.txt");
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	//Enable depth buffer and depth testing
@@ -624,6 +628,18 @@ void SP2::Init()
 
 	meshList[GEO_MODEL_BROKEN] = MeshBuilder::GenerateOBJ("model1", "OBJ//Broken_fence.obj");
 	meshList[GEO_MODEL_BROKEN]->textureID = LoadTGA("Image//fence.tga");
+
+	meshList[GEO_BUILDING01] = MeshBuilder::GenerateOBJ("model1", "OBJ//Building01.obj");
+	meshList[GEO_BUILDING01]->textureID = LoadTGA("Image//Building01.tga");
+
+	meshList[GEO_BUILDING02] = MeshBuilder::GenerateOBJ("model1", "OBJ//Building02.obj");
+	meshList[GEO_BUILDING02]->textureID = LoadTGA("Image//Building02.tga");
+
+	meshList[GEO_BUILDING03] = MeshBuilder::GenerateOBJ("model1", "OBJ//Building03.obj");
+	meshList[GEO_BUILDING03]->textureID = LoadTGA("Image//Building03.tga");
+
+	meshList[GEO_BUILDING04] = MeshBuilder::GenerateOBJ("model1", "OBJ//Building04.obj");
+	meshList[GEO_BUILDING04]->textureID = LoadTGA("Image//Building04.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -3931,6 +3947,50 @@ void SP2::RenderWorld()
 	modelStack.Scale(data.GetRenderPos(20)->getScaleX(),data.GetRenderPos(10)->getScaleY(),data.GetRenderPos(20)->getScaleZ());
 	RenderMesh(meshList[GEO_MODEL_GUARDCONTROL], true);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	RenderBuilding();
+	modelStack.PopMatrix();
+}
+
+void SP2::RenderBuilding()
+{
+	for(int i = 0; i < Building01.ReturnReadListSize(); ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(Building01.GetRenderPos(i)->getTranslationX(),Building01.GetRenderPos(i)->getTranslationY(),Building01.GetRenderPos(i)->getTranslationZ());
+		modelStack.Rotate(Building01.GetRenderPos(i)->getRotation(),Building01.GetRenderPos(i)->getRX(),Building01.GetRenderPos(i)->getRY(),Building01.GetRenderPos(i)->getRZ());
+		modelStack.Scale(Building01.GetRenderPos(i)->getScaleX(),Building01.GetRenderPos(i)->getScaleY(),Building01.GetRenderPos(i)->getScaleZ());
+		RenderMesh(meshList[GEO_BUILDING01],false);
+		modelStack.PopMatrix();
+	}
+	for(int i = 0; i < Building02.ReturnReadListSize(); ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(Building02.GetRenderPos(i)->getTranslationX(),Building02.GetRenderPos(i)->getTranslationY(),Building02.GetRenderPos(i)->getTranslationZ());
+		modelStack.Rotate(Building02.GetRenderPos(i)->getRotation(),Building02.GetRenderPos(i)->getRX(),Building02.GetRenderPos(i)->getRY(),Building02.GetRenderPos(i)->getRZ());
+		modelStack.Scale(Building02.GetRenderPos(i)->getScaleX(),Building02.GetRenderPos(i)->getScaleY(),Building02.GetRenderPos(i)->getScaleZ());
+		RenderMesh(meshList[GEO_BUILDING02],false);
+		modelStack.PopMatrix();
+	}
+	for(int i = 0; i < Building03.ReturnReadListSize(); ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(Building03.GetRenderPos(i)->getTranslationX(),Building03.GetRenderPos(i)->getTranslationY(),Building03.GetRenderPos(i)->getTranslationZ());
+		modelStack.Rotate(Building03.GetRenderPos(i)->getRotation(),Building03.GetRenderPos(i)->getRX(),Building03.GetRenderPos(i)->getRY(),Building03.GetRenderPos(i)->getRZ());
+		modelStack.Scale(Building03.GetRenderPos(i)->getScaleX(),Building03.GetRenderPos(i)->getScaleY(),Building03.GetRenderPos(i)->getScaleZ());
+		RenderMesh(meshList[GEO_BUILDING03],false);
+		modelStack.PopMatrix();
+	}
+	for(int i = 0; i < Building04.ReturnReadListSize(); ++i)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(Building04.GetRenderPos(i)->getTranslationX(),Building04.GetRenderPos(i)->getTranslationY(),Building04.GetRenderPos(i)->getTranslationZ());
+		modelStack.Rotate(Building04.GetRenderPos(i)->getRotation(),Building04.GetRenderPos(i)->getRX(),Building04.GetRenderPos(i)->getRY(),Building04.GetRenderPos(i)->getRZ());
+		modelStack.Scale(Building04.GetRenderPos(i)->getScaleX(),Building04.GetRenderPos(i)->getScaleY(),Building04.GetRenderPos(i)->getScaleZ());
+		RenderMesh(meshList[GEO_BUILDING04],false);
+		modelStack.PopMatrix();
+	}
 }
 
 void SP2::RenderCharacter()
