@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file Camera.cpp
-\Author SP2 Group 4
-\pa
-\brief
-Codes to move and initiate a camera.
-*/
-/****************************************************************************/
 #include "Camera.h"
 #include "Application.h"
 #include "Mtx44.h"

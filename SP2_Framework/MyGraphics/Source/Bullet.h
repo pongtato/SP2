@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file Bullet.h
-\Author SP2 Group 4
-\par
-\brief
-Main header file for Bullet.
-*/
-/****************************************************************************/
 #pragma once
 #include <iostream>
 #include "Vector3.h"

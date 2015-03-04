@@ -1,12 +1,4 @@
-/****************************************************************************/
-/*!
-\file Mesh.cpp
-\Author SP2 Group 4
-\par
-\brief
-Codes to store meshes for making shapes
-*/
-/****************************************************************************/
+
 #include "Mesh.h"
 #include "GL\glew.h"
 #include "Vertex.h"

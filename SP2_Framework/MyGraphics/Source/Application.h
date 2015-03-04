@@ -1,12 +1,4 @@
-/****************************************************************************/
-/*!
-\file Application.h
-\Author SP2 Group 4
-\par
-\brief
-Main header file for Application.
-*/
-/****************************************************************************/
+
 #ifndef APPLICATION_H
 #define APPLICATION_H
 

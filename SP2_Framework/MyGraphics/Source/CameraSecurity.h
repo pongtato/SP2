@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file CameraSecurity.h
-\Author SP2 Group 4
-\par
-\brief
-Main Header file for CameraSecurity
-*/
-/****************************************************************************/
 #pragma once
 
 #include <Windows.h>

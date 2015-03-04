@@ -1,12 +1,4 @@
-/*************************************************************************/
-/*!
-\file Application.cpp
-\Author SP2 Group 4
-\par
-\brief
-Codes to initiate and work the application.
-*/
-/*************************************************************************/
+
 #include "Application.h"
 
 //Include GLEW

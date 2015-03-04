@@ -1,0 +1,6 @@
+CanFoodLeftBTM,-28,3.5,-2.3,-90,0,1,0,1,1,1
+CanFoodLeftMIDDLE,-28,5.4,-2.3,-90,0,1,0,1,1,1
+CanFoodLeftTOP,-28,7.3,-2.3,-90,0,1,0,1,1,1
+CanFoodRightBTM,-28,3.5,-0.1,90,0,1,0,1,1,1
+CanFoodRightMIDDLE,-28,5.4,-0.1,90,0,1,0,1,1,1
+CanFoodRightTOP,-28,7.3,-0.1,90,0,1,0,1,1,1

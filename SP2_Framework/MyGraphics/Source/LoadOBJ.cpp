@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file LoadOBJ.cpp
-\Author SP2 Group 4
-\par
-\brief
-Codes to load OBJ files from a folder.
-*/
-/****************************************************************************/
 #include <iostream>
 #include <fstream>
 #include <map>

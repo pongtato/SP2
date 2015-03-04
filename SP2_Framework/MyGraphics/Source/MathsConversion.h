@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file MathsConversion.h
-\Author SP2 Group 4
-\par
-\brief
-Codes to convert Radians to Degrees and back.
-*/
-/****************************************************************************/
 #pragma once
 
 #define	PI			3.14159265

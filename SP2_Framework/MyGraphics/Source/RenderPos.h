@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file RenderPos.h
-\Author SP2 Group 4
-\par
-\brief
-Main header file for RenderPos.
-*/
-/****************************************************************************/
 #include <iostream>
 #include <string>
 #pragma once

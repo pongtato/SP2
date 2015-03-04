@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file Light.h
-\Author SP2 Group 4
-\par
-\brief
-Struct to define the behaviour of Light.
-*/
-/****************************************************************************/
 #ifndef _LIGHT_H
 #define _LIGHT_H
 

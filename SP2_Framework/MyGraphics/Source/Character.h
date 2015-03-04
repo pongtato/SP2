@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file Character.h
-\Author SP2 Group 4
-\par
-\brief
-Defines stats and variables for Character.cpp.
-*/
-/****************************************************************************/
 #pragma once
 #include <iostream>
 #include <vector>

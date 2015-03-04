@@ -1,12 +1,3 @@
-/****************************************************************************/
-/*!
-\file CollisionBounds.h
-\Author SP2 Group 4
-\par
-\brief
-Vectors for CollisionBounds.cpp.
-*/
-/****************************************************************************/
 #pragma once
 #include "Vector3.h"
 class CCollisionBounds

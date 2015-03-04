@@ -1,0 +1,6 @@
+VegCanLeftBTM,-56,3.2,13,180,0,1,0,1,1,1
+VegCanLeftMIDDLE,-56,5.1,13,180,0,1,0,1,1,1
+VegCanLeftTOP,-56,7,13,180,0,1,0,1,1,1
+VegCanRightBTM,-56,3.2,15,0,0,1,0,1,1,1
+VegCanRightMIDDLE,-56,5.1,15,0,0,1,0,1,1,1
+VegCanRightTOP,-56,7,15,0,0,1,0,1,1,1
