@@ -665,9 +665,13 @@ void SP2::Init()
 	MenuKey = true;
 	ExplosionScale = 50;
 	camera.setCameraState(2);
+	EscapeEnd = false;
 	MenuState = 1;
 	GunOffset = 0;
 	GunSwing = -30.f;
+	DupeRot = 0;
+	DupeRotArms = 0;
+	DupeRotArmsY = 0;
 
 	ROLE = "Shopper";
 
@@ -783,6 +787,13 @@ void SP2::Update(double dt)
 		{
 			EscapeCarMove++;
 		}
+		if ( EscapeCarMove >=  30 )
+		{
+			keybd_event( VK_NUMPAD9,
+				0X69,
+				KEYEVENTF_EXTENDEDKEY | 0,
+				0 );
+		}
 
 		if ( GunOffset < 0.06)
 		{
@@ -891,6 +902,14 @@ void SP2::Update(double dt)
 		}
 	}
 
+	if (player.trolley == true)
+	{
+		Trolleyz.Position = Vector3(camera.position.x,camera.position.y,camera.position.z);
+		Trolleyz.Direction = Vector3(camera.target.x-camera.position.x,camera.target.y-camera.position.y,camera.target.z-camera.position.z);
+		Trolleyz.TrolleyLimiter(camera.position.x,camera.position.y,camera.position.z,dt);
+		BoundsCheckTrolley(Trolleyz.Position.x,Trolleyz.Position.y,Trolleyz.Position.z);
+	}
+
 	if (shoot.bullet > 0  && police == true)
 	{
 		if(Application::IsKeyPressed(VK_LBUTTON))
@@ -950,6 +969,80 @@ void SP2::Update(double dt)
 		}
 	}
 
+	if ( camera.isCollide == false && player.trolley == true && player.trolleyDrop == false)
+	{
+			if(camera.MouseX < 400)
+			{
+				DupeRot += (float)(camera.CAMERA_SPEED * dt);
+			}
+
+			if(camera.MouseX < 398  && camera.downSight == false)
+			{
+				DupeRot += (float)(18*camera.CAMERA_SPEED * dt);
+			}
+
+			if(camera.MouseX > 400)
+			{
+				DupeRot -= (float)(camera.CAMERA_SPEED * dt);
+			}
+
+			if(camera.MouseX > 402  && camera.downSight == false)
+			{
+				DupeRot -= (float)(18*camera.CAMERA_SPEED * dt);
+			}
+	}
+
+	if ( camera.isCollide == false && MenuKey != true )
+	{
+		if(camera.MouseX < 400)
+		{
+			DupeRotArms += (float)(camera.CAMERA_SPEED * dt);
+		}
+
+		if(camera.MouseX < 398  && camera.downSight == false)
+		{
+			DupeRotArms += (float)(18*camera.CAMERA_SPEED * dt);
+		}
+
+		if(camera.MouseX > 400)
+		{
+			DupeRotArms -= (float)(camera.CAMERA_SPEED * dt);
+		}
+
+		if(camera.MouseX > 402  && camera.downSight == false)
+		{
+			DupeRotArms -= (float)(18*camera.CAMERA_SPEED * dt);
+		}
+
+		if (camera.CameraLock < 40)
+		{
+			if (camera.getCameraState() == 0 )
+			{
+				if(camera.MouseY < 300 && camera.MouseY >=298)
+				{
+					DupeRotArmsY += (float)(camera.CAMERA_SPEED * dt);
+				}
+				if(camera.MouseY < 298 && camera.downSight == false)
+				{
+					DupeRotArmsY += (float)(12*camera.CAMERA_SPEED * dt);
+				}
+			}
+		}
+		if (camera.CameraLock > -40)
+		{
+			if (camera.getCameraState() == 0 )
+			{
+				if(camera.MouseY > 300 && camera.MouseY <= 302 )
+				{
+					DupeRotArmsY -= (float)(camera.CAMERA_SPEED * dt);
+				}
+				if(camera.MouseY > 302  && camera.downSight == false)
+				{
+					DupeRotArmsY -= (float)(12*camera.CAMERA_SPEED * dt);
+				}
+			}
+		}
+	}
 	Animate(dt);
 }
 
@@ -1402,9 +1495,10 @@ void SP2::BoundsCheck()
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
 		camera.isCollide = true;
+
 	}
 	//Trolley Collision(player only)
-	if(camera.position.x >= trolley.LastX - 5 && camera.position.x <= trolley.LastX + 5 && camera.position.z >= trolley.LastZ - 3 && camera.position.z <= trolley.LastZ + 3 && player.trolley == false)// need fix
+	if(camera.position.x >= trolley.LastX-3 && camera.position.x <= trolley.LastX+3 && camera.position.z >= trolley.LastZ - 3 && camera.position.z <= trolley.LastZ + 3 && player.trolley == false)// need fix
 	{
 		camera.position.x = cameraDupe.position.x;
 		camera.target.x = cameraDupe.target.x;
@@ -1476,6 +1570,319 @@ void SP2::BoundsCheck()
 				playeridle = false;
 			}
 			/*if(camera.position.x > shopper.getPosX() + 5 && camera.position.z > shopper.getPosZ() + 5 )
+			{
+			playeridle = false;
+			}*/
+		}
+	}
+}
+
+void SP2::BoundsCheckTrolley(float x,float y, float z)
+{
+	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempshopper;
+	tempMart.x = data.GetRenderPos(0)->getTranslationX();
+	tempMart.z = data.GetRenderPos(0)->getTranslationZ();
+	tempShelves.x = shelve.GetRenderPos(0)->getTranslationX();
+	tempShelves.z = shelve.GetRenderPos(0)->getTranslationZ();
+	tempCashier.x = cashier.GetRenderPos(0)->getTranslationX();
+	tempCashier.z = cashier.GetRenderPos(0)->getTranslationZ();
+	tempFridge.x = fridge.GetRenderPos(0)->getTranslationX();
+	tempFridge.z = fridge.GetRenderPos(0)->getTranslationZ();
+	tempshopper.x = shopper.getPosX();
+	tempshopper.z = shopper.getPosZ();
+
+	//PoliceCar
+	for ( int i = 0; i< VanBounds.size(); ++i)
+	{
+		if ( x  >= VanBounds[i]->TTL.x && x  <= VanBounds[i]->TTR.x 
+			&& y >= VanBounds[i]->BTL.y && y <= VanBounds[i]->TTL.y
+			&& z >= VanBounds[i]->TTL.z && z <= VanBounds[i]->TBL.z && police == true)
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+		}
+	}
+
+	//fence check
+	//leftfence
+	if( x <= data.GetRenderPos(7)->getTranslationX()-100)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+		
+			camera.isCollide = true;
+	}
+	//right fence
+	else if( x >= data.GetRenderPos(7)->getTranslationX()+90)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			
+			camera.isCollide = true;
+	}
+	else if( z <= data.GetRenderPos(7)->getTranslationZ()-205)
+	{
+		
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+	else if( z >= data.GetRenderPos(7)->getTranslationZ()+180)
+	{
+	
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	////mart outer bound check
+	////left wall
+	else if( x >= tempMart.x - 78 && x <= tempMart.x - 71 && z <= tempMart.z + 54 && z >= tempMart.z - 54)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+	////Back Wall Left
+	else if( x >= tempMart.x -78 && x <= tempMart.x - 14 && z <= tempMart.z + -45  && z >= tempMart.z - 54)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	////Back Wall Right
+	else if( x >= tempMart.x + 14 && x <= tempMart.x + 78 && z <= tempMart.z + -45  && z >= tempMart.z - 54)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	////Right Wall
+	else if( x >= tempMart.x + 71 && x <= tempMart.x + 78 && z <= tempMart.z + 54  && z >= tempMart.z - 54)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	////Right Wall
+	else if( x >= tempMart.x - 62 && x <= tempMart.x + 62 && z <= tempMart.z + 54  && z >= tempMart.z + 46)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	////Middle Wall
+	else if( x >= tempMart.x - 62 && x <= tempMart.x + 62 && z <= tempMart.z - 22  && z >= tempMart.z  - 30)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	//Fridge Bounds Check
+	else if(x >= tempFridge.x -92 && x <= tempFridge.x +8 && z <= tempFridge.z + 2 && z >= tempFridge.z)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	//patroler collision
+	else if(x >= patroler.getPosX() - 2 && x <= patroler.getPosX() +2 && z >= patroler.getPosZ() - 2 && z <= patroler.getPosZ() +2)
+	{
+		if(x != cameraDupe.position.x && z != cameraDupe.position.z)//player not idle
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+		}
+		else//idle player/camera
+		{
+			cout<<"player is idle"<<endl;
+		}
+	}
+	else
+	{
+		camera.isCollide = false;
+	}
+
+	//Shelves Bounds Check
+	for(int i = 0; i<3; ++i)
+	{
+		for(int j = 0; j<3; ++j)
+		{
+			if(x >= ((tempShelves.x - 4) + (j*34)) && x <= ((tempShelves.x + 22) + (j*34))  && z <= (tempShelves.z +48 -(i*15)) && z >= (tempShelves.z +43-(i*15)))
+			{
+				camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+
+			}
+		}
+	}
+	//Cashier Bounds Check
+	for(int i = 0; i < 4; ++i)
+	{
+		if(x >= tempCashier.x -1 && x <= tempCashier.x +2 && z <= tempCashier.z + 53 -(i*16) && z >= tempCashier.z + 44-(i*16))
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+		}
+	}
+
+	//Fridge Bounds Check
+	if(x >= tempFridge.x -92 && x <= tempFridge.x +8 && z <= tempFridge.z + 2 && z >= tempFridge.z)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+
+	//GuardHouse Collison
+	//left wall
+	if(x >= data.GetRenderPos(19)->getTranslationX() + 141 && x <= data.GetRenderPos(19)->getTranslationX() + 145 && z >= 87 && z <= 118)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+	//right wall
+	if(x <= data.GetRenderPos(19)->getTranslationX() + 169 && x >= data.GetRenderPos(19)->getTranslationX() + 168 && z >= 87 && z <= 118)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+	//back wall
+	if(z >= data.GetRenderPos(19)->getTranslationZ() + 230 && z <= data.GetRenderPos(19)->getTranslationZ() + 235 && x >= 60 && x <= 90)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+	//Front wall
+	if(z >= data.GetRenderPos(19)->getTranslationZ() + 203 && z <= data.GetRenderPos(19)->getTranslationZ() + 206 && x >= 71 && x <= 90)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+	//Guard Control
+	if(x >= data.GetRenderPos(20)->getTranslationX() - 2.8 && x <= data.GetRenderPos(20)->getTranslationX() + 14.2 && z >= data.GetRenderPos(20)->getTranslationZ() - 12.5 && z <= data.GetRenderPos(20)->getTranslationZ() - 10.5)
+	{
+		camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+	}
+	//Cashier NPC Collision
+	for(int i = 0; i < 4; ++i)
+	{
+		if(x >= cashiermodel.GetRenderPos(i)->getTranslationX() - 2 && x <= cashiermodel.GetRenderPos(i)->getTranslationX() + 2 && z >= cashiermodel.GetRenderPos(i)->getTranslationZ() - 2 && z <= cashiermodel.GetRenderPos(i)->getTranslationZ() + 2)
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+		}
+
+	}
+	//shopper AI collision
+	if(playeridle == false)
+	{
+		if(x >= shopper.getPosX() - 4 && x <= shopper.getPosX() + 4 && z >= shopper.getPosZ() - 4 && z <= shopper.getPosZ() + 4)
+		{
+			if(x != cameraDupe.position.x && z != cameraDupe.position.z)//player not idle
+			{
+				camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+
+			}
+			else if(x == cameraDupe.position.x && z == cameraDupe.position.z)//idle player/camera
+			{
+				cout<<"player is idle"<<endl;
+				//prevent AI movement
+				playeridle = true;
+			}
+		}
+	}
+	//player break idle for AI
+	if(playeridle == true)
+	{
+		//player X Coord > AI X Coord
+		if(x > shopper.getPosX() && x < shopper.getPosX() + 2)
+		{
+			if(x < cameraDupe.position.x && z >= shopper.getPosZ() - 3 && z <= shopper.getPosZ() + 3)
+			{
+				if(x < cameraDupe.position.x && z >= shopper.getPosZ() - 2 && z <= shopper.getPosZ() + 2)
+				{
+					camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			
+			camera.isCollide = true;
+
+				}
+
+			}
+			//player X Coord < AI X Coord
+			if(x < shopper.getPosX())
+			{
+				if(x > cameraDupe.position.x && z >= shopper.getPosZ() - 2 && z <= shopper.getPosZ() + 2)
+				{
+					camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			
+			camera.isCollide = true;
+				}
+			}
+			if(((z > shopper.getPosZ() + 3 || z < shopper.getPosZ() - 3) && (x > shopper.getPosX() + 3 || x < shopper.getPosX() - 3)) || (x > shopper.getPosX() + 5) || (x < shopper.getPosX() - 5))
+			{
+				playeridle = false;
+			}
+			/*if(x > shopper.getPosX() + 5 && z > shopper.getPosZ() + 5 )
 			{
 			playeridle = false;
 			}*/
@@ -1562,42 +1969,42 @@ void SP2::Trolley()
 	if(Application::IsKeyPressed('E'))
 	{
 		if ( camera.target.x >= trolley.LastX-5 && camera.target.x <= trolley.LastX+5
-		&& camera.target.y >= data.GetRenderPos(21)->getTranslationY()-2 && camera.target.y <= data.GetRenderPos(21)->getTranslationY()+5
+			&& camera.target.y >= data.GetRenderPos(21)->getTranslationY()-2 && camera.target.y <= data.GetRenderPos(21)->getTranslationY()+5
 			&& camera.target.z >= trolley.LastZ-5 && camera.target.z <= trolley.LastZ+5)
 		{
 			player.trolley = true;
 			player.trolleyDrop = false;
 			camera.TrolleyMode = true;
-			if ( player.trolley == false && player.trolleyDrop == false)
-			{
-			camera.position.x = -34;
-			camera.position.z = 24;
-			camera.target.x = -33;
-			camera.target.z = 24;
-			}
 		}
 	}
+
+	if ( player.trolley == true && player.trolleyDrop == false)
+		trolley.DetectBulletPos = Trolleyz.Position;
+
 	if ( player.trolley == true)
 	{
 		player.setInventoryCap(trolley.ExpansionSize);
 		modelStack.PushMatrix();
 		modelStack.Translate(camera.position.x,data.GetRenderPos(21)->getTranslationY(),camera.position.z);
-		modelStack.Rotate(camera.CamRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+		modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 		modelStack.PushMatrix();
 		modelStack.Translate(3,0,0);
 		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
 		modelStack.PopMatrix();	
 		modelStack.PopMatrix();	
-		trolley.SetList(camera.position.x,camera.position.z,camera.CamRotation,10);
+		trolley.SetList(trolley.DetectBulletPos.x,trolley.DetectBulletPos.z,DupeRot,10);
 	}
+
 	else if ( player.trolley == false && player.trolleyDrop == false)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(data.GetRenderPos(21)->getTranslationX(),data.GetRenderPos(21)->getTranslationY(),data.GetRenderPos(21)->getTranslationZ());
 		modelStack.Rotate(data.GetRenderPos(21)->getRotation(),data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
+		modelStack.PushMatrix();
 		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
+		modelStack.PopMatrix();
 		modelStack.PopMatrix();
 		trolley.SetList(data.GetRenderPos(21)->getTranslationX(),data.GetRenderPos(21)->getTranslationZ(),camera.CamRotation,10);
 	}
@@ -1606,21 +2013,16 @@ void SP2::Trolley()
 	{
 		player.trolley = false;
 		player.trolleyDrop = true;
-		camera.TrolleyMode = false;
 	}
 
 	if ( player.trolleyDrop == true)
 	{
 		modelStack.PushMatrix();
 		modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY(),trolley.LastZ);
-		modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
-		modelStack.PushMatrix();
-		modelStack.Translate(3,0,0);
+		modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
 		modelStack.PopMatrix();	
-		modelStack.PopMatrix();	
-		//player.setInventoryCap(trolley.ExpansionSize/2);
 	}
 }
 
@@ -2067,6 +2469,15 @@ void SP2::Render()
 			RenderMesh(meshList[GEO_MODEL_BULLET], true);
 			modelStack.PopMatrix();
 		}
+
+			if ( player.trolley == true)
+			{
+				modelStack.PushMatrix();
+				modelStack.Translate(Trolleyz.Position.x,Trolleyz.Position.y,Trolleyz.Position.z);
+				RenderMesh(meshList[GEO_MODEL_BULLET], true);
+				modelStack.PopMatrix();
+			}
+
 			if ( camera.getCameraState() == 0 )
 		RenderScreenUI();
 			else if (MenuKey == true)
@@ -2326,6 +2737,19 @@ void SP2::MenuUpdate(double dt)
 			camera.setCameraState(0);
 			MenuLimit = true;
 			MenuKey = false;
+		}
+
+		else if ( MenuState == 4 && MenuLimit <= 0)
+		{
+				keybd_event( VK_ESCAPE,
+				0X1B,
+				KEYEVENTF_EXTENDEDKEY | 0,
+				0 );
+
+					keybd_event( VK_ESCAPE,
+				0X1B,
+				KEYEVENTF_EXTENDEDKEY | 0,
+				0 );
 		}
 	}	
 
@@ -4117,23 +4541,20 @@ void SP2::RenderPlayer()
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	//Left Right to camera
-	if ( player.trolley == false && camera.isCollide == false)
-		modelStack.Rotate(camera.CamRotationX,0,1,0);
-	else if ( camera.isCollide == true)
-		modelStack.Rotate(camera.PrevCamRotationX,0,1,0);
+	if ( player.trolley == false)
+		modelStack.Rotate(DupeRotArms,0,1,0);
 	else if ( player.trolley == true)
-		modelStack.Rotate(camera.CamRotation-90,0,1,0);
+		modelStack.Rotate(DupeRot,0,1,0);
 	modelStack.PushMatrix();
 	//Up Down to camera
-	if ( player.trolley == false && camera.isCollide == false)
-		modelStack.Rotate(camera.CamRotationY,1,0,0);
-	else if ( camera.isCollide == true)
-		modelStack.Rotate(camera.PrevCamRotationY,0,1,0);
+	if ( player.trolley == false)
+		modelStack.Rotate(DupeRotArmsY,1,0,0);
 	else if ( player.trolley == true)
 		modelStack.Rotate(-60,1,0,0);
 	//Right Arm
 	modelStack.PushMatrix();
 	modelStack.Translate(0.05, -0.2, -0.1);
+	//modelStack.Translate(0.05, -0.2, -0.1);
 	modelStack.Rotate(-10,0,1,0);
 	modelStack.PushMatrix();
 	modelStack.Rotate(ArmSwing,1,0,0);
@@ -4162,10 +4583,10 @@ void SP2::RenderPlayer()
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	//Left Right to camera
-	modelStack.Rotate(camera.CamRotationX,0,1,0);
+	modelStack.Rotate(DupeRotArms,0,1,0);
 	modelStack.PushMatrix();
 	//Up Down to camera
-	modelStack.Rotate(camera.CamRotationY,1,0,0);
+	modelStack.Rotate(DupeRotArmsY,1,0,0);
 	//Right Arm
 	modelStack.PushMatrix();
 	modelStack.Translate(0.07, -0.24, -0.25);
@@ -4189,10 +4610,10 @@ void SP2::RenderPlayer()
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	//Left Right to camera
-	modelStack.Rotate(camera.CamRotationX,0,1,0);
+	modelStack.Rotate(DupeRotArms,0,1,0);
 	modelStack.PushMatrix();
 	//Up Down to camera
-	modelStack.Rotate(camera.CamRotationY,1,0,0);
+	modelStack.Rotate(DupeRotArmsY,1,0,0);
 	//Right Arm
 	modelStack.PushMatrix();
 	modelStack.Translate(0.0, -0.20, -0.3);

@@ -59,6 +59,8 @@ public:
 	float CAMERA_SPEED;
 	float TrolleyStateR;
 	float TrolleyStateT;
+	double MouseX;
+	double MouseY;
 	bool RepeatPress;
 	int State;
 	Application test;

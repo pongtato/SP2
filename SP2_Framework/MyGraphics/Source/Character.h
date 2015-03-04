@@ -46,5 +46,7 @@ public:
 	bool trolleyDrop;
 	bool Align;
 	bool Takeitems;
+
+	bool Restart;
 };
 

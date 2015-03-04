@@ -14,6 +14,7 @@ CCharacter::CCharacter(void)
 	trolley = false;
 	trolleyDrop = false;
 	Align = false;
+	Restart = false;
 }
 
 

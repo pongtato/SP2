@@ -23,6 +23,7 @@ public:
 	double getPosY(void);
 	double DMX;
 	double DMY;
+	bool restart;
 
 	void mousePos(void);
 

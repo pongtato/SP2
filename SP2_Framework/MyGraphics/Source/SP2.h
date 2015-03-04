@@ -269,6 +269,7 @@ public:
 	vector<CBullet*> bullet;
 	vector<CBullet*> Policebullet;
 	CBullet shoot;
+	CBullet Trolleyz;
 
 	vector<CCollisionBounds*> colBounds;
 	vector<CCollisionBounds*> VanBounds;
@@ -298,6 +299,9 @@ public:
 	float MenuLimit;
 	float GunOffset;
 	float GunSwing;
+	float DupeRot;
+	float DupeRotArms;
+	float DupeRotArmsY;
 
 private:
 	unsigned m_vertexArrayID;
@@ -384,6 +388,7 @@ private:
 	void DoorSlide();
 	void ShutterOpen();
 	void BoundsCheck();
+	void BoundsCheckTrolley(float x,float y, float z);
 	void UIupdates(double dt);
 	void Animate(double dt);
 	void CheckOut();

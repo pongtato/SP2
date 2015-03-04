@@ -48,6 +48,7 @@ bool Application::IsKeyReleased(unsigned short key)
 
 Application::Application()
 {
+	restart = false;
 }
 
 Application::~Application()
@@ -126,6 +127,7 @@ void Application::Init()
 
 void Application::Run()
 {
+	restart = false;
 	Scene *scene = new SP2();		
 	scene->Init();
 
@@ -138,12 +140,20 @@ void Application::Run()
 		glfwSwapBuffers(m_window);
 		//Get and organize events, like keyboard and mouse input, window resizing, etc...
 		glfwPollEvents();
+		if (IsKeyPressed(VK_NUMPAD9))
+			restart = true;
         m_timer.waitUntil(frameTime);       // Frame rate limiter. Limits each frame to a specified time in ms.   
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 	scene->Exit();
 
 	delete scene;
+
+	if ( restart == true)
+	{
+		restart = false;
+		Run();
+	}
 }
 
 void Application::Exit()

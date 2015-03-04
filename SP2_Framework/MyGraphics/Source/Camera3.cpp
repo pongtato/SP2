@@ -12,7 +12,7 @@ Camera3::Camera3()
 	TrolleyMode = false;
 	RepeatPress = true;
 	State = 1;
-	isCollide = false;
+	//isCollide = false;
 	downSight = false;
 }
 
@@ -149,8 +149,8 @@ void Camera3::Update(double dt)
 	int sprint = 1;
 	//bool moving = false;
 	test.mousePos();
-	double MouseX = test.getPosX();
-	double MouseY = test.getPosY();
+	MouseX = test.getPosX();
+	MouseY = test.getPosY();
 
 	if(Application::IsKeyPressed(VK_SHIFT) && player.getStamina()!=0 && moving == true)
 	{
@@ -307,7 +307,7 @@ void Camera3::Update(double dt)
 
 	}
 	
-	if ( CameraMode == false && TrolleyMode == false)
+	if ( CameraMode == false)
 		{
 
 			if(Application::IsKeyPressed('A') && Limit(position,target, 450, CAMERA_SPEED))
@@ -353,200 +353,6 @@ void Camera3::Update(double dt)
 				moving = false;
 			}
 		}
-
-	if  ( TrolleyMode == true)
-	{
-		if (position.z <= 23 || position.z >= 23 && CamRotation != 180)
-		{
-			if(Application::IsKeyPressed('A')&&(RepeatPress == true))
-			{
-				if ( State == 1)
-				{
-					State = 2;
-				}
-				else if (State == 2)
-				{
-					State = 4;
-				}
-				else if (State ==4)
-				{
-					State = 3;
-				}
-				else if (State == 3)
-				{
-					State = 1;
-				}
-				fixCamera = true;
-				TrolleyStateR = CamRotation+90;
-				RepeatPress = false;
-			}
-		}
-
-		if (position.z <= 23 || position.z >= 23 && CamRotation != 0)
-		{
-			if(Application::IsKeyPressed('D')&&(RepeatPress == true))
-			{
-				if ( State == 1)
-				{
-					State = 3;
-				}
-				else if (State == 2)
-				{
-					State = 1;
-				}
-				else if (State ==4)
-				{
-					State = 2;
-				}
-				else if (State == 3)
-				{
-					State = 4;
-				}
-				fixCamera = true;
-				TrolleyStateR = CamRotation-90;
-				RepeatPress = false;
-			}
-		}
-
-		if(Application::IsKeyPressed('W')&&(RepeatPress == true))
-		{
-				if (State == 1)
-				{
-					if (position.x <= -69)
-					{
-						TrolleyStateT = -35;
-					}
-					else if (position.x > -37 && position.x < -33 )
-					{
-						TrolleyStateT = 0;
-					}
-					else if (position.x > -2 && position.x < 2 )
-					{
-						TrolleyStateT = 35;
-					}
-				}
-				else if (State == 2)
-				{
-					if (position.z >= 23)
-					{
-						TrolleyStateT = 8;
-					}
-					else if (position.z < 10 && position.z > 6 )
-					{
-						TrolleyStateT = -7;
-					}
-					else if (position.z > -9 && position.z < -6 )
-					{
-						TrolleyStateT = -25;
-					}
-				}
-				else if (State == 3)
-				{
-					if (position.z <= -23)
-					{
-						TrolleyStateT = -8;
-					}
-					else if (position.z < 10 && position.z > 6 )
-					{
-						TrolleyStateT = 25;
-					}
-					else if (position.z > -9 && position.z < -6 )
-					{
-						TrolleyStateT = 7;
-					}
-				}
-				else if (State == 4)
-				{
-					if (position.x >= 35)
-					{
-						TrolleyStateT = 0;
-					}
-					else if (position.x > -37 && position.x < -33 )
-					{
-						TrolleyStateT = -69;
-					}
-					else if (position.x > -2 && position.x < 2 )
-					{
-						TrolleyStateT = -34;
-					}
-				}
-				fixTranslation = true;
-				RepeatPress = false;
-			}
-	}
-
-	if(fixCamera == true)
-	{
-		if(CamRotation > TrolleyStateR)
-		{
-			CamRotation-= 3;
-		}
-		else 
-			if(CamRotation < TrolleyStateR)
-			{
-				CamRotation+= 3;
-			}
-			else
-			{
-				RepeatPress = true;
-				fixCamera = false;
-			}
-	}
-	else if (fixTranslation == true)
-	{
-		if (State == 1)
-		{
-			if (position.x < TrolleyStateT)
-			{
-				position.x++;
-				target.x++;
-			}
-			else
-			{
-				RepeatPress = true;
-				fixTranslation = false;
-			}
-		}
-		else if (State == 2)
-		{
-			if (position.z > TrolleyStateT)
-			{
-				position.z--;
-				target.z--;
-			}
-			else
-			{
-				RepeatPress = true;
-				fixTranslation = false;
-			}
-		}
-		else if (State == 3)
-		{
-			if (position.z < TrolleyStateT)
-			{
-				position.z++;
-				target.z++;
-			}
-			else
-			{
-				RepeatPress = true;
-				fixTranslation = false;
-			}
-		}
-		else if (State == 4)
-		{
-			if (position.x > TrolleyStateT)
-			{
-				position.x--;
-				target.x--;
-			}
-			else
-			{
-				RepeatPress = true;
-				fixTranslation = false;
-			}
-		}
-	}
 	Doorsensor(position,CAMERA_SPEED);
 	Shuttersensor(position, CAMERA_SPEED);
 	StaffDoorsensor(position, CAMERA_SPEED);
