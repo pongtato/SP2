@@ -661,11 +661,14 @@ void SP2::Init()
 	shopper.setPosZ(character.GetRenderPos(2)->getTranslationZ());
 	police = false;
 	EscapeCarMove = 0;
-	ArmSwing = 130;
+	ArmSwing = 0;
 	MenuKey = true;
 	ExplosionScale = 50;
 	camera.setCameraState(2);
 	MenuState = 1;
+	GunOffset = 0;
+	GunSwing = -30.f;
+
 	ROLE = "Shopper";
 
 	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
@@ -779,6 +782,16 @@ void SP2::Update(double dt)
 		if ( EscapeEnd == true)
 		{
 			EscapeCarMove++;
+		}
+
+		if ( GunOffset < 0.06)
+		{
+			GunOffset += 0.01;
+		}
+
+		if ( GunSwing < 0)
+		{
+			GunSwing +=3;
 		}
 
 		if(Application::IsKeyPressed(VK_RBUTTON))
@@ -1154,6 +1167,7 @@ void SP2::CharacterCrouch()
 			camera.position.y = 6;
 			camera.target.y = 6;
 			camera.CameraLock = 0;
+			camera.CamRotationY = 0;
 		}
 }
 
@@ -2102,7 +2116,8 @@ void SP2::RenderScreenUI()
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 10);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
-	RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 30);
+	if (camera.downSight == false)
+		RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 30);
 	RenderUI(meshList[GEO_HP], Color(0, 1, 0), HpCalc, 1.5, 15, 12.5, 9);
 	RenderUI(meshList[GEO_STAM], Color(0, 1, 0), Calc, 1.5, 15, 45, 9);
 	RenderUI(meshList[GEO_HPI], Color(0, 1, 0), 4, 4, 4, 12, 9);
@@ -2377,15 +2392,15 @@ void SP2::CheckItem()
 			{
 				if (player.returnInvenSize() < player.getInventoryCap() && FNB.GetRenderPosItem(i)->getItemAvailability() == true && FNB.GetRenderPosItem(i)->getItemName() == ItemName)
 				{
-					if (ArmSwing > 0 )
+					if (ArmSwing < 140 )
 					{
-						ArmSwing-=15;
-					}
-					else
+						ArmSwing+=5;
+					}	
+
+					if (ArmSwing >= 140)
 					{
 					FNB.GetRenderPosItem(i)->setItemAvailable(0);
 					player.setInventory(FNB.GetRenderPosItem(i)->getItemName(),FNB.GetRenderPosItem(i)->getItemPrice());
-					ArmSwing = 130;
 					player.Takeitems = false;
 					break;
 					}
@@ -2393,6 +2408,12 @@ void SP2::CheckItem()
 			}
 		}
 	}
+	if ( player.Takeitems == false)
+	{
+		if (ArmSwing > 0 )
+			ArmSwing-=2;
+	}
+
 	if(Application::IsKeyPressed('G'))
 	{
 		for ( int i = 0; i < FNB.ReturnListSize();  ++i)
@@ -2436,8 +2457,15 @@ void SP2::CheckOut()
 		}
 	}
 
+	if ( paying == false)
+		{
+			if (ArmSwing > 0 )
+				ArmSwing-=2;
+		}
+
 	if ( paying == true && player.returnInvenSize() != 0)
 	{
+
 		for ( int j = 0; j < player.returnInvenSize(); ++j)
 		{
 			if ( j >= 5)
@@ -2708,11 +2736,11 @@ void SP2::CheckOut()
 				modelStack.PopMatrix();	
 				modelStack.PopMatrix();	
 			}
-			if (ArmSwing < 130 && paying == true )
+			if (ArmSwing < 140 && paying == true )
 			{
-				ArmSwing++;
+				ArmSwing+=5;
 			}
-			else if (ArmSwing >= 130 && paying == true )
+			else if (ArmSwing >= 140 && paying == true )
 			{
 				player.setMoney(player.getInventory(j)->getItemPrice());
 				player.sellItems(j);
@@ -4089,14 +4117,18 @@ void SP2::RenderPlayer()
 	modelStack.PushMatrix();
 	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
 	//Left Right to camera
-	if ( player.trolley == false)
+	if ( player.trolley == false && camera.isCollide == false)
 		modelStack.Rotate(camera.CamRotationX,0,1,0);
+	else if ( camera.isCollide == true)
+		modelStack.Rotate(camera.PrevCamRotationX,0,1,0);
 	else if ( player.trolley == true)
 		modelStack.Rotate(camera.CamRotation-90,0,1,0);
 	modelStack.PushMatrix();
 	//Up Down to camera
-	if ( player.trolley == false)
+	if ( player.trolley == false && camera.isCollide == false)
 		modelStack.Rotate(camera.CamRotationY,1,0,0);
+	else if ( camera.isCollide == true)
+		modelStack.Rotate(camera.PrevCamRotationY,0,1,0);
 	else if ( player.trolley == true)
 		modelStack.Rotate(-60,1,0,0);
 	//Right Arm
@@ -4124,7 +4156,7 @@ void SP2::RenderPlayer()
 	modelStack.PopMatrix();
 	}
 
-	if ( police == true  && EscapeEnd != true)
+	if ( police == true  && EscapeEnd != true && camera.downSight == false)
 	{
 		//Origin
 	modelStack.PushMatrix();
@@ -4136,12 +4168,44 @@ void SP2::RenderPlayer()
 	modelStack.Rotate(camera.CamRotationY,1,0,0);
 	//Right Arm
 	modelStack.PushMatrix();
-	modelStack.Translate(0.07, -0.12, -0.25);
+	modelStack.Translate(0.07, -0.24, -0.25);
 	//modelStack.Rotate(-10,0,1,0);
+	modelStack.PushMatrix();
+	modelStack.Translate(0.,GunOffset,0);
+	modelStack.Rotate(GunSwing,1,0,0);
 	modelStack.PushMatrix();
 	//modelStack.Rotate(ArmSwing,1,0,0);
 	modelStack.Rotate(-90,0,1,0);
 	RenderMesh(meshList[GEO_MODEL_RIFLE], true);
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+	}
+	else if ( police == true  && EscapeEnd != true && camera.downSight == true)
+	{
+		//Origin
+	modelStack.PushMatrix();
+	modelStack.Translate(camera.position.x, camera.position.y, camera.position.z);
+	//Left Right to camera
+	modelStack.Rotate(camera.CamRotationX,0,1,0);
+	modelStack.PushMatrix();
+	//Up Down to camera
+	modelStack.Rotate(camera.CamRotationY,1,0,0);
+	//Right Arm
+	modelStack.PushMatrix();
+	modelStack.Translate(0.0, -0.20, -0.3);
+	//modelStack.Translate(0, -0.6, -0.25);
+	//modelStack.Rotate(-10,0,1,0);
+	modelStack.PushMatrix();
+	modelStack.Translate(0.,GunOffset,0);
+	modelStack.Rotate(-5,1,0,0);
+	modelStack.PushMatrix();
+	//modelStack.Rotate(ArmSwing,1,0,0);
+	modelStack.Rotate(-90,0,1,0);
+	RenderMesh(meshList[GEO_MODEL_RIFLE], true);
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
@@ -4377,7 +4441,7 @@ void SP2::NPCShop()
 		{
 			shopper.setShop(false);
 		}
-		if(shopper.maxItem == 5)
+		if(shopper.maxItem == 1)
 		{
 			shopper.cashIn = true;
 			shopper.Checkout();

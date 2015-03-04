@@ -54,6 +54,8 @@ public:
 	float CamRotation;
 	float CamRotationX;
 	float CamRotationY;
+	float PrevCamRotationX;
+	float PrevCamRotationY;
 	float CAMERA_SPEED;
 	float TrolleyStateR;
 	float TrolleyStateT;

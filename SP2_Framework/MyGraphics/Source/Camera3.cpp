@@ -176,7 +176,8 @@ void Camera3::Update(double dt)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(CAMERA_SPEED * dt);
-			CamRotationX+=yaw;
+			if ( isCollide == false)
+				CamRotationX+=yaw;
 			Mtx44 rotation;
 			rotation.SetToRotation(yaw, 0, 1, 0);
 			view = rotation * view;
@@ -188,7 +189,8 @@ void Camera3::Update(double dt)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(18*CAMERA_SPEED * dt);
-			CamRotationX+=yaw;
+			if ( isCollide == false)
+				CamRotationX+=yaw;
 			Mtx44 rotation;
 			rotation.SetToRotation(yaw, 0, 1, 0);
 			view = rotation * view;
@@ -199,7 +201,8 @@ void Camera3::Update(double dt)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(-CAMERA_SPEED * dt);
-			CamRotationX+=yaw;
+			if ( isCollide == false)
+				CamRotationX+=yaw;
 			Mtx44 rotation;
 			rotation.SetToRotation(yaw, 0, 1, 0);
 			view = rotation * view;
@@ -211,7 +214,8 @@ void Camera3::Update(double dt)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(18*-CAMERA_SPEED * dt);
-			CamRotationX+=yaw;
+			if ( isCollide == false)
+				CamRotationX+=yaw;
 			Mtx44 rotation;
 			rotation.SetToRotation(yaw, 0, 1, 0);
 			view = rotation * view;
@@ -225,7 +229,8 @@ void Camera3::Update(double dt)
 				if(MouseY < 300 && MouseY >=298)
 				{
 					float pitch = (float)(CAMERA_SPEED * dt);
-					CamRotationY+=pitch;
+					if ( isCollide == false)
+						CamRotationY+=pitch;
 					Vector3 view = (target - position).Normalized();
 					Vector3 right = view.Cross(up);
 					right.y = 0;
@@ -236,13 +241,12 @@ void Camera3::Update(double dt)
 					view = rotation * view;
 					target = view + position;
 					CameraLock+=pitch; 
-					cout << CameraLock << endl;
-					cout << pitch << endl;
 				}
 				if(MouseY < 298 && downSight == false)
 				{
 					float pitch = (float)(12*CAMERA_SPEED * dt);
-					CamRotationY+=pitch;
+					if ( isCollide == false)
+						CamRotationY+=pitch;
 					Vector3 view = (target - position).Normalized();
 					Vector3 right = view.Cross(up);
 					right.y = 0;
@@ -253,8 +257,6 @@ void Camera3::Update(double dt)
 					view = rotation * view;
 					target = view + position;	
 					CameraLock+=pitch;
-					cout << CameraLock << endl;
-					cout << pitch << endl;
 				}
 			}
 		}
@@ -265,7 +267,8 @@ void Camera3::Update(double dt)
 				if(MouseY > 300 && MouseY <= 302 )
 				{
 					float pitch = (float)(-CAMERA_SPEED * dt);
-					CamRotationY+=pitch;
+					if ( isCollide == false)
+						CamRotationY+=pitch;
 					Vector3 view = (target - position).Normalized();
 					Vector3 right = view.Cross(up);
 					right.y = 0;
@@ -276,13 +279,12 @@ void Camera3::Update(double dt)
 					view = rotation * view;
 					target = view + position;
 					CameraLock+=pitch;
-					cout << CameraLock << endl;
-					cout << pitch << endl;
 				}
 				if(MouseY > 302  && downSight == false)
 				{
 					float pitch = (float)(12*-CAMERA_SPEED * dt);
-					CamRotationY+=pitch;
+					if ( isCollide == false)
+						CamRotationY+=pitch;
 					Vector3 view = (target - position).Normalized();
 					Vector3 right = view.Cross(up);
 					right.y = 0;
@@ -293,16 +295,18 @@ void Camera3::Update(double dt)
 					view = rotation * view;
 					target = view + position;
 					CameraLock+=pitch;
-					cout << CameraLock << endl;
-					cout << pitch << endl;
 				}
 			}
 		}
-}
-	
-	
+	}
 
+	if ( isCollide != true)
+	{
+		PrevCamRotationX = CamRotationX;
+		PrevCamRotationY = CamRotationY;
 
+	}
+	
 	if ( CameraMode == false && TrolleyMode == false)
 		{
 

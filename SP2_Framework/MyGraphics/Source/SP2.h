@@ -296,6 +296,8 @@ public:
 	float ExplosionScale;
 	int MenuState;
 	float MenuLimit;
+	float GunOffset;
+	float GunSwing;
 
 private:
 	unsigned m_vertexArrayID;
