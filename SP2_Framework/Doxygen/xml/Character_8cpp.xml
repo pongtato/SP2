@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Character_8cpp" kind="file">
+    <compoundname>Character.cpp</compoundname>
+    <includes refid="Character_8h" local="yes">Character.h</includes>
+    <incdepgraph>
+      <node id="1952">
+        <label>Character.h</label>
+        <link refid="Character_8h"/>
+        <childnode refid="1953" relation="include">
+        </childnode>
+        <childnode refid="1954" relation="include">
+        </childnode>
+        <childnode refid="1955" relation="include">
+        </childnode>
+        <childnode refid="1956" relation="include">
+        </childnode>
+        <childnode refid="1957" relation="include">
+        </childnode>
+      </node>
+      <node id="1955">
+        <label>string</label>
+      </node>
+      <node id="1951">
+        <label>MyGraphics/Source/Character.cpp</label>
+        <link refid="Character.cpp"/>
+        <childnode refid="1952" relation="include">
+        </childnode>
+      </node>
+      <node id="1954">
+        <label>vector</label>
+      </node>
+      <node id="1953">
+        <label>iostream</label>
+      </node>
+      <node id="1957">
+        <label>Item.h</label>
+        <link refid="Item_8h"/>
+        <childnode refid="1953" relation="include">
+        </childnode>
+        <childnode refid="1955" relation="include">
+        </childnode>
+      </node>
+      <node id="1956">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>Codes to the properties of the player character. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classSP2" kindref="compound">SP2</ref> Group 4 <simplesect kind="par"><title></title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Character_8h" kindref="compound">Character.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" refkind="member"><highlight class="normal"><ref refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" kindref="member">CCharacter::CCharacter</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" kindref="member">health</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" kindref="member">stamina</ref><sp/>=<sp/>200;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1abba6564fd188af397ad9e8e292cee305" kindref="member">money</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" kindref="member">detection</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1ab578181da76912ee5f1a8779a148a49c" kindref="member">bullets</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" kindref="member">inventoryCap</ref><sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" kindref="member">career</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Unemployed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1aded02254b61671e5d8cd9f019b69727d" kindref="member">unpaiditems</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1a3add3afae5ab0ec2223a2bb2ea5bf4ca" kindref="member">trolley</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1a2b4b0adf3360dc6ba3b091e319f0d56d" kindref="member">trolleyDrop</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1ad02c1119e6d653a68770ef96281a77f7" kindref="member">Align</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classCCharacter_1a6176ffa71d744eed17566ab6d61e37bf" refkind="member"><highlight class="normal"><ref refid="classCCharacter_1a6176ffa71d744eed17566ab6d61e37bf" kindref="member">CCharacter::~CCharacter</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classCCharacter_1aec136bac277476b1cf6cc9a9a0f385e2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1aec136bac277476b1cf6cc9a9a0f385e2" kindref="member">CCharacter::setHealth</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hp)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" kindref="member">health</ref><sp/>-=<sp/>hp;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classCCharacter_1a3ff185ddb9f1cd4830fbb2abeb5f3d76" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a3ff185ddb9f1cd4830fbb2abeb5f3d76" kindref="member">CCharacter::setMoney</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cash)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1abba6564fd188af397ad9e8e292cee305" kindref="member">money</ref><sp/>-=<sp/>cash;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classCCharacter_1a1182c42e68f6b37efe1bad5cfb766d1c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a1182c42e68f6b37efe1bad5cfb766d1c" kindref="member">CCharacter::setBullets</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ammo)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1ab578181da76912ee5f1a8779a148a49c" kindref="member">bullets</ref><sp/>=<sp/>ammo;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classCCharacter_1abb8d82e3f1e2add2fda9eced2601e88c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1abb8d82e3f1e2add2fda9eced2601e88c" kindref="member">CCharacter::setStamina</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stam)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" kindref="member">stamina</ref><sp/>-=<sp/>stam;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classCCharacter_1a398d5f43490c3d830e9edafda2882f95" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a398d5f43490c3d830e9edafda2882f95" kindref="member">CCharacter::setDetection</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>detect)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" kindref="member">detection</ref><sp/>=<sp/>detect;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classCCharacter_1aac912c54bc2622ea4bdbb7a22edb1911" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1aac912c54bc2622ea4bdbb7a22edb1911" kindref="member">CCharacter::setClass</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>job)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" kindref="member">career</ref><sp/>=<sp/>job;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classCCharacter_1a839914479f46f17587ecda205dbf900b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a839914479f46f17587ecda205dbf900b" kindref="member">CCharacter::getMoney</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1abba6564fd188af397ad9e8e292cee305" kindref="member">money</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classCCharacter_1a51b3281282938697a286d38e06c65f3c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a51b3281282938697a286d38e06c65f3c" kindref="member">CCharacter::getHealth</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" kindref="member">health</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classCCharacter_1aaf9f7a3c49545cf4f8ded10af3ecddad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1aaf9f7a3c49545cf4f8ded10af3ecddad" kindref="member">CCharacter::getStamina</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" kindref="member">stamina</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classCCharacter_1a2b8b9040ac34931843d33cd81f28777e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a2b8b9040ac34931843d33cd81f28777e" kindref="member">CCharacter::getDetection</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" kindref="member">detection</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classCCharacter_1a1678b1a5ac64998332cc46a04c38e3ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a1678b1a5ac64998332cc46a04c38e3ef" kindref="member">CCharacter::getClass</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" kindref="member">career</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classCCharacter_1a2fa127c9f4238f26ab4bab8a47b5ea97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="classCCharacter_1a2fa127c9f4238f26ab4bab8a47b5ea97" kindref="member">CCharacter::setInventory</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>price)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem" kindref="compound">CItem</ref><sp/>*<sp/>inven<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classCItem" kindref="compound">CItem</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inven-&gt;<ref refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" kindref="member">setItemName</ref>(name);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inven-&gt;<ref refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" kindref="member">setItemPrice</ref>(price);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" kindref="member">inven_list</ref>.push_back(inven);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" kindref="member">CCharacter::dropItem</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>itemname)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classCCharacter_1ad5f30d8f816db4ce704cd1a8151c3ceb" kindref="member">returnInvenSize</ref>();<sp/>++i)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" kindref="member">getInventory</ref>(i)-&gt;<ref refid="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" kindref="member">getItemName</ref>()<sp/>==<sp/>itemname)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" kindref="member">inven_list</ref>.erase(<ref refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" kindref="member">inven_list</ref>.begin()+i);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classCCharacter_1a274fbf3a0dd55541958b28f8ee5ee24e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="classCCharacter_1a274fbf3a0dd55541958b28f8ee5ee24e" kindref="member">CCharacter::sellItems</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" kindref="member">inven_list</ref>.erase(<ref refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" kindref="member">inven_list</ref>.begin()+n);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" refkind="member"><highlight class="normal"><ref refid="classCItem" kindref="compound">CItem</ref>*<sp/><ref refid="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" kindref="member">CCharacter::getInventory</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" kindref="member">inven_list</ref>[n];</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classCCharacter_1ad5f30d8f816db4ce704cd1a8151c3ceb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1ad5f30d8f816db4ce704cd1a8151c3ceb" kindref="member">CCharacter::returnInvenSize</ref>()</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" kindref="member">inven_list</ref>.size();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classCCharacter_1af61d0d8a5a13edf35a40552b52c52803" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1af61d0d8a5a13edf35a40552b52c52803" kindref="member">CCharacter::setInventoryCap</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" kindref="member">inventoryCap</ref><sp/>=<sp/>size;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classCCharacter_1afa92c015e4a27824c694289502d4ead5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1afa92c015e4a27824c694289502d4ead5" kindref="member">CCharacter::getInventoryCap</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" kindref="member">inventoryCap</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Character.cpp"/>
+  </compounddef>
+</doxygen>

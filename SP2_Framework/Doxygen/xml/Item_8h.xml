@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Item_8h" kind="file">
+    <compoundname>Item.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">string</includes>
+    <includedby refid="Character_8h" local="yes">MyGraphics/Source/Character.h</includedby>
+    <includedby refid="ReadFromText_8h" local="yes">MyGraphics/Source/ReadFromText.h</includedby>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="Item_8cpp" local="yes">MyGraphics/Source/Item.cpp</includedby>
+    <incdepgraph>
+      <node id="2006">
+        <label>string</label>
+      </node>
+      <node id="2005">
+        <label>iostream</label>
+      </node>
+      <node id="2004">
+        <label>MyGraphics/Source/Item.h</label>
+        <link refid="Item.h"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+        <childnode refid="2006" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2009">
+        <label>MyGraphics/Source/Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2013" relation="include">
+        </childnode>
+        <childnode refid="2017" relation="include">
+        </childnode>
+      </node>
+      <node id="2008">
+        <label>MyGraphics/Source/Character.h</label>
+        <link refid="Character_8h"/>
+        <childnode refid="2009" relation="include">
+        </childnode>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2018" relation="include">
+        </childnode>
+      </node>
+      <node id="2014">
+        <label>MyGraphics/Source/ReadFromText.h</label>
+        <link refid="ReadFromText_8h"/>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2015" relation="include">
+        </childnode>
+      </node>
+      <node id="2013">
+        <label>MyGraphics/Source/NPC.h</label>
+        <link refid="NPC_8h"/>
+        <childnode refid="2014" relation="include">
+        </childnode>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2016" relation="include">
+        </childnode>
+      </node>
+      <node id="2017">
+        <label>MyGraphics/Source/Camera3.cpp</label>
+        <link refid="Camera3_8cpp"/>
+      </node>
+      <node id="2016">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="2018">
+        <label>MyGraphics/Source/Character.cpp</label>
+        <link refid="Character_8cpp"/>
+      </node>
+      <node id="2019">
+        <label>MyGraphics/Source/Item.cpp</label>
+        <link refid="Item_8cpp"/>
+      </node>
+      <node id="2015">
+        <label>MyGraphics/Source/ReadFromText.cpp</label>
+        <link refid="ReadFromText_8cpp"/>
+      </node>
+      <node id="2010">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="2011" relation="include">
+        </childnode>
+        <childnode refid="2012" relation="include">
+        </childnode>
+      </node>
+      <node id="2012">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="2011">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2007">
+        <label>MyGraphics/Source/Item.h</label>
+        <link refid="Item.h"/>
+        <childnode refid="2008" relation="include">
+        </childnode>
+        <childnode refid="2014" relation="include">
+        </childnode>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2019" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCItem" prot="public">CItem</innerclass>
+    <briefdescription>
+<para>Defines the variables of the items. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classSP2" kindref="compound">SP2</ref> Group 4 <simplesect kind="par"><title></title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classCItem" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCItem" kindref="compound">CItem</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" kindref="member">itemName</ref>;</highlight></codeline>
+<codeline lineno="21" refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" kindref="member">itemPrice</ref>;</highlight></codeline>
+<codeline lineno="22" refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" kindref="member">itemAvailable</ref>;</highlight></codeline>
+<codeline lineno="23" refid="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" kindref="member">rotation</ref>;</highlight></codeline>
+<codeline lineno="24" refid="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" kindref="member">translationX</ref>;</highlight></codeline>
+<codeline lineno="25" refid="classCItem_1a1fe600bca9745c01fce3e63025e231fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a1fe600bca9745c01fce3e63025e231fc" kindref="member">translationY</ref>;</highlight></codeline>
+<codeline lineno="26" refid="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" kindref="member">translationZ</ref>;</highlight></codeline>
+<codeline lineno="27" refid="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" kindref="member">RX</ref>;</highlight></codeline>
+<codeline lineno="28" refid="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" kindref="member">RY</ref>;</highlight></codeline>
+<codeline lineno="29" refid="classCItem_1af8637c2409d6e4db6d986f33d8a50105" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1af8637c2409d6e4db6d986f33d8a50105" kindref="member">RZ</ref>;</highlight></codeline>
+<codeline lineno="30" refid="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" kindref="member">scaleX</ref>;</highlight></codeline>
+<codeline lineno="31" refid="classCItem_1af72899aabbcbf1b922430eb560a338a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1af72899aabbcbf1b922430eb560a338a7" kindref="member">scaleY</ref>;</highlight></codeline>
+<codeline lineno="32" refid="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" kindref="member">scaleZ</ref>;</highlight></codeline>
+<codeline lineno="33" refid="classCItem_1a4f07776624a61d55d6d426de06c3552a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a4f07776624a61d55d6d426de06c3552a" kindref="member">itemCount</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem" kindref="compound">CItem</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classCItem" kindref="compound">CItem</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setItemName(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setItemPrice(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>price);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setItemAvailable(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bought);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setItemCount(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>getItemName(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getItemPrice(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getItemAvailability(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setItemRotation(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setItemTranslation(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setItemScale(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getItemRotation(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getItemTranslationX(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>getItemTranslationY(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>getItemTranslationZ(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>getItemRX(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>getItemRY(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>getItemRZ(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>getItemScaleX(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>getItemScaleY(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>getItemScaleZ(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getItemCount(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62" refid="classCItem_1aa617976377722a38a236968742801184" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aa617976377722a38a236968742801184" kindref="member">ShootCD</ref>;</highlight></codeline>
+<codeline lineno="63" refid="classCItem_1adcae706dab84e8eb3cb85f618b5a66ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1adcae706dab84e8eb3cb85f618b5a66ec" kindref="member">RespawnCD</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>sethealth(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hp);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resethealth();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h"/>
+  </compounddef>
+</doxygen>

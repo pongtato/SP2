@@ -1,0 +1,17 @@
+digraph "CNPC"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="CNPC",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" npc_list" ,fontname="Helvetica"];
+  Node2 [label="vector\< CNPC * \>",height=0.2,width=0.4,color="grey75"];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CharName" ,fontname="Helvetica"];
+  Node3 [label="string",height=0.2,width=0.4,color="grey75"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CharPosZ\nCharRot\nCheckpoints\nCharSpeed\nCharPosX" ,fontname="Helvetica"];
+  Node4 [label="float",height=0.2,width=0.4,color="grey75"];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CurrentState\nmaxItem\nPath\nDirection" ,fontname="Helvetica"];
+  Node5 [label="int",height=0.2,width=0.4,color="grey75"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" exitMart\ncashIn\nshop\nenterMart" ,fontname="Helvetica"];
+  Node6 [label="bool",height=0.2,width=0.4,color="grey75"];
+}

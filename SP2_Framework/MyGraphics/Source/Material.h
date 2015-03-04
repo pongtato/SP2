@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file Material.h
+\Author SP2 Group 4
+\par
+\brief
+Codes to define component based lighting behavior.
+*/
+/****************************************************************************/
 #ifndef _MATERIAL_H
 #define _MATERIAL_H
 

@@ -1,6 +1,0 @@
-CerealLeftBTM,-62,4,-17,90,0,1,0,1,1,1
-CerealLeftMIDDLE,-62,5.9,-17,90,0,1,0,1,1,1
-CerealLeftTOP,-62,7.8,-17,90,0,1,0,1,1,1
-CerealRightBTM,-62,4,-15,-90,0,1,0,1,1,1
-CerealRightMIDDLE,-62,5.9,-15,-90,0,1,0,1,1,1
-CerealRightTOP,-62,7.8,-15,-90,0,1,0,1,1,1

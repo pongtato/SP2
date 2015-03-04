@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file MeshBuilder.h
+\Author SP2 Group 4
+\par
+\brief
+Codes to build Meshes from Mesh.h and Mesh.cpp
+*/
+/****************************************************************************/
 #ifndef MESH_BUILDER_H
 #define MESH_BUILDER_H
 

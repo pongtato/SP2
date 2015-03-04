@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCReadFromText" kind="class" prot="public">
+    <compoundname>CReadFromText</compoundname>
+    <includes refid="ReadFromText_8h" local="no">ReadFromText.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCReadFromText_1ad9582d234075dd7c184dc1b8c3885681" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classCRenderPos" kindref="compound">CRenderPos</ref> * &gt;</type>
+        <definition>vector&lt;CRenderPos*&gt; CReadFromText::my_list</definition>
+        <argsstring></argsstring>
+        <name>my_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="27" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCReadFromText_1ac34988a1cae7a6a60b9e71f3f393b0d8" compoundref="ReadFromText_8cpp" startline="13" endline="16">CReadFromText</referencedby>
+        <referencedby refid="classCReadFromText_1a47c9cede756d7aa11b86d6f1fb74e958" compoundref="ReadFromText_8cpp" startline="23" endline="26">GetRenderPos</referencedby>
+        <referencedby refid="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" compoundref="ReadFromText_8cpp" startline="51" endline="97">ReadTextFile</referencedby>
+        <referencedby refid="classCReadFromText_1aca740381311b8823c43023287c47d46e" compoundref="ReadFromText_8cpp" startline="38" endline="49">ResetData</referencedby>
+        <referencedby refid="classCReadFromText_1a18c71aa6eabd4ec5b9c4cd5a729ff931" compoundref="ReadFromText_8cpp" startline="206" endline="209">ReturnReadListSize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCReadFromText_1ac199149dfda439140c5d2ae2922d1808" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classCItem" kindref="compound">CItem</ref> * &gt;</type>
+        <definition>vector&lt;CItem* &gt; CReadFromText::item_list</definition>
+        <argsstring></argsstring>
+        <name>item_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="28" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classCReadFromText_1af3e2721e0c4eaf2dea2c5c97337df1b8" compoundref="ReadFromText_8cpp" startline="28" endline="31">GetRenderPosItem</referencedby>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1abeec024313c1baf3541c72400c070b08" compoundref="ReadFromText_8cpp" startline="201" endline="204">ReturnListSize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCReadFromText_1a561c9cea1d9fff7529e7e9300c77bf65" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classCItem" kindref="compound">CItem</ref> * &gt;</type>
+        <definition>vector&lt;CItem* &gt; CReadFromText::Police_list</definition>
+        <argsstring></argsstring>
+        <name>Police_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="29" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classCReadFromText_1ada1c18880d64f0f5cea1e8467b47df96" compoundref="ReadFromText_8cpp" startline="33" endline="36">GetRenderPosPolice</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">ReadTextFilePolice</referencedby>
+        <referencedby refid="classCReadFromText_1a20bc16380608953e6f7940a5439c696a" compoundref="ReadFromText_8cpp" startline="211" endline="214">ReadTextFilePoliceSize</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCReadFromText_1ac34988a1cae7a6a60b9e71f3f393b0d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CReadFromText::CReadFromText</definition>
+        <argsstring>(void)</argsstring>
+        <name>CReadFromText</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="31" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="13" bodyend="16"/>
+        <references refid="classCReadFromText_1ad9582d234075dd7c184dc1b8c3885681" compoundref="ReadFromText_8h" startline="27">my_list</references>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1a8b3fa886f68b632bea62db2b0f671999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CReadFromText::~CReadFromText</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CReadFromText</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="32" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="18" bodyend="21"/>
+        <references refid="classCReadFromText_1aca740381311b8823c43023287c47d46e" compoundref="ReadFromText_8cpp" startline="38" endline="49">ResetData</references>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1a47c9cede756d7aa11b86d6f1fb74e958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classCRenderPos" kindref="compound">CRenderPos</ref> *</type>
+        <definition>CRenderPos * CReadFromText::GetRenderPos</definition>
+        <argsstring>(const int selection)</argsstring>
+        <name>GetRenderPos</name>
+        <param>
+          <type>const int</type>
+          <declname>selection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="33" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="23" bodyend="26"/>
+        <references refid="classCReadFromText_1ad9582d234075dd7c184dc1b8c3885681" compoundref="ReadFromText_8h" startline="27">my_list</references>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1115" endline="1360">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classSP2_1a2d5a4fefafe0f4e2efddbbf6239441e9" compoundref="SP2_8cpp" startline="2993" endline="3174">SP2::BulletCollision</referencedby>
+        <referencedby refid="classSP2_1a10de88b5c519e049d2f534ccf0a26863" compoundref="SP2_8cpp" startline="3176" endline="3510">SP2::BulletCollisionEnemy</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="2205" endline="2517">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="3512" endline="3523">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="2602" endline="2624">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="3729" endline="3749">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="3525" endline="3536">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="1955" endline="2152">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="3538" endline="3566">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="3568" endline="3727">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="1503" endline="1808">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1af3e2721e0c4eaf2dea2c5c97337df1b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classCItem" kindref="compound">CItem</ref> *</type>
+        <definition>CItem * CReadFromText::GetRenderPosItem</definition>
+        <argsstring>(int selection)</argsstring>
+        <name>GetRenderPosItem</name>
+        <param>
+          <type>int</type>
+          <declname>selection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="34" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="28" bodyend="31"/>
+        <references refid="classCReadFromText_1ac199149dfda439140c5d2ae2922d1808" compoundref="ReadFromText_8h" startline="28">item_list</references>
+        <referencedby refid="classSP2_1a2d5a4fefafe0f4e2efddbbf6239441e9" compoundref="SP2_8cpp" startline="2993" endline="3174">SP2::BulletCollision</referencedby>
+        <referencedby refid="classSP2_1a10de88b5c519e049d2f534ccf0a26863" compoundref="SP2_8cpp" startline="3176" endline="3510">SP2::BulletCollisionEnemy</referencedby>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1ada1c18880d64f0f5cea1e8467b47df96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classCItem" kindref="compound">CItem</ref> *</type>
+        <definition>CItem * CReadFromText::GetRenderPosPolice</definition>
+        <argsstring>(int selection)</argsstring>
+        <name>GetRenderPosPolice</name>
+        <param>
+          <type>int</type>
+          <declname>selection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="35" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="33" bodyend="36"/>
+        <references refid="classCReadFromText_1a561c9cea1d9fff7529e7e9300c77bf65" compoundref="ReadFromText_8h" startline="29">Police_list</references>
+        <referencedby refid="classSP2_1a2d5a4fefafe0f4e2efddbbf6239441e9" compoundref="SP2_8cpp" startline="2993" endline="3174">SP2::BulletCollision</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="2894" endline="2992">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CReadFromText::ReadTextFile</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>ReadTextFile</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="36" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="51" bodyend="97"/>
+        <references refid="classCReadFromText_1ad9582d234075dd7c184dc1b8c3885681" compoundref="ReadFromText_8h" startline="27">my_list</references>
+        <references refid="classCReadFromText_1aca740381311b8823c43023287c47d46e" compoundref="ReadFromText_8cpp" startline="38" endline="49">ResetData</references>
+        <references refid="classCRenderPos_1a3f14fc0e5a8decdd4ee38e78a2977917" compoundref="RenderPos_8cpp" startline="44" endline="47">CRenderPos::setName</references>
+        <references refid="classCRenderPos_1acd04bd4bf35c43cf1eb5c7df3bdc19cb" compoundref="RenderPos_8cpp" startline="22" endline="28">CRenderPos::setRotation</references>
+        <references refid="classCRenderPos_1ab678aa787ddec521c4d7bbf927230340" compoundref="RenderPos_8cpp" startline="37" endline="42">CRenderPos::setScale</references>
+        <references refid="classCRenderPos_1a414f03604c96738578eb32aa29536020" compoundref="RenderPos_8cpp" startline="30" endline="35">CRenderPos::setTranslation</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CReadFromText::ReadTextFileItem</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>ReadTextFileItem</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="37" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="99" bodyend="147"/>
+        <references refid="classCReadFromText_1ac199149dfda439140c5d2ae2922d1808" compoundref="ReadFromText_8h" startline="28">item_list</references>
+        <references refid="classCReadFromText_1aca740381311b8823c43023287c47d46e" compoundref="ReadFromText_8cpp" startline="38" endline="49">ResetData</references>
+        <references refid="classCItem_1a666a3c0c6a0f64ad1186514a31b0af9e" compoundref="Item_8cpp" startline="117" endline="120">CItem::setItemAvailable</references>
+        <references refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" compoundref="Item_8cpp" startline="107" endline="110">CItem::setItemName</references>
+        <references refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" compoundref="Item_8cpp" startline="112" endline="115">CItem::setItemPrice</references>
+        <references refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" compoundref="Item_8cpp" startline="35" endline="41">CItem::setItemRotation</references>
+        <references refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" compoundref="Item_8cpp" startline="50" endline="55">CItem::setItemScale</references>
+        <references refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" compoundref="Item_8cpp" startline="43" endline="48">CItem::setItemTranslation</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CReadFromText::ReadTextFilePolice</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>ReadTextFilePolice</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="38" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="149" bodyend="199"/>
+        <references refid="classCReadFromText_1a561c9cea1d9fff7529e7e9300c77bf65" compoundref="ReadFromText_8h" startline="29">Police_list</references>
+        <references refid="classCReadFromText_1aca740381311b8823c43023287c47d46e" compoundref="ReadFromText_8cpp" startline="38" endline="49">ResetData</references>
+        <references refid="classCItem_1adcae706dab84e8eb3cb85f618b5a66ec" compoundref="Item_8h" startline="63">CItem::RespawnCD</references>
+        <references refid="classCItem_1a666a3c0c6a0f64ad1186514a31b0af9e" compoundref="Item_8cpp" startline="117" endline="120">CItem::setItemAvailable</references>
+        <references refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" compoundref="Item_8cpp" startline="107" endline="110">CItem::setItemName</references>
+        <references refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" compoundref="Item_8cpp" startline="112" endline="115">CItem::setItemPrice</references>
+        <references refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" compoundref="Item_8cpp" startline="35" endline="41">CItem::setItemRotation</references>
+        <references refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" compoundref="Item_8cpp" startline="50" endline="55">CItem::setItemScale</references>
+        <references refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" compoundref="Item_8cpp" startline="43" endline="48">CItem::setItemTranslation</references>
+        <references refid="classCItem_1aa617976377722a38a236968742801184" compoundref="Item_8h" startline="62">CItem::ShootCD</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1aca740381311b8823c43023287c47d46e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CReadFromText::ResetData</definition>
+        <argsstring>(void)</argsstring>
+        <name>ResetData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="39" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="38" bodyend="49"/>
+        <references refid="classCReadFromText_1ad9582d234075dd7c184dc1b8c3885681" compoundref="ReadFromText_8h" startline="27">my_list</references>
+        <referencedby refid="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" compoundref="ReadFromText_8cpp" startline="51" endline="97">ReadTextFile</referencedby>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">ReadTextFilePolice</referencedby>
+        <referencedby refid="classCReadFromText_1a8b3fa886f68b632bea62db2b0f671999" compoundref="ReadFromText_8cpp" startline="18" endline="21">~CReadFromText</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1abeec024313c1baf3541c72400c070b08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CReadFromText::ReturnListSize</definition>
+        <argsstring>(void)</argsstring>
+        <name>ReturnListSize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="40" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="201" bodyend="204"/>
+        <references refid="classCReadFromText_1ac199149dfda439140c5d2ae2922d1808" compoundref="ReadFromText_8h" startline="28">item_list</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1a18c71aa6eabd4ec5b9c4cd5a729ff931" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CReadFromText::ReturnReadListSize</definition>
+        <argsstring>(void)</argsstring>
+        <name>ReturnReadListSize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="41" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="206" bodyend="209"/>
+        <references refid="classCReadFromText_1ad9582d234075dd7c184dc1b8c3885681" compoundref="ReadFromText_8h" startline="27">my_list</references>
+      </memberdef>
+      <memberdef kind="function" id="classCReadFromText_1a20bc16380608953e6f7940a5439c696a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CReadFromText::ReadTextFilePoliceSize</definition>
+        <argsstring>(void)</argsstring>
+        <name>ReadTextFilePoliceSize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="42" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.cpp" bodystart="211" bodyend="214"/>
+        <references refid="classCReadFromText_1a561c9cea1d9fff7529e7e9300c77bf65" compoundref="ReadFromText_8h" startline="29">Police_list</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="2894" endline="2992">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4606">
+        <label>CReadFromText</label>
+        <link refid="classCReadFromText"/>
+        <childnode refid="4607" relation="usage">
+          <edgelabel>Police_list</edgelabel>
+          <edgelabel>item_list</edgelabel>
+        </childnode>
+        <childnode refid="4608" relation="usage">
+          <edgelabel>my_list</edgelabel>
+        </childnode>
+      </node>
+      <node id="4608">
+        <label>vector&lt; CRenderPos * &gt;</label>
+      </node>
+      <node id="4607">
+        <label>vector&lt; CItem * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" line="25" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/ReadFromText.h" bodystart="24" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classCReadFromText_1ac34988a1cae7a6a60b9e71f3f393b0d8" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>CReadFromText</name></member>
+      <member refid="classCReadFromText_1a47c9cede756d7aa11b86d6f1fb74e958" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>GetRenderPos</name></member>
+      <member refid="classCReadFromText_1af3e2721e0c4eaf2dea2c5c97337df1b8" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>GetRenderPosItem</name></member>
+      <member refid="classCReadFromText_1ada1c18880d64f0f5cea1e8467b47df96" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>GetRenderPosPolice</name></member>
+      <member refid="classCReadFromText_1ac199149dfda439140c5d2ae2922d1808" prot="private" virt="non-virtual"><scope>CReadFromText</scope><name>item_list</name></member>
+      <member refid="classCReadFromText_1ad9582d234075dd7c184dc1b8c3885681" prot="private" virt="non-virtual"><scope>CReadFromText</scope><name>my_list</name></member>
+      <member refid="classCReadFromText_1a561c9cea1d9fff7529e7e9300c77bf65" prot="private" virt="non-virtual"><scope>CReadFromText</scope><name>Police_list</name></member>
+      <member refid="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>ReadTextFile</name></member>
+      <member refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>ReadTextFileItem</name></member>
+      <member refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>ReadTextFilePolice</name></member>
+      <member refid="classCReadFromText_1a20bc16380608953e6f7940a5439c696a" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>ReadTextFilePoliceSize</name></member>
+      <member refid="classCReadFromText_1aca740381311b8823c43023287c47d46e" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>ResetData</name></member>
+      <member refid="classCReadFromText_1abeec024313c1baf3541c72400c070b08" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>ReturnListSize</name></member>
+      <member refid="classCReadFromText_1a18c71aa6eabd4ec5b9c4cd5a729ff931" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>ReturnReadListSize</name></member>
+      <member refid="classCReadFromText_1a8b3fa886f68b632bea62db2b0f671999" prot="public" virt="non-virtual"><scope>CReadFromText</scope><name>~CReadFromText</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

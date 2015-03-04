@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classApplication" kind="class" prot="public">
+    <compoundname>Application</compoundname>
+    <includes refid="Application_8h" local="no">Application.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classApplication_1a0a0b3389d2230cb16226bbb4d14b4a55" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Application::DMX</definition>
+        <argsstring></argsstring>
+        <name>DMX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="32" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="165" endline="175">mousePos</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1afe734332635a3cba05b241190d5c255b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Application::DMY</definition>
+        <argsstring></argsstring>
+        <name>DMY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="33" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="165" endline="175">mousePos</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" static="no" mutable="no">
+        <type><ref refid="classStopWatch" kindref="compound">StopWatch</ref></type>
+        <definition>StopWatch Application::m_timer</definition>
+        <argsstring></argsstring>
+        <name>m_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="40" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="135" endline="155">Run</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1ae16fec3e346b4bbc7a036b2a2d5fbc7b" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Application::MX</definition>
+        <argsstring></argsstring>
+        <name>MX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="41" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classApplication_1abbbf79bb3dc9594a84c59e69369a8bf5" compoundref="Application_8cpp" startline="75" endline="78">getPosX</referencedby>
+        <referencedby refid="classApplication_1a83d541667dc4cb4a8e437a00356c76cc" compoundref="Application_8cpp" startline="65" endline="68">setPosX</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classApplication_1a0bc57e16f00892f7ca5c902273e353eb" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Application::MY</definition>
+        <argsstring></argsstring>
+        <name>MY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="42" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classApplication_1ac64a83a6554096731951dbb31010cb06" compoundref="Application_8cpp" startline="80" endline="83">getPosY</referencedby>
+        <referencedby refid="classApplication_1a3801816b6e91886e1d43f9084753cdd2" compoundref="Application_8cpp" startline="70" endline="73">setPosY</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>()</argsstring>
+        <name>Application</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="20" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::~Application</definition>
+        <argsstring>()</argsstring>
+        <name>~Application</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="21" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="22" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="85" bodyend="133"/>
+        <references refid="Application_8cpp_1a6e6d1771a9242858811be0a3569838fa" compoundref="Application_8cpp" startline="34" endline="38">error_callback</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="24">m_window</references>
+        <references refid="Application_8cpp_1aadcee9765075e232ca0720f80a76ad37" compoundref="Application_8cpp" startline="28" endline="31">resize_callback</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="12" endline="18">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="23" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="135" bodyend="155"/>
+        <references refid="classScene_1aae8e24654ef98c79961c2b804b12852c">Scene::Exit</references>
+        <references refid="Application_8cpp_1ae228418b33873657fa31313fb4189a8f" compoundref="Application_8cpp" startline="26">frameTime</references>
+        <references refid="classStopWatch_1ac8be1626396d1a5ca414f74349d59eb2" compoundref="timer_8cpp" startline="34" endline="41">StopWatch::getElapsedTime</references>
+        <references refid="classScene_1ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene::Init</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="47" endline="50">IsKeyPressed</references>
+        <references refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" compoundref="Application_8h" startline="40">m_timer</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="24">m_window</references>
+        <references refid="classScene_1ae24d21e12b34839994ad265662ea24d7">Scene::Render</references>
+        <references refid="classStopWatch_1a23301f735a2e3190435e39c9fd70cdf2" compoundref="timer_8cpp" startline="29" endline="32">StopWatch::startTimer</references>
+        <references refid="classScene_1af5c6bcf2185087fb32c27fb8f6a18d91">Scene::Update</references>
+        <references refid="classStopWatch_1a2cd0856fc87a40038edfd66d784be8b4" compoundref="timer_8cpp" startline="43" endline="56">StopWatch::waitUntil</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="12" endline="18">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::Exit</definition>
+        <argsstring>()</argsstring>
+        <name>Exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="24" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="157" bodyend="163"/>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="24">m_window</references>
+        <referencedby refid="main_8cpp_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8cpp" startline="12" endline="18">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a83d541667dc4cb4a8e437a00356c76cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::setPosX</definition>
+        <argsstring>(double x)</argsstring>
+        <name>setPosX</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="28" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="65" bodyend="68"/>
+        <references refid="classApplication_1ae16fec3e346b4bbc7a036b2a2d5fbc7b" compoundref="Application_8h" startline="41">MX</references>
+        <referencedby refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="165" endline="175">mousePos</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a3801816b6e91886e1d43f9084753cdd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::setPosY</definition>
+        <argsstring>(double y)</argsstring>
+        <name>setPosY</name>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="29" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="70" bodyend="73"/>
+        <references refid="classApplication_1a0bc57e16f00892f7ca5c902273e353eb" compoundref="Application_8h" startline="42">MY</references>
+        <referencedby refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="165" endline="175">mousePos</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1abbbf79bb3dc9594a84c59e69369a8bf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Application::getPosX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getPosX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="30" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="75" bodyend="78"/>
+        <references refid="classApplication_1ae16fec3e346b4bbc7a036b2a2d5fbc7b" compoundref="Application_8h" startline="41">MX</references>
+        <referencedby refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="165" endline="175">mousePos</referencedby>
+        <referencedby refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" compoundref="CameraSecurity_8cpp" startline="34" endline="74">CCameraSecurity::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Camera3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1ac64a83a6554096731951dbb31010cb06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Application::getPosY</definition>
+        <argsstring>(void)</argsstring>
+        <name>getPosY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="31" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="80" bodyend="83"/>
+        <references refid="classApplication_1a0bc57e16f00892f7ca5c902273e353eb" compoundref="Application_8h" startline="42">MY</references>
+        <referencedby refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="165" endline="175">mousePos</referencedby>
+        <referencedby refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" compoundref="CameraSecurity_8cpp" startline="34" endline="74">CCameraSecurity::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Camera3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a9a1615be638cb53643040fc234ebfc8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::mousePos</definition>
+        <argsstring>(void)</argsstring>
+        <name>mousePos</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="35" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="165" bodyend="175"/>
+        <references refid="classApplication_1a0a0b3389d2230cb16226bbb4d14b4a55" compoundref="Application_8h" startline="32">DMX</references>
+        <references refid="classApplication_1afe734332635a3cba05b241190d5c255b" compoundref="Application_8h" startline="33">DMY</references>
+        <references refid="classApplication_1abbbf79bb3dc9594a84c59e69369a8bf5" compoundref="Application_8cpp" startline="75" endline="78">getPosX</references>
+        <references refid="classApplication_1ac64a83a6554096731951dbb31010cb06" compoundref="Application_8cpp" startline="80" endline="83">getPosY</references>
+        <references refid="Application_8cpp_1ac325468d8b5ea73fd5e5831ba972bb59" compoundref="Application_8cpp" startline="24">m_window</references>
+        <references refid="classApplication_1a83d541667dc4cb4a8e437a00356c76cc" compoundref="Application_8cpp" startline="65" endline="68">setPosX</references>
+        <references refid="classApplication_1a3801816b6e91886e1d43f9084753cdd2" compoundref="Application_8cpp" startline="70" endline="73">setPosY</references>
+        <referencedby refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" compoundref="CameraSecurity_8cpp" startline="34" endline="74">CCameraSecurity::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Camera3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Application::IsKeyPressed</definition>
+        <argsstring>(unsigned short key)</argsstring>
+        <name>IsKeyPressed</name>
+        <param>
+          <type>unsigned short</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="25" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="47" bodyend="50"/>
+        <referencedby refid="classSP2_1a52f5bd692cfa04e060629c1967af30e4" compoundref="SP2_8cpp" startline="1100" endline="1113">SP2::CharacterCrouch</referencedby>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="2205" endline="2517">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="2519" endline="2542">SP2::EscapeSteal</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="1955" endline="2152">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" compoundref="Application_8cpp" startline="135" endline="155">Run</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+        <referencedby refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6" compoundref="Camera_8cpp" startline="37" endline="56">Camera::Update</referencedby>
+        <referencedby refid="classCamera2_1a1a54eeb46692c8806b7abea38a6301f3" compoundref="Camera2_8cpp" startline="33" endline="94">Camera2::Update</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Camera3::Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classApplication_1a9ff20843515422477480fbd1fff7de2a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Application::IsKeyReleased</definition>
+        <argsstring>(unsigned short key)</argsstring>
+        <name>IsKeyReleased</name>
+        <param>
+          <type>unsigned short</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="26" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.cpp" bodystart="52" bodyend="55"/>
+        <referencedby refid="classSP2_1a52f5bd692cfa04e060629c1967af30e4" compoundref="SP2_8cpp" startline="1100" endline="1113">SP2::CharacterCrouch</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Camera3::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4498">
+        <label>double</label>
+      </node>
+      <node id="4497">
+        <label>Application</label>
+        <link refid="classApplication"/>
+        <childnode refid="4498" relation="usage">
+          <edgelabel>MX</edgelabel>
+          <edgelabel>DMX</edgelabel>
+          <edgelabel>MY</edgelabel>
+          <edgelabel>DMY</edgelabel>
+        </childnode>
+        <childnode refid="4499" relation="usage">
+          <edgelabel>m_timer</edgelabel>
+        </childnode>
+      </node>
+      <node id="4501">
+        <label>LARGE_INTEGER</label>
+      </node>
+      <node id="4499">
+        <label>StopWatch</label>
+        <link refid="classStopWatch"/>
+        <childnode refid="4500" relation="usage">
+          <edgelabel>wTimerRes</edgelabel>
+        </childnode>
+        <childnode refid="4501" relation="usage">
+          <edgelabel>frequency</edgelabel>
+          <edgelabel>currTime</edgelabel>
+          <edgelabel>prevTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="4500">
+        <label>UINT</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" line="18" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Application.h" bodystart="17" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classApplication_1afa8cc05ce6b6092be5ecdfdae44e05f8" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="classApplication_1a0a0b3389d2230cb16226bbb4d14b4a55" prot="public" virt="non-virtual"><scope>Application</scope><name>DMX</name></member>
+      <member refid="classApplication_1afe734332635a3cba05b241190d5c255b" prot="public" virt="non-virtual"><scope>Application</scope><name>DMY</name></member>
+      <member refid="classApplication_1a9d410604b39b8374a884b1f2a1f2a5ba" prot="public" virt="non-virtual"><scope>Application</scope><name>Exit</name></member>
+      <member refid="classApplication_1abbbf79bb3dc9594a84c59e69369a8bf5" prot="public" virt="non-virtual"><scope>Application</scope><name>getPosX</name></member>
+      <member refid="classApplication_1ac64a83a6554096731951dbb31010cb06" prot="public" virt="non-virtual"><scope>Application</scope><name>getPosY</name></member>
+      <member refid="classApplication_1a276388f7090c0a2b1c8b16cf033b969d" prot="public" virt="non-virtual"><scope>Application</scope><name>Init</name></member>
+      <member refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" prot="public" virt="non-virtual"><scope>Application</scope><name>IsKeyPressed</name></member>
+      <member refid="classApplication_1a9ff20843515422477480fbd1fff7de2a" prot="public" virt="non-virtual"><scope>Application</scope><name>IsKeyReleased</name></member>
+      <member refid="classApplication_1ac81ea1396dc69c6d48b9a701954f53fe" prot="private" virt="non-virtual"><scope>Application</scope><name>m_timer</name></member>
+      <member refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" prot="public" virt="non-virtual"><scope>Application</scope><name>mousePos</name></member>
+      <member refid="classApplication_1ae16fec3e346b4bbc7a036b2a2d5fbc7b" prot="private" virt="non-virtual"><scope>Application</scope><name>MX</name></member>
+      <member refid="classApplication_1a0bc57e16f00892f7ca5c902273e353eb" prot="private" virt="non-virtual"><scope>Application</scope><name>MY</name></member>
+      <member refid="classApplication_1aaf09cd6cb412086dc039e28cdb059f0d" prot="public" virt="non-virtual"><scope>Application</scope><name>Run</name></member>
+      <member refid="classApplication_1a83d541667dc4cb4a8e437a00356c76cc" prot="public" virt="non-virtual"><scope>Application</scope><name>setPosX</name></member>
+      <member refid="classApplication_1a3801816b6e91886e1d43f9084753cdd2" prot="public" virt="non-virtual"><scope>Application</scope><name>setPosY</name></member>
+      <member refid="classApplication_1a748bca84fefb9c12661cfaa2f623748d" prot="public" virt="non-virtual"><scope>Application</scope><name>~Application</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

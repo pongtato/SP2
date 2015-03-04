@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file Character.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to the properties of the player character.
+*/
+/****************************************************************************/
 #include "Character.h"
 
 

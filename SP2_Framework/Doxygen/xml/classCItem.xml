@@ -1,0 +1,899 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCItem" kind="class" prot="public">
+    <compoundname>CItem</compoundname>
+    <includes refid="Item_8h" local="no">Item.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string CItem::itemName</definition>
+        <argsstring></argsstring>
+        <name>itemName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="20" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classCItem_1aa476a2d773330b4e6c0e8d33bd722185" compoundref="Item_8cpp" startline="13" endline="18">CItem</referencedby>
+        <referencedby refid="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" compoundref="Item_8cpp" startline="122" endline="125">getItemName</referencedby>
+        <referencedby refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" compoundref="Item_8cpp" startline="107" endline="110">setItemName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CItem::itemPrice</definition>
+        <argsstring></argsstring>
+        <name>itemPrice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="21" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classCItem_1aa476a2d773330b4e6c0e8d33bd722185" compoundref="Item_8cpp" startline="13" endline="18">CItem</referencedby>
+        <referencedby refid="classCItem_1ae9e41ff6cf5ce9746520b5cd956baba6" compoundref="Item_8cpp" startline="127" endline="130">getItemPrice</referencedby>
+        <referencedby refid="classCItem_1a1cdacc78dc3c561acec1c5d4eef8ee4c" compoundref="Item_8cpp" startline="30" endline="33">resethealth</referencedby>
+        <referencedby refid="classCItem_1a088bd79abf9f01b0fcc8ec0ca08b475f" compoundref="Item_8cpp" startline="25" endline="28">sethealth</referencedby>
+        <referencedby refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" compoundref="Item_8cpp" startline="112" endline="115">setItemPrice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CItem::itemAvailable</definition>
+        <argsstring></argsstring>
+        <name>itemAvailable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="22" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classCItem_1aa476a2d773330b4e6c0e8d33bd722185" compoundref="Item_8cpp" startline="13" endline="18">CItem</referencedby>
+        <referencedby refid="classCItem_1a4020a5ef13e705d275c28c4d2943920e" compoundref="Item_8cpp" startline="132" endline="135">getItemAvailability</referencedby>
+        <referencedby refid="classCItem_1a666a3c0c6a0f64ad1186514a31b0af9e" compoundref="Item_8cpp" startline="117" endline="120">setItemAvailable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="23" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classCItem_1aa8dfde872166e5116229a4a0bb32bc50" compoundref="Item_8cpp" startline="57" endline="60">getItemRotation</referencedby>
+        <referencedby refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" compoundref="Item_8cpp" startline="35" endline="41">setItemRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::translationX</definition>
+        <argsstring></argsstring>
+        <name>translationX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="24" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classCItem_1a4467447f207fc549d27c53d308c3c99c" compoundref="Item_8cpp" startline="92" endline="95">getItemTranslationX</referencedby>
+        <referencedby refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" compoundref="Item_8cpp" startline="43" endline="48">setItemTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1a1fe600bca9745c01fce3e63025e231fc" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::translationY</definition>
+        <argsstring></argsstring>
+        <name>translationY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="25" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classCItem_1a019ed70d6dd9f434bdede3fca771622b" compoundref="Item_8cpp" startline="97" endline="100">getItemTranslationY</referencedby>
+        <referencedby refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" compoundref="Item_8cpp" startline="43" endline="48">setItemTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::translationZ</definition>
+        <argsstring></argsstring>
+        <name>translationZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="26" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classCItem_1aa00a713e2186dc58e2a49727bb0e3df7" compoundref="Item_8cpp" startline="102" endline="105">getItemTranslationZ</referencedby>
+        <referencedby refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" compoundref="Item_8cpp" startline="43" endline="48">setItemTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CItem::RX</definition>
+        <argsstring></argsstring>
+        <name>RX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="27" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCItem_1a9b111af38d26f876d75f4bd6b63b2a02" compoundref="Item_8cpp" startline="62" endline="65">getItemRX</referencedby>
+        <referencedby refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" compoundref="Item_8cpp" startline="35" endline="41">setItemRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CItem::RY</definition>
+        <argsstring></argsstring>
+        <name>RY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="28" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classCItem_1ae9a929826c0e3c7ab0c712a5636d6231" compoundref="Item_8cpp" startline="67" endline="70">getItemRY</referencedby>
+        <referencedby refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" compoundref="Item_8cpp" startline="35" endline="41">setItemRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1af8637c2409d6e4db6d986f33d8a50105" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CItem::RZ</definition>
+        <argsstring></argsstring>
+        <name>RZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="29" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classCItem_1a5f26192cbac72e0d053de2363b45156f" compoundref="Item_8cpp" startline="72" endline="75">getItemRZ</referencedby>
+        <referencedby refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" compoundref="Item_8cpp" startline="35" endline="41">setItemRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::scaleX</definition>
+        <argsstring></argsstring>
+        <name>scaleX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="30" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classCItem_1ac63c82ac9b974cee2a7b32015682f4df" compoundref="Item_8cpp" startline="77" endline="80">getItemScaleX</referencedby>
+        <referencedby refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" compoundref="Item_8cpp" startline="50" endline="55">setItemScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1af72899aabbcbf1b922430eb560a338a7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::scaleY</definition>
+        <argsstring></argsstring>
+        <name>scaleY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="31" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classCItem_1abd8d0cdd3fd32b5e386e5ad9b311c9b2" compoundref="Item_8cpp" startline="82" endline="85">getItemScaleY</referencedby>
+        <referencedby refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" compoundref="Item_8cpp" startline="50" endline="55">setItemScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::scaleZ</definition>
+        <argsstring></argsstring>
+        <name>scaleZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="32" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classCItem_1acb7d737f76519c16e418c0cf761cc069" compoundref="Item_8cpp" startline="87" endline="90">getItemScaleZ</referencedby>
+        <referencedby refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" compoundref="Item_8cpp" startline="50" endline="55">setItemScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1a4f07776624a61d55d6d426de06c3552a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CItem::itemCount</definition>
+        <argsstring></argsstring>
+        <name>itemCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="33" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classCItem_1aff520ba770abab6d13533f9a9d1787e4" compoundref="Item_8cpp" startline="142" endline="145">getItemCount</referencedby>
+        <referencedby refid="classCItem_1aa6e486a4695f8e95fc81e6ce6af645d7" compoundref="Item_8cpp" startline="137" endline="140">setItemCount</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCItem_1aa617976377722a38a236968742801184" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::ShootCD</definition>
+        <argsstring></argsstring>
+        <name>ShootCD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="62" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="2894" endline="2992">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCItem_1adcae706dab84e8eb3cb85f618b5a66ec" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CItem::RespawnCD</definition>
+        <argsstring></argsstring>
+        <name>RespawnCD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="63" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCItem_1aa476a2d773330b4e6c0e8d33bd722185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CItem::CItem</definition>
+        <argsstring>(void)</argsstring>
+        <name>CItem</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="35" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="13" bodyend="18"/>
+        <references refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" compoundref="Item_8h" startline="22">itemAvailable</references>
+        <references refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" compoundref="Item_8h" startline="20">itemName</references>
+        <references refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" compoundref="Item_8h" startline="21">itemPrice</references>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a00aeafeeaf647c7059b9d325ac5a1108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CItem::~CItem</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CItem</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="36" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a975d9577390871458fea4a2fdfaeaec3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::setItemName</definition>
+        <argsstring>(string name)</argsstring>
+        <name>setItemName</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="38" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="107" bodyend="110"/>
+        <references refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" compoundref="Item_8h" startline="20">itemName</references>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">CReadFromText::ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+        <referencedby refid="classCCharacter_1a2fa127c9f4238f26ab4bab8a47b5ea97" compoundref="Character_8cpp" startline="88" endline="94">CCharacter::setInventory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::setItemPrice</definition>
+        <argsstring>(double price)</argsstring>
+        <name>setItemPrice</name>
+        <param>
+          <type>double</type>
+          <declname>price</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="39" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="112" bodyend="115"/>
+        <references refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" compoundref="Item_8h" startline="21">itemPrice</references>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">CReadFromText::ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+        <referencedby refid="classCCharacter_1a2fa127c9f4238f26ab4bab8a47b5ea97" compoundref="Character_8cpp" startline="88" endline="94">CCharacter::setInventory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a666a3c0c6a0f64ad1186514a31b0af9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::setItemAvailable</definition>
+        <argsstring>(bool bought)</argsstring>
+        <name>setItemAvailable</name>
+        <param>
+          <type>bool</type>
+          <declname>bought</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="40" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="117" bodyend="120"/>
+        <references refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" compoundref="Item_8h" startline="22">itemAvailable</references>
+        <referencedby refid="classSP2_1a2d5a4fefafe0f4e2efddbbf6239441e9" compoundref="SP2_8cpp" startline="2993" endline="3174">SP2::BulletCollision</referencedby>
+        <referencedby refid="classSP2_1a10de88b5c519e049d2f534ccf0a26863" compoundref="SP2_8cpp" startline="3176" endline="3510">SP2::BulletCollisionEnemy</referencedby>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">CReadFromText::ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1aa6e486a4695f8e95fc81e6ce6af645d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::setItemCount</definition>
+        <argsstring>(int n)</argsstring>
+        <name>setItemCount</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="41" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="137" bodyend="140"/>
+        <references refid="classCItem_1a4f07776624a61d55d6d426de06c3552a" compoundref="Item_8h" startline="33">itemCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string CItem::getItemName</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemName</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="43" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="122" bodyend="125"/>
+        <references refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" compoundref="Item_8h" startline="20">itemName</references>
+        <referencedby refid="classSP2_1a2d5a4fefafe0f4e2efddbbf6239441e9" compoundref="SP2_8cpp" startline="2993" endline="3174">SP2::BulletCollision</referencedby>
+        <referencedby refid="classSP2_1a10de88b5c519e049d2f534ccf0a26863" compoundref="SP2_8cpp" startline="3176" endline="3510">SP2::BulletCollisionEnemy</referencedby>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="2205" endline="2517">SP2::CheckOut</referencedby>
+        <referencedby refid="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" compoundref="Character_8cpp" startline="96" endline="108">CCharacter::dropItem</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="1955" endline="2152">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="1503" endline="1808">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1ae9e41ff6cf5ce9746520b5cd956baba6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CItem::getItemPrice</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemPrice</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="44" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="127" bodyend="130"/>
+        <references refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" compoundref="Item_8h" startline="21">itemPrice</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="2205" endline="2517">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="2519" endline="2542">SP2::EscapeSteal</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a4020a5ef13e705d275c28c4d2943920e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CItem::getItemAvailability</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemAvailability</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="45" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="132" bodyend="135"/>
+        <references refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" compoundref="Item_8h" startline="22">itemAvailable</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="2894" endline="2992">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a4333f4e926a0b400e29891afb28ebf93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::setItemRotation</definition>
+        <argsstring>(float a, int x, int y, int z)</argsstring>
+        <name>setItemRotation</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="47" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="35" bodyend="41"/>
+        <references refid="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" compoundref="Item_8h" startline="23">rotation</references>
+        <references refid="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" compoundref="Item_8h" startline="27">RX</references>
+        <references refid="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" compoundref="Item_8h" startline="28">RY</references>
+        <references refid="classCItem_1af8637c2409d6e4db6d986f33d8a50105" compoundref="Item_8h" startline="29">RZ</references>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">CReadFromText::ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::setItemTranslation</definition>
+        <argsstring>(float x, float y, float z)</argsstring>
+        <name>setItemTranslation</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="48" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="43" bodyend="48"/>
+        <references refid="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" compoundref="Item_8h" startline="24">translationX</references>
+        <references refid="classCItem_1a1fe600bca9745c01fce3e63025e231fc" compoundref="Item_8h" startline="25">translationY</references>
+        <references refid="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" compoundref="Item_8h" startline="26">translationZ</references>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">CReadFromText::ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a3581f5eab1792bed9c6a114974500fda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::setItemScale</definition>
+        <argsstring>(float x, float y, float z)</argsstring>
+        <name>setItemScale</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="49" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="50" bodyend="55"/>
+        <references refid="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" compoundref="Item_8h" startline="30">scaleX</references>
+        <references refid="classCItem_1af72899aabbcbf1b922430eb560a338a7" compoundref="Item_8h" startline="31">scaleY</references>
+        <references refid="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" compoundref="Item_8h" startline="32">scaleZ</references>
+        <referencedby refid="classCReadFromText_1a8c58b64d56b923d55af5de6b94af3ea2" compoundref="ReadFromText_8cpp" startline="99" endline="147">CReadFromText::ReadTextFileItem</referencedby>
+        <referencedby refid="classCReadFromText_1a74f0e2ec9ab25e5e89ead8e18ae19a4f" compoundref="ReadFromText_8cpp" startline="149" endline="199">CReadFromText::ReadTextFilePolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1aa8dfde872166e5116229a4a0bb32bc50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CItem::getItemRotation</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemRotation</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="51" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="57" bodyend="60"/>
+        <references refid="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" compoundref="Item_8h" startline="23">rotation</references>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a4467447f207fc549d27c53d308c3c99c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CItem::getItemTranslationX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemTranslationX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="52" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="92" bodyend="95"/>
+        <references refid="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" compoundref="Item_8h" startline="24">translationX</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="2894" endline="2992">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a019ed70d6dd9f434bdede3fca771622b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CItem::getItemTranslationY</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemTranslationY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="53" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="97" bodyend="100"/>
+        <references refid="classCItem_1a1fe600bca9745c01fce3e63025e231fc" compoundref="Item_8h" startline="25">translationY</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="2894" endline="2992">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1aa00a713e2186dc58e2a49727bb0e3df7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CItem::getItemTranslationZ</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemTranslationZ</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="54" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="102" bodyend="105"/>
+        <references refid="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" compoundref="Item_8h" startline="26">translationZ</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="2154" endline="2203">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="2894" endline="2992">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a9b111af38d26f876d75f4bd6b63b2a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CItem::getItemRX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemRX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="55" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="62" bodyend="65"/>
+        <references refid="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" compoundref="Item_8h" startline="27">RX</references>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1ae9a929826c0e3c7ab0c712a5636d6231" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CItem::getItemRY</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemRY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="56" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="67" bodyend="70"/>
+        <references refid="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" compoundref="Item_8h" startline="28">RY</references>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a5f26192cbac72e0d053de2363b45156f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CItem::getItemRZ</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemRZ</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="57" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="72" bodyend="75"/>
+        <references refid="classCItem_1af8637c2409d6e4db6d986f33d8a50105" compoundref="Item_8h" startline="29">RZ</references>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1ac63c82ac9b974cee2a7b32015682f4df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CItem::getItemScaleX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemScaleX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="58" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="77" bodyend="80"/>
+        <references refid="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" compoundref="Item_8h" startline="30">scaleX</references>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1abd8d0cdd3fd32b5e386e5ad9b311c9b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CItem::getItemScaleY</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemScaleY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="59" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="82" bodyend="85"/>
+        <references refid="classCItem_1af72899aabbcbf1b922430eb560a338a7" compoundref="Item_8h" startline="31">scaleY</references>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1acb7d737f76519c16e418c0cf761cc069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CItem::getItemScaleZ</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemScaleZ</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="60" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="87" bodyend="90"/>
+        <references refid="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" compoundref="Item_8h" startline="32">scaleZ</references>
+        <referencedby refid="classSP2_1adba986149ca1f4881677bec02996ee76" compoundref="SP2_8cpp" startline="3885" endline="4018">SP2::RenderFNB</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="2626" endline="2892">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1aff520ba770abab6d13533f9a9d1787e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CItem::getItemCount</definition>
+        <argsstring>(void)</argsstring>
+        <name>getItemCount</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="61" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="142" bodyend="145"/>
+        <references refid="classCItem_1a4f07776624a61d55d6d426de06c3552a" compoundref="Item_8h" startline="33">itemCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a088bd79abf9f01b0fcc8ec0ca08b475f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::sethealth</definition>
+        <argsstring>(int hp)</argsstring>
+        <name>sethealth</name>
+        <param>
+          <type>int</type>
+          <declname>hp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="64" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="25" bodyend="28"/>
+        <references refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" compoundref="Item_8h" startline="21">itemPrice</references>
+        <referencedby refid="classSP2_1a2d5a4fefafe0f4e2efddbbf6239441e9" compoundref="SP2_8cpp" startline="2993" endline="3174">SP2::BulletCollision</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCItem_1a1cdacc78dc3c561acec1c5d4eef8ee4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CItem::resethealth</definition>
+        <argsstring>()</argsstring>
+        <name>resethealth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="65" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.cpp" bodystart="30" bodyend="33"/>
+        <references refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" compoundref="Item_8h" startline="21">itemPrice</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4574">
+        <label>CItem</label>
+        <link refid="classCItem"/>
+        <childnode refid="4575" relation="usage">
+          <edgelabel>itemPrice</edgelabel>
+        </childnode>
+        <childnode refid="4576" relation="usage">
+          <edgelabel>scaleY</edgelabel>
+          <edgelabel>scaleZ</edgelabel>
+          <edgelabel>ShootCD</edgelabel>
+          <edgelabel>rotation</edgelabel>
+          <edgelabel>RespawnCD</edgelabel>
+          <edgelabel>translationX</edgelabel>
+          <edgelabel>translationY</edgelabel>
+          <edgelabel>translationZ</edgelabel>
+          <edgelabel>scaleX</edgelabel>
+        </childnode>
+        <childnode refid="4577" relation="usage">
+          <edgelabel>itemCount</edgelabel>
+          <edgelabel>RX</edgelabel>
+          <edgelabel>RY</edgelabel>
+          <edgelabel>RZ</edgelabel>
+        </childnode>
+        <childnode refid="4578" relation="usage">
+          <edgelabel>itemAvailable</edgelabel>
+        </childnode>
+        <childnode refid="4579" relation="usage">
+          <edgelabel>itemName</edgelabel>
+        </childnode>
+      </node>
+      <node id="4579">
+        <label>string</label>
+      </node>
+      <node id="4576">
+        <label>float</label>
+      </node>
+      <node id="4577">
+        <label>int</label>
+      </node>
+      <node id="4575">
+        <label>double</label>
+      </node>
+      <node id="4578">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" line="18" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Item.h" bodystart="17" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classCItem_1aa476a2d773330b4e6c0e8d33bd722185" prot="public" virt="non-virtual"><scope>CItem</scope><name>CItem</name></member>
+      <member refid="classCItem_1a4020a5ef13e705d275c28c4d2943920e" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemAvailability</name></member>
+      <member refid="classCItem_1aff520ba770abab6d13533f9a9d1787e4" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemCount</name></member>
+      <member refid="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemName</name></member>
+      <member refid="classCItem_1ae9e41ff6cf5ce9746520b5cd956baba6" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemPrice</name></member>
+      <member refid="classCItem_1aa8dfde872166e5116229a4a0bb32bc50" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemRotation</name></member>
+      <member refid="classCItem_1a9b111af38d26f876d75f4bd6b63b2a02" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemRX</name></member>
+      <member refid="classCItem_1ae9a929826c0e3c7ab0c712a5636d6231" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemRY</name></member>
+      <member refid="classCItem_1a5f26192cbac72e0d053de2363b45156f" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemRZ</name></member>
+      <member refid="classCItem_1ac63c82ac9b974cee2a7b32015682f4df" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemScaleX</name></member>
+      <member refid="classCItem_1abd8d0cdd3fd32b5e386e5ad9b311c9b2" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemScaleY</name></member>
+      <member refid="classCItem_1acb7d737f76519c16e418c0cf761cc069" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemScaleZ</name></member>
+      <member refid="classCItem_1a4467447f207fc549d27c53d308c3c99c" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemTranslationX</name></member>
+      <member refid="classCItem_1a019ed70d6dd9f434bdede3fca771622b" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemTranslationY</name></member>
+      <member refid="classCItem_1aa00a713e2186dc58e2a49727bb0e3df7" prot="public" virt="non-virtual"><scope>CItem</scope><name>getItemTranslationZ</name></member>
+      <member refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" prot="private" virt="non-virtual"><scope>CItem</scope><name>itemAvailable</name></member>
+      <member refid="classCItem_1a4f07776624a61d55d6d426de06c3552a" prot="private" virt="non-virtual"><scope>CItem</scope><name>itemCount</name></member>
+      <member refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" prot="private" virt="non-virtual"><scope>CItem</scope><name>itemName</name></member>
+      <member refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" prot="private" virt="non-virtual"><scope>CItem</scope><name>itemPrice</name></member>
+      <member refid="classCItem_1a1cdacc78dc3c561acec1c5d4eef8ee4c" prot="public" virt="non-virtual"><scope>CItem</scope><name>resethealth</name></member>
+      <member refid="classCItem_1adcae706dab84e8eb3cb85f618b5a66ec" prot="public" virt="non-virtual"><scope>CItem</scope><name>RespawnCD</name></member>
+      <member refid="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" prot="private" virt="non-virtual"><scope>CItem</scope><name>rotation</name></member>
+      <member refid="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" prot="private" virt="non-virtual"><scope>CItem</scope><name>RX</name></member>
+      <member refid="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" prot="private" virt="non-virtual"><scope>CItem</scope><name>RY</name></member>
+      <member refid="classCItem_1af8637c2409d6e4db6d986f33d8a50105" prot="private" virt="non-virtual"><scope>CItem</scope><name>RZ</name></member>
+      <member refid="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" prot="private" virt="non-virtual"><scope>CItem</scope><name>scaleX</name></member>
+      <member refid="classCItem_1af72899aabbcbf1b922430eb560a338a7" prot="private" virt="non-virtual"><scope>CItem</scope><name>scaleY</name></member>
+      <member refid="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" prot="private" virt="non-virtual"><scope>CItem</scope><name>scaleZ</name></member>
+      <member refid="classCItem_1a088bd79abf9f01b0fcc8ec0ca08b475f" prot="public" virt="non-virtual"><scope>CItem</scope><name>sethealth</name></member>
+      <member refid="classCItem_1a666a3c0c6a0f64ad1186514a31b0af9e" prot="public" virt="non-virtual"><scope>CItem</scope><name>setItemAvailable</name></member>
+      <member refid="classCItem_1aa6e486a4695f8e95fc81e6ce6af645d7" prot="public" virt="non-virtual"><scope>CItem</scope><name>setItemCount</name></member>
+      <member refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" prot="public" virt="non-virtual"><scope>CItem</scope><name>setItemName</name></member>
+      <member refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" prot="public" virt="non-virtual"><scope>CItem</scope><name>setItemPrice</name></member>
+      <member refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" prot="public" virt="non-virtual"><scope>CItem</scope><name>setItemRotation</name></member>
+      <member refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" prot="public" virt="non-virtual"><scope>CItem</scope><name>setItemScale</name></member>
+      <member refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" prot="public" virt="non-virtual"><scope>CItem</scope><name>setItemTranslation</name></member>
+      <member refid="classCItem_1aa617976377722a38a236968742801184" prot="public" virt="non-virtual"><scope>CItem</scope><name>ShootCD</name></member>
+      <member refid="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" prot="private" virt="non-virtual"><scope>CItem</scope><name>translationX</name></member>
+      <member refid="classCItem_1a1fe600bca9745c01fce3e63025e231fc" prot="private" virt="non-virtual"><scope>CItem</scope><name>translationY</name></member>
+      <member refid="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" prot="private" virt="non-virtual"><scope>CItem</scope><name>translationZ</name></member>
+      <member refid="classCItem_1a00aeafeeaf647c7059b9d325ac5a1108" prot="public" virt="non-virtual"><scope>CItem</scope><name>~CItem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

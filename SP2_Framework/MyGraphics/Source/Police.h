@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file Police.h
+\Author SP2 Group 4
+\par
+\brief
+Defines functions for the police.
+*/
+/****************************************************************************/
 #pragma once
 #include <string>
 #include <iostream>

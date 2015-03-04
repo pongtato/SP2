@@ -1,3 +1,12 @@
+/************************************************************************/
+/*!
+\file Utility.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to positioning the light ball.
+*/
+/************************************************************************/
 #include "Utility.h"
 
 Position operator*(const Mtx44& lhs, Position rhs)

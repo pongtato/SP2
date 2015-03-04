@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="structgvdevice__callbacks__s" kind="struct" prot="public">
+    <compoundname>gvdevice_callbacks_s</compoundname>
+    <includes refid="gvcjob_8h" local="no">gvcjob.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1a5c7554da0eceaf3f6174f40d04674159" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::refresh)(GVJ_t *job)</definition>
+        <argsstring>)(GVJ_t *job)</argsstring>
+        <name>refresh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="157" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1acd0d48187d840d5c1e831fe6172b7c7e" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::button_press)(GVJ_t *job, int button, pointf pointer)</definition>
+        <argsstring>)(GVJ_t *job, int button, pointf pointer)</argsstring>
+        <name>button_press</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="158" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1a27a14a8345489de144e960fc5e378106" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::button_release)(GVJ_t *job, int button, pointf pointer)</definition>
+        <argsstring>)(GVJ_t *job, int button, pointf pointer)</argsstring>
+        <name>button_release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="159" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1a44bad2c73fa6d57889ac689c9d6a2c0d" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::motion)(GVJ_t *job, pointf pointer)</definition>
+        <argsstring>)(GVJ_t *job, pointf pointer)</argsstring>
+        <name>motion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="160" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1a6bb575fadc4c6a3a0d64c10b92a738a0" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::modify)(GVJ_t *job, const char *name, const char *value)</definition>
+        <argsstring>)(GVJ_t *job, const char *name, const char *value)</argsstring>
+        <name>modify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="161" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1a3352dfc994087b36df5386ee0546385b" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::del)(GVJ_t *job)</definition>
+        <argsstring>)(GVJ_t *job)</argsstring>
+        <name>del</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="162" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1a4f1dfd774566331cbed8ee80e2e306f5" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::read)(GVJ_t *job, const char *filename, const char *layout)</definition>
+        <argsstring>)(GVJ_t *job, const char *filename, const char *layout)</argsstring>
+        <name>read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="163" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1ac26581d1249fd6328241d6745b555ce3" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::layout)(GVJ_t *job, const char *layout)</definition>
+        <argsstring>)(GVJ_t *job, const char *layout)</argsstring>
+        <name>layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="164" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgvdevice__callbacks__s_1af169274cc06a276bcf27ff3dd8852af7" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* gvdevice_callbacks_s::render)(GVJ_t *job, const char *format, const char *filename)</definition>
+        <argsstring>)(GVJ_t *job, const char *format, const char *filename)</argsstring>
+        <name>render</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="165" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4761">
+        <label>void(*)(GVJ_t *job, const char *layout)</label>
+      </node>
+      <node id="4758">
+        <label>void(*)(GVJ_t *job, pointf pointer)</label>
+      </node>
+      <node id="4762">
+        <label>void(*)(GVJ_t *job)</label>
+      </node>
+      <node id="4756">
+        <label>void(*)(GVJ_t *job, const char *filename, const char *layout)</label>
+      </node>
+      <node id="4759">
+        <label>void(*)(GVJ_t *job, int button, pointf pointer)</label>
+      </node>
+      <node id="4755">
+        <label>gvdevice_callbacks_s</label>
+        <link refid="structgvdevice__callbacks__s"/>
+        <childnode refid="4756" relation="usage">
+          <edgelabel>read</edgelabel>
+        </childnode>
+        <childnode refid="4757" relation="usage">
+          <edgelabel>modify</edgelabel>
+        </childnode>
+        <childnode refid="4758" relation="usage">
+          <edgelabel>motion</edgelabel>
+        </childnode>
+        <childnode refid="4759" relation="usage">
+          <edgelabel>button_release</edgelabel>
+          <edgelabel>button_press</edgelabel>
+        </childnode>
+        <childnode refid="4760" relation="usage">
+          <edgelabel>render</edgelabel>
+        </childnode>
+        <childnode refid="4761" relation="usage">
+          <edgelabel>layout</edgelabel>
+        </childnode>
+        <childnode refid="4762" relation="usage">
+          <edgelabel>del</edgelabel>
+          <edgelabel>refresh</edgelabel>
+        </childnode>
+      </node>
+      <node id="4757">
+        <label>void(*)(GVJ_t *job, const char *name, const char *value)</label>
+      </node>
+      <node id="4760">
+        <label>void(*)(GVJ_t *job, const char *format, const char *filename)</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" line="156" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/gvcjob.h" bodystart="156" bodyend="166"/>
+    <listofallmembers>
+      <member refid="structgvdevice__callbacks__s_1acd0d48187d840d5c1e831fe6172b7c7e" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>button_press</name></member>
+      <member refid="structgvdevice__callbacks__s_1a27a14a8345489de144e960fc5e378106" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>button_release</name></member>
+      <member refid="structgvdevice__callbacks__s_1a3352dfc994087b36df5386ee0546385b" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>del</name></member>
+      <member refid="structgvdevice__callbacks__s_1ac26581d1249fd6328241d6745b555ce3" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>layout</name></member>
+      <member refid="structgvdevice__callbacks__s_1a6bb575fadc4c6a3a0d64c10b92a738a0" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>modify</name></member>
+      <member refid="structgvdevice__callbacks__s_1a44bad2c73fa6d57889ac689c9d6a2c0d" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>motion</name></member>
+      <member refid="structgvdevice__callbacks__s_1a4f1dfd774566331cbed8ee80e2e306f5" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>read</name></member>
+      <member refid="structgvdevice__callbacks__s_1a5c7554da0eceaf3f6174f40d04674159" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>refresh</name></member>
+      <member refid="structgvdevice__callbacks__s_1af169274cc06a276bcf27ff3dd8852af7" prot="public" virt="non-virtual"><scope>gvdevice_callbacks_s</scope><name>render</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

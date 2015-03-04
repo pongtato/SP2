@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Light_8h" kind="file">
+    <compoundname>Light.h</compoundname>
+    <includes refid="Vertex_8h" local="yes">Vertex.h</includes>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <incdepgraph>
+      <node id="2022">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="2023" relation="include">
+        </childnode>
+        <childnode refid="2028" relation="include">
+        </childnode>
+      </node>
+      <node id="2024">
+        <label>cmath</label>
+      </node>
+      <node id="2025">
+        <label>exception</label>
+      </node>
+      <node id="2026">
+        <label>ctime</label>
+      </node>
+      <node id="2027">
+        <label>cstdlib</label>
+      </node>
+      <node id="2028">
+        <label>iostream</label>
+      </node>
+      <node id="2020">
+        <label>MyGraphics/Source/Light.h</label>
+        <link refid="Light.h"/>
+        <childnode refid="2021" relation="include">
+        </childnode>
+      </node>
+      <node id="2023">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="2024" relation="include">
+        </childnode>
+        <childnode refid="2025" relation="include">
+        </childnode>
+        <childnode refid="2026" relation="include">
+        </childnode>
+        <childnode refid="2027" relation="include">
+        </childnode>
+      </node>
+      <node id="2021">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="2022" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2030">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="2031" relation="include">
+        </childnode>
+        <childnode refid="2032" relation="include">
+        </childnode>
+      </node>
+      <node id="2032">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="2029">
+        <label>MyGraphics/Source/Light.h</label>
+        <link refid="Light.h"/>
+        <childnode refid="2030" relation="include">
+        </childnode>
+      </node>
+      <node id="2031">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structLight" prot="public">Light</innerclass>
+    <briefdescription>
+<para>Struct to define the behaviour of <ref refid="structLight" kindref="compound">Light</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classSP2" kindref="compound">SP2</ref> Group 4 <simplesect kind="par"><title></title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_LIGHT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_LIGHT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vertex_8h" kindref="compound">Vertex.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="structLight" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLight" kindref="compound">Light</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17" refid="structLight_1afeb738db41e987719e359166ef93314f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structPosition" kindref="compound">Position</ref><sp/><ref refid="structLight_1afeb738db41e987719e359166ef93314f" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="18" refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structColor" kindref="compound">Color</ref><sp/><ref refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" kindref="member">color</ref>;</highlight></codeline>
+<codeline lineno="19" refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" kindref="member">power</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" kindref="member">kC</ref>,<sp/><ref refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" kindref="member">kL</ref>,<sp/><ref refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" kindref="member">kQ</ref>;</highlight></codeline>
+<codeline lineno="21" refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" kindref="member">Light</ref>()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" kindref="member">LIGHT_TYPE</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" kindref="member">LIGHT_POINT</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="27" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" kindref="member">LIGHT_DIRECTIONAL</ref>,</highlight></codeline>
+<codeline lineno="28" refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" kindref="member">LIGHT_SPOT</ref>,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="30" refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" kindref="member">LIGHT_TYPE</ref><sp/><ref refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="31" refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" kindref="member">spotDirection</ref>;</highlight></codeline>
+<codeline lineno="32" refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" kindref="member">cosCutoff</ref>;</highlight></codeline>
+<codeline lineno="33" refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" kindref="member">cosInner</ref>;</highlight></codeline>
+<codeline lineno="34" refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" kindref="member">exponent</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Light.h"/>
+  </compounddef>
+</doxygen>

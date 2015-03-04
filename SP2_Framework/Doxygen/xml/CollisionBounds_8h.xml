@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="CollisionBounds_8h" kind="file">
+    <compoundname>CollisionBounds.h</compoundname>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="CollisionBounds_8cpp" local="yes">MyGraphics/Source/CollisionBounds.cpp</includedby>
+    <incdepgraph>
+      <node id="1987">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="1988" relation="include">
+        </childnode>
+        <childnode refid="1993" relation="include">
+        </childnode>
+      </node>
+      <node id="1989">
+        <label>cmath</label>
+      </node>
+      <node id="1990">
+        <label>exception</label>
+      </node>
+      <node id="1986">
+        <label>MyGraphics/Source/CollisionBounds.h</label>
+        <link refid="CollisionBounds.h"/>
+        <childnode refid="1987" relation="include">
+        </childnode>
+      </node>
+      <node id="1991">
+        <label>ctime</label>
+      </node>
+      <node id="1992">
+        <label>cstdlib</label>
+      </node>
+      <node id="1993">
+        <label>iostream</label>
+      </node>
+      <node id="1988">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="1989" relation="include">
+        </childnode>
+        <childnode refid="1990" relation="include">
+        </childnode>
+        <childnode refid="1991" relation="include">
+        </childnode>
+        <childnode refid="1992" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1998">
+        <label>MyGraphics/Source/CollisionBounds.cpp</label>
+        <link refid="CollisionBounds_8cpp"/>
+      </node>
+      <node id="1994">
+        <label>MyGraphics/Source/CollisionBounds.h</label>
+        <link refid="CollisionBounds.h"/>
+        <childnode refid="1995" relation="include">
+        </childnode>
+        <childnode refid="1998" relation="include">
+        </childnode>
+      </node>
+      <node id="1995">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+      </node>
+      <node id="1997">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="1996">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCCollisionBounds" prot="public">CCollisionBounds</innerclass>
+    <briefdescription>
+<para>Vectors for <ref refid="CollisionBounds_8cpp" kindref="compound">CollisionBounds.cpp</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classSP2" kindref="compound">SP2</ref> Group 4 <simplesect kind="par"><title></title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classCCollisionBounds" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCCollisionBounds" kindref="compound">CCollisionBounds</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCollisionBounds_1abe41a6ed837aa445bc0fa19a0b13ab77" kindref="member">CCollisionBounds</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCollisionBounds_1abbd65e1b624de5cf3bb17f6b78ac0a2a" kindref="member">~CCollisionBounds</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//top<sp/>left<sp/>of<sp/>top<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classCCollisionBounds_1a5fba7d1944b8561b41eff9869c2d6b63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1a5fba7d1944b8561b41eff9869c2d6b63" kindref="member">TTL</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//top<sp/>right<sp/>of<sp/>top<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classCCollisionBounds_1afc137a96f854ccc13938eb48bb4cd420" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1afc137a96f854ccc13938eb48bb4cd420" kindref="member">TTR</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//bottom<sp/>left<sp/>of<sp/>top<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classCCollisionBounds_1a83c046f2941b07d7e0f08090617e1a56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1a83c046f2941b07d7e0f08090617e1a56" kindref="member">TBL</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//botom<sp/><sp/>right<sp/>of<sp/>top<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classCCollisionBounds_1a765e48ed28deeb9790042c1d2a50ce89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1a765e48ed28deeb9790042c1d2a50ce89" kindref="member">TBR</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//top<sp/>left<sp/>of<sp/>bottom<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classCCollisionBounds_1a0ccf17bc8279d125c3aac36cfca7496a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1a0ccf17bc8279d125c3aac36cfca7496a" kindref="member">BTL</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//top<sp/>right<sp/>of<sp/>bottom<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classCCollisionBounds_1a06cf8a0985de58149453a2a6654be2ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1a06cf8a0985de58149453a2a6654be2ae" kindref="member">BTR</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//bottom<sp/>left<sp/>of<sp/>bottom<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classCCollisionBounds_1acce18667b28dd100478106713ae1c369" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1acce18667b28dd100478106713ae1c369" kindref="member">BBL</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//botom<sp/><sp/>right<sp/>of<sp/>bottom<sp/>section<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classCCollisionBounds_1a3219d79b7c40fd82e0cfca0d103e3c08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCollisionBounds_1a3219d79b7c40fd82e0cfca0d103e3c08" kindref="member">BBR</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCollisionBounds_1ae7839f6f519df7425134b5b6954baa41" kindref="member">SetCollisionBounds</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>OffsetX,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>OffsetY,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>OffsetZ);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/CollisionBounds.h"/>
+  </compounddef>
+</doxygen>

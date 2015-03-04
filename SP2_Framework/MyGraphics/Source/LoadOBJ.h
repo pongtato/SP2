@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file LoadOBJ.h
+\Author SP2 Group 4
+\par
+\brief
+Functions and vectors to load Objects.
+*/
+/****************************************************************************/
 #ifndef LOAD_OBJ_H
 #define LOAD_OBJ_H
 

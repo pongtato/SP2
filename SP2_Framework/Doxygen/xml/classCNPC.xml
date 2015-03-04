@@ -1,0 +1,961 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCNPC" kind="class" prot="public">
+    <compoundname>CNPC</compoundname>
+    <includes refid="NPC_8h" local="no">NPC.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCNPC_1a6f3934d6011937922528d4462f00a9c1" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string CNPC::CharName</definition>
+        <argsstring></argsstring>
+        <name>CharName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="26" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classCNPC_1afc17964b06ef48daf55d783a3b78c8a3" compoundref="NPC_8cpp" startline="53" endline="56">getName</referencedby>
+        <referencedby refid="classCNPC_1aa5e3aede2735126287808e41b35d3e79" compoundref="NPC_8cpp" startline="33" endline="36">setName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a45836ebd3d5cf608fde27b69d8ef736d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CNPC::CharSpeed</definition>
+        <argsstring></argsstring>
+        <name>CharSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="27" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classCNPC_1aa6cf575198a51b6e21e79b1fc0bf0258" compoundref="NPC_8cpp" startline="68" endline="71">getSpeed</referencedby>
+        <referencedby refid="classCNPC_1a8e4661c79851a208479a7e6117388194" compoundref="NPC_8cpp" startline="48" endline="51">setSpeed</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1ae501d4735a6c0bfe3fd52849ac5336b6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CNPC::CharPosX</definition>
+        <argsstring></argsstring>
+        <name>CharPosX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="28" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classCNPC_1a3f6cd3f2aaa1cbf05768971d5e455cdb" compoundref="NPC_8cpp" startline="58" endline="61">getPosX</referencedby>
+        <referencedby refid="classCNPC_1a845812680ee1f5f2ae18a01091733665" compoundref="NPC_8cpp" startline="38" endline="41">setPosX</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a1eedf86dfafaf8a350c7bc657dcf2f9e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CNPC::CharPosZ</definition>
+        <argsstring></argsstring>
+        <name>CharPosZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="29" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classCNPC_1a790575c687283f2ee6807824b9bb302f" compoundref="NPC_8cpp" startline="63" endline="66">getPosZ</referencedby>
+        <referencedby refid="classCNPC_1a3cd42b55ac62c078bd61ee944cac532f" compoundref="NPC_8cpp" startline="43" endline="46">setPosZ</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a1c5ef0c801785e4d2fc83cc2767a9d72" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CNPC::CharRot</definition>
+        <argsstring></argsstring>
+        <name>CharRot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="30" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classCNPC_1a59c64aa979def0bf034cc6730f06c357" compoundref="NPC_8cpp" startline="88" endline="91">getRot</referencedby>
+        <referencedby refid="classCNPC_1abdcd69d857e7cf55fa81318e3c6ef21b" compoundref="NPC_8cpp" startline="83" endline="86">SetRot</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a2953a31ac78b339ad246327a98fed02c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CNPC::Direction</definition>
+        <argsstring></argsstring>
+        <name>Direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="31" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classCNPC_1a5f825df48d7176c9d416a81ad864d650" compoundref="NPC_8cpp" startline="78" endline="81">getDirection</referencedby>
+        <referencedby refid="classCNPC_1a648ab30fd1662b891d69882ddbd7206b" compoundref="NPC_8cpp" startline="73" endline="76">setDirection</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a64f77ee46d72e0773b9ea8a3c49ee758" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CNPC::Path</definition>
+        <argsstring></argsstring>
+        <name>Path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="32" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classCNPC_1a2373bd3885f598112294dfb287bbff10" compoundref="NPC_8cpp" startline="185" endline="188">getPath</referencedby>
+        <referencedby refid="classCNPC_1a6b562d2af5ea91088f8cb28a516132cb" compoundref="NPC_8cpp" startline="180" endline="183">setPath</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1ad5214b99d6f402f0c004027cf8c03820" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CNPC::CurrentState</definition>
+        <argsstring></argsstring>
+        <name>CurrentState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="33" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classCNPC_1acd7886370a516b0082acfb9241a82d3e" compoundref="NPC_8cpp" startline="418" endline="421">getCurrentState</referencedby>
+        <referencedby refid="classCNPC_1a86cc66cac7af4a0558b5816a970e2241" compoundref="NPC_8cpp" startline="413" endline="416">setCurrentState</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a6741eadf0021658d7000ffa726c64c15" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CNPC::Checkpoints[20]</definition>
+        <argsstring>[20]</argsstring>
+        <name>Checkpoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="34" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classCNPC_1aa08aef76be9578365991835b467e24ad" compoundref="NPC_8cpp" startline="408" endline="411">getCheckpoints</referencedby>
+        <referencedby refid="classCNPC_1abab78f9367c0ad00421f45bcaa2f3bfe" compoundref="NPC_8cpp" startline="403" endline="406">setCheckpoints</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a6247310ed01f5479b525e320741989dc" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classCNPC" kindref="compound">CNPC</ref> * &gt;</type>
+        <definition>vector&lt;CNPC*&gt; CNPC::npc_list</definition>
+        <argsstring></argsstring>
+        <name>npc_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="35" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classCNPC_1a279d766cf9fd1aefb298c4baccc2b011" compoundref="NPC_8cpp" startline="190" endline="193">GetNPCPos</referencedby>
+        <referencedby refid="classCNPC_1aa072fbc13660787d118a8b06b5949d6f" compoundref="NPC_8cpp" startline="195" endline="241">ReadTextFilePath</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNPC::shop</definition>
+        <argsstring></argsstring>
+        <name>shop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="37" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classCNPC_1a4f2de594e6d68c1493545677721b6ca8" compoundref="NPC_8cpp" startline="525" endline="528">getShop</referencedby>
+        <referencedby refid="classCNPC_1a8fa26f62137bbc2bfe0d142b36a26f99" compoundref="NPC_8cpp" startline="521" endline="524">setShop</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCNPC_1a3b462fff23af392e93706c4f2f7c67aa" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CNPC::maxItem</definition>
+        <argsstring></argsstring>
+        <name>maxItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="69" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classCNPC_1a28323ea0f31c013066a0fe702961636f" compoundref="NPC_8cpp" startline="529" endline="538">respawn</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1ab029436c78458fa7505eec21b619ad49" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNPC::cashIn</definition>
+        <argsstring></argsstring>
+        <name>cashIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="70" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classCNPC_1a28323ea0f31c013066a0fe702961636f" compoundref="NPC_8cpp" startline="529" endline="538">respawn</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a6c499945d0a1f6d3302092e33449d74f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNPC::exitMart</definition>
+        <argsstring></argsstring>
+        <name>exitMart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="71" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classSP2_1adf4818d8d36de155c2d17865c9a4f03a" compoundref="SP2_8cpp" startline="1377" endline="1434">SP2::DoorSlide</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCNPC_1a3ce1aa0e500c403b307f69ccb74effde" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNPC::enterMart</definition>
+        <argsstring></argsstring>
+        <name>enterMart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="72" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</referencedby>
+        <referencedby refid="classSP2_1adf4818d8d36de155c2d17865c9a4f03a" compoundref="SP2_8cpp" startline="1377" endline="1434">SP2::DoorSlide</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCNPC_1ae1da3972c31ba69773452b71104db4f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CNPC::CNPC</definition>
+        <argsstring>(void)</argsstring>
+        <name>CNPC</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="42" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="13" bodyend="26"/>
+        <references refid="classCNPC_1ab029436c78458fa7505eec21b619ad49" compoundref="NPC_8h" startline="70">cashIn</references>
+        <references refid="classCNPC_1a6f3934d6011937922528d4462f00a9c1" compoundref="NPC_8h" startline="26">CharName</references>
+        <references refid="classCNPC_1ae501d4735a6c0bfe3fd52849ac5336b6" compoundref="NPC_8h" startline="28">CharPosX</references>
+        <references refid="classCNPC_1a1eedf86dfafaf8a350c7bc657dcf2f9e" compoundref="NPC_8h" startline="29">CharPosZ</references>
+        <references refid="classCNPC_1a1c5ef0c801785e4d2fc83cc2767a9d72" compoundref="NPC_8h" startline="30">CharRot</references>
+        <references refid="classCNPC_1a45836ebd3d5cf608fde27b69d8ef736d" compoundref="NPC_8h" startline="27">CharSpeed</references>
+        <references refid="classCNPC_1a3ce1aa0e500c403b307f69ccb74effde" compoundref="NPC_8h" startline="72">enterMart</references>
+        <references refid="classCNPC_1a6c499945d0a1f6d3302092e33449d74f" compoundref="NPC_8h" startline="71">exitMart</references>
+        <references refid="classCNPC_1a3b462fff23af392e93706c4f2f7c67aa" compoundref="NPC_8h" startline="69">maxItem</references>
+        <references refid="classCNPC_1a64f77ee46d72e0773b9ea8a3c49ee758" compoundref="NPC_8h" startline="32">Path</references>
+        <references refid="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" compoundref="NPC_8h" startline="37">shop</references>
+        <referencedby refid="classCNPC_1aa072fbc13660787d118a8b06b5949d6f" compoundref="NPC_8cpp" startline="195" endline="241">ReadTextFilePath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1aa6a089efd5dab54b9fdbe8bf5e6f79e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CNPC::~CNPC</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CNPC</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="43" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1aa5e3aede2735126287808e41b35d3e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setName</definition>
+        <argsstring>(string name)</argsstring>
+        <name>setName</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="45" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="33" bodyend="36"/>
+        <references refid="classCNPC_1a6f3934d6011937922528d4462f00a9c1" compoundref="NPC_8h" startline="26">CharName</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a845812680ee1f5f2ae18a01091733665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setPosX</definition>
+        <argsstring>(float x)</argsstring>
+        <name>setPosX</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="46" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="38" bodyend="41"/>
+        <references refid="classCNPC_1ae501d4735a6c0bfe3fd52849ac5336b6" compoundref="NPC_8h" startline="28">CharPosX</references>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classCNPC_1a28323ea0f31c013066a0fe702961636f" compoundref="NPC_8cpp" startline="529" endline="538">respawn</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a3cd42b55ac62c078bd61ee944cac532f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setPosZ</definition>
+        <argsstring>(float z)</argsstring>
+        <name>setPosZ</name>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="47" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="43" bodyend="46"/>
+        <references refid="classCNPC_1a1eedf86dfafaf8a350c7bc657dcf2f9e" compoundref="NPC_8h" startline="29">CharPosZ</references>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classCNPC_1a28323ea0f31c013066a0fe702961636f" compoundref="NPC_8cpp" startline="529" endline="538">respawn</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a8e4661c79851a208479a7e6117388194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setSpeed</definition>
+        <argsstring>(float speed)</argsstring>
+        <name>setSpeed</name>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="48" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="48" bodyend="51"/>
+        <references refid="classCNPC_1a45836ebd3d5cf608fde27b69d8ef736d" compoundref="NPC_8h" startline="27">CharSpeed</references>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a648ab30fd1662b891d69882ddbd7206b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setDirection</definition>
+        <argsstring>(int state)</argsstring>
+        <name>setDirection</name>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="49" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="73" bodyend="76"/>
+        <references refid="classCNPC_1a2953a31ac78b339ad246327a98fed02c" compoundref="NPC_8h" startline="31">Direction</references>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1abdcd69d857e7cf55fa81318e3c6ef21b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::SetRot</definition>
+        <argsstring>(float rot)</argsstring>
+        <name>SetRot</name>
+        <param>
+          <type>float</type>
+          <declname>rot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="50" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="83" bodyend="86"/>
+        <references refid="classCNPC_1a1c5ef0c801785e4d2fc83cc2767a9d72" compoundref="NPC_8h" startline="30">CharRot</references>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classCNPC_1a28323ea0f31c013066a0fe702961636f" compoundref="NPC_8cpp" startline="529" endline="538">respawn</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a6b562d2af5ea91088f8cb28a516132cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setPath</definition>
+        <argsstring>(int node)</argsstring>
+        <name>setPath</name>
+        <param>
+          <type>int</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="51" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="180" bodyend="183"/>
+        <references refid="classCNPC_1a64f77ee46d72e0773b9ea8a3c49ee758" compoundref="NPC_8h" startline="32">Path</references>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1abab78f9367c0ad00421f45bcaa2f3bfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setCheckpoints</definition>
+        <argsstring>(int n, float point)</argsstring>
+        <name>setCheckpoints</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="52" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="403" bodyend="406"/>
+        <references refid="classCNPC_1a6741eadf0021658d7000ffa726c64c15" compoundref="NPC_8h" startline="34">Checkpoints</references>
+        <referencedby refid="classCNPC_1aa072fbc13660787d118a8b06b5949d6f" compoundref="NPC_8cpp" startline="195" endline="241">ReadTextFilePath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a86cc66cac7af4a0558b5816a970e2241" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setCurrentState</definition>
+        <argsstring>(int state)</argsstring>
+        <name>setCurrentState</name>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="53" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="413" bodyend="416"/>
+        <references refid="classCNPC_1ad5214b99d6f402f0c004027cf8c03820" compoundref="NPC_8h" startline="33">CurrentState</references>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::TestAIPath</definition>
+        <argsstring>(void)</argsstring>
+        <name>TestAIPath</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="55" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="93" bodyend="178"/>
+        <references refid="classCNPC_1a5f825df48d7176c9d416a81ad864d650" compoundref="NPC_8cpp" startline="78" endline="81">getDirection</references>
+        <references refid="classCNPC_1a3f6cd3f2aaa1cbf05768971d5e455cdb" compoundref="NPC_8cpp" startline="58" endline="61">getPosX</references>
+        <references refid="classCNPC_1a790575c687283f2ee6807824b9bb302f" compoundref="NPC_8cpp" startline="63" endline="66">getPosZ</references>
+        <references refid="classCNPC_1a59c64aa979def0bf034cc6730f06c357" compoundref="NPC_8cpp" startline="88" endline="91">getRot</references>
+        <references refid="classCNPC_1a648ab30fd1662b891d69882ddbd7206b" compoundref="NPC_8cpp" startline="73" endline="76">setDirection</references>
+        <references refid="classCNPC_1a845812680ee1f5f2ae18a01091733665" compoundref="NPC_8cpp" startline="38" endline="41">setPosX</references>
+        <references refid="classCNPC_1a3cd42b55ac62c078bd61ee944cac532f" compoundref="NPC_8cpp" startline="43" endline="46">setPosZ</references>
+        <references refid="classCNPC_1abdcd69d857e7cf55fa81318e3c6ef21b" compoundref="NPC_8cpp" startline="83" endline="86">SetRot</references>
+        <referencedby refid="classSP2_1a0bf675d02f52d549d3ce55ae3d5112ce" compoundref="SP2_8cpp" startline="898" endline="903">SP2::NPCwalk</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::ShopPathing</definition>
+        <argsstring>(int n, bool idle)</argsstring>
+        <name>ShopPathing</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>idle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="56" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="243" bodyend="401"/>
+        <references refid="classCNPC_1ab029436c78458fa7505eec21b619ad49" compoundref="NPC_8h" startline="70">cashIn</references>
+        <references refid="classCNPC_1aa08aef76be9578365991835b467e24ad" compoundref="NPC_8cpp" startline="408" endline="411">getCheckpoints</references>
+        <references refid="classCNPC_1a279d766cf9fd1aefb298c4baccc2b011" compoundref="NPC_8cpp" startline="190" endline="193">GetNPCPos</references>
+        <references refid="classCNPC_1a2373bd3885f598112294dfb287bbff10" compoundref="NPC_8cpp" startline="185" endline="188">getPath</references>
+        <references refid="classCNPC_1a3f6cd3f2aaa1cbf05768971d5e455cdb" compoundref="NPC_8cpp" startline="58" endline="61">getPosX</references>
+        <references refid="classCNPC_1a790575c687283f2ee6807824b9bb302f" compoundref="NPC_8cpp" startline="63" endline="66">getPosZ</references>
+        <references refid="classCNPC_1a59c64aa979def0bf034cc6730f06c357" compoundref="NPC_8cpp" startline="88" endline="91">getRot</references>
+        <references refid="classCNPC_1a6b562d2af5ea91088f8cb28a516132cb" compoundref="NPC_8cpp" startline="180" endline="183">setPath</references>
+        <references refid="classCNPC_1a845812680ee1f5f2ae18a01091733665" compoundref="NPC_8cpp" startline="38" endline="41">setPosX</references>
+        <references refid="classCNPC_1a3cd42b55ac62c078bd61ee944cac532f" compoundref="NPC_8cpp" startline="43" endline="46">setPosZ</references>
+        <references refid="classCNPC_1abdcd69d857e7cf55fa81318e3c6ef21b" compoundref="NPC_8cpp" startline="83" endline="86">SetRot</references>
+        <references refid="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" compoundref="NPC_8h" startline="37">shop</references>
+        <referencedby refid="classSP2_1a0bf675d02f52d549d3ce55ae3d5112ce" compoundref="SP2_8cpp" startline="898" endline="903">SP2::NPCwalk</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1afc17964b06ef48daf55d783a3b78c8a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string CNPC::getName</definition>
+        <argsstring>(void)</argsstring>
+        <name>getName</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="58" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="53" bodyend="56"/>
+        <references refid="classCNPC_1a6f3934d6011937922528d4462f00a9c1" compoundref="NPC_8h" startline="26">CharName</references>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a3f6cd3f2aaa1cbf05768971d5e455cdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CNPC::getPosX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getPosX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="59" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="58" bodyend="61"/>
+        <references refid="classCNPC_1ae501d4735a6c0bfe3fd52849ac5336b6" compoundref="NPC_8h" startline="28">CharPosX</references>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1115" endline="1360">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="3729" endline="3749">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="1955" endline="2152">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a790575c687283f2ee6807824b9bb302f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CNPC::getPosZ</definition>
+        <argsstring>(void)</argsstring>
+        <name>getPosZ</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="60" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="63" bodyend="66"/>
+        <references refid="classCNPC_1a1eedf86dfafaf8a350c7bc657dcf2f9e" compoundref="NPC_8h" startline="29">CharPosZ</references>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1115" endline="1360">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="3729" endline="3749">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="1955" endline="2152">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1aa6cf575198a51b6e21e79b1fc0bf0258" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CNPC::getSpeed</definition>
+        <argsstring>(void)</argsstring>
+        <name>getSpeed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="61" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="68" bodyend="71"/>
+        <references refid="classCNPC_1a45836ebd3d5cf608fde27b69d8ef736d" compoundref="NPC_8h" startline="27">CharSpeed</references>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a59c64aa979def0bf034cc6730f06c357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CNPC::getRot</definition>
+        <argsstring>(void)</argsstring>
+        <name>getRot</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="62" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="88" bodyend="91"/>
+        <references refid="classCNPC_1a1c5ef0c801785e4d2fc83cc2767a9d72" compoundref="NPC_8h" startline="30">CharRot</references>
+        <referencedby refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" compoundref="NPC_8cpp" startline="432" endline="517">Checkout</referencedby>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="3729" endline="3749">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a5f825df48d7176c9d416a81ad864d650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CNPC::getDirection</definition>
+        <argsstring>(void)</argsstring>
+        <name>getDirection</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="63" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="78" bodyend="81"/>
+        <references refid="classCNPC_1a2953a31ac78b339ad246327a98fed02c" compoundref="NPC_8h" startline="31">Direction</references>
+        <referencedby refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" compoundref="NPC_8cpp" startline="93" endline="178">TestAIPath</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a2373bd3885f598112294dfb287bbff10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CNPC::getPath</definition>
+        <argsstring>(void)</argsstring>
+        <name>getPath</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="64" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="185" bodyend="188"/>
+        <references refid="classCNPC_1a64f77ee46d72e0773b9ea8a3c49ee758" compoundref="NPC_8h" startline="32">Path</references>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1aa08aef76be9578365991835b467e24ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CNPC::getCheckpoints</definition>
+        <argsstring>(int n)</argsstring>
+        <name>getCheckpoints</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="65" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="408" bodyend="411"/>
+        <references refid="classCNPC_1a6741eadf0021658d7000ffa726c64c15" compoundref="NPC_8h" startline="34">Checkpoints</references>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1acd7886370a516b0082acfb9241a82d3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CNPC::getCurrentState</definition>
+        <argsstring>(void)</argsstring>
+        <name>getCurrentState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="66" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="418" bodyend="421"/>
+        <references refid="classCNPC_1ad5214b99d6f402f0c004027cf8c03820" compoundref="NPC_8h" startline="33">CurrentState</references>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1ac7a179382b95a824fe95f334d48a3fb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CNPC::RandNumGen</definition>
+        <argsstring>(int minNum, int maxNum)</argsstring>
+        <name>RandNumGen</name>
+        <param>
+          <type>int</type>
+          <declname>minNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="73" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="423" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a7c3b477437309235bc2ca10618432f20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::Checkout</definition>
+        <argsstring>()</argsstring>
+        <name>Checkout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="74" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="432" bodyend="517"/>
+        <references refid="classCNPC_1ab029436c78458fa7505eec21b619ad49" compoundref="NPC_8h" startline="70">cashIn</references>
+        <references refid="classCNPC_1a6c499945d0a1f6d3302092e33449d74f" compoundref="NPC_8h" startline="71">exitMart</references>
+        <references refid="classCNPC_1a3f6cd3f2aaa1cbf05768971d5e455cdb" compoundref="NPC_8cpp" startline="58" endline="61">getPosX</references>
+        <references refid="classCNPC_1a790575c687283f2ee6807824b9bb302f" compoundref="NPC_8cpp" startline="63" endline="66">getPosZ</references>
+        <references refid="classCNPC_1a59c64aa979def0bf034cc6730f06c357" compoundref="NPC_8cpp" startline="88" endline="91">getRot</references>
+        <references refid="classCNPC_1a845812680ee1f5f2ae18a01091733665" compoundref="NPC_8cpp" startline="38" endline="41">setPosX</references>
+        <references refid="classCNPC_1a3cd42b55ac62c078bd61ee944cac532f" compoundref="NPC_8cpp" startline="43" endline="46">setPosZ</references>
+        <references refid="classCNPC_1abdcd69d857e7cf55fa81318e3c6ef21b" compoundref="NPC_8cpp" startline="83" endline="86">SetRot</references>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1ac1740b58e66d9439d30139e229610952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::Steal</definition>
+        <argsstring>()</argsstring>
+        <name>Steal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="75" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="518" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a8fa26f62137bbc2bfe0d142b36a26f99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::setShop</definition>
+        <argsstring>(bool input)</argsstring>
+        <name>setShop</name>
+        <param>
+          <type>bool</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="76" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="521" bodyend="524"/>
+        <references refid="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" compoundref="NPC_8h" startline="37">shop</references>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a4f2de594e6d68c1493545677721b6ca8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CNPC::getShop</definition>
+        <argsstring>()</argsstring>
+        <name>getShop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="77" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="525" bodyend="528"/>
+        <references refid="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" compoundref="NPC_8h" startline="37">shop</references>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a28323ea0f31c013066a0fe702961636f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::respawn</definition>
+        <argsstring>()</argsstring>
+        <name>respawn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="78" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="529" bodyend="538"/>
+        <references refid="classCNPC_1ab029436c78458fa7505eec21b619ad49" compoundref="NPC_8h" startline="70">cashIn</references>
+        <references refid="classCNPC_1a3b462fff23af392e93706c4f2f7c67aa" compoundref="NPC_8h" startline="69">maxItem</references>
+        <references refid="classCNPC_1a845812680ee1f5f2ae18a01091733665" compoundref="NPC_8cpp" startline="38" endline="41">setPosX</references>
+        <references refid="classCNPC_1a3cd42b55ac62c078bd61ee944cac532f" compoundref="NPC_8cpp" startline="43" endline="46">setPosZ</references>
+        <references refid="classCNPC_1abdcd69d857e7cf55fa81318e3c6ef21b" compoundref="NPC_8cpp" startline="83" endline="86">SetRot</references>
+        <referencedby refid="classSP2_1a536c8c778dc9cc319bd16298cf5ae0dd" compoundref="SP2_8cpp" startline="4020" endline="4137">SP2::NPCShop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1aa072fbc13660787d118a8b06b5949d6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CNPC::ReadTextFilePath</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>ReadTextFilePath</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="80" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="195" bodyend="241"/>
+        <references refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" compoundref="NPC_8cpp" startline="13" endline="26">CNPC</references>
+        <references refid="classCNPC_1a6247310ed01f5479b525e320741989dc" compoundref="NPC_8h" startline="35">npc_list</references>
+        <references refid="classCNPC_1abab78f9367c0ad00421f45bcaa2f3bfe" compoundref="NPC_8cpp" startline="403" endline="406">setCheckpoints</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCNPC_1a279d766cf9fd1aefb298c4baccc2b011" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classCNPC" kindref="compound">CNPC</ref> *</type>
+        <definition>CNPC * CNPC::GetNPCPos</definition>
+        <argsstring>(const int selection)</argsstring>
+        <name>GetNPCPos</name>
+        <param>
+          <type>const int</type>
+          <declname>selection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="81" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.cpp" bodystart="190" bodyend="193"/>
+        <references refid="classCNPC_1a6247310ed01f5479b525e320741989dc" compoundref="NPC_8h" startline="35">npc_list</references>
+        <referencedby refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" compoundref="NPC_8cpp" startline="243" endline="401">ShopPathing</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4581">
+        <label>CNPC</label>
+        <link refid="classCNPC"/>
+        <childnode refid="4582" relation="usage">
+          <edgelabel>npc_list</edgelabel>
+        </childnode>
+        <childnode refid="4583" relation="usage">
+          <edgelabel>CharName</edgelabel>
+        </childnode>
+        <childnode refid="4584" relation="usage">
+          <edgelabel>CharPosZ</edgelabel>
+          <edgelabel>CharRot</edgelabel>
+          <edgelabel>Checkpoints</edgelabel>
+          <edgelabel>CharSpeed</edgelabel>
+          <edgelabel>CharPosX</edgelabel>
+        </childnode>
+        <childnode refid="4585" relation="usage">
+          <edgelabel>CurrentState</edgelabel>
+          <edgelabel>maxItem</edgelabel>
+          <edgelabel>Path</edgelabel>
+          <edgelabel>Direction</edgelabel>
+        </childnode>
+        <childnode refid="4586" relation="usage">
+          <edgelabel>exitMart</edgelabel>
+          <edgelabel>cashIn</edgelabel>
+          <edgelabel>shop</edgelabel>
+          <edgelabel>enterMart</edgelabel>
+        </childnode>
+      </node>
+      <node id="4583">
+        <label>string</label>
+      </node>
+      <node id="4584">
+        <label>float</label>
+      </node>
+      <node id="4585">
+        <label>int</label>
+      </node>
+      <node id="4582">
+        <label>vector&lt; CNPC * &gt;</label>
+      </node>
+      <node id="4586">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" line="24" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h" bodystart="23" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classCNPC_1ab029436c78458fa7505eec21b619ad49" prot="public" virt="non-virtual"><scope>CNPC</scope><name>cashIn</name></member>
+      <member refid="classCNPC_1a6f3934d6011937922528d4462f00a9c1" prot="private" virt="non-virtual"><scope>CNPC</scope><name>CharName</name></member>
+      <member refid="classCNPC_1ae501d4735a6c0bfe3fd52849ac5336b6" prot="private" virt="non-virtual"><scope>CNPC</scope><name>CharPosX</name></member>
+      <member refid="classCNPC_1a1eedf86dfafaf8a350c7bc657dcf2f9e" prot="private" virt="non-virtual"><scope>CNPC</scope><name>CharPosZ</name></member>
+      <member refid="classCNPC_1a1c5ef0c801785e4d2fc83cc2767a9d72" prot="private" virt="non-virtual"><scope>CNPC</scope><name>CharRot</name></member>
+      <member refid="classCNPC_1a45836ebd3d5cf608fde27b69d8ef736d" prot="private" virt="non-virtual"><scope>CNPC</scope><name>CharSpeed</name></member>
+      <member refid="classCNPC_1a7c3b477437309235bc2ca10618432f20" prot="public" virt="non-virtual"><scope>CNPC</scope><name>Checkout</name></member>
+      <member refid="classCNPC_1a6741eadf0021658d7000ffa726c64c15" prot="private" virt="non-virtual"><scope>CNPC</scope><name>Checkpoints</name></member>
+      <member refid="classCNPC_1ae1da3972c31ba69773452b71104db4f4" prot="public" virt="non-virtual"><scope>CNPC</scope><name>CNPC</name></member>
+      <member refid="classCNPC_1ad5214b99d6f402f0c004027cf8c03820" prot="private" virt="non-virtual"><scope>CNPC</scope><name>CurrentState</name></member>
+      <member refid="classCNPC_1a2953a31ac78b339ad246327a98fed02c" prot="private" virt="non-virtual"><scope>CNPC</scope><name>Direction</name></member>
+      <member refid="classCNPC_1a3ce1aa0e500c403b307f69ccb74effde" prot="public" virt="non-virtual"><scope>CNPC</scope><name>enterMart</name></member>
+      <member refid="classCNPC_1a6c499945d0a1f6d3302092e33449d74f" prot="public" virt="non-virtual"><scope>CNPC</scope><name>exitMart</name></member>
+      <member refid="classCNPC_1aa08aef76be9578365991835b467e24ad" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getCheckpoints</name></member>
+      <member refid="classCNPC_1acd7886370a516b0082acfb9241a82d3e" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getCurrentState</name></member>
+      <member refid="classCNPC_1a5f825df48d7176c9d416a81ad864d650" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getDirection</name></member>
+      <member refid="classCNPC_1afc17964b06ef48daf55d783a3b78c8a3" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getName</name></member>
+      <member refid="classCNPC_1a279d766cf9fd1aefb298c4baccc2b011" prot="public" virt="non-virtual"><scope>CNPC</scope><name>GetNPCPos</name></member>
+      <member refid="classCNPC_1a2373bd3885f598112294dfb287bbff10" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getPath</name></member>
+      <member refid="classCNPC_1a3f6cd3f2aaa1cbf05768971d5e455cdb" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getPosX</name></member>
+      <member refid="classCNPC_1a790575c687283f2ee6807824b9bb302f" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getPosZ</name></member>
+      <member refid="classCNPC_1a59c64aa979def0bf034cc6730f06c357" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getRot</name></member>
+      <member refid="classCNPC_1a4f2de594e6d68c1493545677721b6ca8" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getShop</name></member>
+      <member refid="classCNPC_1aa6cf575198a51b6e21e79b1fc0bf0258" prot="public" virt="non-virtual"><scope>CNPC</scope><name>getSpeed</name></member>
+      <member refid="classCNPC_1a3b462fff23af392e93706c4f2f7c67aa" prot="public" virt="non-virtual"><scope>CNPC</scope><name>maxItem</name></member>
+      <member refid="classCNPC_1a6247310ed01f5479b525e320741989dc" prot="private" virt="non-virtual"><scope>CNPC</scope><name>npc_list</name></member>
+      <member refid="classCNPC_1a64f77ee46d72e0773b9ea8a3c49ee758" prot="private" virt="non-virtual"><scope>CNPC</scope><name>Path</name></member>
+      <member refid="classCNPC_1ac7a179382b95a824fe95f334d48a3fb5" prot="public" virt="non-virtual"><scope>CNPC</scope><name>RandNumGen</name></member>
+      <member refid="classCNPC_1aa072fbc13660787d118a8b06b5949d6f" prot="public" virt="non-virtual"><scope>CNPC</scope><name>ReadTextFilePath</name></member>
+      <member refid="classCNPC_1a28323ea0f31c013066a0fe702961636f" prot="public" virt="non-virtual"><scope>CNPC</scope><name>respawn</name></member>
+      <member refid="classCNPC_1abab78f9367c0ad00421f45bcaa2f3bfe" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setCheckpoints</name></member>
+      <member refid="classCNPC_1a86cc66cac7af4a0558b5816a970e2241" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setCurrentState</name></member>
+      <member refid="classCNPC_1a648ab30fd1662b891d69882ddbd7206b" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setDirection</name></member>
+      <member refid="classCNPC_1aa5e3aede2735126287808e41b35d3e79" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setName</name></member>
+      <member refid="classCNPC_1a6b562d2af5ea91088f8cb28a516132cb" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setPath</name></member>
+      <member refid="classCNPC_1a845812680ee1f5f2ae18a01091733665" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setPosX</name></member>
+      <member refid="classCNPC_1a3cd42b55ac62c078bd61ee944cac532f" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setPosZ</name></member>
+      <member refid="classCNPC_1abdcd69d857e7cf55fa81318e3c6ef21b" prot="public" virt="non-virtual"><scope>CNPC</scope><name>SetRot</name></member>
+      <member refid="classCNPC_1a8fa26f62137bbc2bfe0d142b36a26f99" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setShop</name></member>
+      <member refid="classCNPC_1a8e4661c79851a208479a7e6117388194" prot="public" virt="non-virtual"><scope>CNPC</scope><name>setSpeed</name></member>
+      <member refid="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" prot="private" virt="non-virtual"><scope>CNPC</scope><name>shop</name></member>
+      <member refid="classCNPC_1ab35bbe4dc25cfad73de0a0fed2c969e9" prot="public" virt="non-virtual"><scope>CNPC</scope><name>ShopPathing</name></member>
+      <member refid="classCNPC_1ac1740b58e66d9439d30139e229610952" prot="public" virt="non-virtual"><scope>CNPC</scope><name>Steal</name></member>
+      <member refid="classCNPC_1ae2c051e137267c6b8fc7fe9815b20bd6" prot="public" virt="non-virtual"><scope>CNPC</scope><name>TestAIPath</name></member>
+      <member refid="classCNPC_1aa6a089efd5dab54b9fdbe8bf5e6f79e1" prot="public" virt="non-virtual"><scope>CNPC</scope><name>~CNPC</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,36 @@
+digraph "SP2::UIupdates"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SP2::UIupdates",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CCharacter::getHealth",height=0.2,width=0.4,color="black",URL="$classCCharacter.html#a51b3281282938697a286d38e06c65f3c"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CItem::getItemName",height=0.2,width=0.4,color="black",URL="$classCItem.html#a97214eb9bcb83e71c52463d2adc4c5b6"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CItem::getItemPrice",height=0.2,width=0.4,color="black",URL="$classCItem.html#ae9e41ff6cf5ce9746520b5cd956baba6"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CItem::getItemTranslationX",height=0.2,width=0.4,color="black",URL="$classCItem.html#a4467447f207fc549d27c53d308c3c99c"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CItem::getItemTranslationY",height=0.2,width=0.4,color="black",URL="$classCItem.html#a019ed70d6dd9f434bdede3fca771622b"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CItem::getItemTranslationZ",height=0.2,width=0.4,color="black",URL="$classCItem.html#aa00a713e2186dc58e2a49727bb0e3df7"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="CCharacter::getMoney",height=0.2,width=0.4,color="black",URL="$classCCharacter.html#a839914479f46f17587ecda205dbf900b"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="CReadFromText::GetRenderPos",height=0.2,width=0.4,color="black",URL="$classCReadFromText.html#a47c9cede756d7aa11b86d6f1fb74e958"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="CReadFromText::GetRender\lPosItem",height=0.2,width=0.4,color="black",URL="$classCReadFromText.html#af3e2721e0c4eaf2dea2c5c97337df1b8"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="CCharacter::getStamina",height=0.2,width=0.4,color="black",URL="$classCCharacter.html#aaf9f7a3c49545cf4f8ded10af3ecddad"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="CRenderPos::getTranslationX",height=0.2,width=0.4,color="black",URL="$classCRenderPos.html#a7980c6f5efe97b90a255bfc674362b88"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="CRenderPos::getTranslationY",height=0.2,width=0.4,color="black",URL="$classCRenderPos.html#aef3ffa8b7f1d7c0e8f5481eaa8b8e5cc"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="CRenderPos::getTranslationZ",height=0.2,width=0.4,color="black",URL="$classCRenderPos.html#a34426e676efb3ff2698f33acd192e812"];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="CReadFromText::ReturnListSize",height=0.2,width=0.4,color="black",URL="$classCReadFromText.html#abeec024313c1baf3541c72400c070b08"];
+}

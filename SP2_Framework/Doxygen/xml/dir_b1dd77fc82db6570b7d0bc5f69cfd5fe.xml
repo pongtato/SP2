@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="dir_b1dd77fc82db6570b7d0bc5f69cfd5fe" kind="dir">
+    <compoundname>graphviz-2.38</compoundname>
+    <innerdir refid="dir_a334ded5927ae8929a5cf715c79f32d2">graphviz-2.38/release</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/"/>
+  </compounddef>
+</doxygen>

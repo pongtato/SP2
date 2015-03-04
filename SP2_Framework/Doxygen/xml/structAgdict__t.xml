@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="structAgdict__t" kind="struct" prot="public">
+    <compoundname>Agdict_t</compoundname>
+    <includes refid="graph_8h" local="no">graph.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structAgdict__t_1a29c4612c530c22c43cc47ba607d04235" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Agdict_t::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" line="117" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structAgdict__t_1a95f3d8b2cd772d676bb80b97fbc0f7ba" prot="public" static="no" mutable="no">
+        <type><ref refid="cdt_8h_1ac0967b1ac6289e719be57de7797cbc56" kindref="member">Dict_t</ref> *</type>
+        <definition>Dict_t* Agdict_t::dict</definition>
+        <argsstring></argsstring>
+        <name>dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" line="118" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structAgdict__t_1aa455c87854a6f5ffba370da88f5c645a" prot="public" static="no" mutable="no">
+        <type><ref refid="structAgsym__t" kindref="compound">Agsym_t</ref> **</type>
+        <definition>Agsym_t** Agdict_t::list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" line="119" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3370">
+        <label></label>
+      </node>
+      <node id="3356">
+        <label>Agdict_t</label>
+        <link refid="structAgdict__t"/>
+        <childnode refid="3357" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="3361" relation="usage">
+          <edgelabel>dict</edgelabel>
+        </childnode>
+        <childnode refid="3375" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3372">
+        <label>Void_t *</label>
+      </node>
+      <node id="3366">
+        <label>Dtcompar_f</label>
+      </node>
+      <node id="3375">
+        <label>char *</label>
+      </node>
+      <node id="3367">
+        <label>Dtmemory_f</label>
+      </node>
+      <node id="3357">
+        <label>Agsym_t</label>
+        <link refid="structAgsym__t"/>
+        <childnode refid="3358" relation="usage">
+          <edgelabel>value</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="3359" relation="usage">
+          <edgelabel>index</edgelabel>
+        </childnode>
+        <childnode refid="3360" relation="usage">
+          <edgelabel>printed</edgelabel>
+          <edgelabel>fixed</edgelabel>
+        </childnode>
+      </node>
+      <node id="3361">
+        <label>_dt_s</label>
+        <link refid="struct__dt__s"/>
+        <childnode refid="3362" relation="usage">
+          <edgelabel>disc</edgelabel>
+        </childnode>
+        <childnode refid="3369" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="3372" relation="usage">
+          <edgelabel>user</edgelabel>
+        </childnode>
+        <childnode refid="3359" relation="usage">
+          <edgelabel>type</edgelabel>
+          <edgelabel>nview</edgelabel>
+        </childnode>
+        <childnode refid="3361" relation="usage">
+          <edgelabel>view</edgelabel>
+          <edgelabel>walk</edgelabel>
+        </childnode>
+        <childnode refid="3367" relation="usage">
+          <edgelabel>memoryf</edgelabel>
+        </childnode>
+        <childnode refid="3373" relation="usage">
+          <edgelabel>searchf</edgelabel>
+        </childnode>
+        <childnode refid="3374" relation="usage">
+          <edgelabel>meth</edgelabel>
+        </childnode>
+      </node>
+      <node id="3369">
+        <label>_dtdata_s</label>
+        <link refid="struct__dtdata__s"/>
+        <childnode refid="3370" relation="usage">
+          <edgelabel>hh</edgelabel>
+        </childnode>
+        <childnode refid="3371" relation="usage">
+          <edgelabel>here</edgelabel>
+          <edgelabel>_htab</edgelabel>
+          <edgelabel>_head</edgelabel>
+        </childnode>
+        <childnode refid="3359" relation="usage">
+          <edgelabel>size</edgelabel>
+          <edgelabel>loop</edgelabel>
+          <edgelabel>ntab</edgelabel>
+          <edgelabel>type</edgelabel>
+          <edgelabel>minp</edgelabel>
+        </childnode>
+      </node>
+      <node id="3359">
+        <label>int</label>
+      </node>
+      <node id="3373">
+        <label>Dtsearch_f</label>
+      </node>
+      <node id="3374">
+        <label>_dtmethod_s</label>
+        <link refid="struct__dtmethod__s"/>
+        <childnode refid="3359" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="3373" relation="usage">
+          <edgelabel>searchf</edgelabel>
+        </childnode>
+      </node>
+      <node id="3365">
+        <label>Dtmake_f</label>
+      </node>
+      <node id="3368">
+        <label>Dthash_f</label>
+      </node>
+      <node id="3362">
+        <label>_dtdisc_s</label>
+        <link refid="struct__dtdisc__s"/>
+        <childnode refid="3363" relation="usage">
+          <edgelabel>freef</edgelabel>
+        </childnode>
+        <childnode refid="3364" relation="usage">
+          <edgelabel>eventf</edgelabel>
+        </childnode>
+        <childnode refid="3365" relation="usage">
+          <edgelabel>makef</edgelabel>
+        </childnode>
+        <childnode refid="3366" relation="usage">
+          <edgelabel>comparf</edgelabel>
+        </childnode>
+        <childnode refid="3359" relation="usage">
+          <edgelabel>size</edgelabel>
+          <edgelabel>key</edgelabel>
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="3367" relation="usage">
+          <edgelabel>memoryf</edgelabel>
+        </childnode>
+        <childnode refid="3368" relation="usage">
+          <edgelabel>hashf</edgelabel>
+        </childnode>
+      </node>
+      <node id="3371">
+        <label>_dtlink_s</label>
+        <link refid="struct__dtlink__s"/>
+        <childnode refid="3371" relation="usage">
+          <edgelabel>_left</edgelabel>
+          <edgelabel>right</edgelabel>
+        </childnode>
+        <childnode refid="3370" relation="usage">
+          <edgelabel>hl</edgelabel>
+        </childnode>
+        <childnode refid="3360" relation="usage">
+          <edgelabel>_hash</edgelabel>
+        </childnode>
+      </node>
+      <node id="3360">
+        <label>unsigned</label>
+      </node>
+      <node id="3363">
+        <label>Dtfree_f</label>
+      </node>
+      <node id="3358">
+        <label>char</label>
+      </node>
+      <node id="3364">
+        <label>Dtevent_f</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" line="116" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/graph.h" bodystart="116" bodyend="120"/>
+    <listofallmembers>
+      <member refid="structAgdict__t_1a95f3d8b2cd772d676bb80b97fbc0f7ba" prot="public" virt="non-virtual"><scope>Agdict_t</scope><name>dict</name></member>
+      <member refid="structAgdict__t_1aa455c87854a6f5ffba370da88f5c645a" prot="public" virt="non-virtual"><scope>Agdict_t</scope><name>list</name></member>
+      <member refid="structAgdict__t_1a29c4612c530c22c43cc47ba607d04235" prot="public" virt="non-virtual"><scope>Agdict_t</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

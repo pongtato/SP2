@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCTrolley" kind="class" prot="public">
+    <compoundname>CTrolley</compoundname>
+    <includes refid="Trolley_8h" local="no">Trolley.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCTrolley_1ab3353ae145dcc7c49ec99803a1ff2d26" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CTrolley::PositionTranslate</definition>
+        <argsstring></argsstring>
+        <name>PositionTranslate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="23" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classCTrolley_1a600fefa0abdb35b1dd981814c033ab93" compoundref="Trolley_8cpp" startline="13" endline="18">CTrolley</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCTrolley_1a6ee91f3cca77a12a0361cc88a3b394c5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CTrolley::LastX</definition>
+        <argsstring></argsstring>
+        <name>LastX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="24" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1115" endline="1360">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classCTrolley_1a31c198781cf348f568157a5bc56d3440" compoundref="Trolley_8cpp" startline="29" endline="35">SetList</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="1503" endline="1808">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCTrolley_1abb73870d2f14dc1e2a14c075fe2b9a16" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CTrolley::LastZ</definition>
+        <argsstring></argsstring>
+        <name>LastZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="25" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1115" endline="1360">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classCTrolley_1a31c198781cf348f568157a5bc56d3440" compoundref="Trolley_8cpp" startline="29" endline="35">SetList</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="1503" endline="1808">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="959" endline="1060">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCTrolley_1a70c5cfe3f0d9a4cf0141df976563d0a7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CTrolley::LastRotation</definition>
+        <argsstring></argsstring>
+        <name>LastRotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="26" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classCTrolley_1a31c198781cf348f568157a5bc56d3440" compoundref="Trolley_8cpp" startline="29" endline="35">SetList</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="1503" endline="1808">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCTrolley_1a6f672dbc52386ea4f647573be7afe33f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CTrolley::ExpansionSize</definition>
+        <argsstring></argsstring>
+        <name>ExpansionSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="27" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCTrolley_1a31c198781cf348f568157a5bc56d3440" compoundref="Trolley_8cpp" startline="29" endline="35">SetList</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCTrolley_1ae7742346d79bf95206824a348a300646" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CTrolley::TrolleyLimit</definition>
+        <argsstring></argsstring>
+        <name>TrolleyLimit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="28" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classCTrolley_1a600fefa0abdb35b1dd981814c033ab93" compoundref="Trolley_8cpp" startline="13" endline="18">CTrolley</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCTrolley_1a144e0b8b1a0e582492a43f52ee3a850b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CTrolley::TrolleyCount</definition>
+        <argsstring></argsstring>
+        <name>TrolleyCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="29" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classCTrolley_1a600fefa0abdb35b1dd981814c033ab93" compoundref="Trolley_8cpp" startline="13" endline="18">CTrolley</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCTrolley_1a600fefa0abdb35b1dd981814c033ab93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CTrolley::CTrolley</definition>
+        <argsstring>(void)</argsstring>
+        <name>CTrolley</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="21" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.cpp" bodystart="13" bodyend="18"/>
+        <references refid="classCTrolley_1ab3353ae145dcc7c49ec99803a1ff2d26" compoundref="Trolley_8h" startline="23">PositionTranslate</references>
+        <references refid="classCTrolley_1a144e0b8b1a0e582492a43f52ee3a850b" compoundref="Trolley_8h" startline="29">TrolleyCount</references>
+        <references refid="classCTrolley_1ae7742346d79bf95206824a348a300646" compoundref="Trolley_8h" startline="28">TrolleyLimit</references>
+      </memberdef>
+      <memberdef kind="function" id="classCTrolley_1a766c7dbcd36f190ca5bd4390f1d91029" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CTrolley::~CTrolley</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CTrolley</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="22" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classCTrolley_1a06ebc7875111ea5c68a2c5c77d2d3e60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CTrolley::Spawner</definition>
+        <argsstring>(void)</argsstring>
+        <name>Spawner</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="31" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classCTrolley_1a31c198781cf348f568157a5bc56d3440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CTrolley::SetList</definition>
+        <argsstring>(float x, float z, float rot, int size)</argsstring>
+        <name>SetList</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="32" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.cpp" bodystart="29" bodyend="35"/>
+        <references refid="classCTrolley_1a6f672dbc52386ea4f647573be7afe33f" compoundref="Trolley_8h" startline="27">ExpansionSize</references>
+        <references refid="classCTrolley_1a70c5cfe3f0d9a4cf0141df976563d0a7" compoundref="Trolley_8h" startline="26">LastRotation</references>
+        <references refid="classCTrolley_1a6ee91f3cca77a12a0361cc88a3b394c5" compoundref="Trolley_8h" startline="24">LastX</references>
+        <references refid="classCTrolley_1abb73870d2f14dc1e2a14c075fe2b9a16" compoundref="Trolley_8h" startline="25">LastZ</references>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4616">
+        <label>float</label>
+      </node>
+      <node id="4617">
+        <label>int</label>
+      </node>
+      <node id="4615">
+        <label>CTrolley</label>
+        <link refid="classCTrolley"/>
+        <childnode refid="4616" relation="usage">
+          <edgelabel>LastZ</edgelabel>
+          <edgelabel>LastRotation</edgelabel>
+          <edgelabel>LastX</edgelabel>
+          <edgelabel>PositionTranslate</edgelabel>
+        </childnode>
+        <childnode refid="4617" relation="usage">
+          <edgelabel>TrolleyLimit</edgelabel>
+          <edgelabel>TrolleyCount</edgelabel>
+          <edgelabel>ExpansionSize</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" line="18" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Trolley.h" bodystart="17" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classCTrolley_1a600fefa0abdb35b1dd981814c033ab93" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>CTrolley</name></member>
+      <member refid="classCTrolley_1a6f672dbc52386ea4f647573be7afe33f" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>ExpansionSize</name></member>
+      <member refid="classCTrolley_1a70c5cfe3f0d9a4cf0141df976563d0a7" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>LastRotation</name></member>
+      <member refid="classCTrolley_1a6ee91f3cca77a12a0361cc88a3b394c5" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>LastX</name></member>
+      <member refid="classCTrolley_1abb73870d2f14dc1e2a14c075fe2b9a16" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>LastZ</name></member>
+      <member refid="classCTrolley_1ab3353ae145dcc7c49ec99803a1ff2d26" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>PositionTranslate</name></member>
+      <member refid="classCTrolley_1a31c198781cf348f568157a5bc56d3440" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>SetList</name></member>
+      <member refid="classCTrolley_1a06ebc7875111ea5c68a2c5c77d2d3e60" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>Spawner</name></member>
+      <member refid="classCTrolley_1a144e0b8b1a0e582492a43f52ee3a850b" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>TrolleyCount</name></member>
+      <member refid="classCTrolley_1ae7742346d79bf95206824a348a300646" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>TrolleyLimit</name></member>
+      <member refid="classCTrolley_1a766c7dbcd36f190ca5bd4390f1d91029" prot="public" virt="non-virtual"><scope>CTrolley</scope><name>~CTrolley</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

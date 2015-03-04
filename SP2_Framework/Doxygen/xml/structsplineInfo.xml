@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="structsplineInfo" kind="struct" prot="public">
+    <compoundname>splineInfo</compoundname>
+    <includes refid="types_8h" local="no">types.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsplineInfo_1ab95d385ccfc3c9b89b9c09d765592350" prot="public" static="no" mutable="no">
+        <type><ref refid="types_8h_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref>(*</type>
+        <definition>boolean(* splineInfo::swapEnds)(edge_t *e)</definition>
+        <argsstring>)(edge_t *e)</argsstring>
+        <name>swapEnds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="87" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsplineInfo_1a3a31cb7c036d0febf5a31da9f0c154d0" prot="public" static="no" mutable="no">
+        <type><ref refid="types_8h_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref>(*</type>
+        <definition>boolean(* splineInfo::splineMerge)(node_t *n)</definition>
+        <argsstring>)(node_t *n)</argsstring>
+        <name>splineMerge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="88" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsplineInfo_1af4829172b595849889a8245d0effd98e" prot="public" static="no" mutable="no">
+        <type><ref refid="types_8h_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>boolean splineInfo::ignoreSwap</definition>
+        <argsstring></argsstring>
+        <name>ignoreSwap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="89" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsplineInfo_1a22976cfd9e85689f83319723003475bd" prot="public" static="no" mutable="no">
+        <type><ref refid="types_8h_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref></type>
+        <definition>boolean splineInfo::isOrtho</definition>
+        <argsstring></argsstring>
+        <name>isOrtho</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="90" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5728">
+        <label>unsigned char</label>
+      </node>
+      <node id="5727">
+        <label>splineInfo</label>
+        <link refid="structsplineInfo"/>
+        <childnode refid="5728" relation="usage">
+          <edgelabel>swapEnds</edgelabel>
+          <edgelabel>splineMerge</edgelabel>
+        </childnode>
+        <childnode refid="5729" relation="usage">
+          <edgelabel>isOrtho</edgelabel>
+          <edgelabel>ignoreSwap</edgelabel>
+        </childnode>
+      </node>
+      <node id="5729">
+        <label>unsigned</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="86" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="86" bodyend="91"/>
+    <listofallmembers>
+      <member refid="structsplineInfo_1af4829172b595849889a8245d0effd98e" prot="public" virt="non-virtual"><scope>splineInfo</scope><name>ignoreSwap</name></member>
+      <member refid="structsplineInfo_1a22976cfd9e85689f83319723003475bd" prot="public" virt="non-virtual"><scope>splineInfo</scope><name>isOrtho</name></member>
+      <member refid="structsplineInfo_1a3a31cb7c036d0febf5a31da9f0c154d0" prot="public" virt="non-virtual"><scope>splineInfo</scope><name>splineMerge</name></member>
+      <member refid="structsplineInfo_1ab95d385ccfc3c9b89b9c09d765592350" prot="public" virt="non-virtual"><scope>splineInfo</scope><name>swapEnds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

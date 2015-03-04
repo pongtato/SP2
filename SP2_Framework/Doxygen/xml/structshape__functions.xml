@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="structshape__functions" kind="struct" prot="public">
+    <compoundname>shape_functions</compoundname>
+    <includes refid="types_8h" local="no">types.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structshape__functions_1ab973eefdfd9a104ad6007b7ec7e275c9" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* shape_functions::initfn)(node_t *)</definition>
+        <argsstring>)(node_t *)</argsstring>
+        <name>initfn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="174" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshape__functions_1a5bdfddd20e0fb7604b7d5e15c8f57aaf" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* shape_functions::freefn)(node_t *)</definition>
+        <argsstring>)(node_t *)</argsstring>
+        <name>freefn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="175" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshape__functions_1a33509060b5149319bef13250fce36c69" prot="public" static="no" mutable="no">
+        <type><ref refid="structport" kindref="compound">port</ref>(*</type>
+        <definition>port(* shape_functions::portfn)(node_t *, char *, char *)</definition>
+        <argsstring>)(node_t *, char *, char *)</argsstring>
+        <name>portfn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="176" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshape__functions_1a5d267ca743693a71778ed6d74d778fc4" prot="public" static="no" mutable="no">
+        <type><ref refid="types_8h_1a7670a4e8a07d9ebb00411948b0bbf86d" kindref="member">boolean</ref>(*</type>
+        <definition>boolean(* shape_functions::insidefn)(inside_t *inside_context, pointf)</definition>
+        <argsstring>)(inside_t *inside_context, pointf)</argsstring>
+        <name>insidefn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="177" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshape__functions_1a282f1ff290910518898df6368f7d97f9" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* shape_functions::pboxfn)(node_t *n, port *p, int side, boxf rv[], int *kptr)</definition>
+        <argsstring>)(node_t *n, port *p, int side, boxf rv[], int *kptr)</argsstring>
+        <name>pboxfn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="178" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshape__functions_1aa37923bbe637a971dda16262a93c1cbe" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* shape_functions::codefn)(GVJ_t *job, node_t *n)</definition>
+        <argsstring>)(GVJ_t *job, node_t *n)</argsstring>
+        <name>codefn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="179" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5675">
+        <label>pointf_s</label>
+        <link refid="structpointf__s"/>
+        <childnode refid="5672" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+        </childnode>
+      </node>
+      <node id="5680">
+        <label>void(*)(GVJ_t *job, node_t *n)</label>
+      </node>
+      <node id="5677">
+        <label>unsigned char</label>
+      </node>
+      <node id="5678">
+        <label>int</label>
+      </node>
+      <node id="5672">
+        <label>double</label>
+      </node>
+      <node id="5671">
+        <label>port</label>
+        <link refid="structport"/>
+        <childnode refid="5672" relation="usage">
+          <edgelabel>theta</edgelabel>
+        </childnode>
+        <childnode refid="5673" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="5674" relation="usage">
+          <edgelabel>bp</edgelabel>
+        </childnode>
+        <childnode refid="5676" relation="usage">
+          <edgelabel>constrained</edgelabel>
+          <edgelabel>defined</edgelabel>
+          <edgelabel>side</edgelabel>
+          <edgelabel>order</edgelabel>
+          <edgelabel>dyna</edgelabel>
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="5675" relation="usage">
+          <edgelabel>p</edgelabel>
+        </childnode>
+      </node>
+      <node id="5676">
+        <label>unsigned</label>
+      </node>
+      <node id="5670">
+        <label>shape_functions</label>
+        <link refid="structshape__functions"/>
+        <childnode refid="5671" relation="usage">
+          <edgelabel>portfn</edgelabel>
+        </childnode>
+        <childnode refid="5677" relation="usage">
+          <edgelabel>insidefn</edgelabel>
+        </childnode>
+        <childnode refid="5678" relation="usage">
+          <edgelabel>pboxfn</edgelabel>
+        </childnode>
+        <childnode refid="5679" relation="usage">
+          <edgelabel>freefn</edgelabel>
+          <edgelabel>initfn</edgelabel>
+        </childnode>
+        <childnode refid="5680" relation="usage">
+          <edgelabel>codefn</edgelabel>
+        </childnode>
+      </node>
+      <node id="5679">
+        <label>void(*)(node_t *)</label>
+      </node>
+      <node id="5673">
+        <label>char</label>
+      </node>
+      <node id="5674">
+        <label>boxf</label>
+        <link refid="structboxf"/>
+        <childnode refid="5675" relation="usage">
+          <edgelabel>LL</edgelabel>
+          <edgelabel>UR</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" line="173" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/graphviz-2.38/release/include/graphviz/types.h" bodystart="173" bodyend="180"/>
+    <listofallmembers>
+      <member refid="structshape__functions_1aa37923bbe637a971dda16262a93c1cbe" prot="public" virt="non-virtual"><scope>shape_functions</scope><name>codefn</name></member>
+      <member refid="structshape__functions_1a5bdfddd20e0fb7604b7d5e15c8f57aaf" prot="public" virt="non-virtual"><scope>shape_functions</scope><name>freefn</name></member>
+      <member refid="structshape__functions_1ab973eefdfd9a104ad6007b7ec7e275c9" prot="public" virt="non-virtual"><scope>shape_functions</scope><name>initfn</name></member>
+      <member refid="structshape__functions_1a5d267ca743693a71778ed6d74d778fc4" prot="public" virt="non-virtual"><scope>shape_functions</scope><name>insidefn</name></member>
+      <member refid="structshape__functions_1a282f1ff290910518898df6368f7d97f9" prot="public" virt="non-virtual"><scope>shape_functions</scope><name>pboxfn</name></member>
+      <member refid="structshape__functions_1a33509060b5149319bef13250fce36c69" prot="public" virt="non-virtual"><scope>shape_functions</scope><name>portfn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

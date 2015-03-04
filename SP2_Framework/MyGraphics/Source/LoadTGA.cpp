@@ -1,4 +1,12 @@
-
+/****************************************************************************/
+/*!
+\file LoadTGA.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to load TARGA files from a folder.
+*/
+/****************************************************************************/
 #include <iostream>
 #include <fstream>
 #include <GL\glew.h>

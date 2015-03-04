@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file Scene.h
+\Author SP2 Group 4
+\par
+\brief
+Class to define renderable objects in SP2.
+*/
+/****************************************************************************/
 #ifndef SCENE_H
 #define SCENE_H
 

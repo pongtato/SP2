@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file CollisionBounds.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes for collision checking.
+*/
+/****************************************************************************/
 #include "CollisionBounds.h"
 
 

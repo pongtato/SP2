@@ -1,6 +1,0 @@
-ReditosLeftBTM,-28,3.4,13,180,0,1,0,1,1,1
-ReditosLeftMIDDLE,-28,5.3,13,180,0,1,0,1,1,1
-ReditosLeftTOP,-28,7.2,13,180,0,1,0,1,1,1
-ReditosRightBTM,-28,3.4,15,0,0,1,0,1,1,1
-ReditosRightMIDDLE,-28,5.3,15,0,0,1,0,1,1,1
-ReditosRightTOP,-28,7.2,15,0,0,1,0,1,1,1

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="dir_dee659742e3a2ad7c012db753b0955bb" kind="dir">
+    <compoundname>MyGraphics</compoundname>
+    <innerdir refid="dir_c34125158d5d809e1ddb249e42cc0d33">MyGraphics/Source</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/"/>
+  </compounddef>
+</doxygen>

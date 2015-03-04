@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="structColor" kind="struct" prot="public">
+    <compoundname>Color</compoundname>
+    <includes refid="Vertex_8h" local="no">Vertex.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structColor_1a3958a556b47d2de3dd45c75aac833c20" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" line="30" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classSP2_1ab49c40d25cc25c6272e7943708a1867e" compoundref="SP2_8cpp" startline="4184" endline="4209">SP2::RenderText</referencedby>
+        <referencedby refid="classSP2_1ab642469a9e89925dafd3055a79b65cda" compoundref="SP2_8cpp" startline="4211" endline="4253">SP2::RenderTextOnScreen</referencedby>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="35" endline="38">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structColor_1a5defbb21620e480e556181772d665f34" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" line="30" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="35" endline="38">Set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structColor_1a33e482be18d6ea31d2b403bee13683b7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Color::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" line="30" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="35" endline="38">Set</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Color::Color</definition>
+        <argsstring>(float r=1, float g=1, float b=1)</argsstring>
+        <name>Color</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" line="31" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" bodystart="31" bodyend="34"/>
+        <references refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" compoundref="Vertex_8h" startline="35" endline="38">Set</references>
+      </memberdef>
+      <memberdef kind="function" id="structColor_1acc77e4e3583d3eca7e476952e51bfb80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Color::Set</definition>
+        <argsstring>(float r, float g, float b)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" line="35" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" bodystart="35" bodyend="38"/>
+        <references refid="structColor_1a33e482be18d6ea31d2b403bee13683b7" compoundref="Vertex_8h" startline="30">b</references>
+        <references refid="structColor_1a5defbb21620e480e556181772d665f34" compoundref="Vertex_8h" startline="30">g</references>
+        <references refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" compoundref="Vertex_8h" startline="30">r</references>
+        <referencedby refid="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" compoundref="Vertex_8h" startline="31" endline="34">Color</referencedby>
+        <referencedby refid="classMeshBuilder_1a78d37e2b0cc068eec801f17c367100e7" compoundref="MeshBuilder_8cpp" startline="30" endline="73">MeshBuilder::GenerateAxes</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a18ea7e045a2a3ddb75f840f3db993e6b" compoundref="SP2_8cpp" startline="924" endline="950">SP2::Stealing</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4589">
+        <label>float</label>
+      </node>
+      <node id="4588">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="4589" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" line="29" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Vertex.h" bodystart="28" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structColor_1a33e482be18d6ea31d2b403bee13683b7" prot="public" virt="non-virtual"><scope>Color</scope><name>b</name></member>
+      <member refid="structColor_1aa2ccdb977158b64bf8ad9000f443b09c" prot="public" virt="non-virtual"><scope>Color</scope><name>Color</name></member>
+      <member refid="structColor_1a5defbb21620e480e556181772d665f34" prot="public" virt="non-virtual"><scope>Color</scope><name>g</name></member>
+      <member refid="structColor_1a3958a556b47d2de3dd45c75aac833c20" prot="public" virt="non-virtual"><scope>Color</scope><name>r</name></member>
+      <member refid="structColor_1acc77e4e3583d3eca7e476952e51bfb80" prot="public" virt="non-virtual"><scope>Color</scope><name>Set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

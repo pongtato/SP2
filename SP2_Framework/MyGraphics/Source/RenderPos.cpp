@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file RenderPos.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to rendering the positions of objects from text files.
+*/
+/****************************************************************************/
 #include "RenderPos.h"
 
 

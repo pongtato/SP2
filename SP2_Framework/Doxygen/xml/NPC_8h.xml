@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="NPC_8h" kind="file">
+    <compoundname>NPC.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">fstream</includes>
+    <includes refid="Camera3_8h" local="yes">Camera3.h</includes>
+    <includedby refid="ReadFromText_8h" local="yes">MyGraphics/Source/ReadFromText.h</includedby>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="NPC_8cpp" local="yes">MyGraphics/Source/NPC.cpp</includedby>
+    <incdepgraph>
+      <node id="2190">
+        <label>windows.h</label>
+      </node>
+      <node id="2191">
+        <label>Character.h</label>
+        <link refid="Character_8h"/>
+        <childnode refid="2175" relation="include">
+        </childnode>
+        <childnode refid="2176" relation="include">
+        </childnode>
+        <childnode refid="2174" relation="include">
+        </childnode>
+        <childnode refid="2192" relation="include">
+        </childnode>
+        <childnode refid="2193" relation="include">
+        </childnode>
+      </node>
+      <node id="2179">
+        <label>Camera3.h</label>
+        <link refid="Camera3_8h"/>
+        <childnode refid="2180" relation="include">
+        </childnode>
+        <childnode refid="2181" relation="include">
+        </childnode>
+        <childnode refid="2188" relation="include">
+        </childnode>
+        <childnode refid="2191" relation="include">
+        </childnode>
+        <childnode refid="2174" relation="include">
+        </childnode>
+      </node>
+      <node id="2182">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="2183" relation="include">
+        </childnode>
+        <childnode refid="2175" relation="include">
+        </childnode>
+      </node>
+      <node id="2173">
+        <label>MyGraphics/Source/NPC.h</label>
+        <link refid="NPC.h"/>
+        <childnode refid="2174" relation="include">
+        </childnode>
+        <childnode refid="2175" relation="include">
+        </childnode>
+        <childnode refid="2176" relation="include">
+        </childnode>
+        <childnode refid="2177" relation="include">
+        </childnode>
+        <childnode refid="2178" relation="include">
+        </childnode>
+        <childnode refid="2179" relation="include">
+        </childnode>
+      </node>
+      <node id="2180">
+        <label>Windows.h</label>
+      </node>
+      <node id="2184">
+        <label>cmath</label>
+      </node>
+      <node id="2174">
+        <label>string</label>
+      </node>
+      <node id="2185">
+        <label>exception</label>
+      </node>
+      <node id="2178">
+        <label>fstream</label>
+      </node>
+      <node id="2189">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="2190" relation="include">
+        </childnode>
+      </node>
+      <node id="2186">
+        <label>ctime</label>
+      </node>
+      <node id="2176">
+        <label>vector</label>
+      </node>
+      <node id="2177">
+        <label>sstream</label>
+      </node>
+      <node id="2187">
+        <label>cstdlib</label>
+      </node>
+      <node id="2181">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="2182" relation="include">
+        </childnode>
+      </node>
+      <node id="2175">
+        <label>iostream</label>
+      </node>
+      <node id="2183">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="2184" relation="include">
+        </childnode>
+        <childnode refid="2185" relation="include">
+        </childnode>
+        <childnode refid="2186" relation="include">
+        </childnode>
+        <childnode refid="2187" relation="include">
+        </childnode>
+      </node>
+      <node id="2193">
+        <label>Item.h</label>
+        <link refid="Item_8h"/>
+        <childnode refid="2175" relation="include">
+        </childnode>
+        <childnode refid="2174" relation="include">
+        </childnode>
+      </node>
+      <node id="2192">
+        <label>algorithm</label>
+      </node>
+      <node id="2188">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="2189" relation="include">
+        </childnode>
+        <childnode refid="2174" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2195">
+        <label>MyGraphics/Source/ReadFromText.h</label>
+        <link refid="ReadFromText_8h"/>
+        <childnode refid="2196" relation="include">
+        </childnode>
+        <childnode refid="2199" relation="include">
+        </childnode>
+      </node>
+      <node id="2194">
+        <label>MyGraphics/Source/NPC.h</label>
+        <link refid="NPC.h"/>
+        <childnode refid="2195" relation="include">
+        </childnode>
+        <childnode refid="2196" relation="include">
+        </childnode>
+        <childnode refid="2200" relation="include">
+        </childnode>
+      </node>
+      <node id="2200">
+        <label>MyGraphics/Source/NPC.cpp</label>
+        <link refid="NPC_8cpp"/>
+      </node>
+      <node id="2199">
+        <label>MyGraphics/Source/ReadFromText.cpp</label>
+        <link refid="ReadFromText_8cpp"/>
+      </node>
+      <node id="2196">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="2197" relation="include">
+        </childnode>
+        <childnode refid="2198" relation="include">
+        </childnode>
+      </node>
+      <node id="2198">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="2197">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCNPC" prot="public">CNPC</innerclass>
+    <briefdescription>
+<para>Main header file for NPCs. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classSP2" kindref="compound">SP2</ref> Group 4 <simplesect kind="par"><title></title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera3_8h" kindref="compound">Camera3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classCNPC" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCNPC" kindref="compound">CNPC</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="classCNPC_1a6f3934d6011937922528d4462f00a9c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a6f3934d6011937922528d4462f00a9c1" kindref="member">CharName</ref>;</highlight></codeline>
+<codeline lineno="27" refid="classCNPC_1a45836ebd3d5cf608fde27b69d8ef736d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a45836ebd3d5cf608fde27b69d8ef736d" kindref="member">CharSpeed</ref>;</highlight></codeline>
+<codeline lineno="28" refid="classCNPC_1ae501d4735a6c0bfe3fd52849ac5336b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1ae501d4735a6c0bfe3fd52849ac5336b6" kindref="member">CharPosX</ref>;</highlight></codeline>
+<codeline lineno="29" refid="classCNPC_1a1eedf86dfafaf8a350c7bc657dcf2f9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a1eedf86dfafaf8a350c7bc657dcf2f9e" kindref="member">CharPosZ</ref>;</highlight></codeline>
+<codeline lineno="30" refid="classCNPC_1a1c5ef0c801785e4d2fc83cc2767a9d72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a1c5ef0c801785e4d2fc83cc2767a9d72" kindref="member">CharRot</ref>;</highlight></codeline>
+<codeline lineno="31" refid="classCNPC_1a2953a31ac78b339ad246327a98fed02c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a2953a31ac78b339ad246327a98fed02c" kindref="member">Direction</ref>;</highlight></codeline>
+<codeline lineno="32" refid="classCNPC_1a64f77ee46d72e0773b9ea8a3c49ee758" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a64f77ee46d72e0773b9ea8a3c49ee758" kindref="member">Path</ref>;</highlight></codeline>
+<codeline lineno="33" refid="classCNPC_1ad5214b99d6f402f0c004027cf8c03820" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1ad5214b99d6f402f0c004027cf8c03820" kindref="member">CurrentState</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classCNPC_1a6741eadf0021658d7000ffa726c64c15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Checkpoints[20];</highlight></codeline>
+<codeline lineno="35" refid="classCNPC_1a6247310ed01f5479b525e320741989dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;CNPC*&gt;<ref refid="classCNPC_1a6247310ed01f5479b525e320741989dc" kindref="member">npc_list</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>AI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a170d7a1cea0a186dd14797b0ba9644b1" kindref="member">shop</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCNPC" kindref="compound">CNPC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classCNPC" kindref="compound">CNPC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setName(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setPosX(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setPosZ(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setSpeed(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setDirection(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetRot(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rot);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setPath(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>node);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setCheckpoints(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structpoint" kindref="compound">point</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setCurrentState(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestAIPath(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShopPathing(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>idle);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>getName(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getPosX(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getPosZ(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getSpeed(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getRot(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getDirection(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getPath(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>getCheckpoints(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getCurrentState(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//AI<sp/>NPC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classCNPC_1a3b462fff23af392e93706c4f2f7c67aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a3b462fff23af392e93706c4f2f7c67aa" kindref="member">maxItem</ref>;</highlight></codeline>
+<codeline lineno="70" refid="classCNPC_1ab029436c78458fa7505eec21b619ad49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1ab029436c78458fa7505eec21b619ad49" kindref="member">cashIn</ref>;</highlight></codeline>
+<codeline lineno="71" refid="classCNPC_1a6c499945d0a1f6d3302092e33449d74f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a6c499945d0a1f6d3302092e33449d74f" kindref="member">exitMart</ref>;</highlight></codeline>
+<codeline lineno="72" refid="classCNPC_1a3ce1aa0e500c403b307f69ccb74effde" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCNPC_1a3ce1aa0e500c403b307f69ccb74effde" kindref="member">enterMart</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RandNumGen(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minNum,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxNum);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Checkout();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Steal();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setShop(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>input);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getShop();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>respawn();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ReadTextFilePath(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCNPC" kindref="compound">CNPC</ref>*<sp/>GetNPCPos(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>selection);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/NPC.h"/>
+  </compounddef>
+</doxygen>

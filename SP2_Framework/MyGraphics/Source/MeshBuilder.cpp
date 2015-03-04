@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file MeshBuilder.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to build the Mesh for using shapes.
+*/
+/****************************************************************************/
 #include "MeshBuilder.h"
 #include <GL\glew.h>
 #include <vector>

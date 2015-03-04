@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="dir_785e226ca5807a7ec4c3daca95b953d1" kind="dir">
+    <compoundname>Common</compoundname>
+    <innerdir refid="dir_68a63a359fb9da554dc599dc89adc248">Common/Source</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/Common/"/>
+  </compounddef>
+</doxygen>

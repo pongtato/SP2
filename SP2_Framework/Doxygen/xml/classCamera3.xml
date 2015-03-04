@@ -1,0 +1,968 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCamera3" kind="class" prot="public">
+    <compoundname>Camera3</compoundname>
+    <basecompoundref refid="classCamera" prot="public" virt="non-virtual">Camera</basecompoundref>
+    <includes refid="Camera3_8h" local="no">Camera3.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCamera3_1ab6de09647790b8270623a666556960aa" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Camera3::staminaDupe</definition>
+        <argsstring></argsstring>
+        <name>staminaDupe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="24" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classCamera3_1ae1967a58ebef7d0dcb95fbd978594ef4" compoundref="Camera3_8cpp" startline="152" endline="155">getStaminaDupe</referencedby>
+        <referencedby refid="classCamera3_1a670c5ff0dac43d66224e9340a5b2cbdb" compoundref="Camera3_8cpp" startline="147" endline="150">setStaminaDupe</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a2e5bac28eaa8b9f56b72692b0db64a82" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Camera3::cameraState</definition>
+        <argsstring></argsstring>
+        <name>cameraState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="25" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classCamera3_1afe56a2c6a99a15bc579a9d066c7ee5b7" compoundref="Camera3_8cpp" startline="537" endline="540">getCameraState</referencedby>
+        <referencedby refid="classCamera3_1af2907f79d30dae5402e39348bb943859" compoundref="Camera3_8cpp" startline="532" endline="535">setCameraState</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera3::defaultPosition</definition>
+        <argsstring></argsstring>
+        <name>defaultPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="31" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="33" endline="42">Init</referencedby>
+        <referencedby refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" compoundref="Camera3_8cpp" startline="525" endline="530">Reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera3::defaultTarget</definition>
+        <argsstring></argsstring>
+        <name>defaultTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="32" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="33" endline="42">Init</referencedby>
+        <referencedby refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" compoundref="Camera3_8cpp" startline="525" endline="530">Reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a089366725666df811a969aca24168cb6" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Camera3::defaultUp</definition>
+        <argsstring></argsstring>
+        <name>defaultUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="33" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" compoundref="Camera3_8cpp" startline="33" endline="42">Init</referencedby>
+        <referencedby refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" compoundref="Camera3_8cpp" startline="525" endline="530">Reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a7daeda4ca38658b1c79620476de10125" prot="public" static="no" mutable="no">
+        <type><ref refid="classCCharacter" kindref="compound">CCharacter</ref></type>
+        <definition>CCharacter Camera3::player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="34" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a76a31ece1880ffd4028503c880e74220" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::EntranceDoor</definition>
+        <argsstring></argsstring>
+        <name>EntranceDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="39" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a9abdebab098c68662929d0dbb8a6941d" compoundref="Camera3_8cpp" startline="125" endline="145">Doorsensor</referencedby>
+        <referencedby refid="classSP2_1adf4818d8d36de155c2d17865c9a4f03a" compoundref="SP2_8cpp" startline="1377" endline="1434">SP2::DoorSlide</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1af9e051704a4e4f0266cdab10926da1bc" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::ExitDoor</definition>
+        <argsstring></argsstring>
+        <name>ExitDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="40" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classCamera3_1a9abdebab098c68662929d0dbb8a6941d" compoundref="Camera3_8cpp" startline="125" endline="145">Doorsensor</referencedby>
+        <referencedby refid="classSP2_1adf4818d8d36de155c2d17865c9a4f03a" compoundref="SP2_8cpp" startline="1377" endline="1434">SP2::DoorSlide</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1abcd9f66223b004631e86b32f156d49a9" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::ShutterDoor</definition>
+        <argsstring></argsstring>
+        <name>ShutterDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="41" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classSP2_1a1d93704f80c8e9023eb4bdc519a4821b" compoundref="SP2_8cpp" startline="1362" endline="1375">SP2::ShutterOpen</referencedby>
+        <referencedby refid="classCamera3_1ad912c2b605d22c11ba0edcff895f5a71" compoundref="Camera3_8cpp" startline="112" endline="123">Shuttersensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a8fd3cd85404bd469a87c5a69e7d6e38a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::RightStaffDoor</definition>
+        <argsstring></argsstring>
+        <name>RightStaffDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="42" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classSP2_1adf4818d8d36de155c2d17865c9a4f03a" compoundref="SP2_8cpp" startline="1377" endline="1434">SP2::DoorSlide</referencedby>
+        <referencedby refid="classCamera3_1a6af0f56e3c40b0f769cedc319ed21198" compoundref="Camera3_8cpp" startline="89" endline="110">StaffDoorsensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a18bc2ec7226d139ac7608a68b08ebcc0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::LeftStaffDoor</definition>
+        <argsstring></argsstring>
+        <name>LeftStaffDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="43" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classSP2_1adf4818d8d36de155c2d17865c9a4f03a" compoundref="SP2_8cpp" startline="1377" endline="1434">SP2::DoorSlide</referencedby>
+        <referencedby refid="classCamera3_1a6af0f56e3c40b0f769cedc319ed21198" compoundref="Camera3_8cpp" startline="89" endline="110">StaffDoorsensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a33579353d81afbb611ded668fa5d81bb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::moving</definition>
+        <argsstring></argsstring>
+        <name>moving</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="44" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a8c3869fbdc97e728dc1d0efb6a5ab6b1" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::CameraMode</definition>
+        <argsstring></argsstring>
+        <name>CameraMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="45" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a056ea1ef5235c53ae47e225e3cf9deff" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::TrolleyMode</definition>
+        <argsstring></argsstring>
+        <name>TrolleyMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="46" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1ac4a4ffbc211374211f287c22260fa157" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::fixCamera</definition>
+        <argsstring></argsstring>
+        <name>fixCamera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="47" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a22f500828cf1a4cf0ec6d0dd4bde89e1" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::fixTranslation</definition>
+        <argsstring></argsstring>
+        <name>fixTranslation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="48" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a77fcbee8824bfc09e1b01022c747f294" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::isCollide</definition>
+        <argsstring></argsstring>
+        <name>isCollide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="49" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1115" endline="1360">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a42b006e55c2ae297322cc295570f1ac6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Camera3::CameraLock</definition>
+        <argsstring></argsstring>
+        <name>CameraLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="62" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classSP2_1a52f5bd692cfa04e060629c1967af30e4" compoundref="SP2_8cpp" startline="1100" endline="1113">SP2::CharacterCrouch</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1adc6630a0bdd6c681e5a712e90202229b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera3::CamRotation</definition>
+        <argsstring></argsstring>
+        <name>CamRotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="63" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classSP2_1a4e58b7099316f5913fc77ea5061bc48c" compoundref="SP2_8cpp" startline="3817" endline="3883">SP2::RenderPlayer</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="1436" endline="1501">SP2::Trolley</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a439ed8d74fe5bf844652b346c1f33197" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera3::CamRotationX</definition>
+        <argsstring></argsstring>
+        <name>CamRotationX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="64" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classSP2_1a4e58b7099316f5913fc77ea5061bc48c" compoundref="SP2_8cpp" startline="3817" endline="3883">SP2::RenderPlayer</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1aa1018d995fc69f36a98847535bcb4840" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera3::CamRotationY</definition>
+        <argsstring></argsstring>
+        <name>CamRotationY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="65" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classSP2_1a4e58b7099316f5913fc77ea5061bc48c" compoundref="SP2_8cpp" startline="3817" endline="3883">SP2::RenderPlayer</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a30aaa301c488f7f9480d7e09efc42a24" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera3::CAMERA_SPEED</definition>
+        <argsstring></argsstring>
+        <name>CAMERA_SPEED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="66" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a64f232f592db57a1a92b3d4ec5f049c7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera3::TrolleyStateR</definition>
+        <argsstring></argsstring>
+        <name>TrolleyStateR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="67" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a638fafd678eea8a39b51586c96a2d6e1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Camera3::TrolleyStateT</definition>
+        <argsstring></argsstring>
+        <name>TrolleyStateT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="68" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1aa8615a61e1c757ff4225036ade219058" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Camera3::RepeatPress</definition>
+        <argsstring></argsstring>
+        <name>RepeatPress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="69" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a8a204076d72028f19f83fa185c308e3c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Camera3::State</definition>
+        <argsstring></argsstring>
+        <name>State</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="70" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" compoundref="Camera3_8cpp" startline="14" endline="27">Camera3</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCamera3_1a64bd485d6bdfed0fa915d66ee52f1e7b" prot="public" static="no" mutable="no">
+        <type><ref refid="classApplication" kindref="compound">Application</ref></type>
+        <definition>Application Camera3::test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="72" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera3::Camera3</definition>
+        <argsstring>()</argsstring>
+        <name>Camera3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="36" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="14" bodyend="27"/>
+        <references refid="classCamera3_1a30aaa301c488f7f9480d7e09efc42a24" compoundref="Camera3_8h" startline="66">CAMERA_SPEED</references>
+        <references refid="classCamera3_1a42b006e55c2ae297322cc295570f1ac6" compoundref="Camera3_8h" startline="62">CameraLock</references>
+        <references refid="classCamera3_1a8c3869fbdc97e728dc1d0efb6a5ab6b1" compoundref="Camera3_8h" startline="45">CameraMode</references>
+        <references refid="classCamera3_1a2e5bac28eaa8b9f56b72692b0db64a82" compoundref="Camera3_8h" startline="25">cameraState</references>
+        <references refid="classCamera3_1adc6630a0bdd6c681e5a712e90202229b" compoundref="Camera3_8h" startline="63">CamRotation</references>
+        <references refid="classCamera3_1a439ed8d74fe5bf844652b346c1f33197" compoundref="Camera3_8h" startline="64">CamRotationX</references>
+        <references refid="classCamera3_1aa1018d995fc69f36a98847535bcb4840" compoundref="Camera3_8h" startline="65">CamRotationY</references>
+        <references refid="classCamera3_1a77fcbee8824bfc09e1b01022c747f294" compoundref="Camera3_8h" startline="49">isCollide</references>
+        <references refid="classCamera3_1aa8615a61e1c757ff4225036ade219058" compoundref="Camera3_8h" startline="69">RepeatPress</references>
+        <references refid="classCamera3_1a8a204076d72028f19f83fa185c308e3c" compoundref="Camera3_8h" startline="70">State</references>
+        <references refid="classCamera3_1a056ea1ef5235c53ae47e225e3cf9deff" compoundref="Camera3_8h" startline="46">TrolleyMode</references>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1a386fa089e2507622ef79675cd95efd69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera3::~Camera3</definition>
+        <argsstring>()</argsstring>
+        <name>~Camera3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="37" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Camera3::Init</definition>
+        <argsstring>(const Vector3 &amp;pos, const Vector3 &amp;target, const Vector3 &amp;up)</argsstring>
+        <name>Init</name>
+        <reimplements refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c">Init</reimplements>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>up</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="51" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="33" bodyend="42"/>
+        <references refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Vector3::Cross</references>
+        <references refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" compoundref="Camera3_8h" startline="31">defaultPosition</references>
+        <references refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" compoundref="Camera3_8h" startline="32">defaultTarget</references>
+        <references refid="classCamera3_1a089366725666df811a969aca24168cb6" compoundref="Camera3_8h" startline="33">defaultUp</references>
+        <references refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Vector3::Normalize</references>
+        <references refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Vector3::Normalized</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="18">Camera::position</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="19">Camera::target</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="41" endline="671">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Camera3::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="52" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="157" bodyend="523"/>
+        <references refid="classCamera3_1a30aaa301c488f7f9480d7e09efc42a24" compoundref="Camera3_8h" startline="66">CAMERA_SPEED</references>
+        <references refid="classCamera3_1a42b006e55c2ae297322cc295570f1ac6" compoundref="Camera3_8h" startline="62">CameraLock</references>
+        <references refid="classCamera3_1a8c3869fbdc97e728dc1d0efb6a5ab6b1" compoundref="Camera3_8h" startline="45">CameraMode</references>
+        <references refid="classCamera3_1adc6630a0bdd6c681e5a712e90202229b" compoundref="Camera3_8h" startline="63">CamRotation</references>
+        <references refid="classCamera3_1a439ed8d74fe5bf844652b346c1f33197" compoundref="Camera3_8h" startline="64">CamRotationX</references>
+        <references refid="classCamera3_1aa1018d995fc69f36a98847535bcb4840" compoundref="Camera3_8h" startline="65">CamRotationY</references>
+        <references refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Vector3::Cross</references>
+        <references refid="classCamera3_1a9abdebab098c68662929d0dbb8a6941d" compoundref="Camera3_8cpp" startline="125" endline="145">Doorsensor</references>
+        <references refid="classCamera3_1ac4a4ffbc211374211f287c22260fa157" compoundref="Camera3_8h" startline="47">fixCamera</references>
+        <references refid="classCamera3_1a22f500828cf1a4cf0ec6d0dd4bde89e1" compoundref="Camera3_8h" startline="48">fixTranslation</references>
+        <references refid="classCamera3_1afe56a2c6a99a15bc579a9d066c7ee5b7" compoundref="Camera3_8cpp" startline="537" endline="540">getCameraState</references>
+        <references refid="classApplication_1abbbf79bb3dc9594a84c59e69369a8bf5" compoundref="Application_8cpp" startline="75" endline="78">Application::getPosX</references>
+        <references refid="classApplication_1ac64a83a6554096731951dbb31010cb06" compoundref="Application_8cpp" startline="80" endline="83">Application::getPosY</references>
+        <references refid="classCCharacter_1aaf9f7a3c49545cf4f8ded10af3ecddad" compoundref="Character_8cpp" startline="73" endline="76">CCharacter::getStamina</references>
+        <references refid="classCamera3_1a77fcbee8824bfc09e1b01022c747f294" compoundref="Camera3_8h" startline="49">isCollide</references>
+        <references refid="classApplication_1a72cc9bba26506a7c0f54c346dfbd5cfe" compoundref="Application_8cpp" startline="47" endline="50">Application::IsKeyPressed</references>
+        <references refid="classApplication_1a9ff20843515422477480fbd1fff7de2a" compoundref="Application_8cpp" startline="52" endline="55">Application::IsKeyReleased</references>
+        <references refid="classCamera3_1a46a09d0e439f7c46519df9fa36803b0e" compoundref="Camera3_8cpp" startline="44" endline="87">Limit</references>
+        <references refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="165" endline="175">Application::mousePos</references>
+        <references refid="classCamera3_1a33579353d81afbb611ded668fa5d81bb" compoundref="Camera3_8h" startline="44">moving</references>
+        <references refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Vector3::Normalize</references>
+        <references refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Vector3::Normalized</references>
+        <references refid="classCamera3_1a7daeda4ca38658b1c79620476de10125" compoundref="Camera3_8h" startline="34">player</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="18">Camera::position</references>
+        <references refid="classCamera3_1aa8615a61e1c757ff4225036ade219058" compoundref="Camera3_8h" startline="69">RepeatPress</references>
+        <references refid="classCCharacter_1abb8d82e3f1e2add2fda9eced2601e88c" compoundref="Character_8cpp" startline="48" endline="51">CCharacter::setStamina</references>
+        <references refid="classCamera3_1a670c5ff0dac43d66224e9340a5b2cbdb" compoundref="Camera3_8cpp" startline="147" endline="150">setStaminaDupe</references>
+        <references refid="classMtx44_1ac0587ffb5ff9fd58ad5768d28fc06574" compoundref="Mtx44_8cpp" startline="319" endline="341">Mtx44::SetToRotation</references>
+        <references refid="classCamera3_1ad912c2b605d22c11ba0edcff895f5a71" compoundref="Camera3_8cpp" startline="112" endline="123">Shuttersensor</references>
+        <references refid="classCamera3_1a6af0f56e3c40b0f769cedc319ed21198" compoundref="Camera3_8cpp" startline="89" endline="110">StaffDoorsensor</references>
+        <references refid="classCamera3_1a8a204076d72028f19f83fa185c308e3c" compoundref="Camera3_8h" startline="70">State</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="19">Camera::target</references>
+        <references refid="classCamera3_1a64bd485d6bdfed0fa915d66ee52f1e7b" compoundref="Camera3_8h" startline="72">test</references>
+        <references refid="classCamera3_1a056ea1ef5235c53ae47e225e3cf9deff" compoundref="Camera3_8h" startline="46">TrolleyMode</references>
+        <references refid="classCamera3_1a64f232f592db57a1a92b3d4ec5f049c7" compoundref="Camera3_8h" startline="67">TrolleyStateR</references>
+        <references refid="classCamera3_1a638fafd678eea8a39b51586c96a2d6e1" compoundref="Camera3_8h" startline="68">TrolleyStateT</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="20">Camera::up</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1a46a09d0e439f7c46519df9fa36803b0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Camera3::Limit</definition>
+        <argsstring>(Vector3 &amp;pos, Vector3 &amp;target, int Border, float camSpeed)</argsstring>
+        <name>Limit</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Border</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>camSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="53" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="44" bodyend="87"/>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1a9abdebab098c68662929d0dbb8a6941d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera3::Doorsensor</definition>
+        <argsstring>(Vector3 &amp;pos, float camSpeed)</argsstring>
+        <name>Doorsensor</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>camSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="54" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="125" bodyend="145"/>
+        <references refid="classCamera3_1a76a31ece1880ffd4028503c880e74220" compoundref="Camera3_8h" startline="39">EntranceDoor</references>
+        <references refid="classCamera3_1af9e051704a4e4f0266cdab10926da1bc" compoundref="Camera3_8h" startline="40">ExitDoor</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="18">Camera::position</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1ad912c2b605d22c11ba0edcff895f5a71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera3::Shuttersensor</definition>
+        <argsstring>(Vector3 &amp;pos, float camSpeed)</argsstring>
+        <name>Shuttersensor</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>camSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="55" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="112" bodyend="123"/>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="18">Camera::position</references>
+        <references refid="classCamera3_1abcd9f66223b004631e86b32f156d49a9" compoundref="Camera3_8h" startline="41">ShutterDoor</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1a6af0f56e3c40b0f769cedc319ed21198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera3::StaffDoorsensor</definition>
+        <argsstring>(Vector3 &amp;pos, float camSpeed)</argsstring>
+        <name>StaffDoorsensor</name>
+        <param>
+          <type><ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>camSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="56" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="89" bodyend="110"/>
+        <references refid="classCamera3_1a18bc2ec7226d139ac7608a68b08ebcc0" compoundref="Camera3_8h" startline="43">LeftStaffDoor</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="18">Camera::position</references>
+        <references refid="classCamera3_1a8fd3cd85404bd469a87c5a69e7d6e38a" compoundref="Camera3_8h" startline="42">RightStaffDoor</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Camera3::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <reimplements refid="classCamera_1aa46f58b32270a571ab56dde4caca46db">Reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="57" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="525" bodyend="530"/>
+        <references refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" compoundref="Camera3_8h" startline="31">defaultPosition</references>
+        <references refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" compoundref="Camera3_8h" startline="32">defaultTarget</references>
+        <references refid="classCamera3_1a089366725666df811a969aca24168cb6" compoundref="Camera3_8h" startline="33">defaultUp</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="18">Camera::position</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="19">Camera::target</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="20">Camera::up</references>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1a670c5ff0dac43d66224e9340a5b2cbdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera3::setStaminaDupe</definition>
+        <argsstring>(int stam)</argsstring>
+        <name>setStaminaDupe</name>
+        <param>
+          <type>int</type>
+          <declname>stam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="58" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="147" bodyend="150"/>
+        <references refid="classCamera3_1ab6de09647790b8270623a666556960aa" compoundref="Camera3_8h" startline="24">staminaDupe</references>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1ae1967a58ebef7d0dcb95fbd978594ef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Camera3::getStaminaDupe</definition>
+        <argsstring>(void)</argsstring>
+        <name>getStaminaDupe</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="59" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="152" bodyend="155"/>
+        <references refid="classCamera3_1ab6de09647790b8270623a666556960aa" compoundref="Camera3_8h" startline="24">staminaDupe</references>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="1955" endline="2152">SP2::RenderScreenUI</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1af2907f79d30dae5402e39348bb943859" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera3::setCameraState</definition>
+        <argsstring>(int State)</argsstring>
+        <name>setCameraState</name>
+        <param>
+          <type>int</type>
+          <declname>State</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="60" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="532" bodyend="535"/>
+        <references refid="classCamera3_1a2e5bac28eaa8b9f56b72692b0db64a82" compoundref="Camera3_8h" startline="25">cameraState</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCamera3_1afe56a2c6a99a15bc579a9d066c7ee5b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Camera3::getCameraState</definition>
+        <argsstring>(void)</argsstring>
+        <name>getCameraState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="61" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.cpp" bodystart="537" bodyend="540"/>
+        <references refid="classCamera3_1a2e5bac28eaa8b9f56b72692b0db64a82" compoundref="Camera3_8h" startline="25">cameraState</references>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="1810" endline="1934">SP2::Render</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="157" endline="523">Update</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="678" endline="896">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4529">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+      </node>
+      <node id="4528">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="4529" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4531">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="4532" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="4542">
+        <label>string</label>
+      </node>
+      <node id="4533">
+        <label>float</label>
+      </node>
+      <node id="4530">
+        <label>Camera3</label>
+        <link refid="classCamera3"/>
+        <childnode refid="4531" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4534" relation="usage">
+          <edgelabel>test</edgelabel>
+        </childnode>
+        <childnode refid="4533" relation="usage">
+          <edgelabel>CamRotationX</edgelabel>
+          <edgelabel>CAMERA_SPEED</edgelabel>
+          <edgelabel>CamRotationY</edgelabel>
+          <edgelabel>CamRotation</edgelabel>
+          <edgelabel>TrolleyStateR</edgelabel>
+          <edgelabel>TrolleyStateT</edgelabel>
+        </childnode>
+        <childnode refid="4532" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+        </childnode>
+        <childnode refid="4539" relation="usage">
+          <edgelabel>staminaDupe</edgelabel>
+          <edgelabel>cameraState</edgelabel>
+          <edgelabel>CameraLock</edgelabel>
+          <edgelabel>State</edgelabel>
+        </childnode>
+        <childnode refid="4540" relation="usage">
+          <edgelabel>fixCamera</edgelabel>
+          <edgelabel>RightStaffDoor</edgelabel>
+          <edgelabel>RepeatPress</edgelabel>
+          <edgelabel>CameraMode</edgelabel>
+          <edgelabel>TrolleyMode</edgelabel>
+          <edgelabel>ExitDoor</edgelabel>
+          <edgelabel>EntranceDoor</edgelabel>
+          <edgelabel>isCollide</edgelabel>
+          <edgelabel>ShutterDoor</edgelabel>
+          <edgelabel>LeftStaffDoor</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="4541" relation="usage">
+          <edgelabel>player</edgelabel>
+        </childnode>
+      </node>
+      <node id="4539">
+        <label>int</label>
+      </node>
+      <node id="4535">
+        <label>double</label>
+      </node>
+      <node id="4534">
+        <label>Application</label>
+        <link refid="classApplication"/>
+        <childnode refid="4535" relation="usage">
+          <edgelabel>MX</edgelabel>
+          <edgelabel>DMX</edgelabel>
+          <edgelabel>MY</edgelabel>
+          <edgelabel>DMY</edgelabel>
+        </childnode>
+        <childnode refid="4536" relation="usage">
+          <edgelabel>m_timer</edgelabel>
+        </childnode>
+      </node>
+      <node id="4543">
+        <label>vector&lt; CItem * &gt;</label>
+      </node>
+      <node id="4538">
+        <label>LARGE_INTEGER</label>
+      </node>
+      <node id="4536">
+        <label>StopWatch</label>
+        <link refid="classStopWatch"/>
+        <childnode refid="4537" relation="usage">
+          <edgelabel>wTimerRes</edgelabel>
+        </childnode>
+        <childnode refid="4538" relation="usage">
+          <edgelabel>frequency</edgelabel>
+          <edgelabel>currTime</edgelabel>
+          <edgelabel>prevTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="4541">
+        <label>CCharacter</label>
+        <link refid="classCCharacter"/>
+        <childnode refid="4535" relation="usage">
+          <edgelabel>money</edgelabel>
+        </childnode>
+        <childnode refid="4533" relation="usage">
+          <edgelabel>detection</edgelabel>
+        </childnode>
+        <childnode refid="4539" relation="usage">
+          <edgelabel>bullets</edgelabel>
+          <edgelabel>stamina</edgelabel>
+          <edgelabel>inventoryCap</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="4540" relation="usage">
+          <edgelabel>Takeitems</edgelabel>
+          <edgelabel>Align</edgelabel>
+          <edgelabel>trolleyDrop</edgelabel>
+          <edgelabel>trolley</edgelabel>
+          <edgelabel>unpaiditems</edgelabel>
+        </childnode>
+        <childnode refid="4542" relation="usage">
+          <edgelabel>career</edgelabel>
+        </childnode>
+        <childnode refid="4543" relation="usage">
+          <edgelabel>inven_list</edgelabel>
+        </childnode>
+      </node>
+      <node id="4540">
+        <label>bool</label>
+      </node>
+      <node id="4537">
+        <label>UINT</label>
+      </node>
+      <node id="4532">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="4533" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" line="22" column="1" bodyfile="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/Camera3.h" bodystart="21" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classCamera_1a01f94c3543f56ede7af49dc778f19331" prot="public" virt="non-virtual"><scope>Camera3</scope><name>Camera</name></member>
+      <member refid="classCamera3_1aef7409cbc80ffd21a658c7055653b0ab" prot="public" virt="non-virtual"><scope>Camera3</scope><name>Camera3</name></member>
+      <member refid="classCamera3_1a30aaa301c488f7f9480d7e09efc42a24" prot="public" virt="non-virtual"><scope>Camera3</scope><name>CAMERA_SPEED</name></member>
+      <member refid="classCamera3_1a42b006e55c2ae297322cc295570f1ac6" prot="public" virt="non-virtual"><scope>Camera3</scope><name>CameraLock</name></member>
+      <member refid="classCamera3_1a8c3869fbdc97e728dc1d0efb6a5ab6b1" prot="public" virt="non-virtual"><scope>Camera3</scope><name>CameraMode</name></member>
+      <member refid="classCamera3_1a2e5bac28eaa8b9f56b72692b0db64a82" prot="private" virt="non-virtual"><scope>Camera3</scope><name>cameraState</name></member>
+      <member refid="classCamera3_1adc6630a0bdd6c681e5a712e90202229b" prot="public" virt="non-virtual"><scope>Camera3</scope><name>CamRotation</name></member>
+      <member refid="classCamera3_1a439ed8d74fe5bf844652b346c1f33197" prot="public" virt="non-virtual"><scope>Camera3</scope><name>CamRotationX</name></member>
+      <member refid="classCamera3_1aa1018d995fc69f36a98847535bcb4840" prot="public" virt="non-virtual"><scope>Camera3</scope><name>CamRotationY</name></member>
+      <member refid="classCamera3_1a0befffc59212bf28cffddc24f2b31e67" prot="public" virt="non-virtual"><scope>Camera3</scope><name>defaultPosition</name></member>
+      <member refid="classCamera3_1a0c65c81ec5c614828b140c8125cf79da" prot="public" virt="non-virtual"><scope>Camera3</scope><name>defaultTarget</name></member>
+      <member refid="classCamera3_1a089366725666df811a969aca24168cb6" prot="public" virt="non-virtual"><scope>Camera3</scope><name>defaultUp</name></member>
+      <member refid="classCamera3_1a9abdebab098c68662929d0dbb8a6941d" prot="public" virt="non-virtual"><scope>Camera3</scope><name>Doorsensor</name></member>
+      <member refid="classCamera3_1a76a31ece1880ffd4028503c880e74220" prot="public" virt="non-virtual"><scope>Camera3</scope><name>EntranceDoor</name></member>
+      <member refid="classCamera3_1af9e051704a4e4f0266cdab10926da1bc" prot="public" virt="non-virtual"><scope>Camera3</scope><name>ExitDoor</name></member>
+      <member refid="classCamera3_1ac4a4ffbc211374211f287c22260fa157" prot="public" virt="non-virtual"><scope>Camera3</scope><name>fixCamera</name></member>
+      <member refid="classCamera3_1a22f500828cf1a4cf0ec6d0dd4bde89e1" prot="public" virt="non-virtual"><scope>Camera3</scope><name>fixTranslation</name></member>
+      <member refid="classCamera3_1afe56a2c6a99a15bc579a9d066c7ee5b7" prot="public" virt="non-virtual"><scope>Camera3</scope><name>getCameraState</name></member>
+      <member refid="classCamera3_1ae1967a58ebef7d0dcb95fbd978594ef4" prot="public" virt="non-virtual"><scope>Camera3</scope><name>getStaminaDupe</name></member>
+      <member refid="classCamera3_1a19ed99e698e764c1da3a985cf75eb93f" prot="public" virt="virtual"><scope>Camera3</scope><name>Init</name></member>
+      <member refid="classCamera3_1a77fcbee8824bfc09e1b01022c747f294" prot="public" virt="non-virtual"><scope>Camera3</scope><name>isCollide</name></member>
+      <member refid="classCamera3_1a18bc2ec7226d139ac7608a68b08ebcc0" prot="public" virt="non-virtual"><scope>Camera3</scope><name>LeftStaffDoor</name></member>
+      <member refid="classCamera3_1a46a09d0e439f7c46519df9fa36803b0e" prot="public" virt="non-virtual"><scope>Camera3</scope><name>Limit</name></member>
+      <member refid="classCamera3_1a33579353d81afbb611ded668fa5d81bb" prot="public" virt="non-virtual"><scope>Camera3</scope><name>moving</name></member>
+      <member refid="classCamera3_1a7daeda4ca38658b1c79620476de10125" prot="public" virt="non-virtual"><scope>Camera3</scope><name>player</name></member>
+      <member refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" prot="public" virt="non-virtual"><scope>Camera3</scope><name>position</name></member>
+      <member refid="classCamera3_1aa8615a61e1c757ff4225036ade219058" prot="public" virt="non-virtual"><scope>Camera3</scope><name>RepeatPress</name></member>
+      <member refid="classCamera3_1a4b10106bcd89f21e3cf3e39f04d8c1cb" prot="public" virt="virtual"><scope>Camera3</scope><name>Reset</name></member>
+      <member refid="classCamera3_1a8fd3cd85404bd469a87c5a69e7d6e38a" prot="public" virt="non-virtual"><scope>Camera3</scope><name>RightStaffDoor</name></member>
+      <member refid="classCamera3_1af2907f79d30dae5402e39348bb943859" prot="public" virt="non-virtual"><scope>Camera3</scope><name>setCameraState</name></member>
+      <member refid="classCamera3_1a670c5ff0dac43d66224e9340a5b2cbdb" prot="public" virt="non-virtual"><scope>Camera3</scope><name>setStaminaDupe</name></member>
+      <member refid="classCamera3_1abcd9f66223b004631e86b32f156d49a9" prot="public" virt="non-virtual"><scope>Camera3</scope><name>ShutterDoor</name></member>
+      <member refid="classCamera3_1ad912c2b605d22c11ba0edcff895f5a71" prot="public" virt="non-virtual"><scope>Camera3</scope><name>Shuttersensor</name></member>
+      <member refid="classCamera3_1a6af0f56e3c40b0f769cedc319ed21198" prot="public" virt="non-virtual"><scope>Camera3</scope><name>StaffDoorsensor</name></member>
+      <member refid="classCamera3_1ab6de09647790b8270623a666556960aa" prot="private" virt="non-virtual"><scope>Camera3</scope><name>staminaDupe</name></member>
+      <member refid="classCamera3_1a8a204076d72028f19f83fa185c308e3c" prot="public" virt="non-virtual"><scope>Camera3</scope><name>State</name></member>
+      <member refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" prot="public" virt="non-virtual"><scope>Camera3</scope><name>target</name></member>
+      <member refid="classCamera3_1a64bd485d6bdfed0fa915d66ee52f1e7b" prot="public" virt="non-virtual"><scope>Camera3</scope><name>test</name></member>
+      <member refid="classCamera3_1a056ea1ef5235c53ae47e225e3cf9deff" prot="public" virt="non-virtual"><scope>Camera3</scope><name>TrolleyMode</name></member>
+      <member refid="classCamera3_1a64f232f592db57a1a92b3d4ec5f049c7" prot="public" virt="non-virtual"><scope>Camera3</scope><name>TrolleyStateR</name></member>
+      <member refid="classCamera3_1a638fafd678eea8a39b51586c96a2d6e1" prot="public" virt="non-virtual"><scope>Camera3</scope><name>TrolleyStateT</name></member>
+      <member refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" prot="public" virt="non-virtual"><scope>Camera3</scope><name>up</name></member>
+      <member refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" prot="public" virt="virtual"><scope>Camera3</scope><name>Update</name></member>
+      <member refid="classCamera_1ad1897942d0ccf91052386388a497349f" prot="public" virt="non-virtual"><scope>Camera3</scope><name>~Camera</name></member>
+      <member refid="classCamera3_1a386fa089e2507622ef79675cd95efd69" prot="public" virt="non-virtual"><scope>Camera3</scope><name>~Camera3</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

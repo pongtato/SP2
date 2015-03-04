@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="CameraSecurity_8cpp" kind="file">
+    <compoundname>CameraSecurity.cpp</compoundname>
+    <includes refid="CameraSecurity_8h" local="yes">CameraSecurity.h</includes>
+    <incdepgraph>
+      <node id="1927">
+        <label>windows.h</label>
+      </node>
+      <node id="1918">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="1919" relation="include">
+        </childnode>
+        <childnode refid="1924" relation="include">
+        </childnode>
+      </node>
+      <node id="1916">
+        <label>Windows.h</label>
+      </node>
+      <node id="1920">
+        <label>cmath</label>
+      </node>
+      <node id="1928">
+        <label>string</label>
+      </node>
+      <node id="1929">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="1919" relation="include">
+        </childnode>
+        <childnode refid="1918" relation="include">
+        </childnode>
+      </node>
+      <node id="1921">
+        <label>exception</label>
+      </node>
+      <node id="1914">
+        <label>MyGraphics/Source/CameraSecurity.cpp</label>
+        <link refid="CameraSecurity.cpp"/>
+        <childnode refid="1915" relation="include">
+        </childnode>
+      </node>
+      <node id="1926">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="1927" relation="include">
+        </childnode>
+      </node>
+      <node id="1922">
+        <label>ctime</label>
+      </node>
+      <node id="1915">
+        <label>CameraSecurity.h</label>
+        <link refid="CameraSecurity_8h"/>
+        <childnode refid="1916" relation="include">
+        </childnode>
+        <childnode refid="1917" relation="include">
+        </childnode>
+        <childnode refid="1925" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+      </node>
+      <node id="1923">
+        <label>cstdlib</label>
+      </node>
+      <node id="1917">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="1918" relation="include">
+        </childnode>
+      </node>
+      <node id="1924">
+        <label>iostream</label>
+      </node>
+      <node id="1919">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="1920" relation="include">
+        </childnode>
+        <childnode refid="1921" relation="include">
+        </childnode>
+        <childnode refid="1922" relation="include">
+        </childnode>
+        <childnode refid="1923" relation="include">
+        </childnode>
+      </node>
+      <node id="1925">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="1926" relation="include">
+        </childnode>
+        <childnode refid="1928" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>Codes to update the Security Cameras. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classSP2" kindref="compound">SP2</ref> Group 4 <simplesect kind="par"><title></title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CameraSecurity_8h" kindref="compound">CameraSecurity.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classCCameraSecurity_1aa5d172ca33a91d5c9bf80fc3d2beb906" refkind="member"><highlight class="normal"><ref refid="classCCameraSecurity_1aa5d172ca33a91d5c9bf80fc3d2beb906" kindref="member">CCameraSecurity::CCameraSecurity</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" kindref="member">Limit</ref><sp/>=<sp/>45;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classCCameraSecurity_1a4ef17d92f28d755bf1e2bf25073ec19e" refkind="member"><highlight class="normal"><ref refid="classCCameraSecurity_1a4ef17d92f28d755bf1e2bf25073ec19e" kindref="member">CCameraSecurity::~CCameraSecurity</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classCCameraSecurity_1a8d9bd3c98bdf09d72bc2075ed78c0403" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCameraSecurity_1a8d9bd3c98bdf09d72bc2075ed78c0403" kindref="member">CCameraSecurity::Init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>target,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>up)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref><sp/>=<sp/><ref refid="classCCameraSecurity_1ae2c48f10ce31733f1c97c38f75e578f1" kindref="member">defaultPosition</ref><sp/>=<sp/>pos;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;target<sp/>=<sp/><ref refid="classCCameraSecurity_1a689f19e2fa49feaffe120aa241d5fb34" kindref="member">defaultTarget</ref><sp/>=<sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>view<sp/>=<sp/>(target<sp/>-<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>).Normalized();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>right<sp/>=<sp/>view.<ref refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" kindref="member">Cross</ref>(up);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>right.<ref refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" kindref="member">y</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>right.<ref refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" kindref="member">Normalize</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;up<sp/>=<sp/><ref refid="classCCameraSecurity_1a15bc5963bc15c36c1b75eae4e90e55e4" kindref="member">defaultUp</ref><sp/>=<sp/>right.<ref refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" kindref="member">Cross</ref>(view).<ref refid="structVector3_1a2da0f00c5529bced69763320dac9c414" kindref="member">Normalized</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" kindref="member">CCameraSecurity::Update</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MouseX<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MouseY<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>OldMousePosX<sp/>=<sp/>MouseX;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>OldMousePosY<sp/>=<sp/>MouseY;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" kindref="member">test</ref>.<ref refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" kindref="member">mousePos</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MouseX<sp/>=<sp/><ref refid="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" kindref="member">test</ref>.<ref refid="classApplication_1abbbf79bb3dc9594a84c59e69369a8bf5" kindref="member">getPosX</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MouseY<sp/>=<sp/><ref refid="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" kindref="member">test</ref>.<ref refid="classApplication_1ac64a83a6554096731951dbb31010cb06" kindref="member">getPosY</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>CAMERA_SPEED<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" kindref="member">Limit</ref><sp/>&gt;<sp/>-20<sp/>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((MouseX<sp/>-<sp/>OldMousePosX)<sp/>&lt;<sp/>400)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>view<sp/>=<sp/>(<ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>-<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>).Normalized();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yaw<sp/>=<sp/>(float)(4*CAMERA_SPEED<sp/>*<sp/>dt);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMtx44" kindref="compound">Mtx44</ref><sp/>rotation;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotation.<ref refid="classMtx44_1ac0587ffb5ff9fd58ad5768d28fc06574" kindref="member">SetToRotation</ref>(yaw,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>view<sp/>=<sp/>rotation<sp/>*<sp/>view;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref><sp/>=<sp/>rotation<sp/>*<sp/><ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>=<sp/>view<sp/>+<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout<sp/>&lt;&lt;<sp/>MouseX<sp/>&lt;&lt;<sp/>&quot;,&quot;<sp/>&lt;&lt;<sp/>MouseY<sp/>&lt;&lt;<sp/>endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" kindref="member">Limit</ref>--;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" kindref="member">Limit</ref><sp/>&lt;<sp/>60)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((MouseX<sp/>-<sp/>OldMousePosX)<sp/>&gt;<sp/>400)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/>view<sp/>=<sp/>(<ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>-<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>).Normalized();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yaw<sp/>=<sp/>(float)(4*-CAMERA_SPEED<sp/>*<sp/>dt);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMtx44" kindref="compound">Mtx44</ref><sp/>rotation;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotation.<ref refid="classMtx44_1ac0587ffb5ff9fd58ad5768d28fc06574" kindref="member">SetToRotation</ref>(yaw,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>view<sp/>=<sp/>rotation<sp/>*<sp/>view;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref><sp/>=<sp/>rotation<sp/>*<sp/><ref refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" kindref="member">up</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" kindref="member">target</ref><sp/>=<sp/>view<sp/>+<sp/><ref refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" kindref="member">Limit</ref>++;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/c3pot_000/Desktop/NYP Work/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.cpp"/>
+  </compounddef>
+</doxygen>

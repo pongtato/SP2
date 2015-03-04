@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file CameraSecurity.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to update the Security Cameras.
+*/
+/****************************************************************************/
 #include "CameraSecurity.h"
 
 
