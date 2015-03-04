@@ -1176,7 +1176,7 @@ void SP2::BoundsCheck()
 	{
 		if ( camera.position.x  >= VanBounds[i]->TTL.x && camera.position.x  <= VanBounds[i]->TTR.x 
 			&& camera.position.y >= VanBounds[i]->BTL.y && camera.position.y <= VanBounds[i]->TTL.y
-			&& camera.position.z >= VanBounds[i]->TTL.z && camera.position.z <= VanBounds[i]->TBL.z)
+			&& camera.position.z >= VanBounds[i]->TTL.z && camera.position.z <= VanBounds[i]->TBL.z && police == true)
 		{
 			camera.position.x = cameraDupe.position.x;
 			camera.target.x = cameraDupe.target.x;
@@ -2342,10 +2342,10 @@ void SP2::LightsReset()
 		lights[3].color.Set(Lightswitch,Lightswitch,Lightswitch);
 		lights[4].color.Set(Lightswitch,Lightswitch,Lightswitch);
 		lights[0].power = 1.0f;
-		lights[1].power = 1.0f;
-		lights[2].power = 1.0f;
-		lights[3].power = 1.0f;
-		lights[4].power = 1.0f;
+		lights[1].power = 0.2f;
+		lights[2].power = 0.2f;
+		lights[3].power = 0.2f;
+		lights[4].power = 0.2f;
 
 
 		glUniform3fv(m_parameters[U_LIGHT1_COLOR], 1, &lights[1].color.r);
