@@ -1268,6 +1268,7 @@ void SP2::BoundsCheck()
 			camera.target.x = cameraDupe.target.x;
 			camera.position.z = cameraDupe.position.z;
 			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
 		}
 	}
 
@@ -1278,17 +1279,76 @@ void SP2::BoundsCheck()
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
 	}
 
+	//GuardHouse Collison
+	//left wall
+	if(camera.position.x >= data.GetRenderPos(19)->getTranslationX() + 141 && camera.position.x <= data.GetRenderPos(19)->getTranslationX() + 145 && camera.position.z >= 87 && camera.position.z <= 118)
+	{
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
+	}
+	//right wall
+	if(camera.position.x <= data.GetRenderPos(19)->getTranslationX() + 169 && camera.position.x >= data.GetRenderPos(19)->getTranslationX() + 168 && camera.position.z >= 87 && camera.position.z <= 118)
+	{
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
+	}
+	//back wall
+	if(camera.position.z >= data.GetRenderPos(19)->getTranslationZ() + 230 && camera.position.z <= data.GetRenderPos(19)->getTranslationZ() + 235 && camera.position.x >= 60 && camera.position.x <= 90)
+	{
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
+	}
+	//Front wall
+	if(camera.position.z >= data.GetRenderPos(19)->getTranslationZ() + 203 && camera.position.z <= data.GetRenderPos(19)->getTranslationZ() + 206 && camera.position.x >= 71 && camera.position.x <= 90)
+	{
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
+	}
+	//Guard Control
+	if(camera.position.x >= data.GetRenderPos(20)->getTranslationX() - 2.8 && camera.position.x <= data.GetRenderPos(20)->getTranslationX() + 14.2 && camera.position.z >= data.GetRenderPos(20)->getTranslationZ() - 12.5 && camera.position.z <= data.GetRenderPos(20)->getTranslationZ() - 10.5)
+	{
+		camera.position.x = cameraDupe.position.x;
+		camera.target.x = cameraDupe.target.x;
+		camera.position.z = cameraDupe.position.z;
+		camera.target.z = cameraDupe.target.z;
+		camera.isCollide = true;
+	}
 	//Trolley Collision(player only)
-	if(camera.position.x >= trolley.LastX - 5 && camera.position.x <= trolley.LastX + 5 && camera.position.z >= trolley.LastZ - 3 && camera.position.z <= trolley.LastZ + 3)
+	if(camera.position.x >= trolley.LastX - 5 && camera.position.x <= trolley.LastX + 5 && camera.position.z >= trolley.LastZ - 3 && camera.position.z <= trolley.LastZ + 3 && player.trolley == false)// need fix
 	{
 		camera.position.x = cameraDupe.position.x;
 		camera.target.x = cameraDupe.target.x;
 		camera.position.z = cameraDupe.position.z;
 		camera.target.z = cameraDupe.target.z;
 	}
-
+	//Cashier NPC Collision
+	for(int i = 0; i < 4; ++i)
+	{
+		if(camera.position.x >= cashiermodel.GetRenderPos(i)->getTranslationX() - 2 && camera.position.x <= cashiermodel.GetRenderPos(i)->getTranslationX() + 2 && camera.position.z >= cashiermodel.GetRenderPos(i)->getTranslationZ() - 2 && camera.position.z <= cashiermodel.GetRenderPos(i)->getTranslationZ() + 2)
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+		}
+		
+	}
 	//shopper AI collision
 	if(playeridle == false)
 	{
@@ -1315,26 +1375,28 @@ void SP2::BoundsCheck()
 	if(playeridle == true)
 	{
 		//player X Coord > AI X Coord
-		if(camera.position.x > shopper.getPosX())
+		if(camera.position.x > shopper.getPosX() && camera.position.x < shopper.getPosX() + 2)
 		{
-			if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
+			if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 3 && camera.position.z <= shopper.getPosZ() + 3)
 			{
 				camera.position.x = cameraDupe.position.x;
 				camera.target.x = cameraDupe.target.x;
 				
 			}
-			if(camera.position.z >= shopper.getPosZ() + 2 || camera.position.z <= shopper.getPosZ() - 2)
-			{
-			}
+			
 		}
 		//player X Coord < AI X Coord
-		if(camera.position.x < shopper.getPosX())
+		if(camera.position.x < shopper.getPosX() && camera.position.x > shopper.getPosX() - 2)
 		{
-			if(camera.position.x > cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
+			if(camera.position.x > cameraDupe.position.x && camera.position.z > shopper.getPosZ() - 2 && camera.position.z < shopper.getPosZ() + 2)
 			{
 				camera.position.x = cameraDupe.position.x;
 				camera.target.x = cameraDupe.target.x;
 			}
+		}
+		if(((camera.position.z > shopper.getPosZ() + 3 || camera.position.z < shopper.getPosZ() - 3) && (camera.position.x > shopper.getPosX() + 3 || camera.position.x < shopper.getPosX() - 3)) || (camera.position.x > shopper.getPosX() + 5) || (camera.position.x < shopper.getPosX() - 5))
+		{
+			playeridle = false;
 		}
 		/*if(camera.position.x > shopper.getPosX() + 5 && camera.position.z > shopper.getPosZ() + 5 )
 		{
@@ -4098,7 +4160,7 @@ void SP2::NPCShop()
 		{
 			shopper.setShop(false);
 		}
-		if(shopper.maxItem == 1)
+		if(shopper.maxItem == 5)
 		{
 			shopper.cashIn = true;
 			shopper.Checkout();
