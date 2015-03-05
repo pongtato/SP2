@@ -20,6 +20,9 @@
 #include "Bullet.h"
 #include "CollisionBounds.h"
 #include "Police.h"
+#include <iomanip>
+#include <time.h>
+#include <stdlib.h>
 #include "Csounds.h"
 
 using namespace std;
@@ -240,6 +243,9 @@ private:
 		GEO_BUILDING02,
 		GEO_BUILDING03,
 		GEO_BUILDING04,
+		GEO_LAMP,
+		GEO_FLAG,
+		GEO_MISSINGITEM,
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -274,6 +280,7 @@ public:
 	CReadFromText Building02;
 	CReadFromText Building03;
 	CReadFromText Building04;
+	CReadFromText Lamp;
 	vector<CBullet*> bullet;
 	vector<CBullet*> Policebullet;
 	CBullet shoot;
@@ -312,6 +319,7 @@ public:
 	float DupeRotArms;
 	float DupeRotArmsY;
 	Csounds MusicPlayer;
+	int RandomItem;
 
 private:
 	unsigned m_vertexArrayID;
@@ -331,6 +339,12 @@ private:
 	bool NPC3idle;
 	bool paying;
 	bool paid;
+	double DTimer;
+	string DTtime;
+	bool UpdateItemMissing;
+	string missinglist;
+	string nameofitem[10];
+	int noofitem[10];
 	float CashierOffetX;
 	float CashierOffetY;
 	float CashierOffetZ;
@@ -362,7 +376,7 @@ private:
 	float ArmSwing;
 	bool MenuKey;
 	void EscapeSteal();
-	
+	float LengthY;
 
 	//Camera2 camera;
 	Camera3 camera;
@@ -385,12 +399,14 @@ private:
 	void RenderFNB();
 	void RenderPlayer();
 	void RenderScreenUI();
+	void RenderItemMissing();
 	void RenderAnimate();
 	void RenderAnimate2();
 	void RenderAnimateGuard();
 	void RenderPolice();
 	void PoliceShoot(double dt);
 	void RenderBuilding();
+	void ItemMissing();
 
 	void SetPrevPos(void);
 	void RenderMesh(Mesh *mesh, bool enableLight);

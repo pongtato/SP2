@@ -99,6 +99,11 @@ void  CCharacter::dropItem(string itemname)
 	}
 }
 
+string CCharacter::getItemName(int n)
+{
+	return getInventory(n)->getItemName();
+}
+
 void  CCharacter::sellItems(int n)
 {
 	inven_list.erase(inven_list.begin()+n);

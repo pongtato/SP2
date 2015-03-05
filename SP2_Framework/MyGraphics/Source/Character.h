@@ -37,6 +37,7 @@ public:
 	int getStamina(void);
 	int getBullets(void);
 	float getDetection(void);
+	string getItemName(int n);
 	CItem* getInventory(int n);
 	string getClass(void);
 	int returnInvenSize();

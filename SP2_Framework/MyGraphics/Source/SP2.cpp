@@ -42,6 +42,7 @@ void SP2::Init()
 	Building02.ReadTextFile("OBJ-Pos/Building/Building02Pos.txt");
 	Building03.ReadTextFile("OBJ-Pos/Building/Building03Pos.txt");
 	Building04.ReadTextFile("OBJ-Pos/Building/Building04Pos.txt");
+	Lamp.ReadTextFile("OBJ-Pos/Building/LampPos.txt");
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	//Enable depth buffer and depth testing
@@ -77,7 +78,11 @@ void SP2::Init()
 	NPC3idle = false;
 	translate = 0;
 	translateY = 0;
+	LengthY = 0;
+	UpdateItemMissing = true;
 	float tempX = data.GetRenderPos(10)->getTranslationX();
+	srand((unsigned) time(NULL));
+	RandomItem = rand() % 1000 + 1;
 
 	//Initialize camera settings
 	camera.Init(Vector3(0, 6, 100), Vector3(0, 0, 0), Vector3(0, 1, 0));
@@ -293,7 +298,7 @@ void SP2::Init()
 	glUniform1f(m_parameters[U_LIGHT4_COSCUTOFF], lights[4].cosCutoff);
 	glUniform1f(m_parameters[U_LIGHT4_COSINNER], lights[4].cosInner);
 	glUniform1f(m_parameters[U_LIGHT4_EXPONENT], lights[4].exponent);
-
+	
 	//Light ball
 	meshList[GEO_LIGHTBALL] = MeshBuilder::GenerateSphere("lightball", Color(1, 1, 1), 10, 10, 1);
 	meshList[GEO_LIGHTBALL2] = MeshBuilder::GenerateSphere("lightball2", Color(1, 1, 1), 10, 10, 1);
@@ -663,6 +668,15 @@ void SP2::Init()
 
 	meshList[GEO_BUILDING04] = MeshBuilder::GenerateOBJ("model1", "OBJ//Building04.obj");
 	meshList[GEO_BUILDING04]->textureID = LoadTGA("Image//Building04.tga");
+
+	meshList[GEO_LAMP] = MeshBuilder::GenerateOBJ("model1", "OBJ//Lamp.obj");
+	meshList[GEO_LAMP]->textureID = LoadTGA("Image//Lamp.tga");
+
+	meshList[GEO_FLAG] = MeshBuilder::GenerateOBJ("model1", "OBJ//Flag.obj");
+	meshList[GEO_FLAG]->textureID = LoadTGA("Image//Flag.tga");
+
+	meshList[GEO_MISSINGITEM] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_MISSINGITEM]->textureID = LoadTGA("Image//MissingItem.tga");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//comic.tga");
@@ -1070,6 +1084,12 @@ void SP2::Update(double dt)
 		}
 	}
 	Animate(dt);
+
+	if(UpdateItemMissing == true)
+	{
+		ItemMissing();
+		UpdateItemMissing = false;
+	}
 }
 
 void SP2::NPCwalk()
@@ -1164,6 +1184,11 @@ void SP2::UIupdates(double dt)
 	std::stringstream kk;
 	kk << "$" << player.getMoney();
 	MONEY = kk.str();
+
+	DTimer += dt;
+	std::stringstream DeltaTime;
+	DeltaTime << setprecision(2) << fixed << DTimer;
+	DTtime = DeltaTime.str();
 
 	if ( police == true)
 	{
@@ -2312,7 +2337,7 @@ void SP2::TrolleyUpdate()
 					modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 					RenderMesh(meshList[GEO_MODEL_LAYSCHIPS], true);
 					modelStack.PopMatrix();	
-					modelStack.PopMatrix();	
+					modelStack.PopMatrix();
 				}
 				else if ( player.getInventory(i)->getItemName() == "Cactus")
 				{
@@ -2535,27 +2560,7 @@ void SP2::Render()
 		glUniform3fv(m_parameters[U_LIGHT4_POSITION], 1, &lightPosition_cameraspace.x);
 		Vector3 spotDirection_cameraspace = viewStack.Top() * lights[4].spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT4_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
-	}
-
-	/*modelStack.PushMatrix();
-	modelStack.Translate(lights[0].position.x, lights[0].position.y, lights[0].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(lights[1].position.x, lights[1].position.y, lights[1].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL2], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(lights[2].position.x, lights[2].position.y, lights[2].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL2], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Translate(lights[3].position.x, lights[3].position.y, lights[3].position.z);
-	RenderMesh(meshList[GEO_LIGHTBALL2], false);
-	modelStack.PopMatrix();*/
+	}	
 
 	RenderMesh(meshList[GEO_AXES], false);
 	RenderWorld();
@@ -2607,9 +2612,12 @@ void SP2::Render()
 			}
 
 			if ( camera.getCameraState() == 0 )
-		RenderScreenUI();
+				RenderScreenUI();
 			else if (MenuKey == true)
 				MainMenu();
+
+			if(Application::IsKeyPressed(VK_TAB))
+				RenderItemMissing();
 }
 
 void SP2::RenderBasicModel()
@@ -2653,6 +2661,7 @@ void SP2::RenderScreenUI()
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 12);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 11);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 10);
+	RenderTextOnScreen(meshList[GEO_TEXT], DTtime, Color(0,1,0), 5,5,10);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
 	if (camera.downSight == false)
@@ -2794,6 +2803,169 @@ void SP2::RenderScreenUI()
 	}
 }
 
+void SP2::RenderItemMissing()
+{
+	RenderUI(meshList[GEO_MISSINGITEM], Color(0, 1, 0), 45, 32, 1, 65, 35);
+	LengthY = 0;
+	int offsetlist1 = 0, offsetlist2 = 0, offsetlist3 = 0, offsetlist4 = 0, offsetlist5 = 0, offsetlist6 = 0, offsetlist7 = 0, offsetlist8 = 0, offsetlist9 = 0, offsetlist10 = 0, offsetlist11 = 0, offsetlist12 = 0, offsetlist13 = 0, offsetlist14 = 0, offsetlist15 = 0, offsetlist16 = 0, offsetlist17 = 0, offsetlist18 = 0, offsetlist19 = 0, offsetlist20 = 0, offsetlist21 = 0, offsetlist22 = 0;
+	float offsetx = 14;
+	float offsety = 15;
+
+	for(int i = 0; i < 10; i++)
+	{
+		if(FNB.GetRenderPosItem(noofitem[i])->getItemAvailability() == false)
+		{
+			RenderTextOnScreen(meshList[GEO_TEXT],nameofitem[i],Color(0,1,0), 3, offsetx, offsety - LengthY);
+			LengthY+= 1;
+		}
+	}
+	/*
+	for(int i = 0 ; i < FNB.ReturnListSize(); ++i)
+	{
+		if(LengthY > 10)
+		{
+			offsetx = 10;
+			LengthY = 0;
+		}
+		if(FNB.GetRenderPosItem(i)->getItemAvailability() == false)
+		{
+			if (FNB.GetRenderPosItem(i)->getItemName() == "Coke" && offsetlist1 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Coke",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist1++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Pepsi" && offsetlist2 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Pepsi",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist2++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "MtDew" && offsetlist3 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"MtDew",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist3++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Pizza" && offsetlist4 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Pizza",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist4++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "IceCream" && offsetlist5 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"IceCream",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist5++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "McNCheese" && offsetlist6 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"McNCheese",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist6++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Toblerone" && offsetlist7 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Toblerone",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist7++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Rocher" && offsetlist8 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Rocher",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist8++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Reditos" && offsetlist9 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Reditos",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist9++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Dewitos" && offsetlist10 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Dewitos",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist10++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Lays" && offsetlist11 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Lays",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist11++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Cactus" && offsetlist12 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Cactus",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist12++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Vegcan" && offsetlist13 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Vegcan",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist13++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "PCan" && offsetlist14 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"PCan",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist14++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "MOaties" && offsetlist15 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"MOaties",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist15++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "OBox" && offsetlist16 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"OBox",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist16++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Chickenstock" && offsetlist17 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Chickenstock",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist17++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Pistol" && offsetlist18 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Pistol",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist18++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Rifle" && offsetlist19 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Rifle",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist19++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "Milo" && offsetlist20 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"Milo",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist20++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "SardCan" && offsetlist21 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"SardCan",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist21++;
+			}
+			else if (FNB.GetRenderPosItem(i)->getItemName() == "SoupCan" && offsetlist22 < 1)
+			{
+				RenderTextOnScreen(meshList[GEO_TEXT],"SoupCan",Color(0,1,0), 3, offsetx, offsety - LengthY);
+				LengthY += 1;
+				offsetlist22++;
+			}
+		}
+	}
+	*/
+}
+
 void SP2::MainMenu()
 {
 	if(MenuKey == true)
@@ -2926,6 +3098,47 @@ void SP2::LightsReset()
 		glUniform3fv(m_parameters[U_LIGHT4_COLOR], 1, &lights[4].color.r);
 		glUniform1f(m_parameters[U_LIGHT4_POWER], lights[4].power);
 		glUniform1f(m_parameters[U_LIGHT0_POWER], lights[0].power);
+	}
+}
+
+void SP2::ItemMissing()
+{
+	for(int i = 0; i < 10; i++)
+	{
+		std::stringstream listitem;
+		while(RandomItem >= FNB.ReturnListSize())
+		{
+			RandomItem = rand() % 1000;
+		}
+	
+		if (FNB.GetRenderPosItem(RandomItem)->getItemAvailability() == true)
+		{
+			FNB.GetRenderPosItem(RandomItem)->setItemAvailable(0);
+			listitem << FNB.GetRenderPosItem(RandomItem)->getItemName();
+			missinglist = listitem.str();
+			nameofitem[i] = missinglist;
+			noofitem[i] = RandomItem;
+			player.setInventory(FNB.GetRenderPosItem(RandomItem)->getItemName(),FNB.GetRenderPosItem(RandomItem)->getItemPrice());
+			RandomItem = rand() % 1000;
+		}
+		else
+		{
+			while(FNB.GetRenderPosItem(RandomItem)->getItemAvailability() == false)
+			{
+				RandomItem = rand() % 1000;
+				while(RandomItem >= FNB.ReturnListSize())
+				{
+					RandomItem = rand() % 1000;
+				}
+				FNB.GetRenderPosItem(RandomItem)->setItemAvailable(0);
+				listitem << FNB.GetRenderPosItem(RandomItem)->getItemName();
+				missinglist = listitem.str();
+				nameofitem[i] = missinglist;
+				noofitem[i] = RandomItem;
+				player.setInventory(FNB.GetRenderPosItem(RandomItem)->getItemName(),FNB.GetRenderPosItem(RandomItem)->getItemPrice());
+				RandomItem = rand() % 1000;
+			}
+		}
 	}
 }
 
@@ -4573,6 +4786,27 @@ void SP2::RenderBuilding()
 		modelStack.Scale(Building04.GetRenderPos(i)->getScaleX(),Building04.GetRenderPos(i)->getScaleY(),Building04.GetRenderPos(i)->getScaleZ());
 		RenderMesh(meshList[GEO_BUILDING04],false);
 		modelStack.PopMatrix();
+	}
+	for(int i = 0;i < Lamp.ReturnReadListSize(); ++i)
+	{
+		if(i < 4)
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(Lamp.GetRenderPos(i)->getTranslationX(),Lamp.GetRenderPos(i)->getTranslationY(),Lamp.GetRenderPos(i)->getTranslationZ());
+			modelStack.Rotate(Lamp.GetRenderPos(i)->getRotation(),Lamp.GetRenderPos(i)->getRX(),Lamp.GetRenderPos(i)->getRY(),Lamp.GetRenderPos(i)->getRZ());
+			modelStack.Scale(Lamp.GetRenderPos(i)->getScaleX(),Lamp.GetRenderPos(i)->getScaleY(),Lamp.GetRenderPos(i)->getScaleZ());
+			RenderMesh(meshList[GEO_LAMP],false);
+			modelStack.PopMatrix();
+		}
+		else
+		{
+			modelStack.PushMatrix();
+			modelStack.Translate(Lamp.GetRenderPos(i)->getTranslationX(),Lamp.GetRenderPos(i)->getTranslationY(),Lamp.GetRenderPos(i)->getTranslationZ());
+			modelStack.Rotate(Lamp.GetRenderPos(i)->getRotation(),Lamp.GetRenderPos(i)->getRX(),Lamp.GetRenderPos(i)->getRY(),Lamp.GetRenderPos(i)->getRZ());
+			modelStack.Scale(Lamp.GetRenderPos(i)->getScaleX(),Lamp.GetRenderPos(i)->getScaleY(),Lamp.GetRenderPos(i)->getScaleZ());
+			RenderMesh(meshList[GEO_FLAG],false);
+			modelStack.PopMatrix();
+		}
 	}
 }
 
