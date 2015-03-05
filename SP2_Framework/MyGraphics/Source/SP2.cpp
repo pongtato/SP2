@@ -43,6 +43,7 @@ void SP2::Init()
 	Building03.ReadTextFile("OBJ-Pos/Building/Building03Pos.txt");
 	Building04.ReadTextFile("OBJ-Pos/Building/Building04Pos.txt");
 	Lamp.ReadTextFile("OBJ-Pos/Building/LampPos.txt");
+	Locker.ReadTextFile("OBJ-Pos/Building/LockerPos.txt");
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	//Enable depth buffer and depth testing
@@ -674,6 +675,9 @@ void SP2::Init()
 
 	meshList[GEO_FLAG] = MeshBuilder::GenerateOBJ("model1", "OBJ//Flag.obj");
 	meshList[GEO_FLAG]->textureID = LoadTGA("Image//Flag.tga");
+
+	meshList[GEO_LOCKER] = MeshBuilder::GenerateOBJ("model1", "OBJ//Locker.obj");
+	meshList[GEO_LOCKER]->textureID = LoadTGA("Image//Locker.tga");
 
 	meshList[GEO_MISSINGITEM] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_MISSINGITEM]->textureID = LoadTGA("Image//MissingItem.tga");
@@ -4807,6 +4811,16 @@ void SP2::RenderBuilding()
 			RenderMesh(meshList[GEO_FLAG],false);
 			modelStack.PopMatrix();
 		}
+	}
+	
+	for(int i = 0; i < Locker.ReturnReadListSize(); i++)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(Locker.GetRenderPos(i)->getTranslationX(),Locker.GetRenderPos(i)->getTranslationY(),Locker.GetRenderPos(i)->getTranslationZ());
+		modelStack.Rotate(Locker.GetRenderPos(i)->getRotation(),Locker.GetRenderPos(i)->getRX(),Locker.GetRenderPos(i)->getRY(),Locker.GetRenderPos(i)->getRZ());
+		modelStack.Scale(Locker.GetRenderPos(i)->getScaleX(),Locker.GetRenderPos(i)->getScaleY(),Locker.GetRenderPos(i)->getScaleZ());
+		RenderMesh(meshList[GEO_LOCKER],false);
+		modelStack.PopMatrix();
 	}
 }
 

@@ -246,6 +246,7 @@ private:
 		GEO_LAMP,
 		GEO_FLAG,
 		GEO_MISSINGITEM,
+		GEO_LOCKER,
 
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -281,6 +282,7 @@ public:
 	CReadFromText Building03;
 	CReadFromText Building04;
 	CReadFromText Lamp;
+	CReadFromText Locker;
 	vector<CBullet*> bullet;
 	vector<CBullet*> Policebullet;
 	CBullet shoot;
