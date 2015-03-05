@@ -80,7 +80,7 @@ void SP2::Init()
 	translate = 0;
 	translateY = 0;
 	LengthY = 0;
-	UpdateItemMissing = true;
+	UpdateItemMissing = false;
 	GameEndStaff = false;
 	GameEndSteal = false;
 	GameEndStealLose = false;
@@ -365,8 +365,17 @@ void SP2::Init()
 	meshList[GEO_DIALOGUEBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_DIALOGUEBOX]->textureID = LoadTGA("Image//dialoguebox.tga");
 
+	meshList[GEO_PINSTRUCTBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_PINSTRUCTBOX]->textureID = LoadTGA("Image//Pinstruct.tga");
+
+	meshList[GEO_SINSTRUCTBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_SINSTRUCTBOX]->textureID = LoadTGA("Image//Sinstruct.tga");
+
 	meshList[GEO_MENUBOX] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_MENUBOX]->textureID = LoadTGA("Image//menubox.tga");
+
+	meshList[GEO_MAIN_INSTRUCT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_MAIN_INSTRUCT]->textureID = LoadTGA("Image//Instruct.tga");
 
 	meshList[GEO_MENUSELECT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_MENUSELECT]->textureID = LoadTGA("Image//menuselect.tga");
@@ -644,6 +653,10 @@ void SP2::Init()
 	meshList[GEO_MODEL_POLICEVAN] = MeshBuilder::GenerateOBJ("model1", "OBJ//PoliceVan.obj");
 	meshList[GEO_MODEL_POLICEVAN]->textureID = LoadTGA("Image//PoliceVan.tga");
 
+	//police car
+	meshList[GEO_MODEL_ESCAPE] = MeshBuilder::GenerateOBJ("model1", "OBJ//PoliceVan.obj");
+	meshList[GEO_MODEL_ESCAPE]->textureID = LoadTGA("Image//Escape.tga");
+
 	meshList[GEO_MODEL_POLICEVANWHEEL] = MeshBuilder::GenerateOBJ("model1", "OBJ//PoliceVanWheel.obj");
 	meshList[GEO_MODEL_POLICEVANWHEEL]->textureID = LoadTGA("Image//Cart.tga");
 	//Character(security guard)
@@ -735,8 +748,12 @@ void SP2::Init()
 	GameEndStaff = false;
 	GameEndSteal = false;
 	ROLE = "Shopper";
+	Instruct = false;
+	PInstruct = false;
+	SInstruct = false;
 	//Play Music
 	MusicPlayer.MainMusic();
+	//Init Police bounds
 	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
 	{
 		if ( PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true )
@@ -747,6 +764,7 @@ void SP2::Init()
 		}
 	}
 
+	//Init Police van bounds
 	for ( int i =0; i < PoliceCol.ReturnListSize(); ++i)
 	{
 		if ( i < 4)
@@ -768,15 +786,22 @@ void SP2::Init()
 			}
 		}
 	}
+
+	//Init Locker bounds
+	for ( int i =0; i < Locker.ReturnReadListSize(); ++i)
+	{
+		CCollisionBounds* temp =  new CCollisionBounds();
+		temp->SetCollisionBounds(Locker.GetRenderPos(i)->getTranslationX(),Locker.GetRenderPos(i)->getTranslationY(),Locker.GetRenderPos(i)->getTranslationZ(),2,7,2);
+		LockerBounds.push_back(temp);
+	}
 }
 
-static float ROT_LIMIT = 45.f;
-static float SCALE_LIMIT = 5.f;
-bool Lightsssss = false;
+//Animate walk speed
 static float WSPEED = 50.0f;
 
 void SP2::Update(double dt)
 {
+
 	float LSPEED = 10.f;
 	if(Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -786,6 +811,8 @@ void SP2::Update(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
 	if(Application::IsKeyPressed('4')) 
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+	
+	//Main menu update or exited main menu
 	if(MenuKey == true)
 	{
 		MenuUpdate(dt);
@@ -793,6 +820,18 @@ void SP2::Update(double dt)
 	else
 		LightsReset();
 
+	if ( Application::IsKeyPressed('E') && police != true && ShopStaff != true)
+		{
+			if ( camera.target.x >= LockerBounds[0]->TTL.x && camera.target.x <= LockerBounds[0]->TTR.x
+				&& camera.target.y >= LockerBounds[0]->BTL.y && camera.target.y <= LockerBounds[0]->TTL.y
+				&& camera.target.z >= LockerBounds[0]->TTL.z && camera.target.z <= LockerBounds[0]->TBL.z)
+			{
+				ShopStaff = true;
+				ItemMissing();
+			}
+		}
+
+	//Activate security camera
 	if ( ItemName == "Camera")
 	{
 		if(Application::IsKeyPressed('5'))
@@ -812,6 +851,7 @@ void SP2::Update(double dt)
 			camera.CameraMode = false;
 		}
 	}
+
 	CheckItem();
 	DoorSlide();
 	ShutterOpen();
@@ -841,9 +881,20 @@ void SP2::Update(double dt)
 		ExplosionScale++;
 	}
 
+	if ( ShopStaff == true)
+	{
+		SInstruct = true;
+		StaffInstructTimer += (1*dt);
+	}
+	
+	//Police spawned alarm rung
 	if ( police == true)
 	{
+		PInstruct = true;
+		PoliceInstructTimer += (1*dt);
+			
 		ROLE = "Thief";
+		ShopStaff = false;
 
 		/*if ( Application::IsKeyPressed(VK_NUMPAD8))
 		{
@@ -859,7 +910,7 @@ void SP2::Update(double dt)
 		{
 			EscapeCarMove++;
 		}
-		if ( EscapeCarMove >=  50 )
+		if ( EscapeCarMove >=  70 )
 		{
 			GameEndSteal = true;
 			keybd_event( VK_NUMPAD9,
@@ -878,6 +929,7 @@ void SP2::Update(double dt)
 			GunSwing +=3;
 		}
 
+		//Zoom In and out
 		if(Application::IsKeyPressed(VK_RBUTTON))
 		{
 			Mtx44 projection;
@@ -893,6 +945,7 @@ void SP2::Update(double dt)
 			camera.downSight = false;
 		}
 
+		//Damage animation reset
 		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
 		{
 			if (PoliceMan.GetRenderPosPolice(i)->DamageReset < 0.5 && PoliceMan.GetRenderPosPolice(i)->Damaged == true)
@@ -906,19 +959,7 @@ void SP2::Update(double dt)
 			}
 		}
 
-		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
-		{
-			if (PoliceMan.GetRenderPosPolice(i)->DamageReset < 0.5 && PoliceMan.GetRenderPosPolice(i)->Damaged == true)
-			{
-				PoliceMan.GetRenderPosPolice(i)->DamageReset += (2*dt);
-			}
-			else if (PoliceMan.GetRenderPosPolice(i)->DamageReset >=0.5 )
-			{
-				PoliceMan.GetRenderPosPolice(i)->Damaged = false;
-				PoliceMan.GetRenderPosPolice(i)->DamageReset = 0;
-			}
-		}
-
+		//Police respawn
 		for ( int i =0; i<PoliceMan.ReadTextFilePoliceSize(); ++i)
 		{
 			if ( PoliceMan.GetRenderPosPolice(i)->getItemPrice() <= 0 )
@@ -942,6 +983,7 @@ void SP2::Update(double dt)
 
 		PoliceShoot(dt);
 
+		//Police van roll in animation
 		for (int i = 0; i < Police.ReturnListSize(); ++i)
 		{
 			if (Police.GetRenderPosItem(i)->getItemName() == "PoliceVan")
@@ -975,6 +1017,7 @@ void SP2::Update(double dt)
 		}
 	}
 
+	//Trolley mode activated
 	if (player.trolley == true)
 	{
 		Trolleyz.Position = Vector3(camera.position.x,camera.position.y,camera.position.z);
@@ -983,6 +1026,7 @@ void SP2::Update(double dt)
 		BoundsCheckTrolley(Trolleyz.Position.x,Trolleyz.Position.y,Trolleyz.Position.z);
 	}
 
+	//Shooting
 	if (shoot.bullet > 0  && police == true)
 	{
 		if(Application::IsKeyPressed(VK_LBUTTON))
@@ -1004,6 +1048,7 @@ void SP2::Update(double dt)
 			}
 		}
 	}
+	//Bullet check
 	else if  (shoot.bullet <= 0  && police == true)
 	{
 		if ( shoot.clip >0)
@@ -1018,6 +1063,7 @@ void SP2::Update(double dt)
 			}
 		}
 	}
+	//Reload
 	else if  (shoot.bullet <= 0  && police == true)
 	{
 		if ( shoot.clip >0)
@@ -1025,6 +1071,7 @@ void SP2::Update(double dt)
 		shoot.bullet=30;
 	}
 
+	//Bullet check for delete
 	for( int i=0; i < bullet.size(); i ++ )
 	{
 		BulletCollision(bullet[i]->Position.x,bullet[i]->Position.y,bullet[i]->Position.z,dt);
@@ -1034,6 +1081,7 @@ void SP2::Update(double dt)
 		}
 	}
 
+	//Enemy bullet check for delete
 	for( int i=0; i < Policebullet.size(); i ++ )
 	{
 		BulletCollisionEnemy(Policebullet[i]->Position.x,Policebullet[i]->Position.y,Policebullet[i]->Position.z);
@@ -1043,6 +1091,7 @@ void SP2::Update(double dt)
 		}
 	}
 
+	//Local calculation for rotation
 	if ( camera.isCollide == false && player.trolley == true && player.trolleyDrop == false)
 	{
 			if(camera.MouseX < 960)
@@ -1140,7 +1189,7 @@ void SP2::UnpaidItems()
 	}
 	if (player.unpaiditems == true)
 	{
-		if ( camera.position.z <= -40 || camera.position.z >= 40)
+		if ( camera.position.z <= -65 || camera.position.z >= 40)
 		{
 			police = true;
 		}
@@ -1234,11 +1283,10 @@ void SP2::UIupdates(double dt)
 	EndGameSteal = Final2.str();
 
 	std::stringstream Final3;
-	Final3  <<  "Money Confiscated :(";
+	Final3  <<  "Vehicle Destroyed";
 	EndGameStealL = Final3.str();
-
-
-
+	
+	//Crosshair updates
 	if ( police == true)
 	{
 		std::stringstream ll;
@@ -1253,6 +1301,7 @@ void SP2::UIupdates(double dt)
 		BulletCount = ll.str();
 	}
 
+	//Scan for item 
 	for ( int i = 0; i < FNB.ReturnListSize();  ++i)
 	{
 		if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.2 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.2 
@@ -1261,7 +1310,14 @@ void SP2::UIupdates(double dt)
 		{
 			ItemName = FNB.GetRenderPosItem(i)->getItemName();
 			std::stringstream pp;
+			if ( FNB.GetRenderPosItem(i)->getItemName() != "Rifle" && FNB.GetRenderPosItem(i)->getItemName() != "Pistol")
+			{
 			pp << "$" << FNB.GetRenderPosItem(i)->getItemPrice();
+			}
+			else
+			{
+			pp << "Pick Ammo";
+			}
 			ItemPrice = pp.str();
 			break;
 		}
@@ -1272,6 +1328,7 @@ void SP2::UIupdates(double dt)
 		}
 	}
 
+	//scan for cashier
 	for ( int i = 0; i < 4;  ++i)
 	{
 		if ( camera.target.x >= cashier.GetRenderPos(i)->getTranslationX()-4 && camera.target.x <= cashier.GetRenderPos(i)->getTranslationX()+4 
@@ -1282,6 +1339,7 @@ void SP2::UIupdates(double dt)
 		}
 	}
 
+	//scan for security camera panel
 	if ( camera.target.x >= data.GetRenderPos(20)->getTranslationX()-2 && camera.target.x <= data.GetRenderPos(20)->getTranslationX()+13.5 
 			&& camera.target.y >= data.GetRenderPos(20)->getTranslationY()-10 && camera.target.y <= data.GetRenderPos(20)->getTranslationY()+10
 			&& camera.target.z >= data.GetRenderPos(20)->getTranslationZ()-10 && camera.target.z <= data.GetRenderPos(20)->getTranslationZ())
@@ -1289,6 +1347,7 @@ void SP2::UIupdates(double dt)
 			ItemName = "Camera";
 		}
 
+	//scan for trolley
 	if ( camera.target.x >= trolley.LastX-5 && camera.target.x <= trolley.LastX+5
 		&& camera.target.y >= data.GetRenderPos(21)->getTranslationY()-2 && camera.target.y <= data.GetRenderPos(21)->getTranslationY()+5
 		&& camera.target.z >= trolley.LastZ-5 && camera.target.z <= trolley.LastZ+5 && player.trolley == false)
@@ -1296,6 +1355,7 @@ void SP2::UIupdates(double dt)
 			ItemName = "Trolley";
 		}
 
+	//scan for fill truck
 	if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
 		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
 		&& camera.target.z >= VanBounds[4]->TBL.z-2 && camera.target.z <= VanBounds[4]->TBL.z+2 && police == true)
@@ -1303,11 +1363,19 @@ void SP2::UIupdates(double dt)
 			ItemName = "$$$";
 		}
 
+	//scan for escape 
 		if ( camera.target.x >= VanBounds[4]->TTL.x && camera.target.x <= VanBounds[4]->TTR.x
 		&& camera.target.y >= VanBounds[4]->BTL.y && camera.target.y <= VanBounds[4]->TTL.y
 		&& camera.target.z >= VanBounds[4]->TTL.z && camera.target.z <= VanBounds[4]->TBL.z-15 && police == true)
 		{
 			ItemName = "Escape";
+		}
+
+		if ( camera.target.x >= LockerBounds[0]->TTL.x && camera.target.x <= LockerBounds[0]->TTR.x
+		&& camera.target.y >= LockerBounds[0]->BTL.y && camera.target.y <= LockerBounds[0]->TTL.y
+		&& camera.target.z >= LockerBounds[0]->TTL.z && camera.target.z <= LockerBounds[0]->TBL.z)
+		{
+			ItemName = "Shop Staff";
 		}
 }
 
@@ -1385,6 +1453,22 @@ void SP2::BoundsCheck()
 		if ( camera.position.x  >= VanBounds[i]->TTL.x && camera.position.x  <= VanBounds[i]->TTR.x 
 			&& camera.position.y >= VanBounds[i]->BTL.y && camera.position.y <= VanBounds[i]->TTL.y
 			&& camera.position.z >= VanBounds[i]->TTL.z && camera.position.z <= VanBounds[i]->TBL.z && police == true)
+		{
+			camera.position.x = cameraDupe.position.x;
+			camera.target.x = cameraDupe.target.x;
+			camera.position.z = cameraDupe.position.z;
+			camera.target.z = cameraDupe.target.z;
+			camera.isCollide = true;
+		}
+	}
+
+	
+	//Locker
+	for ( int i = 0; i< LockerBounds.size(); ++i)
+	{
+		if ( camera.position.x  >= LockerBounds[i]->TTL.x && camera.position.x  <= LockerBounds[i]->TTR.x 
+			&& camera.position.y >= LockerBounds[i]->BTL.y && camera.position.y <= LockerBounds[i]->TTL.y
+			&& camera.position.z >= LockerBounds[i]->TTL.z && camera.position.z <= LockerBounds[i]->TBL.z)
 		{
 			camera.position.x = cameraDupe.position.x;
 			camera.target.x = cameraDupe.target.x;
@@ -1502,10 +1586,6 @@ void SP2::BoundsCheck()
 			camera.position.z = cameraDupe.position.z;
 			camera.target.z = cameraDupe.target.z;
 			camera.isCollide = true;
-		}
-		else//idle player/camera
-		{
-			cout<<"player is idle"<<endl;
 		}
 	}
 	else
@@ -1635,7 +1715,6 @@ void SP2::BoundsCheck()
 			}
 			else if(camera.position.x == cameraDupe.position.x && camera.position.z == cameraDupe.position.z)//idle player/camera
 			{
-				cout<<"player is idle"<<endl;
 				//prevent AI movement
 				playeridle = true;
 				NPC1idle = true;
@@ -1687,7 +1766,6 @@ void SP2::BoundsCheck()
 			}
 			else if(camera.position.x == cameraDupe.position.x && camera.position.z == cameraDupe.position.z)//idle player/camera
 			{
-				cout<<"player is idle"<<endl;
 				//prevent AI movement
 				playeridle = true;
 				NPC2idle = true;
@@ -1740,7 +1818,6 @@ void SP2::BoundsCheck()
 			}
 			else if(camera.position.x == cameraDupe.position.x && camera.position.z == cameraDupe.position.z)//idle player/camera
 			{
-				cout<<"player is idle"<<endl;
 				//prevent AI movement
 				playeridle = true;
 				NPC3idle = true;
@@ -1921,10 +1998,6 @@ void SP2::BoundsCheckTrolley(float x,float y, float z)
 			camera.target.z = cameraDupe.target.z;
 			camera.isCollide = true;
 		}
-		else//idle player/camera
-		{
-			cout<<"player is idle"<<endl;
-		}
 	}
 	else
 	{
@@ -2045,7 +2118,6 @@ void SP2::BoundsCheckTrolley(float x,float y, float z)
 			}
 			else if(x == cameraDupe.position.x && z == cameraDupe.position.z)//idle player/camera
 			{
-				cout<<"player is idle"<<endl;
 				//prevent AI movement
 				playeridle = true;
 			}
@@ -2466,7 +2538,7 @@ void SP2::TrolleyUpdate()
 					modelStack.PopMatrix();	
 					modelStack.PopMatrix();	
 				}
-				else if ( player.getInventory(i)->getItemName() == "Pistol")
+			/*	else if ( player.getInventory(i)->getItemName() == "Pistol")
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
@@ -2479,7 +2551,7 @@ void SP2::TrolleyUpdate()
 					modelStack.PopMatrix();	
 					modelStack.PopMatrix();	
 				}
-				else if ( player.getInventory(i)->getItemName() == "Rifle")
+				else if ( player.getInventory(i)->getItemName() == "Rifle" )
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
@@ -2491,7 +2563,7 @@ void SP2::TrolleyUpdate()
 					RenderMesh(meshList[GEO_MODEL_RIFLE], true);
 					modelStack.PopMatrix();	
 					modelStack.PopMatrix();	
-				}
+				}*/
 				else if ( player.getInventory(i)->getItemName() == "Milo")
 				{
 					modelStack.PushMatrix();
@@ -2667,11 +2739,10 @@ void SP2::Render()
 
 			if(police == false && Application::IsKeyPressed(VK_TAB))
 			{
-				ShopStaff = true;
+				//ShopStaff = true;
 				RenderItemMissing();
 				if(UpdateItemMissing == true)
 				{
-					ItemMissing();
 					UpdateItemMissing = false;
 				}
 			}
@@ -2740,8 +2811,8 @@ void SP2::RenderScreenUI()
 	double tempHpCalc = player.getHealth();
 	double HpCalc = (tempHpCalc/100) * 54 ;
 
-	//RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
-	//RenderTextOnScreen(meshList[GEO_TEXT], FPS_count , Color(0, 1, 0), 3, 18, 18);
+	RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
+	RenderTextOnScreen(meshList[GEO_TEXT], FPS_count , Color(0, 1, 0), 3, 18, 18);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], XPos , Color(0, 1, 0), 3, 0, 18);
 	//RenderTextOnScreen(meshList[GEO_TEXT], ZPos , Color(0, 1, 0), 3, 0, 17);
@@ -2760,9 +2831,20 @@ void SP2::RenderScreenUI()
 		RenderUI(meshList[GEO_XHAIR], Color(0, 1, 0), 15, 15, 15, 40, 30);
 	RenderUI(meshList[GEO_HP], Color(0, 1, 0), HpCalc, 1.5, 15, 12.5, 9);
 	RenderUI(meshList[GEO_STAM], Color(0, 1, 0), Calc, 1.5, 15, 45, 9);
-	RenderUI(meshList[GEO_HPI], Color(0, 1, 0), 4, 4, 4, 12, 9);
+	RenderUI(meshList[GEO_HPI], Color(0, 1, 0), 5, 4, 4, 12, 9);
 	RenderUI(meshList[GEO_STAMI], Color(0, 1, 0), 4, 4, 4, 45, 9);
 
+	if (PInstruct == true && PoliceInstructTimer < 5)
+	{
+	RenderUI(meshList[GEO_PINSTRUCTBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
+	//RenderTextOnScreen(meshList[GEO_TEXT], "Load items on to your truck at the back of the store before its destroyed!" , Color(0, 1, 0), 1, 6.1, 9.2);
+	}
+
+	if (SInstruct == true && StaffInstructTimer < 5)
+	{
+	RenderUI(meshList[GEO_SINSTRUCTBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
+	//RenderTextOnScreen(meshList[GEO_TEXT], "Restock items as fast as possible!" , Color(0, 1, 0), 2, 6.1, 9.2);
+	}
 
 	//Render Cashier Dialogue
 	for(int i = 0; i<4; ++i)
@@ -2770,7 +2852,7 @@ void SP2::RenderScreenUI()
 		if(camera.position.x >= cashier.GetRenderPos(i)->getTranslationX()-5 && camera.position.x <= cashier.GetRenderPos(i)->getTranslationX()-1 && camera.position.z >= cashier.GetRenderPos(i)->getTranslationZ()-2 && camera.position.z <= cashier.GetRenderPos(i)->getTranslationZ()+2)
 		{
 			RenderUI(meshList[GEO_DIALOGUEBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
-			RenderTextOnScreen(meshList[GEO_TEXT], "Welcome to UNFAIRPRICE" , Color(0, 1, 0), 2, 6, 9.2);
+			RenderTextOnScreen(meshList[GEO_TEXT], "Welcome to UNFAIRPRICE" , Color(0, 1, 0), 2, 6.1, 9.2);
 		}
 	}
 	//Render shopper/guard Dialogue
@@ -2779,7 +2861,7 @@ void SP2::RenderScreenUI()
 		if(camera.position.x >= shopper.getPosX()-8 && camera.position.x <= shopper.getPosX()+2 && camera.position.z >= shopper.getPosZ()-2 && camera.position.z <= shopper.getPosZ()+2)
 		{
 			RenderUI(meshList[GEO_DIALOGUEBOX], Color(0, 1, 0), 60, 50, 1.5, 40, 20);
-			RenderTextOnScreen(meshList[GEO_TEXT], "What should i get?" , Color(0, 1, 0), 2, 6, 9.2);
+			RenderTextOnScreen(meshList[GEO_TEXT], "What should i get?" , Color(0, 1, 0), 2, 6.1, 9.2);
 		}
 	}
 	//RenderTextOnScreen(meshList[GEO_TEXT], HP, Color(1, 1, 1), 4, 3.2, 1.5);
@@ -2793,6 +2875,11 @@ void SP2::RenderScreenUI()
 			temp = 4;
 		}
 	RenderUI(meshList[GEO_UI], Color(0, 1, 0), 5, 5, 5,15+(i*5.5)+temp, 4);
+	}
+
+	if (Instruct == true)
+	{
+		RenderUI(meshList[GEO_MAIN_INSTRUCT], Color(0, 1, 0), 80,60, 0, 40, 30);
 	}
 
 	for ( int i = 0; i < player.returnInvenSize(); ++i)
@@ -2872,14 +2959,14 @@ void SP2::RenderScreenUI()
 			{
 				RenderUI(meshList[GEO_MODEL_CHICKENSTOCK], Color(0, 1, 0), 3, 3, 3,15+(i*5.5)+temp,3.5);
 			}
-			else if ( player.getInventory(i)->getItemName() == "Pistol")
+			/*else if ( player.getInventory(i)->getItemName() == "Pistol")
 			{
 				RenderUI(meshList[GEO_MODEL_PISTOL], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5)+temp, 3);
 			}
 			else if ( player.getInventory(i)->getItemName() == "Rifle")
 			{
 				RenderUI(meshList[GEO_MODEL_RIFLE], Color(0, 1, 0), 2.5, 3.5, 3.5,15+(i*5.5)+temp, 3);
-			}
+			}*/
 			else if ( player.getInventory(i)->getItemName() == "Milo")
 			{
 				RenderUI(meshList[GEO_MODEL_MILO], Color(0, 1, 0), 3.5, 3.5, 3.5,15+(i*5.5)+temp, 4);
@@ -3077,23 +3164,14 @@ void SP2::MainMenu()
 		float offset = 25;
 		RenderUI(meshList[GEO_STARTBTN], Color(0,1,0), 25, 25, 1.5, middle, 25);
 		RenderUI(meshList[GEO_INSTRUCTIONBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle - offset, 25);
-		RenderUI(meshList[GEO_ACHIEVEBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle + offset, 25);
+		RenderUI(meshList[GEO_EXITBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle + offset, 25);
 	}
-
 	else if (MenuState == 3)
 	{
 		float middle = 40;
 		float offset = 25;
-		RenderUI(meshList[GEO_ACHIEVEBTN], Color(0,1,0), 25, 25, 1.5, middle, 25);
-		RenderUI(meshList[GEO_STARTBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle - offset, 25);
-		RenderUI(meshList[GEO_EXITBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle + offset, 25);
-	}
-	else if (MenuState == 4)
-	{
-		float middle = 40;
-		float offset = 25;
 		RenderUI(meshList[GEO_EXITBTN], Color(0,1,0), 25, 25, 1.5, middle, 25);
-		RenderUI(meshList[GEO_ACHIEVEBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle - offset, 25);
+		RenderUI(meshList[GEO_STARTBTN], Color(0,1,0), buttonsize, buttonsize, 1.5, middle - offset, 25);
 	}
 	}
 }
@@ -3115,23 +3193,37 @@ void SP2::MenuUpdate(double dt)
 	}	
 	if(Application::IsKeyPressed(VK_RIGHT))
 	{
-		if ( MenuState <4 && MenuLimit <= 0)
+		if ( MenuState <3 && MenuLimit <= 0)
 		{
 			MenuState++;
 			MenuLimit = true;
 			MusicPlayer.MetalClank();
 		}
-	}	
+	}
+	if(Application::IsKeyPressed(VK_BACK) && Instruct == true)
+	{
+		camera.setCameraState(2);
+		Instruct = false;
+	}
+
 	if(Application::IsKeyPressed(VK_RETURN))
 	{
-		if ( MenuState == 2 && MenuLimit <= 0)
+		if ( MenuState == 1 && MenuLimit <= 0)
+		{
+			Instruct = true;
+			MenuLimit = true;
+			camera.setCameraState(0);
+			//MenuKey = false;
+		}
+		
+		else if ( MenuState == 2 && MenuLimit <= 0)
 		{
 			camera.setCameraState(0);
 			MenuLimit = true;
 			MenuKey = false;
 		}
 
-		else if ( MenuState == 4 && MenuLimit <= 0)
+		else if ( MenuState == 3 && MenuLimit <= 0)
 		{
 				keybd_event( VK_ESCAPE,
 				0X1B,
@@ -3251,15 +3343,25 @@ void SP2::CheckItem()
 				{
 					if (ArmSwing < 140 )
 					{
-						ArmSwing+=5;
+						ArmSwing+=10;
 					}	
 
-					if (ArmSwing >= 140)
+					if ( FNB.GetRenderPosItem(i)->getItemName() != "Rifle" && FNB.GetRenderPosItem(i)->getItemName() != "Pistol")
 					{
-					FNB.GetRenderPosItem(i)->setItemAvailable(0);
-					player.setInventory(FNB.GetRenderPosItem(i)->getItemName(),FNB.GetRenderPosItem(i)->getItemPrice());
-					player.Takeitems = false;
-					break;
+						if (ArmSwing >= 140)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							player.setInventory(FNB.GetRenderPosItem(i)->getItemName(),FNB.GetRenderPosItem(i)->getItemPrice());
+							player.Takeitems = false;
+							break;
+						}
+					}
+					else
+					{
+						FNB.GetRenderPosItem(i)->setItemAvailable(0);
+						shoot.clip++;
+						player.Takeitems = false;
+						break;
 					}
 				}
 			}
@@ -3304,7 +3406,7 @@ void SP2::CheckOut()
 	float StartPosZ = -2.3;
 	float StartPosX = 1.8;
 	float PerZ = 1;
-	if(Application::IsKeyPressed('E') && player.returnInvenSize() != 0)
+	if(Application::IsKeyPressed('E') && player.returnInvenSize() != 0 && ShopStaff != true && police != true)
 	{
 		for ( int i = 0; i < 4;  ++i)
 		{
@@ -3540,7 +3642,7 @@ void SP2::CheckOut()
 				modelStack.PopMatrix();	
 				modelStack.PopMatrix();	
 			}
-			else if ( player.getInventory(j)->getItemName() == "Pistol")
+		/*	else if ( player.getInventory(j)->getItemName() == "Pistol")
 			{
 				modelStack.PushMatrix();
 				modelStack.Translate(CashierOffetX,CashierOffetY+tempOffsetY,CashierOffetZ);
@@ -3563,7 +3665,7 @@ void SP2::CheckOut()
 				RenderMesh(meshList[GEO_MODEL_RIFLE], true);
 				modelStack.PopMatrix();	
 				modelStack.PopMatrix();	
-			}
+			}*/
 			else if ( player.getInventory(j)->getItemName() == "Milo")
 			{
 				modelStack.PushMatrix();
@@ -3939,7 +4041,7 @@ void SP2::RenderPolice()
 			modelStack.Translate(Police.GetRenderPosItem(i)->getItemTranslationX()+Escape.PoliceXMove,Police.GetRenderPosItem(i)->getItemTranslationY(),Police.GetRenderPosItem(i)->getItemTranslationZ()+Escape.PoliceZMove-EscapeCarMove);
 			modelStack.Rotate(Police.GetRenderPosItem(i)->getItemRotation()+Escape.PoliceRotate,Police.GetRenderPosItem(i)->getItemRX(),Police.GetRenderPosItem(i)->getItemRY(),Police.GetRenderPosItem(i)->getItemRZ());
 			modelStack.Scale(Police.GetRenderPosItem(i)->getItemScaleX(),Police.GetRenderPosItem(i)->getItemScaleY(),Police.GetRenderPosItem(i)->getItemScaleZ());
-			RenderMesh(meshList[GEO_MODEL_POLICEVAN], true);
+			RenderMesh(meshList[GEO_MODEL_ESCAPE], true);
 			//front Left wheel
 			modelStack.PushMatrix();
 			modelStack.Translate(-3.2,-1,5.7);
@@ -5227,11 +5329,11 @@ void SP2::RenderFNB()
 			{
 			RenderMesh(meshList[GEO_MODEL_CHICKENSTOCK], true);
 			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Pistol")
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Pistol" && police == true)
 			{
 			RenderMesh(meshList[GEO_MODEL_PISTOL], true);
 			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Rifle")
+			else if ( FNB.GetRenderPosItem(i)->getItemName() == "Rifle" && police == true)
 			{
 			RenderMesh(meshList[GEO_MODEL_RIFLE], true);
 			}

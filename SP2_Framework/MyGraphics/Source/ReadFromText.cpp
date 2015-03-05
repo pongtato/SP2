@@ -33,7 +33,6 @@ void CReadFromText::ResetData(void)
 	{
 		 delete my_list[i];
 		 my_list[i] = NULL;
-		 cout << " Deleted " << endl;
 	}
 	my_list.clear();
 	my_list.shrink_to_fit();

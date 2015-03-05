@@ -242,6 +242,10 @@ private:
 		GEO_WINSCREEN,
 		GEO_ACHIEVESCREEN,
 		GEO_INSTRUCTIONSSCREEN,
+		GEO_MODEL_ESCAPE,
+		GEO_MAIN_INSTRUCT,
+		GEO_PINSTRUCTBOX,
+		GEO_SINSTRUCTBOX,
 
 		GEO_BUILDING01,
 		GEO_BUILDING02,
@@ -294,6 +298,8 @@ public:
 
 	vector<CCollisionBounds*> colBounds;
 	vector<CCollisionBounds*> VanBounds;
+	vector<CCollisionBounds*> LockerBounds;
+	
 
 
 	CNPC npc;
@@ -358,6 +364,11 @@ private:
 	float CashierOffetX;
 	float CashierOffetY;
 	float CashierOffetZ;
+	float PoliceInstructTimer;
+	float StaffInstructTimer;
+	bool PInstruct;
+	bool SInstruct;
+	bool Instruct;
 	std::string FPS_count;
 	std::string XPos;
 	std::string ZPos;
