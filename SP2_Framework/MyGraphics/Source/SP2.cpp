@@ -2474,7 +2474,7 @@ void SP2::Render()
 			{
 				modelStack.PushMatrix();
 				modelStack.Translate(Trolleyz.Position.x,Trolleyz.Position.y,Trolleyz.Position.z);
-				RenderMesh(meshList[GEO_MODEL_BULLET], true);
+				//RenderMesh(meshList[GEO_MODEL_BULLET], true);
 				modelStack.PopMatrix();
 			}
 
@@ -4549,8 +4549,8 @@ void SP2::RenderPlayer()
 	//Up Down to camera
 	if ( player.trolley == false)
 		modelStack.Rotate(DupeRotArmsY,1,0,0);
-	else if ( player.trolley == true)
-		modelStack.Rotate(-60,1,0,0);
+	/*else if ( player.trolley == true)
+		modelStack.Rotate(-60,1,0,0);*/
 	//Right Arm
 	modelStack.PushMatrix();
 	modelStack.Translate(0.05, -0.2, -0.1);
@@ -4558,6 +4558,7 @@ void SP2::RenderPlayer()
 	modelStack.Rotate(-10,0,1,0);
 	modelStack.PushMatrix();
 	modelStack.Rotate(ArmSwing,1,0,0);
+	if ( player.trolley == false)
 	RenderMesh(meshList[GEO_PLAYER_ARMSR], false);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
@@ -4570,7 +4571,7 @@ void SP2::RenderPlayer()
 		modelStack.Rotate(ArmSwing,1,0,0);
 	else if ( player.trolley == false)
 		modelStack.Rotate(0,1,0,0);
-	RenderMesh(meshList[GEO_PLAYER_ARMSL], false);
+	//RenderMesh(meshList[GEO_PLAYER_ARMSL], false);
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
