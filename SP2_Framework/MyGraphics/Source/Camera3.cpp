@@ -172,7 +172,7 @@ void Camera3::Update(double dt)
 
 	if ( isCollide == false)
 	{
-		if(MouseX < 400)
+		if(MouseX < 960)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(CAMERA_SPEED * dt);
@@ -185,7 +185,7 @@ void Camera3::Update(double dt)
 			target = view + position;
 		}
 
-		if(MouseX < 398  && downSight == false)
+		if(MouseX < 958  && downSight == false)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(18*CAMERA_SPEED * dt);
@@ -197,7 +197,7 @@ void Camera3::Update(double dt)
 			up = rotation * up;
 			target = view + position;
 		}
-		if(MouseX > 400)
+		if(MouseX > 960)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(-CAMERA_SPEED * dt);
@@ -210,7 +210,7 @@ void Camera3::Update(double dt)
 			target = view + position;
 		}
 
-		if(MouseX > 402  && downSight == false)
+		if(MouseX > 962 && downSight == false)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(18*-CAMERA_SPEED * dt);
@@ -226,7 +226,7 @@ void Camera3::Update(double dt)
 		{
 			if (getCameraState() == 0 )
 			{
-				if(MouseY < 300 && MouseY >=298)
+				if(MouseY < 540 && MouseY >=538)
 				{
 					float pitch = (float)(CAMERA_SPEED * dt);
 					if ( isCollide == false)
@@ -242,7 +242,7 @@ void Camera3::Update(double dt)
 					target = view + position;
 					CameraLock+=pitch; 
 				}
-				if(MouseY < 298 && downSight == false)
+				if(MouseY < 538 && downSight == false)
 				{
 					float pitch = (float)(12*CAMERA_SPEED * dt);
 					if ( isCollide == false)
@@ -264,7 +264,7 @@ void Camera3::Update(double dt)
 		{
 			if (getCameraState() == 0 )
 			{
-				if(MouseY > 300 && MouseY <= 302 )
+				if(MouseY > 540 && MouseY <= 542 )
 				{
 					float pitch = (float)(-CAMERA_SPEED * dt);
 					if ( isCollide == false)
@@ -280,7 +280,7 @@ void Camera3::Update(double dt)
 					target = view + position;
 					CameraLock+=pitch;
 				}
-				if(MouseY > 302  && downSight == false)
+				if(MouseY > 542  && downSight == false)
 				{
 					float pitch = (float)(12*-CAMERA_SPEED * dt);
 					if ( isCollide == false)

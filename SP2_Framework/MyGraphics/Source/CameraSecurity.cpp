@@ -35,7 +35,7 @@ void CCameraSecurity::Update(double dt)
 
 	if ( Limit > -20 )
 	{
-		if((MouseX - OldMousePosX) < 400)
+		if((MouseX - OldMousePosX) < 960)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(4*CAMERA_SPEED * dt);
@@ -44,13 +44,12 @@ void CCameraSecurity::Update(double dt)
 			view = rotation * view;
 			up = rotation * up;
 			target = view + position;
-			//cout << MouseX << "," << MouseY << endl;
 			Limit--;
 		}
 	}
 	if ( Limit < 60)
 	{
-		if((MouseX - OldMousePosX) > 400)
+		if((MouseX - OldMousePosX) > 960)
 		{
 			Vector3 view = (target - position).Normalized();
 			float yaw = (float)(4*-CAMERA_SPEED * dt);

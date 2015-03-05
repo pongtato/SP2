@@ -81,6 +81,10 @@ void SP2::Init()
 	translateY = 0;
 	LengthY = 0;
 	UpdateItemMissing = true;
+	GameEndStaff = false;
+	GameEndSteal = false;
+	GameEndStealLose = false;
+	ShopStaff = false;
 	float tempX = data.GetRenderPos(10)->getTranslationX();
 	srand((unsigned) time(NULL));
 	RandomItem = rand() % 1000 + 1;
@@ -339,6 +343,18 @@ void SP2::Init()
 
 	meshList[GEO_LOGO] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_LOGO]->textureID = LoadTGA("Image//Logo.tga");
+
+	meshList[GEO_ENDSCREEN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_ENDSCREEN]->textureID = LoadTGA("Image//losescreen.tga");
+
+	meshList[GEO_WINSCREEN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_WINSCREEN]->textureID = LoadTGA("Image//winscreen.tga");
+
+	meshList[GEO_INSTRUCTIONSSCREEN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_INSTRUCTIONSSCREEN]->textureID = LoadTGA("Image//Tint.tga");
+
+	meshList[GEO_ACHIEVESCREEN] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
+	meshList[GEO_ACHIEVESCREEN]->textureID = LoadTGA("Image//Tint.tga");
 
 	meshList[GEO_TINT] = MeshBuilder::GenerateQuad("quad", Color(1, 1, 1), 1.f);
 	meshList[GEO_TINT]->textureID = LoadTGA("Image//Tint.tga");
@@ -716,6 +732,8 @@ void SP2::Init()
 	DupeRot = 0;
 	DupeRotArms = 0;
 	DupeRotArmsY = 0;
+	GameEndStaff = false;
+	GameEndSteal = false;
 	ROLE = "Shopper";
 	//Play Music
 	MusicPlayer.MainMusic();
@@ -826,12 +844,24 @@ void SP2::Update(double dt)
 	if ( police == true)
 	{
 		ROLE = "Thief";
+
+		/*if ( Application::IsKeyPressed(VK_NUMPAD8))
+		{
+			player.setHealth(1000);
+		}*/
+
+		if (player.getHealth() <= 0 )
+		{
+			GameEndStealLose = true;
+		}
+
 		if ( EscapeEnd == true)
 		{
 			EscapeCarMove++;
 		}
-		if ( EscapeCarMove >=  30 )
+		if ( EscapeCarMove >=  50 )
 		{
+			GameEndSteal = true;
 			keybd_event( VK_NUMPAD9,
 				0X69,
 				KEYEVENTF_EXTENDEDKEY | 0,
@@ -1015,22 +1045,22 @@ void SP2::Update(double dt)
 
 	if ( camera.isCollide == false && player.trolley == true && player.trolleyDrop == false)
 	{
-			if(camera.MouseX < 400)
+			if(camera.MouseX < 960)
 			{
 				DupeRot += (float)(camera.CAMERA_SPEED * dt);
 			}
 
-			if(camera.MouseX < 398  && camera.downSight == false)
+			if(camera.MouseX < 958  && camera.downSight == false)
 			{
 				DupeRot += (float)(18*camera.CAMERA_SPEED * dt);
 			}
 
-			if(camera.MouseX > 400)
+			if(camera.MouseX > 960)
 			{
 				DupeRot -= (float)(camera.CAMERA_SPEED * dt);
 			}
 
-			if(camera.MouseX > 402  && camera.downSight == false)
+			if(camera.MouseX > 962  && camera.downSight == false)
 			{
 				DupeRot -= (float)(18*camera.CAMERA_SPEED * dt);
 			}
@@ -1038,22 +1068,22 @@ void SP2::Update(double dt)
 
 	if ( camera.isCollide == false && MenuKey != true )
 	{
-		if(camera.MouseX < 400)
+		if(camera.MouseX < 960)
 		{
 			DupeRotArms += (float)(camera.CAMERA_SPEED * dt);
 		}
 
-		if(camera.MouseX < 398  && camera.downSight == false)
+		if(camera.MouseX < 958  && camera.downSight == false)
 		{
 			DupeRotArms += (float)(18*camera.CAMERA_SPEED * dt);
 		}
 
-		if(camera.MouseX > 400)
+		if(camera.MouseX > 960)
 		{
 			DupeRotArms -= (float)(camera.CAMERA_SPEED * dt);
 		}
 
-		if(camera.MouseX > 402  && camera.downSight == false)
+		if(camera.MouseX > 962  && camera.downSight == false)
 		{
 			DupeRotArms -= (float)(18*camera.CAMERA_SPEED * dt);
 		}
@@ -1062,11 +1092,11 @@ void SP2::Update(double dt)
 		{
 			if (camera.getCameraState() == 0 )
 			{
-				if(camera.MouseY < 300 && camera.MouseY >=298)
+				if(camera.MouseY < 540 && camera.MouseY >=538)
 				{
 					DupeRotArmsY += (float)(camera.CAMERA_SPEED * dt);
 				}
-				if(camera.MouseY < 298 && camera.downSight == false)
+				if(camera.MouseY < 538 && camera.downSight == false)
 				{
 					DupeRotArmsY += (float)(12*camera.CAMERA_SPEED * dt);
 				}
@@ -1076,11 +1106,11 @@ void SP2::Update(double dt)
 		{
 			if (camera.getCameraState() == 0 )
 			{
-				if(camera.MouseY > 300 && camera.MouseY <= 302 )
+				if(camera.MouseY > 540 && camera.MouseY <= 542 )
 				{
 					DupeRotArmsY -= (float)(camera.CAMERA_SPEED * dt);
 				}
-				if(camera.MouseY > 302  && camera.downSight == false)
+				if(camera.MouseY > 542  && camera.downSight == false)
 				{
 					DupeRotArmsY -= (float)(12*camera.CAMERA_SPEED * dt);
 				}
@@ -1088,12 +1118,6 @@ void SP2::Update(double dt)
 		}
 	}
 	Animate(dt);
-
-	if(UpdateItemMissing == true)
-	{
-		ItemMissing();
-		UpdateItemMissing = false;
-	}
 }
 
 void SP2::NPCwalk()
@@ -1189,10 +1213,31 @@ void SP2::UIupdates(double dt)
 	kk << "$" << player.getMoney();
 	MONEY = kk.str();
 
+	if ( ShopStaff == true && GameEndStaff != true)
+	{	
 	DTimer += dt;
 	std::stringstream DeltaTime;
 	DeltaTime << setprecision(2) << fixed << DTimer;
 	DTtime = DeltaTime.str();
+	}
+
+	if ( GameEndStaff == true)
+	{
+		std::stringstream Final;
+		Final << "Your time :" << setprecision(2) << fixed << DTimer;
+		EndGame = Final.str();
+	}
+	
+
+	std::stringstream Final2;
+	Final2 << "You stole: $" << player.getMoney() ;
+	EndGameSteal = Final2.str();
+
+	std::stringstream Final3;
+	Final3  <<  "Money Confiscated :(";
+	EndGameStealL = Final3.str();
+
+
 
 	if ( police == true)
 	{
@@ -2620,8 +2665,52 @@ void SP2::Render()
 			else if (MenuKey == true)
 				MainMenu();
 
-			if(Application::IsKeyPressed(VK_TAB))
+			if(police == false && Application::IsKeyPressed(VK_TAB))
+			{
+				ShopStaff = true;
 				RenderItemMissing();
+				if(UpdateItemMissing == true)
+				{
+					ItemMissing();
+					UpdateItemMissing = false;
+				}
+			}
+
+
+	if ( player.returnInvenSize() == 0 && ShopStaff == true && police != true)
+	{
+		RenderUI(meshList[GEO_WINSCREEN], Color(0, 1, 0), 80,60, 0, 40, 30);
+		GameEndStaff = true;
+	}
+
+	if ( GameEndSteal == true )
+	{
+		RenderUI(meshList[GEO_WINSCREEN], Color(0, 1, 0), 80,60, 0, 40, 30);
+		police = false;
+	}
+	if ( GameEndStealLose == true )
+	{
+		RenderUI(meshList[GEO_ENDSCREEN], Color(0, 1, 0), 80,60, 0, 40, 30);
+		police = false;
+	}
+
+	if ( ShopStaff == true && GameEndStaff != true)
+		RenderTextOnScreen(meshList[GEO_TEXT], DTtime, Color(0,1,0), 5,5,10);
+
+	if ( GameEndStaff == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], EndGame, Color(1,1,1), 3,5,10);
+	}
+
+	if (GameEndSteal == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], EndGameSteal, Color(1,1,1), 3,5,10);
+	}
+
+	if (GameEndStealLose == true)
+	{
+		RenderTextOnScreen(meshList[GEO_TEXT], EndGameStealL, Color(1,1,1), 3,5,10);
+	}
 }
 
 void SP2::RenderBasicModel()
@@ -2651,11 +2740,11 @@ void SP2::RenderScreenUI()
 	double tempHpCalc = player.getHealth();
 	double HpCalc = (tempHpCalc/100) * 54 ;
 
-	RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
-	RenderTextOnScreen(meshList[GEO_TEXT], FPS_count , Color(0, 1, 0), 3, 18, 18);
+	//RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
+	//RenderTextOnScreen(meshList[GEO_TEXT], FPS_count , Color(0, 1, 0), 3, 18, 18);
 
-	RenderTextOnScreen(meshList[GEO_TEXT], XPos , Color(0, 1, 0), 3, 0, 18);
-	RenderTextOnScreen(meshList[GEO_TEXT], ZPos , Color(0, 1, 0), 3, 0, 17);
+	//RenderTextOnScreen(meshList[GEO_TEXT], XPos , Color(0, 1, 0), 3, 0, 18);
+	//RenderTextOnScreen(meshList[GEO_TEXT], ZPos , Color(0, 1, 0), 3, 0, 17);
 	RenderTextOnScreen(meshList[GEO_TEXT], MONEY , Color(0, 1, 0), 3, 0, 14);
 	RenderTextOnScreen(meshList[GEO_TEXT], ItemName , Color(0, 1, 0), 3, 13, 11);
 	RenderTextOnScreen(meshList[GEO_TEXT], ItemPrice , Color(0, 1, 0), 3, 13, 10.2);
@@ -2665,7 +2754,6 @@ void SP2::RenderScreenUI()
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS2 , Color(0,1,0), 3, 4, 12);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS3 , Color(0,1,0), 3, 4, 11);
 	RenderTextOnScreen(meshList[GEO_TEXT], INSTRUCTIONS4 , Color(0,1,0), 3, 4, 10);
-	RenderTextOnScreen(meshList[GEO_TEXT], DTtime, Color(0,1,0), 5,5,10);
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], Target, Color(0, 1, 0), 2, 0, 16);
 	if (camera.downSight == false)
@@ -2674,6 +2762,7 @@ void SP2::RenderScreenUI()
 	RenderUI(meshList[GEO_STAM], Color(0, 1, 0), Calc, 1.5, 15, 45, 9);
 	RenderUI(meshList[GEO_HPI], Color(0, 1, 0), 4, 4, 4, 12, 9);
 	RenderUI(meshList[GEO_STAMI], Color(0, 1, 0), 4, 4, 4, 45, 9);
+
 
 	//Render Cashier Dialogue
 	for(int i = 0; i<4; ++i)
@@ -2815,13 +2904,10 @@ void SP2::RenderItemMissing()
 	float offsetx = 14;
 	float offsety = 15;
 
-	for(int i = 0; i < 10; i++)
+	for(int i = 0; i < player.returnInvenSize(); i++)
 	{
-		if(FNB.GetRenderPosItem(noofitem[i])->getItemAvailability() == false)
-		{
-			RenderTextOnScreen(meshList[GEO_TEXT],nameofitem[i],Color(0,1,0), 3, offsetx, offsety - LengthY);
+			RenderTextOnScreen(meshList[GEO_TEXT],player.getInventory(i)->getItemName(),Color(0,1,0), 3, offsetx, offsety - LengthY);
 			LengthY+= 1;
-		}
 	}
 	/*
 	for(int i = 0 ; i < FNB.ReturnListSize(); ++i)
@@ -3107,7 +3193,7 @@ void SP2::LightsReset()
 
 void SP2::ItemMissing()
 {
-	for(int i = 0; i < 10; i++)
+	for(int i = 0; i < 5; i++)
 	{
 		std::stringstream listitem;
 		while(RandomItem >= FNB.ReturnListSize())
@@ -3158,7 +3244,7 @@ void SP2::CheckItem()
 		for ( int i = 0; i < FNB.ReturnListSize();  ++i)
 		{
 			if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.4 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.4 
-				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-1 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+1 
+				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-1.2 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+0.8
 				&& camera.target.z >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-1 && camera.target.z <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+1)
 			{
 				if (player.returnInvenSize() < player.getInventoryCap() && FNB.GetRenderPosItem(i)->getItemAvailability() == true && FNB.GetRenderPosItem(i)->getItemName() == ItemName)
@@ -3190,13 +3276,20 @@ void SP2::CheckItem()
 		for ( int i = 0; i < FNB.ReturnListSize();  ++i)
 		{
 			if ( camera.target.x >= FNB.GetRenderPosItem(i)->getItemTranslationX()-0.4 && camera.target.x <= FNB.GetRenderPosItem(i)->getItemTranslationX()+0.4 
-				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-0.8 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+0.8 
+				&& camera.target.y >= FNB.GetRenderPosItem(i)->getItemTranslationY()-1.2 && camera.target.y <= FNB.GetRenderPosItem(i)->getItemTranslationY()+0.8 
 				&& camera.target.z >= FNB.GetRenderPosItem(i)->getItemTranslationZ()-1 && camera.target.z <= FNB.GetRenderPosItem(i)->getItemTranslationZ()+1)
 			{
 				if (player.returnInvenSize() > 0 && FNB.GetRenderPosItem(i)->getItemAvailability() == false)
 				{
-					FNB.GetRenderPosItem(i)->setItemAvailable(1);
-					player.dropItem(FNB.GetRenderPosItem(i)->getItemName());
+					for ( int j = 0; j < player.returnInvenSize(); ++j)
+					{
+						if ( player.getInventory(j)->getItemName() == FNB.GetRenderPosItem(i)->getItemName())
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(1);
+							player.dropItem(FNB.GetRenderPosItem(i)->getItemName());
+							break;
+						}
+					}
 				}
 			}
 		}
@@ -5153,34 +5246,6 @@ void SP2::RenderFNB()
 			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SoupCan")
 			{
 			RenderMesh(meshList[GEO_MODEL_TOMATOSOUPCAN], true);
-			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyFrozen")
-			{
-			RenderMesh(meshList[GEO_MODEL_SFFOOD], true);
-			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyCan")
-			{
-			RenderMesh(meshList[GEO_MODEL_SCANS], true);
-			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyChips")
-			{
-			RenderMesh(meshList[GEO_MODEL_SCHIPS], true);
-			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyCereal")
-			{
-			RenderMesh(meshList[GEO_MODEL_SCEREAL], true);
-			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyVeg")
-			{
-			RenderMesh(meshList[GEO_MODEL_SCVEG], true);
-			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyGun")
-			{
-			RenderMesh(meshList[GEO_MODEL_SGUNS], true);
-			}
-			else if ( FNB.GetRenderPosItem(i)->getItemName() == "SupplyTin")
-			{
-			RenderMesh(meshList[GEO_MODEL_STFOOD], true);
 			}
 			modelStack.PopMatrix();
 		}

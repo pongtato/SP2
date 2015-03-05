@@ -238,6 +238,10 @@ private:
 		GEO_EXITBTN,
 		GEO_LOGO,
 		GEO_TINT,
+		GEO_ENDSCREEN,
+		GEO_WINSCREEN,
+		GEO_ACHIEVESCREEN,
+		GEO_INSTRUCTIONSSCREEN,
 
 		GEO_BUILDING01,
 		GEO_BUILDING02,
@@ -341,6 +345,10 @@ private:
 	bool NPC3idle;
 	bool paying;
 	bool paid;
+	bool ShopStaff;
+	bool GameEndStaff;
+	bool GameEndSteal;
+	bool GameEndStealLose;
 	double DTimer;
 	string DTtime;
 	bool UpdateItemMissing;
@@ -369,6 +377,9 @@ private:
 	std::string TheifTut;
 	std::string ShopTut;
 	std::string GuardTut;
+	std::string EndGame;
+	std::string EndGameSteal;
+	std::string EndGameStealL;
 
 	float EntranceDoorSlide;
 	float ExitDoorSlide;
