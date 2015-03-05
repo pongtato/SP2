@@ -437,7 +437,7 @@ void CNPC::Checkout()
 		//Put AI Pay Money Animation
 		if(getPosX() >= 41)// AI at left most cashier
 		{
-			if(getRot() <= 90 && getRot() > 0 && getPosZ() <=-25)//turn shopper right after paying money
+			if(getRot() <= 90 && getRot() > 0 && getPosZ() <=-8)//turn shopper right after paying money
 			{
 				float temp = getRot() - 1;
 				SetRot(temp);

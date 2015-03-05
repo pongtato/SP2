@@ -20,6 +20,7 @@
 #include "Bullet.h"
 #include "CollisionBounds.h"
 #include "Police.h"
+#include "Csounds.h"
 
 using namespace std;
 
@@ -124,6 +125,13 @@ private:
 		GEO_MODEL_RIGHTARM,
 		GEO_MODEL_LEFTLEG,
 		GEO_MODEL_RIGHTLEG,
+		//Shopper 2
+		GEO_MODEL_SHOPPER2_HEAD,
+		GEO_MODEL_SHOPPER2_BODY,
+		GEO_MODEL_SHOPPER2_LEFTARM,
+		GEO_MODEL_SHOPPER2_RIGHTARM,
+		GEO_MODEL_SHOPPER2_LEFTLEG,
+		GEO_MODEL_SHOPPER2_RIGHTLEG,
 		//Cashier
 		GEO_MODEL_CASHIER_HEAD,
 		GEO_MODEL_CASHIER_BODY,
@@ -278,6 +286,7 @@ public:
 	CNPC npc;
 	CNPC guard;
 	CNPC shopper;
+	CNPC shopperTwo;
 	CNPC patroler;
 	CCharacter player;
 	CTrolley trolley;
@@ -302,6 +311,7 @@ public:
 	float DupeRot;
 	float DupeRotArms;
 	float DupeRotArmsY;
+	Csounds MusicPlayer;
 
 private:
 	unsigned m_vertexArrayID;
@@ -316,6 +326,9 @@ private:
 	float translateY;
 	bool walk;
 	bool playeridle;
+	bool NPC1idle;
+	bool NPC2idle;
+	bool NPC3idle;
 	bool paying;
 	bool paid;
 	float CashierOffetX;
@@ -373,6 +386,7 @@ private:
 	void RenderPlayer();
 	void RenderScreenUI();
 	void RenderAnimate();
+	void RenderAnimate2();
 	void RenderAnimateGuard();
 	void RenderPolice();
 	void PoliceShoot(double dt);

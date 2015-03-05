@@ -32,6 +32,7 @@ void SP2::Init()
 	character.ReadTextFile( "OBJ-Pos/NPC/Characterpos.txt" );
 	guard.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	shopper.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
+	shopperTwo.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	patroler.ReadTextFilePath( "OBJ-Pos/NPC/CharacterPath.txt");
 	FNB.ReadTextFileItem( "OBJ-Pos/FNB.txt");
 	Police.ReadTextFileItem("OBJ-Pos/PoliceInit.txt");
@@ -66,11 +67,14 @@ void SP2::Init()
 	// Make sure you pass uniform parameters after glUseProgram()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 
-	//variable to rotate geometry
+	//variable init
 	rotateAngle = 0;
 	angle = 0;
 	walk = false;
 	playeridle = false;
+	NPC1idle = false;
+	NPC2idle = false;
+	NPC3idle = false;
 	translate = 0;
 	translateY = 0;
 	float tempX = data.GetRenderPos(10)->getTranslationX();
@@ -565,6 +569,25 @@ void SP2::Init()
 	meshList[GEO_MODEL_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
 	meshList[GEO_MODEL_RIGHTLEG]->textureID = LoadTGA("Image//characterskin.tga");
 
+	//Character(shopper2)
+	meshList[GEO_MODEL_SHOPPER2_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
+	meshList[GEO_MODEL_SHOPPER2_HEAD]->textureID = LoadTGA("Image//shopper2skin.tga");
+
+	meshList[GEO_MODEL_SHOPPER2_BODY] = MeshBuilder::GenerateOBJ("model1", "OBJ//body.obj");
+	meshList[GEO_MODEL_SHOPPER2_BODY]->textureID = LoadTGA("Image//shopper2skin.tga");
+
+	meshList[GEO_MODEL_SHOPPER2_LEFTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_SHOPPER2_LEFTARM]->textureID = LoadTGA("Image//shopper2skin.tga");
+
+	meshList[GEO_MODEL_SHOPPER2_RIGHTARM] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftarm.obj");
+	meshList[GEO_MODEL_SHOPPER2_RIGHTARM]->textureID = LoadTGA("Image//shopper2skin.tga");
+
+	meshList[GEO_MODEL_SHOPPER2_LEFTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_SHOPPER2_LEFTLEG]->textureID = LoadTGA("Image//shopper2skin.tga");
+
+	meshList[GEO_MODEL_SHOPPER2_RIGHTLEG] = MeshBuilder::GenerateOBJ("model1", "OBJ//leftleg.obj");
+	meshList[GEO_MODEL_SHOPPER2_RIGHTLEG]->textureID = LoadTGA("Image//shopper2skin.tga");
+
 	//Character(cashier person)
 	meshList[GEO_MODEL_CASHIER_HEAD] = MeshBuilder::GenerateOBJ("model1", "OBJ//head.obj");
 	meshList[GEO_MODEL_CASHIER_HEAD]->textureID = LoadTGA("Image//cashierskin.tga");
@@ -659,6 +682,9 @@ void SP2::Init()
 	shopper.setName(character.GetRenderPos(2)->getName());
 	shopper.setPosX(character.GetRenderPos(2)->getTranslationX());
 	shopper.setPosZ(character.GetRenderPos(2)->getTranslationZ());
+	shopperTwo.setName(character.GetRenderPos(3)->getName());
+	shopperTwo.setPosX(character.GetRenderPos(3)->getTranslationX());
+	shopperTwo.setPosZ(character.GetRenderPos(3)->getTranslationZ());
 	police = false;
 	EscapeCarMove = 0;
 	ArmSwing = 0;
@@ -672,9 +698,9 @@ void SP2::Init()
 	DupeRot = 0;
 	DupeRotArms = 0;
 	DupeRotArmsY = 0;
-
 	ROLE = "Shopper";
-
+	//Play Music
+	MusicPlayer.MainMusic();
 	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
 	{
 		if ( PoliceMan.GetRenderPosPolice(i)->getItemAvailability() == true )
@@ -750,7 +776,6 @@ void SP2::Update(double dt)
 			camera.CameraMode = false;
 		}
 	}
-
 	CheckItem();
 	DoorSlide();
 	ShutterOpen();
@@ -927,6 +952,7 @@ void SP2::Update(double dt)
 			bullet.push_back( temp );
 			shoot.bullet--;
 			shoot.ShootInterval = 0;
+			MusicPlayer.Bullet();
 			}
 		}
 	}
@@ -1051,6 +1077,7 @@ void SP2::NPCwalk()
 	npc.TestAIPath();
 	guard.ShopPathing(0,playeridle);
 	shopper.ShopPathing(1,playeridle);
+	shopperTwo.ShopPathing(2,playeridle);
 }
 
 void SP2::UnpaidItems()
@@ -1537,44 +1564,145 @@ void SP2::BoundsCheck()
 				cout<<"player is idle"<<endl;
 				//prevent AI movement
 				playeridle = true;
+				NPC1idle = true;
 			}
 		}
 	}
-	//player break idle for AI
-	if(playeridle == true)
+	//player break idle for AI shopper
+	if(playeridle == true && NPC1idle == true)
 	{
 		//player X Coord > AI X Coord
 		if(camera.position.x > shopper.getPosX() && camera.position.x < shopper.getPosX() + 2)
 		{
 			if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 3 && camera.position.z <= shopper.getPosZ() + 3)
 			{
-				if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
-				{
-					camera.position.x = cameraDupe.position.x;
-					camera.target.x = cameraDupe.target.x;
-
-				}
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
 
 			}
-			//player X Coord < AI X Coord
-			if(camera.position.x < shopper.getPosX())
+
+		}
+		//player X Coord < AI X Coord
+		if(camera.position.x < shopper.getPosX() && camera.position.x > shopper.getPosX() - 2)
+		{
+			if(camera.position.x > cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
 			{
-				if(camera.position.x > cameraDupe.position.x && camera.position.z >= shopper.getPosZ() - 2 && camera.position.z <= shopper.getPosZ() + 2)
-				{
-					camera.position.x = cameraDupe.position.x;
-					camera.target.x = cameraDupe.target.x;
-				}
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
 			}
-			if(((camera.position.z > shopper.getPosZ() + 3 || camera.position.z < shopper.getPosZ() - 3) && (camera.position.x > shopper.getPosX() + 3 || camera.position.x < shopper.getPosX() - 3)) || (camera.position.x > shopper.getPosX() + 5) || (camera.position.x < shopper.getPosX() - 5))
-			{
-				playeridle = false;
-			}
-			/*if(camera.position.x > shopper.getPosX() + 5 && camera.position.z > shopper.getPosZ() + 5 )
-			{
+		}
+		if(((camera.position.z > shopper.getPosZ() + 3 || camera.position.z < shopper.getPosZ() - 3) && (camera.position.x > shopper.getPosX() + 3 || camera.position.x < shopper.getPosX() - 3)) || (camera.position.x > shopper.getPosX() + 5) || (camera.position.x < shopper.getPosX() - 5))
+		{
 			playeridle = false;
-			}*/
+			NPC1idle = false;
 		}
 	}
+	//shopper 2  AI collision
+	if(playeridle == false)
+	{
+		if(camera.position.x >= shopperTwo.getPosX() - 4 && camera.position.x <= shopperTwo.getPosX() + 4 && camera.position.z >= shopperTwo.getPosZ() - 4 && camera.position.z <= shopperTwo.getPosZ() + 4)
+		{
+			if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)//player not idle
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+				camera.position.z = cameraDupe.position.z;
+				camera.target.z = cameraDupe.target.z;
+				playeridle = false;
+
+			}
+			else if(camera.position.x == cameraDupe.position.x && camera.position.z == cameraDupe.position.z)//idle player/camera
+			{
+				cout<<"player is idle"<<endl;
+				//prevent AI movement
+				playeridle = true;
+				NPC2idle = true;
+			}
+		}
+	}
+	//player break idle for AI shopper 2
+	if(playeridle == true && NPC2idle == true)
+	{
+		//player X Coord > AI X Coord
+		if(camera.position.x > shopperTwo.getPosX() && camera.position.x < shopperTwo.getPosX() + 2)
+		{
+			if(camera.position.x < cameraDupe.position.x && camera.position.z >= shopperTwo.getPosZ() - 3 && camera.position.z <= shopperTwo.getPosZ() + 3)
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+
+			}
+
+		}
+		//player X Coord < AI X Coord
+		if(camera.position.x < shopperTwo.getPosX() && camera.position.x > shopperTwo.getPosX() - 2)
+		{
+			if(camera.position.x > cameraDupe.position.x && camera.position.z >= shopperTwo.getPosZ() - 2 && camera.position.z <= shopperTwo.getPosZ() + 2)
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+			}
+		}
+		if(((camera.position.z > shopperTwo.getPosZ() + 3 || camera.position.z < shopperTwo.getPosZ() - 3) && (camera.position.x > shopperTwo.getPosX() + 3 || camera.position.x < shopperTwo.getPosX() - 3)) || (camera.position.x > shopperTwo.getPosX() + 5) || (camera.position.x < shopperTwo.getPosX() - 5))
+		{
+			playeridle = false;
+			NPC2idle = false;
+		}
+	}
+
+	//guard/patroler AI collision
+	if(playeridle == false)
+	{
+		if(camera.position.x >= guard.getPosX() - 4 && camera.position.x <= guard.getPosX() + 4 && camera.position.z >= guard.getPosZ() - 4 && camera.position.z <= guard.getPosZ() + 4)
+		{
+			if(camera.position.x != cameraDupe.position.x && camera.position.z != cameraDupe.position.z)//player not idle
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+				camera.position.z = cameraDupe.position.z;
+				camera.target.z = cameraDupe.target.z;
+				playeridle = false;
+
+			}
+			else if(camera.position.x == cameraDupe.position.x && camera.position.z == cameraDupe.position.z)//idle player/camera
+			{
+				cout<<"player is idle"<<endl;
+				//prevent AI movement
+				playeridle = true;
+				NPC3idle = true;
+			}
+		}
+	}
+	//player break idle for AI guard/patroler
+	if(playeridle == true && NPC3idle == true)
+	{
+		//player X Coord > AI X Coord
+		if(camera.position.x > guard.getPosX() && camera.position.x < guard.getPosX() + 2)
+		{
+			if(camera.position.x < cameraDupe.position.x && camera.position.z >= guard.getPosZ() - 3 && camera.position.z <= guard.getPosZ() + 3)
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+
+			}
+
+		}
+		//player X Coord < AI X Coord
+		if(camera.position.x < guard.getPosX() && camera.position.x > guard.getPosX() - 2)
+		{
+			if(camera.position.x > cameraDupe.position.x && camera.position.z >= guard.getPosZ() - 2 && camera.position.z <= guard.getPosZ() + 2)
+			{
+				camera.position.x = cameraDupe.position.x;
+				camera.target.x = cameraDupe.target.x;
+			}
+		}
+		if(((camera.position.z > guard.getPosZ() + 3 || camera.position.z < guard.getPosZ() - 3) && (camera.position.x > guard.getPosX() + 3 || camera.position.x < guard.getPosX() - 3)) || (camera.position.x > guard.getPosX() + 5) || (camera.position.x < guard.getPosX() - 5))
+		{
+			playeridle = false;
+			NPC3idle = false;
+		}
+	}
+	
 }
 
 void SP2::BoundsCheckTrolley(float x,float y, float z)
@@ -2720,6 +2848,7 @@ void SP2::MenuUpdate(double dt)
 		{
 			MenuState--;
 			MenuLimit = true;
+			MusicPlayer.MetalClank();
 		}
 	}	
 	if(Application::IsKeyPressed(VK_RIGHT))
@@ -2728,6 +2857,7 @@ void SP2::MenuUpdate(double dt)
 		{
 			MenuState++;
 			MenuLimit = true;
+			MusicPlayer.MetalClank();
 		}
 	}	
 	if(Application::IsKeyPressed(VK_RETURN))
@@ -3200,6 +3330,7 @@ void SP2::EscapeSteal()
 			{
 				//End scene code
 				EscapeEnd = true;
+				MusicPlayer.Explosion();
 				camera.setCameraState(3);
 				
 			}
@@ -4454,11 +4585,20 @@ void SP2::RenderCharacter()
 	RenderAnimateGuard();
 	modelStack.PopMatrix();
 
+	//Render Shopper
 	modelStack.PushMatrix();
 	modelStack.Translate(shopper.getPosX(), character.GetRenderPos(2)->getTranslationY(), shopper.getPosZ());
 	modelStack.Rotate(shopper.getRot(),character.GetRenderPos(2)->getRX(),character.GetRenderPos(2)->getRY(),character.GetRenderPos(2)->getRZ());
 	modelStack.Scale(character.GetRenderPos(2)->getScaleX(),character.GetRenderPos(2)->getScaleY(),character.GetRenderPos(2)->getScaleZ());
 	RenderAnimate();
+	modelStack.PopMatrix();
+
+	//Render Shopper 2
+	modelStack.PushMatrix();
+	modelStack.Translate(shopperTwo.getPosX(), character.GetRenderPos(3)->getTranslationY(), shopperTwo.getPosZ());
+	modelStack.Rotate(shopperTwo.getRot(),character.GetRenderPos(3)->getRX(),character.GetRenderPos(3)->getRY(),character.GetRenderPos(3)->getRZ());
+	modelStack.Scale(character.GetRenderPos(3)->getScaleX(),character.GetRenderPos(3)->getScaleY(),character.GetRenderPos(3)->getScaleZ());
+	RenderAnimate2();
 	modelStack.PopMatrix();
 
 	//All Cashier personnel
@@ -4528,6 +4668,39 @@ void SP2::RenderAnimate()
 	modelStack.Translate(-1, 0.2, 0 - translate * 2);
 	modelStack.Rotate(angle, 1, 0, 0);
 	RenderMesh(meshList[GEO_MODEL_RIGHTLEG], false);
+	modelStack.PopMatrix();
+
+	modelStack.PopMatrix();
+}
+
+void SP2::RenderAnimate2()
+{
+	modelStack.PushMatrix();
+	RenderMesh(meshList[GEO_MODEL_SHOPPER2_HEAD], false);
+	RenderMesh(meshList[GEO_MODEL_SHOPPER2_BODY], false);
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, translateY - 0.1, -translate * 4);
+	modelStack.Rotate(angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_SHOPPER2_LEFTARM], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(-3, translateY - 0.1, 0 + translate * 4);
+	modelStack.Rotate(-angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_SHOPPER2_RIGHTARM], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Translate(0, 0.2, translate * 2);
+	modelStack.Rotate(-angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_SHOPPER2_LEFTLEG], false);
+	modelStack.PopMatrix();
+	
+	modelStack.PushMatrix();
+	modelStack.Translate(-1, 0.2, 0 - translate * 2);
+	modelStack.Rotate(angle, 1, 0, 0);
+	RenderMesh(meshList[GEO_MODEL_SHOPPER2_RIGHTLEG], false);
 	modelStack.PopMatrix();
 
 	modelStack.PopMatrix();
@@ -4768,6 +4941,7 @@ void SP2::RenderFNB()
 
 void SP2::NPCShop()
 {
+	//For shopper 1
 	if(playeridle == false)
 	{
 		//shopper shop(scripted)
@@ -4863,7 +5037,7 @@ void SP2::NPCShop()
 		{
 			shopper.setShop(false);
 		}
-		if(shopper.maxItem == 1)
+		if(shopper.maxItem == 4)
 		{
 			shopper.cashIn = true;
 			shopper.Checkout();
@@ -4881,6 +5055,122 @@ void SP2::NPCShop()
 		if(shopper.getPosZ() < 30)
 		{
 			shopper.enterMart = false;
+		}
+	}
+	//for shopper 2
+	if(playeridle == false)
+	{
+		//shopperTwo shop(scripted)
+		if(shopperTwo.getPosX() > -25 && shopperTwo.getPosX() < 0 && shopperTwo.getPosZ() <= -8)//getting 1 Vegcan
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "Vegcan" && shopperTwo.maxItem == 0)
+					{
+						shopperTwo.setShop(true);
+						if(shopperTwo.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopperTwo.maxItem = 1;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopperTwo.getRot() == 0)//reset for next shop
+		{
+			shopperTwo.setShop(false);
+		}
+		if(shopperTwo.getPosX() > 0 && shopperTwo.getPosX() < 25 && shopperTwo.getPosZ() <= -8)//getting 1 PCan
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "PCan" && shopperTwo.maxItem == 1)
+					{
+						shopperTwo.setShop(true);
+						if(shopperTwo.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopperTwo.maxItem = 2;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopperTwo.getRot() == 0)//reset for next shop
+		{
+			shopperTwo.setShop(false);
+		}
+		if(shopperTwo.getPosX() > -25 && shopperTwo.getPosX() < 0 && shopperTwo.getPosZ() <= -8)//getting 2nd VegCan
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "Vegcan" && shopperTwo.maxItem == 2)
+					{
+						shopperTwo.setShop(true);
+						if(shopperTwo.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopperTwo.maxItem = 3;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopperTwo.getRot() == 0)//reset for next shop
+		{
+			shopperTwo.setShop(false);
+		}
+		if(shopperTwo.getPosX() > 0 && shopperTwo.getPosX() < 25 && shopperTwo.getPosZ() <= -8)//getting 2nd PCan
+		{
+			for ( int i = 0; i < FNB.ReturnListSize();  ++i)
+			{
+				if (FNB.GetRenderPosItem(i)->getItemAvailability() == true)
+				{
+					if ( FNB.GetRenderPosItem(i)->getItemName() == "PCan" && shopperTwo.maxItem == 3)
+					{
+						shopperTwo.setShop(true);
+						if(shopperTwo.getRot() == 0)
+						{
+							FNB.GetRenderPosItem(i)->setItemAvailable(0);
+							shopperTwo.maxItem = 4;
+						}
+					}
+
+				}
+			}
+		}
+		if(shopperTwo.getRot() == 0)//reset for next shop
+		{
+			shopperTwo.setShop(false);
+		}
+		if(shopperTwo.maxItem == 3)
+		{
+			shopperTwo.cashIn = true;
+			shopperTwo.Checkout();
+		}
+		// respawn AI
+		if(shopperTwo.getPosX() >= 150 )
+		{
+			shopperTwo.respawn();
+		}
+		//open entrance door
+		if(shopperTwo.getPosZ() <= 60 && shopperTwo.getPosZ() >= 30 && shopperTwo.maxItem == 0)
+		{
+			shopperTwo.enterMart = true;
+		}
+		if(shopperTwo.getPosZ() < 30)
+		{
+			shopperTwo.enterMart = false;
 		}
 	}
 }
