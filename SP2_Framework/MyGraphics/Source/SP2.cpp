@@ -1554,7 +1554,7 @@ void SP2::BoundsCheck()
 
 	}
 	//Trolley Collision(player only)
-	if(camera.position.x >= trolley.LastX-3 && camera.position.x <= trolley.LastX+3 && camera.position.z >= trolley.LastZ - 3 && camera.position.z <= trolley.LastZ + 3 && player.trolley == false)// need fix
+	if(camera.position.x >= trolley.LastXMove-3 && camera.position.x <= trolley.LastXMove+3 && camera.position.z >= trolley.LastZMove - 3 && camera.position.z <= trolley.LastZMove + 3 && player.trolley == false)// need fix
 	{
 		camera.position.x = cameraDupe.position.x;
 		camera.target.x = cameraDupe.target.x;
@@ -2150,7 +2150,7 @@ void SP2::Trolley()
 		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
 		modelStack.PopMatrix();	
 		modelStack.PopMatrix();	
-		trolley.SetList(trolley.DetectBulletPos.x,trolley.DetectBulletPos.z,DupeRot,10);
+		trolley.SetList(camera.position.x,camera.position.z,trolley.DetectBulletPos.x,trolley.DetectBulletPos.z,DupeRot,10);
 	}
 
 	else if ( player.trolley == false && player.trolleyDrop == false)
@@ -2163,7 +2163,7 @@ void SP2::Trolley()
 		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
 		modelStack.PopMatrix();
 		modelStack.PopMatrix();
-		trolley.SetList(data.GetRenderPos(21)->getTranslationX(),data.GetRenderPos(21)->getTranslationZ(),camera.CamRotation,10);
+		trolley.SetList(data.GetRenderPos(21)->getTranslationX(),data.GetRenderPos(21)->getTranslationZ(),data.GetRenderPos(21)->getTranslationX(),data.GetRenderPos(21)->getTranslationZ(),camera.CamRotation,10);
 	}
 
 	if(Application::IsKeyPressed('R') && player.trolley == true)
@@ -2175,7 +2175,7 @@ void SP2::Trolley()
 	if ( player.trolleyDrop == true)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY(),trolley.LastZ);
+		modelStack.Translate(trolley.LastXMove,data.GetRenderPos(21)->getTranslationY(),trolley.LastZMove);
 		modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
 		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
@@ -3016,7 +3016,7 @@ void SP2::MenuUpdate(double dt)
 {
 	if (MenuLimit > 0 )
 	{
-		MenuLimit -= (1*dt);
+		MenuLimit -= (3*dt);
 	}
 	if(Application::IsKeyPressed(VK_LEFT))
 	{

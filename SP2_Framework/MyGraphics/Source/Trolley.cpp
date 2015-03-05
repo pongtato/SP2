@@ -17,10 +17,12 @@ void CTrolley::Spawner(void)
 {
 }
 
-void CTrolley::SetList(float x,float z, float rot, int size)
+void CTrolley::SetList(float itemx,float itemz,float x,float z, float rot, int size)
 {
-	LastX = x;
-	LastZ = z;
+	LastX = itemx;
+	LastZ = itemz;
+	LastXMove = x;
+	LastZMove = z;
 	LastRotation = rot;
 	ExpansionSize = size;
 }

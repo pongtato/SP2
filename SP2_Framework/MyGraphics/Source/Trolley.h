@@ -15,6 +15,8 @@ public:
 	float PositionTranslate;
 	float LastX;
 	float LastZ;
+	float LastXMove;
+	float LastZMove;
 	float LastRotation;
 	int ExpansionSize;
 	int TrolleyLimit;
@@ -22,6 +24,6 @@ public:
 	Vector3 DetectBulletPos;
 
 	void Spawner(void);
-	void SetList(float x,float z, float rot, int size);
+	void SetList(float itemx,float itemz,float x,float z, float rot, int size);
 };
 
