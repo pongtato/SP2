@@ -2381,7 +2381,10 @@ void SP2::Trolley()
 		modelStack.Translate(trolley.LastXMove,data.GetRenderPos(21)->getTranslationY(),trolley.LastZMove);
 		modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 		modelStack.Scale(data.GetRenderPos(21)->getScaleX(),data.GetRenderPos(21)->getScaleY(),data.GetRenderPos(21)->getScaleZ());
+		modelStack.PushMatrix();
+		modelStack.Translate(-3,0,0);
 		RenderMesh(meshList[GEO_MODEL_TROLLEY], true);
+		modelStack.PopMatrix();	
 		modelStack.PopMatrix();	
 	}
 }
@@ -2412,7 +2415,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2425,7 +2428,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2438,7 +2441,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2451,7 +2454,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0.2,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2464,7 +2467,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.41,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2478,7 +2481,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2491,7 +2494,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.3,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2504,7 +2507,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0.3,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2517,7 +2520,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2529,7 +2532,7 @@ void SP2::TrolleyUpdate()
 				else if ( player.getInventory(i)->getItemName() == "Dewitos")
 				{						modelStack.PushMatrix();
 				modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-				modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+				modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 				modelStack.PushMatrix();
 				modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 				modelStack.Rotate(90,0,1,0);
@@ -2542,7 +2545,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0.39,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2555,7 +2558,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2568,7 +2571,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2581,7 +2584,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2594,7 +2597,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.4,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2607,7 +2610,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2620,7 +2623,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2633,7 +2636,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2646,7 +2649,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2659,7 +2662,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,0,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2672,7 +2675,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.2,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2685,7 +2688,7 @@ void SP2::TrolleyUpdate()
 				{
 					modelStack.PushMatrix();
 					modelStack.Translate(trolley.LastX,data.GetRenderPos(21)->getTranslationY()+tempOffsetY,trolley.LastZ);
-					modelStack.Rotate(trolley.LastRotation,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
+					modelStack.Rotate(DupeRot,data.GetRenderPos(21)->getRX(),data.GetRenderPos(21)->getRY(),data.GetRenderPos(21)->getRZ());
 					modelStack.PushMatrix();
 					modelStack.Translate(StartPosX+(i*PerX)-offSetX,-0.1,StartPosZ+offSetZ);
 					modelStack.Rotate(90,0,1,0);
@@ -2917,8 +2920,11 @@ void SP2::RenderScreenUI()
 	double tempHpCalc = player.getHealth();
 	double HpCalc = (tempHpCalc/100) * 54 ;
 
+	if ( Application::IsKeyPressed(VK_TAB))
+	{
 	RenderTextOnScreen(meshList[GEO_TEXT], "FPS: " , Color(0, 1, 0), 3, 14, 18);
 	RenderTextOnScreen(meshList[GEO_TEXT], FPS_count , Color(0, 1, 0), 3, 18, 18);
+	}
 
 	//RenderTextOnScreen(meshList[GEO_TEXT], XPos , Color(0, 1, 0), 3, 0, 18);
 	//RenderTextOnScreen(meshList[GEO_TEXT], ZPos , Color(0, 1, 0), 3, 0, 17);
