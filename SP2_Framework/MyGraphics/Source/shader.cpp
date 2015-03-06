@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file shader.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to load the Shaders included in the folder
+*/
+/****************************************************************************/
 #include <stdio.h>
 #include <string>
 #include <vector>

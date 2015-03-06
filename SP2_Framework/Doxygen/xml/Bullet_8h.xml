@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Bullet_8h" kind="file">
+    <compoundname>Bullet.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes refid="Vector3_8h" local="yes">Vector3.h</includes>
+    <includes local="no">math.h</includes>
+    <includes refid="MathsConversion_8h" local="yes">MathsConversion.h</includes>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="Bullet_8cpp" local="yes">MyGraphics/Source/Bullet.cpp</includedby>
+    <incdepgraph>
+      <node id="1998">
+        <label>cmath</label>
+      </node>
+      <node id="1994">
+        <label>MyGraphics/Source/Bullet.h</label>
+        <link refid="Bullet.h"/>
+        <childnode refid="1995" relation="include">
+        </childnode>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2003" relation="include">
+        </childnode>
+      </node>
+      <node id="1999">
+        <label>exception</label>
+      </node>
+      <node id="1997">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="1998" relation="include">
+        </childnode>
+        <childnode refid="1999" relation="include">
+        </childnode>
+        <childnode refid="2000" relation="include">
+        </childnode>
+        <childnode refid="2001" relation="include">
+        </childnode>
+      </node>
+      <node id="2003">
+        <label>MathsConversion.h</label>
+        <link refid="MathsConversion_8h"/>
+      </node>
+      <node id="1996">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="1995" relation="include">
+        </childnode>
+      </node>
+      <node id="2000">
+        <label>ctime</label>
+      </node>
+      <node id="2002">
+        <label>math.h</label>
+      </node>
+      <node id="2001">
+        <label>cstdlib</label>
+      </node>
+      <node id="1995">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2007">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="2005">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="2006" relation="include">
+        </childnode>
+        <childnode refid="2007" relation="include">
+        </childnode>
+      </node>
+      <node id="2004">
+        <label>MyGraphics/Source/Bullet.h</label>
+        <link refid="Bullet.h"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2008">
+        <label>MyGraphics/Source/Bullet.cpp</label>
+        <link refid="Bullet_8cpp"/>
+      </node>
+      <node id="2006">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCBullet" prot="public">CBullet</innerclass>
+    <innernamespace refid="namespacestd">std</innernamespace>
+    <briefdescription>
+<para>Main header file for Bullet. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classSP2" kindref="compound">SP2</ref> Group 4 <simplesect kind="par"><title></title><para></para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">/****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector3_8h" kindref="compound">Vector3.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MathsConversion_8h" kindref="compound">MathsConversion.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classCBullet" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCBullet" kindref="compound">CBullet</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight></codeline>
+<codeline lineno="21" refid="classCBullet_1aff8f832c2165f3b9866227fa8fa9eb4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1aff8f832c2165f3b9866227fa8fa9eb4a" kindref="member">Position</ref>;</highlight></codeline>
+<codeline lineno="22" refid="classCBullet_1a492ce45b75d4c5ee5d83ed9782638167" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1a492ce45b75d4c5ee5d83ed9782638167" kindref="member">PPosition</ref>;</highlight></codeline>
+<codeline lineno="23" refid="classCBullet_1a5c3a870fc51150d3c4bdcaa98f174afd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1a5c3a870fc51150d3c4bdcaa98f174afd" kindref="member">Direction</ref>;</highlight></codeline>
+<codeline lineno="24" refid="classCBullet_1a26248b7787119f5375c63ceb8dc52024" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1a26248b7787119f5375c63ceb8dc52024" kindref="member">Velocity</ref>;</highlight></codeline>
+<codeline lineno="25" refid="classCBullet_1ae4dcdca1c9d03a8b5314e3b061b63d86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1ae4dcdca1c9d03a8b5314e3b061b63d86" kindref="member">VelocityPolice</ref>;</highlight></codeline>
+<codeline lineno="26" refid="classCBullet_1a9ddbe168ca58e144c5ec27de0371db45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1a9ddbe168ca58e144c5ec27de0371db45" kindref="member">TrolleyOffset</ref>;</highlight></codeline>
+<codeline lineno="27" refid="classCBullet_1a2eac2364cd8a99b82b8acca5f275357b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1a2eac2364cd8a99b82b8acca5f275357b" kindref="member">Range</ref>;</highlight></codeline>
+<codeline lineno="28" refid="classCBullet_1a118f8840c95ff9b10da02fe6be80e036" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCBullet_1a118f8840c95ff9b10da02fe6be80e036" kindref="member">RangeTrolley</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classCBullet_1a62acd0644206b35b375bab864b69bc19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCBullet_1a62acd0644206b35b375bab864b69bc19" kindref="member">alive</ref>;</highlight></codeline>
+<codeline lineno="31" refid="classCBullet_1a980b5c212ce80154da51c678a45db21c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCBullet_1a980b5c212ce80154da51c678a45db21c" kindref="member">bullet</ref>;</highlight></codeline>
+<codeline lineno="32" refid="classCBullet_1a08ac3df57f87a40df1e37fc2d58007a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCBullet_1a08ac3df57f87a40df1e37fc2d58007a6" kindref="member">clip</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCBullet" kindref="compound">CBullet</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classCBullet" kindref="compound">CBullet</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>BulletUpdate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>BulletUpdatePolice(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>TrolleyLimiter(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BulletRender(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41" refid="classCBullet_1a6e82eaf799ef2193c2eb077acd44daac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCBullet_1a6e82eaf799ef2193c2eb077acd44daac" kindref="member">ShootInterval</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classCBullet_1a4ff567b7ae05c59c097272906656ca41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCBullet_1a4ff567b7ae05c59c097272906656ca41" kindref="member">RTime</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h"/>
+  </compounddef>
+</doxygen>

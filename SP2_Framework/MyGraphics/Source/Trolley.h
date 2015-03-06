@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file Trolley.h
+\Author SP2 Group 4
+\par
+\brief
+Class to define functions and variables for the Trolley.
+*/
+/****************************************************************************/
 #pragma once
 #include <iostream>
 #include <vector>

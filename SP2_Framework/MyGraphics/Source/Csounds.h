@@ -16,5 +16,7 @@ public:
 	bool Explosion();
 	bool Bullet();
 	bool MetalClank();
+	bool CheckOut();
+	bool Reload();
 };
 

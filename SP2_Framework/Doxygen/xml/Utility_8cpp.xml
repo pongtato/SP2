@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Utility_8cpp" kind="file">
+    <compoundname>Utility.cpp</compoundname>
+    <includes refid="Utility_8h" local="yes">Utility.h</includes>
+    <incdepgraph>
+      <node id="2743">
+        <label>MyGraphics/Source/Utility.cpp</label>
+        <link refid="Utility.cpp"/>
+        <childnode refid="2744" relation="include">
+        </childnode>
+      </node>
+      <node id="2753">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="2747" relation="include">
+        </childnode>
+        <childnode refid="2746" relation="include">
+        </childnode>
+      </node>
+      <node id="2748">
+        <label>cmath</label>
+      </node>
+      <node id="2744">
+        <label>Utility.h</label>
+        <link refid="Utility_8h"/>
+        <childnode refid="2745" relation="include">
+        </childnode>
+        <childnode refid="2753" relation="include">
+        </childnode>
+      </node>
+      <node id="2749">
+        <label>exception</label>
+      </node>
+      <node id="2747">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="2748" relation="include">
+        </childnode>
+        <childnode refid="2749" relation="include">
+        </childnode>
+        <childnode refid="2750" relation="include">
+        </childnode>
+        <childnode refid="2751" relation="include">
+        </childnode>
+      </node>
+      <node id="2746">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="2747" relation="include">
+        </childnode>
+        <childnode refid="2752" relation="include">
+        </childnode>
+      </node>
+      <node id="2750">
+        <label>ctime</label>
+      </node>
+      <node id="2751">
+        <label>cstdlib</label>
+      </node>
+      <node id="2752">
+        <label>iostream</label>
+      </node>
+      <node id="2745">
+        <label>Vertex.h</label>
+        <link refid="Vertex_8h"/>
+        <childnode refid="2746" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Utility_8cpp_1ab5084c0eec6da543a86a225409a7f565" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+        <definition>Position operator*</definition>
+        <argsstring>(const Mtx44 &amp;lhs, Position rhs)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classMtx44" kindref="compound">Mtx44</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Utility.cpp" line="3" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Utility.cpp" bodystart="3" bodyend="9"/>
+        <references refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" compoundref="Mtx44_8h" startline="50">Mtx44::a</references>
+        <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
+        <references refid="structPosition_1a54a6182b5f7539295b32255808897d3f" compoundref="Vertex_8h" startline="8">Position::y</references>
+        <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Utility_8h" kindref="compound">Utility.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="Utility_8h_1ab5084c0eec6da543a86a225409a7f565" refkind="member"><highlight class="normal"><ref refid="structPosition" kindref="compound">Position</ref><sp/><ref refid="Utility_8cpp_1ab5084c0eec6da543a86a225409a7f565" kindref="member">operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classMtx44" kindref="compound">Mtx44</ref>&amp;<sp/>lhs,<sp/><ref refid="structPosition" kindref="compound">Position</ref><sp/>rhs)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b[4];</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b[i]<sp/>=<sp/>lhs.<ref refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" kindref="member">a</ref>[0<sp/>*<sp/>4<sp/>+<sp/>i]<sp/>*<sp/>rhs.<ref refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" kindref="member">x</ref><sp/>+<sp/>lhs.<sp/>a[1<sp/>*<sp/>4<sp/>+<sp/>i]<sp/>*<sp/>rhs.<ref refid="structPosition_1a54a6182b5f7539295b32255808897d3f" kindref="member">y</ref><sp/>+<sp/>lhs.<ref refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" kindref="member">a</ref>[2<sp/>*<sp/>4<sp/>+<sp/>i]<sp/>*<sp/>rhs.<ref refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" kindref="member">z</ref><sp/>+<sp/>lhs.<ref refid="classMtx44_1a97018c3b3ef41a962e27340c144430ea" kindref="member">a</ref>[3<sp/>*<sp/>4<sp/>+<sp/>i]<sp/>*<sp/>1;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structPosition" kindref="compound">Position</ref>(b[0],<sp/>b[1],<sp/>b[2]);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Utility.cpp"/>
+  </compounddef>
+</doxygen>

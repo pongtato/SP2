@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCBullet" kind="class" prot="public">
+    <compoundname>CBullet</compoundname>
+    <includes refid="Bullet_8h" local="no">Bullet.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCBullet_1aff8f832c2165f3b9866227fa8fa9eb4a" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="21" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="4109" endline="4207">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="2612" endline="2787">SP2::Render</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a492ce45b75d4c5ee5d83ed9782638167" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::PPosition</definition>
+        <argsstring></argsstring>
+        <name>PPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="22" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a5c3a870fc51150d3c4bdcaa98f174afd" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::Direction</definition>
+        <argsstring></argsstring>
+        <name>Direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="23" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classCBullet_1af3ee58493a6094fe4d739995ccc8764c" compoundref="Bullet_8cpp" startline="49" endline="60">BulletUpdate</referencedby>
+        <referencedby refid="classCBullet_1a92ead12df9f2b07499d0f8f8a606ab76" compoundref="Bullet_8cpp" startline="67" endline="78">BulletUpdatePolice</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="4109" endline="4207">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classCBullet_1ab915771afbf3d097e1ebae68b81718c5" compoundref="Bullet_8cpp" startline="80" endline="91">TrolleyLimiter</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a26248b7787119f5375c63ceb8dc52024" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::Velocity</definition>
+        <argsstring></argsstring>
+        <name>Velocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="24" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classCBullet_1af3ee58493a6094fe4d739995ccc8764c" compoundref="Bullet_8cpp" startline="49" endline="60">BulletUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1ae4dcdca1c9d03a8b5314e3b061b63d86" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::VelocityPolice</definition>
+        <argsstring></argsstring>
+        <name>VelocityPolice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="25" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classCBullet_1a92ead12df9f2b07499d0f8f8a606ab76" compoundref="Bullet_8cpp" startline="67" endline="78">BulletUpdatePolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a9ddbe168ca58e144c5ec27de0371db45" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::TrolleyOffset</definition>
+        <argsstring></argsstring>
+        <name>TrolleyOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="26" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classCBullet_1ab915771afbf3d097e1ebae68b81718c5" compoundref="Bullet_8cpp" startline="80" endline="91">TrolleyLimiter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a2eac2364cd8a99b82b8acca5f275357b" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::Range</definition>
+        <argsstring></argsstring>
+        <name>Range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="27" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classCBullet_1af3ee58493a6094fe4d739995ccc8764c" compoundref="Bullet_8cpp" startline="49" endline="60">BulletUpdate</referencedby>
+        <referencedby refid="classCBullet_1a92ead12df9f2b07499d0f8f8a606ab76" compoundref="Bullet_8cpp" startline="67" endline="78">BulletUpdatePolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a118f8840c95ff9b10da02fe6be80e036" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CBullet::RangeTrolley</definition>
+        <argsstring></argsstring>
+        <name>RangeTrolley</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="28" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a62acd0644206b35b375bab864b69bc19" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CBullet::alive</definition>
+        <argsstring></argsstring>
+        <name>alive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="30" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classCBullet_1af3ee58493a6094fe4d739995ccc8764c" compoundref="Bullet_8cpp" startline="49" endline="60">BulletUpdate</referencedby>
+        <referencedby refid="classCBullet_1a92ead12df9f2b07499d0f8f8a606ab76" compoundref="Bullet_8cpp" startline="67" endline="78">BulletUpdatePolice</referencedby>
+        <referencedby refid="classCBullet_1ab915771afbf3d097e1ebae68b81718c5" compoundref="Bullet_8cpp" startline="80" endline="91">TrolleyLimiter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a980b5c212ce80154da51c678a45db21c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CBullet::bullet</definition>
+        <argsstring></argsstring>
+        <name>bullet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="31" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classCBullet_1a4fb95e47d439b953e7bb0918ad2729d8" compoundref="Bullet_8cpp" startline="18" endline="33">CBullet</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a08ac3df57f87a40df1e37fc2d58007a6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CBullet::clip</definition>
+        <argsstring></argsstring>
+        <name>clip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="32" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classCBullet_1a4fb95e47d439b953e7bb0918ad2729d8" compoundref="Bullet_8cpp" startline="18" endline="33">CBullet</referencedby>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="3329" endline="3401">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a6e82eaf799ef2193c2eb077acd44daac" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CBullet::ShootInterval</definition>
+        <argsstring></argsstring>
+        <name>ShootInterval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="41" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCBullet_1a4ff567b7ae05c59c097272906656ca41" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CBullet::RTime</definition>
+        <argsstring></argsstring>
+        <name>RTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="42" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCBullet_1a4fb95e47d439b953e7bb0918ad2729d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CBullet::CBullet</definition>
+        <argsstring>(void)</argsstring>
+        <name>CBullet</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="34" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.cpp" bodystart="18" bodyend="33"/>
+        <references refid="classCBullet_1a980b5c212ce80154da51c678a45db21c" compoundref="Bullet_8h" startline="31">bullet</references>
+        <references refid="classCBullet_1a08ac3df57f87a40df1e37fc2d58007a6" compoundref="Bullet_8h" startline="32">clip</references>
+      </memberdef>
+      <memberdef kind="function" id="classCBullet_1ad66f7e1653de986cf1d5b4dae17dc901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CBullet::~CBullet</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CBullet</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="35" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.cpp" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classCBullet_1af3ee58493a6094fe4d739995ccc8764c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CBullet::BulletUpdate</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>BulletUpdate</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Updates the flight path and damage of your bullets. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="37" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.cpp" bodystart="49" bodyend="60"/>
+        <references refid="classCBullet_1a62acd0644206b35b375bab864b69bc19" compoundref="Bullet_8h" startline="30">alive</references>
+        <references refid="classCBullet_1a5c3a870fc51150d3c4bdcaa98f174afd" compoundref="Bullet_8h" startline="23">Direction</references>
+        <references refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Vector3::Normalize</references>
+        <references refid="classCBullet_1a2eac2364cd8a99b82b8acca5f275357b" compoundref="Bullet_8h" startline="27">Range</references>
+        <references refid="classCBullet_1a26248b7787119f5375c63ceb8dc52024" compoundref="Bullet_8h" startline="24">Velocity</references>
+        <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structPosition_1a54a6182b5f7539295b32255808897d3f" compoundref="Vertex_8h" startline="8">Position::y</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classCBullet_1a92ead12df9f2b07499d0f8f8a606ab76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CBullet::BulletUpdatePolice</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>BulletUpdatePolice</name>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Updates the flight path and damage of the police&apos;s bullets. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="38" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.cpp" bodystart="67" bodyend="78"/>
+        <references refid="classCBullet_1a62acd0644206b35b375bab864b69bc19" compoundref="Bullet_8h" startline="30">alive</references>
+        <references refid="classCBullet_1a5c3a870fc51150d3c4bdcaa98f174afd" compoundref="Bullet_8h" startline="23">Direction</references>
+        <references refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Vector3::Normalize</references>
+        <references refid="classCBullet_1a2eac2364cd8a99b82b8acca5f275357b" compoundref="Bullet_8h" startline="27">Range</references>
+        <references refid="classCBullet_1ae4dcdca1c9d03a8b5314e3b061b63d86" compoundref="Bullet_8h" startline="25">VelocityPolice</references>
+        <references refid="structPosition_1af684446cbf0f6d53386686283da6dcc6" compoundref="Vertex_8h" startline="8">Position::x</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structPosition_1a54a6182b5f7539295b32255808897d3f" compoundref="Vertex_8h" startline="8">Position::y</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structPosition_1a5dc8c08d3d7209ba538ad21ba604aa44" compoundref="Vertex_8h" startline="8">Position::z</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+      </memberdef>
+      <memberdef kind="function" id="classCBullet_1ab915771afbf3d097e1ebae68b81718c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CBullet::TrolleyLimiter</definition>
+        <argsstring>(float x, float y, float z, double dt)</argsstring>
+        <name>TrolleyLimiter</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="39" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.cpp" bodystart="80" bodyend="91"/>
+        <references refid="classCBullet_1a62acd0644206b35b375bab864b69bc19" compoundref="Bullet_8h" startline="30">alive</references>
+        <references refid="classCBullet_1a5c3a870fc51150d3c4bdcaa98f174afd" compoundref="Bullet_8h" startline="23">Direction</references>
+        <references refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Vector3::Normalize</references>
+        <references refid="classCBullet_1a9ddbe168ca58e144c5ec27de0371db45" compoundref="Bullet_8h" startline="26">TrolleyOffset</references>
+        <references refid="structVector3_1a7e2d3237b29a2f29d7b3d8b2934e35f2" compoundref="Vector3_8h" startline="27">Vector3::x</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <references refid="structVector3_1aa8c9461eb24bd2c364258078811a3e9d" compoundref="Vector3_8h" startline="27">Vector3::z</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCBullet_1ad6b010e12b251f1454b077e2f0672c04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CBullet::BulletRender</definition>
+        <argsstring>(void)</argsstring>
+        <name>BulletRender</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="40" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="328">
+        <label>CBullet</label>
+        <link refid="classCBullet"/>
+        <childnode refid="329" relation="usage">
+          <edgelabel>ShootInterval</edgelabel>
+          <edgelabel>RTime</edgelabel>
+        </childnode>
+        <childnode refid="330" relation="usage">
+          <edgelabel>bullet</edgelabel>
+          <edgelabel>clip</edgelabel>
+        </childnode>
+        <childnode refid="331" relation="usage">
+          <edgelabel>TrolleyOffset</edgelabel>
+          <edgelabel>RangeTrolley</edgelabel>
+          <edgelabel>PPosition</edgelabel>
+          <edgelabel>VelocityPolice</edgelabel>
+          <edgelabel>Direction</edgelabel>
+          <edgelabel>Range</edgelabel>
+          <edgelabel>Position</edgelabel>
+          <edgelabel>Velocity</edgelabel>
+        </childnode>
+        <childnode refid="332" relation="usage">
+          <edgelabel>alive</edgelabel>
+        </childnode>
+      </node>
+      <node id="329">
+        <label>float</label>
+      </node>
+      <node id="330">
+        <label>int</label>
+      </node>
+      <node id="332">
+        <label>bool</label>
+      </node>
+      <node id="331">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="329" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" line="19" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Bullet.h" bodystart="18" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classCBullet_1a62acd0644206b35b375bab864b69bc19" prot="public" virt="non-virtual"><scope>CBullet</scope><name>alive</name></member>
+      <member refid="classCBullet_1a980b5c212ce80154da51c678a45db21c" prot="public" virt="non-virtual"><scope>CBullet</scope><name>bullet</name></member>
+      <member refid="classCBullet_1ad6b010e12b251f1454b077e2f0672c04" prot="public" virt="non-virtual"><scope>CBullet</scope><name>BulletRender</name></member>
+      <member refid="classCBullet_1af3ee58493a6094fe4d739995ccc8764c" prot="public" virt="non-virtual"><scope>CBullet</scope><name>BulletUpdate</name></member>
+      <member refid="classCBullet_1a92ead12df9f2b07499d0f8f8a606ab76" prot="public" virt="non-virtual"><scope>CBullet</scope><name>BulletUpdatePolice</name></member>
+      <member refid="classCBullet_1a4fb95e47d439b953e7bb0918ad2729d8" prot="public" virt="non-virtual"><scope>CBullet</scope><name>CBullet</name></member>
+      <member refid="classCBullet_1a08ac3df57f87a40df1e37fc2d58007a6" prot="public" virt="non-virtual"><scope>CBullet</scope><name>clip</name></member>
+      <member refid="classCBullet_1a5c3a870fc51150d3c4bdcaa98f174afd" prot="public" virt="non-virtual"><scope>CBullet</scope><name>Direction</name></member>
+      <member refid="classCBullet_1aff8f832c2165f3b9866227fa8fa9eb4a" prot="public" virt="non-virtual"><scope>CBullet</scope><name>Position</name></member>
+      <member refid="classCBullet_1a492ce45b75d4c5ee5d83ed9782638167" prot="public" virt="non-virtual"><scope>CBullet</scope><name>PPosition</name></member>
+      <member refid="classCBullet_1a2eac2364cd8a99b82b8acca5f275357b" prot="public" virt="non-virtual"><scope>CBullet</scope><name>Range</name></member>
+      <member refid="classCBullet_1a118f8840c95ff9b10da02fe6be80e036" prot="public" virt="non-virtual"><scope>CBullet</scope><name>RangeTrolley</name></member>
+      <member refid="classCBullet_1a4ff567b7ae05c59c097272906656ca41" prot="public" virt="non-virtual"><scope>CBullet</scope><name>RTime</name></member>
+      <member refid="classCBullet_1a6e82eaf799ef2193c2eb077acd44daac" prot="public" virt="non-virtual"><scope>CBullet</scope><name>ShootInterval</name></member>
+      <member refid="classCBullet_1ab915771afbf3d097e1ebae68b81718c5" prot="public" virt="non-virtual"><scope>CBullet</scope><name>TrolleyLimiter</name></member>
+      <member refid="classCBullet_1a9ddbe168ca58e144c5ec27de0371db45" prot="public" virt="non-virtual"><scope>CBullet</scope><name>TrolleyOffset</name></member>
+      <member refid="classCBullet_1a26248b7787119f5375c63ceb8dc52024" prot="public" virt="non-virtual"><scope>CBullet</scope><name>Velocity</name></member>
+      <member refid="classCBullet_1ae4dcdca1c9d03a8b5314e3b061b63d86" prot="public" virt="non-virtual"><scope>CBullet</scope><name>VelocityPolice</name></member>
+      <member refid="classCBullet_1ad66f7e1653de986cf1d5b4dae17dc901" prot="public" virt="non-virtual"><scope>CBullet</scope><name>~CBullet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

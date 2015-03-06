@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCCameraSecurity" kind="class" prot="public">
+    <compoundname>CCameraSecurity</compoundname>
+    <basecompoundref refid="classCamera" prot="public" virt="non-virtual">Camera</basecompoundref>
+    <includes refid="CameraSecurity_8h" local="no">CameraSecurity.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCCameraSecurity_1ae2c48f10ce31733f1c97c38f75e578f1" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CCameraSecurity::defaultPosition</definition>
+        <argsstring></argsstring>
+        <name>defaultPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="13" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classCCameraSecurity_1a8d9bd3c98bdf09d72bc2075ed78c0403" compoundref="CameraSecurity_8cpp" startline="14" endline="23">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCameraSecurity_1a689f19e2fa49feaffe120aa241d5fb34" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CCameraSecurity::defaultTarget</definition>
+        <argsstring></argsstring>
+        <name>defaultTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="14" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classCCameraSecurity_1a8d9bd3c98bdf09d72bc2075ed78c0403" compoundref="CameraSecurity_8cpp" startline="14" endline="23">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCameraSecurity_1a15bc5963bc15c36c1b75eae4e90e55e4" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 CCameraSecurity::defaultUp</definition>
+        <argsstring></argsstring>
+        <name>defaultUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="15" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classCCameraSecurity_1a8d9bd3c98bdf09d72bc2075ed78c0403" compoundref="CameraSecurity_8cpp" startline="14" endline="23">Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" prot="public" static="no" mutable="no">
+        <type><ref refid="classApplication" kindref="compound">Application</ref></type>
+        <definition>Application CCameraSecurity::test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="22" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" compoundref="CameraSecurity_8cpp" startline="25" endline="64">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CCameraSecurity::Limit</definition>
+        <argsstring></argsstring>
+        <name>Limit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="23" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classCCameraSecurity_1aa5d172ca33a91d5c9bf80fc3d2beb906" compoundref="CameraSecurity_8cpp" startline="4" endline="7">CCameraSecurity</referencedby>
+        <referencedby refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" compoundref="CameraSecurity_8cpp" startline="25" endline="64">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCCameraSecurity_1aa5d172ca33a91d5c9bf80fc3d2beb906" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CCameraSecurity::CCameraSecurity</definition>
+        <argsstring>(void)</argsstring>
+        <name>CCameraSecurity</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="17" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.cpp" bodystart="4" bodyend="7"/>
+        <references refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" compoundref="CameraSecurity_8h" startline="23">Limit</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCameraSecurity_1a4ef17d92f28d755bf1e2bf25073ec19e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CCameraSecurity::~CCameraSecurity</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CCameraSecurity</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="18" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classCCameraSecurity_1a8d9bd3c98bdf09d72bc2075ed78c0403" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CCameraSecurity::Init</definition>
+        <argsstring>(const Vector3 &amp;pos, const Vector3 &amp;target, const Vector3 &amp;up)</argsstring>
+        <name>Init</name>
+        <reimplements refid="classCamera_1a609775f7ec4cd936ad7add808cd7354c">Init</reimplements>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>up</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="20" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.cpp" bodystart="14" bodyend="23"/>
+        <references refid="structVector3_1aa1cdc5357009b47fe585ddd61e263aad" compoundref="Vector3_8cpp" startline="319" endline="322">Vector3::Cross</references>
+        <references refid="classCCameraSecurity_1ae2c48f10ce31733f1c97c38f75e578f1" compoundref="CameraSecurity_8h" startline="13">defaultPosition</references>
+        <references refid="classCCameraSecurity_1a689f19e2fa49feaffe120aa241d5fb34" compoundref="CameraSecurity_8h" startline="14">defaultTarget</references>
+        <references refid="classCCameraSecurity_1a15bc5963bc15c36c1b75eae4e90e55e4" compoundref="CameraSecurity_8h" startline="15">defaultUp</references>
+        <references refid="structVector3_1aaef4f25a38878a640ab4a48002a7eff8" compoundref="Vector3_8cpp" startline="358" endline="367">Vector3::Normalize</references>
+        <references refid="structVector3_1a2da0f00c5529bced69763320dac9c414" compoundref="Vector3_8cpp" startline="337" endline="343">Vector3::Normalized</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="structVector3_1a86eb35a9fa2d5a49e7fad66a35fa9c13" compoundref="Vector3_8h" startline="27">Vector3::y</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CCameraSecurity::Update</definition>
+        <argsstring>(double dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classCamera_1acc1741feb6d9da849ea4b6c12e0711e6">Update</reimplements>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="21" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.cpp" bodystart="25" bodyend="64"/>
+        <references refid="classApplication_1abbbf79bb3dc9594a84c59e69369a8bf5" compoundref="Application_8cpp" startline="76" endline="79">Application::getPosX</references>
+        <references refid="classApplication_1ac64a83a6554096731951dbb31010cb06" compoundref="Application_8cpp" startline="81" endline="84">Application::getPosY</references>
+        <references refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" compoundref="CameraSecurity_8h" startline="23">Limit</references>
+        <references refid="classApplication_1a9a1615be638cb53643040fc234ebfc8b" compoundref="Application_8cpp" startline="175" endline="182">Application::mousePos</references>
+        <references refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" compoundref="Camera_8h" startline="9">Camera::position</references>
+        <references refid="classMtx44_1ac0587ffb5ff9fd58ad5768d28fc06574" compoundref="Mtx44_8cpp" startline="319" endline="341">Mtx44::SetToRotation</references>
+        <references refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" compoundref="Camera_8h" startline="10">Camera::target</references>
+        <references refid="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" compoundref="CameraSecurity_8h" startline="22">test</references>
+        <references refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" compoundref="Camera_8h" startline="11">Camera::up</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="334">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+      </node>
+      <node id="333">
+        <label>CCameraSecurity</label>
+        <link refid="classCCameraSecurity"/>
+        <childnode refid="334" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="336">
+        <label>Camera</label>
+        <link refid="classCamera"/>
+        <childnode refid="337" relation="usage">
+          <edgelabel>target</edgelabel>
+          <edgelabel>position</edgelabel>
+          <edgelabel>up</edgelabel>
+        </childnode>
+      </node>
+      <node id="338">
+        <label>float</label>
+      </node>
+      <node id="335">
+        <label>CCameraSecurity</label>
+        <link refid="classCCameraSecurity"/>
+        <childnode refid="336" relation="public-inheritance">
+        </childnode>
+        <childnode refid="338" relation="usage">
+          <edgelabel>Limit</edgelabel>
+        </childnode>
+        <childnode refid="339" relation="usage">
+          <edgelabel>test</edgelabel>
+        </childnode>
+        <childnode refid="337" relation="usage">
+          <edgelabel>defaultTarget</edgelabel>
+          <edgelabel>defaultPosition</edgelabel>
+          <edgelabel>defaultUp</edgelabel>
+        </childnode>
+      </node>
+      <node id="340">
+        <label>double</label>
+      </node>
+      <node id="339">
+        <label>Application</label>
+        <link refid="classApplication"/>
+        <childnode refid="340" relation="usage">
+          <edgelabel>MX</edgelabel>
+          <edgelabel>DMX</edgelabel>
+          <edgelabel>MY</edgelabel>
+          <edgelabel>DMY</edgelabel>
+        </childnode>
+        <childnode refid="341" relation="usage">
+          <edgelabel>m_timer</edgelabel>
+        </childnode>
+        <childnode refid="344" relation="usage">
+          <edgelabel>restart</edgelabel>
+        </childnode>
+      </node>
+      <node id="343">
+        <label>LARGE_INTEGER</label>
+      </node>
+      <node id="341">
+        <label>StopWatch</label>
+        <link refid="classStopWatch"/>
+        <childnode refid="342" relation="usage">
+          <edgelabel>wTimerRes</edgelabel>
+        </childnode>
+        <childnode refid="343" relation="usage">
+          <edgelabel>frequency</edgelabel>
+          <edgelabel>currTime</edgelabel>
+          <edgelabel>prevTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="344">
+        <label>bool</label>
+      </node>
+      <node id="342">
+        <label>UINT</label>
+      </node>
+      <node id="337">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="338" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" line="11" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h" bodystart="10" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classCamera_1a01f94c3543f56ede7af49dc778f19331" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>Camera</name></member>
+      <member refid="classCCameraSecurity_1aa5d172ca33a91d5c9bf80fc3d2beb906" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>CCameraSecurity</name></member>
+      <member refid="classCCameraSecurity_1ae2c48f10ce31733f1c97c38f75e578f1" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>defaultPosition</name></member>
+      <member refid="classCCameraSecurity_1a689f19e2fa49feaffe120aa241d5fb34" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>defaultTarget</name></member>
+      <member refid="classCCameraSecurity_1a15bc5963bc15c36c1b75eae4e90e55e4" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>defaultUp</name></member>
+      <member refid="classCCameraSecurity_1a8d9bd3c98bdf09d72bc2075ed78c0403" prot="public" virt="virtual"><scope>CCameraSecurity</scope><name>Init</name></member>
+      <member refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>Limit</name></member>
+      <member refid="classCamera_1a3b229874a00253021a1b6c61657fa5ab" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>position</name></member>
+      <member refid="classCamera_1aa46f58b32270a571ab56dde4caca46db" prot="public" virt="virtual"><scope>CCameraSecurity</scope><name>Reset</name></member>
+      <member refid="classCamera_1a7b1215b2f9c2a71cd41e4225c7df31e8" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>target</name></member>
+      <member refid="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>test</name></member>
+      <member refid="classCamera_1ab76ce866ca2acd6ab54447f474077245" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>up</name></member>
+      <member refid="classCCameraSecurity_1aa86fbbb2f7acf4e65e414fbe4d01727f" prot="public" virt="virtual"><scope>CCameraSecurity</scope><name>Update</name></member>
+      <member refid="classCamera_1ad1897942d0ccf91052386388a497349f" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>~Camera</name></member>
+      <member refid="classCCameraSecurity_1a4ef17d92f28d755bf1e2bf25073ec19e" prot="public" virt="non-virtual"><scope>CCameraSecurity</scope><name>~CCameraSecurity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

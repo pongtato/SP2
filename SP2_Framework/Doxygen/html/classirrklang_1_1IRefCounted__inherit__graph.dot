@@ -1,0 +1,24 @@
+digraph "irrklang::IRefCounted"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="irrklang::IRefCounted",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="irrklang::IAudioRecorder",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1IAudioRecorder.html",tooltip="Interface to an audio recorder. Create it using the createIrrKlangAudioRecorder() function..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="irrklang::IAudioStream",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1IAudioStream.html",tooltip="Reads and decodes audio data into an usable audio stream for the ISoundEngine. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="irrklang::IAudioStreamLoader",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1IAudioStreamLoader.html",tooltip="Class which is able to create an audio file stream from a file. "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="irrklang::ICapturedAudio\lDataReceiver",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1ICapturedAudioDataReceiver.html",tooltip="Interface to be implemented by the user if access to the recorded audio data is needed. "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="irrklang::IFileFactory",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1IFileFactory.html",tooltip="Interface to overwrite file access in irrKlang. "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="irrklang::IFileReader",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1IFileReader.html",tooltip="Interface providing read acess to a file. "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="irrklang::ISoundDeviceList",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1ISoundDeviceList.html",tooltip="A list of sound devices for a sound driver. Use irrklang::createSoundDeviceList() to create this list..."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="irrklang::ISoundEngine",height=0.2,width=0.4,color="black",URL="$classirrklang_1_1ISoundEngine.html",tooltip="Interface to the sound engine, for playing 3d and 2d sound and music. "];
+}

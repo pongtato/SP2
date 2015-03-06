@@ -1,15 +1,43 @@
+/****************************************************************************/
+/*!
+\file Camera2.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to move and initiate a camera.
+*/
+/****************************************************************************/
 #include "Camera2.h"
 #include "Application.h"
 #include "Mtx44.h"
-
+/****************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/****************************************************************************/
 Camera2::Camera2()
 {
 }
-
+/****************************************************************************/
+/*!
+\brief
+Default destructor
+*/
+/****************************************************************************/
 Camera2::~Camera2()
 {
 }
+/***************************************************************/
+/*!
+/brief
+Initiation codes for the position, target, and positive z-coordinates.
 
+/param pos - position vector
+/param target - point target vector
+/param up - positive z-coordinates vector
+*/
+/***************************************************************/
 void Camera2::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	this->position = defaultPosition = pos;
@@ -20,7 +48,12 @@ void Camera2::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
 }
-
+/****************************************************************************/
+/*!
+\brief
+Codes for camera controls, and sets the speed for camera movement.
+*/
+/****************************************************************************/
 void Camera2::Update(double dt)
 {
 	static const float CAMERA_SPEED = 50.f;
@@ -83,7 +116,12 @@ void Camera2::Update(double dt)
 		Reset();
 	}
 }
-
+/****************************************************************************/
+/*!
+\brief
+Resets vectors to the base starting set.
+*/
+/****************************************************************************/
 void Camera2::Reset()
 {
 	position = defaultPosition;

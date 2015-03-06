@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCPolice" kind="class" prot="public">
+    <compoundname>CPolice</compoundname>
+    <includes refid="Police_8h" local="no">Police.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCPolice_1a09241b5379af7af9d9be18dab89207c1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CPolice::PoliceXMove</definition>
+        <argsstring></argsstring>
+        <name>PoliceXMove</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="13" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" compoundref="Police_8cpp" startline="4" endline="13">CPolice</referencedby>
+        <referencedby refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" compoundref="Police_8cpp" startline="20" endline="42">PoliceDrive</referencedby>
+        <referencedby refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" compoundref="Police_8cpp" startline="44" endline="67">PoliceDriveL</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="3838" endline="4107">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCPolice_1aa06c6c61506897ba454c5f31bcf14f5b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CPolice::PoliceZMove</definition>
+        <argsstring></argsstring>
+        <name>PoliceZMove</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="14" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" compoundref="Police_8cpp" startline="4" endline="13">CPolice</referencedby>
+        <referencedby refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" compoundref="Police_8cpp" startline="20" endline="42">PoliceDrive</referencedby>
+        <referencedby refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" compoundref="Police_8cpp" startline="44" endline="67">PoliceDriveL</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="3838" endline="4107">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCPolice_1a5005889017dcce467b2d04e19d38eb9c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CPolice::PoliceRotate</definition>
+        <argsstring></argsstring>
+        <name>PoliceRotate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="15" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" compoundref="Police_8cpp" startline="4" endline="13">CPolice</referencedby>
+        <referencedby refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" compoundref="Police_8cpp" startline="20" endline="42">PoliceDrive</referencedby>
+        <referencedby refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" compoundref="Police_8cpp" startline="44" endline="67">PoliceDriveL</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="3838" endline="4107">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCPolice_1a010a5468077bce39ccd610821a717db5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CPolice::FinalPosX</definition>
+        <argsstring></argsstring>
+        <name>FinalPosX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="16" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" compoundref="Police_8cpp" startline="4" endline="13">CPolice</referencedby>
+        <referencedby refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" compoundref="Police_8cpp" startline="20" endline="42">PoliceDrive</referencedby>
+        <referencedby refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" compoundref="Police_8cpp" startline="44" endline="67">PoliceDriveL</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCPolice_1afe1ed67f8d2ccd705de0c2c7a45cd310" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CPolice::FinalPosZ</definition>
+        <argsstring></argsstring>
+        <name>FinalPosZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="17" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" compoundref="Police_8cpp" startline="4" endline="13">CPolice</referencedby>
+        <referencedby refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" compoundref="Police_8cpp" startline="20" endline="42">PoliceDrive</referencedby>
+        <referencedby refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" compoundref="Police_8cpp" startline="44" endline="67">PoliceDriveL</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCPolice_1abad010fb5439f4c74bd18d78ae89eb3e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CPolice::WheelRot</definition>
+        <argsstring></argsstring>
+        <name>WheelRot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="18" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" compoundref="Police_8cpp" startline="20" endline="42">PoliceDrive</referencedby>
+        <referencedby refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" compoundref="Police_8cpp" startline="44" endline="67">PoliceDriveL</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="3838" endline="4107">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCPolice_1a3cddd4f79bc75a3080dc57773d65ed90" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CPolice::arrived</definition>
+        <argsstring></argsstring>
+        <name>arrived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="19" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" compoundref="Police_8cpp" startline="4" endline="13">CPolice</referencedby>
+        <referencedby refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" compoundref="Police_8cpp" startline="20" endline="42">PoliceDrive</referencedby>
+        <referencedby refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" compoundref="Police_8cpp" startline="44" endline="67">PoliceDriveL</referencedby>
+        <referencedby refid="classSP2_1af7a3194da6dfb0052b7155f6e2ba6dd1" compoundref="SP2_8cpp" startline="4109" endline="4207">SP2::PoliceShoot</referencedby>
+        <referencedby refid="classSP2_1a9a3e14f5fff0d9412f11df54ed578c13" compoundref="SP2_8cpp" startline="3838" endline="4107">SP2::RenderPolice</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCPolice_1a67e6d05dc44e379ac727a9ceabb17507" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CPolice::escape</definition>
+        <argsstring></argsstring>
+        <name>escape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="20" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" compoundref="Police_8cpp" startline="4" endline="13">CPolice</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCPolice_1a3d29e90f24655542d67e32a6ed723087" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CPolice::CPolice</definition>
+        <argsstring>(void)</argsstring>
+        <name>CPolice</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="10" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.cpp" bodystart="4" bodyend="13"/>
+        <references refid="classCPolice_1a3cddd4f79bc75a3080dc57773d65ed90" compoundref="Police_8h" startline="19">arrived</references>
+        <references refid="classCPolice_1a67e6d05dc44e379ac727a9ceabb17507" compoundref="Police_8h" startline="20">escape</references>
+        <references refid="classCPolice_1a010a5468077bce39ccd610821a717db5" compoundref="Police_8h" startline="16">FinalPosX</references>
+        <references refid="classCPolice_1afe1ed67f8d2ccd705de0c2c7a45cd310" compoundref="Police_8h" startline="17">FinalPosZ</references>
+        <references refid="classCPolice_1a5005889017dcce467b2d04e19d38eb9c" compoundref="Police_8h" startline="15">PoliceRotate</references>
+        <references refid="classCPolice_1a09241b5379af7af9d9be18dab89207c1" compoundref="Police_8h" startline="13">PoliceXMove</references>
+        <references refid="classCPolice_1aa06c6c61506897ba454c5f31bcf14f5b" compoundref="Police_8h" startline="14">PoliceZMove</references>
+      </memberdef>
+      <memberdef kind="function" id="classCPolice_1a2723504c8d5af86a3925bbced91f3f10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CPolice::~CPolice</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CPolice</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="11" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CPolice::PoliceDrive</definition>
+        <argsstring>(float x, float y, float z, float zOff, float xOff, float rot)</argsstring>
+        <name>PoliceDrive</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>zOff</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>xOff</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="22" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.cpp" bodystart="20" bodyend="42"/>
+        <references refid="classCPolice_1a3cddd4f79bc75a3080dc57773d65ed90" compoundref="Police_8h" startline="19">arrived</references>
+        <references refid="classCPolice_1a010a5468077bce39ccd610821a717db5" compoundref="Police_8h" startline="16">FinalPosX</references>
+        <references refid="classCPolice_1afe1ed67f8d2ccd705de0c2c7a45cd310" compoundref="Police_8h" startline="17">FinalPosZ</references>
+        <references refid="classCPolice_1a5005889017dcce467b2d04e19d38eb9c" compoundref="Police_8h" startline="15">PoliceRotate</references>
+        <references refid="classCPolice_1a09241b5379af7af9d9be18dab89207c1" compoundref="Police_8h" startline="13">PoliceXMove</references>
+        <references refid="classCPolice_1aa06c6c61506897ba454c5f31bcf14f5b" compoundref="Police_8h" startline="14">PoliceZMove</references>
+        <references refid="classCPolice_1abad010fb5439f4c74bd18d78ae89eb3e" compoundref="Police_8h" startline="18">WheelRot</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CPolice::PoliceDriveL</definition>
+        <argsstring>(float x, float rot, float z, float zOff, float xOff, float rotOff)</argsstring>
+        <name>PoliceDriveL</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rot</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>zOff</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>xOff</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotOff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="23" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.cpp" bodystart="44" bodyend="67"/>
+        <references refid="classCPolice_1a3cddd4f79bc75a3080dc57773d65ed90" compoundref="Police_8h" startline="19">arrived</references>
+        <references refid="classCPolice_1a010a5468077bce39ccd610821a717db5" compoundref="Police_8h" startline="16">FinalPosX</references>
+        <references refid="classCPolice_1afe1ed67f8d2ccd705de0c2c7a45cd310" compoundref="Police_8h" startline="17">FinalPosZ</references>
+        <references refid="classCPolice_1a5005889017dcce467b2d04e19d38eb9c" compoundref="Police_8h" startline="15">PoliceRotate</references>
+        <references refid="classCPolice_1a09241b5379af7af9d9be18dab89207c1" compoundref="Police_8h" startline="13">PoliceXMove</references>
+        <references refid="classCPolice_1aa06c6c61506897ba454c5f31bcf14f5b" compoundref="Police_8h" startline="14">PoliceZMove</references>
+        <references refid="classCPolice_1abad010fb5439f4c74bd18d78ae89eb3e" compoundref="Police_8h" startline="18">WheelRot</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="379">
+        <label>float</label>
+      </node>
+      <node id="380">
+        <label>bool</label>
+      </node>
+      <node id="378">
+        <label>CPolice</label>
+        <link refid="classCPolice"/>
+        <childnode refid="379" relation="usage">
+          <edgelabel>WheelRot</edgelabel>
+          <edgelabel>PoliceRotate</edgelabel>
+          <edgelabel>PoliceZMove</edgelabel>
+          <edgelabel>FinalPosX</edgelabel>
+          <edgelabel>PoliceXMove</edgelabel>
+          <edgelabel>FinalPosZ</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>escape</edgelabel>
+          <edgelabel>arrived</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" line="8" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h" bodystart="7" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classCPolice_1a3cddd4f79bc75a3080dc57773d65ed90" prot="public" virt="non-virtual"><scope>CPolice</scope><name>arrived</name></member>
+      <member refid="classCPolice_1a3d29e90f24655542d67e32a6ed723087" prot="public" virt="non-virtual"><scope>CPolice</scope><name>CPolice</name></member>
+      <member refid="classCPolice_1a67e6d05dc44e379ac727a9ceabb17507" prot="public" virt="non-virtual"><scope>CPolice</scope><name>escape</name></member>
+      <member refid="classCPolice_1a010a5468077bce39ccd610821a717db5" prot="public" virt="non-virtual"><scope>CPolice</scope><name>FinalPosX</name></member>
+      <member refid="classCPolice_1afe1ed67f8d2ccd705de0c2c7a45cd310" prot="public" virt="non-virtual"><scope>CPolice</scope><name>FinalPosZ</name></member>
+      <member refid="classCPolice_1a9078aaf95c1fcec0bce4d83a1030a265" prot="public" virt="non-virtual"><scope>CPolice</scope><name>PoliceDrive</name></member>
+      <member refid="classCPolice_1af7fbdb726d614de2ebd8c53dfe3afba7" prot="public" virt="non-virtual"><scope>CPolice</scope><name>PoliceDriveL</name></member>
+      <member refid="classCPolice_1a5005889017dcce467b2d04e19d38eb9c" prot="public" virt="non-virtual"><scope>CPolice</scope><name>PoliceRotate</name></member>
+      <member refid="classCPolice_1a09241b5379af7af9d9be18dab89207c1" prot="public" virt="non-virtual"><scope>CPolice</scope><name>PoliceXMove</name></member>
+      <member refid="classCPolice_1aa06c6c61506897ba454c5f31bcf14f5b" prot="public" virt="non-virtual"><scope>CPolice</scope><name>PoliceZMove</name></member>
+      <member refid="classCPolice_1abad010fb5439f4c74bd18d78ae89eb3e" prot="public" virt="non-virtual"><scope>CPolice</scope><name>WheelRot</name></member>
+      <member refid="classCPolice_1a2723504c8d5af86a3925bbced91f3f10" prot="public" virt="non-virtual"><scope>CPolice</scope><name>~CPolice</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,11 @@
+digraph "irrKlang" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_73f5790281594f034a2fc0d1f881cd30 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_73f5790281594f034a2fc0d1f881cd30.html"];
+    dir_73f5790281594f034a2fc0d1f881cd30 [shape=plaintext label="irrKlang"];
+    dir_c51202b06f10c1ec41f10ffc05c07b88 [shape=box label="include" color="black" fillcolor="white" style="filled" URL="dir_c51202b06f10c1ec41f10ffc05c07b88.html"];
+  }
+}

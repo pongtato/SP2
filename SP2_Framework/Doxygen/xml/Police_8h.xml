@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Police_8h" kind="file">
+    <compoundname>Police.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">iostream</includes>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="Police_8cpp" local="yes">MyGraphics/Source/Police.cpp</includedby>
+    <incdepgraph>
+      <node id="2477">
+        <label>string</label>
+      </node>
+      <node id="2478">
+        <label>iostream</label>
+      </node>
+      <node id="2476">
+        <label>MyGraphics/Source/Police.h</label>
+        <link refid="Police.h"/>
+        <childnode refid="2477" relation="include">
+        </childnode>
+        <childnode refid="2478" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2482">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="2480">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="2481" relation="include">
+        </childnode>
+        <childnode refid="2482" relation="include">
+        </childnode>
+      </node>
+      <node id="2481">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2483">
+        <label>MyGraphics/Source/Police.cpp</label>
+        <link refid="Police_8cpp"/>
+      </node>
+      <node id="2479">
+        <label>MyGraphics/Source/Police.h</label>
+        <link refid="Police.h"/>
+        <childnode refid="2480" relation="include">
+        </childnode>
+        <childnode refid="2483" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCPolice" prot="public">CPolice</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classCPolice" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCPolice" kindref="compound">CPolice</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCPolice" kindref="compound">CPolice</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classCPolice" kindref="compound">CPolice</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classCPolice_1a09241b5379af7af9d9be18dab89207c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1a09241b5379af7af9d9be18dab89207c1" kindref="member">PoliceXMove</ref>;</highlight></codeline>
+<codeline lineno="14" refid="classCPolice_1aa06c6c61506897ba454c5f31bcf14f5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1aa06c6c61506897ba454c5f31bcf14f5b" kindref="member">PoliceZMove</ref>;</highlight></codeline>
+<codeline lineno="15" refid="classCPolice_1a5005889017dcce467b2d04e19d38eb9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1a5005889017dcce467b2d04e19d38eb9c" kindref="member">PoliceRotate</ref>;</highlight></codeline>
+<codeline lineno="16" refid="classCPolice_1a010a5468077bce39ccd610821a717db5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1a010a5468077bce39ccd610821a717db5" kindref="member">FinalPosX</ref>;</highlight></codeline>
+<codeline lineno="17" refid="classCPolice_1afe1ed67f8d2ccd705de0c2c7a45cd310" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1afe1ed67f8d2ccd705de0c2c7a45cd310" kindref="member">FinalPosZ</ref>;</highlight></codeline>
+<codeline lineno="18" refid="classCPolice_1abad010fb5439f4c74bd18d78ae89eb3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1abad010fb5439f4c74bd18d78ae89eb3e" kindref="member">WheelRot</ref>;</highlight></codeline>
+<codeline lineno="19" refid="classCPolice_1a3cddd4f79bc75a3080dc57773d65ed90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1a3cddd4f79bc75a3080dc57773d65ed90" kindref="member">arrived</ref>;</highlight></codeline>
+<codeline lineno="20" refid="classCPolice_1a67e6d05dc44e379ac727a9ceabb17507" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCPolice_1a67e6d05dc44e379ac727a9ceabb17507" kindref="member">escape</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PoliceDrive(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zOff,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xOff,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rot);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PoliceDriveL(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rot,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zOff,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xOff,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotOff);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Police.h"/>
+  </compounddef>
+</doxygen>

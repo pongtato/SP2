@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="MathsConversion_8h" kind="file">
+    <compoundname>MathsConversion.h</compoundname>
+    <includedby refid="Bullet_8h" local="yes">MyGraphics/Source/Bullet.h</includedby>
+    <invincdepgraph>
+      <node id="2360">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="2358">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="2359" relation="include">
+        </childnode>
+        <childnode refid="2360" relation="include">
+        </childnode>
+      </node>
+      <node id="2357">
+        <label>MyGraphics/Source/Bullet.h</label>
+        <link refid="Bullet_8h"/>
+        <childnode refid="2358" relation="include">
+        </childnode>
+        <childnode refid="2361" relation="include">
+        </childnode>
+      </node>
+      <node id="2361">
+        <label>MyGraphics/Source/Bullet.cpp</label>
+        <link refid="Bullet_8cpp"/>
+      </node>
+      <node id="2356">
+        <label>MyGraphics/Source/MathsConversion.h</label>
+        <link refid="MathsConversion.h"/>
+        <childnode refid="2357" relation="include">
+        </childnode>
+      </node>
+      <node id="2359">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="MathsConversion_8h_1a598a3330b3c21701223ee0ca14316eca" prot="public" static="no">
+        <name>PI</name>
+        <initializer>3.14159265</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" line="3" column="9" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="MathsConversion_8h_1abbfb1b8e88373781c6238d647110f5d2" prot="public" static="no">
+        <name>DEGTORAD</name>
+        <initializer>( <ref refid="MathsConversion_8h_1a598a3330b3c21701223ee0ca14316eca" kindref="member">PI</ref> / 180.0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" line="4" column="9" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" bodystart="4" bodyend="-1"/>
+        <referencedby refid="MathsConversion_8h_1ab425721e6df1644a97af6ecab35be84c" compoundref="MathsConversion_8h" startline="16" endline="19">DegToRad</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="MathsConversion_8h_1a9fcbc53371e9a60b983c6b338537aa40" prot="public" static="no">
+        <name>RADTODEG</name>
+        <initializer>( 180.0 / <ref refid="MathsConversion_8h_1a598a3330b3c21701223ee0ca14316eca" kindref="member">PI</ref> )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" line="5" column="9" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" bodystart="5" bodyend="-1"/>
+        <referencedby refid="MathsConversion_8h_1aa89cecefbdd422ecd340ceb2a9df8fc9" compoundref="MathsConversion_8h" startline="9" endline="12">RadToDeg</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="MathsConversion_8h_1aa89cecefbdd422ecd340ceb2a9df8fc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Type</type>
+          </param>
+        </templateparamlist>
+        <type>Type</type>
+        <definition>Type RadToDeg</definition>
+        <argsstring>(const Type rad)</argsstring>
+        <name>RadToDeg</name>
+        <param>
+          <type>const Type</type>
+          <declname>rad</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" line="9" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" bodystart="9" bodyend="12"/>
+        <references refid="MathsConversion_8h_1a9fcbc53371e9a60b983c6b338537aa40" compoundref="MathsConversion_8h" startline="5">RADTODEG</references>
+      </memberdef>
+      <memberdef kind="function" id="MathsConversion_8h_1ab425721e6df1644a97af6ecab35be84c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Type</type>
+          </param>
+        </templateparamlist>
+        <type>Type</type>
+        <definition>Type DegToRad</definition>
+        <argsstring>(const Type deg)</argsstring>
+        <name>DegToRad</name>
+        <param>
+          <type>const Type</type>
+          <declname>deg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" line="16" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h" bodystart="16" bodyend="19"/>
+        <references refid="MathsConversion_8h_1abbfb1b8e88373781c6238d647110f5d2" compoundref="MathsConversion_8h" startline="4">DEGTORAD</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="MathsConversion_8h_1a598a3330b3c21701223ee0ca14316eca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PI<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3.14159265</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="MathsConversion_8h_1abbfb1b8e88373781c6238d647110f5d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEGTORAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>PI<sp/>/<sp/>180.0<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="MathsConversion_8h_1a9fcbc53371e9a60b983c6b338537aa40" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RADTODEG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>180.0<sp/>/<sp/>PI<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Convert<sp/>Radians<sp/>To<sp/>Degrees</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Type&gt;</highlight></codeline>
+<codeline lineno="9" refid="MathsConversion_8h_1aa89cecefbdd422ecd340ceb2a9df8fc9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>Type<sp/><ref refid="MathsConversion_8h_1aa89cecefbdd422ecd340ceb2a9df8fc9" kindref="member">RadToDeg</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type<sp/>rad)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Type</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<sp/>rad<sp/>*<sp/><ref refid="MathsConversion_8h_1a9fcbc53371e9a60b983c6b338537aa40" kindref="member">RADTODEG</ref><sp/>);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Convert<sp/>Degrees<sp/>To<sp/>Radians</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Type&gt;</highlight></codeline>
+<codeline lineno="16" refid="MathsConversion_8h_1ab425721e6df1644a97af6ecab35be84c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>Type<sp/><ref refid="MathsConversion_8h_1ab425721e6df1644a97af6ecab35be84c" kindref="member">DegToRad</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type<sp/>deg)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Type</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<sp/>deg<sp/>*<sp/><ref refid="MathsConversion_8h_1abbfb1b8e88373781c6238d647110f5d2" kindref="member">DEGTORAD</ref><sp/>);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/MathsConversion.h"/>
+  </compounddef>
+</doxygen>

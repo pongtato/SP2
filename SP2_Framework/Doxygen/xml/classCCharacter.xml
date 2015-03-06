@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCCharacter" kind="class" prot="public">
+    <compoundname>CCharacter</compoundname>
+    <includes refid="Character_8h" local="no">Character.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCCharacter_1abba6564fd188af397ad9e8e292cee305" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CCharacter::money</definition>
+        <argsstring></argsstring>
+        <name>money</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="11" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classCCharacter_1a839914479f46f17587ecda205dbf900b" compoundref="Character_8cpp" startline="55" endline="58">getMoney</referencedby>
+        <referencedby refid="classCCharacter_1a3ff185ddb9f1cd4830fbb2abeb5f3d76" compoundref="Character_8cpp" startline="30" endline="33">setMoney</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CCharacter::health</definition>
+        <argsstring></argsstring>
+        <name>health</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="12" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classCCharacter_1a51b3281282938697a286d38e06c65f3c" compoundref="Character_8cpp" startline="60" endline="63">getHealth</referencedby>
+        <referencedby refid="classCCharacter_1aec136bac277476b1cf6cc9a9a0f385e2" compoundref="Character_8cpp" startline="25" endline="28">setHealth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CCharacter::stamina</definition>
+        <argsstring></argsstring>
+        <name>stamina</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="13" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classCCharacter_1aaf9f7a3c49545cf4f8ded10af3ecddad" compoundref="Character_8cpp" startline="65" endline="68">getStamina</referencedby>
+        <referencedby refid="classCCharacter_1abb8d82e3f1e2add2fda9eced2601e88c" compoundref="Character_8cpp" startline="40" endline="43">setStamina</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1ab578181da76912ee5f1a8779a148a49c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CCharacter::bullets</definition>
+        <argsstring></argsstring>
+        <name>bullets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="14" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classCCharacter_1a1182c42e68f6b37efe1bad5cfb766d1c" compoundref="Character_8cpp" startline="35" endline="38">setBullets</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CCharacter::detection</definition>
+        <argsstring></argsstring>
+        <name>detection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="15" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classCCharacter_1a2b8b9040ac34931843d33cd81f28777e" compoundref="Character_8cpp" startline="70" endline="73">getDetection</referencedby>
+        <referencedby refid="classCCharacter_1a398d5f43490c3d830e9edafda2882f95" compoundref="Character_8cpp" startline="45" endline="48">setDetection</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classCItem" kindref="compound">CItem</ref> * &gt;</type>
+        <definition>vector&lt;CItem* &gt; CCharacter::inven_list</definition>
+        <argsstring></argsstring>
+        <name>inven_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="16" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" compoundref="Character_8cpp" startline="88" endline="100">dropItem</referencedby>
+        <referencedby refid="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" compoundref="Character_8cpp" startline="112" endline="115">getInventory</referencedby>
+        <referencedby refid="classCCharacter_1ad5f30d8f816db4ce704cd1a8151c3ceb" compoundref="Character_8cpp" startline="117" endline="120">returnInvenSize</referencedby>
+        <referencedby refid="classCCharacter_1a274fbf3a0dd55541958b28f8ee5ee24e" compoundref="Character_8cpp" startline="107" endline="110">sellItems</referencedby>
+        <referencedby refid="classCCharacter_1a2fa127c9f4238f26ab4bab8a47b5ea97" compoundref="Character_8cpp" startline="80" endline="86">setInventory</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CCharacter::inventoryCap</definition>
+        <argsstring></argsstring>
+        <name>inventoryCap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="17" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classCCharacter_1afa92c015e4a27824c694289502d4ead5" compoundref="Character_8cpp" startline="127" endline="130">getInventoryCap</referencedby>
+        <referencedby refid="classCCharacter_1af61d0d8a5a13edf35a40552b52c52803" compoundref="Character_8cpp" startline="122" endline="125">setInventoryCap</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string CCharacter::career</definition>
+        <argsstring></argsstring>
+        <name>career</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="18" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classCCharacter_1a1678b1a5ac64998332cc46a04c38e3ef" compoundref="Character_8cpp" startline="75" endline="78">getClass</referencedby>
+        <referencedby refid="classCCharacter_1aac912c54bc2622ea4bdbb7a22edb1911" compoundref="Character_8cpp" startline="50" endline="53">setClass</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classCCharacter_1aded02254b61671e5d8cd9f019b69727d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CCharacter::unpaiditems</definition>
+        <argsstring></argsstring>
+        <name>unpaiditems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="45" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classSP2_1a46ab8053b4e0129e1e3b700c3eef9bdd" compoundref="SP2_8cpp" startline="1182" endline="1199">SP2::UnpaidItems</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1a3add3afae5ab0ec2223a2bb2ea5bf4ca" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CCharacter::trolley</definition>
+        <argsstring></argsstring>
+        <name>trolley</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="46" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1438" endline="1859">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="2612" endline="2787">SP2::Render</referencedby>
+        <referencedby refid="classSP2_1a4e58b7099316f5913fc77ea5061bc48c" compoundref="SP2_8cpp" startline="5156" endline="5256">SP2::RenderPlayer</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1a2b4b0adf3360dc6ba3b091e319f0d56d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CCharacter::trolleyDrop</definition>
+        <argsstring></argsstring>
+        <name>trolleyDrop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="47" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1ad02c1119e6d653a68770ef96281a77f7" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CCharacter::Align</definition>
+        <argsstring></argsstring>
+        <name>Align</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="48" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1a9f25939f22720f605f3333a419c37e16" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CCharacter::Takeitems</definition>
+        <argsstring></argsstring>
+        <name>Takeitems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="49" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="3329" endline="3401">SP2::CheckItem</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCCharacter_1ac27d3d6aef3f59abb9ea5043be31d4ca" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CCharacter::Restart</definition>
+        <argsstring></argsstring>
+        <name>Restart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="51" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" compoundref="Character_8cpp" startline="4" endline="18">CCharacter</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CCharacter::CCharacter</definition>
+        <argsstring>(void)</argsstring>
+        <name>CCharacter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="21" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="4" bodyend="18"/>
+        <references refid="classCCharacter_1ad02c1119e6d653a68770ef96281a77f7" compoundref="Character_8h" startline="48">Align</references>
+        <references refid="classCCharacter_1ab578181da76912ee5f1a8779a148a49c" compoundref="Character_8h" startline="14">bullets</references>
+        <references refid="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" compoundref="Character_8h" startline="18">career</references>
+        <references refid="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" compoundref="Character_8h" startline="15">detection</references>
+        <references refid="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" compoundref="Character_8h" startline="12">health</references>
+        <references refid="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" compoundref="Character_8h" startline="17">inventoryCap</references>
+        <references refid="classCCharacter_1abba6564fd188af397ad9e8e292cee305" compoundref="Character_8h" startline="11">money</references>
+        <references refid="classCCharacter_1ac27d3d6aef3f59abb9ea5043be31d4ca" compoundref="Character_8h" startline="51">Restart</references>
+        <references refid="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" compoundref="Character_8h" startline="13">stamina</references>
+        <references refid="classCCharacter_1a3add3afae5ab0ec2223a2bb2ea5bf4ca" compoundref="Character_8h" startline="46">trolley</references>
+        <references refid="classCCharacter_1a2b4b0adf3360dc6ba3b091e319f0d56d" compoundref="Character_8h" startline="47">trolleyDrop</references>
+        <references refid="classCCharacter_1aded02254b61671e5d8cd9f019b69727d" compoundref="Character_8h" startline="45">unpaiditems</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a6176ffa71d744eed17566ab6d61e37bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CCharacter::~CCharacter</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CCharacter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="22" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a3ff185ddb9f1cd4830fbb2abeb5f3d76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setMoney</definition>
+        <argsstring>(double cash)</argsstring>
+        <name>setMoney</name>
+        <param>
+          <type>double</type>
+          <declname>cash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="24" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="30" bodyend="33"/>
+        <references refid="classCCharacter_1abba6564fd188af397ad9e8e292cee305" compoundref="Character_8h" startline="11">money</references>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="3726" endline="3754">SP2::EscapeSteal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1aec136bac277476b1cf6cc9a9a0f385e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setHealth</definition>
+        <argsstring>(int hp)</argsstring>
+        <name>setHealth</name>
+        <param>
+          <type>int</type>
+          <declname>hp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="25" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="25" bodyend="28"/>
+        <references refid="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" compoundref="Character_8h" startline="12">health</references>
+        <referencedby refid="classSP2_1a10de88b5c519e049d2f534ccf0a26863" compoundref="SP2_8cpp" startline="4392" endline="4725">SP2::BulletCollisionEnemy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1abb8d82e3f1e2add2fda9eced2601e88c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setStamina</definition>
+        <argsstring>(int stam)</argsstring>
+        <name>setStamina</name>
+        <param>
+          <type>int</type>
+          <declname>stam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="26" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="40" bodyend="43"/>
+        <references refid="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" compoundref="Character_8h" startline="13">stamina</references>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="147" endline="359">Camera3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a1182c42e68f6b37efe1bad5cfb766d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setBullets</definition>
+        <argsstring>(int ammo)</argsstring>
+        <name>setBullets</name>
+        <param>
+          <type>int</type>
+          <declname>ammo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="27" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="35" bodyend="38"/>
+        <references refid="classCCharacter_1ab578181da76912ee5f1a8779a148a49c" compoundref="Character_8h" startline="14">bullets</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a398d5f43490c3d830e9edafda2882f95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setDetection</definition>
+        <argsstring>(float detect)</argsstring>
+        <name>setDetection</name>
+        <param>
+          <type>float</type>
+          <declname>detect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="28" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="45" bodyend="48"/>
+        <references refid="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" compoundref="Character_8h" startline="15">detection</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a2fa127c9f4238f26ab4bab8a47b5ea97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setInventory</definition>
+        <argsstring>(string name, double price)</argsstring>
+        <name>setInventory</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>price</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="29" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="80" bodyend="86"/>
+        <references refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" compoundref="Character_8h" startline="16">inven_list</references>
+        <references refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" compoundref="Item_8cpp" startline="99" endline="102">CItem::setItemName</references>
+        <references refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" compoundref="Item_8cpp" startline="104" endline="107">CItem::setItemPrice</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="3329" endline="3401">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1ad43b892a725841b85f9bfd0201f61823" compoundref="SP2_8cpp" startline="3288" endline="3327">SP2::ItemMissing</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1aac912c54bc2622ea4bdbb7a22edb1911" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setClass</definition>
+        <argsstring>(string job)</argsstring>
+        <name>setClass</name>
+        <param>
+          <type>string</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="30" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="50" bodyend="53"/>
+        <references refid="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" compoundref="Character_8h" startline="18">career</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::dropItem</definition>
+        <argsstring>(string itemname)</argsstring>
+        <name>dropItem</name>
+        <param>
+          <type>string</type>
+          <declname>itemname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="31" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="88" bodyend="100"/>
+        <references refid="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" compoundref="Character_8cpp" startline="112" endline="115">getInventory</references>
+        <references refid="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" compoundref="Item_8cpp" startline="114" endline="117">CItem::getItemName</references>
+        <references refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" compoundref="Character_8h" startline="16">inven_list</references>
+        <references refid="classCCharacter_1ad5f30d8f816db4ce704cd1a8151c3ceb" compoundref="Character_8cpp" startline="117" endline="120">returnInvenSize</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="3329" endline="3401">SP2::CheckItem</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a274fbf3a0dd55541958b28f8ee5ee24e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::sellItems</definition>
+        <argsstring>(int n)</argsstring>
+        <name>sellItems</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="32" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="107" bodyend="110"/>
+        <references refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" compoundref="Character_8h" startline="16">inven_list</references>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="3726" endline="3754">SP2::EscapeSteal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1af61d0d8a5a13edf35a40552b52c52803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CCharacter::setInventoryCap</definition>
+        <argsstring>(int size)</argsstring>
+        <name>setInventoryCap</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="33" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="122" bodyend="125"/>
+        <references refid="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" compoundref="Character_8h" startline="17">inventoryCap</references>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a839914479f46f17587ecda205dbf900b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CCharacter::getMoney</definition>
+        <argsstring>(void)</argsstring>
+        <name>getMoney</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="35" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="55" bodyend="58"/>
+        <references refid="classCCharacter_1abba6564fd188af397ad9e8e292cee305" compoundref="Character_8h" startline="11">money</references>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="3726" endline="3754">SP2::EscapeSteal</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a51b3281282938697a286d38e06c65f3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CCharacter::getHealth</definition>
+        <argsstring>(void)</argsstring>
+        <name>getHealth</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="36" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="60" bodyend="63"/>
+        <references refid="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" compoundref="Character_8h" startline="12">health</references>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="2808" endline="2986">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1aaf9f7a3c49545cf4f8ded10af3ecddad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CCharacter::getStamina</definition>
+        <argsstring>(void)</argsstring>
+        <name>getStamina</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="37" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="65" bodyend="68"/>
+        <references refid="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" compoundref="Character_8h" startline="13">stamina</references>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+        <referencedby refid="classCamera3_1acc5d4103826cda6d20b80a0d35eacdbe" compoundref="Camera3_8cpp" startline="147" endline="359">Camera3::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1abde4315bbf70d8fbd105c211e8f3288f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CCharacter::getBullets</definition>
+        <argsstring>(void)</argsstring>
+        <name>getBullets</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a2b8b9040ac34931843d33cd81f28777e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CCharacter::getDetection</definition>
+        <argsstring>(void)</argsstring>
+        <name>getDetection</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="39" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="70" bodyend="73"/>
+        <references refid="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" compoundref="Character_8h" startline="15">detection</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1ae4b3f4ba1fd0dbbea585d360d6890b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string CCharacter::getItemName</definition>
+        <argsstring>(int n)</argsstring>
+        <name>getItemName</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="40" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="102" bodyend="105"/>
+        <references refid="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" compoundref="Character_8cpp" startline="112" endline="115">getInventory</references>
+        <references refid="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" compoundref="Item_8cpp" startline="114" endline="117">CItem::getItemName</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classCItem" kindref="compound">CItem</ref> *</type>
+        <definition>CItem * CCharacter::getInventory</definition>
+        <argsstring>(int n)</argsstring>
+        <name>getInventory</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="41" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="112" bodyend="115"/>
+        <references refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" compoundref="Character_8h" startline="16">inven_list</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="3329" endline="3401">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+        <referencedby refid="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" compoundref="Character_8cpp" startline="88" endline="100">dropItem</referencedby>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="3726" endline="3754">SP2::EscapeSteal</referencedby>
+        <referencedby refid="classCCharacter_1ae4b3f4ba1fd0dbbea585d360d6890b43" compoundref="Character_8cpp" startline="102" endline="105">getItemName</referencedby>
+        <referencedby refid="classSP2_1a2461e90e84e4308a7c3e91d1d0372d3c" compoundref="SP2_8cpp" startline="2988" endline="3146">SP2::RenderItemMissing</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="2808" endline="2986">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1a1678b1a5ac64998332cc46a04c38e3ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string CCharacter::getClass</definition>
+        <argsstring>(void)</argsstring>
+        <name>getClass</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="42" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="75" bodyend="78"/>
+        <references refid="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" compoundref="Character_8h" startline="18">career</references>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1ad5f30d8f816db4ce704cd1a8151c3ceb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CCharacter::returnInvenSize</definition>
+        <argsstring>()</argsstring>
+        <name>returnInvenSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="43" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="117" bodyend="120"/>
+        <references refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" compoundref="Character_8h" startline="16">inven_list</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="3329" endline="3401">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+        <referencedby refid="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" compoundref="Character_8cpp" startline="88" endline="100">dropItem</referencedby>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="3726" endline="3754">SP2::EscapeSteal</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="2612" endline="2787">SP2::Render</referencedby>
+        <referencedby refid="classSP2_1a2461e90e84e4308a7c3e91d1d0372d3c" compoundref="SP2_8cpp" startline="2988" endline="3146">SP2::RenderItemMissing</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="2808" endline="2986">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a46ab8053b4e0129e1e3b700c3eef9bdd" compoundref="SP2_8cpp" startline="1182" endline="1199">SP2::UnpaidItems</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCCharacter_1afa92c015e4a27824c694289502d4ead5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CCharacter::getInventoryCap</definition>
+        <argsstring>(void)</argsstring>
+        <name>getInventoryCap</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="44" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.cpp" bodystart="127" bodyend="130"/>
+        <references refid="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" compoundref="Character_8h" startline="17">inventoryCap</references>
+        <referencedby refid="classSP2_1ad2f12ddb7e26a548f20243aead5d02d6" compoundref="SP2_8cpp" startline="3329" endline="3401">SP2::CheckItem</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="2808" endline="2986">SP2::RenderScreenUI</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="351">
+        <label>string</label>
+      </node>
+      <node id="348">
+        <label>float</label>
+      </node>
+      <node id="349">
+        <label>int</label>
+      </node>
+      <node id="347">
+        <label>double</label>
+      </node>
+      <node id="352">
+        <label>vector&lt; CItem * &gt;</label>
+      </node>
+      <node id="346">
+        <label>CCharacter</label>
+        <link refid="classCCharacter"/>
+        <childnode refid="347" relation="usage">
+          <edgelabel>money</edgelabel>
+        </childnode>
+        <childnode refid="348" relation="usage">
+          <edgelabel>detection</edgelabel>
+        </childnode>
+        <childnode refid="349" relation="usage">
+          <edgelabel>bullets</edgelabel>
+          <edgelabel>stamina</edgelabel>
+          <edgelabel>inventoryCap</edgelabel>
+          <edgelabel>health</edgelabel>
+        </childnode>
+        <childnode refid="350" relation="usage">
+          <edgelabel>Takeitems</edgelabel>
+          <edgelabel>Align</edgelabel>
+          <edgelabel>trolleyDrop</edgelabel>
+          <edgelabel>trolley</edgelabel>
+          <edgelabel>unpaiditems</edgelabel>
+          <edgelabel>Restart</edgelabel>
+        </childnode>
+        <childnode refid="351" relation="usage">
+          <edgelabel>career</edgelabel>
+        </childnode>
+        <childnode refid="352" relation="usage">
+          <edgelabel>inven_list</edgelabel>
+        </childnode>
+      </node>
+      <node id="350">
+        <label>bool</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" line="9" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Character.h" bodystart="8" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classCCharacter_1ad02c1119e6d653a68770ef96281a77f7" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>Align</name></member>
+      <member refid="classCCharacter_1ab578181da76912ee5f1a8779a148a49c" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>bullets</name></member>
+      <member refid="classCCharacter_1ab5eab87c0e9ad3a04830e257fc0fb8be" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>career</name></member>
+      <member refid="classCCharacter_1a0a45163210c01ba76eff3d79b2ec6e10" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>CCharacter</name></member>
+      <member refid="classCCharacter_1aabf9c6e4f5e386b800bdf8c36c23fea5" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>detection</name></member>
+      <member refid="classCCharacter_1a8bc2dc6a010b614eca6be6eaffdeb609" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>dropItem</name></member>
+      <member refid="classCCharacter_1abde4315bbf70d8fbd105c211e8f3288f" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getBullets</name></member>
+      <member refid="classCCharacter_1a1678b1a5ac64998332cc46a04c38e3ef" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getClass</name></member>
+      <member refid="classCCharacter_1a2b8b9040ac34931843d33cd81f28777e" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getDetection</name></member>
+      <member refid="classCCharacter_1a51b3281282938697a286d38e06c65f3c" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getHealth</name></member>
+      <member refid="classCCharacter_1a4409d8a9a5ec012dfdf3bb18b113423f" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getInventory</name></member>
+      <member refid="classCCharacter_1afa92c015e4a27824c694289502d4ead5" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getInventoryCap</name></member>
+      <member refid="classCCharacter_1ae4b3f4ba1fd0dbbea585d360d6890b43" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getItemName</name></member>
+      <member refid="classCCharacter_1a839914479f46f17587ecda205dbf900b" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getMoney</name></member>
+      <member refid="classCCharacter_1aaf9f7a3c49545cf4f8ded10af3ecddad" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>getStamina</name></member>
+      <member refid="classCCharacter_1af9b6ffb9cb05bb69b6a43c4712ba744a" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>health</name></member>
+      <member refid="classCCharacter_1aa55623fe9161a3564cfbce8d02ebd0b6" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>inven_list</name></member>
+      <member refid="classCCharacter_1a4b100e5e63e728cde3c69b6a97e61f68" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>inventoryCap</name></member>
+      <member refid="classCCharacter_1abba6564fd188af397ad9e8e292cee305" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>money</name></member>
+      <member refid="classCCharacter_1ac27d3d6aef3f59abb9ea5043be31d4ca" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>Restart</name></member>
+      <member refid="classCCharacter_1ad5f30d8f816db4ce704cd1a8151c3ceb" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>returnInvenSize</name></member>
+      <member refid="classCCharacter_1a274fbf3a0dd55541958b28f8ee5ee24e" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>sellItems</name></member>
+      <member refid="classCCharacter_1a1182c42e68f6b37efe1bad5cfb766d1c" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setBullets</name></member>
+      <member refid="classCCharacter_1aac912c54bc2622ea4bdbb7a22edb1911" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setClass</name></member>
+      <member refid="classCCharacter_1a398d5f43490c3d830e9edafda2882f95" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setDetection</name></member>
+      <member refid="classCCharacter_1aec136bac277476b1cf6cc9a9a0f385e2" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setHealth</name></member>
+      <member refid="classCCharacter_1a2fa127c9f4238f26ab4bab8a47b5ea97" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setInventory</name></member>
+      <member refid="classCCharacter_1af61d0d8a5a13edf35a40552b52c52803" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setInventoryCap</name></member>
+      <member refid="classCCharacter_1a3ff185ddb9f1cd4830fbb2abeb5f3d76" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setMoney</name></member>
+      <member refid="classCCharacter_1abb8d82e3f1e2add2fda9eced2601e88c" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>setStamina</name></member>
+      <member refid="classCCharacter_1a34ba7d057bdd38793b8bd947227f4a39" prot="private" virt="non-virtual"><scope>CCharacter</scope><name>stamina</name></member>
+      <member refid="classCCharacter_1a9f25939f22720f605f3333a419c37e16" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>Takeitems</name></member>
+      <member refid="classCCharacter_1a3add3afae5ab0ec2223a2bb2ea5bf4ca" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>trolley</name></member>
+      <member refid="classCCharacter_1a2b4b0adf3360dc6ba3b091e319f0d56d" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>trolleyDrop</name></member>
+      <member refid="classCCharacter_1aded02254b61671e5d8cd9f019b69727d" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>unpaiditems</name></member>
+      <member refid="classCCharacter_1a6176ffa71d744eed17566ab6d61e37bf" prot="public" virt="non-virtual"><scope>CCharacter</scope><name>~CCharacter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

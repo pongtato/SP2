@@ -1,16 +1,45 @@
+/****************************************************************************/
+/*!
+\file CameraSecurity.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to update the Security Cameras.
+*/
+/****************************************************************************/
 #include "CameraSecurity.h"
 
-
+/****************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/****************************************************************************/
 CCameraSecurity::CCameraSecurity(void)
 {
 	Limit = 45;
 }
 
-
+/****************************************************************************/
+/*!
+\brief
+Default destructor
+*/
+/****************************************************************************/
 CCameraSecurity::~CCameraSecurity(void)
 {
 }
 
+/***************************************************************/
+/*!
+/brief
+Initiation codes for the position, target, and positive z-coordinates.
+
+/param pos - position vector
+/param target - point target vector
+/param up - positive z-coordinates vector
+*/
+/***************************************************************/
 void CCameraSecurity::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	this->position = defaultPosition = pos;
@@ -21,7 +50,12 @@ void CCameraSecurity::Init(const Vector3& pos, const Vector3& target, const Vect
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
 }
-
+/****************************************************************************/
+/*!
+\brief
+Codes for camera controls, trolley controls, and 
+*/
+/****************************************************************************/
 void CCameraSecurity::Update(double dt)
 {
 	double MouseX = 0;

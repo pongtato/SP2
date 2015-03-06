@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="dir_73f5790281594f034a2fc0d1f881cd30" kind="dir">
+    <compoundname>irrKlang</compoundname>
+    <innerdir refid="dir_c51202b06f10c1ec41f10ffc05c07b88">irrKlang/include</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/SP2/SP2_Framework/irrKlang/"/>
+  </compounddef>
+</doxygen>

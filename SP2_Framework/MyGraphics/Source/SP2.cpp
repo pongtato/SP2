@@ -1,3 +1,12 @@
+/************************************************************************/
+/*!
+\file SP2.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to update and render the application.
+*/
+/************************************************************************/
 #include "SP2.h"
 #include "GL\glew.h"
 #include <sstream>
@@ -12,16 +21,31 @@
 
 #include "LoadTGA.h"
 
-
+/***************************************************************/
+/*!
+/brief
+Default Constructor
+*/
+/***************************************************************/
 SP2::SP2()
 {
 	Lightswitch = 1;
 }
-
+/***************************************************************/
+/*!
+/brief
+Default Destructor
+*/
+/***************************************************************/
 SP2::~SP2()
 {
 }
-
+/***************************************************************/
+/*!
+/brief
+Initiation codes for text files, parameters, meshLists, etc.
+*/
+/***************************************************************/
 void SP2::Init()
 {
 	data.ReadTextFile( "OBJ-Pos/Martpos.txt" );
@@ -798,7 +822,12 @@ void SP2::Init()
 
 //Animate walk speed
 static float WSPEED = 50.0f;
-
+/***************************************************************/
+/*!
+/brief
+Codes for the numerical controls and police updating
+*/
+/***************************************************************/
 void SP2::Update(double dt)
 {
 
@@ -1057,6 +1086,8 @@ void SP2::Update(double dt)
 				shoot.RTime += (1*dt);
 			if ( shoot.RTime >= 2)
 			{
+				//play reloading music
+				MusicPlayer.Reload();
 				shoot.clip--;
 				shoot.bullet=30;
 				shoot.RTime = 0;
@@ -1168,7 +1199,12 @@ void SP2::Update(double dt)
 	}
 	Animate(dt);
 }
-
+/***************************************************************/
+/*!
+/brief
+A function for NPCs to walk a assigned path
+*/
+/***************************************************************/
 void SP2::NPCwalk()
 {
 	npc.TestAIPath();
@@ -1176,7 +1212,12 @@ void SP2::NPCwalk()
 	shopper.ShopPathing(1,playeridle);
 	shopperTwo.ShopPathing(2,playeridle);
 }
-
+/***************************************************************/
+/*!
+/brief
+Code to check if items were unpaid or not.
+*/
+/***************************************************************/
 void SP2::UnpaidItems()
 {
 	if (player.returnInvenSize() == 0)
@@ -1195,7 +1236,12 @@ void SP2::UnpaidItems()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Code to set the mart to an 'alert' state.
+*/
+/***************************************************************/
 void SP2::Stealing()
 {
 	if (police == true)
@@ -1223,14 +1269,24 @@ void SP2::Stealing()
 		glUniform1f(m_parameters[U_LIGHT0_POWER], lights[0].power);
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Code to set back to the previous position for the collision codes.
+*/
+/***************************************************************/
 void SP2::SetPrevPos()
 {
 	cameraDupe.position = camera.position;
 	cameraDupe.target = camera.target;
 	cameraDupe.up = camera.up;
 }
-
+/***************************************************************/
+/*!
+/brief
+Code to update the User Interface.
+*/
+/***************************************************************/
 void SP2::UIupdates(double dt)
 {
 	std::stringstream dd;
@@ -1378,7 +1434,12 @@ void SP2::UIupdates(double dt)
 			ItemName = "Shop Staff";
 		}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to animate the NPCs.
+*/
+/***************************************************************/
 void SP2::Animate(double dt)
 {
 	 if(walk == false)
@@ -1416,7 +1477,12 @@ void SP2::Animate(double dt)
 		 }
 	 }
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for crouching controls and definitions.
+*/
+/***************************************************************/
 void SP2::CharacterCrouch()
 {
 		if(Application::IsKeyPressed(VK_CONTROL) && camera.position.y != 4)
@@ -1432,7 +1498,12 @@ void SP2::CharacterCrouch()
 			camera.CamRotationY = 0;
 		}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to check from a text file where the bounds are for collision checking.
+*/
+/***************************************************************/
 void SP2::BoundsCheck()
 {
 	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempshopper;
@@ -2163,7 +2234,12 @@ void SP2::BoundsCheckTrolley(float x,float y, float z)
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to open the shutter door.
+*/
+/***************************************************************/
 void SP2::ShutterOpen()
 {
 	if (camera.ShutterDoor == true && ShutterDoorOpen < 22)
@@ -2178,7 +2254,12 @@ void SP2::ShutterOpen()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to animate the door sliding.
+*/
+/***************************************************************/
 void SP2::DoorSlide()
 {
 	//Main Mart Doors
@@ -2237,7 +2318,12 @@ void SP2::DoorSlide()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for the trolley controls and rendering.
+*/
+/***************************************************************/
 void SP2::Trolley()
 {
 	if(Application::IsKeyPressed('E'))
@@ -2299,7 +2385,12 @@ void SP2::Trolley()
 		modelStack.PopMatrix();	
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to show the items in the trolley, and for updating it in general.
+*/
+/***************************************************************/
 void SP2::TrolleyUpdate()
 {
 	float tempOffsetY = 2;
@@ -2606,7 +2697,12 @@ void SP2::TrolleyUpdate()
 			}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for general render functions.
+*/
+/***************************************************************/
 void SP2::Render()
 {
 	//bool toggleLight = false;
@@ -2783,7 +2879,12 @@ void SP2::Render()
 		RenderTextOnScreen(meshList[GEO_TEXT], EndGameStealL, Color(1,1,1), 3,5,10);
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render a basic character model
+*/
+/***************************************************************/
 void SP2::RenderBasicModel()
 {
 	modelStack.PushMatrix();
@@ -2802,7 +2903,12 @@ void SP2::RenderBasicModel()
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the UI on screen.
+*/
+/***************************************************************/
 void SP2::RenderScreenUI()
 {
 	double tempStamCalc = camera.getStaminaDupe();
@@ -3323,7 +3429,12 @@ void SP2::ItemMissing()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Code for item collection and replacement controls.
+*/
+/***************************************************************/
 void SP2::CheckItem()
 {
 	if(Application::IsKeyPressed('E'))
@@ -3397,7 +3508,12 @@ void SP2::CheckItem()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for checking out items.
+*/
+/***************************************************************/
 void SP2::CheckOut()
 { 
 	float tempOffsetY = 3.8;
@@ -3419,6 +3535,8 @@ void SP2::CheckOut()
 				CashierOffetX = cashier.GetRenderPos(i)->getTranslationX();
 				CashierOffetY = cashier.GetRenderPos(i)->getTranslationY();
 				CashierOffetZ = cashier.GetRenderPos(i)->getTranslationZ();
+				//Play CheckOut music
+				MusicPlayer.CheckOut();
 			}
 		}
 	}
@@ -3718,7 +3836,12 @@ void SP2::CheckOut()
 			}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for escaping from the mart.
+*/
+/***************************************************************/
 void SP2::EscapeSteal()
 {
 	if(Application::IsKeyPressed('E') && player.returnInvenSize() != 0)
@@ -3748,7 +3871,12 @@ void SP2::EscapeSteal()
 			}
 		}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the Skybox.
+*/
+/***************************************************************/
 void SP2::RenderSkybox()
 {
 	modelStack.PushMatrix();
@@ -3806,7 +3934,12 @@ void SP2::RenderSkybox()
 
 
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the cashier NPC.
+*/
+/***************************************************************/
 void SP2::RenderCashierModel()
 {
 	for(int i = 0; i < 4; ++i)
@@ -3830,7 +3963,12 @@ void SP2::RenderCashierModel()
 		modelStack.PopMatrix();
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render a policeman model.
+*/
+/***************************************************************/
 void SP2::RenderPolice()
 {
 	for(int i=0; i< Police.ReturnListSize(); ++i)
@@ -4101,7 +4239,12 @@ void SP2::RenderPolice()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for policemen to shoot at the escape van.
+*/
+/***************************************************************/
 void SP2::PoliceShoot(double dt)
 {
 	for ( int i = 0; i < PoliceMan.ReadTextFilePoliceSize(); ++i)
@@ -4201,6 +4344,13 @@ void SP2::PoliceShoot(double dt)
 		}
 	}
 }
+
+/***************************************************************/
+/*!
+/brief
+Codes for your bullet collision.
+*/
+/***************************************************************/
 bool SP2::BulletCollision(float x,float y,float z,double dt)
 {
 	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
@@ -4384,7 +4534,12 @@ bool SP2::BulletCollision(float x,float y,float z,double dt)
 	}
 	return false;
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for the enemy's bullets to hit things.
+*/
+/***************************************************************/
 bool SP2::BulletCollisionEnemy(float x,float y,float z)
 {
 	Vector3 tempMart, tempShelves, tempCashier, tempFridge, tempPatroler;
@@ -4719,7 +4874,12 @@ bool SP2::BulletCollisionEnemy(float x,float y,float z)
 	}
 	return false;
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the cashier counter.
+*/
+/***************************************************************/
 void SP2::RenderCashier()
 {
 	for(int i = 0; i < 4; ++i)
@@ -4732,7 +4892,12 @@ void SP2::RenderCashier()
 		modelStack.PopMatrix();
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the fridge shelves.
+*/
+/***************************************************************/
 void SP2::RenderFridge()
 {
 	for(int i = 0; i < 7; ++i)
@@ -4745,7 +4910,12 @@ void SP2::RenderFridge()
 		modelStack.PopMatrix();
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the shelves.
+*/
+/***************************************************************/
 void SP2::RenderShelves()
 {
 	int temp = 0;
@@ -4775,7 +4945,12 @@ void SP2::RenderShelves()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the world objects.
+*/
+/***************************************************************/
 void SP2::RenderWorld()
 {	
 	modelStack.PushMatrix();
@@ -4947,7 +5122,12 @@ void SP2::RenderWorld()
 	RenderBuilding();
 	modelStack.PopMatrix();
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the Buildings outside the fence.
+*/
+/***************************************************************/
 void SP2::RenderBuilding()
 {
 	for(int i = 0; i < Building01.ReturnReadListSize(); ++i)
@@ -5018,7 +5198,12 @@ void SP2::RenderBuilding()
 		modelStack.PopMatrix();
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the NPCs.
+*/
+/***************************************************************/
 void SP2::RenderCharacter()
 {
 	modelStack.PushMatrix();
@@ -5049,7 +5234,12 @@ void SP2::RenderCharacter()
 	RenderCashierModel();
 	modelStack.PopMatrix();
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render a guard NPC with walking animation
+*/
+/***************************************************************/
 void SP2::RenderAnimateGuard()
 {
 	modelStack.PushMatrix();
@@ -5082,7 +5272,12 @@ void SP2::RenderAnimateGuard()
 
 	modelStack.PopMatrix();
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to animate 1st shopper with walking animation
+*/
+/***************************************************************/
 void SP2::RenderAnimate()
 {
 	modelStack.PushMatrix();
@@ -5115,7 +5310,12 @@ void SP2::RenderAnimate()
 
 	modelStack.PopMatrix();
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to animate 2nd shopper with walking animation
+*/
+/***************************************************************/
 void SP2::RenderAnimate2()
 {
 	modelStack.PushMatrix();
@@ -5148,7 +5348,12 @@ void SP2::RenderAnimate2()
 
 	modelStack.PopMatrix();
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the player charater.
+*/
+/***************************************************************/
 void SP2::RenderPlayer()
 {
 	if (police != true && EscapeEnd != true)
@@ -5250,7 +5455,12 @@ void SP2::RenderPlayer()
 	modelStack.PopMatrix();
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to render the items.
+*/
+/***************************************************************/
 void SP2::RenderFNB()
 {
 	for ( int i = 0; i < FNB.ReturnListSize();  ++i)
@@ -5353,7 +5563,12 @@ void SP2::RenderFNB()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for an NPC to shop.
+*/
+/***************************************************************/
 void SP2::NPCShop()
 {
 	//For shopper 1
@@ -5589,7 +5804,12 @@ void SP2::NPCShop()
 		}
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for rendering meshes from the meshlist.
+*/
+/***************************************************************/
 void SP2::RenderMesh(Mesh *mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
@@ -5634,7 +5854,12 @@ void SP2::RenderMesh(Mesh *mesh, bool enableLight)
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for rendering text.
+*/
+/***************************************************************/
 void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if(!mesh || mesh->textureID <= 0) //Proper error check
@@ -5661,7 +5886,12 @@ void SP2::RenderText(Mesh* mesh, std::string text, Color color)
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 	glEnable(GL_DEPTH_TEST);
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for rendering text on the screen
+*/
+/***************************************************************/
 void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if(!mesh || mesh->textureID <= 0) //Proper error check
@@ -5705,7 +5935,12 @@ void SP2::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float si
 
 	glEnable(GL_DEPTH_TEST);
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes for rendering the UI
+*/
+/***************************************************************/
 void SP2::RenderUI(Mesh* mesh, Color color, float sizeX,float sizeY,float sizeZ, float x, float y)
 {
 	if(!mesh || mesh->textureID <= 0) //Proper error check
@@ -5732,7 +5967,12 @@ void SP2::RenderUI(Mesh* mesh, Color color, float sizeX,float sizeY,float sizeZ,
 
 	glEnable(GL_DEPTH_TEST);
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to close the application and cleanup
+*/
+/***************************************************************/
 void SP2::Exit()
 {
 	// Cleanup here
@@ -5743,5 +5983,7 @@ void SP2::Exit()
 	}
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 	glDeleteProgram(m_programID);
+
+	MusicPlayer.~Csounds();
 }
 

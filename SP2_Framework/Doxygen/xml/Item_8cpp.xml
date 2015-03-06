@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Item_8cpp" kind="file">
+    <compoundname>Item.cpp</compoundname>
+    <includes refid="Item_8h" local="yes">Item.h</includes>
+    <incdepgraph>
+      <node id="2269">
+        <label>MyGraphics/Source/Item.cpp</label>
+        <link refid="Item.cpp"/>
+        <childnode refid="2270" relation="include">
+        </childnode>
+      </node>
+      <node id="2272">
+        <label>string</label>
+      </node>
+      <node id="2270">
+        <label>Item.h</label>
+        <link refid="Item_8h"/>
+        <childnode refid="2271" relation="include">
+        </childnode>
+        <childnode refid="2272" relation="include">
+        </childnode>
+      </node>
+      <node id="2271">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Item_8h" kindref="compound">Item.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="classCItem_1aa476a2d773330b4e6c0e8d33bd722185" refkind="member"><highlight class="normal"><ref refid="classCItem_1aa476a2d773330b4e6c0e8d33bd722185" kindref="member">CItem::CItem</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" kindref="member">itemName</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" kindref="member">itemPrice</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" kindref="member">itemAvailable</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a036ab906f4fa72f0c88c289a95d0188b" kindref="member">Damaged</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classCItem_1a00aeafeeaf647c7059b9d325ac5a1108" refkind="member"><highlight class="normal"><ref refid="classCItem_1a00aeafeeaf647c7059b9d325ac5a1108" kindref="member">CItem::~CItem</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classCItem_1a088bd79abf9f01b0fcc8ec0ca08b475f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a088bd79abf9f01b0fcc8ec0ca08b475f" kindref="member">CItem::sethealth</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hp)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" kindref="member">itemPrice</ref><sp/>-=<sp/>hp;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classCItem_1a1cdacc78dc3c561acec1c5d4eef8ee4c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a1cdacc78dc3c561acec1c5d4eef8ee4c" kindref="member">CItem::resethealth</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" kindref="member">itemPrice</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a4333f4e926a0b400e29891afb28ebf93" kindref="member">CItem::setItemRotation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rotate,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>z)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" kindref="member">rotation</ref><sp/>=<sp/>rotate;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" kindref="member">RX</ref><sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" kindref="member">RY</ref><sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1af8637c2409d6e4db6d986f33d8a50105" kindref="member">RZ</ref><sp/>=<sp/>z;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a18929b71f3a6a48acbb6766b6f6e35c4" kindref="member">CItem::setItemTranslation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" kindref="member">translationX</ref><sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a1fe600bca9745c01fce3e63025e231fc" kindref="member">translationY</ref><sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" kindref="member">translationZ</ref><sp/>=<sp/>z;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a3581f5eab1792bed9c6a114974500fda" kindref="member">CItem::setItemScale</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" kindref="member">scaleX</ref><sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1af72899aabbcbf1b922430eb560a338a7" kindref="member">scaleY</ref><sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" kindref="member">scaleZ</ref><sp/>=<sp/>z;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classCItem_1aa8dfde872166e5116229a4a0bb32bc50" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aa8dfde872166e5116229a4a0bb32bc50" kindref="member">CItem::getItemRotation</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aa90ece8672dac7fc43861ee90cc63c5a" kindref="member">rotation</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classCItem_1a9b111af38d26f876d75f4bd6b63b2a02" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a9b111af38d26f876d75f4bd6b63b2a02" kindref="member">CItem::getItemRX</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a2d57badf17cbb701b338a2caa54fe1fd" kindref="member">RX</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classCItem_1ae9a929826c0e3c7ab0c712a5636d6231" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ae9a929826c0e3c7ab0c712a5636d6231" kindref="member">CItem::getItemRY</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ac37e8a9c269cf9504bfc5e6d40f5f4a5" kindref="member">RY</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classCItem_1a5f26192cbac72e0d053de2363b45156f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a5f26192cbac72e0d053de2363b45156f" kindref="member">CItem::getItemRZ</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1af8637c2409d6e4db6d986f33d8a50105" kindref="member">RZ</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classCItem_1ac63c82ac9b974cee2a7b32015682f4df" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ac63c82ac9b974cee2a7b32015682f4df" kindref="member">CItem::getItemScaleX</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a83e3b2babd8eeeabc3d2d6706702a9ba" kindref="member">scaleX</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classCItem_1abd8d0cdd3fd32b5e386e5ad9b311c9b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1abd8d0cdd3fd32b5e386e5ad9b311c9b2" kindref="member">CItem::getItemScaleY</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1af72899aabbcbf1b922430eb560a338a7" kindref="member">scaleY</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classCItem_1acb7d737f76519c16e418c0cf761cc069" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1acb7d737f76519c16e418c0cf761cc069" kindref="member">CItem::getItemScaleZ</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ac59ab2d53a53f6ac666e0e3c5bac4f95" kindref="member">scaleZ</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classCItem_1a4467447f207fc549d27c53d308c3c99c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a4467447f207fc549d27c53d308c3c99c" kindref="member">CItem::getItemTranslationX</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aae4e8160ff1d48cb472b7ea3790d9d89" kindref="member">translationX</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classCItem_1a019ed70d6dd9f434bdede3fca771622b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a019ed70d6dd9f434bdede3fca771622b" kindref="member">CItem::getItemTranslationY</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a1fe600bca9745c01fce3e63025e231fc" kindref="member">translationY</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classCItem_1aa00a713e2186dc58e2a49727bb0e3df7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aa00a713e2186dc58e2a49727bb0e3df7" kindref="member">CItem::getItemTranslationZ</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a7b0193382b9d650432bc95f84bc4ea91" kindref="member">translationZ</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a975d9577390871458fea4a2fdfaeaec3" kindref="member">CItem::setItemName</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" kindref="member">itemName</ref><sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a9e9fee7fd5d46738fdfc65c330abbf08" kindref="member">CItem::setItemPrice</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>price)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" kindref="member">itemPrice</ref><sp/>=<sp/>price;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classCItem_1a666a3c0c6a0f64ad1186514a31b0af9e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a666a3c0c6a0f64ad1186514a31b0af9e" kindref="member">CItem::setItemAvailable</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bought)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" kindref="member">itemAvailable</ref><sp/>=<sp/>bought;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a97214eb9bcb83e71c52463d2adc4c5b6" kindref="member">CItem::getItemName</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ac6cb31a1b0daf47c11a2eece4f9ec371" kindref="member">itemName</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classCItem_1ae9e41ff6cf5ce9746520b5cd956baba6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classCItem_1ae9e41ff6cf5ce9746520b5cd956baba6" kindref="member">CItem::getItemPrice</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a0bc8b94295d8aad17bd26f9627a7ad74" kindref="member">itemPrice</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="classCItem_1a4020a5ef13e705d275c28c4d2943920e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a4020a5ef13e705d275c28c4d2943920e" kindref="member">CItem::getItemAvailability</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a103a194e0465f9e7b9513b9946aab1f5" kindref="member">itemAvailable</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="classCItem_1aa6e486a4695f8e95fc81e6ce6af645d7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aa6e486a4695f8e95fc81e6ce6af645d7" kindref="member">CItem::setItemCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCItem_1a4f07776624a61d55d6d426de06c3552a" kindref="member">itemCount</ref>+=n;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classCItem_1aff520ba770abab6d13533f9a9d1787e4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classCItem_1aff520ba770abab6d13533f9a9d1787e4" kindref="member">CItem::getItemCount</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classCItem_1a4f07776624a61d55d6d426de06c3552a" kindref="member">itemCount</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Item.cpp"/>
+  </compounddef>
+</doxygen>

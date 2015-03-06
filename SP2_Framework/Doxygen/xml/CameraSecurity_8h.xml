@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="CameraSecurity_8h" kind="file">
+    <compoundname>CameraSecurity.h</compoundname>
+    <includes local="no">Windows.h</includes>
+    <includes refid="Camera_8h" local="yes">Camera.h</includes>
+    <includes refid="Application_8h" local="yes">Application.h</includes>
+    <includes refid="Mtx44_8h" local="yes">Mtx44.h</includes>
+    <includedby refid="SP2_8h" local="yes">MyGraphics/Source/SP2.h</includedby>
+    <includedby refid="CameraSecurity_8cpp" local="yes">MyGraphics/Source/CameraSecurity.cpp</includedby>
+    <incdepgraph>
+      <node id="2154">
+        <label>windows.h</label>
+      </node>
+      <node id="2144">
+        <label>Camera.h</label>
+        <link refid="Camera_8h"/>
+        <childnode refid="2145" relation="include">
+        </childnode>
+      </node>
+      <node id="2156">
+        <label>Mtx44.h</label>
+        <link refid="Mtx44_8h"/>
+        <childnode refid="2146" relation="include">
+        </childnode>
+        <childnode refid="2145" relation="include">
+        </childnode>
+      </node>
+      <node id="2143">
+        <label>Windows.h</label>
+      </node>
+      <node id="2147">
+        <label>cmath</label>
+      </node>
+      <node id="2152">
+        <label>Application.h</label>
+        <link refid="Application_8h"/>
+        <childnode refid="2153" relation="include">
+        </childnode>
+        <childnode refid="2155" relation="include">
+        </childnode>
+      </node>
+      <node id="2155">
+        <label>string</label>
+      </node>
+      <node id="2148">
+        <label>exception</label>
+      </node>
+      <node id="2146">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="2147" relation="include">
+        </childnode>
+        <childnode refid="2148" relation="include">
+        </childnode>
+        <childnode refid="2149" relation="include">
+        </childnode>
+        <childnode refid="2150" relation="include">
+        </childnode>
+      </node>
+      <node id="2145">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="2146" relation="include">
+        </childnode>
+        <childnode refid="2151" relation="include">
+        </childnode>
+      </node>
+      <node id="2149">
+        <label>ctime</label>
+      </node>
+      <node id="2153">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="2154" relation="include">
+        </childnode>
+      </node>
+      <node id="2150">
+        <label>cstdlib</label>
+      </node>
+      <node id="2151">
+        <label>iostream</label>
+      </node>
+      <node id="2142">
+        <label>MyGraphics/Source/CameraSecurity.h</label>
+        <link refid="CameraSecurity.h"/>
+        <childnode refid="2143" relation="include">
+        </childnode>
+        <childnode refid="2144" relation="include">
+        </childnode>
+        <childnode refid="2152" relation="include">
+        </childnode>
+        <childnode refid="2156" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2160">
+        <label>MyGraphics/Source/SP2.cpp</label>
+        <link refid="SP2_8cpp"/>
+      </node>
+      <node id="2158">
+        <label>MyGraphics/Source/SP2.h</label>
+        <link refid="SP2_8h"/>
+        <childnode refid="2159" relation="include">
+        </childnode>
+        <childnode refid="2160" relation="include">
+        </childnode>
+      </node>
+      <node id="2159">
+        <label>MyGraphics/Source/Application.cpp</label>
+        <link refid="Application_8cpp"/>
+      </node>
+      <node id="2157">
+        <label>MyGraphics/Source/CameraSecurity.h</label>
+        <link refid="CameraSecurity.h"/>
+        <childnode refid="2158" relation="include">
+        </childnode>
+        <childnode refid="2161" relation="include">
+        </childnode>
+      </node>
+      <node id="2161">
+        <label>MyGraphics/Source/CameraSecurity.cpp</label>
+        <link refid="CameraSecurity_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCCameraSecurity" prot="public">CCameraSecurity</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camera_8h" kindref="compound">Camera.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Application_8h" kindref="compound">Application.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Mtx44_8h" kindref="compound">Mtx44.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classCCameraSecurity" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCCameraSecurity" kindref="compound">CCameraSecurity</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classCamera" kindref="compound">Camera</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13" refid="classCCameraSecurity_1ae2c48f10ce31733f1c97c38f75e578f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCameraSecurity_1ae2c48f10ce31733f1c97c38f75e578f1" kindref="member">defaultPosition</ref>;</highlight></codeline>
+<codeline lineno="14" refid="classCCameraSecurity_1a689f19e2fa49feaffe120aa241d5fb34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCameraSecurity_1a689f19e2fa49feaffe120aa241d5fb34" kindref="member">defaultTarget</ref>;</highlight></codeline>
+<codeline lineno="15" refid="classCCameraSecurity_1a15bc5963bc15c36c1b75eae4e90e55e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structVector3" kindref="compound">Vector3</ref><sp/><ref refid="classCCameraSecurity_1a15bc5963bc15c36c1b75eae4e90e55e4" kindref="member">defaultUp</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCCameraSecurity" kindref="compound">CCameraSecurity</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classCCameraSecurity" kindref="compound">CCameraSecurity</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Init(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>target,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structVector3" kindref="compound">Vector3</ref>&amp;<sp/>up);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Update(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+<codeline lineno="22" refid="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classApplication" kindref="compound">Application</ref><sp/><ref refid="classCCameraSecurity_1a620ce92cc99d0ab8854cd0b98539ae7f" kindref="member">test</ref>;</highlight></codeline>
+<codeline lineno="23" refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classCCameraSecurity_1a334a1759cbacfac8886591a15c5d313d" kindref="member">Limit</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/CameraSecurity.h"/>
+  </compounddef>
+</doxygen>

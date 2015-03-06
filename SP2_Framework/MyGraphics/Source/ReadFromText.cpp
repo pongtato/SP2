@@ -1,31 +1,70 @@
+/****************************************************************************/
+/*!
+\file ReadFromText.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to read from a text file.
+*/
+/****************************************************************************/
 #include "ReadFromText.h"
 
-
+/****************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/****************************************************************************/
 CReadFromText::CReadFromText(void)
 {
 	my_list.clear();
 }
-
+/****************************************************************************/
+/*!
+\brief
+Default destructor
+*/
+/****************************************************************************/
 CReadFromText::~CReadFromText(void)
 {
 	this->ResetData();
 }
-
+/****************************************************************************/
+/*!
+\brief
+Reads position from a text file
+*/
+/****************************************************************************/
 CRenderPos* CReadFromText::GetRenderPos(const int selection)
 {
 	return this->my_list[selection];
 }
-
+/****************************************************************************/
+/*!
+\brief
+Reads an item from a text file
+*/
+/****************************************************************************/
 CItem* CReadFromText::GetRenderPosItem(int selection)
 {
 	return this->item_list[selection];
 }
-
+/****************************************************************************/
+/*!
+\brief
+Reads position vectors to render the police
+*/
+/****************************************************************************/
 CItem* CReadFromText::GetRenderPosPolice(int selection)
 {
 	return this->Police_list[selection];
 }
-
+/****************************************************************************/
+/*!
+\brief
+Delete function.
+*/
+/****************************************************************************/
 void CReadFromText::ResetData(void)
 {
 	// Release memory 
@@ -37,7 +76,12 @@ void CReadFromText::ResetData(void)
 	my_list.clear();
 	my_list.shrink_to_fit();
 }
-
+/****************************************************************************/
+/*!
+\brief
+Codes to check the file name to read the text file
+*/
+/****************************************************************************/
 void CReadFromText::ReadTextFile(const char* filename)
 {
 	// Open File
@@ -85,7 +129,12 @@ void CReadFromText::ReadTextFile(const char* filename)
 	// Close file
 	file.close();
 }
-
+/****************************************************************************/
+/*!
+\brief
+Reads an item from a text file.
+*/
+/****************************************************************************/
 void CReadFromText::ReadTextFileItem(const char* filename)
 {
 	// Open File
@@ -135,7 +184,12 @@ void CReadFromText::ReadTextFileItem(const char* filename)
 	// Close file
 	file.close();
 }
-
+/****************************************************************************/
+/*!
+\brief
+Codes to read the police text file.
+*/
+/****************************************************************************/
 void CReadFromText::ReadTextFilePolice(const char* filename)
 {
 	// Open File

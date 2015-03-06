@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="structLight" kind="struct" prot="public">
+    <compoundname>Light</compoundname>
+    <includes refid="Light_8h" local="no">Light.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structLight_1aa7ed22cab99d811d72896efaee6d07cb" prot="public" static="no">
+        <name>LIGHT_TYPE</name>
+        <enumvalue id="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" prot="public">
+          <name>LIGHT_POINT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" prot="public">
+          <name>LIGHT_DIRECTIONAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" prot="public">
+          <name>LIGHT_SPOT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="16" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="15" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLight_1afeb738db41e987719e359166ef93314f" prot="public" static="no" mutable="no">
+        <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+        <definition>Position Light::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="8" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="8" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="2612" endline="2787">SP2::Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" prot="public" static="no" mutable="no">
+        <type><ref refid="structColor" kindref="compound">Color</ref></type>
+        <definition>Color Light::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="9" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="9" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a7b0cd6148bdb36df018850d2e10cc19d" compoundref="SP2_8cpp" startline="3260" endline="3286">SP2::LightsReset</referencedby>
+        <referencedby refid="classSP2_1a18ea7e045a2a3ddb75f840f3db993e6b" compoundref="SP2_8cpp" startline="1201" endline="1227">SP2::Stealing</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::power</definition>
+        <argsstring></argsstring>
+        <name>power</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="10" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a7b0cd6148bdb36df018850d2e10cc19d" compoundref="SP2_8cpp" startline="3260" endline="3286">SP2::LightsReset</referencedby>
+        <referencedby refid="classSP2_1a0a09b607f5c6d4de5113a8c8b35c2ed4" compoundref="SP2_8cpp" startline="3181" endline="3258">SP2::MenuUpdate</referencedby>
+        <referencedby refid="classSP2_1a18ea7e045a2a3ddb75f840f3db993e6b" compoundref="SP2_8cpp" startline="1201" endline="1227">SP2::Stealing</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::kC</definition>
+        <argsstring></argsstring>
+        <name>kC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="11" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::kL</definition>
+        <argsstring></argsstring>
+        <name>kL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="11" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a79c8e47de58f131ff5403fc2d823cc21" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::kQ</definition>
+        <argsstring></argsstring>
+        <name>kQ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="11" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" prot="public" static="no" mutable="no">
+        <type><ref refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" kindref="member">LIGHT_TYPE</ref></type>
+        <definition>LIGHT_TYPE Light::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="21" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a6bd73eb0b27ef881f8442e20912d9258" prot="public" static="no" mutable="no">
+        <type><ref refid="structVector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Light::spotDirection</definition>
+        <argsstring></argsstring>
+        <name>spotDirection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="22" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1a90159ea511cadcc99364c6f75d108a71" compoundref="SP2_8cpp" startline="2612" endline="2787">SP2::Render</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1af4ce5bbfbf33af96db9b8a222d073298" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::cosCutoff</definition>
+        <argsstring></argsstring>
+        <name>cosCutoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="23" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::cosInner</definition>
+        <argsstring></argsstring>
+        <name>cosInner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="24" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Light::exponent</definition>
+        <argsstring></argsstring>
+        <name>exponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="25" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structLight_1aeb5df09a25a32f19fdffa761268ba24f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Light::Light</definition>
+        <argsstring>()</argsstring>
+        <name>Light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="12" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="12" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="478">
+        <label>Position</label>
+        <link refid="structPosition"/>
+        <childnode refid="476" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="475">
+        <label>LIGHT_TYPE</label>
+      </node>
+      <node id="476">
+        <label>float</label>
+      </node>
+      <node id="474">
+        <label>Light</label>
+        <link refid="structLight"/>
+        <childnode refid="475" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="476" relation="usage">
+          <edgelabel>exponent</edgelabel>
+          <edgelabel>kL</edgelabel>
+          <edgelabel>cosCutoff</edgelabel>
+          <edgelabel>cosInner</edgelabel>
+          <edgelabel>kQ</edgelabel>
+          <edgelabel>kC</edgelabel>
+          <edgelabel>power</edgelabel>
+        </childnode>
+        <childnode refid="477" relation="usage">
+          <edgelabel>spotDirection</edgelabel>
+        </childnode>
+        <childnode refid="478" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="479" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="479">
+        <label>Color</label>
+        <link refid="structColor"/>
+        <childnode refid="476" relation="usage">
+          <edgelabel>g</edgelabel>
+          <edgelabel>r</edgelabel>
+          <edgelabel>b</edgelabel>
+        </childnode>
+      </node>
+      <node id="477">
+        <label>Vector3</label>
+        <link refid="structVector3"/>
+        <childnode refid="476" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" line="7" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Light.h" bodystart="6" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structLight_1ad7a168d26aed1bf7cca1a8d8e6f8ada4" prot="public" virt="non-virtual"><scope>Light</scope><name>color</name></member>
+      <member refid="structLight_1af4ce5bbfbf33af96db9b8a222d073298" prot="public" virt="non-virtual"><scope>Light</scope><name>cosCutoff</name></member>
+      <member refid="structLight_1a8c843f5d1af5c6f4f4928e9906f5d0db" prot="public" virt="non-virtual"><scope>Light</scope><name>cosInner</name></member>
+      <member refid="structLight_1a4eb4fd0f025fb66d1934675ffff0e661" prot="public" virt="non-virtual"><scope>Light</scope><name>exponent</name></member>
+      <member refid="structLight_1a888f11000d2baf1228d9e5c8d8c90fcb" prot="public" virt="non-virtual"><scope>Light</scope><name>kC</name></member>
+      <member refid="structLight_1ab3918c449fb40fa5c6cc5283f2c9687d" prot="public" virt="non-virtual"><scope>Light</scope><name>kL</name></member>
+      <member refid="structLight_1a79c8e47de58f131ff5403fc2d823cc21" prot="public" virt="non-virtual"><scope>Light</scope><name>kQ</name></member>
+      <member refid="structLight_1aeb5df09a25a32f19fdffa761268ba24f" prot="public" virt="non-virtual"><scope>Light</scope><name>Light</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba9bf1f515ab954cb3379615aab42f30b6" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_DIRECTIONAL</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cbab02ff4ee1e2a9673edac03cf11b66338" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_POINT</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cba69dd6d65ad12b410709ae74c8d9b1e16" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_SPOT</name></member>
+      <member refid="structLight_1aa7ed22cab99d811d72896efaee6d07cb" prot="public" virt="non-virtual"><scope>Light</scope><name>LIGHT_TYPE</name></member>
+      <member refid="structLight_1afeb738db41e987719e359166ef93314f" prot="public" virt="non-virtual"><scope>Light</scope><name>position</name></member>
+      <member refid="structLight_1a6c4c401141c4cdb3b9b9b3bab7dd6fbb" prot="public" virt="non-virtual"><scope>Light</scope><name>power</name></member>
+      <member refid="structLight_1a6bd73eb0b27ef881f8442e20912d9258" prot="public" virt="non-virtual"><scope>Light</scope><name>spotDirection</name></member>
+      <member refid="structLight_1a5dcdb101afc28979b5aaff0a2ec79ba5" prot="public" virt="non-virtual"><scope>Light</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

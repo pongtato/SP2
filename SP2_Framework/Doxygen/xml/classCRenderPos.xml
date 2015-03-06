@@ -1,0 +1,677 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCRenderPos" kind="class" prot="public">
+    <compoundname>CRenderPos</compoundname>
+    <includes refid="RenderPos_8h" local="no">RenderPos.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCRenderPos_1aeb833e9f5db7b8c0d39df2af2fafb325" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CRenderPos::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="10" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a16c5e9e5961779dc4c5130225fc50368" compoundref="RenderPos_8cpp" startline="40" endline="43">getRotation</referencedby>
+        <referencedby refid="classCRenderPos_1acd04bd4bf35c43cf1eb5c7df3bdc19cb" compoundref="RenderPos_8cpp" startline="13" endline="19">setRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1abfe6cb96c43d31f4ec487dc877d0ce1f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CRenderPos::translationX</definition>
+        <argsstring></argsstring>
+        <name>translationX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="11" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a7980c6f5efe97b90a255bfc674362b88" compoundref="RenderPos_8cpp" startline="75" endline="78">getTranslationX</referencedby>
+        <referencedby refid="classCRenderPos_1a414f03604c96738578eb32aa29536020" compoundref="RenderPos_8cpp" startline="21" endline="26">setTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1a3bfbabac5a716ae8e188330b68af6df0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CRenderPos::translationY</definition>
+        <argsstring></argsstring>
+        <name>translationY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="12" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1aef3ffa8b7f1d7c0e8f5481eaa8b8e5cc" compoundref="RenderPos_8cpp" startline="80" endline="83">getTranslationY</referencedby>
+        <referencedby refid="classCRenderPos_1a414f03604c96738578eb32aa29536020" compoundref="RenderPos_8cpp" startline="21" endline="26">setTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1a64f61773c1a99aa939c6454d7834d689" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CRenderPos::translationZ</definition>
+        <argsstring></argsstring>
+        <name>translationZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="13" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a34426e676efb3ff2698f33acd192e812" compoundref="RenderPos_8cpp" startline="85" endline="88">getTranslationZ</referencedby>
+        <referencedby refid="classCRenderPos_1a414f03604c96738578eb32aa29536020" compoundref="RenderPos_8cpp" startline="21" endline="26">setTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1adb72fbec0fa832de20160161c6e9253f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CRenderPos::RX</definition>
+        <argsstring></argsstring>
+        <name>RX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="14" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a640459b5e365a3c00d7fe90a420550f1" compoundref="RenderPos_8cpp" startline="45" endline="48">getRX</referencedby>
+        <referencedby refid="classCRenderPos_1acd04bd4bf35c43cf1eb5c7df3bdc19cb" compoundref="RenderPos_8cpp" startline="13" endline="19">setRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1a37c0cd39f134a18336c7d63d19fc6205" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CRenderPos::RY</definition>
+        <argsstring></argsstring>
+        <name>RY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="15" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a0baa228fb7fec4df75213d9cf9e87a82" compoundref="RenderPos_8cpp" startline="50" endline="53">getRY</referencedby>
+        <referencedby refid="classCRenderPos_1acd04bd4bf35c43cf1eb5c7df3bdc19cb" compoundref="RenderPos_8cpp" startline="13" endline="19">setRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1ab7967ef8d96d5279f9cd57500f69ba6c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CRenderPos::RZ</definition>
+        <argsstring></argsstring>
+        <name>RZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="16" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1afd9008802bd38bda31a390d157150838" compoundref="RenderPos_8cpp" startline="55" endline="58">getRZ</referencedby>
+        <referencedby refid="classCRenderPos_1acd04bd4bf35c43cf1eb5c7df3bdc19cb" compoundref="RenderPos_8cpp" startline="13" endline="19">setRotation</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1a728f29e4e7d1479090f1238e3556f1f0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CRenderPos::scaleX</definition>
+        <argsstring></argsstring>
+        <name>scaleX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="17" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a758848e6894ca6753540505a9b98e907" compoundref="RenderPos_8cpp" startline="60" endline="63">getScaleX</referencedby>
+        <referencedby refid="classCRenderPos_1ab678aa787ddec521c4d7bbf927230340" compoundref="RenderPos_8cpp" startline="28" endline="33">setScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1a7f433db53996da088d1152e4b6d2e625" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CRenderPos::scaleY</definition>
+        <argsstring></argsstring>
+        <name>scaleY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="18" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a2713d2535e10ed14c90f72c86452bbba" compoundref="RenderPos_8cpp" startline="65" endline="68">getScaleY</referencedby>
+        <referencedby refid="classCRenderPos_1ab678aa787ddec521c4d7bbf927230340" compoundref="RenderPos_8cpp" startline="28" endline="33">setScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1a8cb2b1ed503a8d851e2c806bf7b1b908" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CRenderPos::scaleZ</definition>
+        <argsstring></argsstring>
+        <name>scaleZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="19" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1ac1a558f3bbbdff50a0da5b13094202a8" compoundref="RenderPos_8cpp" startline="70" endline="73">getScaleZ</referencedby>
+        <referencedby refid="classCRenderPos_1ab678aa787ddec521c4d7bbf927230340" compoundref="RenderPos_8cpp" startline="28" endline="33">setScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classCRenderPos_1ae83f9bcd992c02b00e55b9784f473133" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string CRenderPos::modelName</definition>
+        <argsstring></argsstring>
+        <name>modelName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="20" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classCRenderPos_1a85acc31227aa990799f303cc3f6846fd" compoundref="RenderPos_8cpp" startline="90" endline="93">getName</referencedby>
+        <referencedby refid="classCRenderPos_1a3f14fc0e5a8decdd4ee38e78a2977917" compoundref="RenderPos_8cpp" startline="35" endline="38">setName</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCRenderPos_1a11a9d2eb48f0c153b6a4079f9d58fba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CRenderPos::CRenderPos</definition>
+        <argsstring>(void)</argsstring>
+        <name>CRenderPos</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="22" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1ad8037840d7c3dfbe0aa947a6e27b58fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CRenderPos::~CRenderPos</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CRenderPos</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="23" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1acd04bd4bf35c43cf1eb5c7df3bdc19cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRenderPos::setRotation</definition>
+        <argsstring>(float a, int x, int y, int z)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="26" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="13" bodyend="19"/>
+        <references refid="classCRenderPos_1aeb833e9f5db7b8c0d39df2af2fafb325" compoundref="RenderPos_8h" startline="10">rotation</references>
+        <references refid="classCRenderPos_1adb72fbec0fa832de20160161c6e9253f" compoundref="RenderPos_8h" startline="14">RX</references>
+        <references refid="classCRenderPos_1a37c0cd39f134a18336c7d63d19fc6205" compoundref="RenderPos_8h" startline="15">RY</references>
+        <references refid="classCRenderPos_1ab7967ef8d96d5279f9cd57500f69ba6c" compoundref="RenderPos_8h" startline="16">RZ</references>
+        <referencedby refid="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" compoundref="ReadFromText_8cpp" startline="41" endline="87">CReadFromText::ReadTextFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a414f03604c96738578eb32aa29536020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRenderPos::setTranslation</definition>
+        <argsstring>(float x, float y, float z)</argsstring>
+        <name>setTranslation</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="27" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="21" bodyend="26"/>
+        <references refid="classCRenderPos_1abfe6cb96c43d31f4ec487dc877d0ce1f" compoundref="RenderPos_8h" startline="11">translationX</references>
+        <references refid="classCRenderPos_1a3bfbabac5a716ae8e188330b68af6df0" compoundref="RenderPos_8h" startline="12">translationY</references>
+        <references refid="classCRenderPos_1a64f61773c1a99aa939c6454d7834d689" compoundref="RenderPos_8h" startline="13">translationZ</references>
+        <referencedby refid="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" compoundref="ReadFromText_8cpp" startline="41" endline="87">CReadFromText::ReadTextFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1ab678aa787ddec521c4d7bbf927230340" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRenderPos::setScale</definition>
+        <argsstring>(float x, float y, float z)</argsstring>
+        <name>setScale</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="28" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="28" bodyend="33"/>
+        <references refid="classCRenderPos_1a728f29e4e7d1479090f1238e3556f1f0" compoundref="RenderPos_8h" startline="17">scaleX</references>
+        <references refid="classCRenderPos_1a7f433db53996da088d1152e4b6d2e625" compoundref="RenderPos_8h" startline="18">scaleY</references>
+        <references refid="classCRenderPos_1a8cb2b1ed503a8d851e2c806bf7b1b908" compoundref="RenderPos_8h" startline="19">scaleZ</references>
+        <referencedby refid="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" compoundref="ReadFromText_8cpp" startline="41" endline="87">CReadFromText::ReadTextFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a3f14fc0e5a8decdd4ee38e78a2977917" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRenderPos::setName</definition>
+        <argsstring>(string name)</argsstring>
+        <name>setName</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="29" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="35" bodyend="38"/>
+        <references refid="classCRenderPos_1ae83f9bcd992c02b00e55b9784f473133" compoundref="RenderPos_8h" startline="20">modelName</references>
+        <referencedby refid="classCReadFromText_1ae69389337615ddea1f96770ec36d6b0c" compoundref="ReadFromText_8cpp" startline="41" endline="87">CReadFromText::ReadTextFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a16c5e9e5961779dc4c5130225fc50368" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CRenderPos::getRotation</definition>
+        <argsstring>(void)</argsstring>
+        <name>getRotation</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="31" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="40" bodyend="43"/>
+        <references refid="classCRenderPos_1aeb833e9f5db7b8c0d39df2af2fafb325" compoundref="RenderPos_8h" startline="10">rotation</references>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a7980c6f5efe97b90a255bfc674362b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CRenderPos::getTranslationX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getTranslationX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="32" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="75" bodyend="78"/>
+        <references refid="classCRenderPos_1abfe6cb96c43d31f4ec487dc877d0ce1f" compoundref="RenderPos_8h" startline="11">translationX</references>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1438" endline="1859">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classSP2_1ab8dede99d9f869c1d7b1d572682ee830" compoundref="SP2_8cpp" startline="1861" endline="2167">SP2::BoundsCheckTrolley</referencedby>
+        <referencedby refid="classSP2_1aa8b1390c34fe96ecc62726f1255ddcd5" compoundref="SP2_8cpp" startline="4208" endline="4390">SP2::BulletCollision</referencedby>
+        <referencedby refid="classSP2_1a10de88b5c519e049d2f534ccf0a26863" compoundref="SP2_8cpp" startline="4392" endline="4725">SP2::BulletCollisionEnemy</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="2808" endline="2986">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1aef3ffa8b7f1d7c0e8f5481eaa8b8e5cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CRenderPos::getTranslationY</definition>
+        <argsstring>(void)</argsstring>
+        <name>getTranslationY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="33" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="80" bodyend="83"/>
+        <references refid="classCRenderPos_1a3bfbabac5a716ae8e188330b68af6df0" compoundref="RenderPos_8h" startline="12">translationY</references>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="5026" endline="5055">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a34426e676efb3ff2698f33acd192e812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CRenderPos::getTranslationZ</definition>
+        <argsstring>(void)</argsstring>
+        <name>getTranslationZ</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="34" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="85" bodyend="88"/>
+        <references refid="classCRenderPos_1a64f61773c1a99aa939c6454d7834d689" compoundref="RenderPos_8h" startline="13">translationZ</references>
+        <referencedby refid="classSP2_1a28e52e39d8c6ea3f647cfabf44bc7f4e" compoundref="SP2_8cpp" startline="1438" endline="1859">SP2::BoundsCheck</referencedby>
+        <referencedby refid="classSP2_1ab8dede99d9f869c1d7b1d572682ee830" compoundref="SP2_8cpp" startline="1861" endline="2167">SP2::BoundsCheckTrolley</referencedby>
+        <referencedby refid="classSP2_1aa8b1390c34fe96ecc62726f1255ddcd5" compoundref="SP2_8cpp" startline="4208" endline="4390">SP2::BulletCollision</referencedby>
+        <referencedby refid="classSP2_1a10de88b5c519e049d2f534ccf0a26863" compoundref="SP2_8cpp" startline="4392" endline="4725">SP2::BulletCollisionEnemy</referencedby>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1ac3b1e7055739e49059f10886e828eaa1" compoundref="SP2_8cpp" startline="2808" endline="2986">SP2::RenderScreenUI</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1a714b87284ae204d98ea4e7da6fc42468" compoundref="SP2_8cpp" startline="1236" endline="1382">SP2::UIupdates</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a640459b5e365a3c00d7fe90a420550f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CRenderPos::getRX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getRX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="35" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="45" bodyend="48"/>
+        <references refid="classCRenderPos_1adb72fbec0fa832de20160161c6e9253f" compoundref="RenderPos_8h" startline="14">RX</references>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="5026" endline="5055">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a0baa228fb7fec4df75213d9cf9e87a82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CRenderPos::getRY</definition>
+        <argsstring>(void)</argsstring>
+        <name>getRY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="36" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="50" bodyend="53"/>
+        <references refid="classCRenderPos_1a37c0cd39f134a18336c7d63d19fc6205" compoundref="RenderPos_8h" startline="15">RY</references>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="5026" endline="5055">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1afd9008802bd38bda31a390d157150838" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CRenderPos::getRZ</definition>
+        <argsstring>(void)</argsstring>
+        <name>getRZ</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="37" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="55" bodyend="58"/>
+        <references refid="classCRenderPos_1ab7967ef8d96d5279f9cd57500f69ba6c" compoundref="RenderPos_8h" startline="16">RZ</references>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="5026" endline="5055">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a758848e6894ca6753540505a9b98e907" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CRenderPos::getScaleX</definition>
+        <argsstring>(void)</argsstring>
+        <name>getScaleX</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="38" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="60" bodyend="63"/>
+        <references refid="classCRenderPos_1a728f29e4e7d1479090f1238e3556f1f0" compoundref="RenderPos_8h" startline="17">scaleX</references>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="5026" endline="5055">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a2713d2535e10ed14c90f72c86452bbba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CRenderPos::getScaleY</definition>
+        <argsstring>(void)</argsstring>
+        <name>getScaleY</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="39" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="65" bodyend="68"/>
+        <references refid="classCRenderPos_1a7f433db53996da088d1152e4b6d2e625" compoundref="RenderPos_8h" startline="18">scaleY</references>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="5026" endline="5055">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1ac1a558f3bbbdff50a0da5b13094202a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float CRenderPos::getScaleZ</definition>
+        <argsstring>(void)</argsstring>
+        <name>getScaleZ</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="40" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="70" bodyend="73"/>
+        <references refid="classCRenderPos_1a8cb2b1ed503a8d851e2c806bf7b1b908" compoundref="RenderPos_8h" startline="19">scaleZ</references>
+        <referencedby refid="classSP2_1ada0d81ffceb547575c01f396ece970b3" compoundref="SP2_8cpp" startline="4955" endline="5024">SP2::RenderBuilding</referencedby>
+        <referencedby refid="classSP2_1aef63cecb704d08d6f01e8862f1560878" compoundref="SP2_8cpp" startline="4727" endline="4738">SP2::RenderCashier</referencedby>
+        <referencedby refid="classSP2_1a8ef9dc2ac971aa66fed381ebb7b52821" compoundref="SP2_8cpp" startline="3814" endline="3836">SP2::RenderCashierModel</referencedby>
+        <referencedby refid="classSP2_1a1575e4510c94863f957f85a321ce0bab" compoundref="SP2_8cpp" startline="5026" endline="5055">SP2::RenderCharacter</referencedby>
+        <referencedby refid="classSP2_1a55ac9c42c9a10b7b54d2719e4e983d8f" compoundref="SP2_8cpp" startline="4740" endline="4751">SP2::RenderFridge</referencedby>
+        <referencedby refid="classSP2_1aaf03567aeab1b20fe09c1fd2846e3524" compoundref="SP2_8cpp" startline="4753" endline="4781">SP2::RenderShelves</referencedby>
+        <referencedby refid="classSP2_1ae841ebf184eb3abf840bc54af48fb3c5" compoundref="SP2_8cpp" startline="4783" endline="4953">SP2::RenderWorld</referencedby>
+        <referencedby refid="classSP2_1a4db34fd691c1fd573314e97cd67018d2" compoundref="SP2_8cpp" startline="2243" endline="2303">SP2::Trolley</referencedby>
+        <referencedby refid="classSP2_1aad07f77a1ec1a488c91483bcf29c3723" compoundref="SP2_8cpp" startline="2305" endline="2610">SP2::TrolleyUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCRenderPos_1a85acc31227aa990799f303cc3f6846fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string CRenderPos::getName</definition>
+        <argsstring>(void)</argsstring>
+        <name>getName</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="41" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.cpp" bodystart="90" bodyend="93"/>
+        <references refid="classCRenderPos_1ae83f9bcd992c02b00e55b9784f473133" compoundref="RenderPos_8h" startline="20">modelName</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="389">
+        <label>string</label>
+      </node>
+      <node id="387">
+        <label>float</label>
+      </node>
+      <node id="388">
+        <label>int</label>
+      </node>
+      <node id="386">
+        <label>CRenderPos</label>
+        <link refid="classCRenderPos"/>
+        <childnode refid="387" relation="usage">
+          <edgelabel>scaleY</edgelabel>
+          <edgelabel>scaleZ</edgelabel>
+          <edgelabel>rotation</edgelabel>
+          <edgelabel>translationX</edgelabel>
+          <edgelabel>translationY</edgelabel>
+          <edgelabel>translationZ</edgelabel>
+          <edgelabel>scaleX</edgelabel>
+        </childnode>
+        <childnode refid="388" relation="usage">
+          <edgelabel>RX</edgelabel>
+          <edgelabel>RY</edgelabel>
+          <edgelabel>RZ</edgelabel>
+        </childnode>
+        <childnode refid="389" relation="usage">
+          <edgelabel>modelName</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" line="8" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/RenderPos.h" bodystart="7" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classCRenderPos_1a11a9d2eb48f0c153b6a4079f9d58fba7" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>CRenderPos</name></member>
+      <member refid="classCRenderPos_1a85acc31227aa990799f303cc3f6846fd" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getName</name></member>
+      <member refid="classCRenderPos_1a16c5e9e5961779dc4c5130225fc50368" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getRotation</name></member>
+      <member refid="classCRenderPos_1a640459b5e365a3c00d7fe90a420550f1" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getRX</name></member>
+      <member refid="classCRenderPos_1a0baa228fb7fec4df75213d9cf9e87a82" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getRY</name></member>
+      <member refid="classCRenderPos_1afd9008802bd38bda31a390d157150838" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getRZ</name></member>
+      <member refid="classCRenderPos_1a758848e6894ca6753540505a9b98e907" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getScaleX</name></member>
+      <member refid="classCRenderPos_1a2713d2535e10ed14c90f72c86452bbba" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getScaleY</name></member>
+      <member refid="classCRenderPos_1ac1a558f3bbbdff50a0da5b13094202a8" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getScaleZ</name></member>
+      <member refid="classCRenderPos_1a7980c6f5efe97b90a255bfc674362b88" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getTranslationX</name></member>
+      <member refid="classCRenderPos_1aef3ffa8b7f1d7c0e8f5481eaa8b8e5cc" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getTranslationY</name></member>
+      <member refid="classCRenderPos_1a34426e676efb3ff2698f33acd192e812" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>getTranslationZ</name></member>
+      <member refid="classCRenderPos_1ae83f9bcd992c02b00e55b9784f473133" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>modelName</name></member>
+      <member refid="classCRenderPos_1aeb833e9f5db7b8c0d39df2af2fafb325" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>rotation</name></member>
+      <member refid="classCRenderPos_1adb72fbec0fa832de20160161c6e9253f" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>RX</name></member>
+      <member refid="classCRenderPos_1a37c0cd39f134a18336c7d63d19fc6205" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>RY</name></member>
+      <member refid="classCRenderPos_1ab7967ef8d96d5279f9cd57500f69ba6c" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>RZ</name></member>
+      <member refid="classCRenderPos_1a728f29e4e7d1479090f1238e3556f1f0" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>scaleX</name></member>
+      <member refid="classCRenderPos_1a7f433db53996da088d1152e4b6d2e625" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>scaleY</name></member>
+      <member refid="classCRenderPos_1a8cb2b1ed503a8d851e2c806bf7b1b908" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>scaleZ</name></member>
+      <member refid="classCRenderPos_1a3f14fc0e5a8decdd4ee38e78a2977917" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>setName</name></member>
+      <member refid="classCRenderPos_1acd04bd4bf35c43cf1eb5c7df3bdc19cb" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>setRotation</name></member>
+      <member refid="classCRenderPos_1ab678aa787ddec521c4d7bbf927230340" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>setScale</name></member>
+      <member refid="classCRenderPos_1a414f03604c96738578eb32aa29536020" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>setTranslation</name></member>
+      <member refid="classCRenderPos_1abfe6cb96c43d31f4ec487dc877d0ce1f" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>translationX</name></member>
+      <member refid="classCRenderPos_1a3bfbabac5a716ae8e188330b68af6df0" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>translationY</name></member>
+      <member refid="classCRenderPos_1a64f61773c1a99aa939c6454d7834d689" prot="private" virt="non-virtual"><scope>CRenderPos</scope><name>translationZ</name></member>
+      <member refid="classCRenderPos_1ad8037840d7c3dfbe0aa947a6e27b58fb" prot="public" virt="non-virtual"><scope>CRenderPos</scope><name>~CRenderPos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

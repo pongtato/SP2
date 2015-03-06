@@ -1,5 +1,19 @@
+/****************************************************************************/
+/*!
+\file Bullet.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes for bullet physics and collisions.
+*/
+/****************************************************************************/
 #include "Bullet.h"
-
+/****************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/****************************************************************************/
 
 CBullet::CBullet(void)
 : Position		( Vector3() )
@@ -17,11 +31,21 @@ CBullet::CBullet(void)
 	bullet = 30;
 	clip = 3;
 }
-
+/****************************************************************************/
+/*!
+\brief
+Default destructor
+*/
+/****************************************************************************/
 CBullet::~CBullet(void)
 {
 }
-
+/****************************************************************************/
+/*!
+\brief
+Updates the flight path and damage of your bullets.
+*/
+/****************************************************************************/
 bool CBullet::BulletUpdate(double dt)
 {
 	if ( !alive ) return false;
@@ -34,7 +58,12 @@ bool CBullet::BulletUpdate(double dt)
 		alive = false;
 	return true;
 }
-
+/****************************************************************************/
+/*!
+\brief
+Updates the flight path and damage of the police's bullets.
+*/
+/****************************************************************************/
 bool CBullet::BulletUpdatePolice(double dt)
 {
 	if ( !alive ) return false;

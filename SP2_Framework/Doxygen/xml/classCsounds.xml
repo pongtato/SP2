@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classCsounds" kind="class" prot="public">
+    <compoundname>Csounds</compoundname>
+    <includes refid="Csounds_8h" local="no">Csounds.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" prot="private" static="no" mutable="no">
+        <type><ref refid="classirrklang_1_1ISoundEngine" kindref="compound">ISoundEngine</ref> *</type>
+        <definition>ISoundEngine* Csounds::engine</definition>
+        <argsstring></argsstring>
+        <name>engine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="10" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classCsounds_1a1fe1d35b2fb340a04c1094ba1bc327f1" compoundref="Csounds_8cpp" startline="27" endline="31">Bullet</referencedby>
+        <referencedby refid="classCsounds_1a083345643a1c7e08c23e6ae49194b310" compoundref="Csounds_8cpp" startline="39" endline="43">CheckOut</referencedby>
+        <referencedby refid="classCsounds_1ab095618c642be6222e321334330f561c" compoundref="Csounds_8cpp" startline="4" endline="7">Csounds</referencedby>
+        <referencedby refid="classCsounds_1a165aa2ffe15ca47e182e15b8f78017ad" compoundref="Csounds_8cpp" startline="21" endline="25">Explosion</referencedby>
+        <referencedby refid="classCsounds_1a2dd79ab3d38eee76ff0e89aa62fadc1e" compoundref="Csounds_8cpp" startline="15" endline="19">MainMusic</referencedby>
+        <referencedby refid="classCsounds_1a0804f7ea511143fe689d383f0a5270f6" compoundref="Csounds_8cpp" startline="33" endline="37">MetalClank</referencedby>
+        <referencedby refid="classCsounds_1ac7e013e0806053442601536595b8c559" compoundref="Csounds_8cpp" startline="45" endline="49">Reload</referencedby>
+        <referencedby refid="classCsounds_1a379845d100618d7aa7c2f5ea01f753e1" compoundref="Csounds_8cpp" startline="10" endline="13">~Csounds</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCsounds_1ab095618c642be6222e321334330f561c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Csounds::Csounds</definition>
+        <argsstring>(void)</argsstring>
+        <name>Csounds</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="12" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="4" bodyend="7"/>
+        <references refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c">irrklang::createIrrKlangDevice</references>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+      </memberdef>
+      <memberdef kind="function" id="classCsounds_1a379845d100618d7aa7c2f5ea01f753e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Csounds::~Csounds</definition>
+        <argsstring>(void)</argsstring>
+        <name>~Csounds</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="13" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="10" bodyend="13"/>
+        <references refid="classirrklang_1_1IRefCounted_1a869fe3adc6e49e8da105e95837a565b1" compoundref="ik__IRefCounted_8h" startline="98" endline="109">irrklang::IRefCounted::drop</references>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+        <referencedby refid="classSP2_1a5b606cdfc77b243631fc130483527333" compoundref="SP2_8cpp" startline="5740" endline="5752">SP2::Exit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCsounds_1a2dd79ab3d38eee76ff0e89aa62fadc1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Csounds::MainMusic</definition>
+        <argsstring>()</argsstring>
+        <name>MainMusic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="15" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="15" bodyend="19"/>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <referencedby refid="classSP2_1a8669c489b6a968f367a4610b254ac992" compoundref="SP2_8cpp" startline="25" endline="797">SP2::Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCsounds_1a165aa2ffe15ca47e182e15b8f78017ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Csounds::Explosion</definition>
+        <argsstring>()</argsstring>
+        <name>Explosion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="16" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="21" bodyend="25"/>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <referencedby refid="classSP2_1a869fc9fc66bb7d79be7e15ade956fd9b" compoundref="SP2_8cpp" startline="3726" endline="3754">SP2::EscapeSteal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCsounds_1a1fe1d35b2fb340a04c1094ba1bc327f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Csounds::Bullet</definition>
+        <argsstring>()</argsstring>
+        <name>Bullet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="17" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="27" bodyend="31"/>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCsounds_1a0804f7ea511143fe689d383f0a5270f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Csounds::MetalClank</definition>
+        <argsstring>()</argsstring>
+        <name>MetalClank</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="18" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="33" bodyend="37"/>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <referencedby refid="classSP2_1a0a09b607f5c6d4de5113a8c8b35c2ed4" compoundref="SP2_8cpp" startline="3181" endline="3258">SP2::MenuUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCsounds_1a083345643a1c7e08c23e6ae49194b310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Csounds::CheckOut</definition>
+        <argsstring>()</argsstring>
+        <name>CheckOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="19" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="39" bodyend="43"/>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <referencedby refid="classSP2_1a4036040754c9187fc27d70fa2025ce23" compoundref="SP2_8cpp" startline="3403" endline="3724">SP2::CheckOut</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classCsounds_1ac7e013e0806053442601536595b8c559" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Csounds::Reload</definition>
+        <argsstring>()</argsstring>
+        <name>Reload</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="20" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp" bodystart="45" bodyend="49"/>
+        <references refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" compoundref="Csounds_8h" startline="10">engine</references>
+        <references refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec">irrklang::ISoundEngine::play3D</references>
+        <referencedby refid="classSP2_1a075edf39d3102610bf7f404ae3b8d38c" compoundref="SP2_8cpp" startline="802" endline="1172">SP2::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="392">
+        <label>irrklang::ISoundEngine</label>
+        <link refid="classirrklang_1_1ISoundEngine"/>
+        <childnode refid="393" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="394">
+        <label>int</label>
+      </node>
+      <node id="391">
+        <label>Csounds</label>
+        <link refid="classCsounds"/>
+        <childnode refid="392" relation="usage">
+          <edgelabel>engine</edgelabel>
+        </childnode>
+      </node>
+      <node id="393">
+        <label>irrklang::IRefCounted</label>
+        <link refid="classirrklang_1_1IRefCounted"/>
+        <childnode refid="394" relation="usage">
+          <edgelabel>ReferenceCounter</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" line="8" column="1" bodyfile="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.h" bodystart="7" bodyend="21"/>
+    <listofallmembers>
+      <member refid="classCsounds_1a1fe1d35b2fb340a04c1094ba1bc327f1" prot="public" virt="non-virtual"><scope>Csounds</scope><name>Bullet</name></member>
+      <member refid="classCsounds_1a083345643a1c7e08c23e6ae49194b310" prot="public" virt="non-virtual"><scope>Csounds</scope><name>CheckOut</name></member>
+      <member refid="classCsounds_1ab095618c642be6222e321334330f561c" prot="public" virt="non-virtual"><scope>Csounds</scope><name>Csounds</name></member>
+      <member refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" prot="private" virt="non-virtual"><scope>Csounds</scope><name>engine</name></member>
+      <member refid="classCsounds_1a165aa2ffe15ca47e182e15b8f78017ad" prot="public" virt="non-virtual"><scope>Csounds</scope><name>Explosion</name></member>
+      <member refid="classCsounds_1a2dd79ab3d38eee76ff0e89aa62fadc1e" prot="public" virt="non-virtual"><scope>Csounds</scope><name>MainMusic</name></member>
+      <member refid="classCsounds_1a0804f7ea511143fe689d383f0a5270f6" prot="public" virt="non-virtual"><scope>Csounds</scope><name>MetalClank</name></member>
+      <member refid="classCsounds_1ac7e013e0806053442601536595b8c559" prot="public" virt="non-virtual"><scope>Csounds</scope><name>Reload</name></member>
+      <member refid="classCsounds_1a379845d100618d7aa7c2f5ea01f753e1" prot="public" virt="non-virtual"><scope>Csounds</scope><name>~Csounds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

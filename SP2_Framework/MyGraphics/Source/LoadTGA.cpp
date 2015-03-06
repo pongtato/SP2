@@ -1,10 +1,27 @@
-
+/****************************************************************************/
+/*!
+\file LoadTGA.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to load TARGA files from a folder.
+*/
+/****************************************************************************/
 #include <iostream>
 #include <fstream>
 #include <GL\glew.h>
 
 #include "LoadTGA.h"
+/******************************************************************************/
+/*!
+\brief
+Read a TARGA file from a text file, then use it for quads/OBJs.
 
+\param file_path - path to text file
+
+\return GLuint TGA file for texture
+*/
+/******************************************************************************/
 GLuint LoadTGA(const char *file_path)				// load TGA file to memory
 {
 	std::ifstream fileStream(file_path, std::ios::binary);

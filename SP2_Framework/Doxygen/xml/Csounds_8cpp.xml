@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Csounds_8cpp" kind="file">
+    <compoundname>Csounds.cpp</compoundname>
+    <includes refid="Csounds_8h" local="yes">Csounds.h</includes>
+    <incdepgraph>
+      <node id="2234">
+        <label>ik_IAudioRecorder.h</label>
+        <link refid="ik__IAudioRecorder_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+        <childnode refid="2224" relation="include">
+        </childnode>
+      </node>
+      <node id="2226">
+        <label>ik_ISoundEffectControl.h</label>
+        <link refid="ik__ISoundEffectControl_8h"/>
+        <childnode refid="2218" relation="include">
+        </childnode>
+        <childnode refid="2215" relation="include">
+        </childnode>
+      </node>
+      <node id="2224">
+        <label>ik_ISoundSource.h</label>
+        <link refid="ik__ISoundSource_8h"/>
+        <childnode refid="2218" relation="include">
+        </childnode>
+        <childnode refid="2215" relation="include">
+        </childnode>
+        <childnode refid="2221" relation="include">
+        </childnode>
+        <childnode refid="2222" relation="include">
+        </childnode>
+      </node>
+      <node id="2223">
+        <label>ik_ISoundEngine.h</label>
+        <link refid="ik__ISoundEngine_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+        <childnode refid="2215" relation="include">
+        </childnode>
+        <childnode refid="2224" relation="include">
+        </childnode>
+        <childnode refid="2225" relation="include">
+        </childnode>
+        <childnode refid="2221" relation="include">
+        </childnode>
+        <childnode refid="2227" relation="include">
+        </childnode>
+        <childnode refid="2228" relation="include">
+        </childnode>
+      </node>
+      <node id="2212">
+        <label>irrKlang.h</label>
+        <link refid="irrKlang_8h"/>
+        <childnode refid="2213" relation="include">
+        </childnode>
+        <childnode refid="2215" relation="include">
+        </childnode>
+        <childnode refid="2217" relation="include">
+        </childnode>
+        <childnode refid="2218" relation="include">
+        </childnode>
+        <childnode refid="2219" relation="include">
+        </childnode>
+        <childnode refid="2220" relation="include">
+        </childnode>
+        <childnode refid="2221" relation="include">
+        </childnode>
+        <childnode refid="2222" relation="include">
+        </childnode>
+        <childnode refid="2223" relation="include">
+        </childnode>
+        <childnode refid="2224" relation="include">
+        </childnode>
+        <childnode refid="2225" relation="include">
+        </childnode>
+        <childnode refid="2229" relation="include">
+        </childnode>
+        <childnode refid="2230" relation="include">
+        </childnode>
+        <childnode refid="2226" relation="include">
+        </childnode>
+        <childnode refid="2232" relation="include">
+        </childnode>
+        <childnode refid="2227" relation="include">
+        </childnode>
+        <childnode refid="2231" relation="include">
+        </childnode>
+        <childnode refid="2233" relation="include">
+        </childnode>
+        <childnode refid="2234" relation="include">
+        </childnode>
+        <childnode refid="2228" relation="include">
+        </childnode>
+      </node>
+      <node id="2220">
+        <label>ik_ESoundEngineOptions.h</label>
+        <link refid="ik__ESoundEngineOptions_8h"/>
+      </node>
+      <node id="2211">
+        <label>Csounds.h</label>
+        <link refid="Csounds_8h"/>
+        <childnode refid="2212" relation="include">
+        </childnode>
+      </node>
+      <node id="2213">
+        <label>ik_irrKlangTypes.h</label>
+        <link refid="ik__irrKlangTypes_8h"/>
+        <childnode refid="2214" relation="include">
+        </childnode>
+      </node>
+      <node id="2227">
+        <label>ik_IFileFactory.h</label>
+        <link refid="ik__IFileFactory_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+      </node>
+      <node id="2217">
+        <label>ik_IRefCounted.h</label>
+        <link refid="ik__IRefCounted_8h"/>
+        <childnode refid="2213" relation="include">
+        </childnode>
+      </node>
+      <node id="2218">
+        <label>ik_IVirtualRefCounted.h</label>
+        <link refid="ik__IVirtualRefCounted_8h"/>
+        <childnode refid="2213" relation="include">
+        </childnode>
+      </node>
+      <node id="2233">
+        <label>ik_ISoundDeviceList.h</label>
+        <link refid="ik__ISoundDeviceList_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+      </node>
+      <node id="2228">
+        <label>ik_ISoundMixedOutputReceiver.h</label>
+        <link refid="ik__ISoundMixedOutputReceiver_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+        <childnode refid="2222" relation="include">
+        </childnode>
+      </node>
+      <node id="2214">
+        <label>wchar.h</label>
+      </node>
+      <node id="2231">
+        <label>ik_IFileReader.h</label>
+        <link refid="ik__IFileReader_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+      </node>
+      <node id="2210">
+        <label>MyGraphics/Source/Csounds.cpp</label>
+        <link refid="Csounds.cpp"/>
+        <childnode refid="2211" relation="include">
+        </childnode>
+      </node>
+      <node id="2221">
+        <label>ik_EStreamModes.h</label>
+        <link refid="ik__EStreamModes_8h"/>
+      </node>
+      <node id="2230">
+        <label>ik_IAudioStreamLoader.h</label>
+        <link refid="ik__IAudioStreamLoader_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+        <childnode refid="2231" relation="include">
+        </childnode>
+      </node>
+      <node id="2229">
+        <label>ik_IAudioStream.h</label>
+        <link refid="ik__IAudioStream_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+        <childnode refid="2222" relation="include">
+        </childnode>
+      </node>
+      <node id="2216">
+        <label>math.h</label>
+      </node>
+      <node id="2215">
+        <label>ik_vec3d.h</label>
+        <link refid="ik__vec3d_8h"/>
+        <childnode refid="2216" relation="include">
+        </childnode>
+        <childnode refid="2213" relation="include">
+        </childnode>
+      </node>
+      <node id="2219">
+        <label>ik_ESoundOutputDrivers.h</label>
+        <link refid="ik__ESoundOutputDrivers_8h"/>
+      </node>
+      <node id="2225">
+        <label>ik_ISound.h</label>
+        <link refid="ik__ISound_8h"/>
+        <childnode refid="2218" relation="include">
+        </childnode>
+        <childnode refid="2226" relation="include">
+        </childnode>
+        <childnode refid="2215" relation="include">
+        </childnode>
+      </node>
+      <node id="2222">
+        <label>ik_SAudioStreamFormat.h</label>
+        <link refid="ik__SAudioStreamFormat_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+      </node>
+      <node id="2232">
+        <label>ik_ISoundStopEventReceiver.h</label>
+        <link refid="ik__ISoundStopEventReceiver_8h"/>
+        <childnode refid="2217" relation="include">
+        </childnode>
+        <childnode refid="2222" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Csounds_8h" kindref="compound">Csounds.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="classCsounds_1ab095618c642be6222e321334330f561c" refkind="member"><highlight class="normal"><ref refid="classCsounds_1ab095618c642be6222e321334330f561c" kindref="member">Csounds::Csounds</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref><sp/>=<sp/><ref refid="namespaceirrklang_1ad9829f898bc0665fdd2554a6f5c7ca1c" kindref="member">createIrrKlangDevice</ref>();</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classCsounds_1a379845d100618d7aa7c2f5ea01f753e1" refkind="member"><highlight class="normal"><ref refid="classCsounds_1a379845d100618d7aa7c2f5ea01f753e1" kindref="member">Csounds::~Csounds</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1IRefCounted_1a869fe3adc6e49e8da105e95837a565b1" kindref="member">drop</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classCsounds_1a2dd79ab3d38eee76ff0e89aa62fadc1e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCsounds_1a2dd79ab3d38eee76ff0e89aa62fadc1e" kindref="member">Csounds::MainMusic</ref>()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref>*<sp/>music<sp/>=<sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(</highlight><highlight class="stringliteral">&quot;../irrKlang/media/12Mornings.mp3&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,0,0),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classCsounds_1a165aa2ffe15ca47e182e15b8f78017ad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCsounds_1a165aa2ffe15ca47e182e15b8f78017ad" kindref="member">Csounds::Explosion</ref>()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref>*<sp/>music<sp/>=<sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(</highlight><highlight class="stringliteral">&quot;../irrKlang/media/Boom.mp3&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,0,0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classCsounds_1a1fe1d35b2fb340a04c1094ba1bc327f1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCsounds_1a1fe1d35b2fb340a04c1094ba1bc327f1" kindref="member">Csounds::Bullet</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref>*<sp/>music<sp/>=<sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(</highlight><highlight class="stringliteral">&quot;../irrKlang/media/BulletShot.mp3&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,0,0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classCsounds_1a0804f7ea511143fe689d383f0a5270f6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCsounds_1a0804f7ea511143fe689d383f0a5270f6" kindref="member">Csounds::MetalClank</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref>*<sp/>music<sp/>=<sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(</highlight><highlight class="stringliteral">&quot;../irrKlang/media/Metal<sp/>Clank.mp3&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,0,0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classCsounds_1a083345643a1c7e08c23e6ae49194b310" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCsounds_1a083345643a1c7e08c23e6ae49194b310" kindref="member">Csounds::CheckOut</ref>()</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref>*<sp/>music<sp/>=<sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(</highlight><highlight class="stringliteral">&quot;../irrKlang/media/Checkout.mp3&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,0,0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classCsounds_1ac7e013e0806053442601536595b8c559" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classCsounds_1ac7e013e0806053442601536595b8c559" kindref="member">Csounds::Reload</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classirrklang_1_1ISound" kindref="compound">ISound</ref>*<sp/>music<sp/>=<sp/><ref refid="classCsounds_1a36d9e5456d9ee04ffac1a8c20f01ad91" kindref="member">engine</ref>-&gt;<ref refid="classirrklang_1_1ISoundEngine_1adb09ecc8f61120ce14d26545ed43d8ec" kindref="member">play3D</ref>(</highlight><highlight class="stringliteral">&quot;../irrKlang/media/Reload.mp3&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespaceirrklang_1a592332840fd1799b7c73bcc4c0c4a5af" kindref="member">vec3df</ref>(0,0,0),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Csounds.cpp"/>
+  </compounddef>
+</doxygen>

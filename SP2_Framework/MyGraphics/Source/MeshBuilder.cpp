@@ -1,3 +1,12 @@
+/****************************************************************************/
+/*!
+\file MeshBuilder.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to build the Mesh for using shapes.
+*/
+/****************************************************************************/
 #include "MeshBuilder.h"
 #include <GL\glew.h>
 #include <vector>
@@ -215,7 +224,19 @@ Mesh* MeshBuilder::GenerateCube(const std::string &meshName, Color color, float 
 	return mesh;
 }
 
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of a circle; Use random color for each vertex
+Then generate the VBO/IBO and store them in Mesh object
 
+\param meshName - name of mesh
+\param numSlice - number of slices in cicle
+\param radius - radius of circle
+
+\return Pointer to mesh storing VBO/IBO of circle
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateCircle(const std::string &meshName, Color color, unsigned numSlice, float radius)
 {
 	Vertex v;
@@ -257,7 +278,20 @@ Mesh* MeshBuilder::GenerateCircle(const std::string &meshName, Color color, unsi
 
 	return mesh;
 }
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of a ring; Use random color for each vertex
+Then generate the VBO/IBO and store them in Mesh object
 
+\param meshName - name of mesh
+\param numSlice - Number of slices in ring
+\param outerR - outer radius of cube
+\param innerR - inner radius of cube
+
+\return Pointer to mesh storing VBO/IBO of ring
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateRing(const std::string &meshName, Color color, unsigned numSlice, float outerR, float innerR)
 {
 	Vertex v;
@@ -314,6 +348,20 @@ float sphereY(float phi, float theta) {
 float sphereZ(float phi, float theta) {
 	return cos(Math::DegreeToRadian(phi)) * sin(Math::DegreeToRadian(theta));
 }
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of a sphere; Use random color for each vertex
+Then generate the VBO/IBO and store them in Mesh object
+
+\param meshName - name of mesh
+\param numStack - number of stacks in sphere
+\param numSlice - number of slices in sphere
+\param radius - radius of sphere
+
+\return Pointer to mesh storing VBO/IBO of sphere
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateSphere(const std::string &meshName, Color color, unsigned numStack, unsigned numSlice, float radius)
 {
 	Vertex v;
@@ -348,7 +396,18 @@ Mesh* MeshBuilder::GenerateSphere(const std::string &meshName, Color color, unsi
 
 	return mesh;
 }
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of an OBJ, Use random color for each vertex
+Then generate the VBO/IBO and store them in Mesh object
 
+\param meshName - name of mesh
+\param file_path - path to read from file
+
+\return Pointer to read an OBJ
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateOBJ(const std::string &meshName, const std::string &file_path) {
 	//Read vertices, texcoords & normals from OBJ
 	std::vector<Position> vertices;
@@ -375,7 +434,19 @@ Mesh* MeshBuilder::GenerateOBJ(const std::string &meshName, const std::string &f
 
 	return mesh;
 }
+/******************************************************************************/
+/*!
+\brief
+Generate the vertices of a text TARGA, Use random color for each vertex
+Then generate the VBO/IBO and store them in Mesh object
 
+\param meshName - name of mesh
+\param numRow - number for the row of text
+\param numCol - number for the column of text
+
+\return Pointer to read a TARGA file
+*/
+/******************************************************************************/
 Mesh* MeshBuilder::GenerateText(const std::string &meshName, unsigned numRow, unsigned numCol)
 {
 	Vertex v;

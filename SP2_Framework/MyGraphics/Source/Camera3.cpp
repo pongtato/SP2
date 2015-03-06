@@ -1,7 +1,21 @@
+/****************************************************************************/
+/*!
+\file Camera3.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to move and initiate a camera.
+*/
+/****************************************************************************/
 #include "Camera3.h"
 #include "Application.h"
 #include "Mtx44.h"
-
+/****************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/****************************************************************************/
 Camera3::Camera3()
 {
 	cameraState = 0;
@@ -15,11 +29,25 @@ Camera3::Camera3()
 	//isCollide = false;
 	downSight = false;
 }
-
+/****************************************************************************/
+/*!
+\brief
+Default Destructor
+*/
+/****************************************************************************/
 Camera3::~Camera3()
 {
 }
+/***************************************************************/
+/*!
+/brief
+Initiation codes for the position, target, and positive z-coordinates.
 
+/param pos - position vector
+/param target - point target vector
+/param up - positive z-coordinates vector
+*/
+/***************************************************************/
 void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	this->position = defaultPosition = pos;
@@ -30,7 +58,17 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	right.Normalize();
 	this->up = defaultUp = right.Cross(view).Normalized();
 }
+/***************************************************************/
+/*!
+/brief
+Limitation codes for the camera.
 
+/param position - position vector
+/param target - point target vector
+/param Border - border coordinates to bind the camera
+/param camSpeed - The speed of the camera movement
+*/
+/***************************************************************/
 bool Camera3::Limit( Vector3& position,Vector3& target, int Border, float camSpeed)
 {
 	camSpeed *= 0.02;
@@ -75,7 +113,15 @@ bool Camera3::Limit( Vector3& position,Vector3& target, int Border, float camSpe
 		return true;
 	}
 }
+/***************************************************************/
+/*!
+/brief
+Codes to open the staff shutter door.
 
+/param pos - position vector
+/param camSpeed - The speed of the camera movement
+*/
+/***************************************************************/
 void Camera3::StaffDoorsensor(Vector3& pos, float camSpeed)
 {
 	camSpeed *= 0.05;
@@ -98,7 +144,15 @@ void Camera3::StaffDoorsensor(Vector3& pos, float camSpeed)
 		LeftStaffDoor = false;
 	}
 }
+/***************************************************************/
+/*!
+/brief
+Codes to open the back shutter door.
 
+/param pos - position vector
+/param camSpeed - The speed of the camera movement
+*/
+/***************************************************************/
 void Camera3::Shuttersensor(Vector3& pos, float camSpeed)
 {
 	camSpeed *= 0.05;
@@ -111,7 +165,15 @@ void Camera3::Shuttersensor(Vector3& pos, float camSpeed)
 		ShutterDoor = false;
 	}
 }
+/***************************************************************/
+/*!
+/brief
+Codes to open the mart shutter door.
 
+/param pos - position vector
+/param camSpeed - The speed of the camera movement
+*/
+/***************************************************************/
 void Camera3::Doorsensor(Vector3& pos, float camSpeed)
 {
 	camSpeed *= 0.05;
@@ -133,17 +195,32 @@ void Camera3::Doorsensor(Vector3& pos, float camSpeed)
 		ExitDoor = false;
 	}
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to set the stamina dupe.
+*/
+/***************************************************************/
 void Camera3::setStaminaDupe(int stam)
 {
 	staminaDupe = stam;
 }
-
+/***************************************************************/
+/*!
+/brief
+Codes to get the stamina dupe.
+*/
+/***************************************************************/
 int Camera3::getStaminaDupe(void)
 {
 	return staminaDupe;
 }
-
+/****************************************************************************/
+/*!
+\brief
+Codes for camera controls, trolley controls, and 
+*/
+/****************************************************************************/
 void Camera3::Update(double dt)
 {	
 	int sprint = 1;
@@ -357,19 +434,34 @@ void Camera3::Update(double dt)
 	Shuttersensor(position, CAMERA_SPEED);
 	StaffDoorsensor(position, CAMERA_SPEED);
 }
-
+/****************************************************************************/
+/*!
+\brief
+Resets vectors to the base starting set.
+*/
+/****************************************************************************/
 void Camera3::Reset()
 {
 	position = defaultPosition;
 	target = defaultTarget;
 	up = defaultUp;
 }
-
+/****************************************************************************/
+/*!
+\brief
+Sets the camera state
+*/
+/****************************************************************************/
 void Camera3::setCameraState(int state)
 {
 	cameraState = state;
 }
-
+/****************************************************************************/
+/*!
+\brief
+Gets the camera state
+*/
+/****************************************************************************/
 int Camera3::getCameraState(void)
 {
 	return cameraState;

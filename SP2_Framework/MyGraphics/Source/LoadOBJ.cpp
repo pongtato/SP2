@@ -1,9 +1,27 @@
+/****************************************************************************/
+/*!
+\file LoadOBJ.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to load OBJ files from a folder.
+*/
+/****************************************************************************/
 #include <iostream>
 #include <fstream>
 #include <map>
 
 #include "LoadOBJ.h"
+/******************************************************************************/
+/*!
+\brief
+Read an OBJ file from a text file, then use it for meshes.
 
+\param file_path - path to text file
+
+\return GLuint OBJ file for meshes
+*/
+/******************************************************************************/
 bool LoadOBJ(
 	const char *file_path, 
 	std::vector<Position> & out_vertices, 

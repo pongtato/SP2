@@ -1,15 +1,45 @@
+/****************************************************************************/
+/*!
+\file CollisionBounds.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes for collision checking.
+*/
+/****************************************************************************/
 #include "CollisionBounds.h"
 
-
+/****************************************************************************/
+/*!
+\brief
+Default constructor
+*/
+/****************************************************************************/
 CCollisionBounds::CCollisionBounds(void)
 {
 }
 
-
+/****************************************************************************/
+/*!
+\brief
+Default destructor
+*/
+/****************************************************************************/
 CCollisionBounds::~CCollisionBounds(void)
 {
 }
+/****************************************************************************/
+/*!
+\brief
 
+\param x - x-coordinate
+\param y - y-coordinate
+\param z - z-coordinate
+\param OffsetX - offset distance from x-coordinate
+\param OffsetY - offset distance from y-coordinate
+\param OffsetZ - offset distance from z-coordinate
+*/
+/****************************************************************************/
 void CCollisionBounds::SetCollisionBounds(float x, float y, float z, float OffsetX, float OffsetY, float OffsetZ)
 {
 	//Calulate top left of top section cube

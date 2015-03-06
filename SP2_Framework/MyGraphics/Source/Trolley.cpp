@@ -1,3 +1,12 @@
+/************************************************************************/
+/*!
+\file Trolley.cpp
+\Author SP2 Group 4
+\par
+\brief
+Codes to update and render the Trolley.
+*/
+/************************************************************************/
 #include "Trolley.h"
 
 

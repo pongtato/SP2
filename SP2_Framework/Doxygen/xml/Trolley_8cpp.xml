@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="Trolley_8cpp" kind="file">
+    <compoundname>Trolley.cpp</compoundname>
+    <includes refid="Trolley_8h" local="yes">Trolley.h</includes>
+    <incdepgraph>
+      <node id="2722">
+        <label>cmath</label>
+      </node>
+      <node id="2726">
+        <label>string</label>
+      </node>
+      <node id="2723">
+        <label>exception</label>
+      </node>
+      <node id="2721">
+        <label>MyMath.h</label>
+        <link refid="MyMath_8h"/>
+        <childnode refid="2722" relation="include">
+        </childnode>
+        <childnode refid="2723" relation="include">
+        </childnode>
+        <childnode refid="2724" relation="include">
+        </childnode>
+        <childnode refid="2725" relation="include">
+        </childnode>
+      </node>
+      <node id="2717">
+        <label>Trolley.h</label>
+        <link refid="Trolley_8h"/>
+        <childnode refid="2718" relation="include">
+        </childnode>
+        <childnode refid="2719" relation="include">
+        </childnode>
+        <childnode refid="2720" relation="include">
+        </childnode>
+        <childnode refid="2726" relation="include">
+        </childnode>
+      </node>
+      <node id="2720">
+        <label>Vector3.h</label>
+        <link refid="Vector3_8h"/>
+        <childnode refid="2721" relation="include">
+        </childnode>
+        <childnode refid="2718" relation="include">
+        </childnode>
+      </node>
+      <node id="2724">
+        <label>ctime</label>
+      </node>
+      <node id="2719">
+        <label>vector</label>
+      </node>
+      <node id="2716">
+        <label>MyGraphics/Source/Trolley.cpp</label>
+        <link refid="Trolley.cpp"/>
+        <childnode refid="2717" relation="include">
+        </childnode>
+      </node>
+      <node id="2725">
+        <label>cstdlib</label>
+      </node>
+      <node id="2718">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Trolley_8h" kindref="compound">Trolley.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="classCTrolley_1a600fefa0abdb35b1dd981814c033ab93" refkind="member"><highlight class="normal"><ref refid="classCTrolley_1a600fefa0abdb35b1dd981814c033ab93" kindref="member">CTrolley::CTrolley</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1ae7742346d79bf95206824a348a300646" kindref="member">TrolleyLimit</ref><sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1ab3353ae145dcc7c49ec99803a1ff2d26" kindref="member">PositionTranslate</ref><sp/>=<sp/>50;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1a144e0b8b1a0e582492a43f52ee3a850b" kindref="member">TrolleyCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classCTrolley_1a766c7dbcd36f190ca5bd4390f1d91029" refkind="member"><highlight class="normal"><ref refid="classCTrolley_1a766c7dbcd36f190ca5bd4390f1d91029" kindref="member">CTrolley::~CTrolley</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classCTrolley_1a06ebc7875111ea5c68a2c5c77d2d3e60" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCTrolley_1a06ebc7875111ea5c68a2c5c77d2d3e60" kindref="member">CTrolley::Spawner</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classCTrolley_1a9bc546223ae74a0983b0c4f04b657c37" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classCTrolley_1a9bc546223ae74a0983b0c4f04b657c37" kindref="member">CTrolley::SetList</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>itemx,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>itemz,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rot,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1a6ee91f3cca77a12a0361cc88a3b394c5" kindref="member">LastX</ref><sp/>=<sp/>itemx;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1abb73870d2f14dc1e2a14c075fe2b9a16" kindref="member">LastZ</ref><sp/>=<sp/>itemz;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1aa426927d009253641fdd02c4618e383b" kindref="member">LastXMove</ref><sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1aefd976ea86b498ededcd2e69616ba7e6" kindref="member">LastZMove</ref><sp/>=<sp/>z;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1a70c5cfe3f0d9a4cf0141df976563d0a7" kindref="member">LastRotation</ref><sp/>=<sp/>rot;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classCTrolley_1a6f672dbc52386ea4f647573be7afe33f" kindref="member">ExpansionSize</ref><sp/>=<sp/>size;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/SP2/SP2_Framework/MyGraphics/Source/Trolley.cpp"/>
+  </compounddef>
+</doxygen>
